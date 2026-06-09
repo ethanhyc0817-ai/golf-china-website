@@ -38,3 +38,6 @@ _compressed_*
 *.log
 .env
 .env.*
+
+# Local backups (not deployed)
+index.backup-*.html
