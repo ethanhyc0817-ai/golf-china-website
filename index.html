@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golf China Co — Bespoke Golf Journeys Through the Heart of China</title>
+<meta name="description" content="Private, tailor-made golf journeys across China — championship fairways framed by the Great Wall, karst peaks, Himalayan foothills and tropical coast, woven with culture, cuisine and quiet luxury.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== Golf China Co — design tokens (see DESIGN-SYSTEM.md) ===== */
+:root{
+  --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
+  --cinnabar:#b4452f; --gold:#b89150;
+  --ivory:#f6f1e7; --paper:#fffdf8; --mist:#e7e0d2;
+  --lift:0 18px 50px -20px rgba(20,36,28,.4);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',-apple-system,Segoe UI,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cinnabar);color:#fff}
+.btn-primary:hover{background:#9c3927}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--pine)}
+.fade{opacity:0;transform:translateY(24px);transition:.7s ease}
+.fade.in{opacity:1;transform:none}
+
+/* ===== NAV ===== */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1200px;margin:0 auto}
+header.nav .logo{font-family:var(--serif);font-size:23px;color:#fff;letter-spacing:.5px}
+header.nav .logo span{color:var(--gold)}
+header.nav nav{display:flex;gap:30px;align-items:center}
+header.nav nav a{font-size:13px;letter-spacing:.08em;color:#fff;opacity:.92;font-weight:400}
+header.nav nav a:hover{color:var(--gold)}
+header.nav .nav-cta{font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px;border-radius:2px}
+header.nav.scrolled{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
+header.nav.scrolled .bar{padding:12px 28px}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:60}
+@media(max-width:880px){
+  header.nav .bar{padding:14px 20px}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--pine);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+  header.nav nav.open{max-height:460px}
+  header.nav nav a{padding:15px 22px;border-top:1px solid rgba(255,255,255,.1);font-size:15px;opacity:1}
+  header.nav nav .nav-cta{border:none;border-top:1px solid rgba(255,255,255,.1);background:var(--cinnabar);text-align:center;border-radius:0}
+  .menu-toggle{display:block}
+}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero picture,.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.45) 0%,rgba(20,36,28,.08) 30%,rgba(20,36,28,.15) 55%,rgba(20,36,28,.82) 100%)}
+.hero-inner{position:relative;z-index:2;padding-bottom:9vh;padding-top:120px}
+.hero h1{font-size:clamp(40px,6.4vw,76px);max-width:16ch;margin:16px 0 20px;font-weight:500}
+.hero p.lead{font-size:clamp(16px,2vw,20px);max-width:48ch;opacity:.95}
+.hero .actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap}
+.hero .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.25em;text-transform:uppercase;opacity:.75}
+
+/* ===== SECTION SHELL ===== */
+section{padding:100px 0}
+.section-head{max-width:680px;margin-bottom:54px}
+.section-head h2{font-size:clamp(32px,4.6vw,50px);margin:14px 0}
+.section-head p{color:#4a5a50;font-size:17px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* ===== STATS STRIP ===== */
+.intro{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
+.intro .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
+.intro .stat .n{font-family:var(--serif);font-size:46px;color:var(--pine);line-height:1}
+.intro .stat .l{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--moss);margin-top:8px}
+@media(max-width:760px){.intro .grid{grid-template-columns:repeat(2,1fr);gap:30px}}
+
+/* ===== JOURNEYS ===== */
+.journeys{background:var(--ivory)}
+.journey{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:2px;overflow:hidden;box-shadow:var(--lift);margin-bottom:54px;background:var(--paper)}
+.journey .ph{position:relative;min-height:480px}
+.journey .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.journey .ph .badge{position:absolute;left:24px;top:24px;z-index:2;background:rgba(20,36,28,.78);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:2px}
+.journey .body{padding:46px 44px}
+.journey .body .route{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.journey .body h3{font-size:34px;margin:8px 0 6px;color:var(--pine)}
+.journey .body .sub{color:#54635a;font-size:15px;margin-bottom:22px}
+.days{list-style:none}
+.days li{display:flex;gap:16px;padding:11px 0;border-top:1px solid var(--mist);font-size:14.5px}
+.days li:first-child{border-top:none}
+.days li .d{font-family:var(--serif);font-size:15px;color:var(--cinnabar);min-width:52px;font-weight:600;letter-spacing:.04em;padding-top:1px}
+.days li .t{color:#3c4a42}
+.days li .t b{font-weight:500;color:var(--ink)}
+.journey .body .cta{margin-top:26px}
+.journey:nth-child(even) .ph{order:2}
+@media(max-width:880px){
+  .journey{grid-template-columns:1fr}
+  .journey .ph{min-height:300px;order:0 !important}
+  .journey .body{padding:34px 26px}
+}
+
+/* ===== DESTINATIONS ===== */
+.dest{background:var(--pine);color:#fff}
+.dest .section-head h2{color:#fff}.dest .section-head p{color:rgba(255,255,255,.72)}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:920px){.dest-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.dest-grid{grid-template-columns:1fr}}
+.dcard{background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;transition:.35s}
+.dcard:hover{transform:translateY(-6px);border-color:var(--gold)}
+.dcard .img{position:relative;height:230px}
+.dcard .img img{width:100%;height:100%;object-fit:cover}
+.dcard .img .tag{position:absolute;left:0;bottom:0;background:var(--cinnabar);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px}
+.dcard .c{padding:24px}
+.dcard .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.dcard .c h3{font-size:24px;margin:4px 0 10px}
+.dcard .c p{font-size:13.5px;color:rgba(255,255,255,.82);font-weight:300}
+.dcard .c .meta{margin-top:14px;border-top:1px solid rgba(255,255,255,.16);padding-top:12px;font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.7);display:flex;flex-direction:column;gap:5px}
+.dcard .c .meta span b{color:#fff;font-weight:500}
+
+/* ===== EXPERIENCES ===== */
+.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:920px){.exp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.exp-grid{grid-template-columns:1fr}}
+.ecard{position:relative;border-radius:2px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--lift)}
+.ecard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.ecard:hover img{transform:scale(1.06)}
+.ecard.grad{background:linear-gradient(160deg,#3f6f54,#1f3d2e)}
+.ecard .b{position:relative;z-index:2;padding:24px;background:linear-gradient(180deg,transparent,rgba(20,36,28,.86))}
+.ecard .b h3{font-size:22px;margin-bottom:6px}
+.ecard .b p{font-size:13px;opacity:.9;font-weight:300}
+
+/* ===== WHY ===== */
+.why{background:var(--paper)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:860px){.why-grid{grid-template-columns:1fr;gap:34px}}
+.why .art{border-radius:2px;min-height:440px;position:relative;overflow:hidden;box-shadow:var(--lift)}
+.why .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.why .art .q{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:44px;background:linear-gradient(180deg,transparent,rgba(20,36,28,.8));color:#fff}
+.why .art .q .mk{font-family:var(--serif);font-size:80px;color:var(--gold);line-height:.5}
+.why .art .q p{font-family:var(--serif);font-size:24px;font-style:italic;margin-top:8px}
+.why-points{list-style:none;margin-top:22px}
+.why-points li{padding:16px 0;border-top:1px solid var(--mist);display:flex;gap:16px}
+.why-points li .num{font-family:var(--serif);font-size:24px;color:var(--cinnabar);min-width:34px}
+.why-points li h4{font-size:18px;color:var(--pine)}
+.why-points li p{font-size:14px;color:#54635a}
+
+/* ===== PLAN ===== */
+.plan{background:var(--ivory);border-top:1px solid var(--mist)}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mist);border:1px solid var(--mist)}
+@media(max-width:760px){.plan-grid{grid-template-columns:1fr}}
+.plan-item{background:var(--paper);padding:30px}
+.plan-item h4{font-size:20px;color:var(--pine);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.plan-item h4 .dot{width:8px;height:8px;background:var(--gold);border-radius:999px}
+.plan-item p{font-size:14px;color:#54635a}
+
+/* ===== CTA ===== */
+.cta{background:var(--ink);color:#fff}
+.cta-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:860px){.cta-wrap{grid-template-columns:1fr;gap:34px}}
+.cta h2{font-size:clamp(32px,4.5vw,46px);color:#fff}
+.cta p{color:rgba(255,255,255,.75);margin-top:14px;max-width:42ch}
+.form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:32px;border-radius:2px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.form .row{grid-template-columns:1fr}}
+.form label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:14px 0 6px}
+.form input,.form select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff;padding:12px 14px;border-radius:2px;font-family:var(--sans);font-size:14px}
+.form input::placeholder{color:rgba(255,255,255,.4)}
+.form input:focus,.form select:focus{outline:none;border-color:var(--gold)}
+.form .btn{width:100%;margin-top:22px;border:none}
+.form-note{font-size:12px;color:rgba(255,255,255,.5);margin-top:14px;text-align:center}
+
+/* ===== FOOTER ===== */
+footer{background:var(--pine);color:rgba(255,255,255,.8);padding:60px 0 30px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer .logo{font-family:var(--serif);font-size:24px;color:#fff}
+footer .logo span{color:var(--gold)}
+footer h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+footer ul{list-style:none;font-size:14px;font-weight:300}
+footer ul li{padding:5px 0;opacity:.85}
+footer ul li a:hover{color:#fff}
+footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
+
+@media(max-width:600px){
+  .container{padding:0 20px}
+  section{padding:68px 0}
+  .section-head{margin-bottom:36px}
+  .hero .actions{flex-direction:column}
+  .hero .actions .btn{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="#top" class="logo">Golf <span>China</span> Co</a>
+    <nav>
+      <a href="#journeys">Journeys</a>
+      <a href="#destinations">Destinations &amp; Courses</a>
+      <a href="#experiences">Beyond Golf</a>
+      <a href="#plan">Plan Your Trip</a>
+      <a href="#start" class="nav-cta">Enquire</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <picture>
+    <source media="(max-width:760px)" srcset="assets/img/hero-mobile.jpg">
+    <img class="bg" src="assets/img/hero-desktop.jpg" alt="A golf green beside a still lake reflecting a classical Chinese resort, misty mountains behind">
+  </picture>
+  <div class="scrim"></div>
+  <div class="container hero-inner">
+    <span class="eyebrow">Private Golf Journeys · Mainland China</span>
+    <h1>Play the most beautiful corners of China.</h1>
+    <p class="lead">Championship fairways framed by the Great Wall, karst peaks, Himalayan foothills and tropical coast — woven together with the culture, cuisine and quiet luxury that make a first journey to China unforgettable.</p>
+    <div class="actions">
+      <a href="#journeys" class="btn btn-primary">Explore Signature Journeys</a>
+      <a href="#destinations" class="btn btn-ghost">Browse Courses</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll ↓</div>
+</section>
+
+<!-- STATS -->
+<section class="intro" style="padding:54px 0">
+  <div class="container">
+    <div class="grid">
+      <div class="stat fade"><div class="n">6</div><div class="l">Iconic Regions</div></div>
+      <div class="stat fade"><div class="n">10+</div><div class="l">Championship Courses</div></div>
+      <div class="stat fade"><div class="n">1:1</div><div class="l">Private Concierge</div></div>
+      <div class="stat fade"><div class="n">100%</div><div class="l">Tailor-Made</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEYS -->
+<section class="journeys" id="journeys">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Signature Journeys</span>
+      <h2>Curated routes, told day by day.</h2>
+      <p>Every journey pairs championship golf with the soul of each place — pre-booked tee times, private transfers, hand-picked hotels and a personal guide throughout. Each is a starting point, fully tailorable to your pace and handicap.</p>
+    </div>
+
+    <!-- Journey 1 -->
+    <article class="journey fade">
+      <div class="ph"><span class="badge">6 Days</span><img src="assets/img/course-beijing.jpg" alt="Reignwood Pine Valley golf course, Beijing"></div>
+      <div class="body">
+        <div class="route">Beijing</div>
+        <h3>The Imperial North</h3>
+        <p class="sub">The capital's history and grandeur, with golf in the shadow of the Great Wall.</p>
+        <ul class="days">
+          <li><span class="d">Day 1</span><span class="t">Arrive Beijing; settle into a courtyard-style suite. Evening: a first taste of the capital over <b>Peking duck</b>.</span></li>
+          <li><span class="d">Day 2</span><span class="t">Golf at <b>Reignwood Pine Valley</b> (Jack Nicklaus), set against the Jundu Mountains; afternoon, a private walk on a wild, restored stretch of the <b>Great Wall</b> at golden hour.</span></li>
+          <li><span class="d">Day 3</span><span class="t">The <b>Forbidden City</b> before the crowds with a historian; lunch in a hutong courtyard; afternoon at leisure or a second nine.</span></li>
+          <li><span class="d">Day 4</span><span class="t">A second championship round; later, a tea master and the cypress groves of the <b>Temple of Heaven</b>.</span></li>
+          <li><span class="d">Day 5</span><span class="t">Contemporary Beijing — the 798 art district and a Michelin-starred dinner.</span></li>
+          <li><span class="d">Day 6</span><span class="t">Private transfer for your onward flight, or connect to <b>Jiangnan Greens</b>.</span></li>
+        </ul>
+        <div class="cta"><a href="#start" class="btn btn-primary">Tailor This Journey</a></div>
+      </div>
+    </article>
+
+    <!-- Journey 2 -->
+    <article class="journey fade">
+      <div class="ph"><span class="badge">6 Days</span><img src="assets/img/hero-desktop.jpg" alt="Fuchun Resort golf course reflected in a lake"></div>
+      <div class="body">
+        <div class="route">Shanghai &amp; Hangzhou</div>
+        <h3>Jiangnan Greens</h3>
+        <p class="sub">Cosmopolitan Shanghai and the misty water-towns of the lower Yangtze.</p>
+        <ul class="days">
+          <li><span class="d">Day 1</span><span class="t">Arrive Shanghai; sunset on <b>the Bund</b>, the skyline mirrored across the Huangpu.</span></li>
+          <li><span class="d">Day 2</span><span class="t">Golf at <b>Sheshan International</b>, host of the WGC-HSBC Champions; evening in the French Concession.</span></li>
+          <li><span class="d">Day 3</span><span class="t">A links round at <b>Yangtze Dunes</b>, where the river meets the sea; afternoon, classical gardens and a bespoke tailor.</span></li>
+          <li><span class="d">Day 4</span><span class="t">High-speed train to Hangzhou; <b>West Lake</b> by private boat at dusk.</span></li>
+          <li><span class="d">Day 5</span><span class="t">Golf at <b>Fuchun Resort</b>, fairways reflected in still water beneath misty hills; spa and Longjing tea villages.</span></li>
+          <li><span class="d">Day 6</span><span class="t">Onward transfer, or connect north to Beijing.</span></li>
+        </ul>
+        <div class="cta"><a href="#start" class="btn btn-primary">Tailor This Journey</a></div>
+      </div>
+    </article>
+
+    <!-- Journey 3 -->
+    <article class="journey fade">
+      <div class="ph"><span class="badge">7 Days</span><img src="assets/img/course-springcity.jpg" alt="Spring City golf course in Yunnan overlooking a lake"></div>
+      <div class="body">
+        <div class="route">Yunnan</div>
+        <h3>The Southwest Highlands</h3>
+        <p class="sub">Eternal-spring climate, snow peaks and ethnic-minority culture — China at its most distinctive.</p>
+        <ul class="days">
+          <li><span class="d">Day 1</span><span class="t">Arrive Kunming, the <b>City of Eternal Spring</b>.</span></li>
+          <li><span class="d">Day 2–3</span><span class="t">Two rounds at <b>Spring City</b> — the Nicklaus Mountain course and the Robert Trent Jones Jr. Lake course, ranked among China's very finest.</span></li>
+          <li><span class="d">Day 4</span><span class="t">Fly to Lijiang; the UNESCO <b>old town</b> and Naxi culture at twilight.</span></li>
+          <li><span class="d">Day 5</span><span class="t">Golf at <b>Jade Dragon Snow Mountain</b> — the world's longest course, beneath a 5,500m glacier.</span></li>
+          <li><span class="d">Day 6</span><span class="t">Tea-Horse Road villages, a farmhouse lunch and the Black Dragon Pool.</span></li>
+          <li><span class="d">Day 7</span><span class="t">Onward transfer.</span></li>
+        </ul>
+        <div class="cta"><a href="#start" class="btn btn-primary">Tailor This Journey</a></div>
+      </div>
+    </article>
+
+    <!-- Journey 4 -->
+    <article class="journey fade">
+      <div class="ph"><span class="badge">8 Days</span><img src="assets/img/course-guilin.jpg" alt="Guilin golf course beneath dramatic karst peaks"></div>
+      <div class="body">
+        <div class="route">Guilin &amp; Hainan</div>
+        <h3>Karst &amp; Coast</h3>
+        <p class="sub">The scroll-painting landscape of Guilin, then golf along China's tropical island shore.</p>
+        <ul class="days">
+          <li><span class="d">Day 1</span><span class="t">Arrive Guilin, among the limestone peaks of the ¥20 note.</span></li>
+          <li><span class="d">Day 2</span><span class="t">Golf at <b>Guilin</b>, karst spires rising straight from the fairways.</span></li>
+          <li><span class="d">Day 3</span><span class="t">A slow cruise down the <b>Li River</b> to Yangshuo; cycle between the rice paddies.</span></li>
+          <li><span class="d">Day 4</span><span class="t">Fly to Hainan; arrive on the untouched tropical east coast.</span></li>
+          <li><span class="d">Day 5</span><span class="t">Golf at <b>Mission Hills Blackstone</b>, carved from black volcanic rock.</span></li>
+          <li><span class="d">Day 6</span><span class="t">A links round at <b>The Dunes, Shenzhou Peninsula</b>, on natural sand dunes by the sea.</span></li>
+          <li><span class="d">Day 7</span><span class="t">Oceanfront golf at <b>Shanqin Bay</b>, then the beach and a seafood feast.</span></li>
+          <li><span class="d">Day 8</span><span class="t">Onward transfer.</span></li>
+        </ul>
+        <div class="cta"><a href="#start" class="btn btn-primary">Tailor This Journey</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- DESTINATIONS & COURSES -->
+<section class="dest" id="destinations">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow" style="color:var(--gold)">Destinations &amp; Courses</span>
+      <h2>Six regions, one country of contrasts.</h2>
+      <p>Each region offers a completely different face of China — and a course you could only play here. Combine any of them into a single seamless journey.</p>
+    </div>
+    <div class="dest-grid">
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/course-beijing.jpg" alt="Reignwood Pine Valley"><span class="tag">History</span></div>
+        <div class="c">
+          <div class="region">Beijing</div><h3>Reignwood Pine Valley</h3>
+          <p>A Nicklaus parkland layout in the Jundu Mountains, minutes from wild stretches of the Great Wall.</p>
+          <div class="meta"><span><b>Designer</b> · Jack Nicklaus</span><span><b>Best season</b> · Apr–Jun, Sep–Oct</span><span><b>Pair with</b> · Great Wall, Forbidden City</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/course-sheshan.webp" alt="Sheshan International"><span class="tag">Tournament</span></div>
+        <div class="c">
+          <div class="region">Shanghai</div><h3>Sheshan International</h3>
+          <p>China's most famous course and host of the WGC-HSBC Champions — world-class golf on the city's doorstep.</p>
+          <div class="meta"><span><b>Also</b> · Yangtze Dunes links</span><span><b>Best season</b> · Apr–Jun, Sep–Nov</span><span><b>Pair with</b> · The Bund, dining</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/hero-desktop.jpg" alt="Fuchun Resort"><span class="tag">Resort</span></div>
+        <div class="c">
+          <div class="region">Hangzhou</div><h3>Fuchun Resort</h3>
+          <p>Jiangnan elegance — fairways and a classical resort mirrored in still water beneath misty hills.</p>
+          <div class="meta"><span><b>Style</b> · Garden resort course</span><span><b>Best season</b> · Mar–May, Sep–Nov</span><span><b>Pair with</b> · West Lake, Longjing tea</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/course-springcity.jpg" alt="Spring City Resort"><span class="tag">#1 in China</span></div>
+        <div class="c">
+          <div class="region">Yunnan · Kunming</div><h3>Spring City Resort</h3>
+          <p>Two championship courses — Nicklaus Mountain and RTJ Jr. Lake — in an eternal-spring climate above a vast lake.</p>
+          <div class="meta"><span><b>Designers</b> · Nicklaus · R.T. Jones Jr.</span><span><b>Best season</b> · Year-round</span><span><b>Pair with</b> · Lijiang, Jade Dragon</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/jadedragon-view.jpg" alt="Jade Dragon Snow Mountain Golf"><span class="tag">Highest course</span></div>
+        <div class="c">
+          <div class="region">Yunnan · Lijiang</div><h3>Jade Dragon Snow Mountain</h3>
+          <p>The world's longest course, played at altitude beneath a 5,500-metre glacier — a once-in-a-lifetime round.</p>
+          <div class="meta"><span><b>Setting</b> · Himalayan foothills</span><span><b>Best season</b> · Mar–Nov</span><span><b>Pair with</b> · Old town, Tea-Horse Road</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/course-guilin.jpg" alt="Guilin golf among karst peaks"><span class="tag">Scenery</span></div>
+        <div class="c">
+          <div class="region">Guilin</div><h3>Guilin Landscape</h3>
+          <p>The karst scenery on China's ¥20 note — limestone spires rising straight from the fairways and lakes.</p>
+          <div class="meta"><span><b>Setting</b> · Karst &amp; Li River</span><span><b>Best season</b> · Apr–Oct</span><span><b>Pair with</b> · Li River cruise, Yangshuo</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/course-hainan-blackstone.jpg" alt="Mission Hills Blackstone"><span class="tag">Volcanic</span></div>
+        <div class="c">
+          <div class="region">Hainan · Haikou</div><h3>Mission Hills Blackstone</h3>
+          <p>Asia's largest golf complex — dramatic fairways carved from black lava rock, playable all winter.</p>
+          <div class="meta"><span><b>Designer</b> · Schmidt-Curley</span><span><b>Best season</b> · Oct–Apr</span><span><b>Pair with</b> · The Dunes, beaches</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/course-hainan-dunes.jpg" alt="The Dunes at Shenzhou Peninsula"><span class="tag">Links</span></div>
+        <div class="c">
+          <div class="region">Hainan · Shenzhou</div><h3>The Dunes, Shenzhou</h3>
+          <p>A Tom Weiskopf links carved from natural sand dunes on a wild stretch of tropical coast.</p>
+          <div class="meta"><span><b>Designer</b> · Tom Weiskopf</span><span><b>Best season</b> · Oct–Apr</span><span><b>Pair with</b> · Shanqin Bay, Sanya</span></div>
+        </div>
+      </article>
+
+      <article class="dcard fade">
+        <div class="img"><img src="assets/img/course-hainan-shanqin.jpg" alt="Shanqin Bay oceanfront golf"><span class="tag">Oceanfront</span></div>
+        <div class="c">
+          <div class="region">Hainan · Shanqin Bay</div><h3>Shanqin Bay</h3>
+          <p>One of China's most exclusive clubs — clifftop fairways tumbling toward a turquoise sea.</p>
+          <div class="meta"><span><b>Designer</b> · Bill Coore &amp; Ben Crenshaw</span><span><b>Best season</b> · Oct–Apr</span><span><b>Pair with</b> · Beach, seafood</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section id="experiences">
+  <div class="container">
+    <div class="section-head center fade">
+      <span class="eyebrow">Beyond the Fairway</span>
+      <h2>For everyone in your party.</h2>
+      <p>Golf is the thread — but the journey is bigger. Cultural depth and comfort for golfers and non-golfers alike.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="ecard grad fade"><div class="b"><h3>Cuisine</h3><p>Peking duck, Yunnan wild mushrooms, Cantonese dim sum and private dining with leading chefs.</p></div></div>
+      <div class="ecard fade"><img src="assets/img/place-greatwall.jpg" alt="The Great Wall in autumn"><div class="b"><h3>Culture</h3><p>The Great Wall, the Forbidden City, water towns and minority villages with expert guides.</p></div></div>
+      <div class="ecard fade"><img src="assets/img/guilin-pano.jpg" alt="Misty karst landscape"><div class="b"><h3>Nature</h3><p>Li River cruises, rice-terrace hikes and snow-mountain vistas between rounds.</p></div></div>
+      <div class="ecard fade"><img src="assets/img/place-lijiang.jpg" alt="Lijiang old town"><div class="b"><h3>Stays</h3><p>Hand-picked luxury and design hotels, from Bund landmarks to mountain retreats.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="container why-grid">
+    <div class="art fade">
+      <img src="assets/img/guilin-pano.jpg" alt="Golf fairway beneath misty karst peaks">
+      <div class="q"><span class="mk">“</span><p>We don't sell tee times. We design the journey of a lifetime around them.</p></div>
+    </div>
+    <div class="fade">
+      <span class="eyebrow">Why Travel With Us</span>
+      <h2 style="font-size:clamp(30px,4vw,42px);margin:12px 0 4px;color:var(--pine)">A local touch, a global standard.</h2>
+      <ul class="why-points">
+        <li><span class="num">01</span><div><h4>Golf + culture, not just golf</h4><p>Every round is paired with the place — food, history and people, not a shuttle between resorts.</p></div></li>
+        <li><span class="num">02</span><div><h4>Access &amp; pre-booked tee times</h4><p>Including invite-only and high-demand courses, secured well in advance.</p></div></li>
+        <li><span class="num">03</span><div><h4>English-speaking concierge</h4><p>One point of contact, on the ground, throughout your journey.</p></div></li>
+        <li><span class="num">04</span><div><h4>Fully bespoke</h4><p>Pace, handicap, hotels and non-golf days shaped entirely around you and your party.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="plan" id="plan">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Plan Your Trip</span>
+      <h2>Everything handled, before you arrive.</h2>
+      <p>Traveling to China is easier than ever. We take care of the details that trip up first-time visitors.</p>
+    </div>
+    <div class="plan-grid fade">
+      <div class="plan-item"><h4><span class="dot"></span>Visas &amp; Entry</h4><p>Many nationalities now qualify for visa-free or transit-visa entry. We advise on eligibility and paperwork.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Mobile Payments</h4><p>We set you up with Alipay &amp; WeChat Pay so you can pay anywhere — cards aren't always accepted.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Getting Around</h4><p>Private drivers plus China's high-speed rail; we book every transfer and tee-time logistic.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Best Season</h4><p>Beijing &amp; Shanghai in spring and autumn; Hainan in winter; Yunnan and Guilin nearly year-round.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Clubs &amp; Gear</h4><p>Premium rental sets arranged at every course, or shipping support for your own bag.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Connectivity</h4><p>eSIM &amp; VPN guidance so you stay online and reachable throughout the journey.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="start">
+  <div class="container cta-wrap">
+    <div class="fade">
+      <span class="eyebrow">Start Planning</span>
+      <h2>Let's design your China golf journey.</h2>
+      <p>Tell us a little about your trip and a travel designer will reply within one business day by email or WeChat.</p>
+    </div>
+    <form class="form fade" onsubmit="event.preventDefault();var b=this.querySelector('.btn');b.textContent='Thank you — we will be in touch';b.style.background='#3f6f54';">
+      <div class="row">
+        <div><label>Name</label><input type="text" placeholder="Your name" required></div>
+        <div><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="row">
+        <div><label>Journey</label>
+          <select><option>No preference yet</option><option>The Imperial North (Beijing)</option><option>Jiangnan Greens (Shanghai &amp; Hangzhou)</option><option>Southwest Highlands (Yunnan)</option><option>Karst &amp; Coast (Guilin &amp; Hainan)</option><option>A custom combination</option></select>
+        </div>
+        <div><label>Party size</label>
+          <select><option>1–2</option><option>3–4</option><option>5–8</option><option>Group (8+)</option></select>
+        </div>
+      </div>
+      <div class="row">
+        <div><label>Approx. dates</label><input type="text" placeholder="e.g. Oct 2026"></div>
+        <div><label>Handicap / level</label>
+          <select><option>Beginner</option><option>Casual</option><option>Single digit</option><option>Mixed group</option></select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Request a Proposal</button>
+      <p class="form-note">No obligation · Replies within 1 business day</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo">Golf <span>China</span> Co</div>
+        <p style="font-size:14px;margin-top:14px;max-width:34ch;font-weight:300">Bespoke golf journeys through the most beautiful corners of China, for the discerning international traveler.</p>
+      </div>
+      <div><h5>Journeys</h5><ul><li><a href="#journeys">The Imperial North</a></li><li><a href="#journeys">Jiangnan Greens</a></li><li><a href="#journeys">Southwest Highlands</a></li><li><a href="#journeys">Karst &amp; Coast</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations &amp; Courses</a></li><li><a href="#experiences">Beyond Golf</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#why">Why Us</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>hello@golfchinaco.com</li><li>WeChat: GolfChinaCo</li><li><a href="#start">Enquire now</a></li></ul></div>
+    </div>
+    <div class="base">
+      <span>© 2026 Golf China Co. All rights reserved.</span>
+      <span>Prototype · concept design</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const toggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('header.nav nav');
+toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

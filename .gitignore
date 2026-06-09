@@ -1,0 +1,40 @@
+# macOS system files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Temp / scratch images (not part of the site)
+assets/img/_*
+assets/img/t_*
+
+# Original (pre-compression) backups — keep local, don't push
+*.original.jpg
+*.original.jpeg
+*.original.png
+_compressed_*
+
+# Videos — serve via CDN if needed, not stored in repo
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.webm
+
+# Stray HEIC files (replaced by .jpg versions)
+*.HEIC
+*.heic
+
+# Internal preview / draft pages — never deploy
+*-preview.html
+*-preview-*.html
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs & env
+*.log
+.env
+.env.*
