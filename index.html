@@ -59,8 +59,20 @@ header.nav.scrolled .bar{padding:12px 28px}
 
 /* ===== HERO ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:stretch;color:#fff;overflow:hidden}
-.hero picture,.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.45) 0%,rgba(20,36,28,.08) 30%,rgba(20,36,28,.15) 55%,rgba(20,36,28,.82) 100%)}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hslide{position:absolute;inset:0;opacity:0}
+.hslide.s1{opacity:1}
+.hslide picture,.hslide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hslide.s1{animation:hslide1 24s infinite}
+.hslide.s2{animation:hslide2 24s infinite}
+.hslide.s3{animation:hslide3 24s infinite}
+.hslide.s4{animation:hslide4 24s infinite}
+@keyframes hslide1{0%{opacity:1}20%{opacity:1}25%{opacity:0}95%{opacity:0}100%{opacity:1}}
+@keyframes hslide2{0%{opacity:0}20%{opacity:0}25%{opacity:1}45%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes hslide3{0%{opacity:0}45%{opacity:0}50%{opacity:1}70%{opacity:1}75%{opacity:0}100%{opacity:0}}
+@keyframes hslide4{0%{opacity:0}70%{opacity:0}75%{opacity:1}95%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.hslide{animation:none!important}.hslide.s1{opacity:1}.hslide.s2,.hslide.s3,.hslide.s4{opacity:0}}
+.hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,36,28,.55) 0%,rgba(20,36,28,.25) 35%,rgba(20,36,28,.3) 60%,rgba(20,36,28,.85) 100%)}
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;padding-bottom:9vh;padding-top:120px}
 .hero h1{font-size:clamp(38px,6vw,72px);max-width:18ch;margin:16px 0 20px;font-weight:500}
 .hero p.lead{font-size:clamp(16px,2vw,20px);max-width:54ch;opacity:.95}
@@ -242,10 +254,17 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <picture>
-    <source media="(max-width:760px)" srcset="assets/img/hero-mobile.jpg">
-    <img class="bg" src="assets/img/hero-desktop.jpg" alt="A golf green beside a still lake reflecting a classical Chinese resort, misty mountains behind">
-  </picture>
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hslide s1">
+      <picture>
+        <source media="(max-width:760px)" srcset="assets/img/hero-mobile.jpg">
+        <img src="assets/img/hero-desktop.jpg" alt="A golf green beside a still lake reflecting a classical Chinese resort, misty mountains behind">
+      </picture>
+    </div>
+    <div class="hslide s2"><img src="assets/img/dest-yunnan.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan"></div>
+    <div class="hslide s3"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"></div>
+    <div class="hslide s4"><img src="assets/img/hero-blackstone.jpg" alt="White sand bunkers winding through the fairways of Mission Hills Blackstone, Hainan"></div>
+  </div>
   <div class="scrim"></div>
   <div class="container hero-inner">
     <span class="eyebrow">Private Golf Journeys · Mainland China</span>
