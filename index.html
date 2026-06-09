@@ -71,9 +71,10 @@ header.nav.scrolled .bar{padding:12px 28px}
 @keyframes hslide3{0%{opacity:0}61%{opacity:0}66%{opacity:1}95%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.hslide{animation:none!important}.hslide.s1{opacity:1}.hslide.s2,.hslide.s3{opacity:0}}
 .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,36,28,.55) 0%,rgba(20,36,28,.25) 35%,rgba(20,36,28,.3) 60%,rgba(20,36,28,.85) 100%)}
-.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;padding-bottom:9vh;padding-top:120px}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;padding-bottom:9vh;padding-top:clamp(150px,24vh,260px)}
 .hero h1{font-size:clamp(38px,6vw,72px);max-width:18ch;margin:16px 0 20px;font-weight:500}
-.hero p.lead{font-size:clamp(16px,2vw,20px);max-width:54ch;opacity:.95}
+.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,27px);color:rgba(255,255,255,.94);max-width:30ch;margin-top:22px;padding-top:24px;position:relative}
+.hero .hero-tag::before{content:"";position:absolute;top:0;left:0;width:52px;height:1px;background:var(--gold)}
 .hero .actions{margin-top:auto;display:flex;gap:16px;flex-wrap:wrap}
 .hero .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.25em;text-transform:uppercase;opacity:.75}
 
@@ -271,7 +272,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container hero-inner">
     <span class="eyebrow">Private by Design · China</span>
     <h1>Golf journeys through China's most unexpected landscapes.</h1>
-    <p class="lead">Beyond the fairway, into China.</p>
+    <p class="hero-tag">Beyond the fairway, into China.</p>
     <div class="actions">
       <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
       <a href="#start" class="btn btn-ghost">Request a Private Proposal</a>
