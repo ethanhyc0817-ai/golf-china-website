@@ -132,6 +132,15 @@ section{padding:100px 0}
 .golf-note{font-size:14px;color:rgba(255,255,255,.65);max-width:64ch}
 .golf-note b{color:#fff;font-weight:500}
 
+/* ===== AFTER THE ROUND ===== */
+.after{background:var(--ivory)}
+.after-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center}
+@media(max-width:860px){.after-wrap{grid-template-columns:1fr;gap:36px}}
+.after .photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
+.after .txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
+.after .txt p{font-size:16.5px;color:#3f4f45;max-width:58ch;margin-bottom:18px}
+.after .txt p:last-of-type{margin-bottom:0}
+
 /* ===== JOURNEYS FEATURING BEIJING (package entry cards) ===== */
 .journeys{background:var(--paper);border-top:1px solid var(--mist)}
 .sj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -383,6 +392,19 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
+<!-- AFTER THE ROUND -->
+<section class="after" id="after">
+  <div class="container after-wrap">
+    <img class="photo fade" src="assets/img/exp-xiaolongbao.jpg" alt="Bamboo steamers of xiaolongbao soup dumplings on a Shanghai table">
+    <div class="txt fade">
+      <span class="eyebrow">After the Round</span>
+      <h2>The day does not end at the 18th.</h2>
+      <p>Shanghai eats like the great port city it has always been: bamboo steamers of xiaolongbao in the lanes, hairy crab in season, chef's tables hidden inside concession villas, and the best cellars in Asia. An hour south, Hangzhou answers at Jiangnan's gentler pace — West Lake fish, beggar's chicken, tea-smoked dishes served at tables on the water.</p>
+      <p>For golfers, the evening becomes the kind of dinner that makes the city feel personal — booked, briefed and waiting by the time you've putted out.</p>
+    </div>
+  </div>
+</section>
+
 <!-- JOURNEYS FEATURING SHANGHAI & HANGZHOU -->
 <section class="journeys" id="journeys">
   <div class="container">
@@ -462,15 +484,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="loc">Hangzhou · Longjing Village</div>
           <h3>Pick the harvest yourself</h3>
           <p>Basket in hand, into the dragon-well terraces with a grower's family — pick the spring leaves, watch them roasted, then taste your own harvest on the hillside.</p>
-        </div>
-      </article>
-
-      <article class="excard fade">
-        <img src="assets/img/exp-xiaolongbao.jpg" alt="Bamboo steamers of xiaolongbao soup dumplings on a Shanghai table">
-        <div class="b">
-          <div class="loc">Shanghai · The Table</div>
-          <h3>The soup-dumpling morning</h3>
-          <p>Into the lanes with a chef for Shanghai's great obsession — xiaolongbao folded eighteen times, eaten steamer-side where the locals queue, with the stories behind every basket.</p>
         </div>
       </article>
 
