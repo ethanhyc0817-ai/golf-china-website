@@ -221,11 +221,9 @@ section{padding:100px 0}
 
 /* ===== ABOUT / WHO WE ARE ===== */
 .about{background:var(--ivory)}
-.about-wrap{display:grid;grid-template-columns:360px 1fr;gap:64px;align-items:center}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 @media(max-width:860px){.about-wrap{grid-template-columns:1fr;gap:36px}}
-.about .portrait{aspect-ratio:4/5;max-width:360px;border-radius:2px;background:linear-gradient(165deg,var(--mist),#d9d0bb);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:var(--lift)}
-.about .portrait .mono{font-family:var(--serif);font-size:64px;color:var(--pine);opacity:.5}
-.about .portrait .todo{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8a8268}
+.about .photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
 .about .txt h2{font-size:clamp(30px,4vw,44px);margin:14px 0 18px;color:var(--pine)}
 .about .txt p{font-size:16px;color:#4a5a50;max-width:58ch;margin-bottom:16px}
 .about .sig{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--pine);margin-top:8px}
@@ -716,11 +714,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <!-- ABOUT / WHO WE ARE — placeholder copy, replace with real founder story & photo -->
 <section class="about" id="about">
   <div class="container about-wrap">
-    <div class="portrait fade">
-      <!-- TODO: replace this block with <img src="assets/img/founder.jpg"> -->
-      <div class="mono">GC</div>
-      <div class="todo">Founder portrait — to come</div>
-    </div>
+    <!-- TODO: photo board reads "Surf China Co." — replace with a Golf China version -->
+    <img class="photo fade" src="assets/img/about-team.jpg" alt="The team standing together on a golf course fairway">
     <div class="txt fade">
       <span class="eyebrow">Who We Are</span>
       <h2>Built by people who live between two worlds.</h2>
