@@ -205,6 +205,13 @@ section{padding:100px 0}
 .ccard .c .meta span b{color:var(--pine);font-weight:500}
 .courses .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
 .courses .note b{color:var(--cinnabar);font-weight:500}
+.ccard.more{display:none}
+.courses.show-all .ccard.more{display:flex}
+.more-wrap{text-align:center;margin-top:42px}
+.btn-more{background:transparent;border:1px solid var(--pine);color:var(--pine)}
+.btn-more:hover{background:var(--pine);color:#fff}
+.more-wrap .sub{margin-top:12px;font-size:12.5px;letter-spacing:.04em;color:#6a766d}
+.courses.show-all .more-wrap{display:none}
 
 /* ===== SAMPLE JOURNEYS ===== */
 .journeys{background:var(--ivory)}
@@ -952,6 +959,11 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+const moreBtn=document.getElementById('course-more');
+if(moreBtn){moreBtn.addEventListener('click',()=>{
+  const s=document.getElementById('courses');s.classList.add('show-all');
+  s.querySelectorAll('.ccard.more').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),i*90));
+});}
 document.querySelectorAll('.chinamap .pin').forEach(p=>{
   const go=()=>{const t=document.getElementById(p.dataset.target);if(!t)return;
     t.scrollIntoView({behavior:'smooth',block:'center'});
