@@ -120,23 +120,26 @@ section{padding:100px 0}
 .golf-note{font-size:14px;color:rgba(255,255,255,.65);max-width:64ch}
 .golf-note b{color:#fff;font-weight:500}
 
-/* ===== ITINERARY (Scott Dunn-style day by day) ===== */
-.itin{background:var(--paper);border-top:1px solid var(--mist)}
-.itin-list{max-width:880px}
-.day{display:grid;grid-template-columns:130px 1fr;gap:34px;padding:38px 0;border-top:1px solid var(--mist);position:relative}
-.day:last-of-type{border-bottom:1px solid var(--mist)}
-@media(max-width:640px){.day{grid-template-columns:1fr;gap:10px;padding:30px 0}}
-.day .dn{font-family:var(--serif);color:var(--gold);line-height:.9}
-.day .dn .dlab{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#9aa49c;margin-bottom:8px}
-.day .dn .dnum{font-size:58px}
-.day h3{font-size:25px;color:var(--pine);margin-bottom:10px}
-.day p{font-size:15px;color:#4a5a50;max-width:60ch}
-.day .dmeta{margin-top:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cinnabar);display:flex;gap:22px;flex-wrap:wrap}
-.day .dmeta span::before{content:"·";color:var(--gold);margin-right:8px}
-.day .dmeta span:first-child::before{content:""}
-.itin .tailor{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:34px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.itin .tailor .t h3{font-size:24px;color:var(--pine);margin-bottom:6px}
-.itin .tailor .t p{font-size:14px;color:#54635a;max-width:52ch}
+/* ===== JOURNEYS FEATURING BEIJING (package entry cards) ===== */
+.journeys{background:var(--paper);border-top:1px solid var(--mist)}
+.sj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.sj-grid{grid-template-columns:1fr}}
+.sjcard{position:relative;border-radius:2px;overflow:hidden;color:#fff;min-height:430px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--lift)}
+.sjcard .sj-badge{position:absolute;left:0;top:22px;z-index:3;background:var(--gold);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px}
+.sjcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.sjcard:hover img{transform:scale(1.05)}
+.sjcard .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.06) 0%,rgba(20,36,28,.25) 45%,rgba(20,36,28,.78) 100%)}
+.sjcard .b{position:relative;z-index:2;padding:26px;text-shadow:0 1px 12px rgba(20,36,28,.55)}
+.sjcard .specs{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95}
+.sjcard h3{font-size:25px;margin:8px 0 4px}
+.sjcard .route{font-size:13.5px;color:rgba(255,255,255,.9);font-weight:300}
+.sjcard .hi{font-size:13px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
+.sjcard .foot{margin-top:16px}
+.sjcard .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
+.sjcard .foot a:hover{color:var(--gold)}
+.journeys .tailor{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:34px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.journeys .tailor .t h3{font-size:24px;color:var(--pine);margin-bottom:6px}
+.journeys .tailor .t p{font-size:14px;color:#54635a;max-width:52ch}
 
 /* ===== EXPERIENCES ===== */
 .exclusives{background:var(--ivory)}
@@ -217,7 +220,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <nav>
       <a href="#overview">Overview</a>
       <a href="#golf">The Golf</a>
-      <a href="#itinerary">Itinerary</a>
+      <a href="#journeys">Journeys</a>
       <a href="#exclusives">Experiences</a>
       <a href="#stay">Where You Stay</a>
       <a href="index.html#start" class="nav-cta">Enquire</a>
@@ -306,67 +309,45 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
-<!-- SAMPLE ITINERARY -->
-<section class="itin" id="itinerary">
+<!-- JOURNEYS FEATURING BEIJING -->
+<section class="journeys" id="journeys">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">A Sample Itinerary</span>
-      <h2>Five days in the old capital.</h2>
-      <p>One way the journey can run — shown day by day. Treat it as a sketch: every day is movable, swappable and tailored around your party.</p>
+      <span class="eyebrow">Journeys Featuring Beijing</span>
+      <h2>Where Beijing fits in a journey.</h2>
+      <p>Beijing rarely travels alone — it opens a longer route. Two of our sample journeys begin here; the full day-by-day shape of each lives on its own page.</p>
     </div>
-    <div class="itin-list">
+    <div class="sj-grid">
 
-      <div class="day fade">
-        <div class="dn"><span class="dlab">Day</span><span class="dnum">01</span></div>
-        <div>
-          <h3>Arrival · into the hutongs</h3>
-          <p>Met at the aircraft door, fast-tracked through arrivals and driven into the city. Settle into your hotel among the courtyard lanes, then an easy first evening — a slow walk through the hutongs as the lamps come on, and a roast-duck dinner at a house that has perfected it over generations.</p>
-          <div class="dmeta"><span>Private transfer</span><span>Hutong walk</span><span>Duck dinner</span></div>
+      <article class="sjcard fade">
+        <img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"><div class="scrim"></div>
+        <div class="b">
+          <div class="specs">6–7 Nights · 3 Rounds</div>
+          <h3>First-Time Golf China</h3>
+          <div class="route">Beijing + Hangzhou</div>
+          <div class="hi">Imperial China, Great Wall golf and the quiet elegance of West Lake — the natural first journey.</div>
+          <div class="foot"><a href="index.html#start">Tailor This Journey →</a></div>
         </div>
-      </div>
+      </article>
 
-      <div class="day fade">
-        <div class="dn"><span class="dlab">Day</span><span class="dnum">02</span></div>
-        <div>
-          <h3>The Forbidden City, before the crowds</h3>
-          <p>Through the Meridian Gate as it opens, with a historian guide and the courtyards still in shadow. Climb Jingshan Hill at midday for the axis view over six hundred years of golden roofs. The afternoon is yours — the Temple of Heaven's cypress park, a first tai chi lesson, or the silk and antique markets with someone who knows which stalls matter.</p>
-          <div class="dmeta"><span>Early access</span><span>Historian guide</span><span>Afternoon at leisure</span></div>
+      <article class="sjcard fade">
+        <span class="sj-badge">The Complete Route</span>
+        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"><div class="scrim"></div>
+        <div class="b">
+          <div class="specs">14 Nights / 15 Days · 7–9 Rounds</div>
+          <h3>The Grand China Golf Journey</h3>
+          <div class="route">Beijing + Hangzhou + Yunnan + Hainan</div>
+          <div class="hi">Open in the capital, finish on a tropical coast — the most complete way to experience Golf China.</div>
+          <div class="foot"><a href="index.html#start">Tailor This Journey →</a></div>
         </div>
-      </div>
-
-      <div class="day fade">
-        <div class="dn"><span class="dlab">Day</span><span class="dnum">03</span></div>
-        <div>
-          <h3>Golf at Reignwood Pine Valley</h3>
-          <p>North into the Jundu Mountains for the signature round — Nicklaus parkland with the Great Wall tracing the skyline above. Caddies and forecaddies arranged, lunch in the clubhouse after. Back in the city by evening for dinner in a restored courtyard.</p>
-          <div class="dmeta"><span>18 holes</span><span>The Wall above the back nine</span><span>Clubhouse lunch</span></div>
-        </div>
-      </div>
-
-      <div class="day fade">
-        <div class="dn"><span class="dlab">Day</span><span class="dnum">04</span></div>
-        <div>
-          <h3>The Great Wall, after hours</h3>
-          <p>A wild, unrestored stretch of the Wall, reached on foot with a private guide — no cable cars, no crowds, just watchtowers and wind. As the light goes gold, a table is set on the ramparts: dinner on the Wall itself, the mountains falling away on both sides.</p>
-          <div class="dmeta"><span>Private guide</span><span>Unrestored Wall</span><span>Dinner on the ramparts</span></div>
-        </div>
-      </div>
-
-      <div class="day fade">
-        <div class="dn"><span class="dlab">Day</span><span class="dnum">05</span></div>
-        <div>
-          <h3>A second round, or the Summer Palace — then onward</h3>
-          <p>A final morning shaped to your party: another round in the Jundu foothills, or the lakes and long corridors of the Summer Palace. Then onward — 4.5 hours by high-speed rail to Hangzhou and the calm of West Lake, or a short flight wherever the journey goes next.</p>
-          <div class="dmeta"><span>Golf or culture</span><span>Rail to Hangzhou</span><span>Journey continues</span></div>
-        </div>
-      </div>
+      </article>
 
     </div>
 
     <div class="tailor fade">
       <div class="t">
-        <h3>Make this itinerary yours.</h3>
-        <p>Add days, swap rounds for culture, bring non-golfers — this is a starting point, not a product. Tell us about your party and we'll design Beijing around you.</p>
+        <h3>Or build Beijing into your own.</h3>
+        <p>Add days, swap rounds for culture, bring non-golfers — every journey is designed from scratch. Tell us about your party and we'll shape the route around you.</p>
       </div>
       <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
     </div>
