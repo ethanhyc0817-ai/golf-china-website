@@ -170,6 +170,16 @@ section{padding:100px 0}
 .ccard .img img{width:100%;height:100%;object-fit:cover}
 .ccard .img .tag{position:absolute;left:0;bottom:0;background:rgba(20,36,28,.82);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px}
 .ccard.select .img .tag{background:var(--cinnabar)}
+.ccard .img .rank{position:absolute;right:0;top:0;background:rgba(20,36,28,.85);color:#e8cf95;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;font-weight:500}
+.ccard.noir{background:#0e0e0c;border-color:#2c271d}
+.ccard.noir .img .tag{background:var(--gold);color:var(--ink);font-weight:600}
+.ccard.noir .img .rank{background:var(--gold);color:var(--ink);font-weight:600}
+.ccard.noir .c .region{color:var(--gold)}
+.ccard.noir .c h3{color:#e8cf95}
+.ccard.noir .c p{color:rgba(232,207,149,.8)}
+.ccard.noir .c .meta{border-top-color:rgba(184,145,80,.35);color:rgba(232,207,149,.65)}
+.ccard.noir .c .meta span b{color:var(--gold)}
+.ccard.noir:hover{box-shadow:0 22px 55px -18px rgba(0,0,0,.75)}
 .ccard .c{padding:24px;display:flex;flex-direction:column;flex:1}
 .ccard .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .ccard .c h3{font-size:23px;margin:4px 0 10px;color:var(--pine)}
@@ -512,7 +522,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="course-grid">
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing"><span class="tag">Beijing</span></div>
+        <div class="img"><img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing"><span class="tag">Beijing</span><span class="rank">Asia Top 50 · Golf Magazine</span></div>
         <div class="c">
           <div class="region">Beijing</div><h3>Reignwood Pine Valley</h3>
           <p>Nicklaus golf beneath the Great Wall — a private mountain-parkland club in the Jundu Mountains, the Wall tracing the ridgeline above.</p>
@@ -521,7 +531,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai"><span class="tag">Shanghai</span></div>
+        <div class="img"><img src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai"><span class="tag">Shanghai</span><span class="rank">World Top 100</span></div>
         <div class="c">
           <div class="region">Shanghai</div><h3>Sheshan International</h3>
           <p>China's most famous course and host of a world-tour event — championship golf on the city's doorstep.</p>
@@ -530,7 +540,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/course-springcity.jpg" alt="Spring City Resort golf above a lake in Yunnan"><span class="tag">Yunnan</span></div>
+        <div class="img"><img src="assets/img/course-springcity.jpg" alt="Spring City Resort golf above a lake in Yunnan"><span class="tag">Yunnan</span><span class="rank">World Top 100</span></div>
         <div class="c">
           <div class="region">Kunming · Yunnan</div><h3>Spring City Resort</h3>
           <p>Two celebrated courses in an eternal-spring climate, ranked among the very finest in China.</p>
@@ -539,7 +549,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/jadedragon-fairway.jpg" alt="Jade Dragon Snow Mountain golf course beneath a glacier"><span class="tag">Yunnan</span></div>
+        <div class="img"><img src="assets/img/jadedragon-fairway.jpg" alt="Jade Dragon Snow Mountain golf course beneath a glacier"><span class="tag">Yunnan</span><span class="rank">Asia Top 50 · Golf Magazine</span></div>
         <div class="c">
           <div class="region">Lijiang · Yunnan</div><h3>Jade Dragon Snow Mountain</h3>
           <p>Golf at altitude beneath a 5,500-metre glacier — one of the most dramatic settings in the game.</p>
@@ -548,7 +558,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou"><span class="tag">Hangzhou</span></div>
+        <div class="img"><img src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou"><span class="tag">Hangzhou</span><span class="rank">Asia Top 50 · Golf Magazine</span></div>
         <div class="c">
           <div class="region">Hangzhou</div><h3>Fuchun Resort</h3>
           <p>Jiangnan elegance — fairways and a classical resort mirrored in still water beneath misty hills.</p>
@@ -557,7 +567,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/course-hainan-dunes.jpg" alt="The Dunes links course on the Hainan coast"><span class="tag">Hainan</span></div>
+        <div class="img"><img src="assets/img/course-hainan-dunes.jpg" alt="The Dunes links course on the Hainan coast"><span class="tag">Hainan</span><span class="rank">Asia Top 50 · Golf Magazine</span></div>
         <div class="c">
           <div class="region">Shenzhou · Hainan</div><h3>The Dunes at Shenzhou Peninsula</h3>
           <p>A natural links carved from sand dunes along a wild stretch of tropical coast.</p>
@@ -565,11 +575,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         </div>
       </article>
 
-      <article class="ccard select fade">
-        <div class="img"><img src="assets/img/course-hainan-shanqin.jpg" alt="Shanqin Bay clifftop fairways above a turquoise sea"><span class="tag">By invitation</span></div>
+      <article class="ccard noir fade">
+        <div class="img"><img src="assets/img/course-hainan-shanqin.jpg" alt="Shanqin Bay clifftop fairways above a turquoise sea"><span class="tag">By invitation</span><span class="rank">World Top 100</span></div>
         <div class="c">
           <div class="region">Hainan</div><h3>Shanqin Bay</h3>
-          <p>Coore &amp; Crenshaw on a wild Hainan coastline — one of Asia's most exclusive private golf clubs. Clifftop holes, native sand, sea wind and a level of privacy that has made Shanqin Bay one of the most talked-about courses in Asian golf. Guest play is highly selective and arranged only where available.</p>
+          <p>Coore &amp; Crenshaw on a wild Hainan coastline — the most exclusive and private golf club in Asia. Clifftop holes, native sand and sea wind have earned it a standing place among the World Top 100, yet almost no one has played it: the club keeps no public tee sheet, and its privacy is the point. Guest play is highly selective, by invitation, and arranged only where available.</p>
           <div class="meta"><span><b>Designer</b> · Coore &amp; Crenshaw</span><span><b>Setting</b> · Oceanfront cliffs and native sand</span><span><b>Best season</b> · Oct–Apr</span><span><b>Access</b> · Selective guest access, by arrangement</span></div>
         </div>
       </article>
