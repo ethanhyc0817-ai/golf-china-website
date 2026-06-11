@@ -104,7 +104,16 @@ section{padding:100px 0}
 .featured .top100 .ring .n{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1}
 .featured .top100 .ring .w{font-size:6.5px;letter-spacing:.14em;text-transform:uppercase}
 .featured .top100 .t{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);line-height:1.7;text-align:left}
-@media(max-width:560px){.featured{gap:26px}}
+@media(max-width:680px){
+  .featured{flex-direction:column;gap:18px}
+  .featured .fk{font-size:10px;letter-spacing:.22em}
+  .featured .gd-logo{height:21px}
+  .featured .top100{gap:10px;justify-content:center}
+  .featured .top100 .ring{width:42px;height:42px;flex:none}
+  .featured .top100 .ring .n{font-size:15px}
+  .featured .top100 .ring .w{font-size:5.5px}
+  .featured .top100 .t{font-size:9px;letter-spacing:.15em;line-height:1.6}
+}
 
 /* ===== EXCLUSIVE ACCESS ===== */
 .access{background:var(--ink);color:#fff}
