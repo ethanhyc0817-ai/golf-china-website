@@ -132,6 +132,15 @@ section{padding:100px 0}
 .golf-note{font-size:14px;color:rgba(255,255,255,.65);max-width:64ch}
 .golf-note b{color:#fff;font-weight:500}
 
+/* ===== AFTER THE ROUND ===== */
+.after{background:var(--ivory)}
+.after-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center}
+@media(max-width:860px){.after-wrap{grid-template-columns:1fr;gap:36px}}
+.after .photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
+.after .txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
+.after .txt p{font-size:16.5px;color:#3f4f45;max-width:58ch;margin-bottom:18px}
+.after .txt p:last-of-type{margin-bottom:0}
+
 /* ===== JOURNEYS FEATURING BEIJING (package entry cards) ===== */
 .journeys{background:var(--paper);border-top:1px solid var(--mist)}
 .sj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -353,6 +362,19 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </article>
 
     <p class="golf-note fade"><b>A third round</b> is easily woven in — parkland and lakeside courses across the Jundu foothills and the city's north, chosen for your dates and the season. We'll recommend the right pairing when we design your journey.</p>
+  </div>
+</section>
+
+<!-- AFTER THE ROUND -->
+<section class="after" id="after">
+  <div class="container after-wrap">
+    <img class="photo fade" src="assets/img/dining-peking-duck.jpg" alt="Lacquered slices of Peking duck served in a tiered wooden presentation box, condiments in its drawers">
+    <div class="txt fade">
+      <span class="eyebrow">After the Round</span>
+      <h2>The day does not end at the 18th.</h2>
+      <p>Beijing's best evenings are built around private tables: crisp-skinned Peking duck, quiet courtyard dining, old-city wine rooms, and seasonal northern Chinese menus arranged away from the obvious tourist circuit.</p>
+      <p>For golfers, it moves instead into the kind of dinner that makes Beijing feel personal — booked, briefed and waiting by the time you've putted out.</p>
+    </div>
   </div>
 </section>
 
