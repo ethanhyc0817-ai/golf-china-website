@@ -96,6 +96,15 @@ section{padding:100px 0}
 @media(max-width:440px){.values .grid{grid-template-columns:1fr}}
 .values .strip{text-align:center;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);font-weight:400;line-height:2.2}
 .values .strip span{color:var(--gold);padding:0 12px}
+.featured{display:flex;align-items:center;justify-content:center;gap:46px;flex-wrap:wrap}
+.featured .fk{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6a766d;font-weight:400}
+.featured .gd-wordmark{font-family:var(--serif);font-weight:600;font-style:italic;font-size:30px;color:var(--ink);letter-spacing:.5px;line-height:1}
+.featured .top100{display:flex;align-items:center;gap:12px}
+.featured .top100 .ring{width:54px;height:54px;border:1.5px solid var(--gold);border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--pine)}
+.featured .top100 .ring .n{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1}
+.featured .top100 .ring .w{font-size:6.5px;letter-spacing:.14em;text-transform:uppercase}
+.featured .top100 .t{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);line-height:1.7;text-align:left}
+@media(max-width:560px){.featured{gap:26px}}
 
 /* ===== EXCLUSIVE ACCESS ===== */
 .access{background:var(--ink);color:#fff}
@@ -341,10 +350,15 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="scroll-hint">Scroll ↓</div>
 </section>
 
-<!-- ACCESS STRIP -->
-<section class="values" style="padding:44px 0">
+<!-- FEATURED IN -->
+<!-- TODO: replace typographic wordmark & badge with licensed Golf Digest / World's 100 Greatest logo files when available (assets/img/logo-golfdigest.svg etc.) -->
+<section class="values" style="padding:40px 0">
   <div class="container">
-    <p class="strip fade">Exclusive club access <span>·</span> Private tee-time arrangements <span>·</span> Bilingual local hosts <span>·</span> Premium hotels <span>·</span> Seamless ground logistics</p>
+    <div class="featured fade">
+      <span class="fk">Courses featured in</span>
+      <span class="gd-wordmark">Golf Digest</span>
+      <span class="top100"><span class="ring"><span class="n">100</span><span class="w">World</span></span><span class="t">Golf Digest<br>World's 100 Greatest<br>Golf Courses</span></span>
+    </div>
   </div>
 </section>
 
