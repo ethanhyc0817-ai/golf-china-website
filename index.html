@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golf China — Private, Tailor-Made Golf Journeys Through China</title>
-<meta name="description" content="Golf China designs private, tailor-made golf journeys through China's most unexpected landscapes — Great Wall fairways, snow-mountain courses, volcanic links and tropical island golf, woven with culture, hotels and seamless local access.">
+<title>Golf China — Exclusive Access to China's Most Private Golf Clubs</title>
+<meta name="description" content="China's first golf travel company. Exclusive access to private, near-impossible-to-book golf clubs — Great Wall fairways, snow-mountain courses and clifftop links — with nationwide ground support through our long-standing China Tourism Group partnership.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -95,6 +95,19 @@ section{padding:100px 0}
 @media(max-width:760px){.values .grid{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:440px){.values .grid{grid-template-columns:1fr}}
 
+/* ===== EXCLUSIVE ACCESS ===== */
+.access{background:var(--ink);color:#fff}
+.access .section-head{max-width:760px}
+.access .section-head h2{color:#fff}
+.access .section-head p{color:rgba(255,255,255,.78)}
+.access .claim{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,28px);color:#e8cf95;margin:-18px 0 50px;max-width:34ch}
+.access-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+@media(max-width:820px){.access-grid{grid-template-columns:1fr}}
+.access .pillar{border-top:2px solid var(--gold);padding-top:22px}
+.access .pillar .pk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.access .pillar h4{font-size:22px;margin:10px 0 8px;color:#fff}
+.access .pillar p{font-size:14px;color:rgba(255,255,255,.8);font-weight:300}
+
 /* ===== WHY CHINA ===== */
 .whychina{background:var(--ivory)}
 .wc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--mist);border:1px solid var(--mist)}
@@ -143,6 +156,8 @@ section{padding:100px 0}
 .ccard .c p{font-size:13.5px;color:#54635a;font-weight:300}
 .ccard .c .meta{margin-top:16px;border-top:1px solid var(--mist);padding-top:13px;font-size:12px;color:#6a766d;display:flex;flex-direction:column;gap:5px}
 .ccard .c .meta span b{color:var(--pine);font-weight:500}
+.courses .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
+.courses .note b{color:var(--cinnabar);font-weight:500}
 
 /* ===== SAMPLE JOURNEYS ===== */
 .journeys{background:var(--ivory)}
@@ -281,6 +296,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="bar">
     <a href="#top" class="logo">Golf <span>China</span></a>
     <nav>
+      <a href="#access">Exclusive Access</a>
       <a href="#why-china">Why China</a>
       <a href="#destinations">Destinations</a>
       <a href="#courses">Courses</a>
@@ -312,9 +328,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
   <div class="scrim"></div>
   <div class="container hero-inner">
-    <span class="eyebrow">Private by Design · China</span>
-    <h1>Golf journeys through China's most unexpected landscapes.</h1>
-    <p class="hero-tag">Beyond the fairway, into China.</p>
+    <span class="eyebrow">China's First Golf Travel Company</span>
+    <h1>Exclusive access to courses you cannot book on your own.</h1>
+    <p class="hero-tag">Private clubs, opened by relationship — beyond the fairway, into China.</p>
     <div class="actions">
       <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
       <a href="#start" class="btn btn-ghost">Request a Private Proposal</a>
@@ -327,10 +343,39 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <section class="values" style="padding:56px 0">
   <div class="container">
     <div class="grid">
-      <div class="v fade"><div class="vk">Private by design</div><p>Every journey is built for you alone — your pace, your group, your route.</p></div>
-      <div class="v fade"><div class="vk">World-class courses</div><p>Nicklaus, Coore &amp; Crenshaw, Weiskopf and more, set in landscapes you'll find nowhere else.</p></div>
+      <div class="v fade"><div class="vk">Exclusive club access</div><p>China's finest courses are private, member-only or near-impossible to book. Our exclusive club relationships open doors no one else can.</p></div>
+      <div class="v fade"><div class="vk">China's first</div><p>The first golf travel company dedicated to China — no one knows these courses, or these clubs, like we do.</p></div>
+      <div class="v fade"><div class="vk">Ground support everywhere</div><p>A long-standing partnership with China Tourism Group puts our own people on the ground in every destination you visit.</p></div>
       <div class="v fade"><div class="vk">Culture between rounds</div><p>Old towns, tea roads, food and history woven around the golf, not bolted on.</p></div>
-      <div class="v fade"><div class="vk">Local access</div><p>Tee times, drivers, hotels and translation handled quietly on the ground.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXCLUSIVE ACCESS -->
+<section class="access" id="access">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Exclusive Access</span>
+      <h2>China's greatest courses are private. We're how you get in.</h2>
+      <p>Most of the clubs we feature are member-only — and even those that aren't are notoriously difficult to book. Years of exclusive relationships with these clubs open doors that don't otherwise open, with member-level treatment once you're inside.</p>
+    </div>
+    <p class="claim fade">If you could book it yourself, you wouldn't need us.</p>
+    <div class="access-grid">
+      <div class="pillar fade">
+        <div class="pk">Club Relationships</div>
+        <h4>Doors no one else can open</h4>
+        <p>Direct, exclusive relationships with China's most private golf clubs — confirmed tee times at courses with no public booking, and the welcome of a member when you arrive.</p>
+      </div>
+      <div class="pillar fade">
+        <div class="pk">The Pioneer</div>
+        <h4>China's first golf travel company</h4>
+        <p>We are the first travel company dedicated to golf in China. The relationships, the routes and the access were built here first — by us.</p>
+      </div>
+      <div class="pillar fade">
+        <div class="pk">China Tourism Group</div>
+        <h4>Our people, everywhere you go</h4>
+        <p>A long-standing partnership with China Tourism Group gives us ground support across the country — our staff are on hand in every destination, from arrival to final tee.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -347,7 +392,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <div class="wc-item fade"><div class="num">01</div><h4>A destination most travelers have never seen</h4><p>China isn't the obvious golf trip — that is exactly why it feels different. You'll play courses your friends have never heard of, let alone walked.</p></div>
       <div class="wc-item fade"><div class="num">02</div><h4>Landscapes you cannot recreate elsewhere</h4><p>Great Wall mountains, Yunnan snow peaks, volcanic lava fields and tropical coastline — all within a single country.</p></div>
       <div class="wc-item fade"><div class="num">03</div><h4>Culture between every round</h4><p>Not just resort golf. Food, history, old towns, tea roads and private guides give each day a sense of place.</p></div>
-      <div class="wc-item fade"><div class="num">04</div><h4>Fully handled on the ground</h4><p>Tee times, drivers, hotels, translation, payments, entry guidance and plans for non-golfers — all taken care of.</p></div>
+      <div class="wc-item fade"><div class="num">04</div><h4>Our own people on the ground</h4><p>Through our long-standing China Tourism Group partnership, our staff are present in every destination — tee times, drivers, hotels, translation and payments, all handled in person.</p></div>
     </div>
   </div>
 </section>
@@ -441,8 +486,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Signature Courses</span>
-      <h2>Courses you could only play here.</h2>
-      <p>A short list of the courses we return to most — each chosen as much for its setting as its design. Any of them can anchor a private journey.</p>
+      <h2>Private clubs you can't simply book.</h2>
+      <p>Most of these courses are private or member-only; the rest are guarded by waiting lists and unanswered phones. Through our exclusive club relationships, every one of them can anchor your journey — with member-level treatment when you arrive.</p>
     </div>
     <div class="course-grid">
 
@@ -450,7 +495,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="img"><img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing"><span class="tag">Beijing</span></div>
         <div class="c">
           <div class="region">Beijing</div><h3>Reignwood Pine Valley</h3>
-          <p>Play under the Great Wall of China — a refined Nicklaus parkland layout in the Jundu Mountains, the Wall tracing the ridgeline above.</p>
+          <p>Play under the Great Wall of China — a strictly private Nicklaus members' club in the Jundu Mountains, the Wall tracing the ridgeline above. Guest play only through our club relationship.</p>
           <div class="meta"><span><b>Designer</b> · Jack Nicklaus</span><span><b>Setting</b> · Mountain parkland</span><span><b>Best season</b> · Apr–Jun, Sep–Oct</span><span><b>Pair with</b> · Great Wall, Forbidden City</span></div>
         </div>
       </article>
@@ -510,6 +555,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
     </div>
+    <p class="note fade"><b>Several of these clubs take no public bookings at all.</b> If a course can't be booked on your own, that is usually where we come in.</p>
   </div>
 </section>
 
@@ -716,8 +762,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <span class="eyebrow">Who We Are</span>
       <h2>Built by people who live between two worlds.</h2>
       <!-- TODO: placeholder story — replace with the real one -->
-      <p>Golf China began with a simple observation: the golfers who know the world's great courses almost never know China's — not because the golf isn't there, but because no one had made the country easy for them.</p>
-      <p>Our team grew up here, plays here, and has spent years moving international travelers through China — handling the clubs and the visas, but also knowing which courtyard pours the best pu'er and which stretch of the Wall is empty at sunset. Every enquiry is answered personally, by someone who has walked the route you'll travel.</p>
+      <p>Golf China began with a simple observation: the golfers who know the world's great courses almost never know China's — not because the golf isn't there, but because the clubs are private and no one had opened the doors. So we became the first golf travel company dedicated to China, and built the relationships ourselves.</p>
+      <p>Our team grew up here, plays here, and has spent years moving international travelers through China. Through our exclusive club relationships and a long-standing partnership with China Tourism Group, we have people on the ground in every destination we send you — handling the clubs and the visas, but also knowing which courtyard pours the best pu'er and which stretch of the Wall is empty at sunset. Every enquiry is answered personally, by someone who has walked the route you'll travel.</p>
       <p class="sig">— The Golf China team</p>
     </div>
   </div>
@@ -787,7 +833,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="cols">
       <div>
         <div class="logo">Golf <span>China</span></div>
-        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
+        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">China's first golf travel company — private, tailor-made journeys with exclusive access to the country's most private clubs.</p>
       </div>
       <div><h5>Explore</h5><ul><li><a href="#why-china">Why China</a></li><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Signature Experiences</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
       <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#experiences">Beyond Golf</a></li><li><a href="#start">Request a Proposal</a></li></ul></div>
