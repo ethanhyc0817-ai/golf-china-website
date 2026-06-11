@@ -162,8 +162,9 @@ section{padding:100px 0}
 /* ===== STAY ===== */
 .stay{background:var(--pine);color:#fff}
 .stay .section-head h2{color:#fff}.stay .section-head p{color:rgba(255,255,255,.72)}
-.stay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
-@media(max-width:860px){.stay-wrap{grid-template-columns:1fr}}
+.stay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:26px}
+.stay-wrap.rev .img{order:2}
+@media(max-width:860px){.stay-wrap{grid-template-columns:1fr}.stay-wrap.rev .img{order:0}}
 .stay-wrap .img{position:relative;min-height:380px}
 .stay-wrap .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .stay-wrap .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
@@ -424,12 +425,24 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="stay-wrap fade">
       <div class="img"><img src="assets/img/stay-city.jpg" alt="Golden imperial rooftops in central Beijing"></div>
       <div class="c">
-        <div class="loc">Beijing · City Landmarks</div>
-        <h3>Courtyards &amp; landmark addresses</h3>
-        <p>Our Beijing favourites sit where the city is oldest — the likes of the Waldorf Astoria's hutong courtyards, a few lanes from the Forbidden City, where grey brick and bronze doors give way to deep baths and very good martinis.</p>
-        <p>Every stay is hand-picked for your route, your party and the season — at the level of comfort you choose, booked entirely on your behalf.</p>
+        <div class="loc">In the City · Hutong Courtyards</div>
+        <h3>Sleep where the city is oldest</h3>
+        <p>Our Beijing favourites sit in the hutongs, a few lanes from the Forbidden City — the likes of the Waldorf Astoria's courtyard houses, where grey brick and bronze doors give way to deep baths and very good martinis. Step out of the gate and the oldest streets in the capital are yours before breakfast.</p>
+        <p>For travelers who prefer glass and skyline to grey brick, the city's modern landmarks along the central axis make an equally good base — we'll match the address to your taste.</p>
       </div>
     </div>
+
+    <div class="stay-wrap rev fade">
+      <div class="img"><img src="assets/img/place-greatwall.jpg" alt="The Great Wall riding mountain ridgelines at golden hour, north of Beijing"></div>
+      <div class="c">
+        <div class="loc">In the Mountains · Near the Wall</div>
+        <h3>A night at the foot of the Wall</h3>
+        <p>With both rounds played out in Huairou's mountains, a night in the countryside earns its place — a quiet retreat below the ridgeline, where the Wall is visible from the terrace and the first tee is minutes away rather than an hour through traffic.</p>
+        <p>It pairs naturally with the after-hours Wall evening: dinner on the ramparts, a short drive down, and mountain silence instead of the ring road.</p>
+      </div>
+    </div>
+
+    <p class="note fade" style="text-align:center;margin-top:38px;font-size:14px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
   </div>
 </section>
 
