@@ -109,7 +109,19 @@ section{padding:100px 0}
 @media(max-width:860px){.golf-feature{grid-template-columns:1fr}}
 .golf-feature .img{position:relative;min-height:380px}
 .golf-feature .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.golf-feature .img .tag{position:absolute;left:0;bottom:0;background:var(--cinnabar);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px}
+.golf-feature .img .tag{position:absolute;left:0;bottom:0;background:var(--cinnabar);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;z-index:3}
+
+/* ===== IMAGE GALLERY (course cards) ===== */
+.gal img{opacity:0;transition:opacity .55s ease}
+.gal img.active{opacity:1}
+.gal-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(20,36,28,.4);color:#fff;font-size:20px;line-height:1;cursor:pointer;transition:.25s;backdrop-filter:blur(2px)}
+.gal-btn:hover{background:var(--pine);border-color:var(--gold)}
+.gal-btn.prev{left:14px}
+.gal-btn.next{right:14px}
+.gal-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:8px}
+.gal-dot{width:7px;height:7px;border-radius:999px;border:none;padding:0;background:rgba(255,255,255,.45);cursor:pointer;transition:.25s}
+.gal-dot.on{background:var(--gold);transform:scale(1.25)}
+@media(max-width:600px){.gal-btn{display:none}}
 .golf-feature .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
 .golf-feature .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .golf-feature .c h3{font-size:32px;margin:8px 0 14px}
@@ -292,7 +304,17 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </div>
 
     <article class="golf-feature fade">
-      <div class="img"><img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind"><span class="tag">Signature round</span></div>
+      <div class="img gal">
+        <img class="active" src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind">
+        <img src="assets/img/reignwood-wall-fairway.jpg" alt="The Great Wall snaking down the mountainside above a Reignwood fairway" loading="lazy">
+        <img src="assets/img/reignwood-caddies.jpg" alt="Caddies and players walking a Reignwood fairway beneath the jagged Jundu peaks" loading="lazy">
+        <img src="assets/img/reignwood-autumn-green.jpg" alt="An autumn green at Reignwood Pine Valley with a mountain rising behind" loading="lazy">
+        <img src="assets/img/reignwood-clubhouse.jpg" alt="The white château clubhouse of Reignwood Pine Valley beneath the Jundu Mountains" loading="lazy">
+        <button class="gal-btn prev" aria-label="Previous image">‹</button>
+        <button class="gal-btn next" aria-label="Next image">›</button>
+        <div class="gal-dots"></div>
+        <span class="tag">Signature round</span>
+      </div>
       <div class="c">
         <div class="region">Jundu Mountains · Changping</div>
         <h3>Reignwood Pine Valley</h3>
@@ -307,7 +329,16 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </article>
 
     <article class="golf-feature fade">
-      <div class="img"><img src="assets/img/course-topwin.jpg" alt="Autumn fairways at Topwin Golf &amp; Country Club, with the Yanqi Lake pagoda and the Yanshan mountains beyond"><span class="tag">A presidential round</span></div>
+      <div class="img gal">
+        <img class="active" src="assets/img/course-topwin.jpg" alt="Autumn fairways at Topwin Golf &amp; Country Club, with the Yanqi Lake pagoda and the Yanshan mountains beyond">
+        <img src="assets/img/topwin-lakeside-green.jpg" alt="A bunkered lakeside green jutting into Yanqi Lake, framed by autumn leaves" loading="lazy">
+        <img src="assets/img/topwin-pagoda-lake.jpg" alt="The Yanqi Lake pagoda mirrored in still water beside the course" loading="lazy">
+        <img src="assets/img/topwin-autumn-fairways.jpg" alt="Rolling fairways and autumn grasses beneath the Yanshan range at Topwin" loading="lazy">
+        <button class="gal-btn prev" aria-label="Previous image">‹</button>
+        <button class="gal-btn next" aria-label="Next image">›</button>
+        <div class="gal-dots"></div>
+        <span class="tag">A presidential round</span>
+      </div>
       <div class="c">
         <div class="region">Yanqi Lake · Huairou</div>
         <h3>Topwin Country Club</h3>
@@ -518,6 +549,20 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+/* course image galleries */
+document.querySelectorAll('.gal').forEach(g=>{
+  const imgs=[...g.querySelectorAll('img')];
+  const dots=g.querySelector('.gal-dots');
+  if(imgs.length<2){g.querySelectorAll('.gal-btn').forEach(b=>b.remove());if(dots)dots.remove();return;}
+  let i=0;
+  function go(n){imgs[i].classList.remove('active');dots.children[i].classList.remove('on');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('active');dots.children[i].classList.add('on');}
+  imgs.forEach((_,k)=>{const d=document.createElement('button');d.className='gal-dot'+(k===0?' on':'');d.setAttribute('aria-label','Image '+(k+1));d.addEventListener('click',()=>go(k));dots.appendChild(d);});
+  g.querySelector('.prev').addEventListener('click',()=>go(i-1));
+  g.querySelector('.next').addEventListener('click',()=>go(i+1));
+  let x0=null;
+  g.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+  g.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;},{passive:true});
+});
 </script>
 </body>
 </html>
