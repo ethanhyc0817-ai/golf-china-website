@@ -97,6 +97,7 @@ section{padding:100px 0}
 .values .strip{text-align:center;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);font-weight:400;line-height:2.2}
 .values .strip span{color:var(--gold);padding:0 12px}
 .featured{display:flex;align-items:center;justify-content:center;gap:46px;flex-wrap:wrap}
+.featured .marks{display:flex;align-items:center;gap:46px}
 .featured .fk{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6a766d;font-weight:400}
 .featured .gd-logo{height:26px;width:auto;display:inline-block}
 .featured .top100{display:flex;align-items:center;gap:12px}
@@ -105,14 +106,15 @@ section{padding:100px 0}
 .featured .top100 .ring .w{font-size:6.5px;letter-spacing:.14em;text-transform:uppercase}
 .featured .top100 .t{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);line-height:1.7;text-align:left}
 @media(max-width:680px){
-  .featured{flex-direction:column;gap:18px}
+  .featured{flex-direction:column;gap:16px}
   .featured .fk{font-size:10px;letter-spacing:.22em}
-  .featured .gd-logo{height:21px}
-  .featured .top100{gap:10px;justify-content:center}
-  .featured .top100 .ring{width:42px;height:42px;flex:none}
-  .featured .top100 .ring .n{font-size:15px}
-  .featured .top100 .ring .w{font-size:5.5px}
-  .featured .top100 .t{font-size:9px;letter-spacing:.15em;line-height:1.6}
+  .featured .marks{gap:20px}
+  .featured .gd-logo{height:19px}
+  .featured .top100{gap:8px}
+  .featured .top100 .ring{width:38px;height:38px;flex:none}
+  .featured .top100 .ring .n{font-size:13px}
+  .featured .top100 .ring .w{font-size:5px}
+  .featured .top100 .t{font-size:8px;letter-spacing:.12em;line-height:1.55}
 }
 
 /* ===== EXCLUSIVE ACCESS ===== */
@@ -374,8 +376,10 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="featured fade">
       <span class="fk">Courses featured in</span>
-      <img class="gd-logo" src="assets/img/logo-golfdigest.webp" alt="Golf Digest">
-      <span class="top100"><span class="ring"><span class="n">100</span><span class="w">World</span></span><span class="t">Golf Digest<br>World's 100 Greatest<br>Golf Courses</span></span>
+      <div class="marks">
+        <img class="gd-logo" src="assets/img/logo-golfdigest.webp" alt="Golf Digest">
+        <span class="top100"><span class="ring"><span class="n">100</span><span class="w">World</span></span><span class="t">Golf Digest<br>World's 100 Greatest<br>Golf Courses</span></span>
+      </div>
     </div>
   </div>
 </section>
