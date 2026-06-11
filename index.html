@@ -217,6 +217,8 @@ section{padding:100px 0}
 .ex-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:295px;gap:20px}
 .excard{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift)}
 .excard.feature{grid-row:span 2}
+.excard.wide{grid-column:span 2}
+@media(max-width:560px){.excard.wide{grid-column:span 1}}
 .excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .excard:hover img{transform:scale(1.05)}
 .excard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
@@ -681,16 +683,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         </div>
       </article>
 
-      <article class="excard fade">
-        <img src="assets/img/place-greatwall.jpg" alt="The Great Wall snaking over ridgelines at golden hour">
-        <div class="b">
-          <div class="loc">Beijing</div>
-          <h3>The Great Wall, after hours</h3>
-          <p>A wild, unrestored stretch with a private guide — and a table set on the ramparts as the light goes gold.</p>
-        </div>
-      </article>
-
-      <article class="excard fade">
+      <article class="excard wide fade">
         <img src="assets/img/exp-westlake.jpg" alt="A wooden boat with passengers gliding under green willows on West Lake, Hangzhou">
         <div class="b">
           <div class="loc">Hangzhou</div>
