@@ -118,6 +118,22 @@ section{padding:100px 0}
 }
 
 /* ===== EXCLUSIVE ACCESS ===== */
+/* ===== PROOF / BY THE NUMBERS ===== */
+.proof{background:var(--paper);border-top:1px solid var(--mist);padding:84px 0}
+.proof-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+@media(max-width:880px){.proof-wrap{grid-template-columns:1fr;gap:36px}}
+.proof figure{margin:0}
+.proof figure img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
+.proof figcaption{font-size:12px;color:#6a766d;margin-top:12px;font-weight:300}
+.proof .ph2{font-size:clamp(28px,3.4vw,38px);color:var(--pine);margin:12px 0 30px}
+.proof .stats{display:grid;grid-template-columns:1fr 1fr;gap:30px 36px}
+@media(max-width:440px){.proof .stats{grid-template-columns:1fr}}
+.proof .stat::before{content:"";display:block;width:26px;height:2px;background:var(--gold);margin-bottom:12px}
+.proof .stat .num{font-family:var(--serif);font-size:clamp(36px,4vw,50px);line-height:1;color:var(--pine)}
+.proof .stat .num small{font-size:.55em;color:var(--moss)}
+.proof .stat p{font-size:13.5px;color:#54635a;margin-top:8px;font-weight:300}
+.proof .legends{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,22px);color:var(--pine);margin-top:30px;max-width:40ch}
+
 .access{background:var(--ink);color:#fff}
 .access .section-head{max-width:760px}
 .access .section-head h2{color:#fff}
@@ -405,6 +421,28 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <img class="gd-logo" src="assets/img/logo-golfdigest.webp" alt="Golf Digest">
         <span class="top100"><span class="ring"><span class="n">100</span><span class="w">World</span></span><span class="t">Golf Digest<br>World's 100 Greatest<br>Golf Courses</span></span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF / BY THE NUMBERS -->
+<!-- NOTE: Tiger photo appears to be tournament press imagery — confirm usage rights before launch -->
+<section class="proof" id="proof">
+  <div class="container proof-wrap">
+    <figure class="fade">
+      <img src="assets/img/proof-tiger.jpg" alt="Tiger Woods tees off in front of a crowd at Mission Hills Haikou, Hainan">
+      <figcaption>Tiger Woods at Mission Hills Haikou — The Match at Mission Hills, played on the Blackstone course.</figcaption>
+    </figure>
+    <div class="fade">
+      <span class="eyebrow">By The Numbers</span>
+      <h2 class="ph2">The strongest golf roster in China.</h2>
+      <div class="stats">
+        <div class="stat"><div class="num">8<small> / 10</small></div><p>of China's ten best courses are on our roster — Golf Digest's Best-in-China ranking.</p></div>
+        <div class="stat"><div class="num">4</div><p>courses ranked among Golf Digest's World's 100 Greatest.</p></div>
+        <div class="stat"><div class="num">No. 14</div><p>in the world — Shanqin Bay at its Golf Digest peak. China's No. 1, by invitation only.</p></div>
+        <div class="stat"><div class="num">14×</div><p>editions of the WGC-HSBC Champions hosted at Sheshan International.</p></div>
+      </div>
+      <p class="legends">Tiger Woods, Rory McIlroy, Phil Mickelson and Dustin Johnson have all played these fairways.</p>
     </div>
   </div>
 </section>
