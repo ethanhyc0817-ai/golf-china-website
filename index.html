@@ -70,12 +70,12 @@ header.nav.scrolled .bar{padding:12px 28px}
 @keyframes hslide2{0%{opacity:0}28%{opacity:0}33%{opacity:1}61%{opacity:1}66%{opacity:0}100%{opacity:0}}
 @keyframes hslide3{0%{opacity:0}61%{opacity:0}66%{opacity:1}95%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.hslide{animation:none!important}.hslide.s1{opacity:1}.hslide.s2,.hslide.s3{opacity:0}}
-.hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,36,28,.55) 0%,rgba(20,36,28,.25) 35%,rgba(20,36,28,.3) 60%,rgba(20,36,28,.85) 100%)}
-.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:13vh;padding-top:140px}
-.hero h1{font-size:clamp(36px,4.6vw,56px);max-width:28ch;margin:18px 0 0;font-weight:500;text-wrap:balance}
-.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,25px);color:rgba(255,255,255,.92);max-width:34ch;margin-top:26px;padding-top:24px;position:relative}
+.hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,36,28,.62) 0%,rgba(20,36,28,.3) 38%,rgba(20,36,28,.16) 62%,rgba(20,36,28,.55) 100%)}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;padding-top:clamp(120px,16vh,170px);padding-bottom:9vh}
+.hero h1{font-size:clamp(34px,4.2vw,52px);max-width:28ch;margin:14px 0 0;font-weight:500;text-wrap:balance}
+.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,23px);color:rgba(255,255,255,.92);max-width:34ch;margin-top:22px;padding-top:20px;position:relative}
 .hero .hero-tag::before{content:"";position:absolute;top:0;left:0;width:52px;height:1px;background:var(--gold)}
-.hero .actions{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
+.hero .actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap}
 .hero .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.25em;text-transform:uppercase;opacity:.75}
 
 /* ===== SECTION SHELL ===== */
