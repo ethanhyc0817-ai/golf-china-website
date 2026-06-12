@@ -164,19 +164,17 @@ section{padding:100px 0}
 
 /* ===== EXPERIENCES ===== */
 .exclusives{background:var(--ivory)}
-.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:295px;gap:20px}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:340px;gap:20px}
 .excard{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift)}
-.excard.feature{grid-row:span 2}
 .excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .excard:hover img{transform:scale(1.05)}
 .excard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
 .excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .excard h3{font-size:23px;margin:6px 0 7px}
-.excard.feature h3{font-size:28px}
 .excard p{font-size:13px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
 .exclusives .note{text-align:center;margin-top:38px;font-size:14px;color:#54635a}
-@media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
-@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
+@media(max-width:920px){.ex-grid{grid-auto-rows:300px}}
+@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}}
 
 /* ===== STAY ===== */
 .stay{background:var(--pine);color:#fff}
@@ -460,7 +458,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </div>
     <div class="ex-grid">
 
-      <article class="excard feature fade">
+      <article class="excard fade">
         <img src="assets/img/exp-yacht-bund.jpg" alt="The lit towers of Pudong rising over the Huangpu River at night, seen from the water">
         <div class="b">
           <div class="loc">Shanghai · The Huangpu</div>
