@@ -181,9 +181,18 @@ section{padding:100px 0}
 .excard.feature h3{font-size:28px}
 .excard p{font-size:13px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
 .excard .ptag{display:inline-block;margin-top:11px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:5px 11px;font-weight:600;border-radius:2px}
+/* surf feature: image on top, copy + CTA in a panel below */
+.excard.surf{display:flex;flex-direction:column;align-items:stretch;background:var(--pine)}
+.excard.surf .surf-img{position:relative;flex:1 1 0;min-height:200px;overflow:hidden}
+.excard.surf .surf-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.excard.surf .surf-body{flex:0 0 auto;padding:24px 26px 26px;display:flex;flex-direction:column}
+.excard.surf .surf-body h3{font-size:26px;margin:6px 0 10px}
+.excard.surf .surf-body p{font-size:13px;color:rgba(255,255,255,.86);font-weight:300;max-width:50ch;margin-bottom:18px}
+.excard.surf .surf-cta{align-self:flex-start;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:var(--cinnabar);color:#fff;padding:13px 24px;border-radius:2px;transition:.25s}
+.excard.surf .surf-cta:hover{background:#9c3927}
 .exclusives .note{text-align:center;margin-top:38px;font-size:14px;color:#54635a}
-@media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
-@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
+@media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}.excard.surf{grid-row:span 2}}
+@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}.excard.surf{grid-row:auto}}
 
 /* ===== STAY ===== */
 .stay{background:var(--pine);color:#fff}
@@ -462,13 +471,13 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </div>
     <div class="ex-grid">
 
-      <article class="excard feature fade">
-        <img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan's surf coast">
-        <div class="b">
+      <article class="excard feature surf fade">
+        <div class="surf-img"><img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan's surf coast"></div>
+        <div class="surf-body">
           <div class="loc">Wanning · Hainan</div>
           <h3>Stand up on your first wave</h3>
-          <p>On Hainan's surf coast, with our partner SurfChinaCo, we put complete beginners onto a real wave from the very first session. At a PerfectSwell pool the swell is generated to order — the same shape, the same gentle peel, every time — so there's no paddling out and no waiting: just a coach at your shoulder and a wave built for your level. Children and first-timers especially welcome.</p>
-          <span class="ptag">In partnership with SurfChinaCo</span>
+          <p>On Hainan's surf coast, with our partner SurfChinaCo, we put complete beginners onto a real wave from the very first session. At a PerfectSwell wave pool the swell is generated to order — the same shape, the same gentle peel, every time — so there's no paddling out and no waiting: just a coach at your shoulder and a wave built for your level. First-timers especially welcome.</p>
+          <a class="surf-cta" href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">View more about Surf China Co.</a>
         </div>
       </article>
 
@@ -500,11 +509,12 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="excard fade">
-        <img src="assets/img/exp-rainforest-waterfall.jpg" alt="A waterfall falling through dense tropical rainforest in Hainan's interior">
+        <!-- TODO: replace exp-hainan-coffee.jpg placeholder with a real Xinglong/Wanning coffee photo -->
+        <img src="assets/img/exp-hainan-coffee.jpg" alt="Freshly roasted Hainan coffee beans and a cup in the Xinglong hills of Wanning">
         <div class="b">
-          <div class="loc">Central Hainan</div>
-          <h3>Into the rainforest</h3>
-          <p>Inland from the coast, Hainan turns to tropical rainforest — waterfalls, hot springs and Li and Miao villages, with a private guide who knows the quiet trails.</p>
+          <div class="loc">Xinglong · Wanning</div>
+          <h3>Coffee in the hills</h3>
+          <p>Wanning's Xinglong hills have grown coffee for generations. Walk the plantation, roast a small batch by hand, and taste Hainan's own brew — strong, dark and unmistakably tropical.</p>
         </div>
       </article>
 
