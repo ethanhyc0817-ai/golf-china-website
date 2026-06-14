@@ -10,7 +10,7 @@
 <meta name="description" content="A private golf journey through Jiangnan and modern China — tournament fairways at Sheshan International, garden-resort golf at Fuchun Resort, wild links on Chongming Island, the Bund after dark and West Lake at dawn.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 /* ===== Golf China — design tokens (see DESIGN-SYSTEM.md) ===== */
 :root{
@@ -18,13 +18,13 @@
   --cinnabar:#b4452f; --gold:#b89150;
   --ivory:#f6f1e7; --paper:#fffdf8; --mist:#e7e0d2;
   --lift:0 18px 50px -20px rgba(20,36,28,.4);
-  --serif:'Cormorant Garamond',Georgia,serif;
+  --serif:'Playfair Display',Georgia,serif;
   --sans:'Jost',-apple-system,Segoe UI,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
+body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.65;font-weight:500;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.1;letter-spacing:-.005em}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
@@ -71,7 +71,7 @@ header.nav.scrolled .bar{padding:12px 28px}
 .crumbs a{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px}
 .crumbs a:hover{color:var(--gold);border-color:var(--gold)}
 .crumbs .sep{margin:0 10px;color:var(--gold)}
-.hero h1{font-size:clamp(44px,7vw,84px);max-width:14ch;margin:14px 0 16px}
+.hero h1{font-size:clamp(44px,7vw,84px);max-width:14ch;margin:14px 0 16px;font-weight:800;line-height:1.05}
 .hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,26px);color:rgba(255,255,255,.94);max-width:46ch}
 
 /* ===== FACTS BAR (Black Tomato-style key facts) ===== */
@@ -81,14 +81,14 @@ header.nav.scrolled .bar{padding:12px 28px}
 .facts .f:first-child{border-left:none;padding-left:0}
 .facts .fk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .facts .fv{font-family:var(--serif);font-size:21px;margin-top:6px;line-height:1.25}
-.facts .fs{font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px;font-weight:300}
+.facts .fs{font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px;font-weight:400}
 @media(max-width:860px){.facts .grid{grid-template-columns:1fr 1fr}.facts .f{padding:20px 22px}.facts .f:nth-child(odd){border-left:none;padding-left:0}}
 
 /* ===== SECTION SHELL ===== */
 section{padding:100px 0}
 .section-head{max-width:680px;margin-bottom:54px}
 .section-head h2{font-size:clamp(32px,4.6vw,50px);margin:14px 0}
-.section-head p{color:#4a5a50;font-size:17px}
+.section-head p{color:#46554b;font-size:17px;line-height:1.7}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 
 /* ===== OVERVIEW (editorial intro + at a glance) ===== */
@@ -130,10 +130,10 @@ section{padding:100px 0}
 .golf-feature .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
 .golf-feature .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .golf-feature .c h3{font-size:32px;margin:8px 0 14px}
-.golf-feature .c p{font-size:15px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch}
+.golf-feature .c p{font-size:15px;color:rgba(255,255,255,.85);font-weight:400;max-width:52ch}
 .golf-feature dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;border-top:1px solid rgba(255,255,255,.16);padding-top:18px;margin-top:20px}
 .golf-feature dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:2px}
-.golf-feature dd{font-size:13.5px;color:rgba(255,255,255,.86);font-weight:300}
+.golf-feature dd{font-size:13.5px;color:rgba(255,255,255,.86);font-weight:400}
 .golf-note{font-size:14px;color:rgba(255,255,255,.65);max-width:64ch}
 .golf-note b{color:#fff;font-weight:500}
 
@@ -158,8 +158,8 @@ section{padding:100px 0}
 .sjcard .b{position:relative;z-index:2;padding:26px;text-shadow:0 1px 12px rgba(20,36,28,.55)}
 .sjcard .specs{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95}
 .sjcard h3{font-size:25px;margin:8px 0 4px}
-.sjcard .route{font-size:13.5px;color:rgba(255,255,255,.9);font-weight:300}
-.sjcard .hi{font-size:13px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
+.sjcard .route{font-size:13.5px;color:rgba(255,255,255,.9);font-weight:400}
+.sjcard .hi{font-size:13px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:400}
 .sjcard .foot{margin-top:16px}
 .sjcard .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .sjcard .foot a:hover{color:var(--gold)}
@@ -176,7 +176,7 @@ section{padding:100px 0}
 .excard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
 .excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .excard h3{font-size:23px;margin:6px 0 7px}
-.excard p{font-size:13px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
+.excard p{font-size:13px;color:rgba(255,255,255,.88);font-weight:400;max-width:46ch}
 .exclusives .note{text-align:center;margin-top:38px;font-size:14px;color:#54635a}
 @media(max-width:920px){.ex-grid{grid-auto-rows:300px}}
 @media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}}
@@ -192,7 +192,7 @@ section{padding:100px 0}
 .stay-wrap .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
 .stay-wrap .c .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .stay-wrap .c h3{font-size:30px;margin:8px 0 14px}
-.stay-wrap .c p{font-size:15px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch;margin-bottom:14px}
+.stay-wrap .c p{font-size:15px;color:rgba(255,255,255,.85);font-weight:400;max-width:52ch;margin-bottom:14px}
 .stay-wrap .c p:last-of-type{margin-bottom:0}
 
 /* ===== EXTEND ===== */
@@ -205,7 +205,7 @@ section{padding:100px 0}
 .xcard .b{position:relative;z-index:2;padding:26px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92))}
 .xcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .xcard h3{font-size:25px;margin:6px 0 6px}
-.xcard p{font-size:13.5px;color:rgba(255,255,255,.88);font-weight:300;max-width:48ch}
+.xcard p{font-size:13.5px;color:rgba(255,255,255,.88);font-weight:400;max-width:48ch}
 .xcard .go{margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:3px;display:inline-block}
 
 /* ===== CTA ===== */
@@ -225,7 +225,7 @@ footer .logo .logo-mark{height:32px;width:auto}
 footer .logo .logo-text{color:#fff}
 footer .logo span{color:var(--gold)}
 footer h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-footer ul{list-style:none;font-size:14px;font-weight:300}
+footer ul{list-style:none;font-size:14px;font-weight:400}
 footer ul li{padding:5px 0;opacity:.85}
 footer ul li a:hover{color:#fff}
 footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
@@ -590,7 +590,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="cols">
       <div>
         <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></div>
-        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
+        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:400">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
       </div>
       <div><h5>Explore</h5><ul><li><a href="index.html#why-china">Why China</a></li><li><a href="index.html#destinations">Destinations</a></li><li><a href="index.html#courses">Courses</a></li><li><a href="index.html#journeys">Sample Journeys</a></li><li><a href="index.html#exclusives">Signature Experiences</a></li><li><a href="index.html#stay">Where You Stay</a></li></ul></div>
       <div><h5>Plan</h5><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#about">Who We Are</a></li><li><a href="index.html#plan">Plan Your Trip</a></li><li><a href="index.html#experiences">Beyond Golf</a></li><li><a href="index.html#start">Request a Proposal</a></li></ul></div>
