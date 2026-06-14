@@ -10,7 +10,7 @@
 <meta name="description" content="China's first golf travel company. Private golf journeys built around exclusive club access, selective guest play and confirmed tee times — Nicklaus beneath the Great Wall, Coore &amp; Crenshaw on the Hainan coast — with seamless ground logistics nationwide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ===== Golf China — design tokens (see DESIGN-SYSTEM.md) ===== */
 :root{
@@ -18,13 +18,13 @@
   --cinnabar:#b4452f; --gold:#b89150;
   --ivory:#f6f1e7; --paper:#fffdf8; --mist:#e7e0d2;
   --lift:0 18px 50px -20px rgba(20,36,28,.4);
-  --serif:'Playfair Display',Georgia,serif;
+  --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',-apple-system,Segoe UI,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.65;font-weight:500;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.1;letter-spacing:-.005em}
+body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
@@ -77,7 +77,7 @@ header.nav.scrolled .bar{padding:12px 28px}
 @media(prefers-reduced-motion:reduce){.hslide{animation:none!important}.hslide.s1{opacity:1}.hslide.s2,.hslide.s3{opacity:0}}
 .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,36,28,.62) 0%,rgba(20,36,28,.3) 38%,rgba(20,36,28,.16) 62%,rgba(20,36,28,.75) 100%)}
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;padding-top:clamp(140px,19vh,200px);padding-bottom:9vh}
-.hero h1{font-size:clamp(36px,4.6vw,56px);max-width:24ch;margin:14px 0 0;font-weight:800;line-height:1.05;text-wrap:balance}
+.hero h1{font-size:clamp(34px,4.2vw,52px);max-width:28ch;margin:14px 0 0;font-weight:500;text-wrap:balance}
 .hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,23px);color:rgba(255,255,255,.92);max-width:34ch;margin-top:22px;padding-top:20px;position:relative}
 .hero .hero-tag::before{content:"";position:absolute;top:0;left:0;width:52px;height:1px;background:var(--gold)}
 .hero .actions{margin-top:auto;display:flex;gap:16px;flex-wrap:wrap}
@@ -87,7 +87,7 @@ header.nav.scrolled .bar{padding:12px 28px}
 section{padding:100px 0}
 .section-head{max-width:680px;margin-bottom:54px}
 .section-head h2{font-size:clamp(32px,4.6vw,50px);margin:14px 0}
-.section-head p{color:#46554b;font-size:17px;line-height:1.7}
+.section-head p{color:#4a5a50;font-size:17px}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 
 /* ===== VALUE STRIP ===== */
@@ -96,7 +96,7 @@ section{padding:100px 0}
 .values .v{text-align:left}
 .values .v .vk{font-family:var(--serif);font-size:23px;color:var(--pine);line-height:1.1}
 .values .v .vk::before{content:"";display:block;width:26px;height:2px;background:var(--gold);margin-bottom:14px}
-.values .v p{font-size:13.5px;color:#54635a;margin-top:8px;font-weight:400}
+.values .v p{font-size:13.5px;color:#54635a;margin-top:8px;font-weight:300}
 @media(max-width:760px){.values .grid{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:440px){.values .grid{grid-template-columns:1fr}}
 .values .strip{text-align:center;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);font-weight:400;line-height:2.2}
@@ -129,13 +129,13 @@ section{padding:100px 0}
 @media(max-width:880px){.proof-wrap{grid-template-columns:1fr;gap:36px}}
 .proof figure{margin:0}
 .proof figure img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
-.proof figcaption{font-size:12px;color:#6a766d;margin-top:12px;font-weight:400}
+.proof figcaption{font-size:12px;color:#6a766d;margin-top:12px;font-weight:300}
 .proof .ph2{font-size:clamp(28px,3.4vw,38px);color:var(--pine);margin:12px 0 30px}
 .proof .stats{display:flex;flex-direction:column;gap:24px}
 .proof .stat{border-left:2px solid var(--gold);padding-left:20px}
 .proof .stat h3{font-family:var(--serif);font-size:clamp(23px,2.6vw,30px);line-height:1.2;color:var(--pine);font-weight:500}
-.proof .stat h3 em{font-style:normal;color:var(--gold);font-weight:600}
-.proof .stat p{font-size:13px;color:#6a766d;margin-top:5px;font-weight:400}
+.proof .stat h3 em{font-style:normal;color:var(--cinnabar);font-weight:600}
+.proof .stat p{font-size:13px;color:#6a766d;margin-top:5px;font-weight:300}
 .proof .legends{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,22px);color:var(--pine);margin-top:32px;max-width:40ch}
 @media(max-width:880px){
   .proof{padding:64px 0}
@@ -145,44 +145,6 @@ section{padding:100px 0}
   .proof .stat h3{font-size:20px}
   .proof .legends{margin-top:26px;font-size:18px}
 }
-
-/* ===== HERO CREDIBILITY STRIP ===== */
-.hero-creds{margin-top:34px;display:flex;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
-.hero-creds .cred{padding-right:38px;margin-right:38px;border-right:1px solid rgba(255,255,255,.18)}
-.hero-creds .cred:last-child{border-right:none;margin-right:0;padding-right:0}
-.hero-creds .cn{font-family:var(--serif);font-size:clamp(30px,3.4vw,42px);line-height:1;color:#fff}
-.hero-creds .cn em{font-style:normal;color:var(--gold)}
-.hero-creds .cl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:8px}
-@media(max-width:600px){
-  .hero-creds{gap:18px 0;padding-top:18px}
-  .hero-creds .cred{padding-right:22px;margin-right:22px}
-  .hero-creds .cn{font-size:26px}
-  .hero-creds .cl{font-size:9.5px;letter-spacing:.12em}
-}
-
-/* ===== BIG-NUMBER STAT BAND ===== */
-.statband{background:var(--ink);color:#fff;text-align:center;padding:74px 0}
-.statband .lead-line{font-family:var(--serif);font-weight:700;font-size:clamp(27px,3.3vw,40px);color:#fff;max-width:18ch;margin:0 auto 8px;line-height:1.1}
-.statband .sub{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2vw,21px);color:#e8cf95;margin-bottom:46px}
-.statband .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;max-width:1060px;margin:0 auto;text-align:left}
-.statband .nums>div{border-top:2px solid var(--gold);padding-top:20px}
-.statband .nb{font-family:var(--serif);font-size:clamp(21px,1.9vw,24px);line-height:1;color:var(--gold);font-weight:600;letter-spacing:.01em}
-.statband .nb small{font-size:.62em;font-weight:500;letter-spacing:.04em}
-.statband .claim{font-family:var(--serif);font-weight:700;font-size:clamp(20px,1.9vw,25px);color:#fff;line-height:1.16;margin-top:10px}
-.statband .src{font-size:11.5px;color:rgba(255,255,255,.55);margin-top:11px;line-height:1.6;letter-spacing:.04em;text-transform:uppercase}
-@media(max-width:820px){.statband .nums{grid-template-columns:1fr 1fr;gap:36px 30px}}
-@media(max-width:440px){.statband .nums{grid-template-columns:1fr;gap:28px;text-align:center}.statband{padding:56px 0}}
-
-/* ===== FULL-BLEED EDITORIAL STATEMENT ===== */
-.statement{position:relative;min-height:clamp(440px,72vh,680px);display:flex;align-items:center;color:#fff;overflow:hidden}
-.statement img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.statement .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,36,28,.82) 0%,rgba(20,36,28,.58) 42%,rgba(20,36,28,.2) 100%)}
-.statement .inner{position:relative;z-index:2;max-width:640px}
-.statement .eyebrow{color:#e8cf95}
-.statement h2{font-size:clamp(34px,5vw,62px);color:#fff;margin:16px 0 0;line-height:1.04;text-shadow:0 2px 30px rgba(0,0,0,.4)}
-.statement h2 em{font-style:italic;color:var(--gold)}
-.statement p{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.2vw,24px);color:rgba(255,255,255,.92);margin-top:22px;max-width:40ch}
-@media(max-width:600px){.statement .scrim{background:linear-gradient(180deg,rgba(20,36,28,.5),rgba(20,36,28,.82))}}
 
 .access{background:var(--ink);color:#fff}
 .access .section-head{max-width:760px}
@@ -194,7 +156,7 @@ section{padding:100px 0}
 .access .pillar{border-top:2px solid var(--gold);padding-top:22px}
 .access .pillar .pk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .access .pillar h4{font-size:22px;margin:10px 0 8px;color:#fff}
-.access .pillar p{font-size:14px;color:rgba(255,255,255,.8);font-weight:400}
+.access .pillar p{font-size:14px;color:rgba(255,255,255,.8);font-weight:300}
 
 /* ===== WHY CHINA ===== */
 .whychina{background:var(--ivory)}
@@ -219,10 +181,10 @@ section{padding:100px 0}
 .bigcard .c{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
 .bigcard .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .bigcard .c h3{font-size:28px;margin:5px 0 0}
-.bigcard .c .tagline{font-size:13px;color:rgba(255,255,255,.72);margin:6px 0 18px;font-weight:400}
+.bigcard .c .tagline{font-size:13px;color:rgba(255,255,255,.72);margin:6px 0 18px;font-weight:300}
 .bigcard dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
 .bigcard dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:2px}
-.bigcard dd{font-size:13.5px;color:rgba(255,255,255,.86);font-weight:400}
+.bigcard dd{font-size:13.5px;color:rgba(255,255,255,.86);font-weight:300}
 .bigcard .c .foot{margin-top:auto;padding-top:20px}
 .bigcard .c .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .bigcard .c .foot a:hover{color:var(--gold)}
@@ -266,7 +228,7 @@ section{padding:100px 0}
 .ccard .c{padding:24px;display:flex;flex-direction:column;flex:1}
 .ccard .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .ccard .c h3{font-size:23px;margin:4px 0 10px;color:var(--pine)}
-.ccard .c p{font-size:14px;color:#4d5c52;line-height:1.6}
+.ccard .c p{font-size:13.5px;color:#54635a;font-weight:300}
 .ccard .c .meta{margin-top:16px;border-top:1px solid var(--mist);padding-top:13px;font-size:12px;color:#6a766d;display:flex;flex-direction:column;gap:5px}
 .ccard .c .meta span b{color:var(--pine);font-weight:500}
 .courses .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
@@ -293,9 +255,9 @@ section{padding:100px 0}
 .sjcard .b{position:relative;z-index:2;padding:26px;text-shadow:0 1px 12px rgba(20,36,28,.55)}
 .sjcard .specs{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95}
 .sjcard h3{font-size:25px;margin:8px 0 4px}
-.sjcard .route{font-size:13.5px;color:rgba(255,255,255,.9);font-weight:400}
-.sjcard .hi{font-size:13px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:400}
-.sjcard .bestfor{font-size:12.5px;color:rgba(255,255,255,.7);margin-top:10px;font-weight:400;font-style:italic}
+.sjcard .route{font-size:13.5px;color:rgba(255,255,255,.9);font-weight:300}
+.sjcard .hi{font-size:13px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
+.sjcard .bestfor{font-size:12.5px;color:rgba(255,255,255,.7);margin-top:10px;font-weight:300;font-style:italic}
 .sjcard .foot{margin-top:16px}
 .sjcard .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .sjcard .foot a:hover{color:var(--gold)}
@@ -314,7 +276,7 @@ section{padding:100px 0}
 .excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .excard h3{font-size:23px;margin:6px 0 7px}
 .excard.feature h3{font-size:28px}
-.excard p{font-size:13px;color:rgba(255,255,255,.88);font-weight:400;max-width:46ch}
+.excard p{font-size:13px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
 .exclusives .note{text-align:center;margin-top:38px;font-size:14px;color:#54635a}
 @media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
 @media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
@@ -331,7 +293,7 @@ section{padding:100px 0}
 .scard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.92))}
 .scard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .scard h3{font-size:21px;margin:6px 0 6px}
-.scard p{font-size:13px;opacity:.9;font-weight:400}
+.scard p{font-size:13px;opacity:.9;font-weight:300}
 .stay .note{text-align:center;margin-top:38px;font-size:14px;color:rgba(255,255,255,.65)}
 
 /* ===== BEYOND GOLF (audiences) ===== */
@@ -343,7 +305,7 @@ section{padding:100px 0}
 .ecard.grad{background:linear-gradient(160deg,#3f6f54,#1f3d2e)}
 .ecard .b{position:relative;z-index:2;padding:24px;background:linear-gradient(180deg,transparent,rgba(20,36,28,.88))}
 .ecard .b h3{font-size:21px;margin-bottom:6px}
-.ecard .b p{font-size:13px;opacity:.9;font-weight:400}
+.ecard .b p{font-size:13px;opacity:.9;font-weight:300}
 
 /* ===== HOW IT WORKS ===== */
 .how{background:var(--pine);color:#fff}
@@ -353,36 +315,7 @@ section{padding:100px 0}
 .step{border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
 .step .n{font-family:var(--serif);font-size:46px;color:var(--gold);line-height:1}
 .step h4{font-size:21px;margin:12px 0 8px}
-.step p{font-size:14px;color:rgba(255,255,255,.82);font-weight:400}
-
-/* ===== ACCESS & CREDENTIALS ===== */
-.creds{background:var(--paper);border-top:1px solid var(--mist)}
-.creds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mist);border:1px solid var(--mist)}
-@media(max-width:860px){.creds-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:540px){.creds-grid{grid-template-columns:1fr}}
-.acred{background:var(--paper);padding:32px 30px;display:flex;flex-direction:column;gap:14px}
-.acred .mk{width:30px;height:30px;border:1.5px solid var(--gold);border-radius:999px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:13px;flex:none}
-.acred h4{font-size:18px;color:var(--pine);line-height:1.3;font-weight:700}
-.acred p{font-size:13.5px;color:#54635a;line-height:1.55}
-.creds .foot-note{font-size:13px;color:#6a766d;text-align:center;max-width:60ch;margin:34px auto 0}
-
-/* ===== INDICATIVE INVESTMENT ===== */
-.invest{background:var(--pine);color:#fff}
-.invest .section-head h2{color:#fff}
-.invest .section-head p{color:rgba(255,255,255,.75)}
-.invest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
-@media(max-width:820px){.invest-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
-.tier{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);border-radius:2px;padding:34px 32px;display:flex;flex-direction:column;transition:.3s}
-.tier:hover{border-color:var(--gold);transform:translateY(-4px)}
-.tier.feature{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
-.tier .badge{align-self:flex-start;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:5px 12px;border-radius:2px;margin-bottom:16px}
-.tier .tname{font-family:var(--serif);font-size:25px;color:#fff;font-weight:700;line-height:1.18}
-.tier .dur{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e8cf95;margin-top:10px}
-.tier .price{margin-top:auto;padding-top:22px}
-.tier .price .from{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.tier .price .amt{font-family:var(--serif);font-size:42px;color:var(--gold);font-weight:600;line-height:1;margin-top:8px;letter-spacing:-.01em}
-.tier .price .pp{font-size:12px;letter-spacing:.04em;color:rgba(255,255,255,.6);margin-top:8px}
-.invest .disclaimer{font-size:12.5px;color:rgba(255,255,255,.58);text-align:center;max-width:72ch;margin:36px auto 0;line-height:1.65}
+.step p{font-size:14px;color:rgba(255,255,255,.82);font-weight:300}
 
 /* ===== ABOUT / WHO WE ARE ===== */
 .about{background:var(--ivory)}
@@ -401,6 +334,24 @@ section{padding:100px 0}
 .plan-item h4{font-size:20px;color:var(--pine);margin-bottom:8px;display:flex;align-items:center;gap:10px}
 .plan-item h4 .dot{width:8px;height:8px;background:var(--gold);border-radius:999px}
 .plan-item p{font-size:14px;color:#54635a}
+
+/* ===== INDICATIVE INVESTMENT ===== */
+.invest{background:var(--pine);color:#fff}
+.invest .section-head h2{color:#fff}
+.invest .section-head p{color:rgba(255,255,255,.75)}
+.invest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+@media(max-width:820px){.invest-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
+.tier{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);border-radius:2px;padding:34px 32px;display:flex;flex-direction:column;transition:.3s}
+.tier:hover{border-color:var(--gold);transform:translateY(-4px)}
+.tier.feature{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.tier .badge{align-self:flex-start;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:5px 12px;border-radius:2px;margin-bottom:16px}
+.tier .tname{font-family:var(--serif);font-size:25px;color:#fff;font-weight:600;line-height:1.18}
+.tier .dur{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e8cf95;margin-top:10px}
+.tier .price{margin-top:auto;padding-top:22px}
+.tier .price .from{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.tier .price .amt{font-family:var(--serif);font-size:42px;color:var(--gold);font-weight:600;line-height:1;margin-top:8px;letter-spacing:-.01em}
+.tier .price .pp{font-size:12px;letter-spacing:.04em;color:rgba(255,255,255,.6);margin-top:8px}
+.invest .disclaimer{font-size:12.5px;color:rgba(255,255,255,.58);text-align:center;max-width:72ch;margin:36px auto 0;line-height:1.65}
 
 /* ===== CTA / FORM ===== */
 .cta{background:var(--ink);color:#fff}
@@ -428,7 +379,7 @@ footer .logo .logo-mark{height:32px;width:auto}
 footer .logo .logo-text{color:#fff}
 footer .logo span{color:var(--gold)}
 footer h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-footer ul{list-style:none;font-size:14px;font-weight:400}
+footer ul{list-style:none;font-size:14px;font-weight:300}
 footer ul li{padding:5px 0;opacity:.85}
 footer ul li a:hover{color:#fff}
 footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
@@ -449,11 +400,13 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="bar">
     <a href="#top" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
     <nav>
-      <a href="#access">Access</a>
+      <a href="#access">Exclusive Access</a>
       <a href="#destinations">Destinations</a>
-      <a href="#journeys">Journeys</a>
+      <a href="#courses">Courses</a>
+      <a href="#journeys">Sample Journeys</a>
+      <a href="#exclusives">Experiences</a>
+      <a href="#plan">Plan</a>
       <a href="#investment">Investment</a>
-      <a href="#about">About</a>
       <a href="#start" class="nav-cta">Enquire</a>
     </nav>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -480,16 +433,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="scrim"></div>
   <div class="container hero-inner">
     <span class="eyebrow">Private by Design · China</span>
-    <h1>The greatest golf you've never played.</h1>
-    <p class="hero-tag">Great Wall parkland. Himalayan snow. Tropical coast.</p>
+    <h1>Golf journeys through China's most unexpected landscapes.</h1>
+    <p class="hero-tag">Beyond the fairway, into China.</p>
     <div class="actions">
       <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
       <a href="#start" class="btn btn-ghost">Request a Private Proposal</a>
-    </div>
-    <div class="hero-creds">
-      <div class="cred"><div class="cn"><em>4</em></div><div class="cl">Courses in the<br>World's Top 100</div></div>
-      <div class="cred"><div class="cn"><em>8</em>/10</div><div class="cl">Of China's best<br>courses, on our roster</div></div>
-      <div class="cred"><div class="cn"><em>1</em><small style="font-size:.5em">st</small></div><div class="cl">China's first<br>golf travel company</div></div>
     </div>
   </div>
   <div class="scroll-hint">Scroll ↓</div>
@@ -509,7 +457,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
-<!-- BY THE NUMBERS -->
+<!-- PROOF / BY THE NUMBERS -->
 <!-- NOTE: Tiger photo appears to be tournament press imagery — confirm usage rights before launch -->
 <section class="proof" id="proof">
   <div class="container proof-wrap">
@@ -521,44 +469,42 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <span class="eyebrow">By The Numbers</span>
       <h2 class="ph2">Some of the world's greatest courses are in China.</h2>
       <div class="stats">
-        <div class="stat"><h3>Asia's <em>most exclusive</em> golf club.</h3><p>Shanqin Bay — no public tee sheet, guest play by invitation only.</p></div>
         <div class="stat"><h3>The <em>14th greatest</em> course on earth.</h3><p>Shanqin Bay — Golf Digest's World's 100 Greatest ranking.</p></div>
-        <div class="stat"><h3><em>4 courses</em>, World Top 100.</h3><p>Sheshan, Spring City, Shanqin Bay and Blackstone — Golf Digest.</p></div>
         <div class="stat"><h3><em>8 of China's 10 best</em> courses.</h3><p>All on our roster — Golf Digest's Best-in-China ranking.</p></div>
+        <div class="stat"><h3><em>4 courses</em>, World Top 100.</h3><p>Sheshan, Spring City, Shanqin Bay and Blackstone — Golf Digest.</p></div>
+        <div class="stat"><h3>Asia's <em>most exclusive</em> golf club.</h3><p>Shanqin Bay — no public tee sheet, guest play by invitation only.</p></div>
       </div>
       <p class="legends">Tiger Woods, Rory McIlroy, Phil Mickelson and Dustin Johnson have all played these fairways.</p>
     </div>
   </div>
 </section>
 
-<!-- EXCLUSIVE ACCESS (full-bleed) -->
-<section class="statement" id="access">
-  <img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall tracing the ridgeline behind, Beijing">
-  <div class="scrim"></div>
-  <div class="container inner fade">
-    <span class="eyebrow">Exclusive Access</span>
-    <h2>Inside China's <em>best-kept secret.</em></h2>
-    <p>China's finest courses are private. We arrange play where few are invited.</p>
-  </div>
-</section>
-
-<!-- ACCESS & CREDENTIALS -->
-<section class="creds" id="credentials">
+<!-- EXCLUSIVE ACCESS -->
+<section class="access" id="access">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">Access &amp; Credentials</span>
-      <h2>The relationships behind the access.</h2>
-      <p>The partners, people and standing that make private play possible — not marketing copy.</p>
+      <span class="eyebrow">Exclusive Access</span>
+      <h2>Inside China's best-kept secret.</h2>
+      <p>China's finest courses are private, selective, and rarely open to visitors from abroad. Through relationships built over years, we arrange play where few are invited — from Nicklaus beneath the Great Wall to Coore &amp; Crenshaw on the Hainan coast.</p>
     </div>
-    <div class="creds-grid">
-      <div class="acred fade"><div class="mk">✓</div><h4>Private club relationships across China</h4></div>
-      <div class="acred fade"><div class="mk">✓</div><h4>Partnership &amp; support from China Tourism Group</h4></div>
-      <div class="acred fade"><div class="mk">✓</div><h4>On-ground teams in Beijing, Shanghai, Yunnan &amp; Hainan</h4></div>
-      <div class="acred fade"><div class="mk">✓</div><h4>Access to selected private clubs &amp; ranked courses</h4></div>
-      <div class="acred fade"><div class="mk">✓</div><h4>Golf Digest World Top 100 courses on roster</h4></div>
-      <div class="acred fade"><div class="mk">✓</div><h4>Shanqin Bay — by approval / invitation only</h4></div>
+    <p class="claim fade">Some doors open only by invitation. Ours have been years in the making.</p>
+    <div class="access-grid">
+      <div class="pillar fade">
+        <div class="pk">Club Relationships</div>
+        <h4>Private-club access, by arrangement</h4>
+        <p>Direct relationships with China's most private clubs — and the standing to arrange play where invitations are rare.</p>
+      </div>
+      <div class="pillar fade">
+        <div class="pk">The Pioneer</div>
+        <h4>China's first golf travel company</h4>
+        <p>The first travel company devoted to golf in China. The routes, the relationships, the access — established here, by us.</p>
+      </div>
+      <div class="pillar fade">
+        <div class="pk">China Tourism Group</div>
+        <h4>Our people, everywhere you go</h4>
+        <p>Our partnership with China Tourism Group places our own people on the ground in every destination, throughout your journey.</p>
+      </div>
     </div>
-    <p class="foot-note fade">Specific clubs, courses and tee times are confirmed per itinerary, subject to each club's approval.</p>
   </div>
 </section>
 
@@ -569,7 +515,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <div class="section-head fade">
         <span class="eyebrow" style="color:var(--gold)">Featured Destinations</span>
         <h2>Four regions, one country of contrasts.</h2>
-        <p>Four different faces of China — explore one, or combine them into a single private journey.</p>
+        <p>Each region is a completely different face of China. Explore them on their own, or combine several into a single seamless private journey.</p>
       </div>
       <div class="fade">
         <svg class="chinamap" viewBox="0 0 760 573" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of China showing Golf China destinations">
@@ -592,9 +538,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="region">Beijing</div><h3>Imperial China</h3>
           <p class="tagline">Imperial China · Great Wall · private clubs</p>
           <dl>
-            <dt>Why go</dt><dd>The historic heart of China — the place to begin.</dd>
-            <dt>Golf</dt><dd>Nicklaus parkland beneath the Great Wall.</dd>
-            <dt>Best for</dt><dd>First-timers who want icons and grandeur.</dd>
+            <dt>Why go</dt><dd>The historic heart of China and the natural place to begin a first journey.</dd>
+            <dt>Golf</dt><dd>Reignwood Pine Valley and parkland courses set against the Jundu Mountains.</dd>
+            <dt>Best for</dt><dd>First-time visitors to China who want icons and grandeur.</dd>
           </dl>
           <div class="foot"><a href="imperial-china.html">Discover Imperial China →</a></div>
         </div>
@@ -606,9 +552,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="region">Shanghai / Hangzhou</div><h3>Jiangnan &amp; Modern China</h3>
           <p class="tagline">Design hotels · Jiangnan elegance · tournament golf</p>
           <dl>
-            <dt>Why go</dt><dd>Cosmopolitan China beside misty Jiangnan water-towns.</dd>
-            <dt>Golf</dt><dd>Sheshan International — host of a world-tour event.</dd>
-            <dt>Best for</dt><dd>Style, refinement and tournament-grade golf.</dd>
+            <dt>Why go</dt><dd>Cosmopolitan China beside the misty water-towns of the lower Yangtze.</dd>
+            <dt>Golf</dt><dd>Sheshan International, host of a world-tour event, plus garden resort courses.</dd>
+            <dt>Best for</dt><dd>Travelers who want style, refinement and tournament-grade golf.</dd>
           </dl>
           <div class="foot"><a href="jiangnan-modern-china.html">Discover Jiangnan &amp; Modern China →</a></div>
         </div>
@@ -620,9 +566,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="region">Yunnan</div><h3>South of the Clouds</h3>
           <p class="tagline">Snow-mountain golf · Tea Horse Road · Naxi &amp; Bai culture</p>
           <dl>
-            <dt>Why go</dt><dd>China at its most distinctive — snow peaks, eternal spring.</dd>
-            <dt>Golf</dt><dd>Jade Dragon — the world's longest course, beneath a glacier.</dd>
-            <dt>Best for</dt><dd>The most unusual scenery and culture.</dd>
+            <dt>Why go</dt><dd>China at its most distinctive — eternal-spring climate, snow peaks and ethnic-minority culture.</dd>
+            <dt>Golf</dt><dd>Spring City Resort, and Jade Dragon Snow Mountain — the world's longest course, played beneath a glacier.</dd>
+            <dt>Best for</dt><dd>Travelers who want the most unusual scenery and culture.</dd>
           </dl>
           <div class="foot"><a href="south-of-the-clouds.html">Discover South of the Clouds →</a></div>
         </div>
@@ -634,9 +580,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="region">Hainan</div><h3>Asia's Most Exclusive Golf</h3>
           <p class="tagline">Mission Hills · The Dunes · Shanqin Bay</p>
           <dl>
-            <dt>Why go</dt><dd>China's tropical island — green and playable all winter.</dd>
-            <dt>Golf</dt><dd>Blackstone, The Dunes, and selective Shanqin Bay.</dd>
-            <dt>Best for</dt><dd>Winter golf, tropical coast and serious groups.</dd>
+            <dt>Why go</dt><dd>China's tropical island — warm, green and playable all winter.</dd>
+            <dt>Golf</dt><dd>Mission Hills Blackstone, The Dunes at Shenzhou Peninsula and selective Shanqin Bay.</dd>
+            <dt>Best for</dt><dd>Winter golf, tropical coast and serious golf groups.</dd>
           </dl>
           <div class="foot"><a href="asias-most-exclusive-golf.html">Discover Asia's Most Exclusive Golf →</a></div>
         </div>
@@ -646,14 +592,121 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
-<!-- FULL-BLEED STATEMENT -->
-<section class="statement">
-  <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan, above a turquoise sea">
-  <div class="scrim"></div>
-  <div class="container inner fade">
-    <span class="eyebrow">Where Few Have Played</span>
-    <h2>Some of the greatest golf on earth. <em>And almost no one has seen it.</em></h2>
-    <p>That is what we open — quietly, and only for our guests.</p>
+<!-- SIGNATURE COURSES -->
+<section class="courses" id="courses">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Signature Courses</span>
+      <h2>Exclusive clubs. Rare access.</h2>
+      <p>These are the best courses in China, and most stand among the best in Asia. Yet what stays with you is rarely the course design alone — it is the history and culture each club carries, the company you keep in the clubhouse, and the way golf takes a different shape in every region: parkland beneath the Great Wall, fairways under Himalayan snow, linksland on a tropical coast.</p>
+    </div>
+    <div class="course-grid">
+
+      <article class="ccard fade">
+        <div class="img"><img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing"><span class="tag">Beijing</span></div>
+        <div class="c">
+          <div class="region">Beijing</div><h3>Reignwood Pine Valley</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>Nicklaus golf beneath the Great Wall — a private mountain-parkland club in the Jundu Mountains, the Wall tracing the ridgeline above.</p>
+          <div class="meta"><span><b>Designer</b> · Jack Nicklaus / Nicklaus Design</span><span><b>Setting</b> · Great Wall mountain parkland</span><span><b>Best season</b> · Apr–Oct</span><span><b>Access</b> · Private-club access by arrangement</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img"><img src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai"><span class="tag">Shanghai</span></div>
+        <div class="c">
+          <div class="region">Shanghai</div><h3>Sheshan International</h3><div class="rankline">World Top 100 · Golf Digest</div>
+          <p>China's most famous course and host of a world-tour event — championship golf on the city's doorstep.</p>
+          <div class="meta"><span><b>Designer</b> · Nelson &amp; Haworth</span><span><b>Setting</b> · Tournament parkland</span><span><b>Best season</b> · Apr–Jun, Sep–Nov</span><span><b>Pair with</b> · The Bund, dining</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img"><img src="assets/img/course-springcity.jpg" alt="Spring City Resort golf above a lake in Yunnan"><span class="tag">Yunnan</span></div>
+        <div class="c">
+          <div class="region">Kunming · Yunnan</div><h3>Spring City Resort</h3><div class="rankline">World Top 100 · Golf Digest</div>
+          <p>Two celebrated courses in an eternal-spring climate, ranked among the very finest in China.</p>
+          <div class="meta"><span><b>Designers</b> · Nicklaus · R.T. Jones Jr.</span><span><b>Setting</b> · Lakeside highland</span><span><b>Best season</b> · Year-round</span><span><b>Pair with</b> · Lijiang, Jade Dragon</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img"><img src="assets/img/jadedragon-fairway.jpg" alt="Jade Dragon Snow Mountain golf course beneath a glacier"><span class="tag">Yunnan</span></div>
+        <div class="c">
+          <div class="region">Lijiang · Yunnan</div><h3>Jade Dragon Snow Mountain</h3><div class="rankline">Asia Top 50 · Golf Magazine</div><div class="rankline" style="margin-top:-8px">The World's Longest Course · 8,548 Yards</div>
+          <p>Golf at altitude beneath a 5,500-metre glacier — the longest course on earth, and one of the most dramatic settings in the game.</p>
+          <div class="meta"><span><b>Designer</b> · Neil Haworth</span><span><b>Setting</b> · Himalayan foothills</span><span><b>Best season</b> · Mar–Nov</span><span><b>Pair with</b> · Old town, Tea Horse Road</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img"><img src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou"><span class="tag">Hangzhou</span></div>
+        <div class="c">
+          <div class="region">Hangzhou</div><h3>Fuchun Resort</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>Jiangnan elegance — fairways and a classical resort mirrored in still water beneath misty hills.</p>
+          <div class="meta"><span><b>Designer</b> · Daniel Obermeyer</span><span><b>Setting</b> · Jiangnan garden resort</span><span><b>Best season</b> · Mar–May, Sep–Nov</span><span><b>Pair with</b> · West Lake, Longjing tea</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img"><img src="assets/img/course-hainan-dunes.jpg" alt="The Dunes links course on the Hainan coast"><span class="tag">Hainan</span></div>
+        <div class="c">
+          <div class="region">Shenzhou · Hainan</div><h3>The Dunes at Shenzhou Peninsula</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>A natural links carved from sand dunes along a wild stretch of tropical coast.</p>
+          <div class="meta"><span><b>Designer</b> · Tom Weiskopf</span><span><b>Setting</b> · Oceanside links</span><span><b>Best season</b> · Oct–Apr</span><span><b>Pair with</b> · Shanqin Bay, Sanya</span></div>
+        </div>
+      </article>
+
+      <article class="ccard noir fade">
+        <div class="img"><img src="assets/img/course-hainan-shanqin.jpg" alt="Shanqin Bay clifftop fairways above a turquoise sea"><span class="tag">By invitation</span></div>
+        <div class="c">
+          <div class="region">Hainan</div><h3>Shanqin Bay</h3><div class="rankline">World Top 100 · Golf Digest</div>
+          <p>Coore &amp; Crenshaw on a wild Hainan coastline — the most exclusive and private golf club in Asia. Clifftop holes, native sand and sea wind have earned it a standing place among the World Top 100, yet almost no one has played it: the club keeps no public tee sheet, and its privacy is the point. Guest play is highly selective, by invitation, and arranged only where available.</p>
+          <div class="meta"><span><b>Designer</b> · Coore &amp; Crenshaw</span><span><b>Setting</b> · Oceanfront cliffs and native sand</span><span><b>Best season</b> · Oct–Apr</span><span><b>Access</b> · Selective guest access, by arrangement</span></div>
+        </div>
+      </article>
+
+      <article class="ccard more fade">
+        <div class="img"><img src="assets/img/course-yangtze.jpg" alt="A green at Yangtze Dunes surrounded by wild sandy dunes at dusk, Chongming Island" loading="lazy"><span class="tag">Shanghai</span></div>
+        <div class="c">
+          <div class="region">Chongming · Shanghai</div><h3>Yangtze Dunes</h3><div class="rankline">China Top 3 · Top 100 Golf Courses</div>
+          <p>True links at the mouth of the Yangtze — windswept dunes and fescue on Chongming Island, rebuilt by OCCM into one of Asia's finest modern courses.</p>
+          <div class="meta"><span><b>Designer</b> · OCCM (Ogilvy, Clayton, Cocking &amp; Mead)</span><span><b>Setting</b> · Estuary linksland</span><span><b>Best season</b> · Apr–Jun, Sep–Nov</span><span><b>Pair with</b> · Sheshan, the Bund</span></div>
+        </div>
+      </article>
+
+      <article class="ccard more fade">
+        <div class="img"><img src="assets/img/course-hainan-blackstone.jpg" alt="Rugged white-sand bunkers across a fairway at dusk on the Blackstone course, Haikou" loading="lazy"><span class="tag">Hainan</span></div>
+        <div class="c">
+          <div class="region">Haikou · Hainan</div><h3>Mission Hills Haikou — Blackstone</h3><div class="rankline">World Top 100 · Golf Digest</div>
+          <p>Big, bold championship golf laid over ancient lava fields — host of the 2011 World Cup and the flagship of Asia's largest golf resort.</p>
+          <div class="meta"><span><b>Designer</b> · Schmidt-Curley</span><span><b>Setting</b> · Lava-rock parkland</span><span><b>Best season</b> · Oct–Apr</span><span><b>Pair with</b> · The Dunes, Sanya</span></div>
+        </div>
+      </article>
+
+      <article class="ccard more fade">
+        <div class="img"><img src="assets/img/course-topwin.jpg" alt="Topwin fairways and a pagoda above Yanqi Lake in autumn, with mountains beyond, Beijing" loading="lazy"><span class="tag">Beijing</span></div>
+        <div class="c">
+          <div class="region">Yanqi Lake · Beijing</div><h3>Topwin Golf &amp; Country Club</h3><div class="rankline">China Top 10 · Top 100 Golf Courses</div>
+          <p>Immaculate parkland beside Yanqi Lake, a pagoda skyline and mountains beyond — a former China Open venue an hour from the capital.</p>
+          <div class="meta"><span><b>Designer</b> · Ian Woosnam / IMG</span><span><b>Setting</b> · Lakeside mountain parkland</span><span><b>Best season</b> · Apr–Oct</span><span><b>Pair with</b> · Great Wall, Reignwood</span></div>
+        </div>
+      </article>
+
+      <article class="ccard more fade">
+        <div class="img"><img src="assets/img/course-guilin.jpg" alt="A karst limestone pinnacle rising above the fairways at Guilin Landscape Golf Club" loading="lazy"><span class="tag">Guilin</span></div>
+        <div class="c">
+          <div class="region">Guilin · Guangxi</div><h3>Guilin Landscape</h3>
+          <p>Fairways threading between karst pinnacles — golf inside a classical Chinese ink painting, minutes from the Li River.</p>
+          <div class="meta"><span><b>Designer</b> · Dana Fry</span><span><b>Setting</b> · Karst valley</span><span><b>Best season</b> · Mar–May, Sep–Nov</span><span><b>Pair with</b> · Li River, Yangshuo</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="more-wrap fade">
+      <button class="btn btn-more" id="course-more" type="button">See more golf courses</button>
+      <p class="sub">Four more favourites — across Shanghai, Hainan, Beijing &amp; Guilin</p>
+    </div>
   </div>
 </section>
 
@@ -663,7 +716,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="section-head fade">
       <span class="eyebrow">Sample Private Journeys</span>
       <h2>Inspiration, not itineraries.</h2>
-      <p>A few journeys we love — every one fully tailored to your dates, courses and pace.</p>
+      <p>A few journeys we love, shown as inspiration. Every one is fully tailored — your dates, your courses, your pace. Treat these as a beginning, then we shape the rest around you.</p>
     </div>
     <div class="sj-grid">
 
@@ -707,6 +760,176 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
+<!-- SIGNATURE EXPERIENCES -->
+<section class="exclusives" id="exclusives">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Signature Experiences</span>
+      <h2>What happens between the rounds.</h2>
+      <p>Arranged privately, through relationships built on the ground — not excursions from a brochure. Each one is set up for your party alone.</p>
+    </div>
+    <div class="ex-grid">
+
+      <article class="excard feature fade">
+        <picture>
+          <source media="(max-width:760px)" srcset="assets/img/exp-songzanlin-mobile.jpg">
+          <img src="assets/img/exp-songzanlin.jpg" alt="Monks in crimson robes walking a sunlit lane at Songzanlin Monastery, Shangri-La">
+        </picture>
+        <div class="b">
+          <div class="loc">Shangri-La · Yunnan</div>
+          <h3>Dawn prayers at Songzanlin</h3>
+          <p>The hillside lamasery they call the little Potala, before the first visitors arrive — butter tea with the monks as the morning chant begins.</p>
+        </div>
+      </article>
+
+      <article class="excard fade">
+        <img src="assets/img/exp-mushroom.jpg" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan">
+        <div class="b">
+          <div class="loc">Yunnan · Jun–Sep</div>
+          <h3>The wild-mushroom table</h3>
+          <p>Into the pine forests with a master forager to hunt matsutake and porcini — then watch the morning's haul become dinner at a local chef's table.</p>
+        </div>
+      </article>
+
+      <article class="excard fade">
+        <img src="assets/img/exp-tea.jpg" alt="Tea pickers in conical hats working rolling terraced tea fields">
+        <div class="b">
+          <div class="loc">Lijiang · Yunnan</div>
+          <h3>Tea on the Tea Horse Road</h3>
+          <p>Aged pu'er poured by a tea master in a Naxi courtyard along the old caravan route — a thousand years of trade in one cup.</p>
+        </div>
+      </article>
+
+      <article class="excard wide fade">
+        <img src="assets/img/exp-westlake.jpg" alt="A wooden boat with passengers gliding under green willows on West Lake, Hangzhou">
+        <div class="b">
+          <div class="loc">Hangzhou</div>
+          <h3>West Lake by private boat</h3>
+          <p>A quiet wooden boat and an oarsman who has worked these waters for decades — on the lake at dawn, before it belongs to anyone else.</p>
+        </div>
+      </article>
+
+    </div>
+    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Chinese equivalent.</p>
+  </div>
+</section>
+
+<!-- WHERE YOU STAY -->
+<section class="stay" id="stay">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
+      <h2>Hotels worth the journey in their own right.</h2>
+      <p>Never simply "the hotel near the course." Each journey moves between a handful of carefully chosen addresses — the styles we return to most:</p>
+    </div>
+    <div class="stay-grid">
+
+      <article class="scard fade">
+        <img src="assets/img/stay-city.jpg" alt="Golden roofs and vermilion walls of the Forbidden City, Beijing">
+        <div class="b">
+          <div class="loc">Shanghai · Beijing</div>
+          <h3>City landmarks</h3>
+          <p>Storied addresses on the Bund and beside the Forbidden City — the likes of the Waldorf Astoria's hutong courtyards in Beijing.</p>
+        </div>
+      </article>
+
+      <article class="scard fade">
+        <img src="assets/img/stay-lakeside.jpg" alt="Leifeng Pagoda above West Lake, with lotus beds and a wooden boat, Hangzhou">
+        <div class="b">
+          <div class="loc">Hangzhou · Kunming</div>
+          <h3>Garden &amp; lakeside estates</h3>
+          <p>Jiangnan calm between rounds — the likes of the Four Seasons on West Lake, all temple bells and still water.</p>
+        </div>
+      </article>
+
+      <article class="scard fade">
+        <img src="assets/img/stay-mountain.jpg" alt="Naxi rooftops in Lijiang with Jade Dragon Snow Mountain glowing at sunset">
+        <div class="b">
+          <div class="loc">Lijiang</div>
+          <h3>Mountain retreats</h3>
+          <p>The likes of Banyan Tree Lijiang — Naxi-style villas where the snow mountain fills the window at breakfast.</p>
+        </div>
+      </article>
+
+      <article class="scard fade">
+        <img src="assets/img/hero-blackstone.jpg" alt="A tropical golf coastline in Hainan">
+        <div class="b">
+          <div class="loc">Hainan</div>
+          <h3>Island hideaways</h3>
+          <p>Barefoot luxury on a tropical coast, minutes from the first tee — the likes of Rosewood on Hainan's shore.</p>
+        </div>
+      </article>
+
+    </div>
+    <p class="note fade">Every stay is hand-picked for your route, your party and the season — at the level of comfort you choose, booked entirely on your behalf.</p>
+  </div>
+</section>
+
+<!-- BEYOND GOLF -->
+<section id="experiences">
+  <div class="container">
+    <div class="section-head center fade">
+      <span class="eyebrow">Beyond Golf</span>
+      <h2>Designed around your whole party.</h2>
+      <p>Golf is the thread — but the journey is bigger. While you play, partners and family have their own days arranged, from private cultural experiences to guides and dining.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="ecard fade"><img src="assets/img/fuchun-mist.jpg" alt="A serene garden resort in the mist"><div class="b"><h3>For non-golfers</h3><p>Spa, shopping, tea, design hotels, private guides and relaxed cultural days.</p></div></div>
+      <div class="ecard fade"><img src="assets/img/place-lijiang.jpg" alt="Lijiang old town lanes"><div class="b"><h3>For families</h3><p>A flexible pace, cultural activities, soft adventure and kid-friendly options.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow" style="color:var(--gold)">How It Works</span>
+      <h2>Three steps to a private proposal.</h2>
+      <p>No fixed itineraries to choose from — just a conversation, and a journey shaped entirely around you.</p>
+    </div>
+    <div class="how-grid">
+      <div class="step fade"><div class="n">1</div><h4>Tell us the essentials</h4><p>Your dates, group size and golf level — and anything that matters to your party.</p></div>
+      <div class="step fade"><div class="n">2</div><h4>Choose your destinations</h4><p>Pick the regions that appeal, or let us recommend a route based on your timing and interests.</p></div>
+      <div class="step fade"><div class="n">3</div><h4>Receive a private proposal</h4><p>A tailored plan with courses, hotels, transfers and cultural experiences, ready to refine.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHO WE ARE — placeholder copy, replace with real founder story & photo -->
+<section class="about" id="about">
+  <div class="container about-wrap">
+    <img class="photo fade" src="assets/img/about-team.jpg" alt="The Golf China team standing together on a golf course fairway">
+    <div class="txt fade">
+      <span class="eyebrow">Who We Are</span>
+      <h2>Built by people who live between two worlds.</h2>
+      <!-- TODO: placeholder story — replace with the real one -->
+      <p>Golf China began with a simple observation: the golfers who know the world's great courses almost never know China's — not because the golf isn't there, but because the clubs are private and no one had opened the doors. So we became the first golf travel company dedicated to China, and built the relationships ourselves.</p>
+      <p>Our team grew up here, plays here, and has spent years moving international travelers through China. Through our exclusive club relationships and a long-standing partnership with China Tourism Group, we have people on the ground in every destination we send you — handling the clubs and the visas, but also knowing which courtyard pours the best pu'er and which stretch of the Wall is empty at sunset. Every enquiry is answered personally, by someone who has walked the route you'll travel.</p>
+      <p class="sig">— The Golf China team</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="plan" id="plan">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Plan Your Trip</span>
+      <h2>Everything handled, before you arrive.</h2>
+      <p>Traveling to China is more straightforward than most expect. We take care of the details that trip up first-time visitors.</p>
+    </div>
+    <div class="plan-grid fade">
+      <div class="plan-item"><h4><span class="dot"></span>Visas &amp; Entry</h4><p>Many nationalities now qualify for visa-free or transit-visa entry. We advise on eligibility and paperwork.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Mobile Payments</h4><p>We set you up with Alipay and WeChat Pay before you land, so you can pay seamlessly anywhere.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Getting Around</h4><p>Private drivers paired with China's high-speed rail — every transfer and tee-time logistic arranged.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Best Season</h4><p>Beijing and Shanghai in spring and autumn; Hainan in winter; Yunnan and Guilin near year-round.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Clubs &amp; Gear</h4><p>Premium rental sets arranged at every course, or shipping support for your own bag.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Connectivity</h4><p>eSIM, roaming and app setup guidance so you stay connected throughout the journey.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- INDICATIVE INVESTMENT -->
 <section class="invest" id="investment">
   <div class="container">
@@ -734,21 +957,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </div>
     </div>
     <p class="disclaimer fade">Final pricing depends on hotel level, travel season, party size, routing, and private-club access approval.</p>
-  </div>
-</section>
-
-<!-- ABOUT / WHO WE ARE — placeholder copy, replace with real founder story & photo -->
-<section class="about" id="about">
-  <div class="container about-wrap">
-    <img class="photo fade" src="assets/img/about-team.jpg" alt="The Golf China team standing together on a golf course fairway">
-    <div class="txt fade">
-      <span class="eyebrow">Who We Are</span>
-      <h2>Built by people who live between two worlds.</h2>
-      <!-- TODO: placeholder story — replace with the real one -->
-      <p>The world's great golfers know every famous course — except China's. Not because the golf isn't here, but because the clubs are private and no one had opened the doors. So we did — as China's first golf travel company.</p>
-      <p>Our team lives here, plays here, and has people on the ground in every destination — handling the clubs and the visas, and knowing which stretch of the Wall is empty at sunset. Every enquiry is answered personally.</p>
-      <p class="sig">— The Golf China team</p>
-    </div>
   </div>
 </section>
 
@@ -797,10 +1005,10 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="cols">
       <div>
         <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></div>
-        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:400">China's first golf travel company — private, tailor-made journeys with exclusive access to the country's most private clubs.</p>
+        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">China's first golf travel company — private, tailor-made journeys with exclusive access to the country's most private clubs.</p>
       </div>
-      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#investment">Indicative Investment</a></li><li><a href="#credentials">Access &amp; Credentials</a></li><li><a href="#about">Who We Are</a></li></ul></div>
-      <div><h5>Destinations</h5><ul><li><a href="imperial-china.html">Imperial China · Beijing</a></li><li><a href="jiangnan-modern-china.html">Jiangnan &amp; Modern China</a></li><li><a href="south-of-the-clouds.html">South of the Clouds · Yunnan</a></li><li><a href="asias-most-exclusive-golf.html">Asia's Most Exclusive Golf · Hainan</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Signature Experiences</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
+      <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#experiences">Beyond Golf</a></li><li><a href="#investment">Indicative Investment</a></li><li><a href="#start">Request a Proposal</a></li></ul></div>
       <div><h5>Contact</h5><ul><li>hello@golfchina.com</li><li>WeChat: GolfChina</li><li><a href="#start">Enquire now</a></li></ul></div>
     </div>
     <div class="base">
@@ -819,6 +1027,11 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+const moreBtn=document.getElementById('course-more');
+if(moreBtn){moreBtn.addEventListener('click',()=>{
+  const s=document.getElementById('courses');s.classList.add('show-all');
+  s.querySelectorAll('.ccard.more').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),i*90));
+});}
 document.querySelectorAll('.chinamap .pin').forEach(p=>{
   const go=()=>{const t=document.getElementById(p.dataset.target);if(!t)return;
     t.scrollIntoView({behavior:'smooth',block:'center'});
