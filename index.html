@@ -134,7 +134,7 @@ section{padding:100px 0}
 .proof .stats{display:flex;flex-direction:column;gap:24px}
 .proof .stat{border-left:2px solid var(--gold);padding-left:20px}
 .proof .stat h3{font-family:var(--serif);font-size:clamp(23px,2.6vw,30px);line-height:1.2;color:var(--pine);font-weight:500}
-.proof .stat h3 em{font-style:normal;color:var(--cinnabar);font-weight:600}
+.proof .stat h3 em{font-style:normal;color:var(--gold);font-weight:600}
 .proof .stat p{font-size:13px;color:#6a766d;margin-top:5px;font-weight:400}
 .proof .legends{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,22px);color:var(--pine);margin-top:32px;max-width:40ch}
 @media(max-width:880px){
@@ -510,16 +510,23 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 </section>
 
 <!-- BY THE NUMBERS -->
-<section class="statband" id="proof">
-  <div class="container">
-    <span class="eyebrow fade" style="color:var(--gold)">World-Class · Yet Private</span>
-    <p class="lead-line fade" style="margin-top:14px">Some of the world's greatest golf is in China.</p>
-    <p class="sub fade">And, until now, almost no one outside it had played there.</p>
-    <div class="nums">
-      <div class="fade"><div class="nb"><small>№</small>1</div><div class="claim">Asia's most exclusive club</div><div class="src">Shanqin Bay · by invitation only</div></div>
-      <div class="fade"><div class="nb"><small>№</small>14</div><div class="claim">A top-15 course on Earth</div><div class="src">Shanqin Bay · Golf Digest's 100 Greatest</div></div>
-      <div class="fade"><div class="nb">4</div><div class="claim">Courses in the World's Top 100</div><div class="src">Sheshan · Spring City · Shanqin · Blackstone</div></div>
-      <div class="fade"><div class="nb">8,548<small> yd</small></div><div class="claim">The longest course on Earth</div><div class="src">Jade Dragon · beneath a glacier</div></div>
+<!-- NOTE: Tiger photo appears to be tournament press imagery — confirm usage rights before launch -->
+<section class="proof" id="proof">
+  <div class="container proof-wrap">
+    <figure class="fade">
+      <img src="assets/img/proof-tiger.jpg" alt="Tiger Woods tees off in front of a crowd at Mission Hills Haikou, Hainan">
+      <figcaption>Tiger Woods at Mission Hills Haikou — The Match at Mission Hills, played on the Blackstone course.</figcaption>
+    </figure>
+    <div class="fade">
+      <span class="eyebrow">By The Numbers</span>
+      <h2 class="ph2">Some of the world's greatest courses are in China.</h2>
+      <div class="stats">
+        <div class="stat"><h3>Asia's <em>most exclusive</em> golf club.</h3><p>Shanqin Bay — no public tee sheet, guest play by invitation only.</p></div>
+        <div class="stat"><h3>The <em>14th greatest</em> course on earth.</h3><p>Shanqin Bay — Golf Digest's World's 100 Greatest ranking.</p></div>
+        <div class="stat"><h3><em>4 courses</em>, World Top 100.</h3><p>Sheshan, Spring City, Shanqin Bay and Blackstone — Golf Digest.</p></div>
+        <div class="stat"><h3><em>8 of China's 10 best</em> courses.</h3><p>All on our roster — Golf Digest's Best-in-China ranking.</p></div>
+      </div>
+      <p class="legends">Tiger Woods, Rory McIlroy, Phil Mickelson and Dustin Johnson have all played these fairways.</p>
     </div>
   </div>
 </section>
