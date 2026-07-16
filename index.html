@@ -274,36 +274,40 @@ section{padding:100px 0}
 
 /* ===== SIGNATURE EXPERIENCES ===== */
 .exclusives{background:var(--paper);border-top:1px solid var(--mist)}
-.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:295px;gap:20px}
-.excard{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift)}
-.excard.feature{grid-row:span 2}
-.excard.wide{grid-column:span 2}
-@media(max-width:560px){.excard.wide{grid-column:span 1}}
+.ex-carousel{position:relative}
+.ex-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ex-track::-webkit-scrollbar{display:none}
+.excard{position:relative;flex:0 0 min(340px,80vw);height:450px;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift);scroll-snap-align:start}
 .excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .excard:hover img{transform:scale(1.05)}
+.excard .kind{position:absolute;top:14px;left:14px;z-index:2;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:#fff;background:rgba(20,36,28,.5);backdrop-filter:blur(4px);padding:6px 11px;border-radius:2px}
 .excard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
 .excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .excard h3{font-size:23px;margin:6px 0 7px}
-.excard.feature h3{font-size:28px}
-.excard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
-.exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
-@media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
-@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
+.excard p{font-size:14.5px;color:rgba(255,255,255,.88);font-weight:300}
+.ex-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--pine);font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px -12px rgba(20,36,28,.4);transition:.25s}
+.ex-nav:hover{background:var(--pine);border-color:var(--pine);color:#fff}
+.ex-nav.prev{left:-22px}
+.ex-nav.next{right:-22px}
+.exclusives .note{text-align:center;margin-top:30px;font-size:15px;color:#54635a}
+@media(max-width:760px){.ex-nav{display:none}.excard{height:410px}.ex-track{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px}}
 
-/* ===== WHERE YOU STAY ===== */
-.stay{background:var(--pine);color:#fff}
-.stay .section-head h2{color:#fff}.stay .section-head p{color:rgba(255,255,255,.72)}
-.stay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-@media(max-width:920px){.stay-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.stay-grid{grid-template-columns:1fr}}
-.scard{position:relative;border-radius:2px;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--lift);border:1px solid rgba(255,255,255,.08)}
-.scard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
-.scard:hover img{transform:scale(1.06)}
-.scard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.92))}
-.scard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
-.scard h3{font-size:21px;margin:6px 0 6px}
-.scard p{font-size:14.5px;opacity:.9;font-weight:300}
-.stay .note{text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)}
+/* ===== WHERE YOU STAY (A&K-style recommended hotels) ===== */
+.stay{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
+.hotel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.hcard{background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s ease,transform .3s ease}
+.hcard:hover{box-shadow:var(--lift);transform:translateY(-4px)}
+.hcard .ph{aspect-ratio:4/5;overflow:hidden}
+.hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.hcard:hover .ph img{transform:scale(1.05)}
+.hcard .b{padding:20px 18px 18px;display:flex;flex-direction:column;flex:1}
+.hcard .loc{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.hcard h3{font-size:24px;margin:8px 0 18px;font-weight:500;color:var(--pine)}
+.hcard .btn-view{margin-top:auto;display:block;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:12px 10px;border:1px solid var(--pine);border-radius:2px;color:var(--pine);transition:.25s}
+.hcard .btn-view:hover{background:var(--pine);color:#fff}
+@media(max-width:920px){.hotel-row{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.hotel-row{grid-template-columns:1fr}}
+.stay .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
 
 /* ===== BEYOND GOLF (audiences) ===== */
 .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -793,101 +797,127 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <section class="exclusives" id="exclusives">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">Beyond the Course</span>
+      <span class="eyebrow">Beyond the Fairway</span>
       <h2>China beyond the first tee.</h2>
-      <p>The golf may shape the route, but it should never be the only reason to come. We build private cultural experiences, food, nature and time at a slower pace around every journey — without turning the trip into a checklist of tourist attractions.</p>
+      <p>The golf may shape the route, but it should never be the only reason to come. We build private cultural experiences, food, nature and remarkable places to stay around every journey — without turning the trip into a checklist of tourist attractions.</p>
     </div>
-    <div class="ex-grid">
+    <div class="ex-carousel fade">
+      <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
+      <div class="ex-track" aria-label="Experiences and stays carousel">
 
-      <article class="excard feature fade">
-        <picture>
-          <source media="(max-width:760px)" srcset="assets/img/exp-songzanlin-mobile.jpg">
-          <img src="assets/img/exp-songzanlin.jpg" alt="Monks in crimson robes walking a sunlit lane at Songzanlin Monastery, Shangri-La">
-        </picture>
-        <div class="b">
-          <div class="loc">Shangri-La · Yunnan</div>
-          <h3>Dawn at Songzanlin</h3>
-          <p>Enter Songzanlin Monastery early in the morning, before the day's visitors arrive. Explore its Tibetan Buddhist history with a private local guide while the monastery is still quiet.</p>
-        </div>
-      </article>
+        <article class="excard">
+          <span class="kind">Experience</span>
+          <picture>
+            <source media="(max-width:760px)" srcset="assets/img/exp-songzanlin-mobile.jpg">
+            <img src="assets/img/exp-songzanlin.jpg" alt="Monks in crimson robes walking a sunlit lane at Songzanlin Monastery, Shangri-La">
+          </picture>
+          <div class="b">
+            <div class="loc">Shangri-La · Yunnan</div>
+            <h3>Dawn at Songzanlin</h3>
+            <p>Enter Songzanlin Monastery before the day's visitors arrive, exploring its Tibetan Buddhist history with a private guide while it is still quiet.</p>
+          </div>
+        </article>
 
-      <article class="excard fade">
-        <img src="assets/img/exp-mushroom.jpg" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan">
-        <div class="b">
-          <div class="loc">Yunnan · June to September</div>
-          <h3>The Wild-Mushroom Table</h3>
-          <p>Walk through Yunnan's mountain forests with a local mushroom expert, then return for a private meal prepared around what was found that morning. A seasonal experience rooted completely in the region.</p>
-        </div>
-      </article>
+        <article class="excard">
+          <span class="kind">Experience</span>
+          <img src="assets/img/exp-mushroom.jpg" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan" loading="lazy">
+          <div class="b">
+            <div class="loc">Yunnan · June to September</div>
+            <h3>The Wild-Mushroom Table</h3>
+            <p>Walk the mountain forests with a local mushroom expert, then sit down to a private meal built around what was found that morning.</p>
+          </div>
+        </article>
 
-      <article class="excard fade">
-        <img src="assets/img/exp-tea.jpg" alt="Tea pickers in conical hats working rolling terraced tea fields">
-        <div class="b">
-          <div class="loc">Lijiang · Yunnan</div>
-          <h3>Tea on the Tea Horse Road</h3>
-          <p>Taste tea inside a private Naxi courtyard along the ancient Tea Horse Road. The experience connects Yunnan's tea culture with the traders, horses and communities that once moved through these mountains.</p>
-        </div>
-      </article>
+        <article class="excard">
+          <span class="kind">Experience</span>
+          <img src="assets/img/exp-westlake.jpg" alt="A wooden boat with passengers gliding under green willows on West Lake, Hangzhou" loading="lazy">
+          <div class="b">
+            <div class="loc">Hangzhou</div>
+            <h3>West Lake by Private Boat</h3>
+            <p>Cross West Lake aboard a private wooden boat in the early morning — quiet water, mist over the hills, the shoreline almost to yourself.</p>
+          </div>
+        </article>
 
-      <article class="excard wide fade">
-        <img src="assets/img/exp-westlake.jpg" alt="A wooden boat with passengers gliding under green willows on West Lake, Hangzhou">
-        <div class="b">
-          <div class="loc">Hangzhou</div>
-          <h3>West Lake by Private Boat</h3>
-          <p>Cross West Lake aboard a private wooden boat in the early morning, before the shoreline becomes busy. Quiet water, mist over the hills and one of China's most iconic landscapes almost entirely to yourself.</p>
-        </div>
-      </article>
+        <article class="excard">
+          <span class="kind">Stay</span>
+          <!-- TODO: replace with a real hutong courtyard-hotel scene -->
+          <img src="assets/img/dest-beijing.jpg" alt="Golden-roofed halls of the Forbidden City at dusk, Beijing" loading="lazy">
+          <div class="b">
+            <div class="loc">Beijing</div>
+            <h3>A Courtyard Stay in Beijing</h3>
+            <p>Nights in a restored hutong courtyard — the likes of the Waldorf Astoria's courtyard villas — with imperial Beijing outside the door.</p>
+          </div>
+        </article>
 
+        <article class="excard">
+          <span class="kind">Stay</span>
+          <!-- TODO: replace with a courtyard-retreat scene rather than a course view -->
+          <img src="assets/img/jadedragon-view.jpg" alt="Jade Dragon Snow Mountain rising above pine forest, Lijiang" loading="lazy">
+          <div class="b">
+            <div class="loc">Lijiang · Yunnan</div>
+            <h3>A Mountain Retreat in Lijiang</h3>
+            <p>Stone courtyards and Naxi-style villas beneath Jade Dragon Snow Mountain, Banyan Tree Lijiang among them.</p>
+          </div>
+        </article>
+
+        <article class="excard">
+          <span class="kind">Stay</span>
+          <img src="assets/img/stay-sanya-coast.jpg" alt="Palm trees and a lagoon pool meeting the beach on the Hainan coast" loading="lazy">
+          <div class="b">
+            <div class="loc">Hainan</div>
+            <h3>Hainan Island Hideaway</h3>
+            <p>Beachfront villas and quiet coves within easy reach of the island's finest courses — the likes of Rosewood.</p>
+          </div>
+        </article>
+
+      </div>
+      <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
-    <p class="note fade">These are examples, not fixed inclusions. We begin with what genuinely interests your group, then build the experiences around it.</p>
+    <p class="note fade">Traveling with non-golfers? Every journey can be designed around the whole group.</p>
   </div>
 </section>
 
-<!-- WHERE YOU STAY -->
+<!-- WHERE YOU STAY — A&K-style recommended hotel cards -->
 <section class="stay" id="stay">
   <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
+    <div class="section-head center fade">
+      <span class="eyebrow">Where You Stay</span>
       <h2>Stays that belong to the journey.</h2>
       <p>We do not choose hotels simply because they are five-star. We look for places with character, a strong sense of location and the level of service the journey deserves.</p>
     </div>
-    <div class="stay-grid">
+    <div class="hotel-row">
 
-      <article class="scard fade">
-        <img src="assets/img/stay-city.jpg" alt="Golden roofs and vermilion walls of the Forbidden City, Beijing">
+      <!-- TODO: replace with authorised hotel image — save as assets/img/hotel-peninsula-shanghai.jpg (long edge ≤1600px, q~82) -->
+      <article class="hcard fade">
+        <div class="ph"><img src="assets/img/exp-heritage-bund.jpg" alt="The Peninsula Shanghai on the Bund" loading="lazy"></div>
         <div class="b">
-          <div class="loc">Beijing · Shanghai</div>
-          <h3>City Landmarks</h3>
-          <p>Historic addresses on the Bund, private courtyard hotels in Beijing's hutongs and contemporary city hotels positioned close to the places worth experiencing.</p>
+          <div class="loc">Shanghai, China</div>
+          <h3>The Peninsula Shanghai</h3>
+          <a class="btn-view" href="jiangnan-modern-china.html">View Details</a>
         </div>
       </article>
 
-      <article class="scard fade">
-        <img src="assets/img/stay-lakeside.jpg" alt="Leifeng Pagoda above West Lake, with lotus beds and a wooden boat, Hangzhou">
+      <!-- TODO: replace with authorised hotel image — save as assets/img/hotel-waldorf-astoria-shanghai.jpg (long edge ≤1600px, q~82) -->
+      <article class="hcard fade">
+        <div class="ph"><img src="assets/img/exp-bund.jpg" alt="Waldorf Astoria Shanghai on the Bund" loading="lazy"></div>
         <div class="b">
-          <div class="loc">Hangzhou · Kunming</div>
-          <h3>Garden &amp; Lakeside Retreats</h3>
-          <p>Quiet resorts beside West Lake, Yangzong Lake and the tea hills surrounding Hangzhou. Places designed to slow the journey down between rounds.</p>
+          <div class="loc">Shanghai, China</div>
+          <h3>Waldorf Astoria Shanghai on the Bund</h3>
+          <a class="btn-view" href="jiangnan-modern-china.html">View Details</a>
         </div>
       </article>
 
-      <article class="scard fade">
-        <img src="assets/img/stay-mountain.jpg" alt="Naxi rooftops in Lijiang with Jade Dragon Snow Mountain glowing at sunset">
+      <!-- TODO: replace with authorised hotel image — save as assets/img/hotel-banyan-tree-lijiang.jpg (long edge ≤1600px, q~82) -->
+      <article class="hcard fade">
+        <div class="ph"><img src="assets/img/place-lijiang.jpg" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain" loading="lazy"></div>
         <div class="b">
-          <div class="loc">Dali · Lijiang · Shangri-La</div>
-          <h3>Mountain Retreats</h3>
-          <p>Stone courtyards, Naxi-style villas and mountain lodges surrounded by some of western China's most extraordinary scenery.</p>
+          <div class="loc">Lijiang, China</div>
+          <h3>Banyan Tree Lijiang</h3>
+          <a class="btn-view" href="south-of-the-clouds.html">View Details</a>
         </div>
       </article>
 
-      <article class="scard fade">
-        <img src="assets/img/hero-blackstone.jpg" alt="A tropical golf coastline in Hainan">
-        <div class="b">
-          <div class="loc">Hainan</div>
-          <h3>Island Hideaways</h3>
-          <p>Beachfront resorts, tropical villas and private stays within easy reach of Hainan's leading courses.</p>
-        </div>
-      </article>
+      <!-- TODO: more hotels to come (Beijing, Hangzhou, Hainan…) — duplicate an .hcard above -->
 
     </div>
     <p class="note fade">We present a carefully selected range of options based on your route, the season and how you prefer to travel.</p>
@@ -1058,7 +1088,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private golf journeys across China, built around world-class courses, rare access and a country unlike anywhere else.</p>
         <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">From the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China</a>.</p>
       </div>
-      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Signature Experiences</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Beyond the Fairway</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
       <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#experiences">Beyond Golf</a></li><li><a href="#investment">Indicative Pricing</a></li><li><a href="#start">Request a Proposal</a></li></ul></div>
       <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="#start">Enquire now</a></li></ul></div>
     </div>
@@ -1096,6 +1126,11 @@ document.querySelectorAll('.chinamap .pin').forEach(p=>{
   p.addEventListener('click',go);
   p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
+const exTrack=document.querySelector('.ex-track');
+if(exTrack){document.querySelectorAll('.ex-nav').forEach(btn=>btn.addEventListener('click',()=>{
+  const step=exTrack.querySelector('.excard').getBoundingClientRect().width+20;
+  exTrack.scrollBy({left:btn.classList.contains('next')?step:-step,behavior:'smooth'});
+}));}
 document.querySelectorAll('.bigcard').forEach(card=>{
   const link=card.querySelector('.foot a');if(!link)return;
   card.addEventListener('click',e=>{if(e.target.closest('a'))return;window.location.href=link.href;});
