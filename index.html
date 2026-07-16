@@ -325,6 +325,19 @@ section{padding:100px 0}
 .about .txt h2{font-size:clamp(30px,4vw,44px);margin:14px 0 18px;color:var(--pine)}
 .about .txt p{font-size:16px;color:#4a5a50;max-width:58ch;margin-bottom:16px}
 .about .sig{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--pine);margin-top:8px}
+.about .txt p a{border-bottom:1px solid rgba(31,61,46,.35);transition:border-color .3s}
+.about .txt p a:hover{border-color:var(--gold)}
+
+/* ===== BRAND FAMILY ===== */
+.family{background:var(--ivory);border-top:1px solid var(--mist);padding:72px 0}
+.family .fam-head{text-align:center;font-size:13px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--pine);margin-bottom:44px}
+.family .fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:760px;margin:0 auto;text-align:center}
+@media(max-width:600px){.family .fam-grid{grid-template-columns:1fr;gap:40px}}
+.family .fam-col h3{font-family:var(--serif);font-size:23px;color:var(--pine);margin-bottom:8px;font-weight:600}
+.family .fam-col h3 span{color:var(--gold)}
+.family .fam-col p{font-size:14px;color:#54635a;font-weight:300;max-width:32ch;margin:0 auto}
+.family .fam-link{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color .3s}
+.family .fam-link:hover{color:var(--gold)}
 
 /* ===== PLAN ===== */
 .plan{background:var(--ivory);border-top:1px solid var(--mist)}
@@ -903,9 +916,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="txt fade">
       <span class="eyebrow">Who We Are</span>
       <h2>Built by people who live between two worlds.</h2>
-      <!-- TODO: placeholder story — replace with the real one -->
-      <p>Golf China began with a simple observation: the golfers who know the world's great courses almost never know China's — not because the golf isn't there, but because the clubs are private and no one had opened the doors. So we became the first golf travel company dedicated to China, and built the relationships ourselves.</p>
-      <p>Our team grew up here, plays here, and has spent years moving international travelers through China. Through our exclusive club relationships and a long-standing partnership with China Tourism Group, we have people on the ground in every destination we send you — handling the clubs and the visas, but also knowing which courtyard pours the best pu'er and which stretch of the Wall is empty at sunset. Every enquiry is answered personally, by someone who has walked the route you'll travel.</p>
+      <p>Golf China was created by the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">Surf China Co.</a>, after years of designing private surf, golf and cultural journeys for international travelers in Hainan. What began on one tropical island has grown into a dedicated golf travel brand, opening up China's most exceptional courses and destinations to travelers from around the world.</p>
+      <p>We saw that even well-traveled golfers rarely knew about China's greatest courses — not because the golf was not here, but because many of the country's best clubs are private, reliable information is difficult to find, and very few companies know how to connect the entire journey.</p>
+      <p>So we built the connections ourselves. Our team grew up here and plays here, and through our exclusive club relationships and a long-standing partnership with China Tourism Group, we have people on the ground in every destination we send you — arranging the tee times, transport, hotels and visas, but also knowing which courtyard pours the best pu'er and which stretch of the Wall is empty at sunset. Every itinerary is designed from scratch, and every enquiry is answered personally, by someone who has walked the route you'll travel.</p>
       <p class="sig">— The Golf China team</p>
     </div>
   </div>
@@ -999,6 +1012,24 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
+<!-- BRAND FAMILY -->
+<section class="family" aria-label="Our brand family">
+  <div class="container">
+    <p class="fam-head fade">One team. Two ways to discover China.</p>
+    <div class="fam-grid fade">
+      <div class="fam-col">
+        <h3>Golf <span>China</span></h3>
+        <p>Private golf journeys across China.</p>
+      </div>
+      <div class="fam-col">
+        <h3>Surf China Co.</h3>
+        <p>Private surf and golf journeys in tropical Hainan.</p>
+        <a class="fam-link" href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">Explore Surf China Co. &#8599;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -1006,14 +1037,14 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <div>
         <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></div>
         <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">China's first golf travel company — private, tailor-made journeys with exclusive access to the country's most private clubs.</p>
+        <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>
       <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Signature Experiences</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
       <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#experiences">Beyond Golf</a></li><li><a href="#investment">Indicative Investment</a></li><li><a href="#start">Request a Proposal</a></li></ul></div>
-      <div><h5>Contact</h5><ul><li>hello@golfchina.com</li><li>WeChat: GolfChina</li><li><a href="#start">Enquire now</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="#start">Enquire now</a></li></ul></div>
     </div>
     <div class="base">
       <span>© 2026 Golf China. All rights reserved.</span>
-      <span>Prototype · concept design</span>
     </div>
   </div>
 </footer>
