@@ -305,8 +305,53 @@ section{padding:100px 0}
 .hcard .b{padding:20px 18px 18px;display:flex;flex-direction:column;flex:1}
 .hcard .loc{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .hcard h3{font-size:24px;margin:8px 0 18px;font-weight:500;color:var(--pine)}
-.hcard .btn-view{margin-top:auto;display:block;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:12px 10px;border:1px solid var(--pine);border-radius:2px;color:var(--pine);transition:.25s}
+.hcard .btn-view{margin-top:auto;display:block;width:100%;background:transparent;cursor:pointer;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:12px 10px;border:1px solid var(--pine);border-radius:2px;color:var(--pine);transition:.25s}
 .hcard .btn-view:hover{background:var(--pine);color:#fff}
+/* hotel detail modal */
+.hmodal{position:fixed;inset:0;z-index:300;display:none}
+.hmodal.open{display:block}
+.hmodal .ov{position:absolute;inset:0;background:rgba(20,36,28,.6)}
+.hmodal .panel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1010px,94vw);max-height:90vh;overflow-y:auto;background:var(--paper);border-radius:2px;box-shadow:var(--lift)}
+.hm-head{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:18px 26px;background:var(--paper);border-bottom:1px solid var(--mist)}
+.hm-head .eyebrow{color:var(--pine);letter-spacing:.22em}
+.hm-close{background:none;border:none;cursor:pointer;font-size:26px;line-height:1;color:var(--pine);padding:2px 6px;transition:.25s}
+.hm-close:hover{color:var(--cinnabar)}
+.hm-main{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;padding:26px}
+.hm-gallery{position:relative;aspect-ratio:5/4;overflow:hidden;border-radius:2px;background:var(--mist)}
+.hm-gallery img{width:100%;height:100%;object-fit:cover;display:block}
+.hg-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--pine);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px -10px rgba(20,36,28,.45);transition:.25s}
+.hg-nav:hover{background:var(--pine);border-color:var(--pine);color:#fff}
+.hg-nav.prev{left:14px}.hg-nav.next{right:14px}
+.hg-tag{position:absolute;left:14px;bottom:14px;background:rgba(20,36,28,.85);color:#fff;font-size:11.5px;font-weight:400;letter-spacing:.04em;padding:8px 13px;border-radius:2px}
+.hm-info h3{font-size:clamp(27px,3vw,34px);line-height:1.12;margin:0 0 8px;color:var(--ink)}
+.hm-info .loc{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
+.hm-info .desc{font-size:15px;line-height:1.75;color:#4a5a50;font-weight:300}
+.hm-jlink{display:inline-block;margin-top:22px;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--pine);border-bottom:1px solid var(--gold);padding:0 0 4px}
+.hm-jlink:hover{color:var(--moss)}
+.hm-expert{display:flex;align-items:center;gap:16px;background:var(--ivory);border-left:3px solid var(--gold);padding:18px 20px;margin-top:26px}
+.hm-expert .mk{flex:0 0 44px;width:44px;height:44px;border-radius:999px;background:var(--pine);color:#fff;font-family:var(--serif);font-size:19px;display:flex;align-items:center;justify-content:center}
+.hm-expert .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--pine);font-weight:500}
+.hm-expert p{font-size:14px;color:#4a5a50;margin-top:4px;font-weight:300}
+.hm-expert .btn{margin-left:auto;white-space:nowrap;padding:13px 24px}
+.hm-journeys{border-top:1px solid var(--mist);padding:32px 26px 38px;text-align:center;background:var(--ivory)}
+.hm-journeys h4{font-family:var(--serif);font-size:clamp(23px,2.6vw,28px);font-weight:500;color:var(--ink);margin:10px 0 20px}
+.hm-jcard{display:flex;max-width:660px;margin:0 auto;border:1px solid var(--mist);border-radius:2px;overflow:hidden;background:var(--paper);text-align:left}
+.hm-jcard .jimg{flex:0 0 42%;min-height:210px;background-size:cover;background-position:center}
+.hm-jcard .jb{padding:22px 24px;display:flex;flex-direction:column;flex:1}
+.hm-jcard .specs{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.hm-jcard h5{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:7px 0 5px}
+.hm-jcard .route{font-size:14px;color:#54635a;font-weight:300}
+.hm-jcard .route span{color:var(--gold);padding:0 7px}
+.hm-jcard .jgo{margin-top:auto;padding-top:16px}
+@media(max-width:760px){
+  .hmodal .panel{inset:0;left:0;top:0;width:100%;height:100%;max-height:none;transform:none;border-radius:0}
+  .hm-main{grid-template-columns:1fr;gap:20px;padding:20px}
+  .hm-gallery{aspect-ratio:4/3}
+  .hm-expert{flex-wrap:wrap}.hm-expert .btn{margin-left:0;width:100%;text-align:center}
+  .hm-jcard{flex-direction:column}.hm-jcard .jimg{min-height:190px}
+  .hm-journeys{padding:26px 20px 32px}
+}
+body.hm-lock{overflow:hidden}
 @media(max-width:920px){.hcard{flex-basis:calc((100% - 20px)/2)}}
 @media(max-width:760px){.hcard{flex-basis:78vw}.hotel-row{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px}}
 .stay .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
@@ -891,37 +936,43 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
       <div class="hotel-row">
 
-      <!-- TODO: replace with authorised hotel image — save as assets/img/hotel-peninsula-shanghai.jpg (long edge ≤1600px, q~82) -->
       <article class="hcard fade">
-        <div class="ph"><img src="assets/img/exp-heritage-bund.jpg" alt="The Peninsula Shanghai on the Bund" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/hotel-peninsula-beijing-card.jpg" alt="The Peninsula Beijing" loading="lazy"></div>
         <div class="b">
-          <div class="loc">Shanghai, China</div>
-          <h3>The Peninsula Shanghai</h3>
-          <a class="btn-view" href="jiangnan-modern-china.html">View Details</a>
+          <div class="loc">Beijing, China</div>
+          <h3>The Peninsula Beijing</h3>
+          <button class="btn-view" type="button" data-hotel="peninsula-beijing">View Details</button>
         </div>
       </article>
 
-      <!-- TODO: replace with authorised hotel image — save as assets/img/hotel-waldorf-astoria-shanghai.jpg (long edge ≤1600px, q~82) -->
       <article class="hcard fade">
-        <div class="ph"><img src="assets/img/exp-bund.jpg" alt="Waldorf Astoria Shanghai on the Bund" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/hotel-waldorf-shanghai-card.jpg" alt="Waldorf Astoria Shanghai on the Bund" loading="lazy"></div>
         <div class="b">
           <div class="loc">Shanghai, China</div>
           <h3>Waldorf Astoria Shanghai on the Bund</h3>
-          <a class="btn-view" href="jiangnan-modern-china.html">View Details</a>
+          <button class="btn-view" type="button" data-hotel="waldorf-shanghai">View Details</button>
         </div>
       </article>
 
-      <!-- TODO: replace with authorised hotel image — save as assets/img/hotel-banyan-tree-lijiang.jpg (long edge ≤1600px, q~82) -->
       <article class="hcard fade">
-        <div class="ph"><img src="assets/img/place-lijiang.jpg" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/hotel-banyan-tree-lijiang-card.jpg" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain" loading="lazy"></div>
         <div class="b">
           <div class="loc">Lijiang, China</div>
           <h3>Banyan Tree Lijiang</h3>
-          <a class="btn-view" href="south-of-the-clouds.html">View Details</a>
+          <button class="btn-view" type="button" data-hotel="banyan-tree-lijiang">View Details</button>
         </div>
       </article>
 
-      <!-- TODO: more hotels to come (Beijing, Hangzhou, Hainan…) — duplicate an .hcard above -->
+      <article class="hcard fade">
+        <div class="ph"><img src="assets/img/hotel-jinmao-purelax-card.jpg" alt="Jinmao Purelax Lijiang beneath Jade Dragon Snow Mountain" loading="lazy"></div>
+        <div class="b">
+          <div class="loc">Lijiang, China</div>
+          <h3>Jinmao Purelax Lijiang</h3>
+          <button class="btn-view" type="button" data-hotel="jinmao-purelax">View Details</button>
+        </div>
+      </article>
+
+      <!-- more hotels: duplicate an .hcard above + add an entry in the HOTELS object in the script at the bottom -->
 
       </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
@@ -929,6 +980,52 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <p class="note fade">We present a carefully selected range of options based on your route, the season and how you prefer to travel.</p>
   </div>
 </section>
+
+<!-- HOTEL DETAIL MODAL (populated by the HOTELS object in the script at the bottom) -->
+<div class="hmodal" id="hotel-modal" role="dialog" aria-modal="true" aria-labelledby="hm-name">
+  <div class="ov" data-close></div>
+  <div class="panel">
+    <div class="hm-head">
+      <span class="eyebrow">Hotels in China</span>
+      <button class="hm-close" type="button" data-close aria-label="Close">&times;</button>
+    </div>
+    <div class="hm-main">
+      <div class="hm-gallery">
+        <img id="hm-img" src="" alt="">
+        <button class="hg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+        <button class="hg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        <span class="hg-tag" id="hm-tag"></span>
+      </div>
+      <div class="hm-info">
+        <h3 id="hm-name"></h3>
+        <div class="loc" id="hm-loc"></div>
+        <p class="desc" id="hm-desc"></p>
+        <button class="hm-jlink" type="button" id="hm-jlink"></button>
+        <div class="hm-expert">
+          <div class="mk">GC</div>
+          <div>
+            <div class="k">Speak to an Expert</div>
+            <p id="hm-expert-line"></p>
+          </div>
+          <a class="btn btn-primary" href="#start" data-close>Enquire</a>
+        </div>
+      </div>
+    </div>
+    <div class="hm-journeys" id="hm-journeys">
+      <span class="eyebrow">Journeys</span>
+      <h4 id="hm-jtitle"></h4>
+      <div class="hm-jcard">
+        <div class="jimg" id="hm-jimg"></div>
+        <div class="jb">
+          <div class="specs" id="hm-jspecs"></div>
+          <h5 id="hm-jname"></h5>
+          <div class="route" id="hm-jroute"></div>
+          <div class="jgo"><a class="btn-line" id="hm-jgo" href="#">View Journey &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- BEYOND GOLF -->
 <section id="experiences">
@@ -1138,6 +1235,65 @@ document.querySelectorAll('.ex-nav').forEach(btn=>btn.addEventListener('click',(
   const step=track.firstElementChild.getBoundingClientRect().width+20;
   track.scrollBy({left:btn.classList.contains('next')?step:-step,behavior:'smooth'});
 }));
+/* ===== Hotel detail modal ===== */
+const HOTELS={
+ 'peninsula-beijing':{
+  name:'The Peninsula Beijing',loc:'Beijing, China',
+  desc:'Set on Wangfujing in the heart of the capital, The Peninsula Beijing is a short walk from the Forbidden City and the city’s finest shopping. A sweeping top-to-bottom renovation created some of the most generous rooms and suites in Beijing, finished in a calm, residential style, with celebrated Cantonese dining at Huang Ting and the Peninsula’s famously polished service. An ideal base between rounds at the capital’s leading courses and days among its imperial landmarks.',
+  imgs:['hotel-peninsula-beijing-card.jpg','hotel-peninsula-beijing-1.jpg','hotel-peninsula-beijing-2.jpg','hotel-peninsula-beijing-3.jpg','hotel-peninsula-beijing-4.jpg','hotel-peninsula-beijing-5.jpg','hotel-peninsula-beijing-6.jpg','hotel-peninsula-beijing-7.jpg'],
+  journey:{name:'Imperial China',specs:'6–7 Nights · 3 Rounds',route:['Beijing','The Great Wall'],href:'imperial-china.html',img:'assets/img/sj-firsttime.jpg'}
+ },
+ 'waldorf-shanghai':{
+  name:'Waldorf Astoria Shanghai on the Bund',loc:'Shanghai, China',
+  desc:'Occupying No. 2 on the Bund, with the storied 1911 Shanghai Club building at its heart, the Waldorf Astoria pairs restored colonial grandeur — including the famous Long Bar — with a contemporary tower above the Huangpu River. Generous rooms and a position at the foot of the Bund place both old and new Shanghai within easy reach, with the championship golf of Sheshan a straightforward drive away.',
+  imgs:['hotel-waldorf-shanghai-card.jpg','hotel-waldorf-shanghai-1.jpg','hotel-waldorf-shanghai-2.jpg','hotel-waldorf-shanghai-3.jpg','hotel-waldorf-shanghai-4.jpg','hotel-waldorf-shanghai-5.jpg','hotel-waldorf-shanghai-6.jpg','hotel-waldorf-shanghai-7.jpg','hotel-waldorf-shanghai-8.jpg'],
+  journey:{name:'Jiangnan & Modern China',specs:'6–7 Nights · 3 Rounds',route:['Shanghai','Hangzhou'],href:'jiangnan-modern-china.html',img:'assets/img/hero-shanghai-dusk.jpg'}
+ },
+ 'banyan-tree-lijiang':{
+  name:'Banyan Tree Lijiang',loc:'Lijiang, China',
+  desc:'At more than 2,400 metres, Banyan Tree Lijiang’s stone-walled villas and private courtyards look directly onto the peaks of Jade Dragon Snow Mountain. Built in the local Naxi style on the edge of Shuhe Ancient Town, around 45 minutes from Lijiang’s airport, it suits travellers who want traditional architecture, mountain air and unhurried service between rounds beneath the snow line.',
+  imgs:['hotel-banyan-tree-lijiang-card.jpg','hotel-banyan-tree-lijiang-1.jpg','hotel-banyan-tree-lijiang-2.jpg','hotel-banyan-tree-lijiang-3.jpg','hotel-banyan-tree-lijiang-4.jpg','hotel-banyan-tree-lijiang-5.jpg','hotel-banyan-tree-lijiang-6.jpg'],
+  journey:{name:'South of the Clouds',specs:'10–12 Nights · 5–6 Rounds',route:['Kunming','Lijiang','Shangri-La'],href:'south-of-the-clouds.html',img:'assets/img/jadedragon-fairway.jpg'}
+ },
+ 'jinmao-purelax':{
+  name:'Jinmao Purelax Lijiang',loc:'Lijiang, China',
+  desc:'Part of The Unbound Collection by Hyatt, Jinmao Purelax sits at Ganhaizi meadow on the slopes of Jade Dragon Snow Mountain — the closest luxury base to the peak itself. Every room, suite and villa opens onto a private balcony facing the mountain, and clear high-altitude nights bring some of Yunnan’s finest stargazing. Jade Dragon Snow Mountain Golf Club, the longest course in the world, is minutes away.',
+  imgs:['hotel-jinmao-purelax-card.jpg','hotel-jinmao-purelax-1.jpg','hotel-jinmao-purelax-2.jpg','hotel-jinmao-purelax-3.jpg','hotel-jinmao-purelax-4.jpg','hotel-jinmao-purelax-5.jpg','hotel-jinmao-purelax-6.jpg'],
+  journey:{name:'South of the Clouds',specs:'10–12 Nights · 5–6 Rounds',route:['Kunming','Lijiang','Shangri-La'],href:'south-of-the-clouds.html',img:'assets/img/jadedragon-fairway.jpg'}
+ }
+};
+const hmodal=document.getElementById('hotel-modal');
+if(hmodal){
+  let gal=[],gi=0;
+  const img=document.getElementById('hm-img');
+  const show=i=>{gi=(i+gal.length)%gal.length;img.src='assets/img/'+gal[gi];};
+  const open=id=>{
+    const d=HOTELS[id];if(!d)return;
+    document.getElementById('hm-name').textContent=d.name;
+    document.getElementById('hm-tag').textContent=d.name;
+    document.getElementById('hm-loc').textContent=d.loc;
+    document.getElementById('hm-desc').textContent=d.desc;
+    img.alt=d.name;
+    document.getElementById('hm-jlink').textContent='View journeys featuring '+d.name+' ↓';
+    document.getElementById('hm-expert-line').textContent='Contact us to include '+d.name+' in your journey.';
+    document.getElementById('hm-jtitle').textContent='Journeys featuring '+d.name;
+    document.getElementById('hm-jspecs').textContent=d.journey.specs;
+    document.getElementById('hm-jname').textContent=d.journey.name;
+    document.getElementById('hm-jroute').innerHTML=d.journey.route.join('<span>•</span>');
+    document.getElementById('hm-jgo').href=d.journey.href;
+    document.getElementById('hm-jimg').style.backgroundImage='url('+d.journey.img+')';
+    gal=d.imgs;show(0);
+    hmodal.classList.add('open');document.body.classList.add('hm-lock');
+    hmodal.querySelector('.panel').scrollTop=0;
+  };
+  const close=()=>{hmodal.classList.remove('open');document.body.classList.remove('hm-lock');};
+  document.querySelectorAll('.btn-view[data-hotel]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.hotel)));
+  hmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',close));
+  hmodal.querySelector('.hg-nav.prev').addEventListener('click',()=>show(gi-1));
+  hmodal.querySelector('.hg-nav.next').addEventListener('click',()=>show(gi+1));
+  document.getElementById('hm-jlink').addEventListener('click',()=>document.getElementById('hm-journeys').scrollIntoView({behavior:'smooth',block:'start'}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+}
 document.querySelectorAll('.bigcard').forEach(card=>{
   const link=card.querySelector('.foot a');if(!link)return;
   card.addEventListener('click',e=>{if(e.target.closest('a'))return;window.location.href=link.href;});
