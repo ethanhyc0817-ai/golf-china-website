@@ -175,6 +175,7 @@ section{padding:100px 0}
 @media(max-width:860px){.dest-grid{grid-template-columns:1fr}}
 .bigcard{background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
 .bigcard:hover{transform:translateY(-6px);border-color:var(--gold)}
+.bigcard{cursor:pointer}
 .bigcard .img{position:relative;height:260px}
 .bigcard .img img{width:100%;height:100%;object-fit:cover}
 .bigcard .img .tag{position:absolute;left:0;bottom:0;background:var(--cinnabar);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px}
@@ -1076,6 +1077,10 @@ document.querySelectorAll('.chinamap .pin').forEach(p=>{
     t.classList.add('flash');setTimeout(()=>t.classList.remove('flash'),2200);};
   p.addEventListener('click',go);
   p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+});
+document.querySelectorAll('.bigcard').forEach(card=>{
+  const link=card.querySelector('.foot a');if(!link)return;
+  card.addEventListener('click',e=>{if(e.target.closest('a'))return;window.location.href=link.href;});
 });
 </script>
 </body>
