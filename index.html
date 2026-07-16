@@ -130,7 +130,9 @@ section{padding:100px 0}
 .proof figure{margin:0}
 .proof figure img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
 .proof figcaption{font-size:13px;color:#6a766d;margin-top:12px;font-weight:300}
-.proof .ph2{font-size:clamp(28px,3.4vw,38px);color:var(--pine);margin:12px 0 30px}
+.proof .ph2{font-size:clamp(28px,3.4vw,38px);color:var(--pine);margin:12px 0 18px}
+.proof .pbody{font-size:16.5px;color:#4a5a50;margin:0 0 16px;max-width:56ch}
+.proof .pbody:last-of-type{margin-bottom:30px}
 .proof .stats{display:flex;flex-direction:column;gap:24px}
 .proof .stat{border-left:2px solid var(--gold);padding-left:20px}
 .proof .stat h3{font-family:var(--serif);font-size:clamp(23px,2.6vw,30px);line-height:1.2;color:var(--cinnabar);font-weight:500}
@@ -157,6 +159,8 @@ section{padding:100px 0}
 .access .pillar .pk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .access .pillar h4{font-size:22px;margin:10px 0 8px;color:#fff}
 .access .pillar p{font-size:15.5px;color:rgba(255,255,255,.8);font-weight:300}
+.access .pillar p+p{margin-top:9px}
+.access .section-head p+p{margin-top:12px}
 
 /* ===== WHY CHINA ===== */
 .whychina{background:var(--ivory)}
@@ -186,6 +190,8 @@ section{padding:100px 0}
 .bigcard dl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
 .bigcard dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:2px}
 .bigcard dd{font-size:15px;color:rgba(255,255,255,.86);font-weight:300}
+.bigcard .c .bodycopy{border-top:1px solid rgba(255,255,255,.16);padding-top:16px;display:grid;gap:10px}
+.bigcard .c .bodycopy p{font-size:15px;color:rgba(255,255,255,.86);font-weight:300}
 .bigcard .c .foot{margin-top:auto;padding-top:20px}
 .bigcard .c .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .bigcard .c .foot a:hover{color:var(--gold)}
@@ -230,6 +236,7 @@ section{padding:100px 0}
 .ccard .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .ccard .c h3{font-size:23px;margin:4px 0 10px;color:var(--pine)}
 .ccard .c p{font-size:15px;color:#54635a;font-weight:300}
+.ccard .c p+p{margin-top:8px}
 .ccard .c .meta{margin-top:16px;border-top:1px solid var(--mist);padding-top:13px;font-size:13px;color:#6a766d;display:flex;flex-direction:column;gap:5px}
 .ccard .c .meta span b{color:var(--pine);font-weight:500}
 .courses .note{text-align:center;margin-top:38px;font-size:16px;color:#54635a}
@@ -258,6 +265,7 @@ section{padding:100px 0}
 .sjcard h3{font-size:25px;margin:8px 0 4px}
 .sjcard .route{font-size:15px;color:rgba(255,255,255,.9);font-weight:300}
 .sjcard .hi{font-size:14.5px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
+.sjcard .hi p+p{margin-top:8px}
 .sjcard .bestfor{font-size:12.5px;color:rgba(255,255,255,.7);margin-top:10px;font-weight:300;font-style:italic}
 .sjcard .foot{margin-top:16px}
 .sjcard .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
@@ -420,7 +428,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <a href="#journeys">Sample Journeys</a>
       <a href="#exclusives">Experiences</a>
       <a href="#plan">Plan</a>
-      <a href="#investment">Investment</a>
+      <a href="#investment">Pricing</a>
       <a href="#start" class="nav-cta">Enquire</a>
     </nav>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -442,7 +450,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <img src="assets/img/jadedragon-fairway.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan">
       </picture>
     </div>
-    <div class="hslide s3"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"></div>
+    <div class="hslide s3"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"></div>
   </div>
   <div class="scrim"></div>
   <div class="container hero-inner">
@@ -471,7 +479,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
-<!-- PROOF / BY THE NUMBERS -->
+<!-- GOLF IN CHINA -->
 <!-- NOTE: Tiger photo appears to be tournament press imagery — confirm usage rights before launch -->
 <section class="proof" id="proof">
   <div class="container proof-wrap">
@@ -480,15 +488,16 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <figcaption>Tiger Woods at Mission Hills Haikou — The Match at Mission Hills, played on the Blackstone course.</figcaption>
     </figure>
     <div class="fade">
-      <span class="eyebrow">By The Numbers</span>
-      <h2 class="ph2">Some of the world's greatest courses are in China.</h2>
+      <span class="eyebrow">Golf in China</span>
+      <h2 class="ph2">World-class golf, across landscapes found nowhere else.</h2>
+      <p class="pbody">China's best courses run beneath the Great Wall, through the highlands of Yunnan, across ancient lava fields and along Hainan's tropical coast.</p>
+      <p class="pbody">Designed by some of the greatest names in golf, several have ranked among the world's best. Yet outside China, much of this golf remains almost entirely unknown.</p>
       <div class="stats">
-        <div class="stat"><h3>Ranked <em>14th in the world</em>.</h3><p>Shanqin Bay — Golf Digest's World's 100 Greatest ranking.</p></div>
-        <div class="stat"><h3><em>China's best</em> courses.</h3><p>All on our roster — Golf Digest's Best-in-China ranking.</p></div>
-        <div class="stat"><h3><em>World Top 100</em>.</h3><p>4 courses — Sheshan, Spring City, Shanqin Bay and Blackstone — Golf Digest.</p></div>
-        <div class="stat"><h3>Asia's <em>most exclusive</em> golf courses.</h3><p>Some courses take no public tee sheet, guest play by invitation only.</p></div>
+        <div class="stat"><h3>At the Top of <em>Chinese Golf</em></h3><p>Access to many of the country's leading courses, championship venues and most private clubs.</p></div>
+        <div class="stat"><h3>Three Former <em>World Top 100</em> Courses</h3><p>Sheshan International, Spring City and Blackstone have all appeared in Golf Digest's World's 100 Greatest.</p></div>
+        <div class="stat"><h3>The Country's <em>Defining Courses</em></h3><p>From championship venues to private clubs rarely played by international visitors.</p></div>
+        <div class="stat"><h3>Played by the <em>World's Best</em></h3><p>Courses across our journeys have hosted Tiger Woods, Rory McIlroy, Phil Mickelson, Dustin Johnson and many of the game's biggest names.</p></div>
       </div>
-      <p class="legends">Tiger Woods, Rory McIlroy, Phil Mickelson and Dustin Johnson have all played these fairways.</p>
     </div>
   </div>
 </section>
@@ -498,25 +507,28 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Exclusive Access</span>
-      <h2>Inside China's best-kept secret.</h2>
-      <p>China's finest courses are private, selective, and rarely open to visitors from abroad. Through relationships built over years, we arrange play where few are invited — from Nicklaus beneath the Great Wall to Coore &amp; Crenshaw on the Hainan coast.</p>
+      <h2>Access built over years.</h2>
+      <p>Many of China's best golf courses are private, highly selective or simply not set up to receive international visitors.</p>
+      <p>Golf China builds each journey through direct relationships with clubs across the country — from Nicklaus golf beneath the Great Wall to Coore &amp; Crenshaw design, championship venues and private coastal clubs.</p>
     </div>
-    <p class="claim fade">Some doors open only by invitation. Ours have been years in the making.</p>
+    <p class="claim fade">The difference is not simply knowing where to play. It is knowing how to make the journey possible.</p>
     <div class="access-grid">
       <div class="pillar fade">
         <div class="pk">Club Relationships</div>
         <h4>Private-club access, by arrangement</h4>
-        <p>Direct relationships with China's most private clubs — and the standing to arrange play where invitations are rare.</p>
+        <p>Direct relationships with China's leading private clubs allow us to arrange selective guest play and tee times that are rarely available through public booking channels.</p>
       </div>
       <div class="pillar fade">
         <div class="pk">The Pioneer</div>
         <h4>China's first golf travel company</h4>
-        <p>The first travel company devoted to golf in China. The routes, the relationships, the access — established here, by us.</p>
+        <p>Golf China was the first travel company created exclusively around golf in China.</p>
+        <p>The relationships, the routes and the access were built here first — by us.</p>
       </div>
       <div class="pillar fade">
         <div class="pk">China Tourism Group</div>
         <h4>Our people, everywhere you go</h4>
-        <p>Our partnership with China Tourism Group places our own people on the ground in every destination, throughout your journey.</p>
+        <p>Through our long-standing partnership with China Tourism Group, every journey is supported by experienced local teams across the country.</p>
+        <p>From the moment you arrive to the moment you leave, the details are handled.</p>
       </div>
     </div>
   </div>
@@ -527,9 +539,10 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="dest-intro">
       <div class="section-head fade">
-        <span class="eyebrow" style="color:var(--gold)">Featured Destinations</span>
-        <h2>Four regions, one country of contrasts.</h2>
-        <p>Each region is a completely different face of China. Explore them on their own, or combine several into a single seamless private journey.</p>
+        <span class="eyebrow" style="color:var(--gold)">Destinations</span>
+        <h2>A different China in every direction.</h2>
+        <p>Begin with the history and scale of Beijing. Follow the coast to Shanghai and Hangzhou. Head west into the highlands of Yunnan, or south to the tropical shores of Hainan.</p>
+        <p style="margin-top:12px">These are some of the places we know best, but they are only the beginning. Every route can be expanded, combined or built somewhere entirely different.</p>
       </div>
       <div class="fade">
         <svg class="chinamap" viewBox="0 0 760 573" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of China showing Golf China destinations">
@@ -549,56 +562,55 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <article class="bigcard fade" id="d-beijing">
         <div class="img"><img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing"><span class="tag">First-time essential</span></div>
         <div class="c">
-          <div class="region">Beijing</div><h3>Imperial China</h3>
-          <p class="tagline">Imperial China · Great Wall · private clubs</p>
-          <dl>
-            <dt>Why go</dt><dd>The historic heart of China and the natural place to begin a first journey.</dd>
-            <dt>Golf</dt><dd>Reignwood Pine Valley and parkland courses set against the Jundu Mountains.</dd>
-            <dt>Best for</dt><dd>First-time visitors to China who want icons and grandeur.</dd>
-          </dl>
-          <div class="foot"><a href="imperial-china.html">Discover Imperial China →</a></div>
+          <div class="region">Beijing</div><h3>Golf beneath the Great Wall.</h3>
+          <p class="tagline">Imperial history · Private clubs · Mountain golf</p>
+          <div class="bodycopy">
+            <p>Beijing is where many journeys into China begin, but the city offers far more than an introduction.</p>
+            <p>Play private mountain golf at Reignwood Pine Valley, with the Great Wall running across the surrounding ridgelines. Beyond the course, explore imperial Beijing, historic hutongs, contemporary architecture and one of the world's great food cities.</p>
+            <p>A powerful opening to any China journey.</p>
+          </div>
+          <div class="foot"><a href="imperial-china.html">Discover Beijing →</a></div>
         </div>
       </article>
 
       <article class="bigcard fade" id="d-shanghai">
         <div class="img"><img src="assets/img/dest-hangzhou.jpg" alt="A stone bridge over misty West Lake with the Leifeng Pagoda beyond, Hangzhou"><span class="tag">Modern China</span></div>
         <div class="c">
-          <div class="region">Shanghai / Hangzhou</div><h3>Jiangnan &amp; Modern China</h3>
-          <p class="tagline">Design hotels · Jiangnan elegance · tournament golf</p>
-          <dl>
-            <dt>Why go</dt><dd>Cosmopolitan China beside the misty water-towns of the lower Yangtze.</dd>
-            <dt>Golf</dt><dd>Sheshan International, host of a world-tour event, plus garden resort courses.</dd>
-            <dt>Best for</dt><dd>Travelers who want style, refinement and tournament-grade golf.</dd>
-          </dl>
-          <div class="foot"><a href="jiangnan-modern-china.html">Discover Jiangnan &amp; Modern China →</a></div>
+          <div class="region">Shanghai &amp; Hangzhou</div><h3>Modern China, with a quieter side.</h3>
+          <p class="tagline">The Bund · West Lake · Links-style golf</p>
+          <div class="bodycopy">
+            <p>Shanghai brings scale, energy and some of the country's most established championship golf. Nearby, Hangzhou offers a completely different rhythm, shaped by West Lake, tea fields, traditional gardens and the landscape of Jiangnan.</p>
+            <p>Together, the two cities combine international dining, refined hotels and a collection of links-style golf courses with some of eastern China's richest culture.</p>
+          </div>
+          <div class="foot"><a href="jiangnan-modern-china.html">Discover Shanghai &amp; Hangzhou →</a></div>
         </div>
       </article>
 
       <article class="bigcard fade" id="d-yunnan">
         <div class="img"><img src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, reflected in water, Yunnan"><span class="tag">Most distinctive</span></div>
         <div class="c">
-          <div class="region">Yunnan</div><h3>South of the Clouds</h3>
-          <p class="tagline">Snow-mountain golf · Tea Horse Road · Naxi &amp; Bai culture</p>
-          <dl>
-            <dt>Why go</dt><dd>China at its most distinctive — eternal-spring climate, snow peaks and ethnic-minority culture.</dd>
-            <dt>Golf</dt><dd>Spring City Resort, and Jade Dragon Snow Mountain — the world's longest course, played beneath a glacier.</dd>
-            <dt>Best for</dt><dd>Travelers who want the most unusual scenery and culture.</dd>
-          </dl>
-          <div class="foot"><a href="south-of-the-clouds.html">Discover South of the Clouds →</a></div>
+          <div class="region">Yunnan</div><h3>Golf at the edge of the Himalayas.</h3>
+          <p class="tagline">Highland golf · Snow peaks · Ancient cultures</p>
+          <div class="bodycopy">
+            <p>Yunnan is one of the most extraordinary golf destinations in Asia.</p>
+            <p>Begin beside Yangzong Lake at Spring City, then travel north through Dali and Lijiang to play beneath the snow-covered peaks of Jade Dragon Snow Mountain.</p>
+            <p>Between rounds, follow sections of the ancient Tea Horse Road, enter the worlds of the Bai and Naxi people, and experience a side of China that feels far removed from its major cities.</p>
+          </div>
+          <div class="foot"><a href="south-of-the-clouds.html">Discover Yunnan →</a></div>
         </div>
       </article>
 
       <article class="bigcard fade" id="d-hainan">
-        <div class="img"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"><span class="tag">Winter golf</span></div>
+        <div class="img"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"><span class="tag">Winter golf</span></div>
         <div class="c">
-          <div class="region">Hainan</div><h3>A Tropical Island at the Edge of China</h3>
-          <p class="tagline">Mission Hills · The Dunes</p>
-          <dl>
-            <dt>Why go</dt><dd>China's tropical island — warm, green and playable all winter.</dd>
-            <dt>Golf</dt><dd>Mission Hills Blackstone and The Dunes at Shenzhou Peninsula.</dd>
-            <dt>Best for</dt><dd>Winter golf, tropical coast and serious golf groups.</dd>
-          </dl>
-          <div class="foot"><a href="asias-most-exclusive-golf.html">Discover A Tropical Island at the Edge of China →</a></div>
+          <div class="region">Hainan</div><h3>Tropical golf on the edge of China.</h3>
+          <p class="tagline">Ocean links · Lava fields · Year-round warmth</p>
+          <div class="bodycopy">
+            <p>Hainan is China at its most unexpected: tropical coastlines, volcanic landscapes, warm winters and some of the country's most dramatic golf.</p>
+            <p>Play through ancient black lava at Blackstone, follow the natural dunes and ocean winds at The Dunes, and build the journey around beach resorts, private villas and a slower island pace.</p>
+            <p>It is one of the few places where world-class golf and tropical China come together.</p>
+          </div>
+          <div class="foot"><a href="asias-most-exclusive-golf.html">Discover Hainan →</a></div>
         </div>
       </article>
 
@@ -611,8 +623,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Signature Courses</span>
-      <h2>Exclusive clubs. Rare access.</h2>
-      <p>These are the best courses in China, and most stand among the best in Asia. Yet what stays with you is rarely the course design alone — it is the history and culture each club carries, the company you keep in the clubhouse, and the way golf takes a different shape in every region: parkland beneath the Great Wall, fairways under Himalayan snow, linksland on a tropical coast.</p>
+      <h2>Courses worth crossing the world for.</h2>
+      <p>China's leading courses are not simply places to add another round. Each has the landscape, architecture and sense of place to anchor an entire journey.</p>
     </div>
     <div class="course-grid">
 
@@ -620,7 +632,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="img"><img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing"><span class="tag">Beijing</span></div>
         <div class="c">
           <div class="region">Beijing</div><h3>Reignwood Pine Valley</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
-          <p>Nicklaus golf beneath the Great Wall — a private mountain-parkland club in the Jundu Mountains, the Wall tracing the ridgeline above.</p>
+          <p>Nicklaus-designed mountain golf in Beijing's Jundu Mountains, with the Great Wall rising across the surrounding ridgelines.</p>
+          <p>One of China's most private and visually striking golf clubs.</p>
           <div class="meta"><span><b>Designer</b> · Jack Nicklaus / Nicklaus Design</span><span><b>Setting</b> · Great Wall mountain parkland</span><span><b>Best season</b> · Apr–Oct</span><span><b>Access</b> · Private-club access by arrangement</span></div>
         </div>
       </article>
@@ -629,7 +642,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="img"><img src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai"><span class="tag">Shanghai</span></div>
         <div class="c">
           <div class="region">Shanghai</div><h3>Sheshan International</h3><div class="rankline">World Top 100 · Golf Digest</div>
-          <p>China's most famous course and host of a world-tour event — championship golf on the city's doorstep.</p>
+          <p>China's best-known championship course and the long-time home of the WGC-HSBC Champions.</p>
+          <p>A demanding Nelson &amp; Haworth design that has hosted Tiger Woods, Rory McIlroy, Phil Mickelson and many of the world's greatest players.</p>
           <div class="meta"><span><b>Designer</b> · Nelson &amp; Haworth</span><span><b>Setting</b> · Tournament parkland</span><span><b>Best season</b> · Apr–Jun, Sep–Nov</span><span><b>Pair with</b> · The Bund, dining</span></div>
         </div>
       </article>
@@ -638,7 +652,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="img"><img src="assets/img/course-springcity.jpg" alt="Spring City Resort golf above a lake in Yunnan"><span class="tag">Yunnan</span></div>
         <div class="c">
           <div class="region">Kunming · Yunnan</div><h3>Spring City Resort</h3><div class="rankline">World Top 100 · Golf Digest</div>
-          <p>Two celebrated courses in an eternal-spring climate, ranked among the very finest in China.</p>
+          <p>Two internationally recognised courses set high above Yangzong Lake.</p>
+          <p>The Nicklaus Mountain Course climbs through the hills, while the Robert Trent Jones Jr. Lake Course opens towards the water and surrounding highlands.</p>
           <div class="meta"><span><b>Designers</b> · Nicklaus · R.T. Jones Jr.</span><span><b>Setting</b> · Lakeside highland</span><span><b>Best season</b> · Year-round</span><span><b>Pair with</b> · Lijiang, Jade Dragon</span></div>
         </div>
       </article>
@@ -646,8 +661,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <article class="ccard fade">
         <div class="img"><img src="assets/img/jadedragon-fairway.jpg" alt="Jade Dragon Snow Mountain golf course beneath a glacier"><span class="tag">Yunnan</span></div>
         <div class="c">
-          <div class="region">Lijiang · Yunnan</div><h3>Jade Dragon Snow Mountain</h3><div class="rankline">Asia Top 50 · Golf Magazine</div><div class="rankline" style="margin-top:-8px">The World's Longest Course · 8,548 Yards</div>
-          <p>Golf at altitude beneath a 5,500-metre glacier — the longest course on earth, and one of the most dramatic settings in the game.</p>
+          <div class="region">Lijiang · Yunnan</div><h3>Jade Dragon Snow Mountain</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>One of the highest golf courses in the world, set more than 3,000 metres above sea level beneath Jade Dragon Snow Mountain.</p>
+          <p>At 8,548 yards from the back tees, the scale of both the course and the landscape is difficult to find anywhere else.</p>
           <div class="meta"><span><b>Designer</b> · Neil Haworth</span><span><b>Setting</b> · Himalayan foothills</span><span><b>Best season</b> · Mar–Nov</span><span><b>Pair with</b> · Old town, Tea Horse Road</span></div>
         </div>
       </article>
@@ -656,7 +672,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="img"><img src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou"><span class="tag">Hangzhou</span></div>
         <div class="c">
           <div class="region">Hangzhou</div><h3>Fuchun Resort</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
-          <p>Jiangnan elegance — fairways and a classical resort mirrored in still water beneath misty hills.</p>
+          <p>A quiet hillside course surrounded by tea fields, forest and traditional Jiangnan architecture.</p>
+          <p>The experience feels more like a private retreat than a conventional golf resort.</p>
           <div class="meta"><span><b>Designer</b> · Daniel Obermeyer</span><span><b>Setting</b> · Jiangnan garden resort</span><span><b>Best season</b> · Mar–May, Sep–Nov</span><span><b>Pair with</b> · West Lake, Longjing tea</span></div>
         </div>
       </article>
@@ -664,8 +681,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <article class="ccard fade">
         <div class="img"><img src="assets/img/course-hainan-dunes.jpg" alt="The Dunes links course on the Hainan coast"><span class="tag">Hainan</span></div>
         <div class="c">
-          <div class="region">Shenzhou · Hainan</div><h3>The Dunes at Shenzhou Peninsula</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
-          <p>A natural links carved from sand dunes along a wild stretch of tropical coast.</p>
+          <div class="region">Hainan</div><h3>The Dunes at Shenzhou Peninsula</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>Tom Weiskopf golf shaped through natural sand dunes beside the South China Sea.</p>
+          <p>Firm ground, exposed coastal winds and some of the strongest links-style golf in China.</p>
           <div class="meta"><span><b>Designer</b> · Tom Weiskopf</span><span><b>Setting</b> · Oceanside links</span><span><b>Best season</b> · Oct–Apr</span><span><b>Pair with</b> · Blackstone, Sanya</span></div>
         </div>
       </article>
@@ -673,8 +691,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <article class="ccard more fade">
         <div class="img"><img src="assets/img/course-yangtze.jpg" alt="A green at Yangtze Dunes surrounded by wild sandy dunes at dusk, Chongming Island" loading="lazy"><span class="tag">Shanghai</span></div>
         <div class="c">
-          <div class="region">Chongming · Shanghai</div><h3>Yangtze Dunes</h3><div class="rankline">China Top 3 · Golf Digest</div>
-          <p>True links at the mouth of the Yangtze — windswept dunes and fescue on Chongming Island, rebuilt by OCCM into one of Asia's finest modern courses.</p>
+          <div class="region">Chongming Island · Shanghai</div><h3>Yangtze Dunes</h3><div class="rankline">China Top 3 · Golf Digest</div>
+          <p>A modern links-style course rebuilt by Ogilvy Cocking Mead among large-scale dunes on the edge of the Yangtze River estuary.</p>
+          <p>Open, windswept and unlike almost anything else around Shanghai.</p>
           <div class="meta"><span><b>Designer</b> · OCCM (Ogilvy, Clayton, Cocking &amp; Mead)</span><span><b>Setting</b> · Estuary linksland</span><span><b>Best season</b> · Apr–Jun, Sep–Nov</span><span><b>Pair with</b> · Sheshan, the Bund</span></div>
         </div>
       </article>
@@ -683,7 +702,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="img"><img src="assets/img/course-hainan-blackstone.jpg" alt="Rugged white-sand bunkers across a fairway at dusk on the Blackstone course, Haikou" loading="lazy"><span class="tag">Hainan</span></div>
         <div class="c">
           <div class="region">Haikou · Hainan</div><h3>Mission Hills Haikou — Blackstone</h3><div class="rankline">World Top 100 · Golf Digest</div>
-          <p>Big, bold championship golf laid over ancient lava fields — host of the 2011 World Cup and the flagship of Asia's largest golf resort.</p>
+          <p>The signature course at Mission Hills Haikou, routed through dramatic fields of ancient black lava.</p>
+          <p>A former World Top 100 course and host venue for international events featuring Tiger Woods, Rory McIlroy and other major champions.</p>
           <div class="meta"><span><b>Designer</b> · Schmidt-Curley</span><span><b>Setting</b> · Lava-rock parkland</span><span><b>Best season</b> · Oct–Apr</span><span><b>Pair with</b> · The Dunes, Sanya</span></div>
         </div>
       </article>
@@ -691,8 +711,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <article class="ccard more fade">
         <div class="img"><img src="assets/img/course-topwin.jpg" alt="Topwin fairways and a pagoda above Yanqi Lake in autumn, with mountains beyond, Beijing" loading="lazy"><span class="tag">Beijing</span></div>
         <div class="c">
-          <div class="region">Yanqi Lake · Beijing</div><h3>Topwin Golf &amp; Country Club</h3><div class="rankline">China Top 10 · Top 100 Golf Courses</div>
-          <p>Immaculate parkland beside Yanqi Lake, a pagoda skyline and mountains beyond — a former China Open venue an hour from the capital.</p>
+          <div class="region">Beijing</div><h3>Topwin Golf &amp; Country Club</h3><div class="rankline">China Top 10 · Top 100 Golf Courses</div>
+          <p>Pristine championship golf beside Yanqi Lake, surrounded by the mountains north of Beijing.</p>
+          <p>The club has hosted the Volvo China Open and offers a quieter, more polished side of golf near the capital.</p>
           <div class="meta"><span><b>Designer</b> · Ian Woosnam / IMG</span><span><b>Setting</b> · Lakeside mountain parkland</span><span><b>Best season</b> · Apr–Oct</span><span><b>Pair with</b> · Great Wall, Reignwood</span></div>
         </div>
       </article>
@@ -700,8 +721,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <article class="ccard more fade">
         <div class="img"><img src="assets/img/course-guilin.jpg" alt="A karst limestone pinnacle rising above the fairways at Guilin Landscape Golf Club" loading="lazy"><span class="tag">Guilin</span></div>
         <div class="c">
-          <div class="region">Guilin · Guangxi</div><h3>Guilin Landscape</h3>
-          <p>Fairways threading between karst pinnacles — golf inside a classical Chinese ink painting, minutes from the Li River.</p>
+          <div class="region">Guilin · Guangxi</div><h3>Guilin Landscape Golf Club</h3>
+          <p>Golf set among the limestone karst peaks that define the landscape of Guilin.</p>
+          <p>Few courses in China feel more closely connected to the scenery around them.</p>
           <div class="meta"><span><b>Designer</b> · Dana Fry</span><span><b>Setting</b> · Karst valley</span><span><b>Best season</b> · Mar–May, Sep–Nov</span><span><b>Pair with</b> · Li River, Yangshuo</span></div>
         </div>
       </article>
@@ -709,7 +731,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </div>
 
     <div class="more-wrap fade">
-      <button class="btn btn-more" id="course-more" type="button">See more golf courses</button>
+      <button class="btn btn-more" id="course-more" type="button">See More Courses →</button>
       <p class="sub">Four more favourites — across Shanghai, Hainan, Beijing &amp; Guilin</p>
     </div>
   </div>
@@ -719,9 +741,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <section class="journeys" id="journeys">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">Sample Private Journeys</span>
-      <h2>Inspiration, not itineraries.</h2>
-      <p>A few journeys we love, shown as inspiration. Every one is fully tailored — your dates, your courses, your pace. Treat these as a beginning, then we shape the rest around you.</p>
+      <span class="eyebrow">Private Journeys</span>
+      <h2>Journeys, not packages.</h2>
+      <p>These routes are designed to show what is possible, not to tell you how you have to travel. We can change the pace, add new regions, replace courses, extend the trip or build something entirely from the beginning.</p>
     </div>
     <div class="sj-grid">
 
@@ -731,8 +753,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="specs">6–7 Nights · 3 Rounds</div>
           <h3>First-Time Golf China</h3>
           <div class="route">Beijing + Hangzhou</div>
-          <div class="hi">Imperial China, Great Wall golf and the quiet elegance of West Lake.</div>
-          <div class="bestfor">Shanghai can be added or substituted for a more modern city opening.</div>
+          <div class="hi"><p>Begin with private golf beneath the Great Wall, explore the capital, then finish beside West Lake in Hangzhou.</p><p>A balanced introduction to China, combining defining sights, serious golf and enough time away from the course.</p></div>
+          <div class="bestfor">Shanghai can be added for championship golf, dining and a more modern side of the country.</div>
           <div class="foot"><a href="#start">Tailor This Journey →</a></div>
         </div>
       </article>
@@ -744,24 +766,26 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="specs">10–12 Nights · 5–6 Rounds</div>
           <h3>Snow Peaks to Tropical Coast</h3>
           <div class="route">Yunnan + Hainan</div>
-          <div class="hi">Highland fairways, Tea Horse Road culture and Asia's most exclusive golf club.</div>
+          <div class="hi"><p>Begin in the highlands of Yunnan, playing Spring City and Jade Dragon Snow Mountain beneath some of China's most dramatic landscapes.</p><p>Then fly south to Hainan for tropical coastlines, lava-field golf and a final stretch beside the sea.</p></div>
+          <div class="bestfor">Two completely different sides of China in one journey.</div>
           <div class="foot"><a href="#start">Tailor This Journey →</a></div>
         </div>
       </article>
 
       <article class="sjcard fade">
-        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"><div class="scrim"></div>
+        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"><div class="scrim"></div>
         <div class="b">
-          <div class="specs">14 Nights / 15 Days · 7–9 Rounds</div>
+          <div class="specs">14–15 Days · 7–9 Rounds</div>
           <h3>The Grand China Golf Journey</h3>
-          <div class="route">Beijing + Hangzhou + Yunnan + Hainan</div>
-          <div class="hi">The most complete way to experience Golf China.</div>
+          <div class="route">Beijing + Shanghai / Hangzhou + Yunnan + Hainan</div>
+          <div class="hi"><p>A private journey through the full range of golf in China.</p><p>From the Great Wall and Shanghai's championship courses to Yunnan's snow peaks and the tropical coast of Hainan.</p></div>
+          <div class="bestfor">Built for travelers who want to see how far golf in China can go.</div>
           <div class="foot"><a href="#start">Tailor This Journey →</a></div>
         </div>
       </article>
 
     </div>
-    <p class="note fade">Every journey is fully custom. Tell us what matters and we'll design it from scratch — <a class="btn-line" href="#start">request a private proposal</a>.</p>
+    <p class="note fade">Every journey is designed from scratch around your group, your dates and the way you want to travel.</p>
   </div>
 </section>
 
@@ -769,9 +793,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <section class="exclusives" id="exclusives">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">Signature Experiences</span>
-      <h2>What happens between the rounds.</h2>
-      <p>Arranged privately, through relationships built on the ground — not excursions from a brochure. Each one is set up for your party alone.</p>
+      <span class="eyebrow">Beyond the Course</span>
+      <h2>China beyond the first tee.</h2>
+      <p>The golf may shape the route, but it should never be the only reason to come. We build private cultural experiences, food, nature and time at a slower pace around every journey — without turning the trip into a checklist of tourist attractions.</p>
     </div>
     <div class="ex-grid">
 
@@ -782,17 +806,17 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         </picture>
         <div class="b">
           <div class="loc">Shangri-La · Yunnan</div>
-          <h3>Dawn prayers at Songzanlin</h3>
-          <p>The hillside lamasery they call the little Potala, before the first visitors arrive — butter tea with the monks as the morning chant begins.</p>
+          <h3>Dawn at Songzanlin</h3>
+          <p>Enter Songzanlin Monastery early in the morning, before the day's visitors arrive. Explore its Tibetan Buddhist history with a private local guide while the monastery is still quiet.</p>
         </div>
       </article>
 
       <article class="excard fade">
         <img src="assets/img/exp-mushroom.jpg" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan">
         <div class="b">
-          <div class="loc">Yunnan · Jun–Sep</div>
-          <h3>The wild-mushroom table</h3>
-          <p>Into the pine forests with a master forager to hunt matsutake and porcini — then watch the morning's haul become dinner at a local chef's table.</p>
+          <div class="loc">Yunnan · June to September</div>
+          <h3>The Wild-Mushroom Table</h3>
+          <p>Walk through Yunnan's mountain forests with a local mushroom expert, then return for a private meal prepared around what was found that morning. A seasonal experience rooted completely in the region.</p>
         </div>
       </article>
 
@@ -801,7 +825,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="b">
           <div class="loc">Lijiang · Yunnan</div>
           <h3>Tea on the Tea Horse Road</h3>
-          <p>Aged pu'er poured by a tea master in a Naxi courtyard along the old caravan route — a thousand years of trade in one cup.</p>
+          <p>Taste tea inside a private Naxi courtyard along the ancient Tea Horse Road. The experience connects Yunnan's tea culture with the traders, horses and communities that once moved through these mountains.</p>
         </div>
       </article>
 
@@ -809,13 +833,13 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <img src="assets/img/exp-westlake.jpg" alt="A wooden boat with passengers gliding under green willows on West Lake, Hangzhou">
         <div class="b">
           <div class="loc">Hangzhou</div>
-          <h3>West Lake by private boat</h3>
-          <p>A quiet wooden boat and an oarsman who has worked these waters for decades — on the lake at dawn, before it belongs to anyone else.</p>
+          <h3>West Lake by Private Boat</h3>
+          <p>Cross West Lake aboard a private wooden boat in the early morning, before the shoreline becomes busy. Quiet water, mist over the hills and one of China's most iconic landscapes almost entirely to yourself.</p>
         </div>
       </article>
 
     </div>
-    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Chinese equivalent.</p>
+    <p class="note fade">These are examples, not fixed inclusions. We begin with what genuinely interests your group, then build the experiences around it.</p>
   </div>
 </section>
 
@@ -824,17 +848,17 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
-      <h2>Hotels worth the journey in their own right.</h2>
-      <p>Never simply "the hotel near the course." Each journey moves between a handful of carefully chosen addresses — the styles we return to most:</p>
+      <h2>Stays that belong to the journey.</h2>
+      <p>We do not choose hotels simply because they are five-star. We look for places with character, a strong sense of location and the level of service the journey deserves.</p>
     </div>
     <div class="stay-grid">
 
       <article class="scard fade">
         <img src="assets/img/stay-city.jpg" alt="Golden roofs and vermilion walls of the Forbidden City, Beijing">
         <div class="b">
-          <div class="loc">Shanghai · Beijing</div>
-          <h3>City landmarks</h3>
-          <p>Storied addresses on the Bund and beside the Forbidden City — the likes of the Waldorf Astoria's hutong courtyards in Beijing.</p>
+          <div class="loc">Beijing · Shanghai</div>
+          <h3>City Landmarks</h3>
+          <p>Historic addresses on the Bund, private courtyard hotels in Beijing's hutongs and contemporary city hotels positioned close to the places worth experiencing.</p>
         </div>
       </article>
 
@@ -842,17 +866,17 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <img src="assets/img/stay-lakeside.jpg" alt="Leifeng Pagoda above West Lake, with lotus beds and a wooden boat, Hangzhou">
         <div class="b">
           <div class="loc">Hangzhou · Kunming</div>
-          <h3>Garden &amp; lakeside estates</h3>
-          <p>Jiangnan calm between rounds — the likes of the Four Seasons on West Lake, all temple bells and still water.</p>
+          <h3>Garden &amp; Lakeside Retreats</h3>
+          <p>Quiet resorts beside West Lake, Yangzong Lake and the tea hills surrounding Hangzhou. Places designed to slow the journey down between rounds.</p>
         </div>
       </article>
 
       <article class="scard fade">
         <img src="assets/img/stay-mountain.jpg" alt="Naxi rooftops in Lijiang with Jade Dragon Snow Mountain glowing at sunset">
         <div class="b">
-          <div class="loc">Lijiang</div>
-          <h3>Mountain retreats</h3>
-          <p>The likes of Banyan Tree Lijiang — Naxi-style villas where the snow mountain fills the window at breakfast.</p>
+          <div class="loc">Dali · Lijiang · Shangri-La</div>
+          <h3>Mountain Retreats</h3>
+          <p>Stone courtyards, Naxi-style villas and mountain lodges surrounded by some of western China's most extraordinary scenery.</p>
         </div>
       </article>
 
@@ -860,13 +884,13 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <img src="assets/img/hero-blackstone.jpg" alt="A tropical golf coastline in Hainan">
         <div class="b">
           <div class="loc">Hainan</div>
-          <h3>Island hideaways</h3>
-          <p>Barefoot luxury on a tropical coast, minutes from the first tee — the likes of Rosewood on Hainan's shore.</p>
+          <h3>Island Hideaways</h3>
+          <p>Beachfront resorts, tropical villas and private stays within easy reach of Hainan's leading courses.</p>
         </div>
       </article>
 
     </div>
-    <p class="note fade">Every stay is hand-picked for your route, your party and the season — at the level of comfort you choose, booked entirely on your behalf.</p>
+    <p class="note fade">We present a carefully selected range of options based on your route, the season and how you prefer to travel.</p>
   </div>
 </section>
 
@@ -874,14 +898,15 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <section id="experiences">
   <div class="container">
     <div class="section-head center fade">
-      <span class="eyebrow">Beyond Golf</span>
-      <h2>Designed around your whole party.</h2>
-      <p>Golf is the thread — but the journey is bigger. While you play, partners and family have their own days arranged, from private cultural experiences to guides and dining.</p>
+      <span class="eyebrow">For the Whole Group</span>
+      <h2>Not everyone needs to play every round.</h2>
+      <p>Some journeys are built for a group of golfers. Others include partners, children, friends or family members who may never pick up a club. We design every part of the trip so that no one feels like they are simply waiting for the golf to finish.</p>
     </div>
     <div class="exp-grid">
-      <div class="ecard fade"><img src="assets/img/fuchun-mist.jpg" alt="A serene garden resort in the mist"><div class="b"><h3>For non-golfers</h3><p>Spa, shopping, tea, design hotels, private guides and relaxed cultural days.</p></div></div>
-      <div class="ecard fade"><img src="assets/img/place-lijiang.jpg" alt="Lijiang old town lanes"><div class="b"><h3>For families</h3><p>A flexible pace, cultural activities, soft adventure and kid-friendly options.</p></div></div>
+      <div class="ecard fade"><img src="assets/img/fuchun-mist.jpg" alt="A serene garden resort in the mist"><div class="b"><h3>For Non-Golfers</h3><p>Private guiding, food, design, shopping, wellness, tea, nature and time to explore independently.</p></div></div>
+      <div class="ecard fade"><img src="assets/img/place-lijiang.jpg" alt="Lijiang old town lanes"><div class="b"><h3>For Families</h3><p>Flexible schedules, cultural experiences, light adventure and activities designed around different ages.</p></div></div>
     </div>
+    <p class="fade" style="text-align:center;margin-top:38px;font-size:15px;color:#54635a">Everyone can travel together without having to do everything together.</p>
   </div>
 </section>
 
@@ -890,14 +915,15 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">How It Works</span>
-      <h2>Three steps to a private proposal.</h2>
-      <p>No fixed itineraries to choose from — just a conversation, and a journey shaped entirely around you.</p>
+      <h2>Private from the first conversation.</h2>
+      <p>There are no fixed departures and no standard itinerary hidden behind a different name. Every journey begins with your group.</p>
     </div>
     <div class="how-grid">
-      <div class="step fade"><div class="n">1</div><h4>Tell us the essentials</h4><p>Your dates, group size and golf level — and anything that matters to your party.</p></div>
-      <div class="step fade"><div class="n">2</div><h4>Choose your destinations</h4><p>Pick the regions that appeal, or let us recommend a route based on your timing and interests.</p></div>
-      <div class="step fade"><div class="n">3</div><h4>Receive a private proposal</h4><p>A tailored plan with courses, hotels, transfers and cultural experiences, ready to refine.</p></div>
+      <div class="step fade"><div class="n">1</div><h4>Tell us what you have in mind</h4><p>Share your approximate dates, group size, handicaps, preferred pace and what you want from the trip beyond golf.</p></div>
+      <div class="step fade"><div class="n">2</div><h4>We build the route</h4><p>We select the right destinations, courses, hotels and travel sequence, then bring everything together into one clear proposal.</p></div>
+      <div class="step fade"><div class="n">3</div><h4>We refine it with you</h4><p>Adjust the pace, change the hotels, add another region or remove anything that does not feel right.</p></div>
     </div>
+    <p class="fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.75)">The final journey should feel entirely your own.</p>
   </div>
 </section>
 
@@ -906,12 +932,12 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container about-wrap">
     <img class="photo fade" src="assets/img/about-team.jpg" alt="The Golf China team standing together on a golf course fairway">
     <div class="txt fade">
-      <span class="eyebrow">Who We Are</span>
-      <h2>Built by people who live between two worlds.</h2>
-      <p>Golf China was created by the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">Surf China Co.</a>, after years of designing private surf, golf and cultural journeys for international travelers in Hainan. What began on one tropical island has grown into a dedicated golf travel brand, opening up China's most exceptional courses and destinations to travelers from around the world.</p>
-      <p>We saw that even well-traveled golfers rarely knew about China's greatest courses — not because the golf was not here, but because many of the country's best clubs are private, reliable information is difficult to find, and very few companies know how to connect the entire journey.</p>
-      <p>So we built the connections ourselves. Our team grew up here and plays here, and through our exclusive club relationships and a long-standing partnership with China Tourism Group, we have people on the ground in every destination we send you — arranging the tee times, transport, hotels and visas, but also knowing which courtyard pours the best pu'er and which stretch of the Wall is empty at sunset. Every itinerary is designed from scratch, and every enquiry is answered personally, by someone who has walked the route you'll travel.</p>
-      <p class="sig">— The Golf China team</p>
+      <span class="eyebrow">Golf China</span>
+      <h2>We built the company China golf was missing.</h2>
+      <p>China has extraordinary golf, but planning a serious golf journey here has never been straightforward for international visitors. The best courses can be difficult to identify, private-club access is rarely public, and the distances between destinations make local knowledge essential.</p>
+      <p>Golf China was created to solve that. We are China's first travel company dedicated entirely to golf. We work directly with leading clubs across the country, design every route around first-hand knowledge and manage the journey from arrival to departure. The relationships, the access and the routes were not borrowed from somewhere else. They were built here.</p>
+      <p>Golf China is from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">Surf China</a>, bringing the same local network, hands-on approach and knowledge of travel in China to a new kind of journey. Every enquiry is answered personally by someone who knows the courses, destinations and routes being discussed.</p>
+      <p class="sig">— The Golf China Team</p>
     </div>
   </div>
 </section>
@@ -920,18 +946,19 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <section class="plan" id="plan">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">Plan Your Trip</span>
-      <h2>Everything handled, before you arrive.</h2>
-      <p>Traveling to China is more straightforward than most expect. We take care of the details that trip up first-time visitors.</p>
+      <span class="eyebrow">Travel in China</span>
+      <h2>Complex behind the scenes. Effortless for you.</h2>
+      <p>From entry requirements and domestic travel to payments, connectivity and transporting golf equipment, we handle the details that can make China feel complicated from abroad.</p>
     </div>
     <div class="plan-grid fade">
-      <div class="plan-item"><h4><span class="dot"></span>Visas &amp; Entry</h4><p>Many nationalities now qualify for visa-free or transit-visa entry. We advise on eligibility and paperwork.</p></div>
-      <div class="plan-item"><h4><span class="dot"></span>Mobile Payments</h4><p>We set you up with Alipay and WeChat Pay before you land, so you can pay seamlessly anywhere.</p></div>
-      <div class="plan-item"><h4><span class="dot"></span>Getting Around</h4><p>Private drivers paired with China's high-speed rail — every transfer and tee-time logistic arranged.</p></div>
-      <div class="plan-item"><h4><span class="dot"></span>Best Season</h4><p>Beijing and Shanghai in spring and autumn; Hainan in winter; Yunnan and Guilin near year-round.</p></div>
-      <div class="plan-item"><h4><span class="dot"></span>Clubs &amp; Gear</h4><p>Premium rental sets arranged at every course, or shipping support for your own bag.</p></div>
-      <div class="plan-item"><h4><span class="dot"></span>Connectivity</h4><p>eSIM, roaming and app setup guidance so you stay connected throughout the journey.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Visas &amp; Entry</h4><p>Clear guidance on visa requirements and available visa-free routes based on your passport and itinerary.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Mobile Payments</h4><p>Help setting up Alipay and WeChat Pay before arrival.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Private Transport</h4><p>Private drivers, airport transfers, high-speed rail and domestic flights coordinated as one journey.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>When to Travel</h4><p>Seasonal recommendations based on the destinations and courses you want to play.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Clubs &amp; Equipment</h4><p>Premium rental sets, caddie arrangements and support for guests traveling with their own golf clubs.</p></div>
+      <div class="plan-item"><h4><span class="dot"></span>Connectivity</h4><p>eSIM, roaming and essential app guidance before departure.</p></div>
     </div>
+    <p class="fade" style="text-align:center;margin-top:38px;font-size:15px;color:#54635a">You arrive ready. We handle the rest.</p>
   </div>
 </section>
 
@@ -939,9 +966,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <section class="invest" id="investment">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow" style="color:var(--gold)">Indicative Investment</span>
-      <h2>Where a private journey begins.</h2>
-      <p>Every journey is priced to your party — these are a guide to the starting investment, per person.</p>
+      <span class="eyebrow" style="color:var(--gold)">Indicative Pricing</span>
+      <h2>Every journey is different. This is where they begin.</h2>
+      <p>Final pricing depends on the season, route, hotel level, group size, number of rounds and private-club access.</p>
     </div>
     <div class="invest-grid">
       <div class="tier fade">
@@ -961,7 +988,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <div class="price"><div class="from">From</div><div class="amt">US$7,000</div><div class="pp">per person</div></div>
       </div>
     </div>
-    <p class="disclaimer fade">Final pricing depends on hotel level, travel season, party size, routing, and private-club access approval.</p>
+    <p class="disclaimer fade">Every proposal is built and priced individually.</p>
   </div>
 </section>
 
@@ -970,8 +997,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container cta-wrap">
     <div class="fade">
       <span class="eyebrow">Start Planning</span>
-      <h2>Request a private proposal.</h2>
-      <p>Tell us a little about your trip and a travel designer will reply within one business day by email or WeChat — with no obligation.</p>
+      <h2>Bring us the idea. We'll build the journey.</h2>
+      <p>Tell us your approximate dates, group size and the kind of golf trip you have in mind. Our team will reply personally with the next steps and begin shaping the journey around you.</p>
     </div>
     <form class="form fade" onsubmit="event.preventDefault();var b=this.querySelector('.btn');b.textContent='Thank you — we will be in touch';b.style.background='#3f6f54';">
       <div class="row">
@@ -995,11 +1022,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <select><option>Golf only</option><option>Golf + culture</option><option>Golf + surf</option><option>Family trip</option><option>Not sure yet</option></select>
         </div>
         <div><label>Journey preference</label>
-          <select><option>No preference yet</option><option>First-Time Golf China</option><option>Yunnan Snow Mountain Golf</option><option>Hainan Tropical Golf Escape</option><option>Ultimate Golf China</option><option>Pure Golf China</option><option>A fully tailored combination</option></select>
+          <select><option>No preference yet</option><option>First-Time Golf China</option><option>Snow Peaks to Tropical Coast</option><option>The Grand China Golf Journey</option><option>A fully tailored combination</option></select>
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Request a Private Proposal</button>
-      <p class="form-note">No obligation · Replies within 1 business day</p>
+      <p class="form-note">No obligation · Personal reply within one business day</p>
     </form>
   </div>
 </section>
@@ -1028,11 +1055,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="cols">
       <div>
         <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></div>
-        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">China's first golf travel company — private, tailor-made journeys with exclusive access to the country's most private clubs.</p>
-        <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
+        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private golf journeys across China, built around world-class courses, rare access and a country unlike anywhere else.</p>
+        <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">From the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China</a>.</p>
       </div>
       <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Signature Experiences</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
-      <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#experiences">Beyond Golf</a></li><li><a href="#investment">Indicative Investment</a></li><li><a href="#start">Request a Proposal</a></li></ul></div>
+      <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#experiences">Beyond Golf</a></li><li><a href="#investment">Indicative Pricing</a></li><li><a href="#start">Request a Proposal</a></li></ul></div>
       <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="#start">Enquire now</a></li></ul></div>
     </div>
     <div class="base">
@@ -1056,9 +1083,9 @@ if(moreBtn){moreBtn.addEventListener('click',()=>{
   const open=s.classList.toggle('show-all');
   if(open){
     s.querySelectorAll('.ccard.more').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),i*90));
-    moreBtn.textContent='Show fewer courses';
+    moreBtn.textContent='Show Fewer Courses';
   }else{
-    moreBtn.textContent='See more golf courses';
+    moreBtn.textContent='See More Courses →';
     s.scrollIntoView({behavior:'smooth'});
   }
 });}
