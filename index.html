@@ -294,8 +294,10 @@ section{padding:100px 0}
 
 /* ===== WHERE YOU STAY (A&K-style recommended hotels) ===== */
 .stay{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
-.hotel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.hcard{background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s ease,transform .3s ease}
+.hotel-carousel{position:relative}
+.hotel-row{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.hotel-row::-webkit-scrollbar{display:none}
+.hcard{flex:0 0 clamp(250px,calc((100% - 60px)/4),420px);scroll-snap-align:start;background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s ease,transform .3s ease}
 .hcard:hover{box-shadow:var(--lift);transform:translateY(-4px)}
 .hcard .ph{aspect-ratio:4/5;overflow:hidden}
 .hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
@@ -305,8 +307,8 @@ section{padding:100px 0}
 .hcard h3{font-size:24px;margin:8px 0 18px;font-weight:500;color:var(--pine)}
 .hcard .btn-view{margin-top:auto;display:block;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:12px 10px;border:1px solid var(--pine);border-radius:2px;color:var(--pine);transition:.25s}
 .hcard .btn-view:hover{background:var(--pine);color:#fff}
-@media(max-width:920px){.hotel-row{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.hotel-row{grid-template-columns:1fr}}
+@media(max-width:920px){.hcard{flex-basis:calc((100% - 20px)/2)}}
+@media(max-width:760px){.hcard{flex-basis:78vw}.hotel-row{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px}}
 .stay .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
 
 /* ===== BEYOND GOLF (audiences) ===== */
@@ -885,7 +887,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <h2>Stays that belong to the journey.</h2>
       <p>We do not choose hotels simply because they are five-star. We look for places with character, a strong sense of location and the level of service the journey deserves.</p>
     </div>
-    <div class="hotel-row">
+    <div class="hotel-carousel fade">
+      <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
+      <div class="hotel-row">
 
       <!-- TODO: replace with authorised hotel image — save as assets/img/hotel-peninsula-shanghai.jpg (long edge ≤1600px, q~82) -->
       <article class="hcard fade">
@@ -919,6 +923,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
       <!-- TODO: more hotels to come (Beijing, Hangzhou, Hainan…) — duplicate an .hcard above -->
 
+      </div>
+      <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
     <p class="note fade">We present a carefully selected range of options based on your route, the season and how you prefer to travel.</p>
   </div>
@@ -1126,11 +1132,12 @@ document.querySelectorAll('.chinamap .pin').forEach(p=>{
   p.addEventListener('click',go);
   p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
-const exTrack=document.querySelector('.ex-track');
-if(exTrack){document.querySelectorAll('.ex-nav').forEach(btn=>btn.addEventListener('click',()=>{
-  const step=exTrack.querySelector('.excard').getBoundingClientRect().width+20;
-  exTrack.scrollBy({left:btn.classList.contains('next')?step:-step,behavior:'smooth'});
-}));}
+document.querySelectorAll('.ex-nav').forEach(btn=>btn.addEventListener('click',()=>{
+  const wrap=btn.closest('.ex-carousel, .hotel-carousel');if(!wrap)return;
+  const track=wrap.querySelector('.ex-track, .hotel-row');if(!track||!track.firstElementChild)return;
+  const step=track.firstElementChild.getBoundingClientRect().width+20;
+  track.scrollBy({left:btn.classList.contains('next')?step:-step,behavior:'smooth'});
+}));
 document.querySelectorAll('.bigcard').forEach(card=>{
   const link=card.querySelector('.foot a');if(!link)return;
   card.addEventListener('click',e=>{if(e.target.closest('a'))return;window.location.href=link.href;});
