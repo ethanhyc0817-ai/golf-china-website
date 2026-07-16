@@ -254,22 +254,23 @@ section{padding:100px 0}
 .sj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:920px){.sj-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.sj-grid{grid-template-columns:1fr}}
-.sjcard{position:relative;border-radius:2px;overflow:hidden;color:#fff;min-height:430px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--lift)}
+.sjcard{position:relative;display:flex;flex-direction:column;border-radius:8px;overflow:hidden;background:#d4c6a6;box-shadow:var(--lift)}
 .sjcard.signature{box-shadow:0 0 0 2px var(--gold),var(--lift)}
-.sjcard .sj-badge{position:absolute;left:0;top:22px;z-index:3;background:var(--gold);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px}
-.sjcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
-.sjcard:hover img{transform:scale(1.05)}
-.sjcard .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.06) 0%,rgba(20,36,28,.25) 45%,rgba(20,36,28,.78) 100%)}
-.sjcard .b{position:relative;z-index:2;padding:26px;text-shadow:0 1px 12px rgba(20,36,28,.55)}
-.sjcard .specs{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95}
-.sjcard h3{font-size:25px;margin:8px 0 4px}
-.sjcard .route{font-size:15px;color:rgba(255,255,255,.9);font-weight:300}
-.sjcard .hi{font-size:14.5px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
+.sjcard .sj-badge{position:absolute;left:16px;top:16px;z-index:3;background:#d4c6a6;color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
+.sjcard .ph{overflow:hidden}
+.sjcard .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:.5s}
+.sjcard:hover .ph img{transform:scale(1.05)}
+.sjcard .b{padding:26px 26px 24px;flex:1}
+.sjcard h3{font-size:30px;line-height:1.12}
+.sjcard .specs{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-top:10px}
+.sjcard .hi{font-size:14.5px;color:rgba(20,36,28,.85);margin-top:14px;font-weight:300}
 .sjcard .hi p+p{margin-top:8px}
-.sjcard .bestfor{font-size:12.5px;color:rgba(255,255,255,.7);margin-top:10px;font-weight:300;font-style:italic}
-.sjcard .foot{margin-top:16px}
-.sjcard .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
-.sjcard .foot a:hover{color:var(--gold)}
+.sjcard .tl{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:18px}
+.sjcard .route{font-size:15px;color:rgba(20,36,28,.8);font-weight:300;margin-top:2px}
+.sjcard .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 26px;background:var(--paper);border-top:1px solid rgba(20,36,28,.18)}
+.sjcard .bestfor{font-size:12.5px;font-style:italic;color:#54635a;font-weight:300}
+.sjcard .foot a{background:var(--ink);color:#fff;font-size:13px;font-weight:500;padding:13px 24px;border-radius:12px;white-space:nowrap;transition:.25s}
+.sjcard .foot a:hover{background:var(--pine)}
 .journeys .note{text-align:center;margin-top:40px;font-size:14px;color:#54635a}
 
 /* ===== SIGNATURE EXPERIENCES ===== */
@@ -799,40 +800,40 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="sj-grid">
 
       <article class="sjcard fade">
-        <img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"><div class="scrim"></div>
+        <div class="ph"><img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"></div>
         <div class="b">
-          <div class="specs">6–7 Nights · 3 Rounds</div>
           <h3>First-Time Golf China</h3>
-          <div class="route">Beijing + Hangzhou</div>
+          <div class="specs">6–7 Nights · 3 Rounds</div>
           <div class="hi"><p>Begin with private golf beneath the Great Wall, explore the capital, then finish beside West Lake in Hangzhou.</p><p>A balanced introduction to China, combining defining sights, serious golf and enough time away from the course.</p></div>
-          <div class="bestfor">Shanghai can be added for championship golf, dining and a more modern side of the country.</div>
-          <div class="foot"><a href="#start">Tailor This Journey →</a></div>
+          <div class="tl">Tailor This Journey</div>
+          <div class="route">Beijing · Hangzhou</div>
         </div>
+        <div class="foot"><span class="bestfor">Shanghai can be added for championship golf, dining and a more modern side of the country.</span><a href="#start">Refine Journey</a></div>
       </article>
 
       <article class="sjcard signature fade">
         <span class="sj-badge">Signature Trip</span>
-        <img src="assets/img/jadedragon-fairway.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan"><div class="scrim"></div>
+        <div class="ph"><img src="assets/img/jadedragon-fairway.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan"></div>
         <div class="b">
-          <div class="specs">10–12 Nights · 5–6 Rounds</div>
           <h3>Snow Peaks to Tropical Coast</h3>
-          <div class="route">Yunnan + Hainan</div>
+          <div class="specs">10–12 Nights · 5–6 Rounds</div>
           <div class="hi"><p>Begin in the highlands of Yunnan, playing Spring City and Jade Dragon Snow Mountain beneath some of China's most dramatic landscapes.</p><p>Then fly south to Hainan for tropical coastlines, lava-field golf and a final stretch beside the sea.</p></div>
-          <div class="bestfor">Two completely different sides of China in one journey.</div>
-          <div class="foot"><a href="#start">Tailor This Journey →</a></div>
+          <div class="tl">Tailor This Journey</div>
+          <div class="route">Yunnan · Hainan</div>
         </div>
+        <div class="foot"><span class="bestfor">Two completely different sides of China in one journey.</span><a href="#start">Refine Journey</a></div>
       </article>
 
       <article class="sjcard fade">
-        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"><div class="scrim"></div>
+        <div class="ph"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"></div>
         <div class="b">
-          <div class="specs">14–15 Days · 7–9 Rounds</div>
           <h3>The Grand China Golf Journey</h3>
-          <div class="route">Beijing + Shanghai / Hangzhou + Yunnan + Hainan</div>
+          <div class="specs">14–15 Days · 7–9 Rounds</div>
           <div class="hi"><p>A private journey through the full range of golf in China.</p><p>From the Great Wall and Shanghai's championship courses to Yunnan's snow peaks and the tropical coast of Hainan.</p></div>
-          <div class="bestfor">Built for travelers who want to see how far golf in China can go.</div>
-          <div class="foot"><a href="#start">Tailor This Journey →</a></div>
+          <div class="tl">Tailor This Journey</div>
+          <div class="route">Beijing · Shanghai / Hangzhou · Yunnan · Hainan</div>
         </div>
+        <div class="foot"><span class="bestfor">Built for travelers who want to see how far golf in China can go.</span><a href="#start">Refine Journey</a></div>
       </article>
 
     </div>
