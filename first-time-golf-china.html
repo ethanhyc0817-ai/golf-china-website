@@ -128,7 +128,7 @@ section{padding:100px 0}
 .ph-btns{display:flex;gap:8px}
 .pb{width:38px;height:38px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--pine);font-size:19px;line-height:1;cursor:pointer;transition:.25s}
 .pb:hover{border-color:var(--gold);color:var(--gold)}
-.days{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(310px,340px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:none}
+.days{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(310px,340px);gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-x:contain;touch-action:pan-x pan-y;padding:6px 2px 22px;scrollbar-width:none}
 .days::-webkit-scrollbar{display:none}
 .day{scroll-snap-align:start;background:var(--ivory);border:1px solid var(--mist);border-top:3px solid var(--gold);padding:26px 24px;display:flex;flex-direction:column;border-radius:2px}
 .day.golfday{border-top-color:var(--cinnabar)}
