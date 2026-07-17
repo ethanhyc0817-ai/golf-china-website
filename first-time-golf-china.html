@@ -142,10 +142,7 @@ section{padding:100px 0}
 .dtag.golf{border-color:rgba(180,69,47,.4);color:var(--cinnabar);background:rgba(180,69,47,.06)}
 .daylink{margin-top:14px;align-self:flex-start;appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);border-bottom:1px solid rgba(180,69,47,.35);padding:0 0 3px;transition:.25s}
 .daylink:hover{border-color:var(--cinnabar)}
-.addon-box{margin-top:14px;border:1px dashed rgba(184,145,80,.6);background:rgba(184,145,80,.07);padding:16px 16px;border-radius:2px}
-.addon-box .ak{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
-.addon-box h4{font-size:17px;color:var(--pine);margin:5px 0 5px}
-.addon-box p{font-size:13.5px;color:#54635a;margin:0}
+.day.addon{border:1px dashed rgba(184,145,80,.7);border-top:3px solid var(--gold);background:rgba(184,145,80,.06)}
 .itin-note{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .itin-note .t h3{font-size:23px;color:var(--pine);margin-bottom:5px}
 .itin-note .t p{font-size:15px;color:#54635a;max-width:56ch}
@@ -375,12 +372,15 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="dnum">Day 4 <b>The Wall</b></div>
           <h3>A wild stretch of Wall to yourselves.</h3>
           <p>North into the mountains for the day the non-golfers will talk about longest: a private walk along an unrestored stretch of the Great Wall, no crowds and no barriers, finishing with a table set on the ramparts as the light goes gold. Down the mountain by dark, back to the courtyard for a nightcap.</p>
-          <div class="addon-box">
-            <span class="ak">Optional add-on · A fourth round</span>
-            <h4>Morning golf at Topwin, then the Wall.</h4>
-            <p>Golfers can open the day at Topwin Golf &amp; Country Club on Yanqi Lake — the Woosnam course played by President Obama, twenty minutes from the Wall at Mutianyu — and still make the ramparts for dinner.</p>
-          </div>
           <div class="dtags"><span class="dtag">Private Great Wall walk</span><span class="dtag">Dinner on the ramparts</span></div>
+        </article>
+
+        <article class="day addon fade">
+          <div class="dnum">Optional Add-On <b>A fourth round</b></div>
+          <h3>Morning golf at Topwin, then the Wall.</h3>
+          <p>Golfers can open the Great Wall day at Topwin Golf &amp; Country Club on Yanqi Lake — the Woosnam course played by President Obama, twenty minutes from the ramparts at Mutianyu — and still make dinner on the Wall.</p>
+          <div class="dtags"><span class="dtag golf">Golf · Topwin</span><span class="dtag">Slots into Day 4</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
         </article>
 
         <article class="day fade">
