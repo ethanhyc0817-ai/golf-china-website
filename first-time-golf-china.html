@@ -143,6 +143,15 @@ section{padding:100px 0}
 .daylink{margin-top:14px;align-self:flex-start;appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);border-bottom:1px solid rgba(180,69,47,.35);padding:0 0 3px;transition:.25s}
 .daylink:hover{border-color:var(--cinnabar)}
 .day.addon{border:1px dashed rgba(184,145,80,.7);border-top:3px solid var(--gold);background:rgba(184,145,80,.06)}
+.day.dest{position:relative;padding:0;border:none;overflow:hidden;color:#fff;min-height:300px}
+.day.dest img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.day.dest:hover img{transform:scale(1.05)}
+.day.dest .db{position:relative;z-index:2;margin-top:auto;width:100%;padding:24px;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.94))}
+.day.dest .loc{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.day.dest h3{color:#fff;font-size:24px;margin:6px 0 6px}
+.day.dest p{color:rgba(255,255,255,.88);font-size:14px;margin:0}
+.day.dest .go{margin-top:14px;display:inline-block;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
+.day.dest:hover .go{color:var(--gold)}
 .itin-note{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .itin-note .t h3{font-size:23px;color:var(--pine);margin-bottom:5px}
 .itin-note .t p{font-size:15px;color:#54635a;max-width:56ch}
@@ -390,6 +399,16 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="dtags"><span class="dtag">High-speed rail, business class</span><span class="dtag">The Bund after dark</span></div>
         </article>
 
+        <a class="day dest fade" href="imperial-china.html">
+          <img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing">
+          <div class="db">
+            <div class="loc">The Destination</div>
+            <h3>More on Beijing</h3>
+            <p>Imperial China in depth — the Wall, the golf, the hutongs and where to stay.</p>
+            <span class="go">Discover Beijing →</span>
+          </div>
+        </a>
+
       </div>
 
       <div class="phase fade"><span class="ph-city">Shanghai</span><span class="ph-line"></span><span class="ph-n">Nights 5–8</span><div class="ph-btns"><button class="pb prev" aria-label="Previous days">‹</button><button class="pb next" aria-label="Next days">›</button></div></div>
@@ -424,6 +443,16 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <p>A private transfer to Pudong or Hongqiao and fast-track departure. Or don't go home yet: Hangzhou's West Lake is an hour away, Yunnan's snow-mountain fairways three, and Hainan's tropical coast waits at the end of a short flight south.</p>
           <div class="dtags"><span class="dtag">Private departure</span></div>
         </article>
+
+        <a class="day dest fade" href="jiangnan-modern-china.html">
+          <img src="assets/img/hero-shanghai-dusk.jpg" alt="The Shanghai skyline glowing gold at dusk across the Huangpu River">
+          <div class="db">
+            <div class="loc">The Destination</div>
+            <h3>More on Shanghai</h3>
+            <p>Jiangnan &amp; Modern China in depth — the Bund, the golf, the concessions and West Lake beyond.</p>
+            <span class="go">Discover Shanghai →</span>
+          </div>
+        </a>
 
       </div>
 
