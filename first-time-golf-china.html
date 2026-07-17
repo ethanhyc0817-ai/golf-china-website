@@ -109,46 +109,47 @@ section{padding:100px 0}
 .tabbar{position:sticky;top:0;z-index:40;background:var(--pine);box-shadow:0 8px 24px -12px rgba(20,36,28,.35)}
 .tabbar .tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tabbar .tabs::-webkit-scrollbar{display:none}
-.tabbar .tab-label{display:flex;align-items:center;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-right:26px;white-space:nowrap;font-weight:500}
-.tab{appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:22px 24px;position:relative;white-space:nowrap;transition:.25s}
+.tab{appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:14.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:22px 30px;position:relative;white-space:nowrap;transition:.25s;flex:1;text-align:center}
 .tab:hover{color:#fff}
-.tab::after{content:"";position:absolute;left:24px;right:24px;bottom:0;height:3px;background:transparent;transition:.25s}
+.tab::after{content:"";position:absolute;left:30px;right:30px;bottom:0;height:3px;background:transparent;transition:.25s}
 .tab.on{color:var(--gold)}
 .tab.on::after{background:var(--gold)}
 .panel{display:none}
 .panel.on{display:block}
-@media(max-width:700px){.tab{padding:18px 16px;font-size:12.5px}.tab::after{left:16px;right:16px}.tabbar .tab-label{display:none}}
+@media(max-width:700px){.tab{padding:18px 10px;font-size:12.5px;letter-spacing:.1em}.tab::after{left:10px;right:10px}}
 
 /* ===== ITINERARY ===== */
 .itin{background:var(--paper);border-top:1px solid var(--mist)}
-.itin-wrap{max-width:840px}
-.phase{margin:64px 0 40px;display:flex;align-items:center;gap:18px}
+.phase{margin:56px 0 22px;display:flex;align-items:center;gap:18px}
 .phase:first-of-type{margin-top:0}
 .phase .ph-city{font-family:var(--serif);font-size:30px;color:var(--pine)}
 .phase .ph-n{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
 .phase .ph-line{flex:1;height:1px;background:var(--mist)}
-.days{position:relative}
-.days::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--mist)}
-.day{position:relative;padding:0 0 52px 52px}
-.day:last-child{padding-bottom:8px}
-.day::before{content:"";position:absolute;left:0;top:5px;width:15px;height:15px;border-radius:999px;background:var(--paper);border:2px solid var(--gold)}
-.day.golfday::before{background:var(--cinnabar);border-color:var(--cinnabar)}
+.ph-btns{display:flex;gap:8px}
+.pb{width:38px;height:38px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--pine);font-size:19px;line-height:1;cursor:pointer;transition:.25s}
+.pb:hover{border-color:var(--gold);color:var(--gold)}
+.days{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(310px,340px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{scroll-snap-align:start;background:var(--ivory);border:1px solid var(--mist);border-top:3px solid var(--gold);padding:26px 24px;display:flex;flex-direction:column;border-radius:2px}
+.day.golfday{border-top-color:var(--cinnabar)}
 .day .dnum{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
-.day .dnum b{color:#7a857c;font-weight:400;letter-spacing:.14em;margin-left:10px;text-transform:none;font-size:12px}
-.day h3{font-size:27px;color:var(--pine);margin:7px 0 12px;max-width:24ch}
-.day p{font-size:16.5px;color:#3f4f45;max-width:64ch;margin-bottom:12px}
+.day .dnum b{color:#7a857c;font-weight:400;letter-spacing:.14em;margin-left:8px;text-transform:none;font-size:12px}
+.day h3{font-size:22px;color:var(--pine);margin:8px 0 10px}
+.day p{font-size:14.5px;color:#3f4f45;margin-bottom:10px}
 .day p:last-of-type{margin-bottom:0}
-.dtags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
-.dtag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--mist);padding:5px 12px;color:#54635a;background:var(--ivory);border-radius:2px}
+.dtags{margin-top:auto;padding-top:16px;display:flex;gap:7px;flex-wrap:wrap}
+.dtag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--mist);padding:4px 10px;color:#54635a;background:var(--paper);border-radius:2px}
 .dtag.golf{border-color:rgba(180,69,47,.4);color:var(--cinnabar);background:rgba(180,69,47,.06)}
-.addon-box{margin-top:18px;border:1px dashed rgba(184,145,80,.6);background:rgba(184,145,80,.06);padding:20px 22px;border-radius:2px;max-width:64ch}
-.addon-box .ak{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
-.addon-box h4{font-size:20px;color:var(--pine);margin:6px 0 6px}
-.addon-box p{font-size:15px;color:#54635a;margin:0}
-.itin-note{margin-top:56px;background:var(--ivory);border:1px solid var(--mist);padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.daylink{margin-top:14px;align-self:flex-start;appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);border-bottom:1px solid rgba(180,69,47,.35);padding:0 0 3px;transition:.25s}
+.daylink:hover{border-color:var(--cinnabar)}
+.addon-box{margin-top:14px;border:1px dashed rgba(184,145,80,.6);background:rgba(184,145,80,.07);padding:16px 16px;border-radius:2px}
+.addon-box .ak{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.addon-box h4{font-size:17px;color:var(--pine);margin:5px 0 5px}
+.addon-box p{font-size:13.5px;color:#54635a;margin:0}
+.itin-note{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .itin-note .t h3{font-size:23px;color:var(--pine);margin-bottom:5px}
 .itin-note .t p{font-size:15px;color:#54635a;max-width:56ch}
-@media(max-width:600px){.day{padding-left:38px}.phase .ph-city{font-size:25px}}
+@media(max-width:600px){.phase .ph-city{font-size:25px}.days{grid-auto-columns:82vw}}
 
 /* ===== THE GOLF ===== */
 .golf{background:var(--pine);color:#fff}
@@ -328,10 +329,9 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <!-- TAB BAR -->
 <div class="tabbar" id="tabbar">
   <div class="container tabs">
-    <span class="tab-label">Explore ›</span>
-    <button class="tab on" data-tab="itinerary">Day-by-Day Itinerary</button>
-    <button class="tab" data-tab="golf">The Golf</button>
-    <button class="tab" data-tab="stay">Where You Stay</button>
+    <button class="tab on" data-tab="itinerary">Itinerary</button>
+    <button class="tab" data-tab="golf">Golf</button>
+    <button class="tab" data-tab="stay">Stays</button>
     <button class="tab" data-tab="extend">Add-Ons</button>
   </div>
 </div>
@@ -346,7 +346,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </div>
     <div class="itin-wrap">
 
-      <div class="phase fade"><span class="ph-city">Beijing</span><span class="ph-line"></span><span class="ph-n">Nights 1–4</span></div>
+      <div class="phase fade"><span class="ph-city">Beijing</span><span class="ph-line"></span><span class="ph-n">Nights 1–4</span><div class="ph-btns"><button class="pb prev" aria-label="Previous days">‹</button><button class="pb next" aria-label="Next days">›</button></div></div>
       <div class="days">
 
         <article class="day fade">
@@ -368,6 +368,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <h3>Golf beneath the Great Wall.</h3>
           <p>The round the journey is built around. At Reignwood Pine Valley, Nicklaus fairways climb through the Jundu Mountains with the Wall tracing the ridgeline above the back nine — a closely-held private club where we arrange guest play on your behalf, with caddies, forecaddies and a quiet clubhouse lunch beneath the château's chandeliers.</p>
           <div class="dtags"><span class="dtag golf">Golf · Reignwood Pine Valley</span><span class="dtag">Clubhouse lunch</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
         </article>
 
         <article class="day fade">
@@ -391,7 +392,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
       </div>
 
-      <div class="phase fade"><span class="ph-city">Shanghai</span><span class="ph-line"></span><span class="ph-n">Nights 5–8</span></div>
+      <div class="phase fade"><span class="ph-city">Shanghai</span><span class="ph-line"></span><span class="ph-n">Nights 5–8</span><div class="ph-btns"><button class="pb prev" aria-label="Previous days">‹</button><button class="pb next" aria-label="Next days">›</button></div></div>
       <div class="days">
 
         <article class="day golfday fade">
@@ -399,6 +400,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <h3>Tournament golf at Sheshan.</h3>
           <p>China's most famous course, and for two decades host of its flagship world-tour event — the closing stretch around the old quarry has decided more champions than any other holes in Asia. A strictly private members' club; we arrange your game, your caddies and a long lunch on the terrace where the trophies are handed out. Evening among the plane trees of the old French Concession.</p>
           <div class="dtags"><span class="dtag golf">Golf · Sheshan International</span><span class="dtag">French Concession evening</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
         </article>
 
         <article class="day golfday fade">
@@ -406,6 +408,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <h3>A wild links at the mouth of the Yangtze.</h3>
           <p>An hour from the Bund, on Chongming Island, the trip's final round is its biggest surprise: Yangtze Dunes, a true links through native dunes and wetland, firm turf and river wind, ranked among China's top three modern courses. The world's busiest shipping lane glides past beyond the dunes. Back in the city by evening for a farewell feast.</p>
           <div class="dtags"><span class="dtag golf">Golf · Yangtze Dunes</span><span class="dtag">Farewell dinner</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
         </article>
 
         <article class="day fade">
@@ -705,6 +708,17 @@ function openTab(id,scroll){
 tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
 addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));
 if(location.hash)openTab(location.hash.slice(1),false);
+/* in-itinerary jumps (e.g. golf day → Golf tab) */
+document.querySelectorAll('.daylink').forEach(b=>b.addEventListener('click',()=>{openTab(b.dataset.goto,true);history.replaceState(null,'','#'+b.dataset.goto);}));
+/* day carousels */
+document.querySelectorAll('.phase').forEach(ph=>{
+  const days=ph.nextElementSibling;
+  if(!days||!days.classList.contains('days'))return;
+  const step=()=>days.querySelector('.day').getBoundingClientRect().width+18;
+  const prev=ph.querySelector('.prev'),next=ph.querySelector('.next');
+  if(prev)prev.addEventListener('click',()=>days.scrollBy({left:-step(),behavior:'smooth'}));
+  if(next)next.addEventListener('click',()=>days.scrollBy({left:step(),behavior:'smooth'}));
+});
 /* course image galleries */
 document.querySelectorAll('.gal').forEach(g=>{
   const imgs=[...g.querySelectorAll('img')];
