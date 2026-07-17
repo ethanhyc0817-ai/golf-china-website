@@ -105,6 +105,20 @@ section{padding:100px 0}
 .glance li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;background:var(--gold);border-radius:999px}
 .glance .gnote{font-size:13.5px;color:#7a857c;margin-top:16px;font-style:italic}
 
+/* ===== TAB BAR ===== */
+.tabbar{position:sticky;top:0;z-index:40;background:var(--pine);box-shadow:0 8px 24px -12px rgba(20,36,28,.35)}
+.tabbar .tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabbar .tabs::-webkit-scrollbar{display:none}
+.tabbar .tab-label{display:flex;align-items:center;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-right:26px;white-space:nowrap;font-weight:500}
+.tab{appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:22px 24px;position:relative;white-space:nowrap;transition:.25s}
+.tab:hover{color:#fff}
+.tab::after{content:"";position:absolute;left:24px;right:24px;bottom:0;height:3px;background:transparent;transition:.25s}
+.tab.on{color:var(--gold)}
+.tab.on::after{background:var(--gold)}
+.panel{display:none}
+.panel.on{display:block}
+@media(max-width:700px){.tab{padding:18px 16px;font-size:12.5px}.tab::after{left:16px;right:16px}.tabbar .tab-label{display:none}}
+
 /* ===== ITINERARY ===== */
 .itin{background:var(--paper);border-top:1px solid var(--mist)}
 .itin-wrap{max-width:840px}
@@ -311,8 +325,19 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
+<!-- TAB BAR -->
+<div class="tabbar" id="tabbar">
+  <div class="container tabs">
+    <span class="tab-label">Explore ›</span>
+    <button class="tab on" data-tab="itinerary">Day-by-Day Itinerary</button>
+    <button class="tab" data-tab="golf">The Golf</button>
+    <button class="tab" data-tab="stay">Where You Stay</button>
+    <button class="tab" data-tab="extend">Add-Ons</button>
+  </div>
+</div>
+
 <!-- ITINERARY -->
-<section class="itin" id="itinerary">
+<section class="itin panel on" id="itinerary">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Day by Day</span>
@@ -412,7 +437,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 </section>
 
 <!-- THE GOLF -->
-<section class="golf" id="golf">
+<section class="golf panel" id="golf">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">The Golf</span>
@@ -517,7 +542,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 </section>
 
 <!-- WHERE YOU STAY -->
-<section class="stay" id="stay">
+<section class="stay panel" id="stay">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Where You Stay</span>
@@ -550,7 +575,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 </section>
 
 <!-- EXTEND / ADD-ONS -->
-<section class="extend" id="extend">
+<section class="extend panel" id="extend">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">Extend the Journey</span>
@@ -668,6 +693,18 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+/* tabs */
+const tabbar=document.getElementById('tabbar');
+const tabs=[...document.querySelectorAll('.tab')];
+function openTab(id,scroll){
+  if(!document.getElementById(id)||!document.getElementById(id).classList.contains('panel'))return;
+  tabs.forEach(t=>t.classList.toggle('on',t.dataset.tab===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));
+  if(scroll)window.scrollTo({top:tabbar.offsetTop-56,behavior:'smooth'});
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
+addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));
+if(location.hash)openTab(location.hash.slice(1),false);
 /* course image galleries */
 document.querySelectorAll('.gal').forEach(g=>{
   const imgs=[...g.querySelectorAll('img')];
