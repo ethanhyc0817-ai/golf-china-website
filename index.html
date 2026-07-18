@@ -272,11 +272,11 @@ section{padding:100px 0}
 /* ===== SIGNATURE EXPERIENCES ===== */
 .exclusives{background:var(--paper);border-top:1px solid var(--mist)}
 .ex-carousel{position:relative}
-.ex-track{display:flex;gap:20px;overflow-x:auto;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ex-track{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .ex-track::-webkit-scrollbar{display:none}
 .excard{position:relative;flex:0 0 min(340px,80vw);height:450px;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift)}
 .excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
-.excard:hover img{transform:scale(1.05)}
+@media(hover:hover){.excard:hover img{transform:scale(1.05)}}
 .excard .kind{position:absolute;top:14px;left:14px;z-index:2;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:#fff;background:rgba(20,36,28,.5);backdrop-filter:blur(4px);padding:6px 11px;border-radius:2px}
 .excard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
 .excard .loc{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
@@ -292,13 +292,12 @@ section{padding:100px 0}
 /* ===== WHERE YOU STAY (A&K-style recommended hotels) ===== */
 .stay{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
 .hotel-carousel{position:relative}
-.hotel-row{display:flex;gap:20px;overflow-x:auto;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.hotel-row{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .hotel-row::-webkit-scrollbar{display:none}
 .hcard{flex:0 0 clamp(250px,calc((100% - 60px)/4),420px);background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s ease,transform .3s ease}
-.hcard:hover{box-shadow:var(--lift);transform:translateY(-4px)}
+@media(hover:hover){.hcard:hover{box-shadow:var(--lift);transform:translateY(-4px)}.hcard:hover .ph img{transform:scale(1.05)}}
 .hcard .ph{aspect-ratio:4/5;overflow:hidden}
 .hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.hcard:hover .ph img{transform:scale(1.05)}
 .hcard .b{padding:20px 18px 18px;display:flex;flex-direction:column;flex:1}
 .hcard .loc{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .hcard h3{font-size:24px;margin:8px 0 18px;font-weight:500;color:var(--pine)}
@@ -367,7 +366,7 @@ body.hm-lock{overflow:hidden}
 /* ===== HOW IT WORKS ===== */
 .how{background:var(--pine);color:#fff}
 .how .section-head h2{color:#fff}.how .section-head p{color:rgba(255,255,255,.72)}
-.how-row{display:flex;gap:22px;overflow-x:auto;padding:28px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.how-row{display:flex;gap:22px;overflow-x:auto;overflow-y:hidden;padding:28px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .how-row::-webkit-scrollbar{display:none}
 .step{position:relative;flex:1 0 calc((100% - 66px)/4);background:var(--paper);border-radius:2px;padding:36px 24px 28px;box-shadow:var(--lift)}
 .step .n{position:absolute;top:-20px;left:24px;width:44px;height:44px;border-radius:999px;background:var(--gold);color:var(--ink);font-family:var(--serif);font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
