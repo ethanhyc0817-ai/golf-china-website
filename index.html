@@ -367,12 +367,16 @@ body.hm-lock{overflow:hidden}
 /* ===== HOW IT WORKS ===== */
 .how{background:var(--pine);color:#fff}
 .how .section-head h2{color:#fff}.how .section-head p{color:rgba(255,255,255,.72)}
-.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-@media(max-width:760px){.how-grid{grid-template-columns:1fr}}
-.step{border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
+.how-row{display:flex;gap:24px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.how-row::-webkit-scrollbar{display:none}
+.step{flex:1 0 calc((100% - 72px)/4);border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
 .step .n{font-family:var(--serif);font-size:46px;color:var(--gold);line-height:1}
 .step h4{font-size:21px;margin:12px 0 8px}
-.step p{font-size:15.5px;color:rgba(255,255,255,.82);font-weight:300}
+.step p{font-size:15px;color:rgba(255,255,255,.82);font-weight:300}
+@media(max-width:860px){
+  .step{flex:0 0 66vw;max-width:290px}
+  .how-row{margin:0 -28px;padding-left:28px;padding-right:28px}
+}
 
 /* ===== ABOUT / WHO WE ARE ===== */
 .about{background:var(--ivory)}
@@ -460,7 +464,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   .section-head{margin-bottom:36px}
   .hero .actions{flex-direction:column}
   .hero .actions .btn{text-align:center}
-  .ex-track,.hotel-row{margin:0 -20px;padding-left:20px;padding-right:20px;scroll-padding-left:20px}
+  .ex-track,.hotel-row,.how-row{margin:0 -20px;padding-left:20px;padding-right:20px}
 }
 </style>
 </head>
@@ -1039,15 +1043,16 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">How It Works</span>
-      <h2>Private from the first conversation.</h2>
-      <p>There are no fixed departures and no standard itinerary hidden behind a different name. Every journey begins with your group.</p>
+      <h2>Four steps to your golf journey.</h2>
+      <p>Planning golf in China sounds complicated. It isn't — one message starts it, and we handle everything else.</p>
     </div>
-    <div class="how-grid">
-      <div class="step fade"><div class="n">1</div><h4>Tell us what you have in mind</h4><p>Share your approximate dates, group size, handicaps, preferred pace and what you want from the trip beyond golf.</p></div>
-      <div class="step fade"><div class="n">2</div><h4>We build the route</h4><p>We select the right destinations, courses, hotels and travel sequence, then bring everything together into one clear proposal.</p></div>
-      <div class="step fade"><div class="n">3</div><h4>We refine it with you</h4><p>Adjust the pace, change the hotels, add another region or remove anything that does not feel right.</p></div>
+    <div class="how-row fade">
+      <div class="step"><div class="n">1</div><h4>Make an enquiry</h4><p>Send us a few details — approximate dates, group size and the trip you have in mind.</p></div>
+      <div class="step"><div class="n">2</div><h4>Speak to an expert</h4><p>Talk it through with a specialist who knows every course and route first-hand.</p></div>
+      <div class="step"><div class="n">3</div><h4>Receive your proposal</h4><p>A complete journey — golf, hotels and everything in between — refined with you until it feels right.</p></div>
+      <div class="step"><div class="n">4</div><h4>Confirm and travel</h4><p>We take care of everything on the ground. You just pack your clubs.</p></div>
     </div>
-    <p class="fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.75)">The final journey should feel entirely your own.</p>
+    <p class="fade" style="text-align:center;margin-top:34px"><a class="btn btn-ghost" href="#start">Make an Enquiry</a></p>
   </div>
 </section>
 
