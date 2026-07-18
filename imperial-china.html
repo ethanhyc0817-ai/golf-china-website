@@ -10,21 +10,21 @@
 <meta name="description" content="A private golf journey through Imperial China — Great Wall fairways at Reignwood Pine Valley, early-access mornings in the Forbidden City, hutong courtyards and a table set on the ramparts of the Wall itself.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ===== Golf China — design tokens (see DESIGN-SYSTEM.md) ===== */
+/* ===== Golf China — design tokens v2 (light palette, Playfair/Inter) ===== */
 :root{
-  --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
-  --cinnabar:#b4452f; --gold:#b89150;
-  --ivory:#f6f1e7; --paper:#fffdf8; --mist:#e7e0d2;
-  --lift:0 18px 50px -20px rgba(20,36,28,.4);
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'Jost',-apple-system,Segoe UI,sans-serif;
+  --ink:#201f1b; --pine:#1f3d2e; --moss:#3f6f54;
+  --cinnabar:#b4452f; --gold:#a8894e;
+  --ivory:#faf8f3; --paper:#ffffff; --mist:#e3ddd0;
+  --lift:0 18px 50px -20px rgba(32,31,27,.35);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,Segoe UI,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
+body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.65;font-weight:400;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:.2px}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
@@ -50,15 +50,20 @@ header.nav nav{display:flex;gap:30px;align-items:center}
 header.nav nav a{font-size:13px;letter-spacing:.08em;color:#fff;opacity:.92;font-weight:400}
 header.nav nav a:hover{color:var(--gold)}
 header.nav .nav-cta{font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px;border-radius:2px}
-header.nav.scrolled{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
+header.nav.scrolled{background:var(--ivory);box-shadow:0 2px 20px rgba(32,31,27,.12)}
+header.nav.scrolled .logo,header.nav.scrolled .logo .logo-text,header.nav.scrolled nav a{color:var(--ink);text-shadow:none}
+header.nav.scrolled .logo span{color:var(--gold)}
+header.nav.scrolled .nav-cta{border-color:var(--ink)}
+header.nav.scrolled .menu-toggle{color:var(--ink)}
+header.nav:not(.scrolled) .logo,header.nav:not(.scrolled) nav a{text-shadow:0 1px 12px rgba(0,0,0,.45)}
 header.nav.scrolled .bar{padding:12px 28px}
 .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:60}
 @media(max-width:960px){
   header.nav .bar{padding:14px 20px}
-  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--pine);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--ivory);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
   header.nav nav.open{max-height:520px}
-  header.nav nav a{padding:15px 22px;border-top:1px solid rgba(255,255,255,.1);font-size:15px;opacity:1}
-  header.nav nav .nav-cta{border:none;border-top:1px solid rgba(255,255,255,.1);background:var(--cinnabar);text-align:center;border-radius:0}
+  header.nav nav a,header.nav:not(.scrolled) nav a{padding:16px 22px;border-top:1px solid var(--mist);font-size:16px;opacity:1;color:var(--ink);text-shadow:none}
+  header.nav nav .nav-cta{border:none;border-top:1px solid var(--mist);background:var(--cinnabar);color:#fff;text-align:center;border-radius:0}
   .menu-toggle{display:block}
 }
 
@@ -75,20 +80,20 @@ header.nav.scrolled .bar{padding:12px 28px}
 .hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,26px);color:rgba(255,255,255,.94);max-width:46ch}
 
 /* ===== FACTS BAR (Black Tomato-style key facts) ===== */
-.facts{background:var(--pine);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
+.facts{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--mist)}
 .facts .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.facts .f{padding:26px 28px;border-left:1px solid rgba(255,255,255,.14)}
+.facts .f{padding:26px 28px;border-left:1px solid var(--mist)}
 .facts .f:first-child{border-left:none;padding-left:0}
 .facts .fk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .facts .fv{font-family:var(--serif);font-size:21px;margin-top:6px;line-height:1.25}
-.facts .fs{font-size:13.5px;color:rgba(255,255,255,.65);margin-top:3px;font-weight:300}
+.facts .fs{font-size:13.5px;color:#55534b;margin-top:3px;font-weight:400}
 @media(max-width:860px){.facts .grid{grid-template-columns:1fr 1fr}.facts .f{padding:20px 22px}.facts .f:nth-child(odd){border-left:none;padding-left:0}}
 
 /* ===== SECTION SHELL ===== */
 section{padding:100px 0}
 .section-head{max-width:680px;margin-bottom:54px}
 .section-head h2{font-size:clamp(32px,4.6vw,50px);margin:14px 0}
-.section-head p{color:#4a5a50;font-size:18px}
+.section-head p{color:#55534b;font-size:18px}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 
 /* ===== OVERVIEW (editorial intro + at a glance) ===== */
@@ -96,21 +101,21 @@ section{padding:100px 0}
 .ov-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
 @media(max-width:860px){.ov-wrap{grid-template-columns:1fr;gap:40px}}
 .ov-txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
-.ov-txt p{font-size:17.5px;color:#3f4f45;margin-bottom:18px;max-width:62ch}
+.ov-txt p{font-size:17.5px;color:#55534b;margin-bottom:18px;max-width:62ch}
 .ov-txt .lede::first-letter{font-family:var(--serif);font-size:54px;line-height:.9;float:left;padding:6px 10px 0 0;color:var(--cinnabar)}
 .glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px;position:sticky;top:96px}
 .glance h3{font-size:15px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
 .glance h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:12px}
 .glance ul{list-style:none;margin-top:20px}
-.glance li{font-size:15.5px;color:#3f4f45;padding:11px 0 11px 24px;border-bottom:1px solid var(--mist);position:relative}
+.glance li{font-size:15.5px;color:#55534b;padding:11px 0 11px 24px;border-bottom:1px solid var(--mist);position:relative}
 .glance li:last-child{border-bottom:none}
 .glance li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;background:var(--gold);border-radius:999px}
-.glance .gnote{font-size:13.5px;color:#7a857c;margin-top:16px;font-style:italic}
+.glance .gnote{font-size:13.5px;color:#8a877e;margin-top:16px;font-style:italic}
 
 /* ===== THE GOLF ===== */
-.golf{background:var(--pine);color:#fff}
-.golf .section-head h2{color:#fff}.golf .section-head p{color:rgba(255,255,255,.72)}
-.golf-feature{display:grid;grid-template-columns:1.25fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:26px}
+.golf{background:#f2eee5}
+.golf .section-head h2{color:var(--ink)}.golf .section-head p{color:#55534b}
+.golf-feature{display:grid;grid-template-columns:1.25fr 1fr;gap:0;background:#fff;border:1px solid var(--mist);border-radius:2px;overflow:hidden;margin-bottom:26px}
 @media(max-width:860px){.golf-feature{grid-template-columns:1fr}}
 .golf-feature .img{position:relative;min-height:380px}
 .golf-feature .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -130,12 +135,12 @@ section{padding:100px 0}
 .golf-feature .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
 .golf-feature .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .golf-feature .c h3{font-size:32px;margin:8px 0 14px}
-.golf-feature .c p{font-size:16px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch}
-.golf-feature dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;border-top:1px solid rgba(255,255,255,.16);padding-top:18px;margin-top:20px}
+.golf-feature .c p{font-size:16px;color:#55534b;font-weight:400;max-width:52ch}
+.golf-feature dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;border-top:1px solid var(--mist);padding-top:18px;margin-top:20px}
 .golf-feature dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:2px}
-.golf-feature dd{font-size:15px;color:rgba(255,255,255,.86);font-weight:300}
-.golf-note{font-size:15px;color:rgba(255,255,255,.65);max-width:64ch}
-.golf-note b{color:#fff;font-weight:500}
+.golf-feature dd{font-size:15px;color:var(--ink);font-weight:400}
+.golf-note{font-size:15px;color:#55534b;max-width:64ch}
+.golf-note b{color:var(--pine);font-weight:500}
 
 /* ===== AFTER THE ROUND ===== */
 .after{background:var(--ivory)}
@@ -143,7 +148,7 @@ section{padding:100px 0}
 @media(max-width:860px){.after-wrap{grid-template-columns:1fr;gap:36px}}
 .after .photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
 .after .txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
-.after .txt p{font-size:17.5px;color:#3f4f45;max-width:58ch;margin-bottom:18px}
+.after .txt p{font-size:17.5px;color:#55534b;max-width:58ch;margin-bottom:18px}
 .after .txt p:last-of-type{margin-bottom:0}
 
 /* ===== JOURNEYS FEATURING BEIJING (package entry cards) ===== */
@@ -158,14 +163,14 @@ section{padding:100px 0}
 .sjcard .b{position:relative;z-index:2;padding:26px;text-shadow:0 1px 12px rgba(20,36,28,.55)}
 .sjcard .specs{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95}
 .sjcard h3{font-size:25px;margin:8px 0 4px}
-.sjcard .route{font-size:15px;color:rgba(255,255,255,.9);font-weight:300}
-.sjcard .hi{font-size:14.5px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
+.sjcard .route{font-size:15px;color:rgba(255,255,255,.9);font-weight:400}
+.sjcard .hi{font-size:14.5px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:400}
 .sjcard .foot{margin-top:16px}
 .sjcard .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .sjcard .foot a:hover{color:var(--gold)}
 .journeys .tailor{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:34px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .journeys .tailor .t h3{font-size:24px;color:var(--pine);margin-bottom:6px}
-.journeys .tailor .t p{font-size:15.5px;color:#54635a;max-width:52ch}
+.journeys .tailor .t p{font-size:15.5px;color:#55534b;max-width:52ch}
 
 /* ===== EXPERIENCES ===== */
 .exclusives{background:var(--ivory)}
@@ -178,23 +183,23 @@ section{padding:100px 0}
 .excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .excard h3{font-size:23px;margin:6px 0 7px}
 .excard.feature h3{font-size:28px}
-.excard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
-.exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
+.excard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:400;max-width:46ch}
+.exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#55534b}
 @media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
 @media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
 
 /* ===== STAY ===== */
-.stay{background:var(--pine);color:#fff}
-.stay .section-head h2{color:#fff}.stay .section-head p{color:rgba(255,255,255,.72)}
-.stay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:26px}
+.stay{background:#f2eee5}
+.stay .section-head h2{color:var(--ink)}.stay .section-head p{color:#55534b}
+.stay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--mist);border-radius:2px;overflow:hidden;margin-bottom:26px}
 .stay-wrap.rev .img{order:2}
 @media(max-width:860px){.stay-wrap{grid-template-columns:1fr}.stay-wrap.rev .img{order:0}}
 .stay-wrap .img{position:relative;min-height:380px}
 .stay-wrap .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .stay-wrap .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
-.stay-wrap .c .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.stay-wrap .c .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .stay-wrap .c h3{font-size:30px;margin:8px 0 14px}
-.stay-wrap .c p{font-size:16px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch;margin-bottom:14px}
+.stay-wrap .c p{font-size:16px;color:#55534b;font-weight:400;max-width:52ch;margin-bottom:14px}
 .stay-wrap .c p:last-of-type{margin-bottom:0}
 
 /* ===== EXTEND ===== */
@@ -207,7 +212,7 @@ section{padding:100px 0}
 .xcard .b{position:relative;z-index:2;padding:26px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92))}
 .xcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .xcard h3{font-size:25px;margin:6px 0 6px}
-.xcard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:48ch}
+.xcard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:400;max-width:48ch}
 .xcard .go{margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:3px;display:inline-block}
 
 /* ===== CTA ===== */
@@ -219,17 +224,17 @@ section{padding:100px 0}
 .cta p{color:rgba(255,255,255,.82);margin:18px auto 30px;max-width:46ch}
 
 /* ===== FOOTER ===== */
-footer{background:var(--pine);color:rgba(255,255,255,.8);padding:60px 0 30px}
-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer{background:#f2eee5;border-top:1px solid var(--mist);color:#55534b;padding:60px 0 30px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--mist)}
 @media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
-footer .logo{font-family:var(--serif);font-size:24px;color:#fff;display:flex;align-items:center;gap:12px}
+footer .logo{font-family:var(--serif);font-size:24px;color:var(--ink);display:flex;align-items:center;gap:12px}
 footer .logo .logo-mark{height:32px;width:auto}
-footer .logo .logo-text{color:#fff}
+footer .logo .logo-text{color:var(--ink)}
 footer .logo span{color:var(--gold)}
-footer h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-footer ul{list-style:none;font-size:14px;font-weight:300}
+footer h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pine);margin-bottom:14px}
+footer ul{list-style:none;font-size:14px;font-weight:400}
 footer ul li{padding:5px 0;opacity:.85}
-footer ul li a:hover{color:#fff}
+footer ul li a:hover{color:var(--ink)}
 footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
 
 @media(max-width:600px){
@@ -247,12 +252,12 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="bar">
     <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
     <nav>
-      <a href="#overview">Overview</a>
-      <a href="#golf">The Golf</a>
-      <a href="#journeys">Journeys</a>
-      <a href="#exclusives">Experiences</a>
-      <a href="#stay">Where You Stay</a>
-      <a href="index.html#start" class="nav-cta">Enquire</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="courses.html">Courses</a>
+      <a href="journeys.html">Journeys</a>
+      <a href="experiences.html">Experiences</a>
+      <a href="about.html">Who We Are</a>
+      <a href="enquire.html" class="nav-cta">Enquire</a>
     </nav>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
@@ -266,7 +271,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </picture>
   <div class="scrim"></div>
   <div class="container hero-inner">
-    <div class="crumbs fade in"><a href="index.html">Home</a><span class="sep">·</span><a href="index.html#destinations">Destinations</a><span class="sep">·</span>Beijing</div>
+    <div class="crumbs fade in"><a href="index.html">Home</a><span class="sep">·</span><a href="destinations.html">Destinations</a><span class="sep">·</span>Beijing</div>
     <span class="eyebrow">Beijing · North China</span>
     <h1>Imperial China</h1>
     <p class="hero-tag">Six hundred years of empire, a wild stretch of the Wall to yourselves — and golf played in its shadow.</p>
@@ -414,7 +419,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <h3>The Grand China Golf Journey</h3>
           <div class="route">Beijing + Hangzhou + Yunnan + Hainan</div>
           <div class="hi">Open in the capital, finish on a tropical coast — the most complete way to experience Golf China.</div>
-          <div class="foot"><a href="index.html#start">Tailor This Journey →</a></div>
+          <div class="foot"><a href="enquire.html">Tailor This Journey →</a></div>
         </div>
       </article>
 
@@ -425,7 +430,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         <h3>Or build Beijing into your own.</h3>
         <p>Add days, swap rounds for culture, bring non-golfers — every journey is designed from scratch. Tell us about your party and we'll shape the route around you.</p>
       </div>
-      <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
+      <a href="enquire.html" class="btn btn-primary">Request a Private Proposal</a>
     </div>
   </div>
 </section>
@@ -500,7 +505,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </div>
     </div>
 
-    <p class="note fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
+    <p class="note fade" style="text-align:center;margin-top:38px;font-size:15px;color:#55534b">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
   </div>
 </section>
 
@@ -546,7 +551,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <span class="eyebrow">Start Planning</span>
     <h2>Begin your journey in Imperial China.</h2>
     <p>Tell us a little about your trip and a travel designer will reply within one business day — with no obligation.</p>
-    <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
+    <a href="enquire.html" class="btn btn-primary">Request a Private Proposal</a>
   </div>
 </section>
 
@@ -556,12 +561,12 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="cols">
       <div>
         <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></div>
-        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
-        <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
+        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:400">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
+        <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:400;opacity:.65">Golf China is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>
-      <div><h5>Explore</h5><ul><li><a href="index.html#why-china">Why China</a></li><li><a href="index.html#destinations">Destinations</a></li><li><a href="index.html#courses">Courses</a></li><li><a href="index.html#journeys">Sample Journeys</a></li><li><a href="index.html#exclusives">Signature Experiences</a></li><li><a href="index.html#stay">Where You Stay</a></li></ul></div>
-      <div><h5>Plan</h5><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#about">Who We Are</a></li><li><a href="index.html#plan">Plan Your Trip</a></li><li><a href="index.html#experiences">Beyond Golf</a></li><li><a href="index.html#start">Request a Proposal</a></li></ul></div>
-      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="index.html#start">Enquire now</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="index.html">Why China</a></li><li><a href="destinations.html">Destinations</a></li><li><a href="courses.html">Courses</a></li><li><a href="journeys.html">Sample Journeys</a></li><li><a href="experiences.html">Signature Experiences</a></li><li><a href="experiences.html">Where You Stay</a></li></ul></div>
+      <div><h5>Plan</h5><ul><li><a href="journeys.html">How It Works</a></li><li><a href="about.html">Who We Are</a></li><li><a href="about.html">Plan Your Trip</a></li><li><a href="experiences.html">Beyond Golf</a></li><li><a href="enquire.html">Request a Proposal</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="enquire.html">Enquire now</a></li></ul></div>
     </div>
     <div class="base">
       <span>© 2026 Golf China. All rights reserved.</span>
