@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Journeys — Golf China</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="description" content="Private golf journeys across China — First-Time Golf China, Snow Peaks to Tropical Coast, and the Grand China Golf Journey. Every route redesigned around your group.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#201f1b; --soft:#55534b;
+  --pine:#1f3d2e; --gold:#a8894e; --cinnabar:#b4452f;
+  --paper:#faf8f3; --cream:#f2eee5; --line:#e3ddd0;
+  --lift:0 18px 50px -20px rgba(32,31,27,.35);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,Segoe UI,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;font-weight:400;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:.1px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.container{max-width:1240px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 32px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cinnabar);color:#fff}
+.btn-primary:hover{background:#9c3927}
+.fade{opacity:0;transform:translateY(24px);transition:.7s ease}
+.fade.in{opacity:1;transform:none}
+
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1240px;margin:0 auto}
+header.nav .logo{font-family:var(--serif);font-size:23px;font-weight:600;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px}
+header.nav .logo .logo-mark{height:30px;width:auto;display:block}
+header.nav .logo span{color:#e8cf95}
+header.nav nav{display:flex;gap:30px;align-items:center}
+header.nav nav a{font-size:14px;letter-spacing:.05em;color:#fff;font-weight:500}
+header.nav nav a:hover{opacity:.75}
+header.nav .nav-cta{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.55);padding:10px 20px;border-radius:2px}
+header.nav:not(.scrolled) .logo,header.nav:not(.scrolled) nav a{text-shadow:0 1px 12px rgba(0,0,0,.45)}
+header.nav.scrolled{background:var(--paper);box-shadow:0 2px 20px rgba(32,31,27,.12)}
+header.nav.scrolled .bar{padding:12px 28px}
+header.nav.scrolled .logo,header.nav.scrolled nav a{color:var(--ink);text-shadow:none}
+header.nav.scrolled .logo span{color:var(--gold)}
+header.nav.scrolled .nav-cta{border-color:var(--ink)}
+header.nav.scrolled .menu-toggle{color:var(--ink)}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:60}
+@media(max-width:960px){
+  header.nav .bar{padding:14px 20px}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(32,31,27,.18)}
+  header.nav nav.open{max-height:480px}
+  header.nav nav a,header.nav:not(.scrolled) nav a{padding:16px 22px;border-top:1px solid var(--line);font-size:16px;color:var(--ink);text-shadow:none}
+  header.nav nav .nav-cta{border:none;border-top:1px solid var(--line);background:var(--cinnabar);color:#fff;text-align:center;border-radius:0}
+  .menu-toggle{display:block}
+}
+
+.banner{position:relative;height:min(62vh,560px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,22,.55) 0%,rgba(20,25,22,.05) 45%,rgba(20,25,22,.65) 100%)}
+.banner .cap{position:relative;z-index:2;width:100%;padding-bottom:52px}
+.banner h1{font-size:clamp(36px,5vw,60px);text-shadow:0 2px 24px rgba(0,0,0,.4);max-width:20ch}
+.banner p{font-size:clamp(16px,1.6vw,19px);font-weight:500;color:rgba(255,255,255,.94);margin-top:12px;max-width:52ch}
+
+section{padding:90px 0}
+.sj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:920px){.sj-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.sjcard{position:relative;display:flex;flex-direction:column;border-radius:3px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--lift)}
+.sjcard .sj-badge{position:absolute;left:16px;top:16px;z-index:3;background:var(--paper);color:var(--ink);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
+.sjcard .ph{overflow:hidden}
+.sjcard .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:.5s}
+.sjcard:hover .ph img{transform:scale(1.05)}
+.sjcard .b{padding:26px 26px 22px;flex:1}
+.sjcard h3{font-size:27px;font-weight:600;line-height:1.12}
+.sjcard .specs{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+.sjcard .hi{font-size:16px;color:var(--soft);margin-top:12px}
+.sjcard .bestfor{font-size:14px;font-style:italic;color:var(--soft);margin-top:10px}
+.sjcard .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 26px;border-top:1px solid var(--line)}
+.sjcard .price{font-size:15.5px}
+.sjcard .price b{font-weight:600}
+.sjcard .foot a{background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;padding:13px 24px;border-radius:2px;white-space:nowrap;transition:.25s}
+.sjcard .foot a:hover{background:var(--pine)}
+.note{text-align:center;margin-top:40px;font-size:16.5px;color:var(--soft)}
+
+.how{background:var(--cream);border-top:1px solid var(--line)}
+.how .section-head{margin-bottom:44px}
+.how .section-head h2{font-size:clamp(30px,4vw,44px)}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:760px){.how-grid{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--gold);padding-top:20px}
+.step .n{font-family:var(--serif);font-size:40px;font-weight:600;color:var(--gold);line-height:1}
+.step h4{font-size:21px;font-weight:600;margin:10px 0 6px}
+.step p{font-size:16px;color:var(--soft)}
+
+.pagecta{background:var(--paper);text-align:center}
+.pagecta h2{font-size:clamp(30px,4vw,44px);max-width:24ch;margin:0 auto}
+.pagecta p{font-size:17px;color:var(--soft);margin:14px auto 30px;max-width:52ch}
+
+footer{background:var(--cream);border-top:1px solid var(--line);color:var(--soft);padding:52px 0 28px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid var(--line)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer .logo{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:12px}
+footer .logo span{color:var(--gold)}
+footer h5{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--pine);margin-bottom:14px}
+footer ul{list-style:none;font-size:15px}
+footer ul li{padding:5px 0}
+footer ul li a:hover{color:var(--ink)}
+footer .base{display:flex;justify-content:space-between;font-size:13px;padding-top:20px;flex-wrap:wrap;gap:10px}
+
+@media(max-width:600px){
+  .container{padding:0 20px}
+  section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
+    <nav>
+      <a href="destinations.html">Destinations</a>
+      <a href="courses.html">Courses</a>
+      <a href="journeys.html">Journeys</a>
+      <a href="experiences.html">Experiences</a>
+      <a href="about.html">Who We Are</a>
+      <a href="enquire.html" class="nav-cta">Enquire</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="banner">
+  <img src="assets/img/yangtze-hole3-dusk.jpg" alt="A green at Yangtze Dunes surrounded by wild sandy dunes at dusk">
+  <div class="veil"></div>
+  <div class="container cap">
+    <span class="eyebrow" style="color:#e8cf95">Private Journeys</span>
+    <h1>Journeys, not packages.</h1>
+    <p>Three starting points. Every journey is redesigned around your group and your dates.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="sj-grid">
+      <article class="sjcard fade">
+        <div class="ph"><img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"></div>
+        <div class="b">
+          <h3>First-Time Golf China</h3>
+          <div class="specs">8 Nights · 3 Rounds · Beijing &amp; Shanghai</div>
+          <p class="hi">Begin with private golf beneath the Great Wall, explore the capital, then finish among the skyline and championship courses of Shanghai.</p>
+          <p class="bestfor">Hangzhou, Yunnan or Hainan can be added.</p>
+        </div>
+        <div class="foot"><span class="price">From <b>$5,950</b> pp</span><a href="first-time-golf-china.html">View Itinerary</a></div>
+      </article>
+      <article class="sjcard fade">
+        <span class="sj-badge">Signature Trip</span>
+        <div class="ph"><img src="assets/img/jadedragon-fairway.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan"></div>
+        <div class="b">
+          <h3>Snow Peaks to Tropical Coast</h3>
+          <div class="specs">10–12 Nights · 5–6 Rounds · Yunnan &amp; Hainan</div>
+          <p class="hi">Play Spring City and Jade Dragon beneath the highlands of Yunnan, then fly south to Hainan for lava-field golf and a final stretch beside the sea.</p>
+          <p class="bestfor">Two completely different sides of China in one journey.</p>
+        </div>
+        <div class="foot"><span class="price">From <b>$8,950</b> pp</span><a href="enquire.html">Enquire</a></div>
+      </article>
+      <article class="sjcard fade">
+        <div class="ph"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"></div>
+        <div class="b">
+          <h3>The Grand China Golf Journey</h3>
+          <div class="specs">14–15 Days · 7–9 Rounds · Nationwide</div>
+          <p class="hi">From the Great Wall and Shanghai's championship courses to Yunnan's snow peaks and the tropical coast of Hainan.</p>
+          <p class="bestfor">Built for travelers who want to see how far golf in China can go.</p>
+        </div>
+        <div class="foot"><span class="price">From <b>$12,950</b> pp</span><a href="enquire.html">Enquire</a></div>
+      </article>
+    </div>
+    <p class="note fade">Change the pace, the courses, the regions — or start from a blank page.</p>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">How It Works</span>
+      <h2>Private from the first conversation.</h2>
+    </div>
+    <div class="how-grid">
+      <div class="step fade"><div class="n">1</div><h4>Tell us what you have in mind</h4><p>Dates, group size, and what you want beyond golf.</p></div>
+      <div class="step fade"><div class="n">2</div><h4>We build the route</h4><p>Courses, hotels and travel in one clear proposal.</p></div>
+      <div class="step fade"><div class="n">3</div><h4>We refine it with you</h4><p>Until the journey feels entirely your own.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pagecta">
+  <div class="container">
+    <h2 class="fade">Bring us the idea. We'll build the journey.</h2>
+    <p class="fade">A personal reply within one business day. No obligation.</p>
+    <a href="enquire.html" class="btn btn-primary fade">Request a Private Proposal</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo"><span class="logo-text">Golf <span>China</span></span></div>
+        <p style="font-size:14.5px;margin-top:14px;max-width:36ch">Private golf journeys across China, built around world-class courses and rare access.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="destinations.html">Destinations</a></li><li><a href="courses.html">Courses</a></li><li><a href="journeys.html">Journeys</a></li><li><a href="experiences.html">Experiences</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="about.html">Who We Are</a></li><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="enquire.html">Enquire now</a></li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 Golf China. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const toggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('header.nav nav');
+toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

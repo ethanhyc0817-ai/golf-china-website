@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquire — Golf China</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="description" content="Request a private proposal — tell us your dates, group and the kind of golf trip you have in mind. A personal reply within one business day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#201f1b; --soft:#55534b;
+  --pine:#1f3d2e; --gold:#a8894e; --cinnabar:#b4452f;
+  --paper:#faf8f3; --cream:#f2eee5; --line:#e3ddd0;
+  --lift:0 18px 50px -20px rgba(32,31,27,.35);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,Segoe UI,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;font-weight:400;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:.1px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.container{max-width:1240px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 32px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cinnabar);color:#fff}
+.btn-primary:hover{background:#9c3927}
+.fade{opacity:0;transform:translateY(24px);transition:.7s ease}
+.fade.in{opacity:1;transform:none}
+
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1240px;margin:0 auto}
+header.nav .logo{font-family:var(--serif);font-size:23px;font-weight:600;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px}
+header.nav .logo .logo-mark{height:30px;width:auto;display:block}
+header.nav .logo span{color:#e8cf95}
+header.nav nav{display:flex;gap:30px;align-items:center}
+header.nav nav a{font-size:14px;letter-spacing:.05em;color:#fff;font-weight:500}
+header.nav nav a:hover{opacity:.75}
+header.nav .nav-cta{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.55);padding:10px 20px;border-radius:2px}
+header.nav:not(.scrolled) .logo,header.nav:not(.scrolled) nav a{text-shadow:0 1px 12px rgba(0,0,0,.45)}
+header.nav.scrolled{background:var(--paper);box-shadow:0 2px 20px rgba(32,31,27,.12)}
+header.nav.scrolled .bar{padding:12px 28px}
+header.nav.scrolled .logo,header.nav.scrolled nav a{color:var(--ink);text-shadow:none}
+header.nav.scrolled .logo span{color:var(--gold)}
+header.nav.scrolled .nav-cta{border-color:var(--ink)}
+header.nav.scrolled .menu-toggle{color:var(--ink)}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:60}
+@media(max-width:960px){
+  header.nav .bar{padding:14px 20px}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(32,31,27,.18)}
+  header.nav nav.open{max-height:480px}
+  header.nav nav a,header.nav:not(.scrolled) nav a{padding:16px 22px;border-top:1px solid var(--line);font-size:16px;color:var(--ink);text-shadow:none}
+  header.nav nav .nav-cta{border:none;border-top:1px solid var(--line);background:var(--cinnabar);color:#fff;text-align:center;border-radius:0}
+  .menu-toggle{display:block}
+}
+
+.banner{position:relative;height:min(45vh,420px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,22,.55) 0%,rgba(20,25,22,.1) 45%,rgba(20,25,22,.65) 100%)}
+.banner .cap{position:relative;z-index:2;width:100%;padding-bottom:48px}
+.banner h1{font-size:clamp(34px,4.6vw,54px);text-shadow:0 2px 24px rgba(0,0,0,.4);max-width:22ch}
+
+section{padding:90px 0}
+.cta-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start}
+@media(max-width:860px){.cta-wrap{grid-template-columns:1fr;gap:34px}}
+.cta-wrap h2{font-size:clamp(28px,3.6vw,42px)}
+.cta-wrap .lede{color:var(--soft);margin-top:14px;max-width:40ch;font-size:18px}
+.contact{margin-top:30px;border-top:1px solid var(--line);padding-top:24px}
+.contact .k{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.contact p{font-size:16.5px;color:var(--soft);padding:3px 0}
+.contact a{border-bottom:1px solid var(--gold)}
+.form{background:#fff;border:1px solid var(--line);padding:32px;border-radius:3px;box-shadow:var(--lift)}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.form .row{grid-template-columns:1fr}}
+.form label{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pine);margin:14px 0 6px}
+.form input,.form select{width:100%;background:var(--paper);border:1px solid var(--line);color:var(--ink);padding:13px 14px;border-radius:2px;font-family:var(--sans);font-size:16px}
+.form input::placeholder{color:#a8a396}
+.form input:focus,.form select:focus{outline:none;border-color:var(--gold)}
+.form .btn{width:100%;margin-top:24px;border:none}
+.form-note{font-size:13.5px;color:var(--soft);margin-top:14px;text-align:center}
+
+footer{background:var(--cream);border-top:1px solid var(--line);color:var(--soft);padding:52px 0 28px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid var(--line)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer .logo{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:12px}
+footer .logo span{color:var(--gold)}
+footer h5{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--pine);margin-bottom:14px}
+footer ul{list-style:none;font-size:15px}
+footer ul li{padding:5px 0}
+footer ul li a:hover{color:var(--ink)}
+footer .base{display:flex;justify-content:space-between;font-size:13px;padding-top:20px;flex-wrap:wrap;gap:10px}
+
+@media(max-width:600px){
+  .container{padding:0 20px}
+  section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
+    <nav>
+      <a href="destinations.html">Destinations</a>
+      <a href="courses.html">Courses</a>
+      <a href="journeys.html">Journeys</a>
+      <a href="experiences.html">Experiences</a>
+      <a href="about.html">Who We Are</a>
+      <a href="enquire.html" class="nav-cta">Enquire</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="banner">
+  <img src="assets/img/hero-shanghai-dusk.jpg" alt="The Shanghai skyline across the Huangpu at dusk">
+  <div class="veil"></div>
+  <div class="container cap">
+    <span class="eyebrow" style="color:#e8cf95">Start Planning</span>
+    <h1>Bring us the idea. We'll build the journey.</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container cta-wrap">
+    <div class="fade">
+      <h2>Tell us what you have in mind.</h2>
+      <p class="lede">Approximate dates, group size and the kind of golf trip you're imagining. Our team will reply personally and begin shaping the journey around you.</p>
+      <div class="contact">
+        <div class="k">Contact</div>
+        <p><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></p>
+        <p>WeChat: GolfChina</p>
+      </div>
+    </div>
+    <form class="form fade" onsubmit="event.preventDefault();var b=this.querySelector('.btn');b.textContent='Thank you — we will be in touch';b.style.background='#3f6f54';">
+      <div class="row">
+        <div><label>Name</label><input type="text" placeholder="Your name" required></div>
+        <div><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="row">
+        <div><label>Approx. dates</label><input type="text" placeholder="e.g. Oct 2026"></div>
+        <div><label>Party size</label>
+          <select><option>1–2</option><option>3–4</option><option>5–8</option><option>Group (8+)</option></select>
+        </div>
+      </div>
+      <div class="row">
+        <div><label>Interested in</label>
+          <select><option>Golf only</option><option>Golf + culture</option><option>Golf + surf</option><option>Family trip</option><option>Not sure yet</option></select>
+        </div>
+        <div><label>Journey preference</label>
+          <select><option>No preference yet</option><option>First-Time Golf China</option><option>Snow Peaks to Tropical Coast</option><option>The Grand China Golf Journey</option><option>Fully tailored</option></select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Request a Private Proposal</button>
+      <p class="form-note">No obligation · Personal reply within one business day</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo"><span class="logo-text">Golf <span>China</span></span></div>
+        <p style="font-size:14.5px;margin-top:14px;max-width:36ch">Private golf journeys across China, built around world-class courses and rare access.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="destinations.html">Destinations</a></li><li><a href="courses.html">Courses</a></li><li><a href="journeys.html">Journeys</a></li><li><a href="experiences.html">Experiences</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="about.html">Who We Are</a></li><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 Golf China. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const toggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('header.nav nav');
+toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

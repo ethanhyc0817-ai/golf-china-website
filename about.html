@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who We Are — Golf China</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="description" content="Golf China is China's first golf travel company — direct relationships with the country's leading private clubs, from the team behind Surf China.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#201f1b; --soft:#55534b;
+  --pine:#1f3d2e; --gold:#a8894e; --cinnabar:#b4452f;
+  --paper:#faf8f3; --cream:#f2eee5; --line:#e3ddd0;
+  --lift:0 18px 50px -20px rgba(32,31,27,.35);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,Segoe UI,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;font-weight:400;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:.1px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.container{max-width:1240px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 32px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cinnabar);color:#fff}
+.btn-primary:hover{background:#9c3927}
+.fade{opacity:0;transform:translateY(24px);transition:.7s ease}
+.fade.in{opacity:1;transform:none}
+
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1240px;margin:0 auto}
+header.nav .logo{font-family:var(--serif);font-size:23px;font-weight:600;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px}
+header.nav .logo .logo-mark{height:30px;width:auto;display:block}
+header.nav .logo span{color:#e8cf95}
+header.nav nav{display:flex;gap:30px;align-items:center}
+header.nav nav a{font-size:14px;letter-spacing:.05em;color:#fff;font-weight:500}
+header.nav nav a:hover{opacity:.75}
+header.nav .nav-cta{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.55);padding:10px 20px;border-radius:2px}
+header.nav:not(.scrolled) .logo,header.nav:not(.scrolled) nav a{text-shadow:0 1px 12px rgba(0,0,0,.45)}
+header.nav.scrolled{background:var(--paper);box-shadow:0 2px 20px rgba(32,31,27,.12)}
+header.nav.scrolled .bar{padding:12px 28px}
+header.nav.scrolled .logo,header.nav.scrolled nav a{color:var(--ink);text-shadow:none}
+header.nav.scrolled .logo span{color:var(--gold)}
+header.nav.scrolled .nav-cta{border-color:var(--ink)}
+header.nav.scrolled .menu-toggle{color:var(--ink)}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:60}
+@media(max-width:960px){
+  header.nav .bar{padding:14px 20px}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(32,31,27,.18)}
+  header.nav nav.open{max-height:480px}
+  header.nav nav a,header.nav:not(.scrolled) nav a{padding:16px 22px;border-top:1px solid var(--line);font-size:16px;color:var(--ink);text-shadow:none}
+  header.nav nav .nav-cta{border:none;border-top:1px solid var(--line);background:var(--cinnabar);color:#fff;text-align:center;border-radius:0}
+  .menu-toggle{display:block}
+}
+
+.banner{position:relative;height:min(55vh,500px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,22,.55) 0%,rgba(20,25,22,.05) 45%,rgba(20,25,22,.65) 100%)}
+.banner .cap{position:relative;z-index:2;width:100%;padding-bottom:52px}
+.banner h1{font-size:clamp(36px,5vw,58px);text-shadow:0 2px 24px rgba(0,0,0,.4);max-width:22ch}
+
+section{padding:90px 0}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:860px){.about-wrap{grid-template-columns:1fr;gap:36px}}
+.about-wrap .photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:3px;box-shadow:var(--lift)}
+.about-wrap .txt h2{font-size:clamp(28px,3.4vw,40px);margin:12px 0 16px}
+.about-wrap .txt p{font-size:17px;color:var(--soft);max-width:56ch;margin-bottom:14px}
+.about-wrap .txt p a{border-bottom:1px solid var(--gold)}
+.sig{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--pine);margin-top:6px}
+
+.pillars{background:var(--cream);border-top:1px solid var(--line)}
+.pillars .section-head{margin-bottom:44px}
+.pillars .section-head h2{font-size:clamp(30px,4vw,44px)}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:820px){.pillar-grid{grid-template-columns:1fr}}
+.pillar{border-top:2px solid var(--gold);padding-top:20px}
+.pillar .pk{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.pillar h4{font-size:21px;margin:10px 0 8px;color:var(--pine)}
+.pillar p{font-size:16px;color:var(--soft)}
+.pillar p+p{margin-top:9px}
+
+.family{text-align:center}
+.family .fam-head{font-size:13px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--pine);margin-bottom:40px}
+.fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:760px;margin:0 auto}
+@media(max-width:600px){.fam-grid{grid-template-columns:1fr;gap:40px}}
+.fam-col h3{font-size:23px;color:var(--pine);margin-bottom:8px}
+.fam-col h3 span{color:var(--gold)}
+.fam-col p{font-size:15.5px;color:var(--soft);max-width:32ch;margin:0 auto}
+.fam-link{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color .3s}
+.fam-link:hover{color:var(--gold)}
+
+.pagecta{background:var(--cream);border-top:1px solid var(--line);text-align:center}
+.pagecta h2{font-size:clamp(30px,4vw,44px);max-width:24ch;margin:0 auto}
+.pagecta p{font-size:17px;color:var(--soft);margin:14px auto 30px;max-width:52ch}
+
+footer{background:var(--cream);border-top:1px solid var(--line);color:var(--soft);padding:52px 0 28px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid var(--line)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer .logo{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:12px}
+footer .logo span{color:var(--gold)}
+footer h5{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--pine);margin-bottom:14px}
+footer ul{list-style:none;font-size:15px}
+footer ul li{padding:5px 0}
+footer ul li a:hover{color:var(--ink)}
+footer .base{display:flex;justify-content:space-between;font-size:13px;padding-top:20px;flex-wrap:wrap;gap:10px}
+
+@media(max-width:600px){
+  .container{padding:0 20px}
+  section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
+    <nav>
+      <a href="destinations.html">Destinations</a>
+      <a href="courses.html">Courses</a>
+      <a href="journeys.html">Journeys</a>
+      <a href="experiences.html">Experiences</a>
+      <a href="about.html">Who We Are</a>
+      <a href="enquire.html" class="nav-cta">Enquire</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="banner">
+  <img src="assets/img/fuchun-mist.jpg" alt="A serene garden resort in the mist">
+  <div class="veil"></div>
+  <div class="container cap">
+    <span class="eyebrow" style="color:#e8cf95">Who We Are</span>
+    <h1>We built the company China golf was missing.</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container about-wrap">
+    <img class="photo fade" src="assets/img/about-team.jpg" alt="The Golf China team standing together on a golf course fairway">
+    <div class="txt fade">
+      <span class="eyebrow">Golf China</span>
+      <h2>China's first golf travel company.</h2>
+      <p>China has extraordinary golf, but planning a serious golf journey here has never been straightforward. The best courses can be difficult to identify, private-club access is rarely public, and the distances between destinations make local knowledge essential.</p>
+      <p>Golf China was created to solve that. We work directly with leading clubs across the country, design every route around first-hand knowledge and manage the journey from arrival to departure. The relationships, the access and the routes were not borrowed from somewhere else. They were built here.</p>
+      <p>Every enquiry is answered personally by someone who knows the courses, destinations and routes being discussed.</p>
+      <p class="sig">— The Golf China Team</p>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Exclusive Access</span>
+      <h2>Access built over years.</h2>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar fade">
+        <div class="pk">Club Relationships</div>
+        <h4>The private clubs beyond the map</h4>
+        <p>Through direct, long-standing relationships, we arrange guest play at some of China's — and Asia's — most private golf clubs, far beyond the international golf circuit.</p>
+      </div>
+      <div class="pillar fade">
+        <div class="pk">The Pioneer</div>
+        <h4>First, and still the only</h4>
+        <p>Golf China is the first — and still the only — travel company dedicated entirely to golf in China. Our journeys are designed first-hand by travel experts and passionate golfers.</p>
+      </div>
+      <div class="pillar fade">
+        <div class="pk">China Tourism Group</div>
+        <h4>Our people, everywhere you go</h4>
+        <p>Through our long-standing partnership with China Tourism Group, every journey is supported by experienced local teams across the country. From arrival to departure, every detail is handled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="family">
+  <div class="container">
+    <p class="fam-head fade">One team. Two ways to discover China.</p>
+    <div class="fam-grid fade">
+      <div class="fam-col">
+        <h3>Golf <span>China</span></h3>
+        <p>Private golf journeys across China.</p>
+      </div>
+      <div class="fam-col">
+        <h3>Surf China Co.</h3>
+        <p>Private surf and golf journeys in tropical Hainan.</p>
+        <a class="fam-link" href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">Explore Surf China Co. &#8599;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pagecta">
+  <div class="container">
+    <h2 class="fade">Talk to someone who has played these courses.</h2>
+    <p class="fade">A personal reply within one business day. No obligation.</p>
+    <a href="enquire.html" class="btn btn-primary fade">Request a Private Proposal</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo"><span class="logo-text">Golf <span>China</span></span></div>
+        <p style="font-size:14.5px;margin-top:14px;max-width:36ch">Private golf journeys across China, built around world-class courses and rare access.</p>
+        <p style="font-size:13px;margin-top:12px;max-width:38ch;opacity:.75">From the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China</a>.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="destinations.html">Destinations</a></li><li><a href="courses.html">Courses</a></li><li><a href="journeys.html">Journeys</a></li><li><a href="experiences.html">Experiences</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="enquire.html">Enquire now</a></li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 Golf China. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const toggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('header.nav nav');
+toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
