@@ -367,12 +367,15 @@ body.hm-lock{overflow:hidden}
 /* ===== HOW IT WORKS ===== */
 .how{background:var(--pine);color:#fff}
 .how .section-head h2{color:#fff}.how .section-head p{color:rgba(255,255,255,.72)}
-.how-row{display:flex;gap:24px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.how-row{display:flex;gap:22px;overflow-x:auto;padding:28px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .how-row::-webkit-scrollbar{display:none}
-.step{flex:1 0 calc((100% - 72px)/4);border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
-.step .n{font-family:var(--serif);font-size:46px;color:var(--gold);line-height:1}
-.step h4{font-size:21px;margin:12px 0 8px}
-.step p{font-size:15px;color:rgba(255,255,255,.82);font-weight:300}
+.step{position:relative;flex:1 0 calc((100% - 66px)/4);background:var(--paper);border-radius:2px;padding:36px 24px 28px;box-shadow:var(--lift)}
+.step .n{position:absolute;top:-20px;left:24px;width:44px;height:44px;border-radius:999px;background:var(--gold);color:var(--ink);font-family:var(--serif);font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.step+.step::before{content:"→";position:absolute;left:-19px;top:50%;transform:translateY(-50%);color:#e8cf95;font-size:16px}
+.step h4{font-size:21px;margin:0 0 8px;color:var(--pine)}
+.step p{font-size:14.5px;color:#54635a;font-weight:300}
+.how .cta-line{text-align:center;margin-top:30px}
+.how .cta-line .sub{margin-top:13px;font-size:13px;color:rgba(255,255,255,.62)}
 @media(max-width:860px){
   .step{flex:0 0 66vw;max-width:290px}
   .how-row{margin:0 -28px;padding-left:28px;padding-right:28px}
@@ -1041,7 +1044,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
   <div class="container">
-    <div class="section-head fade">
+    <div class="section-head center fade">
       <span class="eyebrow" style="color:var(--gold)">How It Works</span>
       <h2>Four steps to your golf journey.</h2>
       <p>Planning golf in China sounds complicated. It isn't — one message starts it, and we handle everything else.</p>
@@ -1052,7 +1055,10 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <div class="step"><div class="n">3</div><h4>Receive your proposal</h4><p>A complete journey — golf, hotels and everything in between — refined with you until it feels right.</p></div>
       <div class="step"><div class="n">4</div><h4>Confirm and travel</h4><p>We take care of everything on the ground. You just pack your clubs.</p></div>
     </div>
-    <p class="fade" style="text-align:center;margin-top:34px"><a class="btn btn-ghost" href="#start">Make an Enquiry</a></p>
+    <div class="cta-line fade">
+      <a class="btn btn-primary" href="#start">Make an Enquiry</a>
+      <p class="sub">It takes two minutes — and there's no obligation.</p>
+    </div>
   </div>
 </section>
 
