@@ -216,7 +216,19 @@ section{padding:100px 0}
 .ccard:hover{transform:translateY(-6px);box-shadow:var(--lift)}
 .ccard .img{position:relative;height:208px}
 .ccard .img img{width:100%;height:100%;object-fit:cover}
-.ccard .img .tag{position:absolute;left:0;bottom:0;background:rgba(20,36,28,.82);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px}
+.ccard .img .tag{position:absolute;left:0;bottom:0;background:rgba(20,36,28,.82);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;z-index:3}
+.ccard .img{overflow:hidden}
+.cgal{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cgal::-webkit-scrollbar{display:none}
+.cgal img{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always}
+.cg-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:32px;height:32px;border-radius:999px;border:none;background:rgba(255,255,255,.88);color:var(--pine);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:.25s}
+.ccard .img:hover .cg-nav,.cg-nav:focus-visible{opacity:1}
+.cg-nav:hover{background:var(--pine);color:#fff}
+.cg-nav.prev{left:10px}.cg-nav.next{right:10px}
+.cg-dots{position:absolute;bottom:10px;right:12px;display:flex;gap:5px;z-index:3;pointer-events:none}
+.cg-dots i{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.55);transition:.25s}
+.cg-dots i.on{background:#fff}
+@media(hover:none){.cg-nav{display:none}}
 .ccard.select .img .tag{background:var(--cinnabar)}
 .ccard .rankline{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:-4px 0 12px}
 .ccard.noir{background:#0e0e0c;border-color:#2c271d}
@@ -680,7 +692,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
     <div class="course-grid">
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing"><span class="tag">Beijing</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing">
+            <img src="assets/img/reignwood-autumn-green.jpg" alt="An autumn green at Reignwood Pine Valley framed by golden trees" loading="lazy">
+            <img src="assets/img/reignwood-clubhouse.jpg" alt="The palace-style clubhouse at Reignwood Pine Valley" loading="lazy">
+            <img src="assets/img/reignwood-caddies.jpg" alt="Caddies at Reignwood Pine Valley" loading="lazy">
+          </div>
+          <span class="tag">Beijing</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Beijing</div><h3>Reignwood Pine Valley</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
           <p>Nicklaus mountain golf beneath the Great Wall — one of China's most private clubs.</p>
@@ -689,7 +712,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai"><span class="tag">Shanghai</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai">
+            <img src="assets/img/sheshan-clubhouse-water.jpg" alt="The Sheshan International clubhouse across the water" loading="lazy">
+            <img src="assets/img/sheshan-lakeside.jpg" alt="A lakeside hole at Sheshan International" loading="lazy">
+            <img src="assets/img/sheshan-bunkers.jpg" alt="Deep bunkering at Sheshan International" loading="lazy">
+          </div>
+          <span class="tag">Shanghai</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Shanghai</div><h3>Sheshan International</h3><div class="rankline">World Top 100 · Golf Digest</div>
           <p>China's best-known championship course — long-time home of the WGC-HSBC Champions.</p>
@@ -698,7 +732,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/course-springcity.jpg" alt="Spring City Resort golf above a lake in Yunnan"><span class="tag">Yunnan</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/course-springcity.jpg" alt="Spring City Resort golf above a lake in Yunnan">
+            <img src="assets/img/springcity-lake-green.jpg" alt="A green above Yangzong Lake at Spring City" loading="lazy">
+            <img src="assets/img/springcity-mountain-course.jpg" alt="The Mountain Course climbing the hills at Spring City" loading="lazy">
+            <img src="assets/img/springcity-resort-dusk.jpg" alt="Spring City Resort at dusk" loading="lazy">
+          </div>
+          <span class="tag">Yunnan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Kunming · Yunnan</div><h3>Spring City Resort</h3><div class="rankline">World Top 100 · Golf Digest</div>
           <p>Two world-ranked courses above Yangzong Lake — one climbing the hills, one opening to the water.</p>
@@ -707,7 +752,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/jadedragon-fairway.jpg" alt="Jade Dragon Snow Mountain golf course beneath a glacier"><span class="tag">Yunnan</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/jadedragon-fairway.jpg" alt="Jade Dragon Snow Mountain golf course beneath a glacier">
+            <img src="assets/img/jadedragon-hole12-massif.jpg" alt="The 12th hole beneath the Jade Dragon massif" loading="lazy">
+            <img src="assets/img/jadedragon-snowpeak-fairway.jpg" alt="A fairway running toward the snow peak at Jade Dragon" loading="lazy">
+            <img src="assets/img/jadedragon-golden-fairway.jpg" alt="Golden evening light across a Jade Dragon fairway" loading="lazy">
+          </div>
+          <span class="tag">Yunnan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Lijiang · Yunnan</div><h3>Jade Dragon Snow Mountain</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
           <p>One of the highest courses in the world — 3,000 metres up, 8,548 yards from the tips.</p>
@@ -716,7 +772,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou"><span class="tag">Hangzhou</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou">
+            <img src="assets/img/fuchun-pavilion-lake.jpg" alt="A lakeside pavilion at Fuchun Resort" loading="lazy">
+            <img src="assets/img/fuchun-mist-bunkers.jpg" alt="Misty bunkers on the hillside course at Fuchun Resort" loading="lazy">
+            <img src="assets/img/fuchun-tea-terraces.jpg" alt="Tea terraces beside the fairways at Fuchun Resort" loading="lazy">
+          </div>
+          <span class="tag">Hangzhou</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Hangzhou</div><h3>Fuchun Resort</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
           <p>A quiet hillside course among tea fields and Jiangnan architecture — more private retreat than golf resort.</p>
@@ -725,7 +792,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard fade">
-        <div class="img"><img src="assets/img/course-hainan-dunes.jpg" alt="The Dunes links course on the Hainan coast"><span class="tag">Hainan</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/course-hainan-dunes.jpg" alt="The Dunes links course on the Hainan coast">
+            <img src="assets/img/dunes-shenzhou-sea-green.jpg" alt="A green beside the South China Sea at The Dunes" loading="lazy">
+            <img src="assets/img/dunes-clifftop-green.jpg" alt="A clifftop green above the ocean at The Dunes" loading="lazy">
+            <img src="assets/img/dunes-shenzhou-headland-aerial.jpg" alt="Aerial view of the Shenzhou Peninsula headland holes" loading="lazy">
+          </div>
+          <span class="tag">Hainan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Hainan</div><h3>The Dunes at Shenzhou Peninsula</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
           <p>Weiskopf golf through natural dunes beside the South China Sea — the strongest links golf in China.</p>
@@ -734,7 +812,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard more fade">
-        <div class="img"><img src="assets/img/course-yangtze.jpg" alt="A green at Yangtze Dunes surrounded by wild sandy dunes at dusk, Chongming Island" loading="lazy"><span class="tag">Shanghai</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/course-yangtze.jpg" alt="A green at Yangtze Dunes surrounded by wild sandy dunes at dusk, Chongming Island" loading="lazy">
+            <img src="assets/img/yangtze-links-aerial.jpg" alt="Aerial view of the linksland at Yangtze Dunes" loading="lazy">
+            <img src="assets/img/yangtze-hole3-dusk.jpg" alt="The third hole at Yangtze Dunes at dusk" loading="lazy">
+            <img src="assets/img/yangtze-sunset-green.jpg" alt="A sunset green at Yangtze Dunes" loading="lazy">
+          </div>
+          <span class="tag">Shanghai</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Chongming Island · Shanghai</div><h3>Yangtze Dunes</h3><div class="rankline">China Top 3 · Golf Digest</div>
           <p>A modern links among large-scale dunes on the Yangtze estuary — unlike anything else around Shanghai.</p>
@@ -743,7 +832,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard more fade">
-        <div class="img"><img src="assets/img/course-hainan-blackstone.jpg" alt="Rugged white-sand bunkers across a fairway at dusk on the Blackstone course, Haikou" loading="lazy"><span class="tag">Hainan</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/course-hainan-blackstone.jpg" alt="Rugged white-sand bunkers across a fairway at dusk on the Blackstone course, Haikou" loading="lazy">
+            <img src="assets/img/blackstone-lava-aerial.jpg" alt="Aerial view of fairways cut through black lava at Blackstone" loading="lazy">
+            <img src="assets/img/blackstone-fairway-bunkers.jpg" alt="Bunkered fairway at Blackstone, Mission Hills Haikou" loading="lazy">
+            <img src="assets/img/blackstone-sunrise.jpg" alt="Sunrise over the Blackstone course" loading="lazy">
+          </div>
+          <span class="tag">Hainan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Haikou · Hainan</div><h3>Mission Hills Haikou — Blackstone</h3><div class="rankline">World Top 100 · Golf Digest</div>
           <p>The signature course at Mission Hills Haikou, routed through ancient black lava.</p>
@@ -752,7 +852,18 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard more fade">
-        <div class="img"><img src="assets/img/course-topwin.jpg" alt="Topwin fairways and a pagoda above Yanqi Lake in autumn, with mountains beyond, Beijing" loading="lazy"><span class="tag">Beijing</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/course-topwin.jpg" alt="Topwin fairways and a pagoda above Yanqi Lake in autumn, with mountains beyond, Beijing" loading="lazy">
+            <img src="assets/img/topwin-pagoda-lake.jpg" alt="A pagoda above Yanqi Lake at Topwin" loading="lazy">
+            <img src="assets/img/topwin-autumn-fairways.jpg" alt="Autumn fairways at Topwin Golf & Country Club" loading="lazy">
+            <img src="assets/img/topwin-lakeside-green.jpg" alt="A lakeside green at Topwin" loading="lazy">
+          </div>
+          <span class="tag">Beijing</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Beijing</div><h3>Topwin Golf &amp; Country Club</h3><div class="rankline">China Top 10 · Top 100 Golf Courses</div>
           <p>Championship golf beside Yanqi Lake — host of the Volvo China Open.</p>
@@ -761,7 +872,16 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
       </article>
 
       <article class="ccard more fade">
-        <div class="img"><img src="assets/img/course-guilin.jpg" alt="A karst limestone pinnacle rising above the fairways at Guilin Landscape Golf Club" loading="lazy"><span class="tag">Guilin</span></div>
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/course-guilin.jpg" alt="A karst limestone pinnacle rising above the fairways at Guilin Landscape Golf Club" loading="lazy">
+            <img src="assets/img/guilin-pano.jpg" alt="Panorama of karst peaks above the fairways at Guilin Landscape Golf Club" loading="lazy">
+          </div>
+          <span class="tag">Guilin</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
         <div class="c">
           <div class="region">Guilin · Guangxi</div><h3>Guilin Landscape Golf Club</h3>
           <p>Golf among Guilin's limestone karst peaks — few courses feel more part of their scenery.</p>
@@ -1207,6 +1327,20 @@ if(moreBtn){moreBtn.addEventListener('click',()=>{
     s.scrollIntoView({behavior:'smooth'});
   }
 });}
+// Course card photo galleries
+document.querySelectorAll('.ccard .img').forEach(w=>{
+  const g=w.querySelector('.cgal');if(!g)return;
+  const imgs=g.querySelectorAll('img'),n=imgs.length,dots=w.querySelector('.cg-dots');
+  if(n<2){w.querySelectorAll('.cg-nav').forEach(b=>b.remove());return;}
+  imgs.forEach((_,i)=>{const d=document.createElement('i');if(i===0)d.classList.add('on');dots.appendChild(d);});
+  const idx=()=>Math.round(g.scrollLeft/g.clientWidth);
+  const go=i=>g.scrollTo({left:((i+n)%n)*g.clientWidth,behavior:'smooth'});
+  g.addEventListener('scroll',()=>requestAnimationFrame(()=>{
+    const i=idx();dots.querySelectorAll('i').forEach((d,j)=>d.classList.toggle('on',j===i));
+  }),{passive:true});
+  w.querySelector('.cg-nav.prev').addEventListener('click',()=>go(idx()-1));
+  w.querySelector('.cg-nav.next').addEventListener('click',()=>go(idx()+1));
+});
 document.querySelectorAll('.chinamap .pin').forEach(p=>{
   const go=()=>{const t=document.getElementById(p.dataset.target);if(!t)return;
     t.scrollIntoView({behavior:'smooth',block:'center'});
