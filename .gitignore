@@ -41,3 +41,4 @@ _compressed_*
 
 # Local backups (not deployed)
 index.backup-*.html
+.fuse_hidden*
