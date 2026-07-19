@@ -794,7 +794,7 @@ footer .base{display:flex;justify-content:space-between;font-size:13px;opacity:.
           <div class="hi"><p>Private golf beneath the Great Wall, the capital's defining sights, the skyline and wild links of Shanghai, then a tea-plantation finale on West Lake's doorstep.</p></div>
           <div class="tl">Tailor This Journey</div>
           <div class="route">Beijing · Shanghai · Hangzhou</div>
-          <div class="bestfor">Yunnan or Hainan can be added — mountain golf beneath snow peaks or a tropical coast.</div>
+          <div class="bestfor">Hangzhou, Yunnan or Hainan can be added — West Lake calm, mountain golf or a tropical coast.</div>
         </div>
         <!-- TODO: 确认真实起价 -->
         <div class="foot"><span class="price">From <b>$5,950</b> per person.</span><a href="first-time-golf-china.html">View Full Itinerary</a></div>

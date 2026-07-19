@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imperial China — Beijing Golf Journeys | Golf China</title>
+<title>Jiangnan &amp; Modern China — Shanghai &amp; Hangzhou Golf Journeys | Golf China</title>
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<meta name="description" content="A private golf journey through Imperial China — Great Wall fairways at Reignwood Pine Valley, early-access mornings in the Forbidden City, hutong courtyards and a table set on the ramparts of the Wall itself.">
+<meta name="description" content="A private golf journey through Jiangnan and modern China — tournament fairways at Sheshan International, garden-resort golf at Fuchun Resort, wild links on Chongming Island, the Bund after dark and West Lake at dawn.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -169,19 +169,17 @@ section{padding:100px 0}
 
 /* ===== EXPERIENCES ===== */
 .exclusives{background:var(--ivory)}
-.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:295px;gap:20px}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:340px;gap:20px}
 .excard{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift)}
-.excard.feature{grid-row:span 2}
 .excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .excard:hover img{transform:scale(1.05)}
 .excard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
 .excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
 .excard h3{font-size:23px;margin:6px 0 7px}
-.excard.feature h3{font-size:28px}
 .excard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
 .exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
-@media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
-@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
+@media(max-width:920px){.ex-grid{grid-auto-rows:300px}}
+@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}}
 
 /* ===== STAY ===== */
 .stay{background:var(--pine);color:#fff}
@@ -261,15 +259,15 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <!-- HERO -->
 <section class="hero" id="top" style="padding:0">
   <picture>
-    <source media="(max-width:760px)" srcset="assets/img/hero-templeofheaven-mobile.jpg">
-    <img class="bg" src="assets/img/hero-templeofheaven.jpg" alt="The Temple of Heaven glowing at golden hour beside imperial walls, Beijing">
+    <source media="(max-width:760px)" srcset="assets/img/hero-shanghai-dusk-mobile.jpg">
+    <img class="bg" src="assets/img/hero-shanghai-dusk.jpg" alt="The Shanghai skyline glowing gold at dusk across the Huangpu River">
   </picture>
   <div class="scrim"></div>
   <div class="container hero-inner">
-    <div class="crumbs fade in"><a href="index.html">Home</a><span class="sep">·</span><a href="index.html#destinations">Destinations</a><span class="sep">·</span>Beijing</div>
-    <span class="eyebrow">Beijing · North China</span>
-    <h1>Imperial China</h1>
-    <p class="hero-tag">Six hundred years of empire, a wild stretch of the Wall to yourselves — and golf played in its shadow.</p>
+    <div class="crumbs fade in"><a href="index.html">Home</a><span class="sep">·</span><a href="index.html#destinations">Destinations</a><span class="sep">·</span>Shanghai / Hangzhou</div>
+    <span class="eyebrow">Shanghai / Hangzhou · East China</span>
+    <h1>Jiangnan &amp; Modern China</h1>
+    <p class="hero-tag">China at its most cosmopolitan — and, an hour away, at its most serene. Tournament fairways, design hotels and the still water of West Lake.</p>
   </div>
 </section>
 
@@ -277,10 +275,10 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <div class="facts">
   <div class="container">
     <div class="grid">
-      <div class="f"><div class="fk">Ideal Length</div><div class="fv">4–5 nights</div><div class="fs">as part of a longer journey</div></div>
-      <div class="f"><div class="fk">Golf</div><div class="fv">2–3 rounds</div><div class="fs">incl. Reignwood Pine Valley</div></div>
-      <div class="f"><div class="fk">Best Season</div><div class="fv">Apr–Oct</div><div class="fs">clear skies, golden autumn light</div></div>
-      <div class="f"><div class="fk">Pairs With</div><div class="fv">Hangzhou · Shanghai</div><div class="fs">45 min by air · 4.5 h by rail</div></div>
+      <div class="f"><div class="fk">Ideal Length</div><div class="fv">4–6 nights</div><div class="fs">split between city and lake</div></div>
+      <div class="f"><div class="fk">Golf</div><div class="fv">3–4 rounds</div><div class="fs">incl. Sheshan International</div></div>
+      <div class="f"><div class="fk">Best Season</div><div class="fv">Mar–Jun · Sep–Nov</div><div class="fs">spring mists, golden autumn</div></div>
+      <div class="f"><div class="fk">Pairs With</div><div class="fv">Beijing · Yunnan</div><div class="fs">4.5 h by rail · 3 h by air</div></div>
     </div>
   </div>
 </div>
@@ -290,19 +288,20 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container ov-wrap">
     <div class="ov-txt fade">
       <span class="eyebrow">The Journey</span>
-      <h2>Begin where China began.</h2>
-      <p class="lede">Every empire leaves a capital, and none left one like Beijing. The Forbidden City still sits at the centre of the city's grid like a held breath; the Great Wall still rides the ridgelines an hour to the north. This is where a first journey through China should open — among the icons, before the country starts surprising you.</p>
-      <p>Our Beijing is quieter than the one most visitors see. You enter the Forbidden City as the gates open and the courtyards are still empty. You walk a wild, unrestored stretch of the Wall with no one else on it. And between the monuments you slip into the hutongs — the low, grey-brick lanes where the city actually lives — for noodles, courtyard cafés and the best roast duck of your life.</p>
-      <p>The golf belongs to the same landscape. At Reignwood Pine Valley, Jack Nicklaus laid fairways through the Jundu Mountains with the Wall tracing the skyline above the back nine. Few rounds anywhere carry a sense of place like it.</p>
+      <h2>Two Chinas, an hour apart.</h2>
+      <p class="lede">Shanghai is the China that startles first-time visitors — a skyline that seems to have arrived from the future, set above a river lined with century-old banking halls. Then a train slips south for an hour and you are in Jiangnan, the land "south of the river": West Lake under morning mist, tea terraces, water towns threaded with canals. No other journey holds both within a single week.</p>
+      <p>Our Shanghai runs on private access — a table above the lights of the Bund, the art-deco lanes of the old concessions, the back rooms of the city's best kitchens. Hangzhou is the counterweight: a dawn boat on West Lake before the crowds arrive, Longjing tea picked and poured on the hillside where it grows, an evening in a canal town after the day-trippers have gone.</p>
+      <p>The golf is the strongest in mainland China. Sheshan International has hosted a world-tour event for two decades; Fuchun Resort lays its fairways through a tea-terraced river valley painters have loved for six centuries; and on Chongming Island, a wild modern links runs through dunes at the mouth of the Yangtze.</p>
     </div>
     <aside class="glance fade">
       <h3>At a Glance</h3>
       <ul>
-        <li>Golf beneath the Great Wall at Reignwood Pine Valley</li>
-        <li>Early-access morning in the Forbidden City</li>
-        <li>A private, unrestored stretch of the Wall — with dinner on the ramparts</li>
-        <li>Hutong life: courtyard lanes, markets and a chef's-table duck dinner</li>
-        <li>Hotels the likes of the Waldorf Astoria's hutong courtyards</li>
+        <li>Tournament golf at Sheshan International, host of a world-tour event</li>
+        <li>Garden-resort fairways at Fuchun Resort, mirrored in still water</li>
+        <li>A wild links day among the dunes of Chongming Island</li>
+        <li>The Bund after dark — dinner above the lights of two skylines</li>
+        <li>West Lake at dawn by private boat, Longjing tea with a master</li>
+        <li>Hotels the likes of the Four Seasons on West Lake</li>
         <li>Private driver, guide and every tee time handled</li>
       </ul>
       <p class="gnote">Every element below is a starting point — shaped to your dates, your party and your pace.</p>
@@ -315,83 +314,109 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">The Golf</span>
-      <h2>Fairways in the shadow of the Wall.</h2>
-      <p>Beijing's best golf hides in the mountains north of the city — private, immaculate and all but unknown to international golfers.</p>
+      <h2>Tournament turf, garden fairways, wild dunes.</h2>
+      <p>Three rounds, three different games — the strongest stretch of golf in mainland China, all within two hours of the Bund.</p>
     </div>
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind">
-        <img src="assets/img/reignwood-caddies.jpg" alt="Caddies and players walking a Reignwood fairway beneath the jagged Jundu peaks" loading="lazy">
-        <img src="assets/img/reignwood-autumn-green.jpg" alt="An autumn green at Reignwood Pine Valley with a mountain rising behind" loading="lazy">
-        <img src="assets/img/reignwood-clubhouse.jpg" alt="The white château clubhouse of Reignwood Pine Valley beneath the Jundu Mountains" loading="lazy">
+        <img class="active" src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai">
+        <img src="assets/img/sheshan-tournament-green.jpg" alt="Tournament crowds ringing a green at Sheshan International, Shanghai" loading="lazy">
+        <img src="assets/img/sheshan-wgc-sign.jpg" alt="A drive launched past the red world-championship sign on the 9th tee at Sheshan" loading="lazy">
+        <img src="assets/img/sheshan-pampas-tee.jpg" alt="A player on a Sheshan fairway framed by pampas grass and the lake beyond" loading="lazy">
+        <img src="assets/img/sheshan-grandstand-crowds.jpg" alt="Galleries filling the grandstands around the closing green at Sheshan International" loading="lazy">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
         <span class="tag">Signature round</span>
       </div>
       <div class="c">
-        <div class="region">Jundu Mountains · Changping</div>
-        <h3>Reignwood Pine Valley</h3>
-        <p>Set beneath the Great Wall near Badaling, Reignwood Pine Valley is one of China's most private and prestigious golf clubs — a Nicklaus mountain-parkland layout where elevated tees, sculpted bunkering and fast, guarded greens unfold below the Jundu Mountains, the Wall tracing the ridgeline above. Membership is closely held; we arrange guest play on your behalf, with caddies, forecaddies and a quiet clubhouse lunch to follow.</p>
+        <div class="region">Sheshan Hill · Shanghai</div>
+        <h3>Sheshan International</h3>
+        <p>China's most famous course, and for two decades the host of its flagship world-tour event — the closing stretch around the old quarry has decided more champions than any other holes in Asia. A Nelson &amp; Haworth parkland of mature camphors, sculpted bunkering and a château clubhouse, it is also a strictly private member's club. We arrange guest play on your behalf, with caddies and a long lunch on the terrace where the trophies are handed out.</p>
         <dl>
-          <dt>Designer</dt><dd>Jack Nicklaus / Nicklaus Design</dd>
-          <dt>Setting</dt><dd>Great Wall mountain parkland</dd>
-          <dt>Best season</dt><dd>Apr–Oct</dd>
-          <dt>Pair with</dt><dd>Great Wall, Forbidden City, private Beijing dining</dd>
+          <dt>Designer</dt><dd>Nelson &amp; Haworth</dd>
+          <dt>Setting</dt><dd>Tournament parkland, quarry holes</dd>
+          <dt>Claim to fame</dt><dd>World Top 100 · host of a world-tour event</dd>
+          <dt>Pair with</dt><dd>The Bund, the old concessions, private dining</dd>
         </dl>
       </div>
     </article>
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/course-topwin.jpg" alt="Autumn fairways at Topwin Golf &amp; Country Club, with the Yanqi Lake pagoda and the Yanshan mountains beyond">
-        <img src="assets/img/topwin-lakeside-green.jpg" alt="A bunkered lakeside green jutting into Yanqi Lake, framed by autumn leaves" loading="lazy">
-        <img src="assets/img/topwin-pagoda-lake.jpg" alt="The Yanqi Lake pagoda mirrored in still water beside the course" loading="lazy">
-        <img src="assets/img/topwin-autumn-fairways.jpg" alt="Rolling fairways and autumn grasses beneath the Yanshan range at Topwin" loading="lazy">
-        <img src="assets/img/topwin-stone-bridge.jpg" alt="A stone bridge arching over a still stream on the course, golden willows reflected in the water" loading="lazy">
+        <img class="active" src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou">
+        <img src="assets/img/fuchun-mist.jpg" alt="Morning mist rolling over the forested hills above Fuchun Resort" loading="lazy">
+        <img src="assets/img/fuchun-pavilion-lake.jpg" alt="The pavilions of Fuchun Resort across still water, green hills rising behind" loading="lazy">
+        <img src="assets/img/fuchun-mist-bunkers.jpg" alt="Cloud and mist pouring over the mountains behind a bunkered green at Fuchun Resort" loading="lazy">
+        <img src="assets/img/fuchun-tea-terraces.jpg" alt="Golfers walking a Fuchun fairway beneath terraced walls of Longjing tea" loading="lazy">
+        <img src="assets/img/fuchun-gateway.jpg" alt="The stone gateway and shaded courtyard of Fuchun Resort, hills beyond" loading="lazy">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
-        <span class="tag">A presidential round</span>
+        <span class="tag">A painter's valley</span>
       </div>
       <div class="c">
-        <div class="region">Yanqi Lake · Huairou</div>
-        <h3>Topwin Country Club</h3>
-        <p>Lakeside fairways beneath the Yanshan range, beside the waters where the world's leaders gathered for the 2014 APEC summit — President Obama among those to have played a round here. In autumn the course turns gold and crimson, the pagoda rising over the back nine.</p>
+        <div class="region">Fuchun River Valley · Hangzhou</div>
+        <h3>Fuchun Resort</h3>
+        <p>Six hundred years ago the Fuchun valley inspired one of China's greatest paintings; today it holds the only course in Asia routed through the rolling hills of a working tea plantation. Fairways sweep beneath terraced walls of Longjing tea, greens sit mirrored in still water below the resort's grey-tiled pavilions, and the mist comes and goes all morning. It is golf found nowhere else in the game — unhurried, quiet, and best followed by tea picked a few metres from the fairway.</p>
         <dl>
-          <dt>Designer</dt><dd>Ian Woosnam</dd>
-          <dt>Setting</dt><dd>Lakeside parkland, Yanqi Lake</dd>
-          <dt>Claim to fame</dt><dd>Obama's Beijing round, APEC 2014</dd>
-          <dt>Pair with</dt><dd>The Great Wall at Mutianyu, 20 minutes away</dd>
+          <dt>Designer</dt><dd>Daniel Obermeyer</dd>
+          <dt>Setting</dt><dd>Tea-plantation hills — the only one of its kind in Asia</dd>
+          <dt>Best season</dt><dd>Mar–May, Sep–Nov</dd>
+          <dt>Pair with</dt><dd>West Lake, Longjing tea, a night at the resort</dd>
         </dl>
       </div>
     </article>
 
-    <p class="golf-note fade"><b>A third round</b> is easily woven in — parkland and lakeside courses across the Jundu foothills and the city's north, chosen for your dates and the season. We'll recommend the right pairing when we design your journey.</p>
+    <article class="golf-feature fade">
+      <div class="img gal">
+        <img class="active" src="assets/img/yangtze-hole3-dusk.jpg" alt="Evening light over a fairway threading between sand dunes at Yangtze Dunes, Chongming Island">
+        <img src="assets/img/yangtze-green-dunes-aerial.jpg" alt="An aerial view of a green ringed by dark native dunes at Yangtze Dunes" loading="lazy">
+        <img src="assets/img/yangtze-links-aerial.jpg" alt="Links holes winding through dunes and wetland at the mouth of the Yangtze" loading="lazy">
+        <img src="assets/img/yangtze-sunset-green.jpg" alt="A green glowing at sunset among native dunes at Yangtze Dunes" loading="lazy">
+        <button class="gal-btn prev" aria-label="Previous image">‹</button>
+        <button class="gal-btn next" aria-label="Next image">›</button>
+        <div class="gal-dots"></div>
+        <span class="tag">A wild links</span>
+      </div>
+      <div class="c">
+        <div class="region">Chongming Island · Shanghai</div>
+        <h3>Yangtze Dunes</h3>
+        <p>An hour from the Bund, on an island at the mouth of the Yangtze, lies the most surprising round in China — a true links running through native dunes and wetlands, shaped by the celebrated Australian firm OCM. Firm turf, river wind, blind shoulders and greens tucked into the sand: golf that feels closer to the Irish coast than to anything else in Asia, with the world's busiest shipping lane gliding past beyond the dunes.</p>
+        <dl>
+          <dt>Designer</dt><dd>OCM — Ogilvy, Cocking &amp; Mead</dd>
+          <dt>Setting</dt><dd>Links through river dunes and wetland</dd>
+          <dt>Best season</dt><dd>Mar–Jun, Sep–Dec</dd>
+          <dt>Pair with</dt><dd>A city day in Shanghai — links by morning, the Bund by night</dd>
+        </dl>
+      </div>
+    </article>
+
+    <p class="golf-note fade"><b>A fourth round</b> is easily woven in — Shanghai's private parkland clubs and the lake courses around Hangzhou are chosen for your dates and the season. We'll recommend the right pairing when we design your journey.</p>
   </div>
 </section>
 
 <!-- AFTER THE ROUND -->
 <section class="after" id="after">
   <div class="container after-wrap">
-    <img class="photo fade" src="assets/img/dining-peking-duck.jpg" alt="Lacquered slices of Peking duck served in a tiered wooden presentation box, condiments in its drawers">
+    <img class="photo fade" src="assets/img/exp-xiaolongbao.jpg" alt="Bamboo steamers of xiaolongbao soup dumplings on a Shanghai table">
     <div class="txt fade">
       <span class="eyebrow">After the Round</span>
       <h2>The day does not end at the 18th.</h2>
-      <p>Beijing's best evenings are built around private tables: crisp-skinned Peking duck, quiet courtyard dining, old-city wine rooms, and seasonal northern Chinese menus arranged away from the obvious tourist circuit.</p>
-      <p>For golfers, it moves instead into the kind of dinner that makes Beijing feel personal — booked, briefed and waiting by the time you've putted out.</p>
+      <p>Shanghai eats like the great port city it has always been: bamboo steamers of xiaolongbao in the lanes, hairy crab in season, chef's tables hidden inside concession villas, and the best cellars in Asia. An hour south, Hangzhou answers at Jiangnan's gentler pace — West Lake fish, beggar's chicken, tea-smoked dishes served at tables on the water.</p>
+      <p>For golfers, the evening becomes the kind of dinner that makes the city feel personal — booked, briefed and waiting by the time you've putted out.</p>
     </div>
   </div>
 </section>
 
-<!-- JOURNEYS FEATURING BEIJING -->
+<!-- JOURNEYS FEATURING SHANGHAI & HANGZHOU -->
 <section class="journeys" id="journeys">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">Journeys Featuring Beijing</span>
-      <h2>Where Beijing fits in a journey.</h2>
-      <p>Beijing rarely travels alone — it opens a longer route. Two of our sample journeys begin here; the full day-by-day shape of each lives on its own page.</p>
+      <span class="eyebrow">Journeys Featuring Shanghai &amp; Hangzhou</span>
+      <h2>Where Jiangnan fits in a journey.</h2>
+      <p>Shanghai and Hangzhou anchor the eastern leg of most of our routes — the elegant counterpoint to the capital's grandeur. Two sample journeys pass through; both are starting points, never scripts.</p>
     </div>
     <div class="sj-grid">
 
@@ -401,7 +426,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <div class="specs">9 Nights · 4 Rounds</div>
           <h3>First-Time Golf China</h3>
           <div class="route">Beijing + Shanghai + Hangzhou</div>
-          <div class="hi">Imperial China, Great Wall golf, Shanghai's wild links and a tea-plantation finale in Hangzhou — the natural first journey.</div>
+          <div class="hi">Imperial China, Great Wall golf and a Shanghai finale — Hangzhou is easily added for the quiet elegance of West Lake.</div>
           <div class="foot"><a href="first-time-golf-china.html">View Full Itinerary →</a></div>
         </div>
       </article>
@@ -422,7 +447,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
     <div class="tailor fade">
       <div class="t">
-        <h3>Or build Beijing into your own.</h3>
+        <h3>Or build Jiangnan into your own.</h3>
         <p>Add days, swap rounds for culture, bring non-golfers — every journey is designed from scratch. Tell us about your party and we'll shape the route around you.</p>
       </div>
       <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
@@ -435,40 +460,49 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Signature Experiences</span>
-      <h2>Beijing, arranged privately.</h2>
+      <h2>Jiangnan, arranged privately.</h2>
       <p>Built on relationships on the ground, set up for your party alone — never an excursion from a brochure.</p>
     </div>
     <div class="ex-grid">
 
-      <article class="excard feature fade">
-        <img src="assets/img/place-greatwall.jpg" alt="The Great Wall snaking over ridgelines at golden hour">
+      <article class="excard fade">
+        <img src="assets/img/exp-yacht-bund.jpg" alt="The lit towers of Pudong rising over the Huangpu River at night, seen from the water">
         <div class="b">
-          <div class="loc">Beijing · The Wall</div>
-          <h3>The Great Wall, after hours</h3>
-          <p>A wild, unrestored stretch with a private guide — and a table set on the ramparts as the light goes gold.</p>
+          <div class="loc">Shanghai · The Huangpu</div>
+          <h3>The Bund by private yacht</h3>
+          <p>Cast off at dusk with the river to yourselves — champagne on deck as a century of banking halls glides past one rail and the towers of Pudong the other.</p>
         </div>
       </article>
 
       <article class="excard fade">
-        <img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing">
+        <img src="assets/img/exp-westlake.jpg" alt="A traditional boat gliding across West Lake through morning greenery, Hangzhou">
         <div class="b">
-          <div class="loc">Beijing · Forbidden City</div>
-          <h3>First through the Meridian Gate</h3>
-          <p>The palace courtyards before the city wakes, with a historian who reads the architecture like a text.</p>
+          <div class="loc">Hangzhou · West Lake</div>
+          <h3>West Lake before the world wakes</h3>
+          <p>A private boat at dawn, tea poured on the water, the pagodas still wrapped in mist — the lake the poets meant.</p>
         </div>
       </article>
 
       <article class="excard fade">
-        <img src="assets/img/stay-city.jpg" alt="Golden roofs and vermilion walls of the Forbidden City, Beijing">
+        <img src="assets/img/exp-tea-picking.jpg" alt="Pickers with baskets working the terraced Longjing tea fields above Hangzhou">
         <div class="b">
-          <div class="loc">Beijing · Hutongs</div>
-          <h3>The hutong chef's table</h3>
-          <p>Into the morning markets with a chef, then lunch cooked and poured in a private courtyard house.</p>
+          <div class="loc">Hangzhou · Longjing Village</div>
+          <h3>Pick the harvest yourself</h3>
+          <p>Basket in hand, into the dragon-well terraces with a grower's family — pick the spring leaves, watch them roasted, then taste your own harvest on the hillside.</p>
+        </div>
+      </article>
+
+      <article class="excard fade">
+        <img src="assets/img/exp-heritage-bund.jpg" alt="The clock tower and domes of the Bund's heritage banking halls in golden evening light, Shanghai">
+        <div class="b">
+          <div class="loc">Shanghai · The Old Concessions</div>
+          <h3>The concessions, decoded</h3>
+          <p>A private historian walks you through the plane-tree lanes of the French Concession and the banking halls of the Bund — a century of the city's story, building by building.</p>
         </div>
       </article>
 
     </div>
-    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Beijing equivalent.</p>
+    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Jiangnan equivalent.</p>
   </div>
 </section>
 
@@ -477,26 +511,26 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
-      <h2>Sleep inside the old city.</h2>
-      <p>Not a tower by the ring road — an address that is part of the journey itself.</p>
+      <h2>A skyline, then a lake.</h2>
+      <p>Two addresses, two tempos — the city at full voltage, then Jiangnan calm.</p>
     </div>
     <div class="stay-wrap fade">
-      <div class="img"><img src="assets/img/stay-city.jpg" alt="Golden imperial rooftops in central Beijing"></div>
+      <div class="img"><img src="assets/img/stay-shanghai-night.jpg" alt="The lit towers of Shanghai seen from above at night"></div>
       <div class="c">
-        <div class="loc">In the City · Hutong Courtyards</div>
-        <h3>Sleep where the city is oldest</h3>
-        <p>Our Beijing favourites sit in the hutongs, a few lanes from the Forbidden City — the likes of the Waldorf Astoria's courtyard houses, where grey brick and bronze doors give way to deep baths and very good martinis. Step out of the gate and the oldest streets in the capital are yours before breakfast.</p>
-        <p>For travelers who prefer glass and skyline to grey brick, the city's modern landmarks along the central axis make an equally good base — we'll match the address to your taste.</p>
+        <div class="loc">Shanghai · Above the Lights</div>
+        <h3>Sleep over the skyline</h3>
+        <p>Our Shanghai favourites trade lobby grandeur for height and design — rooms where the wall is glass and the city performs below, a short walk from the Bund's heritage façades and the best tables in Asia.</p>
+        <p>For travelers who prefer plane trees to towers, the converted villas of the old concessions make an equally good base — we'll match the address to your taste.</p>
       </div>
     </div>
 
     <div class="stay-wrap rev fade">
-      <div class="img"><img src="assets/img/place-greatwall.jpg" alt="The Great Wall riding mountain ridgelines at golden hour, north of Beijing"></div>
+      <div class="img"><img src="assets/img/stay-lakeside.jpg" alt="A pagoda rising above the lotus-fringed shore of West Lake, Hangzhou"></div>
       <div class="c">
-        <div class="loc">In the Mountains · Near the Wall</div>
-        <h3>A night at the foot of the Wall</h3>
-        <p>With both rounds played out in Huairou's mountains, a night in the countryside earns its place — a quiet retreat below the ridgeline, where the Wall is visible from the terrace and the first tee is minutes away rather than an hour through traffic.</p>
-        <p>It pairs naturally with the after-hours Wall evening: dinner on the ramparts, a short drive down, and mountain silence instead of the ring road.</p>
+        <div class="loc">Hangzhou · On West Lake</div>
+        <h3>Jiangnan calm between rounds</h3>
+        <p>In Hangzhou the address is the experience — the likes of the Four Seasons on West Lake, all temple bells, still water and gardens that blur into the lakeshore. Mornings begin with mist on the water; evenings end with it rolling back in.</p>
+        <p>For the Fuchun round, a night at the resort itself turns the course's valley into your view — tea terraces from the bath, mist from the breakfast table.</p>
       </div>
     </div>
 
@@ -509,17 +543,17 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Extend the Journey</span>
-      <h2>Beijing is the beginning.</h2>
-      <p>Most of our guests open in the capital, then let the country change around them. Two natural next chapters:</p>
+      <h2>Jiangnan is the hinge.</h2>
+      <p>East China sits at the centre of every longer route — the capital to the north, the snow peaks to the southwest:</p>
     </div>
     <div class="extend-grid">
 
-      <a class="xcard fade" href="jiangnan-modern-china.html">
-        <img src="assets/img/dest-hangzhou.jpg" alt="A stone bridge over misty West Lake with the Leifeng Pagoda beyond, Hangzhou">
+      <a class="xcard fade" href="imperial-china.html">
+        <img src="assets/img/place-greatwall.jpg" alt="The Great Wall snaking over ridgelines at golden hour, north of Beijing">
         <div class="b">
           <div class="loc">4.5 h by high-speed rail</div>
-          <h3>Jiangnan &amp; Modern China</h3>
-          <p>West Lake calm, garden resort golf and the Bund — the classic counterpoint to the capital.</p>
+          <h3>Imperial China</h3>
+          <p>The Forbidden City, golf beneath the Great Wall and dinner on its ramparts — the natural opening chapter.</p>
           <span class="go">Explore →</span>
         </div>
       </a>
@@ -527,7 +561,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <a class="xcard fade" href="south-of-the-clouds.html">
         <img src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan">
         <div class="b">
-          <div class="loc">3.5 h by air</div>
+          <div class="loc">3 h by air</div>
           <h3>South of the Clouds</h3>
           <p>Snow-mountain fairways, the Tea Horse Road and China at its most distinctive.</p>
           <span class="go">Explore →</span>
@@ -540,11 +574,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
 <!-- CTA -->
 <section class="cta" id="start">
-  <img class="bg" src="assets/img/reignwood-greatwall.jpg" alt="">
+  <img class="bg" src="assets/img/fuchun-resort.jpg" alt="">
   <div class="scrim"></div>
   <div class="container inner fade">
     <span class="eyebrow">Start Planning</span>
-    <h2>Begin your journey in Imperial China.</h2>
+    <h2>Begin your journey in Jiangnan.</h2>
     <p>Tell us a little about your trip and a travel designer will reply within one business day — with no obligation.</p>
     <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
   </div>
