@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snow Peaks to Tropical Coast — 9 Nights, Yunnan &amp; Hainan | Golf China</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="description" content="A nine-night private golf journey from the Himalayan foothills to the South China Sea — golf at 3,100 metres beneath the glacier of Jade Dragon Snow Mountain, World Top 100 fairways at Spring City, lava-field golf at Blackstone and a closing links round at The Dunes, Shenzhou Peninsula.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== Golf China — design tokens (see DESIGN-SYSTEM.md) ===== */
+:root{
+  --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
+  --cinnabar:#b4452f; --gold:#b89150;
+  --ivory:#f6f1e7; --paper:#fffdf8; --mist:#e7e0d2;
+  --lift:0 18px 50px -20px rgba(20,36,28,.4);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',-apple-system,Segoe UI,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cinnabar);color:#fff}
+.btn-primary:hover{background:#9c3927}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--pine)}
+.fade{opacity:0;transform:translateY(24px);transition:.7s ease}
+.fade.in{opacity:1;transform:none}
+
+/* ===== NAV ===== */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1200px;margin:0 auto}
+header.nav .logo{font-family:var(--serif);font-size:23px;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px}
+header.nav .logo .logo-mark{height:30px;width:auto;display:block}
+header.nav .logo .logo-text{color:#fff}
+header.nav .logo span{color:var(--gold)}
+header.nav nav{display:flex;gap:30px;align-items:center}
+header.nav nav a{font-size:13px;letter-spacing:.08em;color:#fff;opacity:.92;font-weight:400}
+header.nav nav a:hover{color:var(--gold)}
+header.nav .nav-cta{font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px;border-radius:2px}
+header.nav.scrolled{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
+header.nav.scrolled .bar{padding:12px 28px}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:60}
+@media(max-width:960px){
+  header.nav .bar{padding:14px 20px}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--pine);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+  header.nav nav.open{max-height:520px}
+  header.nav nav a{padding:15px 22px;border-top:1px solid rgba(255,255,255,.1);font-size:15px;opacity:1}
+  header.nav nav .nav-cta{border:none;border-top:1px solid rgba(255,255,255,.1);background:var(--cinnabar);text-align:center;border-radius:0}
+  .menu-toggle{display:block}
+}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.55) 0%,rgba(20,36,28,.15) 40%,rgba(20,36,28,.88) 100%)}
+.hero-inner{position:relative;z-index:2;padding-bottom:72px;width:100%}
+.crumbs{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:22px}
+.crumbs a{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px}
+.crumbs a:hover{color:var(--gold);border-color:var(--gold)}
+.crumbs .sep{margin:0 10px;color:var(--gold)}
+.hero h1{font-size:clamp(44px,7vw,84px);max-width:14ch;margin:14px 0 16px}
+.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,26px);color:rgba(255,255,255,.94);max-width:46ch}
+
+/* ===== FACTS BAR ===== */
+.facts{background:var(--pine);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
+.facts .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.facts .f{padding:26px 28px;border-left:1px solid rgba(255,255,255,.14)}
+.facts .f:first-child{border-left:none;padding-left:0}
+.facts .fk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.facts .fv{font-family:var(--serif);font-size:21px;margin-top:6px;line-height:1.25}
+.facts .fs{font-size:13.5px;color:rgba(255,255,255,.65);margin-top:3px;font-weight:300}
+@media(max-width:860px){.facts .grid{grid-template-columns:1fr 1fr}.facts .f{padding:20px 22px}.facts .f:nth-child(odd){border-left:none;padding-left:0}}
+
+/* ===== SECTION SHELL ===== */
+section{padding:100px 0}
+.section-head{max-width:680px;margin-bottom:54px}
+.section-head h2{font-size:clamp(32px,4.6vw,50px);margin:14px 0}
+.section-head p{color:#4a5a50;font-size:18px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* ===== OVERVIEW ===== */
+.overview{background:var(--ivory)}
+.ov-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
+@media(max-width:860px){.ov-wrap{grid-template-columns:1fr;gap:40px}}
+.ov-txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
+.ov-txt p{font-size:17.5px;color:#3f4f45;margin-bottom:18px;max-width:62ch}
+.ov-txt .lede::first-letter{font-family:var(--serif);font-size:54px;line-height:.9;float:left;padding:6px 10px 0 0;color:var(--cinnabar)}
+.glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px;position:sticky;top:96px}
+.glance h3{font-size:15px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
+.glance h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:12px}
+.glance ul{list-style:none;margin-top:20px}
+.glance li{font-size:15.5px;color:#3f4f45;padding:11px 0 11px 24px;border-bottom:1px solid var(--mist);position:relative}
+.glance li:last-child{border-bottom:none}
+.glance li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;background:var(--gold);border-radius:999px}
+.glance .gnote{font-size:13.5px;color:#7a857c;margin-top:16px;font-style:italic}
+
+/* ===== TAB BAR ===== */
+.tabbar{position:sticky;top:54px;z-index:40;background:var(--pine);border-top:1px solid rgba(255,255,255,.14);box-shadow:0 8px 24px -12px rgba(20,36,28,.35)}
+@media(max-width:960px){.tabbar{top:58px}}
+.tabbar .tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabbar .tabs::-webkit-scrollbar{display:none}
+.tab{appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:14.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:22px 30px;position:relative;white-space:nowrap;transition:.25s;flex:1;text-align:center}
+.tab:hover{color:#fff}
+.tab::after{content:"";position:absolute;left:30px;right:30px;bottom:0;height:3px;background:transparent;transition:.25s}
+.tab.on{color:var(--gold)}
+.tab.on::after{background:var(--gold)}
+.panel{display:none}
+.panel.on{display:block}
+@media(max-width:700px){.tab{padding:18px 10px;font-size:12.5px;letter-spacing:.1em}.tab::after{left:10px;right:10px}}
+
+/* ===== ITINERARY ===== */
+.itin{background:var(--paper);border-top:1px solid var(--mist)}
+.phase{margin:56px 0 22px;display:flex;align-items:center;gap:18px}
+.phase:first-of-type{margin-top:0}
+.phase .ph-city{font-family:var(--serif);font-size:30px;color:var(--pine)}
+.phase .ph-n{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+.phase .ph-line{flex:1;height:1px;background:var(--mist)}
+.ph-btns{display:flex;gap:8px}
+.pb{width:38px;height:38px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--pine);font-size:19px;line-height:1;cursor:pointer;transition:.25s}
+.pb:hover{border-color:var(--gold);color:var(--gold)}
+.days{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(310px,340px);gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;touch-action:pan-x pan-y;padding:6px 2px 22px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{scroll-snap-align:start;scroll-snap-stop:always;background:var(--ivory);border:1px solid var(--mist);border-top:3px solid var(--gold);padding:26px 24px;display:flex;flex-direction:column;border-radius:2px}
+.day.golfday{border-top-color:var(--cinnabar)}
+.day .dnum{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.day .dnum b{color:#7a857c;font-weight:400;letter-spacing:.14em;margin-left:8px;text-transform:none;font-size:12px}
+.day h3{font-size:22px;color:var(--pine);margin:8px 0 10px}
+.day p{font-size:14.5px;color:#3f4f45;margin-bottom:10px}
+.day p:last-of-type{margin-bottom:0}
+.dtags{margin-top:auto;padding-top:16px;display:flex;gap:7px;flex-wrap:wrap}
+.dtag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--mist);padding:4px 10px;color:#54635a;background:var(--paper);border-radius:2px}
+.dtag.golf{border-color:rgba(180,69,47,.4);color:var(--cinnabar);background:rgba(180,69,47,.06)}
+.daylink{margin-top:14px;align-self:flex-start;appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);border-bottom:1px solid rgba(180,69,47,.35);padding:0 0 3px;transition:.25s}
+.daylink:hover{border-color:var(--cinnabar)}
+.day.addon{border:1px dashed rgba(184,145,80,.7);border-top:3px solid var(--gold);background:rgba(184,145,80,.06)}
+.day .dimg{width:calc(100% + 48px);max-width:none;margin:18px -24px -26px;aspect-ratio:16/9;object-fit:cover;display:block}
+.day.dest{position:relative;padding:0;border:none;overflow:hidden;color:#fff;min-height:300px}
+.day.dest img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.day.dest:hover img{transform:scale(1.05)}
+.day.dest .db{position:relative;z-index:2;margin-top:auto;width:100%;padding:24px;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.94))}
+.day.dest .loc{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.day.dest h3{color:#fff;font-size:24px;margin:6px 0 6px}
+.day.dest p{color:rgba(255,255,255,.88);font-size:14px;margin:0}
+.day.dest .go{margin-top:14px;display:inline-block;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
+.day.dest:hover .go{color:var(--gold)}
+.itin-note{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.itin-note .t h3{font-size:23px;color:var(--pine);margin-bottom:5px}
+.itin-note .t p{font-size:15px;color:#54635a;max-width:56ch}
+@media(max-width:600px){.phase .ph-city{font-size:25px}.days{grid-auto-columns:82vw}}
+
+/* ===== THE GOLF ===== */
+.golf{background:var(--pine);color:#fff}
+.golf .section-head h2{color:#fff}.golf .section-head p{color:rgba(255,255,255,.72)}
+.golf-feature{display:grid;grid-template-columns:1.25fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:26px}
+@media(max-width:860px){.golf-feature{grid-template-columns:1fr}}
+.golf-feature .img{position:relative;min-height:380px}
+.golf-feature .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.golf-feature .img .tag{position:absolute;left:0;bottom:0;background:var(--cinnabar);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;z-index:3}
+.golf-feature .img .tag.gold{background:var(--gold);color:var(--ink)}
+.gal img{opacity:0;transition:opacity .55s ease}
+.gal img.active{opacity:1}
+.gal-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(20,36,28,.4);color:#fff;font-size:20px;line-height:1;cursor:pointer;transition:.25s;backdrop-filter:blur(2px)}
+.gal-btn:hover{background:var(--pine);border-color:var(--gold)}
+.gal-btn.prev{left:14px}
+.gal-btn.next{right:14px}
+.gal-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:8px}
+.gal-dot{width:7px;height:7px;border-radius:999px;border:none;padding:0;background:rgba(255,255,255,.45);cursor:pointer;transition:.25s}
+.gal-dot.on{background:var(--gold);transform:scale(1.25)}
+@media(max-width:600px){.gal-btn{display:none}}
+.golf-feature .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
+.golf-feature .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.golf-feature .c h3{font-size:32px;margin:8px 0 14px}
+.golf-feature .c p{font-size:16px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch}
+.golf-feature dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;border-top:1px solid rgba(255,255,255,.16);padding-top:18px;margin-top:20px}
+.golf-feature dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:2px}
+.golf-feature dd{font-size:15px;color:rgba(255,255,255,.86);font-weight:300}
+.golf-note{font-size:15px;color:rgba(255,255,255,.65);max-width:64ch}
+.golf-note b{color:#fff;font-weight:500}
+
+/* ===== STAY (hotel cards + details modal) ===== */
+.stay{background:var(--ivory)}
+.hotel-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px}
+@media(max-width:900px){.hotel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hotel-grid{grid-template-columns:1fr}}
+.hcard{background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.hcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.hcard:hover .ph img{transform:scale(1.04)}
+.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.hcard .b{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.hcard h3{font-size:23px;color:var(--pine)}
+.hcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
+.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+.hcard .vd:hover{background:var(--gold);color:#fff}
+.stay .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
+@media(max-width:600px){.golf-feature .c{padding:30px 24px}}
+/* hotel details modal */
+.hmodal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px}
+.hmodal.open{display:flex}
+.hmodal .ov{position:absolute;inset:0;background:rgba(20,36,28,.55)}
+.hm-panel{position:relative;z-index:2;background:var(--ivory);max-width:1100px;width:100%;max-height:90vh;overflow:auto;padding:40px 44px;border-radius:2px;box-shadow:var(--lift)}
+.hm-panel h3{font-size:clamp(26px,3.4vw,38px);color:var(--ink);margin-bottom:26px;max-width:22ch;padding-right:40px}
+.hm-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;line-height:1;padding:6px}
+.hm-close:hover{color:var(--cinnabar)}
+.hm-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:start}
+@media(max-width:860px){.hm-grid{grid-template-columns:1fr;gap:24px}.hm-panel{padding:28px 22px}.hm-panel h3{margin-bottom:18px}}
+.hm-gal{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--mist)}
+.hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hm-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;transition:.25s}
+.hm-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hm-btn.prev{left:14px}.hm-btn.next{right:14px}
+.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
+.hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+.hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
+
+/* ===== EXTEND / ADD-ONS ===== */
+.extend{background:var(--pine);color:#fff}
+.extend .section-head h2{color:#fff}.extend .section-head p{color:rgba(255,255,255,.72)}
+.extend-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:820px;margin:0 auto}
+@media(max-width:900px){.extend-grid{grid-template-columns:1fr}}
+.xcard{position:relative;border-radius:2px;overflow:hidden;color:#fff;min-height:360px;display:flex;align-items:flex-end;box-shadow:var(--lift)}
+.xcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.xcard:hover img{transform:scale(1.05)}
+.xcard .b{position:relative;z-index:2;padding:26px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92))}
+.xcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.xcard h3{font-size:25px;margin:6px 0 6px}
+.xcard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:48ch}
+.xcard .go{margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:3px;display:inline-block}
+.extend .note{text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)}
+
+/* ===== WHY ===== */
+.why{background:var(--paper);border-top:1px solid var(--mist)}
+.why .section-head{text-align:center;margin-left:auto;margin-right:auto}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:52px 36px;max-width:980px;margin:0 auto;text-align:center}
+@media(max-width:860px){.why-grid{grid-template-columns:1fr 1fr;gap:44px 24px}}
+@media(max-width:520px){.why-grid{gap:36px 18px}.wick svg{width:48px;height:48px;margin-bottom:14px}.wick p{font-size:14.5px}}
+.wick svg{width:56px;height:56px;margin:0 auto 18px;display:block;color:var(--ink);opacity:.85}
+.wick p{font-size:16.5px;color:#3f4f45;max-width:26ch;margin:0 auto;line-height:1.5}
+
+/* ===== INCLUDED ===== */
+.included{background:var(--ivory)}
+.inc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:860px){.inc-wrap{grid-template-columns:1fr;gap:40px}}
+.inc-col h3{font-size:15px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
+.inc-col h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:12px}
+.inc-col ul{list-style:none;margin-top:20px}
+.inc-col li{font-size:16px;color:#3f4f45;padding:12px 0 12px 26px;border-bottom:1px solid var(--mist);position:relative}
+.inc-col li::before{content:"";position:absolute;left:2px;top:21px;width:7px;height:7px;background:var(--gold);border-radius:999px}
+.inc-col li:last-child{border-bottom:none}
+.included .disclaimer{margin-top:40px;font-size:14px;color:#7a857c;font-style:italic;max-width:70ch}
+.price-block{background:var(--paper);border:1px solid var(--mist);padding:34px 32px}
+.price-block .pk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.price-block .amt{font-family:var(--serif);font-size:46px;color:var(--pine);margin:8px 0 2px}
+.price-block .pp{font-size:14px;color:#54635a}
+.price-block p{font-size:14.5px;color:#54635a;margin-top:16px;max-width:44ch}
+.price-block .btn{margin-top:22px}
+
+/* ===== CTA ===== */
+.cta{position:relative;color:#fff;overflow:hidden;padding:130px 0}
+.cta img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.78),rgba(20,36,28,.82))}
+.cta .inner{position:relative;z-index:2;text-align:center;max-width:640px;margin:0 auto}
+.cta h2{font-size:clamp(32px,4.5vw,50px)}
+.cta p{color:rgba(255,255,255,.82);margin:18px auto 30px;max-width:46ch}
+
+/* ===== FOOTER ===== */
+footer{background:var(--pine);color:rgba(255,255,255,.8);padding:60px 0 30px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer .logo{font-family:var(--serif);font-size:24px;color:#fff;display:flex;align-items:center;gap:12px}
+footer .logo .logo-mark{height:32px;width:auto}
+footer .logo .logo-text{color:#fff}
+footer .logo span{color:var(--gold)}
+footer h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+footer ul{list-style:none;font-size:14px;font-weight:300}
+footer ul li{padding:5px 0;opacity:.85}
+footer ul li a:hover{color:#fff}
+footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
+
+@media(max-width:600px){
+  .container{padding:0 20px}
+  section{padding:68px 0}
+  .section-head{margin-bottom:36px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#golf">The Golf</a>
+      <a href="#stay">Where You Stay</a>
+      <a href="#extend">Go Further</a>
+      <a href="index.html#start" class="nav-cta">Enquire</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <img class="bg" src="assets/img/jadedragon-snowpeak-fairway.jpg" alt="A fairway running beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang">
+  <div class="scrim"></div>
+  <div class="container hero-inner">
+    <div class="crumbs fade in"><a href="index.html">Home</a><span class="sep">·</span><a href="index.html#journeys">Private Journeys</a><span class="sep">·</span>Snow Peaks to Tropical Coast</div>
+    <span class="eyebrow">A Signature Journey · Yunnan + Hainan</span>
+    <h1>Snow Peaks to Tropical Coast</h1>
+    <p class="hero-tag">Tee off at 3,100 metres beneath a Himalayan glacier, hole out nine days later beside the South China Sea — two Chinas most travelers never suspect exist.</p>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<div class="facts">
+  <div class="container">
+    <div class="grid">
+      <div class="f"><div class="fk">Duration</div><div class="fv">9 Nights / 10 Days</div><div class="fs">3 Lijiang · 2 Spring City · 4 Hainan</div></div>
+      <div class="f"><div class="fk">The Golf</div><div class="fv">4 Rounds</div><div class="fs">from 3,100 m to sea level</div></div>
+      <div class="f"><div class="fk">Best Season</div><div class="fv">Year-round</div><div class="fs">Mar–Nov in Lijiang · Hainan at its best in winter</div></div>
+      <div class="f"><div class="fk">Priced From</div><div class="fv">US$8,950</div><div class="fs">per golfer · fully private</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="overview" id="overview">
+  <div class="container ov-wrap">
+    <div class="ov-txt fade">
+      <span class="eyebrow">The Journey</span>
+      <h2>From a glacier to the sea, in nine unhurried nights.</h2>
+      <p class="lede">No other golf trip on earth covers this much altitude. It opens in the thin, golden light of the Himalayan foothills — Naxi rooftops, prayer flags, a 5,500-metre glacier filling the sky above your opening round — and closes barefoot on a tropical coast, with a true links through the dunes as the farewell. In between: the World Top 100 fairways of Spring City, lava-field golf at Blackstone, and not a single wasted day.</p>
+      <p>The rhythm is deliberate. Two full days in Lijiang before the first tee shot — the old town in the quiet hours, a Naxi village, dinner beneath the snow mountain — because at 3,100 metres the round is better for a night or two of acclimatising, and so are you. Then the journey descends: to Spring City's highland lake, where you stay inside Asia's most complete golf resort, and finally by direct flight to Hainan, where the air turns warm and the pace turns tropical.</p>
+      <p>Hainan gives the trip its second act: Blackstone's fairways carved through black volcanic rock, a free day among lava-stone villages and spa pools, and a closing round at The Dunes, Shenzhou Peninsula — Tom Weiskopf's wild oceanside links — with your last night in a resort beside the course, the sea at the end of the garden.</p>
+    </div>
+    <aside class="glance fade">
+      <h3>At a Glance</h3>
+      <ul>
+        <li>Golf at 3,100 metres beneath the glacier of Jade Dragon Snow Mountain — the world's longest course</li>
+        <li>A round on Spring City's World Top 100 fairways, staying inside the resort itself</li>
+        <li>Lava-field golf at Blackstone, Mission Hills Haikou — where Tiger met Rory in The Match</li>
+        <li>A closing links round at The Dunes, Shenzhou Peninsula, then a night beside the sea</li>
+        <li>Lijiang's UNESCO old town in the quiet hours, with a Naxi guide</li>
+        <li>Two unhurried acclimatisation days built in before the high-altitude round</li>
+        <li>Private driver, guide and every tee time handled, mountains to coast</li>
+      </ul>
+      <p class="gnote">Every element below is a starting point — shaped to your dates, your party and your pace.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- TAB BAR -->
+<div class="tabbar" id="tabbar">
+  <div class="container tabs">
+    <button class="tab on" data-tab="itinerary">Itinerary</button>
+    <button class="tab" data-tab="golf">Golf</button>
+    <button class="tab" data-tab="stay">Stays</button>
+    <button class="tab" data-tab="extend">Go Further</button>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<section class="itin panel on" id="itinerary">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Day by Day</span>
+      <h2>The shape of the journey.</h2>
+      <p>Nine nights, four rounds, three thousand metres of descent — paced so the altitude works for you, the transfers never stack against the golf, and the last days belong to the sea.</p>
+    </div>
+    <div class="itin-wrap">
+
+      <div class="phase fade"><span class="ph-city">Lijiang</span><span class="ph-line"></span><span class="ph-n">Nights 1–3</span><div class="ph-btns"><button class="pb prev" aria-label="Previous days">‹</button><button class="pb next" aria-label="Next days">›</button></div></div>
+      <div class="days">
+
+        <article class="day fade">
+          <div class="dnum">Day 1 <b>Arrive Lijiang</b></div>
+          <h3>Up into the foothills of the Himalaya.</h3>
+          <p>Met on arrival and driven to your resort beneath Jade Dragon Snow Mountain, the glacier catching the last light from your terrace. The first evening is deliberately gentle — you have just arrived at 2,400 metres, and the trip is designed to let the altitude come to you. A quiet welcome dinner, an early night, nothing on the clock.</p>
+          <div class="dtags"><span class="dtag">Private arrival</span><span class="dtag">No golf today — by design</span></div>
+          <img class="dimg" src="assets/img/place-lijiang.jpg" alt="The grey-tiled rooftops of Lijiang's old town beneath the mountains" loading="lazy">
+        </article>
+
+        <article class="day fade">
+          <div class="dnum">Day 2 <b>Naxi Lijiang</b></div>
+          <h3>The old town, a mountain village, a long lunch.</h3>
+          <p>A day among the Naxi: the UNESCO old town in the quiet hours before the crowds, then out to a working village at the foot of the snow mountain — courtyard houses, dongba script, tea poured the old way. Dinner is private, outside the old town's bustle. It is also your acclimatisation day: the course tomorrow sits at 3,100 metres, and a settled night beforehand makes all the difference to how it plays.</p>
+          <div class="dtags"><span class="dtag">UNESCO old town</span><span class="dtag">Naxi village</span><span class="dtag">Altitude day</span></div>
+          <img class="dimg" src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan" loading="lazy">
+        </article>
+
+        <article class="day golfday fade">
+          <div class="dnum">Day 3 <b>Round One</b></div>
+          <h3>Golf beneath a 5,500-metre glacier.</h3>
+          <p>The round the journey is named for. At 3,100 metres, Jade Dragon stretches to 8,548 yards — the longest championship course in the world — but the thin air carries your ball ten percent farther, and the glacier fills the sky above every shot. Caddies, carts and an unhurried tee time are all arranged; the evening is back in Lijiang, replaying the drives that flew forever.</p>
+          <div class="dtags"><span class="dtag golf">Golf · Jade Dragon Snow Mountain</span><span class="dtag">3,100 m</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
+          <img class="dimg" src="assets/img/jadedragon-morning-light.jpg" alt="Morning light breaking over the fairways beneath Jade Dragon Snow Mountain" loading="lazy">
+        </article>
+
+        <a class="day dest fade" href="south-of-the-clouds.html">
+          <img src="assets/img/hero-yunnan.jpg" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang">
+          <div class="db">
+            <div class="loc">The Destination</div>
+            <h3>More on Yunnan</h3>
+            <p>South of the Clouds in depth — the golf, the Tea Horse Road and Shangri-La beyond.</p>
+            <span class="go">Discover Yunnan →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="phase fade"><span class="ph-city">Spring City</span><span class="ph-line"></span><span class="ph-n">Nights 4–5</span><div class="ph-btns"><button class="pb prev" aria-label="Previous days">‹</button><button class="pb next" aria-label="Next days">›</button></div></div>
+      <div class="days">
+
+        <article class="day fade">
+          <div class="dnum">Day 4 <b>Lijiang → Spring City</b></div>
+          <h3>Down from the mountains to a highland lake.</h3>
+          <p>South by high-speed train or a short flight to Kunming, the City of Eternal Spring, then a private transfer to Spring City Golf &amp; Lake Resort on the shore of Yangzong Lake. The afternoon is kept deliberately clear — settle into the resort, walk the lakeshore, loosen up on the range if you like. No sightseeing is squeezed in today; the resort itself is the destination.</p>
+          <div class="dtags"><span class="dtag">Rail or air, 45 min–3 h</span><span class="dtag">Resort check-in</span></div>
+          <img class="dimg" src="assets/img/springcity-resort-dusk.jpg" alt="Spring City resort glowing at dusk above Yangzong Lake" loading="lazy">
+        </article>
+
+        <article class="day golfday fade">
+          <div class="dnum">Day 5 <b>Round Two</b></div>
+          <h3>World Top 100 golf, thirty steps from your room.</h3>
+          <p>A full day at Asia's most complete golf resort, with no transfers to think about. Play Robert Trent Jones Jr's Lake Course — a World Top 100 fixture tumbling toward the water through eucalyptus and pine — with lunch on the terrace and the whole afternoon to linger. Staying on-resort turns the day into a one-stop golf retreat: spa, lake, dinner, done.</p>
+          <div class="dtags"><span class="dtag golf">Golf · Spring City, Lake Course</span><span class="dtag">Stay &amp; play</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
+          <img class="dimg" src="assets/img/springcity-lake-green.jpg" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy">
+        </article>
+
+        <article class="day addon fade">
+          <div class="dnum">Optional Add-On <b>A second loop</b></div>
+          <h3>The Mountain Course, if one day isn't enough.</h3>
+          <p>Spring City's other half is Jack Nicklaus' Mountain Course, climbing the ridgeline above the lake — all elevation change and long highland views. Keen golfers add a night and play both; the eternal-spring climate means either course is in season every month of the year.</p>
+          <div class="dtags"><span class="dtag golf">Golf · Spring City, Mountain Course</span><span class="dtag">Add-on round</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
+          <img class="dimg" src="assets/img/springcity-blossom-fairway.jpg" alt="Spring blossoms lining a bunkered fairway on the Mountain Course at Spring City" loading="lazy">
+        </article>
+
+      </div>
+
+      <div class="phase fade"><span class="ph-city">Hainan</span><span class="ph-line"></span><span class="ph-n">Nights 6–9</span><div class="ph-btns"><button class="pb prev" aria-label="Previous days">‹</button><button class="pb next" aria-label="Next days">›</button></div></div>
+      <div class="days">
+
+        <article class="day fade">
+          <div class="dnum">Day 6 <b>Kunming → Haikou</b></div>
+          <h3>South again, until the air turns tropical.</h3>
+          <p>A direct flight south — barely ninety minutes — and the journey changes register entirely: sea air, palm lines, the smell of rain on warm stone. You land in Haikou and settle into Mission Hills, where the evening belongs to the resort's natural volcanic hot springs, the rock still warm beneath the water. Tomorrow's first tee is minutes from your door.</p>
+          <div class="dtags"><span class="dtag">Direct flight, 1.5 h</span><span class="dtag">Volcanic hot springs</span></div>
+          <img class="dimg" src="assets/img/stay-missionhills-hotspring.jpg" alt="Steaming volcanic hot-spring pools set in tropical gardens at Mission Hills Haikou" loading="lazy">
+        </article>
+
+        <article class="day golfday fade">
+          <div class="dnum">Day 7 <b>Round Three</b></div>
+          <h3>Golf through a field of black lava.</h3>
+          <p>Blackstone — the headline course at the world's largest golf resort, carved straight through volcanic rock, its fairways framed by jagged lava walls, white sand and tropical palm. Tiger Woods and Rory McIlroy met here in The Match; it holds a place in the World Top 100 and remains the round every visiting golfer wants on the card. The hot springs are waiting when you walk off the eighteenth.</p>
+          <div class="dtags"><span class="dtag golf">Golf · Blackstone</span><span class="dtag">World Top 100</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
+          <img class="dimg" src="assets/img/blackstone-fairway-bunkers.jpg" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway" loading="lazy">
+        </article>
+
+        <article class="day fade">
+          <div class="dnum">Day 8 <b>Hainan, Slowly</b></div>
+          <h3>A day with nothing that has to happen.</h3>
+          <p>Deliberately empty, and it earns its keep: after three rounds and three regions, this is the day the trip breathes. Wander the lava-stone villages of the old volcano country, take the spa slowly, or do nothing at all beside the water. We can fill it — Li culture, the coffee hills, a seafood table by the harbour — but we'll defend it against becoming another transfer day.</p>
+          <div class="dtags"><span class="dtag">Free day — protected</span><span class="dtag">Volcano villages · spa · coast</span></div>
+          <img class="dimg" src="assets/img/exp-hainan-coffee.jpg" alt="Coffee grown in the volcanic hills of northern Hainan" loading="lazy">
+        </article>
+
+        <article class="day golfday fade">
+          <div class="dnum">Day 9 <b>Round Four</b></div>
+          <h3>A wild links to finish, then the sea.</h3>
+          <p>Down the east-coast expressway to Shenzhou Peninsula for the closing round: The Dunes, Tom Weiskopf's natural links through real sand dunes to the water's edge, the wind and the land doing the defending. Afterwards, nowhere to rush to — you stay the night beside the course, with the late afternoon for the beach, the pool or a barefoot walk along an unspoilt stretch of coast.</p>
+          <div class="dtags"><span class="dtag golf">Golf · The Dunes, Shenzhou Peninsula</span><span class="dtag">Night by the sea</span></div>
+          <button class="daylink" data-goto="golf">Explore this course →</button>
+          <img class="dimg" src="assets/img/dunes-shenzhou-headland-aerial.jpg" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula" loading="lazy">
+        </article>
+
+        <article class="day fade">
+          <div class="dnum">Day 10 <b>Depart</b></div>
+          <h3>One last morning on the coast.</h3>
+          <p>Breakfast with the sea in view, a swim if the flight allows, then a private transfer to your departure — via Haikou's international airport or nearby Bo'ao, whichever suits your connection. Or don't stop here: Beijing and the Great Wall, or Shanghai and the Bund, are a direct flight away.</p>
+          <div class="dtags"><span class="dtag">Private departure</span></div>
+          <img class="dimg" src="assets/img/hainan-sunset-coast.jpg" alt="Sunset over the tropical coast of Hainan" loading="lazy">
+        </article>
+
+        <a class="day dest fade" href="asias-most-exclusive-golf.html">
+          <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan">
+          <div class="db">
+            <div class="loc">The Destination</div>
+            <h3>More on Hainan</h3>
+            <p>The tropical coast in depth — the golf, the surf and Asia's most exclusive club.</p>
+            <span class="go">Discover Hainan →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="itin-note fade">
+        <div class="t">
+          <h3>This is a starting point, not a script.</h3>
+          <p>Add a second loop at Spring City, chase an invitation to Shanqin Bay, bring non-golfers for the villages and the sea — every journey is rebuilt from scratch around your party before anything is booked.</p>
+        </div>
+        <a href="index.html#start" class="btn btn-primary">Tailor This Journey</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THE GOLF -->
+<section class="golf panel" id="golf">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow" style="color:var(--gold)">The Golf</span>
+      <h2>Four rounds, three thousand metres apart.</h2>
+      <p>A glacier above the first round, the South China Sea beside the last — no other journey in golf descends this far, or changes character this completely between tee times.</p>
+    </div>
+
+    <article class="golf-feature fade">
+      <div class="img gal">
+        <img class="active" src="assets/img/jadedragon-course-view.jpg" alt="A fairway at Jade Dragon Snow Mountain Golf Club running toward the cloud-wrapped peaks of the massif">
+        <img src="assets/img/jadedragon-golden-fairway.jpg" alt="Golden winter grasses framing a fairway beneath the snow range at Jade Dragon" loading="lazy">
+        <img src="assets/img/jadedragon-valley-green.jpg" alt="A green and its bunkers set in the high valley beneath Jade Dragon Snow Mountain" loading="lazy">
+        <img src="assets/img/jadedragon-bunkered-green.jpg" alt="White-sand bunkers guarding a green in the thin air at Jade Dragon" loading="lazy">
+        <button class="gal-btn prev" aria-label="Previous image">‹</button>
+        <button class="gal-btn next" aria-label="Next image">›</button>
+        <div class="gal-dots"></div>
+        <span class="tag">Round 1 · Golf at 3,100 m</span>
+      </div>
+      <div class="c">
+        <div class="region">Lijiang · Yulong</div>
+        <h3>Jade Dragon Snow Mountain</h3>
+        <p>The most dramatic setting in golf. At 3,100 metres in the Himalayan foothills, Jade Dragon stretches to 8,548 yards — the longest championship course in the world — yet the thin air carries your ball ten percent farther, and you will want every metre of it. Above the fairways the 5,500-metre glacier fills the sky; around them, pine forest and Naxi villages. We build in two nights of acclimatisation before you play — the round is unrepeatable, and worth arriving for properly.</p>
+        <dl>
+          <dt>Designer</dt><dd>Neil Haworth / Nelson &amp; Haworth</dd>
+          <dt>Setting</dt><dd>Himalayan foothills, 3,100 m</dd>
+          <dt>Claim to fame</dt><dd>The world's longest course — 8,548 yards</dd>
+          <dt>How it fits</dt><dd>Round one, Day 3 — after two nights at altitude</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="golf-feature fade">
+      <div class="img gal">
+        <img class="active" src="assets/img/springcity-resort-aerial.jpg" style="object-position:right center" alt="An aerial view of Spring City's forested fairways running down to Yangzong Lake at golden hour">
+        <img src="assets/img/springcity-lake-green.jpg" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy">
+        <img src="assets/img/springcity-forest-fairway.jpg" alt="A tree-lined fairway of the Lake Course descending toward Yangzong Lake" loading="lazy">
+        <img src="assets/img/springcity-lakeside-green.jpg" alt="A green of the Lake Course jutting toward the silver water of Yangzong Lake" loading="lazy">
+        <button class="gal-btn prev" aria-label="Previous image">‹</button>
+        <button class="gal-btn next" aria-label="Next image">›</button>
+        <div class="gal-dots"></div>
+        <span class="tag">Round 2 · World Top 100</span>
+      </div>
+      <div class="c">
+        <div class="region">Yangzong Lake · Kunming</div>
+        <h3>Spring City Golf &amp; Lake Resort</h3>
+        <p>Asia's most complete golf resort: two courses ranked among the continent's finest, draped over hills above a highland lake at 2,000 metres. You play Robert Trent Jones Jr's Lake Course — a World Top 100 fixture tumbling toward the water through eucalyptus and pine — and you stay on the property itself, so the day needs no transfers at all. Keen golfers add Nicklaus' Mountain Course on the ridgeline above; the eternal-spring climate keeps both in season all year.</p>
+        <dl>
+          <dt>Designers</dt><dd>Robert Trent Jones Jr · Jack Nicklaus</dd>
+          <dt>Setting</dt><dd>Lakeside highland, 2,000 m</dd>
+          <dt>Standing</dt><dd>World Top 100 · Lake Course</dd>
+          <dt>How it fits</dt><dd>Round two, Day 5 — a stay-and-play day</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="golf-feature fade">
+      <div class="img gal">
+        <img class="active" src="assets/img/blackstone-fairway-bunkers.jpg" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway">
+        <img src="assets/img/blackstone-palm-fairway.jpg" alt="A palm-lined fairway running between walls of volcanic stone at Blackstone" loading="lazy">
+        <img src="assets/img/blackstone-lava-wall.jpg" alt="A wall of black volcanic rock crossing the fairway toward a green at Blackstone" loading="lazy">
+        <img src="assets/img/blackstone-tiger-rory.jpg" alt="Tiger Woods and Rory McIlroy walking a fairway together during The Match at Mission Hills Haikou" loading="lazy">
+        <button class="gal-btn prev" aria-label="Previous image">‹</button>
+        <button class="gal-btn next" aria-label="Next image">›</button>
+        <div class="gal-dots"></div>
+        <span class="tag">Round 3 · World Top 100</span>
+      </div>
+      <div class="c">
+        <div class="region">Haikou · Hainan</div>
+        <h3>Mission Hills Haikou — Blackstone</h3>
+        <p>The headline course at the world's largest golf resort, Blackstone is carved straight through a field of black volcanic rock — fairways framed by jagged lava walls, white sand and tropical palm. Both Tiger Woods and Rory McIlroy have played here, meeting in The Match on this very course; it holds a place in the World Top 100. With your hotel inside the resort, the first tee is minutes from your door and the day ends in natural volcanic hot springs.</p>
+        <dl>
+          <dt>Designer</dt><dd>Schmidt-Curley Design</dd>
+          <dt>Setting</dt><dd>Lava-rock tropical parkland</dd>
+          <dt>Standing</dt><dd>World Top 100</dd>
+          <dt>How it fits</dt><dd>Round three, Day 7 — steps from your hotel</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="golf-feature fade">
+      <div class="img gal">
+        <img class="active" src="assets/img/dunes-shenzhou-headland-aerial.jpg" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula">
+        <img src="assets/img/dunes-shenzhou-aerial.jpg" alt="An aerial of The Dunes fairways, water and sand winding toward the sea at Shenzhou Peninsula" loading="lazy">
+        <img src="assets/img/dunes-shenzhou-sea-green.jpg" alt="A green set above the rocks and breaking surf at The Dunes, Shenzhou Peninsula" loading="lazy">
+        <img src="assets/img/dunes-shenzhou-lagoon.jpg" alt="A green beside a lagoon with a forested hill behind at The Dunes, Shenzhou Peninsula" loading="lazy">
+        <button class="gal-btn prev" aria-label="Previous image">‹</button>
+        <button class="gal-btn next" aria-label="Next image">›</button>
+        <div class="gal-dots"></div>
+        <span class="tag">Round 4 · Oceanside links</span>
+      </div>
+      <div class="c">
+        <div class="region">Shenzhou · Hainan</div>
+        <h3>The Dunes at Shenzhou Peninsula</h3>
+        <p>A natural links carved from real sand dunes along a wild, unspoilt stretch of tropical coast — closer in spirit to Ireland than the South China Sea. Tom Weiskopf routed the holes through tumbling duneland to the water's edge, leaving the wind and the land to do the defending. It is the most thrilling drive-and-pitch golf on the island, the round most guests remember longest — and the perfect closing note, with your final night beside the course and the sea.</p>
+        <dl>
+          <dt>Designer</dt><dd>Tom Weiskopf</dd>
+          <dt>Setting</dt><dd>Oceanside dune links</dd>
+          <dt>Standing</dt><dd>Asia Top 50</dd>
+          <dt>How it fits</dt><dd>The closing round, Day 9</dd>
+        </dl>
+      </div>
+    </article>
+
+    <p class="golf-note fade"><b>All four rounds are confirmed before you fly</b> — tee times, caddies and carts handled entirely on your behalf, with clubs and shoes hired to spec if you'd rather travel light. Where it can genuinely be confirmed, an invitation round at Shanqin Bay — Asia's most exclusive club — can be woven into the Hainan days.</p>
+  </div>
+</section>
+
+<!-- WHERE YOU STAY -->
+<section class="stay panel" id="stay">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Where You Stay</span>
+      <h2>Four addresses, one long descent.</h2>
+      <p>Three nights beneath the snow mountain, two inside Asia's finest golf resort, three where the volcanoes meet the springs — and a last night beside the links and the sea.</p>
+    </div>
+
+    <div class="hotel-grid">
+
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Lijiang · Nights 1–3</span><img src="assets/img/hotel-banyan-tree-lijiang-card.jpg" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain"></div>
+        <div class="b">
+          <h3>Banyan Tree Lijiang</h3>
+          <div class="loc">Lijiang, Yunnan</div>
+          <button class="vd" data-hotel="banyan">View Details</button>
+        </div>
+      </article>
+
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Spring City · Nights 4–5</span><img src="assets/img/springcity-resort-dusk.jpg" alt="Spring City resort glowing at dusk above Yangzong Lake"></div>
+        <div class="b">
+          <h3>Spring City Golf &amp; Lake Resort</h3>
+          <div class="loc">Yangzong Lake, Kunming</div>
+          <button class="vd" data-hotel="springcity">View Details</button>
+        </div>
+      </article>
+
+      <!-- TODO: 确认观澜湖海口丽思卡尔顿酒店名称/合作与卡片图 -->
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Haikou · Nights 6–8</span><img src="assets/img/stay-missionhills-hotspring.jpg" alt="Steaming volcanic hot-spring pools set in tropical gardens at Mission Hills Haikou"></div>
+        <div class="b">
+          <h3>The Ritz-Carlton at Mission Hills</h3>
+          <div class="loc">Mission Hills, Haikou</div>
+          <button class="vd" data-hotel="ritz">View Details</button>
+        </div>
+      </article>
+
+      <!-- TODO: 确认神州半岛君悦酒店名称/合作与卡片图 -->
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">The Coast · Night 9</span><img src="assets/img/dunes-shenzhou-clubhouse.jpg" alt="A fairway running up to the clubhouse at The Dunes, Shenzhou Peninsula"></div>
+        <div class="b">
+          <h3>Grand Hyatt, Shenzhou Peninsula</h3>
+          <div class="loc">Shenzhou Peninsula, Wanning</div>
+          <button class="vd" data-hotel="hyatt">View Details</button>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note fade">Room categories, alternatives and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
+  </div>
+</section>
+
+<!-- HOTEL DETAILS MODAL -->
+<div class="hmodal" id="hmodal" role="dialog" aria-modal="true" aria-labelledby="hm-name">
+  <div class="ov" data-close></div>
+  <div class="hm-panel">
+    <button class="hm-close" data-close aria-label="Close">✕</button>
+    <h3 id="hm-name"></h3>
+    <div class="hm-grid">
+      <div class="hm-gal">
+        <img id="hm-img" src="" alt="">
+        <button class="hm-btn prev" aria-label="Previous image">‹</button>
+        <button class="hm-btn next" aria-label="Next image">›</button>
+        <span class="hm-count" id="hm-count"></span>
+      </div>
+      <div class="hm-desc">
+        <div class="hm-loc" id="hm-loc"></div>
+        <p id="hm-desc"></p>
+        <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXTEND / ADD-ONS -->
+<section class="extend panel" id="extend">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow" style="color:var(--gold)">Extend the Journey</span>
+      <h2>Don't stop at nine nights.</h2>
+      <p>The route ends on the coast, but it doesn't have to end there — and the mountains behind you hold one more chapter of their own:</p>
+    </div>
+    <div class="extend-grid">
+
+      <a class="xcard fade" href="south-of-the-clouds.html">
+        <img src="assets/img/hero-yunnan.jpg" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang">
+        <div class="b">
+          <div class="loc">+2–3 Nights · Before the golf</div>
+          <h3>Higher Still: Shangri-La</h3>
+          <p>Keep climbing beyond Lijiang — Tiger Leaping Gorge, dawn prayers at the lamasery and the highland plain they renamed Shangri-La.</p>
+          <span class="go">Explore →</span>
+        </div>
+      </a>
+
+      <a class="xcard fade" href="first-time-golf-china.html">
+        <img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind">
+        <div class="b">
+          <div class="loc">+3–5 Nights · Direct flights from Haikou</div>
+          <h3>The Icons: Beijing &amp; Shanghai</h3>
+          <p>Golf beneath the Great Wall, the Forbidden City at opening time and the Bund after dark — the classic first-timer's chapter, before or after the south.</p>
+          <span class="go">Explore →</span>
+        </div>
+      </a>
+
+    </div>
+    <p class="note fade">Each extension is priced and planned as part of a single seamless journey — one proposal, one team on the ground throughout.</p>
+  </div>
+</section>
+
+<!-- WHY GOLF CHINA -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">The Golf China Difference</span>
+      <h2>Why travel with Golf China?</h2>
+    </div>
+    <div class="why-grid">
+
+      <div class="wick fade">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(-1.6deg)">
+          <path d="M23.7 6.9c.4 4.2.4 8.4.5 12.6 0 4.3.1 8.6-.1 12.9"/>
+          <path d="M24.3 7.6c4.7-2.5 9.4-2.7 14.2-.4.3.1.3.4.1.6-3.6 3.3-8.6 4.2-14 2.7"/>
+          <path d="M27.3 8.4c2.5-.8 5-.9 7.5-.3" stroke-width="1.1"/>
+          <path d="M7.4 39.4c4.7-4.9 10.3-7.3 16.4-7.2 6 0 11.7 2.5 16.6 7.4"/>
+          <path d="M20.9 32.7c2-.6 4-.6 5.9-.1" stroke-width="1.2"/>
+          <path d="M11.6 37.1c2.1-1.7 4.5-2.9 7-3.7" stroke-width="1.1"/>
+        </svg>
+        <p>Guest play arranged at China's best courses</p>
+      </div>
+
+      <div class="wick fade">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(1.2deg)">
+          <path d="M9.1 13.2c3.4-1.7 6.9-3.2 10.5-4.6l8.3 3.3c3.5-1.6 7-3.1 10.6-4.4.5 9.4.8 18.9.9 28.4-3.5 1.6-7 3.1-10.6 4.4l-8.4-3.2c-3.4 1.5-6.8 2.9-10.3 4.2-.4-9.4-.7-18.7-1-28.1z"/>
+          <path d="M19.6 9c.3 9.5.5 19 .5 28.5"/>
+          <path d="M28 12.2c.2 9.4.4 18.8.4 28.2"/>
+          <path d="M13.4 28.1c1.6-2.1 3.8-3 6.5-2.7 2.6.3 5.2.9 7.8.3 2.1-.5 3.6-1.9 4.6-4.1" stroke-dasharray="1.8 3.4 3.6 3.2"/>
+          <path d="M33 17.5l3.2 3.1M36.3 17.6l-3.3 3" stroke-width="1.3"/>
+        </svg>
+        <p>Expert-designed golf journeys, customized to suit you</p>
+      </div>
+
+      <div class="wick fade">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(-1.2deg)">
+          <path d="M16.8 6.9c2.8.1 4.9 2.3 4.9 5.1 0 2.7-2.4 4.9-5.2 4.8-2.7-.1-4.8-2.4-4.7-5.2.1-2.7 2.3-4.8 5-4.7z"/>
+          <path d="M15.1 10.1c.8-.9 1.9-1.2 3.1-.9" stroke-width="1.1"/>
+          <path d="M16.6 16.9c-.2 5-.3 10-.4 15 0 1.9-.1 3.9-.2 5.8"/>
+          <path d="M16.1 30.1c1.7 0 3.4.1 5.1.3"/>
+          <path d="M15.9 35.9c1.4 0 2.8.1 4.2.3"/>
+          <path d="M21.6 13.5c1.1.6 2.2 1.3 3.3 1.9"/>
+          <path d="M24.8 15.1c2.9-1.3 5.9-2.5 8.9-3.6 2 2.4 3.9 5 5.6 7.7-2.7 4.5-5.6 8.9-8.8 13.1-2.2-1.5-4.4-3.1-6.5-4.8.1-4.1.4-8.3.8-12.4z"/>
+          <path d="M30.1 19.4c.5.8.9 1.7 1.4 2.5l2.9.4c-.7.7-1.4 1.4-2.1 2 .2 1 .3 1.9.5 2.9-.9-.4-1.7-.9-2.6-1.3-.8.5-1.7.9-2.5 1.4.1-1 .3-2 .4-2.9-.7-.7-1.4-1.3-2.1-2l2.9-.5c.4-.8.8-1.7 1.2-2.5z" stroke-width="1.2"/>
+        </svg>
+        <p>Hand-selected luxury hotels in every region</p>
+      </div>
+
+      <div class="wick fade">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(1.4deg)">
+          <path d="M20.7 9.7c5-.4 10-.4 15 .1 2.3.2 3.8 1.7 4 4 .2 2.6.2 5.2-.1 7.8-.2 2.2-1.8 3.7-4 3.8-2.1.1-4.2.2-6.3.2-1.9 1.7-3.7 3.4-5.6 5.1-.1-1.7-.1-3.4 0-5.1-1.1 0-2.2-.1-3.3-.2-2.2-.1-3.8-1.7-4-3.9-.2-2.7-.2-5.4.1-8.1.2-2.1 1.9-3.5 4.2-3.7z"/>
+          <path d="M13.4 21.7c-.9 0-1.7 0-2.6.1-1.7.1-3 1.3-3.1 3.1-.2 2.3-.2 4.6 0 6.9.1 1.7 1.4 2.9 3.1 3h1.6c0 1.5.1 3 .2 4.5 1.5-1.5 3.1-3 4.6-4.5 1.9 0 3.9-.1 5.8-.2"/>
+          <path d="M25 14.6c2.2-.1 4.4-.1 6.6 0" stroke-width="1.2"/>
+          <path d="M25.1 18.2c1.7-.1 3.4-.1 5.1 0" stroke-width="1.2"/>
+        </svg>
+        <p>Deeply knowledgeable, English-speaking private guides</p>
+      </div>
+
+      <div class="wick fade">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(-1.3deg)">
+          <path d="M11.2 29.4c.7-2.8 1.5-5.6 2.4-8.3.6-1.9 2.2-3.1 4.2-3.1 4.2-.1 8.5-.1 12.7 0 2 0 3.6 1.2 4.2 3.1.9 2.7 1.7 5.5 2.4 8.2"/>
+          <path d="M8.8 29.7c10.2-.7 20.4-.7 30.5 0 1 .1 1.7.8 1.8 1.8.1 1.7.1 3.5 0 5.2-.1 1-.8 1.7-1.8 1.7-10 .5-20 .5-30 0-1 0-1.7-.7-1.8-1.7-.1-1.8-.1-3.5 0-5.3.1-.9.6-1.6 1.3-1.7z"/>
+          <path d="M15.7 21.2c5.5-.3 11.1-.3 16.6 0" stroke-width="1.1"/>
+          <path d="M13.5 33.9c.6-.6 1.5-.7 2.1-.1.6.5.7 1.5.1 2.1-.5.6-1.5.7-2.1.1-.6-.5-.6-1.4-.1-2.1z"/>
+          <path d="M32.4 33.8c.6-.6 1.5-.6 2.1 0s.6 1.5 0 2.1-1.5.6-2.1 0-.6-1.5 0-2.1z"/>
+          <path d="M21.2 31.7c1.9-.1 3.8-.1 5.7 0M21.1 34.3c2-.1 3.9-.1 5.9 0M21.2 36.9c1.9 0 3.8 0 5.7.1" stroke-width="1.1"/>
+          <path d="M12.1 38.5c0 1.1 0 2.1.1 3.2M35.8 38.4c0 1.1.1 2.2.1 3.2"/>
+        </svg>
+        <p>Airport meet and greet with private transfers</p>
+      </div>
+
+      <div class="wick fade">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(1.5deg)">
+          <path d="M12.4 25.7c-.6-5.3 1.3-9.9 5.2-12.8 3.6-2.7 8.3-3.3 12.4-1.6 4.8 2 7.7 6.5 7.6 12v2.3"/>
+          <path d="M9.5 26c1.6-.4 3.3-.4 4.9-.1.6 3.4.6 6.8.1 10.2-1.6.3-3.3.3-4.9-.1-.7-3.3-.7-6.7-.1-10z"/>
+          <path d="M33.5 25.9c1.6-.3 3.3-.3 4.9 0 .6 3.3.6 6.7.1 10-1.6.4-3.3.4-4.9.1-.6-3.4-.7-6.7-.1-10.1z"/>
+          <path d="M35.9 36.3c-.2 3.7-4.3 5.6-9.2 5.7"/>
+          <path d="M24.9 40.9c.9-.2 1.7.4 1.9 1.2.1.8-.5 1.6-1.4 1.7-.9.1-1.6-.5-1.7-1.3-.1-.8.4-1.5 1.2-1.6z"/>
+          <path d="M17.5 14.9c1.9-1.5 4.2-2.3 6.6-2.3" stroke-width="1.1"/>
+        </svg>
+        <p>One team on the ground, on call around the clock</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included" id="included">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">The Fine Print</span>
+      <h2>Everything handled. Nothing to think about.</h2>
+    </div>
+    <div class="inc-wrap">
+      <div class="inc-col fade">
+        <h3>Your Journey Includes</h3>
+        <ul>
+          <li>Nine nights in hand-picked hotels and resorts, at the comfort level you choose</li>
+          <li>Four confirmed rounds — green fees, caddies and carts at every course</li>
+          <li>Private car, driver and English-speaking guide throughout both provinces</li>
+          <li>All intra-journey travel — Lijiang to Kunming by rail or air, and the direct flight south to Haikou</li>
+          <li>Airport meet-and-greet with fast-track on arrival and departure</li>
+          <li>Daily breakfast and reservations at every table mentioned</li>
+          <li>A 24/7 on-the-ground concierge from first tee to final transfer</li>
+        </ul>
+        <p class="disclaimer">International flights, visa fees and personal expenses are not included. China now offers visa-free entry for many nationalities — we'll confirm what applies to you.</p>
+      </div>
+      <div class="price-block fade">
+        <span class="pk">Priced From</span>
+        <div class="amt">US$8,950</div>
+        <div class="pp">per golfer</div>
+        <p>Based on two golfers travelling and sharing a room. Non-golfer companion pricing and preferred rates for private groups are available on request.</p>
+        <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="start">
+  <img class="bg" src="assets/img/hainan-sunset-coast.jpg" alt="">
+  <div class="scrim"></div>
+  <div class="container inner fade">
+    <span class="eyebrow">Start Planning</span>
+    <h2>From the snow peaks to the sea — your journey starts here.</h2>
+    <p>Tell us a little about your trip and a travel designer will reply within one business day — with no obligation.</p>
+    <a href="index.html#start" class="btn btn-primary">Request a Private Proposal</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></div>
+        <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
+        <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="index.html#why-china">Why China</a></li><li><a href="index.html#destinations">Destinations</a></li><li><a href="index.html#courses">Courses</a></li><li><a href="index.html#journeys">Sample Journeys</a></li><li><a href="index.html#exclusives">Signature Experiences</a></li><li><a href="index.html#stay">Where You Stay</a></li></ul></div>
+      <div><h5>Plan</h5><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#about">Who We Are</a></li><li><a href="index.html#plan">Plan Your Trip</a></li><li><a href="index.html#experiences">Beyond Golf</a></li><li><a href="index.html#start">Request a Proposal</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="index.html#start">Enquire now</a></li></ul></div>
+    </div>
+    <div class="base">
+      <span>© 2026 Golf China. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const toggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('header.nav nav');
+toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+/* tabs */
+const tabbar=document.getElementById('tabbar');
+const tabs=[...document.querySelectorAll('.tab')];
+function openTab(id,scroll){
+  if(!document.getElementById(id)||!document.getElementById(id).classList.contains('panel'))return;
+  tabs.forEach(t=>t.classList.toggle('on',t.dataset.tab===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));
+  if(scroll)window.scrollTo({top:tabbar.offsetTop-56,behavior:'smooth'});
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
+addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));
+if(location.hash)openTab(location.hash.slice(1),false);
+/* in-itinerary jumps (e.g. golf day → Golf tab) */
+document.querySelectorAll('.daylink').forEach(b=>b.addEventListener('click',()=>{openTab(b.dataset.goto,true);history.replaceState(null,'','#'+b.dataset.goto);}));
+/* hotel details modal */
+const HOTELS={
+ banyan:{
+  name:'Banyan Tree Lijiang',loc:'Lijiang, Yunnan',
+  desc:'A village of Naxi-style villas at 2,400 metres, each with a private courtyard and the white shoulders of Jade Dragon Snow Mountain filling the horizon. Fires are lit in the evening, the spa draws on mountain botanicals, and the old town is a short drive away — close enough for the quiet hours, far enough for silence. The right altitude, and the right pace, for the nights before the highest round of your life.',
+  imgs:['hotel-banyan-tree-lijiang-card.jpg','hotel-banyan-tree-lijiang-1.jpg','hotel-banyan-tree-lijiang-2.jpg','hotel-banyan-tree-lijiang-3.jpg','hotel-banyan-tree-lijiang-4.jpg','hotel-banyan-tree-lijiang-5.jpg','hotel-banyan-tree-lijiang-6.jpg']
+ },
+ springcity:{
+  name:'Spring City Golf & Lake Resort',loc:'Yangzong Lake, Kunming',
+  desc:'Asia’s most complete golf resort, and the reason these two nights need no transfers at all: rooms and villas sit above Yangzong Lake within the resort itself, with both courses, the practice grounds, the spa and the restaurants a few minutes from your door. You wake at 2,000 metres to lake light and eucalyptus, play a World Top 100 round without getting in a car, and end the day on a terrace over the water — a one-stop highland golf retreat.',
+  imgs:['springcity-resort-dusk.jpg','springcity-resort-aerial.jpg','springcity-lake-green.jpg','springcity-forest-fairway.jpg']
+ },
+ ritz:{
+  name:'The Ritz-Carlton at Mission Hills',loc:'Mission Hills, Haikou',
+  desc:'Your base for the Blackstone rounds sits inside Mission Hills itself — the first tee minutes from your door, the day ending in the resort’s natural volcanic hot springs, the rock still warm beneath the water. It is the easiest, most self-contained golf stay on the island: championship golf, mineral springs and dinner, with nothing more to arrange than when you’d like to play.',
+  imgs:['stay-missionhills-hotspring.jpg','blackstone-sunrise.jpg','blackstone-rainbow-fairway.jpg']
+ },
+ hyatt:{
+  name:'Grand Hyatt, Shenzhou Peninsula',loc:'Shenzhou Peninsula, Wanning',
+  desc:'The closing night belongs to the coast. Beside The Dunes on the Shenzhou Peninsula, your resort opens straight onto an unspoilt stretch of the South China Sea — the beach at the end of the garden, the links a few minutes away. Play the final round in the morning, spend the afternoon barefoot, and leave the next day from the nearest coast to your flight. No better full stop to a journey that began beneath a glacier.',
+  imgs:['dunes-shenzhou-clubhouse.jpg','hainan-sunset-coast.jpg','dunes-rocky-coast.jpg','hainan-hero-dunes-coast.jpg']
+ }
+};
+const hmodal=document.getElementById('hmodal');
+if(hmodal){
+  let gal=[],gi=0;
+  const hImg=document.getElementById('hm-img'),hCount=document.getElementById('hm-count');
+  const show=i=>{gi=(i+gal.length)%gal.length;hImg.src='assets/img/'+gal[gi];hCount.textContent=(gi+1)+' / '+gal.length;};
+  const openH=id=>{
+    const d=HOTELS[id];if(!d)return;
+    document.getElementById('hm-name').textContent=d.name;
+    document.getElementById('hm-loc').textContent=d.loc;
+    document.getElementById('hm-desc').textContent=d.desc;
+    hImg.alt=d.name;gal=d.imgs;show(0);
+    hmodal.classList.add('open');document.body.style.overflow='hidden';
+  };
+  const closeH=()=>{hmodal.classList.remove('open');document.body.style.overflow='';};
+  document.querySelectorAll('.hcard .vd').forEach(b=>b.addEventListener('click',()=>openH(b.dataset.hotel)));
+  hmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeH));
+  hmodal.querySelector('.hm-btn.prev').addEventListener('click',()=>show(gi-1));
+  hmodal.querySelector('.hm-btn.next').addEventListener('click',()=>show(gi+1));
+  addEventListener('keydown',e=>{if(!hmodal.classList.contains('open'))return;if(e.key==='Escape')closeH();if(e.key==='ArrowLeft')show(gi-1);if(e.key==='ArrowRight')show(gi+1);});
+  let hx0=null;
+  const hg=hmodal.querySelector('.hm-gal');
+  hg.addEventListener('touchstart',e=>{hx0=e.touches[0].clientX},{passive:true});
+  hg.addEventListener('touchend',e=>{if(hx0===null)return;const dx=e.changedTouches[0].clientX-hx0;if(Math.abs(dx)>40)show(gi+(dx<0?1:-1));hx0=null;},{passive:true});
+}
+/* day carousels */
+document.querySelectorAll('.phase').forEach(ph=>{
+  const days=ph.nextElementSibling;
+  if(!days||!days.classList.contains('days'))return;
+  const step=()=>days.querySelector('.day').getBoundingClientRect().width+18;
+  const prev=ph.querySelector('.prev'),next=ph.querySelector('.next');
+  if(prev)prev.addEventListener('click',()=>days.scrollBy({left:-step(),behavior:'smooth'}));
+  if(next)next.addEventListener('click',()=>days.scrollBy({left:step(),behavior:'smooth'}));
+});
+/* course image galleries */
+document.querySelectorAll('.gal').forEach(g=>{
+  const imgs=[...g.querySelectorAll('img')];
+  const dots=g.querySelector('.gal-dots');
+  if(imgs.length<2){g.querySelectorAll('.gal-btn').forEach(b=>b.remove());if(dots)dots.remove();return;}
+  let i=0;
+  function go(n){imgs[i].classList.remove('active');dots.children[i].classList.remove('on');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('active');dots.children[i].classList.add('on');}
+  imgs.forEach((_,k)=>{const d=document.createElement('button');d.className='gal-dot'+(k===0?' on':'');d.setAttribute('aria-label','Image '+(k+1));d.addEventListener('click',()=>go(k));dots.appendChild(d);});
+  g.querySelector('.prev').addEventListener('click',()=>go(i-1));
+  g.querySelector('.next').addEventListener('click',()=>go(i+1));
+  let x0=null;
+  g.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+  g.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;},{passive:true});
+});
+</script>
+</body>
+</html>
