@@ -107,7 +107,6 @@ section{padding:100px 0}
 .trust .titem{position:relative;padding:0 8px}
 .trust .titem+.titem::before{content:"";position:absolute;left:-22px;top:50%;transform:translateY(-50%);height:56px;width:1px;background:rgba(106,118,109,.22)}
 .trust .gd-logo{height:24px;width:auto;margin:0 auto 12px;display:block}
-.trust .tk{font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
 .trust h3{font-family:var(--serif);font-size:clamp(23px,2.1vw,27px);color:var(--pine);font-weight:500;line-height:1.25}
 .trust .sub{font-size:17.5px;color:#6a766d;font-weight:300;margin-top:7px}
 @media(max-width:760px){
@@ -157,28 +156,6 @@ section{padding:100px 0}
 .access .pillar p{font-size:18px;color:rgba(255,255,255,.8);font-weight:300}
 .access .pillar p+p{margin-top:9px}
 .access .section-head p+p{margin-top:12px}
-.access-grid.four{grid-template-columns:repeat(2,1fr);gap:34px 44px}
-@media(max-width:820px){.access-grid.four{grid-template-columns:1fr}}
-.access-grid.four .pk{font-size:16px;letter-spacing:.18em}
-.access .pillar .pk+p{margin-top:11px}
-
-/* ===== PEOPLE BEHIND THE JOURNEY ===== */
-.people{background:var(--paper);border-top:1px solid var(--mist)}
-.people-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
-@media(max-width:860px){.people-wrap{grid-template-columns:1fr;gap:36px}}
-.people figure{margin:0}
-.people figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
-.people figcaption{font-size:16.5px;color:#6a766d;margin-top:12px;font-weight:300}
-.people .txt h2{font-size:clamp(32px,4vw,47px);margin:14px 0 18px;color:var(--pine)}
-.people .txt p{font-size:19.5px;color:#4a5a50;max-width:58ch}
-.people .motto{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,28px);color:var(--pine);margin-top:22px;padding-top:20px;position:relative}
-.people .motto::before{content:"";position:absolute;top:0;left:0;width:52px;height:1px;background:var(--gold)}
-.people .quotes{margin-top:56px}
-.people .quotes .qlabel{font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;color:#6a766d;text-align:center;margin-bottom:26px}
-.people .quotes .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@media(max-width:820px){.people .quotes .qgrid{grid-template-columns:1fr}}
-.people .quotes blockquote{background:var(--ivory);border-left:2px solid var(--gold);padding:24px 24px 20px;font-family:var(--serif);font-style:italic;font-size:20px;color:#3d4b43;line-height:1.55}
-.people .quotes blockquote cite{display:block;margin-top:14px;font-family:var(--sans);font-style:normal;font-size:15px;letter-spacing:.08em;color:#6a766d}
 
 /* ===== WHY CHINA ===== */
 .whychina{background:var(--ivory)}
@@ -513,10 +490,10 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   <div class="bar">
     <a href="#top" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
     <nav>
-      <a href="#journeys">Private Journeys</a>
-      <a href="#access">Golf in China</a>
+      <a href="#access">Exclusive Access</a>
       <a href="#destinations">Destinations</a>
       <a href="#courses">Courses</a>
+      <a href="#journeys">Sample Journeys</a>
       <a href="#exclusives">Experiences</a>
       <a href="#plan">Plan</a>
       <a href="#start" class="nav-cta">Plan Your Journey</a>
@@ -561,116 +538,67 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     <div class="trust fade">
       <div class="titem">
         <img class="gd-logo" src="assets/img/logo-golfdigest.webp" alt="Golf Digest">
-        <div class="tk">World-Class Courses</div>
-        <h3>Three courses among the World's 100 Greatest Golf Courses</h3>
+        <h3>World's 100 Greatest</h3>
+        <p class="sub">Three courses ranked by Golf Digest</p>
       </div>
       <div class="titem">
-        <div class="tk">China's Golf Specialists</div>
-        <h3>China's first travel company dedicated entirely to golf</h3>
+        <h3>China's first golf travel company</h3>
+        <p class="sub">Private-club access by arrangement</p>
       </div>
       <div class="titem">
-        <div class="tk">Private Access</div>
-        <h3>Guest play arranged at clubs rarely open to international visitors</h3>
+        <h3>Visa-free for 50 countries</h3>
+        <p class="sub">Up to 30 days · US passports 10 days via transit</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRIVATE JOURNEYS -->
-<section class="journeys" id="journeys">
-  <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow">Private Journeys</span>
-      <h2>Journeys, not packages.</h2>
-      <p>These routes show what is possible. Change the pace, swap courses, add regions — or start from a blank page.</p>
-    </div>
-    <div class="sj-grid">
-
-      <article class="sjcard fade">
-        <span class="sj-badge">All Private Clubs</span>
-        <div class="ph"><img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"></div>
-        <div class="b">
-          <h3>First-Time Golf China</h3>
-          <div class="specs">9 Nights · 4 Rounds · All Private Clubs</div>
-          <div class="hi"><p>Private golf beneath the Great Wall, Shanghai's skyline and wild links, then a tea-plantation finale on West Lake's doorstep.</p></div>
-          <div class="tl">Plan Your Journey</div>
-          <div class="route">Beijing · Shanghai · Hangzhou</div>
-          <div class="bestfor">Add Yunnan or Hainan — snow peaks or a tropical coast.</div>
-        </div>
-        <div class="foot"><span class="price">From <b>$7,950</b> per golfer.</span><a href="first-time-golf-china.html">View Full Itinerary</a></div>
-      </article>
-
-      <article class="sjcard fade">
-        <div class="ph"><img src="assets/img/wavepool-aerial-golden-hour.jpg" alt="The PerfectSwell surf pool at golden hour on Hainan's surf coast"></div>
-        <div class="b">
-          <h3>Surf &amp; Golf Hainan</h3>
-          <div class="specs">8 Nights · 3 Rounds · 4 Surf Sessions</div>
-          <div class="hi"><p>Waves built to order at the world's only tropical-island surf pool, links golf at The Dunes, and a lava-rock finale at Blackstone.</p></div>
-          <div class="tl">Plan Your Journey</div>
-          <div class="route">Wanning · Sanya · Haikou</div>
-          <div class="bestfor">Never surfed? First-timers stand up in session one.</div>
-        </div>
-        <!-- TODO: 确认真实起价 -->
-        <div class="foot"><span class="price">From <b>$4,650</b> per golfer.</span><a href="surf-and-golf-hainan.html">View Full Itinerary</a></div>
-      </article>
-
-      <article class="sjcard signature fade">
-        <span class="sj-badge">Signature Trip</span>
-        <div class="ph"><img src="assets/img/jadedragon-fairway.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan"></div>
-        <div class="b">
-          <h3>Snow Peaks to Tropical Coast</h3>
-          <div class="specs">9 Nights · 4 Rounds</div>
-          <div class="hi"><p>Highland golf at Spring City and Jade Dragon Snow Mountain, then south to Hainan and a final stretch beside the sea.</p></div>
-          <div class="tl">Plan Your Journey</div>
-          <div class="route">Yunnan · Hainan</div>
-          <div class="bestfor">Two completely different sides of China in one journey.</div>
-        </div>
-        <div class="foot"><span class="price">From <b>$5,950</b> per golfer.</span><a href="snow-peaks-to-tropical-coast.html">View Full Itinerary</a></div>
-      </article>
-
-      <article class="sjcard fade">
-        <div class="ph"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"></div>
-        <div class="b">
-          <h3>The Grand China Golf Journey</h3>
-          <div class="specs">14–15 Days · 7–9 Rounds</div>
-          <div class="hi"><p>The full range — the Great Wall, Shanghai's championship courses, Yunnan's snow peaks, Hainan's coast.</p></div>
-          <div class="tl">Plan Your Journey</div>
-          <div class="route">Beijing · Shanghai / Hangzhou · Yunnan · Hainan</div>
-          <div class="bestfor">For travelers who want to see how far golf in China can go.</div>
-        </div>
-        <!-- TODO: 确认真实起价 -->
-        <div class="foot"><span class="price">From <b>$12,950</b> per person.</span><a href="#start">Plan Your Journey</a></div>
-      </article>
-
+<!-- GOLF IN CHINA -->
+<!-- NOTE: Tiger photo appears to be tournament press imagery — confirm usage rights before launch -->
+<section class="proof" id="proof">
+  <div class="container proof-wrap">
+    <figure class="fade">
+      <img src="assets/img/proof-tiger.jpg" alt="Tiger Woods tees off in front of a crowd at Mission Hills Haikou, Hainan">
+      <figcaption>Tiger Woods at Mission Hills Haikou — The Match at Mission Hills, played on the Blackstone course.</figcaption>
+    </figure>
+    <div class="fade">
+      <span class="eyebrow">Golf in China</span>
+      <h2 class="ph2">World-class golf, across landscapes found nowhere else.</h2>
+      <p class="pbody">Courses beneath the Great Wall, in the highlands of Yunnan, along Hainan's tropical coast — designed by the game's greatest names, still almost unknown beyond China.</p>
+      <div class="stats">
+        <div class="stat"><h3>World <em>Top 100</em> Courses</h3><p>Sheshan, Spring City and Blackstone have all made Golf Digest's World's 100 Greatest.</p></div>
+        <div class="stat"><h3>Asia's Most <em>Spectacular Settings</em></h3><p>Fairways above the clouds, lava corridors beside the sea — a scale found nowhere else in Asia.</p></div>
+        <div class="stat"><h3>Designed by the Best.<br><em>Played by the Best.</em></h3><p>Courses by Nicklaus, Trent Jones&nbsp;Jr. and Coore&nbsp;&amp;&nbsp;Crenshaw — played by Woods, McIlroy and Mickelson.</p></div>
+        <div class="stat"><h3>A <em>Year-Round</em> Destination</h3><p>Hainan in winter, Yunnan's highlands in summer — there is no off-season.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CHINA REVEALED THROUGH GOLF — combined "Golf in China" + "Exclusive Access" -->
+<!-- EXCLUSIVE ACCESS -->
 <section class="access" id="access">
   <div class="container">
     <div class="section-head fade">
-      <span class="eyebrow">China Revealed Through Golf</span>
-      <h2>Courses worth crossing the world for.</h2>
-      <p>Beneath the Great Wall, above the clouds in Yunnan and across ancient lava fields on Hainan, China's finest courses reveal a side of the country few international golfers have seen. From world-ranked championship golf to private clubs beyond the usual map, every journey is shaped around the best place to play at the time you travel.</p>
+      <span class="eyebrow">Exclusive Access</span>
+      <h2>Access built over years.</h2>
+      <p>Many of China's finest courses are private and beyond the reach of most international golfers. We open those doors.</p>
     </div>
-    <p class="claim fade">China's first travel company dedicated entirely to golf.</p>
-    <div class="access-grid four">
+    <p class="claim fade">Access opens the door. The journey reveals China.</p>
+    <div class="access-grid">
       <div class="pillar fade">
-        <div class="pk">World-Class Golf</div>
-        <p>Play courses recognized by Golf Digest among the World's 100 Greatest Golf Courses, together with some of Asia's most spectacular and rarely seen designs.</p>
+        <div class="pk">Club Relationships</div>
+        <h4>The private clubs beyond the map</h4>
+        <p>Long-standing relationships open guest play at clubs few overseas golfers ever see.</p>
       </div>
       <div class="pillar fade">
-        <div class="pk">A Year-Round Destination</div>
-        <p>China has no single golf season. From Beijing and Shanghai in spring and autumn, to high-altitude Yunnan in summer and tropical Hainan in winter, we shape every journey around the best conditions at the time you travel.</p>
+        <div class="pk">The Pioneer</div>
+        <h4>China's first golf travel company</h4>
+        <p>The first — and still the only — travel company dedicated entirely to golf in China. Every route played first-hand.</p>
       </div>
       <div class="pillar fade">
-        <div class="pk">The Private Clubs Beyond the Map</div>
-        <p>Through private relationships built over years, Golf China can arrange guest play at some of China's — and Asia's — most private golf clubs. These are courses that can be difficult or impossible for an international visitor to arrange independently.</p>
-      </div>
-      <div class="pillar fade">
-        <div class="pk">Our People, Everywhere You Go</div>
-        <p>With experienced local teams across China, every journey is supported on the ground from arrival to the final tee time. The people planning the journey remain connected with the people delivering it in every destination.</p>
+        <div class="pk">China Tourism Group</div>
+        <h4>Our people, everywhere you go</h4>
+        <p>With China Tourism Group behind us, every journey is supported by local teams across the country.</p>
       </div>
     </div>
   </div>
@@ -756,7 +684,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Signature Courses</span>
-      <h2>Ten courses. Ten different Chinas.</h2>
+      <h2>Courses worth crossing the world for.</h2>
       <p>Each has the landscape, architecture and sense of place to anchor an entire journey.</p>
     </div>
     <div class="course-grid">
@@ -979,6 +907,76 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   </div>
 </section>
 
+<!-- SAMPLE JOURNEYS -->
+<section class="journeys" id="journeys">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Private Journeys</span>
+      <h2>Journeys, not packages.</h2>
+      <p>These routes show what is possible. Change the pace, swap courses, add regions — or start from a blank page.</p>
+    </div>
+    <div class="sj-grid">
+
+      <article class="sjcard fade">
+        <span class="sj-badge">All Private Clubs</span>
+        <div class="ph"><img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"></div>
+        <div class="b">
+          <h3>First-Time Golf China</h3>
+          <div class="specs">9 Nights · 4 Rounds · All Private Clubs</div>
+          <div class="hi"><p>Private golf beneath the Great Wall, Shanghai's skyline and wild links, then a tea-plantation finale on West Lake's doorstep.</p></div>
+          <div class="tl">Plan Your Journey</div>
+          <div class="route">Beijing · Shanghai · Hangzhou</div>
+          <div class="bestfor">Add Yunnan or Hainan — snow peaks or a tropical coast.</div>
+        </div>
+        <div class="foot"><span class="price">From <b>$7,950</b> per golfer.</span><a href="first-time-golf-china.html">View Full Itinerary</a></div>
+      </article>
+
+      <article class="sjcard fade">
+        <div class="ph"><img src="assets/img/wavepool-aerial-golden-hour.jpg" alt="The PerfectSwell surf pool at golden hour on Hainan's surf coast"></div>
+        <div class="b">
+          <h3>Surf &amp; Golf Hainan</h3>
+          <div class="specs">8 Nights · 3 Rounds · 4 Surf Sessions</div>
+          <div class="hi"><p>Waves built to order at the world's only tropical-island surf pool, links golf at The Dunes, and a lava-rock finale at Blackstone.</p></div>
+          <div class="tl">Plan Your Journey</div>
+          <div class="route">Wanning · Sanya · Haikou</div>
+          <div class="bestfor">Never surfed? First-timers stand up in session one.</div>
+        </div>
+        <!-- TODO: 确认真实起价 -->
+        <div class="foot"><span class="price">From <b>$4,650</b> per golfer.</span><a href="surf-and-golf-hainan.html">View Full Itinerary</a></div>
+      </article>
+
+      <article class="sjcard signature fade">
+        <span class="sj-badge">Signature Trip</span>
+        <div class="ph"><img src="assets/img/jadedragon-fairway.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan"></div>
+        <div class="b">
+          <h3>Snow Peaks to Tropical Coast</h3>
+          <div class="specs">9 Nights · 4 Rounds</div>
+          <div class="hi"><p>Highland golf at Spring City and Jade Dragon Snow Mountain, then south to Hainan and a final stretch beside the sea.</p></div>
+          <div class="tl">Plan Your Journey</div>
+          <div class="route">Yunnan · Hainan</div>
+          <div class="bestfor">Two completely different sides of China in one journey.</div>
+        </div>
+        <div class="foot"><span class="price">From <b>$5,950</b> per golfer.</span><a href="snow-peaks-to-tropical-coast.html">View Full Itinerary</a></div>
+      </article>
+
+      <article class="sjcard fade">
+        <div class="ph"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"></div>
+        <div class="b">
+          <h3>The Grand China Golf Journey</h3>
+          <div class="specs">14–15 Days · 7–9 Rounds</div>
+          <div class="hi"><p>The full range — the Great Wall, Shanghai's championship courses, Yunnan's snow peaks, Hainan's coast.</p></div>
+          <div class="tl">Plan Your Journey</div>
+          <div class="route">Beijing · Shanghai / Hangzhou · Yunnan · Hainan</div>
+          <div class="bestfor">For travelers who want to see how far golf in China can go.</div>
+        </div>
+        <!-- TODO: 确认真实起价 -->
+        <div class="foot"><span class="price">From <b>$12,950</b> per person.</span><a href="#start">Plan Your Journey</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- SIGNATURE EXPERIENCES -->
 <section class="exclusives" id="exclusives">
   <div class="container">
@@ -1185,36 +1183,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     </div>
   </div>
 </div>
-
-<!-- THE PEOPLE BEHIND THE JOURNEY -->
-<section class="people" id="people">
-  <div class="container">
-    <div class="people-wrap">
-      <figure class="fade">
-        <!-- TODO: 替换为真实的团队/创始人照片(当前暂用 about-team 占位图) -->
-        <img src="assets/img/about-team.jpg" alt="The Golf China team standing together on a golf course fairway">
-        <!-- TODO: 补充负责行程规划的真实姓名与职务,例如:
-        <figcaption><b>Name Surname</b> · Founder &amp; Head of Journey Planning</figcaption>
-        -->
-      </figure>
-      <div class="txt fade">
-        <span class="eyebrow">The People Behind the Journey</span>
-        <h2>Planned here. Delivered here.</h2>
-        <p>Every Golf China journey is planned by people who live here, play the courses and understand how the country actually moves. From your first conversation to your final tee time, our team remains personally involved — supported by experienced local people in every destination.</p>
-        <p class="motto">Our people, everywhere you go.</p>
-      </div>
-    </div>
-    <!-- TODO: 添加 2–3 条真实旅客评价。不要编造;如暂用 Surf China 评价,必须保留 qlabel 标注,不得冒充 Golf China 客户评价。
-    <div class="quotes fade">
-      <p class="qlabel">From travelers with our sister company, Surf China Co.</p>
-      <div class="qgrid">
-        <blockquote>"…real testimonial text…"<cite>— Name, Country</cite></blockquote>
-        <blockquote>"…real testimonial text…"<cite>— Name, Country</cite></blockquote>
-      </div>
-    </div>
-    -->
-  </div>
-</section>
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
