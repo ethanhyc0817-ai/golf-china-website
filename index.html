@@ -76,11 +76,11 @@ header.nav.scrolled .bar{padding:12px 28px}
 @keyframes hslide2{0%{opacity:0}28%{opacity:0}33%{opacity:1}61%{opacity:1}66%{opacity:0}100%{opacity:0}}
 @keyframes hslide3{0%{opacity:0}61%{opacity:0}66%{opacity:1}95%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.hslide{animation:none!important}.hslide.s1{opacity:1}.hslide.s2,.hslide.s3{opacity:0}}
-.hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,36,28,.62) 0%,rgba(20,36,28,.3) 38%,rgba(20,36,28,.16) 62%,rgba(20,36,28,.75) 100%)}
-.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;padding-top:clamp(140px,19vh,200px);padding-bottom:9vh}
+.hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,36,28,.78) 0%,rgba(20,36,28,.55) 30%,rgba(20,36,28,.22) 58%,rgba(20,36,28,.75) 100%)}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;padding-top:clamp(100px,13vh,150px);padding-bottom:9vh}
 .hero .eyebrow{font-size:clamp(13px,1vw,15px)}
-.hero h1{font-size:clamp(36px,5.2vw,68px);max-width:28ch;margin:14px 0 0;font-weight:500;text-wrap:balance}
-.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,28px);color:rgba(255,255,255,.92);max-width:34ch;margin-top:22px;padding-top:20px;position:relative}
+.hero h1{font-size:clamp(36px,5.2vw,68px);max-width:28ch;margin:14px 0 0;font-weight:500;text-wrap:balance;text-shadow:0 2px 28px rgba(10,20,15,.55)}
+.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,28px);color:rgba(255,255,255,.96);max-width:34ch;margin-top:22px;padding-top:20px;position:relative;text-shadow:0 2px 20px rgba(10,20,15,.6)}
 .hero .hero-tag::before{content:"";position:absolute;top:0;left:0;width:52px;height:1px;background:var(--gold)}
 .hero .actions{margin-top:auto;display:flex;gap:16px;flex-wrap:wrap}
 .hero .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.25em;text-transform:uppercase;opacity:.75}
