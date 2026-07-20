@@ -209,9 +209,11 @@ section{padding:100px 0}
 
 /* ===== SIGNATURE COURSES ===== */
 .courses{background:var(--paper)}
-.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@media(max-width:920px){.course-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.course-grid{grid-template-columns:1fr}}
+.course-carousel{position:relative}
+.course-grid{display:flex;gap:24px;overflow-x:auto;overflow-y:hidden;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.course-grid::-webkit-scrollbar{display:none}
+.course-grid .ccard{flex:0 0 352px;scroll-snap-align:start}
+@media(max-width:760px){.course-grid .ccard{flex-basis:80vw}.course-grid{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px;scroll-snap-type:x proximity}}
 .ccard{background:var(--ivory);border:1px solid var(--mist);border-radius:2px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
 .ccard:hover{transform:translateY(-6px);box-shadow:var(--lift)}
 .ccard .img{position:relative;height:208px}
@@ -248,13 +250,6 @@ section{padding:100px 0}
 .ccard .c .meta span b{color:var(--pine);font-weight:500}
 .courses .note{text-align:center;margin-top:38px;font-size:18px;color:#54635a}
 .courses .note b{color:var(--cinnabar);font-weight:500}
-.ccard.more{display:none}
-.courses.show-all .ccard.more{display:flex}
-.more-wrap{text-align:center;margin-top:42px}
-.btn-more{background:transparent;border:1px solid var(--pine);color:var(--pine)}
-.btn-more:hover{background:var(--pine);color:#fff}
-.more-wrap .sub{margin-top:12px;font-size:17px;letter-spacing:.04em;color:#6a766d}
-.courses.show-all .more-wrap .sub{display:none}
 
 /* ===== SAMPLE JOURNEYS ===== */
 .journeys{background:var(--ivory)}
@@ -479,7 +474,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   .section-head{margin-bottom:36px}
   .hero .actions{flex-direction:column}
   .hero .actions .btn{text-align:center}
-  .ex-track,.hotel-row,.how-row{margin:0 -20px;padding-left:20px;padding-right:20px}
+  .ex-track,.hotel-row,.course-grid,.how-row{margin:0 -20px;padding-left:20px;padding-right:20px}
 }
 
 /* Floating expert CTA */
@@ -681,7 +676,9 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <h2>Courses worth crossing the world for.</h2>
       <p>Each has the landscape, architecture and sense of place to anchor an entire journey.</p>
     </div>
-    <div class="course-grid">
+    <div class="course-carousel fade">
+      <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
+      <div class="course-grid" aria-label="Signature courses carousel">
 
       <article class="ccard fade">
         <div class="img">
@@ -811,7 +808,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         </div>
       </article>
 
-      <article class="ccard more fade">
+      <article class="ccard fade">
         <div class="img">
           <div class="cgal">
             <img src="assets/img/yangtze-hole3-dusk.jpg" alt="The third hole at Yangtze Dunes at dusk, Chongming Island" loading="lazy">
@@ -831,7 +828,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         </div>
       </article>
 
-      <article class="ccard more fade">
+      <article class="ccard fade">
         <div class="img">
           <div class="cgal">
             <img src="assets/img/blackstone-fairway-bunkers.jpg" alt="Rugged bunkers across a fairway on the Blackstone course, Haikou" loading="lazy">
@@ -853,7 +850,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         </div>
       </article>
 
-      <article class="ccard more fade">
+      <article class="ccard fade">
         <div class="img">
           <div class="cgal">
             <img src="assets/img/topwin-yanqi-summer-aerial.jpg" alt="Aerial view of Topwin's fairways along Yanqi Lake, with the lakeside pagoda and the Yanshan mountains beyond, Beijing" loading="lazy">
@@ -876,7 +873,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         </div>
       </article>
 
-      <article class="ccard more fade">
+      <article class="ccard fade">
         <div class="img">
           <div class="cgal">
             <img src="assets/img/course-guilin.jpg" alt="A karst limestone pinnacle rising above the fairways at Guilin Landscape Golf Club" loading="lazy">
@@ -895,10 +892,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       </article>
 
     </div>
-
-    <div class="more-wrap fade">
-      <button class="btn btn-more" id="course-more" type="button">See More Courses →</button>
-      <p class="sub">Four more favourites — across Shanghai, Hainan, Beijing &amp; Guilin</p>
+      <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
   </div>
 </section>
@@ -1320,18 +1314,6 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-const moreBtn=document.getElementById('course-more');
-if(moreBtn){moreBtn.addEventListener('click',()=>{
-  const s=document.getElementById('courses');
-  const open=s.classList.toggle('show-all');
-  if(open){
-    s.querySelectorAll('.ccard.more').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),i*90));
-    moreBtn.textContent='Show Fewer Courses';
-  }else{
-    moreBtn.textContent='See More Courses →';
-    s.scrollIntoView({behavior:'smooth'});
-  }
-});}
 // Course card photo galleries
 document.querySelectorAll('.ccard .img').forEach(w=>{
   const g=w.querySelector('.cgal');if(!g)return;
@@ -1354,9 +1336,9 @@ document.querySelectorAll('.chinamap .pin').forEach(p=>{
   p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
 document.querySelectorAll('.ex-nav').forEach(btn=>btn.addEventListener('click',()=>{
-  const wrap=btn.closest('.ex-carousel, .hotel-carousel');if(!wrap)return;
-  const track=wrap.querySelector('.ex-track, .hotel-row');if(!track||!track.firstElementChild)return;
-  const step=track.firstElementChild.getBoundingClientRect().width+20;
+  const wrap=btn.closest('.ex-carousel, .hotel-carousel, .course-carousel');if(!wrap)return;
+  const track=wrap.querySelector('.ex-track, .hotel-row, .course-grid');if(!track||!track.firstElementChild)return;
+  const step=track.firstElementChild.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||20);
   track.scrollBy({left:btn.classList.contains('next')?step:-step,behavior:'smooth'});
 }));
 /* ===== Hotel detail modal ===== */
