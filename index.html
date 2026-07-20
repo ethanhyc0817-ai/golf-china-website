@@ -429,7 +429,7 @@ body.hm-lock{overflow:hidden}
 /* ===== PLAN ===== */
 .plan{background:var(--ivory);border-top:1px solid var(--mist)}
 .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mist);border:1px solid var(--mist)}
-@media(max-width:760px){.plan-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.plan-grid{grid-template-columns:repeat(2,1fr)}.plan-item{padding:20px 16px}.plan-item h4{font-size:18px}.plan-item p{font-size:15px}}
 .plan-item{background:var(--paper);padding:30px}
 .plan-item h4{font-size:22px;color:var(--pine);margin-bottom:8px;display:flex;align-items:center;gap:10px}
 .plan-item h4 .dot{width:8px;height:8px;background:var(--gold);border-radius:999px}
