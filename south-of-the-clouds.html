@@ -218,6 +218,7 @@ section{padding:100px 0}
   /* A&K-style mobile: image left, white panel right, button at the bottom */
   .ex-grid{display:flex;flex-direction:column;grid-template-columns:none;grid-auto-rows:auto;gap:16px}
   .excard,.excard.feature,.excard.wide{grid-column:auto;grid-row:auto;display:flex;flex-direction:row;align-items:stretch;min-height:185px;background:#fff;border:1px solid var(--mist);color:var(--ink)}
+  .excard picture{display:contents}
   .excard img{position:static;width:44%;height:auto;object-fit:cover;flex:none}
   .excard:hover img{transform:none}
   .excard .b{background:none;text-shadow:none;padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;min-width:0}
@@ -592,6 +593,15 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="hcard fade">
+        <div class="ph"><span class="badge">Lijiang · At the Snow Mountain</span><img src="assets/img/hotel-jinmao-purelax-card.jpg" alt="Jinmao Purelax Lijiang beneath the glacier of Jade Dragon Snow Mountain"></div>
+        <div class="b">
+          <h3>Jinmao Purelax Lijiang</h3>
+          <div class="loc">Lijiang, China</div>
+          <button class="vd" data-hotel="purelax">View Details</button>
+        </div>
+      </article>
+
+      <article class="hcard fade">
         <div class="ph"><span class="badge">Kunming · On the Resort</span><img src="assets/img/springcity-resort-dusk.jpg" alt="Terracotta rooftops of the Spring City resort above Yangzong Lake at sunset"></div>
         <div class="b">
           <h3>Spring City Golf &amp; Lake Resort</h3>
@@ -800,6 +810,11 @@ const HOTELS={
   name:'Banyan Tree Lijiang',loc:'Lijiang, China',
   desc:'Built the Naxi way at the foot of Jade Dragon Snow Mountain, Banyan Tree Lijiang is a village of grey-tile villas and private walled courtyards, the glacier filling the window at breakfast. Pavilions open onto lotus ponds and mountain views, the spa draws on highland traditions, and the old town is minutes away — yet the silence at night is absolute. The natural base for the Jade Dragon round and everything the Lijiang valley holds.',
   imgs:['hotel-banyan-tree-lijiang-card.jpg','hotel-banyan-tree-lijiang-1.jpg','hotel-banyan-tree-lijiang-2.jpg','hotel-banyan-tree-lijiang-3.jpg','hotel-banyan-tree-lijiang-4.jpg','hotel-banyan-tree-lijiang-5.jpg','hotel-banyan-tree-lijiang-6.jpg']
+ },
+ purelax:{
+  name:'Jinmao Purelax Lijiang',loc:'Lijiang, China',
+  desc:'Up on the Ganhaizi meadow at 3,100 metres, Jinmao Purelax is the closest fine address to the Jade Dragon course — the glacier filling the floor-to-ceiling windows, alpine forest at the door. Rooms are oxygen-enriched against the altitude, fires are lit in the evening, and on clear nights the stargazing above the meadow is extraordinary. The natural choice for golfers who want the first tee time beneath the snow mountain.',
+  imgs:['hotel-jinmao-purelax-card.jpg','hotel-jinmao-purelax-1.jpg','hotel-jinmao-purelax-2.jpg','hotel-jinmao-purelax-3.jpg','hotel-jinmao-purelax-4.jpg','hotel-jinmao-purelax-5.jpg','hotel-jinmao-purelax-6.jpg']
  },
  springcity:{
   name:'Spring City Golf & Lake Resort',loc:'Kunming, China',
