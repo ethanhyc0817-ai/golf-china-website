@@ -88,9 +88,23 @@ header.nav.scrolled .bar{padding:12px 28px}
 .facts .fv{font-family:var(--serif);font-size:21px;margin-top:6px;line-height:1.25}
 @media(max-width:860px){.facts .grid{grid-template-columns:1fr 1fr}.facts .f{padding:20px 22px}.facts .f:nth-child(odd){border-left:none;padding-left:0}}
 
+/* ===== TAB BAR ===== */
+.tabbar{position:sticky;top:54px;z-index:40;background:var(--pine);border-top:1px solid rgba(255,255,255,.14);box-shadow:0 8px 24px -12px rgba(20,36,28,.35)}
+@media(max-width:1100px){.tabbar{top:58px}}
+.tabbar .tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabbar .tabs::-webkit-scrollbar{display:none}
+.tab{appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:16.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:22px 30px;position:relative;white-space:nowrap;transition:.25s;flex:1;text-align:center}
+.tab:hover{color:#fff}
+.tab::after{content:"";position:absolute;left:30px;right:30px;bottom:0;height:3px;background:transparent;transition:.25s}
+.tab.on{color:var(--gold)}
+.tab.on::after{background:var(--gold)}
+.panel{display:none}
+.panel.on{display:block}
+@media(max-width:700px){.tab{padding:18px 10px;font-size:15px;letter-spacing:.1em}.tab::after{left:10px;right:10px}}
+
 /* ===== MOBILE: JUMP TO JOURNEYS ===== */
 .jump-journeys{display:none}
-#journeys{scroll-margin-top:78px}
+#journeys{scroll-margin-top:122px}
 @media(max-width:760px){
   .jump-journeys{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--ink);padding:15px 22px;font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.35;text-align:center;-webkit-tap-highlight-color:transparent}
   .jump-journeys:active{background:#a67f42}
@@ -160,6 +174,15 @@ section{padding:100px 0}
 .golf-feature.noir dt{color:var(--gold)}
 .golf-feature.noir dd{color:rgba(232,207,149,.74)}
 
+/* ===== AFTER THE ROUND ===== */
+.after{background:var(--ivory)}
+.after-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center}
+@media(max-width:860px){.after-wrap{grid-template-columns:1fr;gap:36px}}
+.after .photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
+.after .txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
+.after .txt p{font-size:17.5px;color:#3f4f45;max-width:58ch;margin-bottom:18px}
+.after .txt p:last-of-type{margin-bottom:0}
+
 /* ===== JOURNEYS FEATURING HAINAN (package entry cards) ===== */
 .journeys{background:var(--paper);border-top:1px solid var(--mist)}
 .sj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -194,6 +217,9 @@ section{padding:100px 0}
 .excard.feature h3{font-size:28px}
 .excard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
 .excard .ptag{display:inline-block;margin-top:11px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:5px 11px;font-weight:600;border-radius:2px}
+.excard[data-exp]{cursor:pointer}
+.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
+.excard:hover .ex-see{color:#fff;border-color:#fff}
 /* surf feature: image on top, copy + CTA in a panel below */
 .excard.surf{display:flex;flex-direction:column;align-items:stretch;background:var(--pine)}
 .excard.surf .surf-img{position:relative;flex:1 1 0;min-height:200px;overflow:hidden}
@@ -205,7 +231,37 @@ section{padding:100px 0}
 .excard.surf .surf-cta:hover{background:#9c3927}
 .exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
 @media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}.excard.surf{grid-row:span 2}}
-@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}.excard.surf{grid-row:auto}}
+@media(max-width:560px){
+  /* A&K-style mobile: image left, white panel right, button at the bottom (surf feature keeps its stacked layout) */
+  .ex-grid{display:flex;flex-direction:column;grid-template-columns:none;grid-auto-rows:auto;gap:16px}
+  .excard.surf{grid-row:auto;min-height:300px}
+  .excard:not(.surf){grid-column:auto;grid-row:auto;display:flex;flex-direction:row;align-items:stretch;min-height:185px;background:#fff;border:1px solid var(--mist);color:var(--ink)}
+  .excard:not(.surf) img{position:static;width:44%;height:auto;object-fit:cover;flex:none}
+  .excard:not(.surf):hover img{transform:none}
+  .excard:not(.surf) .b{background:none;text-shadow:none;padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;min-width:0}
+  .excard:not(.surf) .loc{color:var(--gold);font-size:12px}
+  .excard:not(.surf) h3{color:var(--pine);font-size:20px;margin:7px 0 0}
+  .excard:not(.surf) p{display:none}
+  .ex-see{display:block;text-align:center;margin-top:auto;padding:12px 6px 11px;color:var(--pine);border:1px solid var(--gold);border-radius:2px}
+  .excard:hover .ex-see{color:var(--pine);border-color:var(--gold)}
+  .xm-btn{width:100%}
+}
+/* experience details modal */
+.xm-name{font-size:clamp(24px,3vw,32px);color:var(--ink);margin:2px 0 16px;line-height:1.15}
+.xm-btn{margin-top:6px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 36px;border-radius:2px;cursor:pointer;transition:.25s}
+.xm-btn:hover{background:var(--gold);color:#fff}
+.hmodal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px}
+.hmodal.open{display:flex}
+.hmodal .ov{position:absolute;inset:0;background:rgba(20,36,28,.55)}
+.hm-panel{position:relative;z-index:2;background:var(--ivory);max-width:1100px;width:100%;max-height:90vh;overflow:auto;padding:40px 44px;border-radius:2px;box-shadow:var(--lift)}
+.hm-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;line-height:1;padding:6px}
+.hm-close:hover{color:var(--cinnabar)}
+.hm-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:start}
+@media(max-width:860px){.hm-grid{grid-template-columns:1fr;gap:24px}.hm-panel{padding:28px 22px}}
+.hm-gal{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--mist)}
+.hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+.hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
 
 /* ===== STAY ===== */
 .stay{background:var(--pine);color:#fff}
@@ -282,7 +338,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <a href="#overview">Overview</a>
       <a href="#golf">The Golf</a>
       <a href="#journeys">Journeys</a>
-      <a href="#exclusives">Experiences</a>
+      <a href="#experiences">Experiences</a>
       <a href="#stay">Where You Stay</a>
       <a href="index.html#start" class="nav-cta">Plan Your Journey</a>
     </nav>
@@ -317,14 +373,26 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </div>
 
-<!-- OVERVIEW -->
 <!-- MOBILE: JUMP TO JOURNEYS -->
 <a class="jump-journeys" href="#journeys">
   <span>Where Hainan fits in a journey</span>
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
 </a>
 
-<section class="overview" id="overview">
+<!-- TAB BAR -->
+<div class="tabbar" id="tabbar">
+  <div class="container tabs">
+    <button class="tab on" data-tab="overview">Overview</button>
+    <button class="tab" data-tab="golf">The Golf</button>
+    <button class="tab" data-tab="experiences">Experiences</button>
+    <button class="tab" data-tab="stay">Stays</button>
+    <button class="tab" data-tab="extend">Go Further</button>
+  </div>
+</div>
+
+<div class="panel on" id="overview">
+<!-- OVERVIEW -->
+<section class="overview">
   <div class="container ov-wrap">
     <div class="ov-txt fade">
       <span class="eyebrow">The Journey</span>
@@ -349,9 +417,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </aside>
   </div>
 </section>
+</div>
 
+<div class="panel" id="golf">
 <!-- THE GOLF -->
-<section class="golf" id="golf">
+<section class="golf">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">The Golf</span>
@@ -442,6 +512,174 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
+<!-- AFTER THE ROUND -->
+<section class="after" id="after">
+  <div class="container after-wrap">
+    <img class="photo fade" src="assets/img/exp-hainan-seafood.jpg" alt="A Hainanese seafood table set out by the water at dusk">
+    <div class="txt fade">
+      <span class="eyebrow">After the Round</span>
+      <h2>The day does not end at the 18th.</h2>
+      <p>Hainan eats the way an island should: the morning's catch chosen from the tanks and grilled by the water, Wenchang chicken done as the island has cooked it for centuries, clay-pot rice in the port towns and cold local beer as the fishing boats come in. The best tables are set on the sand, a few steps from the tide.</p>
+      <p>For golfers, the evening becomes a seafood dinner at the water's edge — booked, briefed and waiting by the time you've putted out.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="panel" id="experiences">
+<!-- SIGNATURE EXPERIENCES -->
+<section class="exclusives">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Signature Experiences</span>
+      <h2>Hainan, beyond the fairway.</h2>
+      <p>Built on relationships on the ground, set up for your party alone — never an excursion from a brochure.</p>
+    </div>
+    <div class="ex-grid">
+
+      <article class="excard feature surf fade">
+        <div class="surf-img"><img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan's surf coast"></div>
+        <div class="surf-body">
+          <div class="loc">Wanning · Hainan</div>
+          <h3>Stand up on your first wave</h3>
+          <p>On Hainan's surf coast, with our partner SurfChinaCo, we put complete beginners onto a real wave from the very first session. At a PerfectSwell wave pool the swell is generated to order — the same shape, the same gentle peel, every time — so there's no paddling out and no waiting: just a coach at your shoulder and a wave built for your level. First-timers especially welcome.</p>
+          <a class="surf-cta" href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">View more about Surf China Co.</a>
+        </div>
+      </article>
+
+      <article class="excard fade" data-exp="lesson" role="button" tabindex="0" aria-label="The private surf lesson — see details">
+        <img src="assets/img/wavepool-surf-lesson.jpg" alt="A surf coach guiding a beginner in the shallows at a wave pool on Hainan">
+        <div class="b">
+          <div class="loc">For Beginners</div>
+          <h3>The private surf lesson</h3>
+          <p>A one-on-one session with a SurfChinaCo coach in the calm end of the pool — pop-ups on the sand, then onto a soft, slow wave dialled right down. The gentlest possible way to learn to surf.</p>
+          <span class="ex-see">See Details</span>
+        </div>
+      </article>
+
+      <article class="excard fade" data-exp="li" role="button" tabindex="0" aria-label="An afternoon with the Li — see details">
+        <img src="assets/img/exp-hainan-li-culture.jpg" style="object-position:center 20%" alt="A Li woman in traditional dress and silver jewellery weaving brocade on a back-strap loom, central Hainan">
+        <div class="b">
+          <div class="loc">Wuzhishan · Hainan</div>
+          <h3>An afternoon with the Li</h3>
+          <p>In the island's interior, the Li — Hainan's first people — weave brocade on back-strap looms, patterns three thousand years old. Sit with a master weaver in a village few visitors reach.</p>
+          <span class="ex-see">See Details</span>
+        </div>
+      </article>
+
+      <article class="excard fade" data-exp="yacht" role="button" tabindex="0" aria-label="A day on the water — see details">
+        <img src="assets/img/exp-sanya-yacht.jpg" alt="A private yacht anchored in a turquoise bay off the Sanya coast, Hainan">
+        <div class="b">
+          <div class="loc">Sanya · Hainan</div>
+          <h3>A day on the water</h3>
+          <p>A private yacht off the Sanya coast — quiet bays for swimming, a chilled lunch aboard, and the island skyline softening as the afternoon turns to gold.</p>
+          <span class="ex-see">See Details</span>
+        </div>
+      </article>
+
+      <article class="excard fade" data-exp="coffee" role="button" tabindex="0" aria-label="Coffee in the hills — see details">
+        <img src="assets/img/exp-hainan-coffee.jpg" alt="A cup of black Hainan coffee, a basket of red coffee cherries and a carafe on a wooden table above the jungle">
+        <div class="b">
+          <div class="loc">Xinglong · Wanning</div>
+          <h3>Coffee in the hills</h3>
+          <p>Wanning's Xinglong hills have grown coffee for generations. Walk the plantation, roast a small batch by hand, and taste Hainan's own brew — strong, dark and unmistakably tropical.</p>
+          <span class="ex-see">See Details</span>
+        </div>
+      </article>
+
+    </div>
+    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Hainan equivalent.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE DETAILS MODAL -->
+<div class="hmodal" id="xmodal" role="dialog" aria-modal="true" aria-labelledby="xm-name">
+  <div class="ov" data-xclose></div>
+  <div class="hm-panel">
+    <button class="hm-close" data-xclose aria-label="Close">✕</button>
+    <div class="hm-grid">
+      <div class="hm-gal"><img id="xm-img" src="" alt=""></div>
+      <div class="hm-desc">
+        <div class="hm-loc" id="xm-loc"></div>
+        <h3 class="xm-name" id="xm-name"></h3>
+        <p id="xm-desc"></p>
+        <button class="xm-btn" data-xclose>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="panel" id="stay">
+<!-- WHERE YOU STAY -->
+<section class="stay">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
+      <h2>Sleep on the tropical coast.</h2>
+      <p>Not a tower by the airport road — an address on the water that is part of the journey itself.</p>
+    </div>
+    <div class="stay-wrap fade">
+      <div class="img"><img src="assets/img/stay-sanya-coast.jpg" alt="A tropical beachfront resort on the Sanya coast at dusk, Hainan"></div>
+      <div class="c">
+        <div class="loc">On the Coast · Sanya &amp; the South</div>
+        <h3>Barefoot luxury on the shore</h3>
+        <p>Our Hainan favourites sit right on the sand — the likes of Rosewood on the island's shore, where private terraces open to the sea, the spa runs late, and the morning's tee time is a short, easy transfer away.</p>
+        <p>For families, we choose resorts with the space and the pools to keep non-golfers happy all day — so the trip works whether you're chasing the World Top 100 or your first green wave.</p>
+      </div>
+    </div>
+
+    <div class="stay-wrap rev fade">
+      <div class="img"><img src="assets/img/stay-missionhills-hotspring.jpg" alt="Steaming volcanic hot-spring pools set in tropical gardens at Mission Hills Haikou"></div>
+      <div class="c">
+        <div class="loc">At Mission Hills · Haikou</div>
+        <h3>Stay where the volcanoes meet the springs</h3>
+        <p>For the Blackstone rounds, the move is to stay inside Mission Hills itself — where the first tee is minutes from your door and the day ends in the resort's natural volcanic hot springs, the rock still warm beneath the water.</p>
+        <p>It is the easiest, most self-contained golf stay on the island: thirty-six holes, mineral springs and dinner, with nothing more to arrange than when you'd like to play.</p>
+      </div>
+    </div>
+
+    <p class="note fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
+  </div>
+</section>
+</div>
+
+<div class="panel" id="extend">
+<!-- EXTEND -->
+<section class="extend">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Extend the Journey</span>
+      <h2>The coast is the finale.</h2>
+      <p>Most of our guests arrive in Hainan after the mountains or the cities — it is where a China journey comes to rest. Two natural chapters that lead here:</p>
+    </div>
+    <div class="extend-grid">
+
+      <a class="xcard fade" href="south-of-the-clouds.html">
+        <img src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan">
+        <div class="b">
+          <div class="loc">90 min by air</div>
+          <h3>South of the Clouds</h3>
+          <p>Snow-mountain fairways, the Tea Horse Road and China at its most distinctive — then south to the sea.</p>
+          <span class="go">Explore →</span>
+        </div>
+      </a>
+
+      <a class="xcard fade" href="jiangnan-modern-china.html">
+        <img src="assets/img/dest-hangzhou.jpg" alt="A stone bridge over misty West Lake with the Leifeng Pagoda beyond, Hangzhou">
+        <div class="b">
+          <div class="loc">2.5 h by air</div>
+          <h3>Jiangnan &amp; Modern China</h3>
+          <p>West Lake calm, garden-resort golf and the Bund — the elegant counterpoint to the tropics.</p>
+          <span class="go">Explore →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+</div>
+
 <!-- JOURNEYS FEATURING HAINAN -->
 <section class="journeys" id="journeys">
   <div class="container">
@@ -500,133 +738,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </section>
 
-<!-- SIGNATURE EXPERIENCES -->
-<section class="exclusives" id="exclusives">
-  <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow">Signature Experiences</span>
-      <h2>Hainan, beyond the fairway.</h2>
-      <p>Built on relationships on the ground, set up for your party alone — never an excursion from a brochure.</p>
-    </div>
-    <div class="ex-grid">
-
-      <article class="excard feature surf fade">
-        <div class="surf-img"><img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan's surf coast"></div>
-        <div class="surf-body">
-          <div class="loc">Wanning · Hainan</div>
-          <h3>Stand up on your first wave</h3>
-          <p>On Hainan's surf coast, with our partner SurfChinaCo, we put complete beginners onto a real wave from the very first session. At a PerfectSwell wave pool the swell is generated to order — the same shape, the same gentle peel, every time — so there's no paddling out and no waiting: just a coach at your shoulder and a wave built for your level. First-timers especially welcome.</p>
-          <a class="surf-cta" href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">View more about Surf China Co.</a>
-        </div>
-      </article>
-
-      <article class="excard fade">
-        <img src="assets/img/wavepool-surf-lesson.jpg" alt="A surf coach guiding a beginner in the shallows at a wave pool on Hainan">
-        <div class="b">
-          <div class="loc">For Beginners</div>
-          <h3>The private surf lesson</h3>
-          <p>A one-on-one session with a SurfChinaCo coach in the calm end of the pool — pop-ups on the sand, then onto a soft, slow wave dialled right down. The gentlest possible way to learn to surf.</p>
-        </div>
-      </article>
-
-      <article class="excard fade">
-        <img src="assets/img/exp-hainan-li-culture.jpg" style="object-position:center 20%" alt="A Li woman in traditional dress and silver jewellery weaving brocade on a back-strap loom, central Hainan">
-        <div class="b">
-          <div class="loc">Wuzhishan · Hainan</div>
-          <h3>An afternoon with the Li</h3>
-          <p>In the island's interior, the Li — Hainan's first people — weave brocade on back-strap looms, patterns three thousand years old. Sit with a master weaver in a village few visitors reach.</p>
-        </div>
-      </article>
-
-      <article class="excard fade">
-        <img src="assets/img/exp-sanya-yacht.jpg" alt="A private yacht anchored in a turquoise bay off the Sanya coast, Hainan">
-        <div class="b">
-          <div class="loc">Sanya · Hainan</div>
-          <h3>A day on the water</h3>
-          <p>A private yacht off the Sanya coast — quiet bays for swimming, a chilled lunch aboard, and the island skyline softening as the afternoon turns to gold.</p>
-        </div>
-      </article>
-
-      <article class="excard fade">
-        <img src="assets/img/exp-hainan-coffee.jpg" alt="A cup of black Hainan coffee, a basket of red coffee cherries and a carafe on a wooden table above the jungle">
-        <div class="b">
-          <div class="loc">Xinglong · Wanning</div>
-          <h3>Coffee in the hills</h3>
-          <p>Wanning's Xinglong hills have grown coffee for generations. Walk the plantation, roast a small batch by hand, and taste Hainan's own brew — strong, dark and unmistakably tropical.</p>
-        </div>
-      </article>
-
-    </div>
-    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Hainan equivalent.</p>
-  </div>
-</section>
-
-<!-- WHERE YOU STAY -->
-<section class="stay" id="stay">
-  <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
-      <h2>Sleep on the tropical coast.</h2>
-      <p>Not a tower by the airport road — an address on the water that is part of the journey itself.</p>
-    </div>
-    <div class="stay-wrap fade">
-      <div class="img"><img src="assets/img/stay-sanya-coast.jpg" alt="A tropical beachfront resort on the Sanya coast at dusk, Hainan"></div>
-      <div class="c">
-        <div class="loc">On the Coast · Sanya &amp; the South</div>
-        <h3>Barefoot luxury on the shore</h3>
-        <p>Our Hainan favourites sit right on the sand — the likes of Rosewood on the island's shore, where private terraces open to the sea, the spa runs late, and the morning's tee time is a short, easy transfer away.</p>
-        <p>For families, we choose resorts with the space and the pools to keep non-golfers happy all day — so the trip works whether you're chasing the World Top 100 or your first green wave.</p>
-      </div>
-    </div>
-
-    <div class="stay-wrap rev fade">
-      <div class="img"><img src="assets/img/stay-missionhills-hotspring.jpg" alt="Steaming volcanic hot-spring pools set in tropical gardens at Mission Hills Haikou"></div>
-      <div class="c">
-        <div class="loc">At Mission Hills · Haikou</div>
-        <h3>Stay where the volcanoes meet the springs</h3>
-        <p>For the Blackstone rounds, the move is to stay inside Mission Hills itself — where the first tee is minutes from your door and the day ends in the resort's natural volcanic hot springs, the rock still warm beneath the water.</p>
-        <p>It is the easiest, most self-contained golf stay on the island: thirty-six holes, mineral springs and dinner, with nothing more to arrange than when you'd like to play.</p>
-      </div>
-    </div>
-
-    <p class="note fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
-  </div>
-</section>
-
-<!-- EXTEND -->
-<section class="extend" id="extend">
-  <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow">Extend the Journey</span>
-      <h2>The coast is the finale.</h2>
-      <p>Most of our guests arrive in Hainan after the mountains or the cities — it is where a China journey comes to rest. Two natural chapters that lead here:</p>
-    </div>
-    <div class="extend-grid">
-
-      <a class="xcard fade" href="south-of-the-clouds.html">
-        <img src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan">
-        <div class="b">
-          <div class="loc">90 min by air</div>
-          <h3>South of the Clouds</h3>
-          <p>Snow-mountain fairways, the Tea Horse Road and China at its most distinctive — then south to the sea.</p>
-          <span class="go">Explore →</span>
-        </div>
-      </a>
-
-      <a class="xcard fade" href="jiangnan-modern-china.html">
-        <img src="assets/img/dest-hangzhou.jpg" alt="A stone bridge over misty West Lake with the Leifeng Pagoda beyond, Hangzhou">
-        <div class="b">
-          <div class="loc">2.5 h by air</div>
-          <h3>Jiangnan &amp; Modern China</h3>
-          <p>West Lake calm, garden-resort golf and the Bund — the elegant counterpoint to the tropics.</p>
-          <span class="go">Explore →</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
 <section class="cta" id="start">
   <img class="bg" src="assets/img/hainan-sunset-coast.jpg" alt="">
@@ -667,6 +778,33 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+/* tabs */
+const tabbar=document.getElementById('tabbar');
+const tabs=[...document.querySelectorAll('.tab')];
+function openTab(id,scroll){
+  const p=document.getElementById(id);
+  if(!p||!p.classList.contains('panel'))return;
+  tabs.forEach(t=>t.classList.toggle('on',t.dataset.tab===id));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('on',x.id===id));
+  if(scroll)snapToTabbar();
+}
+/* Jump the new panel to its top instantly. Smooth scrolling is unreliable here:
+   on mobile the animation is cancelled by leftover touch momentum, and swapping
+   to a shorter panel shrinks the document mid-animation so the scroll lands
+   clamped — either way you stay wherever you'd scrolled to. */
+function snapToTabbar(){
+  const root=document.documentElement, prev=root.style.scrollBehavior;
+  const y=()=>tabbar.offsetTop-(innerWidth<=1100?58:54);
+  root.style.scrollBehavior='auto';           // override html{scroll-behavior:smooth}
+  window.scrollTo(0,y());
+  requestAnimationFrame(()=>{                  // re-assert once the swap has laid out
+    window.scrollTo(0,y());
+    root.style.scrollBehavior=prev;
+  });
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
+addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));
+if(location.hash)openTab(location.hash.slice(1),false);
 /* course image galleries */
 document.querySelectorAll('.gal').forEach(g=>{
   const imgs=[...g.querySelectorAll('img')];
@@ -681,6 +819,47 @@ document.querySelectorAll('.gal').forEach(g=>{
   g.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
   g.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;},{passive:true});
 });
+/* experience details modal */
+const EXPS={
+ lesson:{
+  name:'The private surf lesson',loc:'Wanning · For Beginners',
+  img:'wavepool-surf-lesson.jpg',alt:'A surf coach guiding a beginner in the shallows at a wave pool on Hainan',
+  desc:'Learning to surf in the ocean means days of paddling, waiting and white-water tumbles. At the PerfectSwell pool it means standing up, often within the first hour. A one-on-one session with a SurfChinaCo coach begins with pop-ups on the sand, then moves to the calm end of the pool, where a soft, slow wave is dialled right down to your level — the same gentle peel, every time, with a coach at your shoulder for each one. It is the gentlest possible way into the sport, and the reason the non-golfers so often come home with the best story of the trip.'
+ },
+ li:{
+  name:'An afternoon with the Li',loc:'Wuzhishan · Hainan',
+  img:'exp-hainan-li-culture.jpg',alt:'A Li woman in traditional dress and silver jewellery weaving brocade on a back-strap loom, central Hainan',
+  desc:'Long before the resorts and the fairways, Hainan belonged to the Li — the island’s first people, whose villages still sit in the green interior below Wuzhishan’s five peaks. Their brocade, woven on back-strap looms in patterns three thousand years old, is recognised by UNESCO as a craft in need of urgent safeguarding; only a handful of master weavers remain. Sit with one of them in a village few visitors reach, watch the patterns emerge thread by thread, and hear the island’s oldest story told by the people who lived it.'
+ },
+ yacht:{
+  name:'A day on the water',loc:'Sanya · Hainan',
+  img:'exp-sanya-yacht.jpg',alt:'A private yacht anchored in a turquoise bay off the Sanya coast, Hainan',
+  desc:'Sanya’s coastline is best understood from the sea — a run of headlands, islets and quiet turquoise bays that the beach crowds never reach. Your yacht casts off mid-morning with a skipper and crew who know exactly where the water is calmest: an anchorage for swimming and snorkelling, a chilled seafood lunch on deck, and the long, unhurried run home as the island skyline softens to gold. A natural rest day between rounds — and the day the non-golfers talk about at dinner.'
+ },
+ coffee:{
+  name:'Coffee in the hills',loc:'Xinglong · Wanning',
+  img:'exp-hainan-coffee.jpg',alt:'A cup of black Hainan coffee, a basket of red coffee cherries and a carafe on a wooden table above the jungle',
+  desc:'Most visitors have no idea China grows coffee at all — yet Wanning’s Xinglong hills have grown it for generations, ever since returning overseas Chinese carried the first beans home from Southeast Asia. Walk the plantation rows with the family that farms them, pick the red cherries in season, roast a small batch by hand over the fire, and taste Hainan’s own brew the local way: strong, dark and sweetened with condensed milk, on a terrace above the jungle. Twenty minutes from the surf coast, and a world away from it.'
+ }
+};
+const xmodal=document.getElementById('xmodal');
+if(xmodal){
+  const openX=id=>{
+    const d=EXPS[id];if(!d)return;
+    document.getElementById('xm-name').textContent=d.name;
+    document.getElementById('xm-loc').textContent=d.loc;
+    document.getElementById('xm-desc').textContent=d.desc;
+    const im=document.getElementById('xm-img');im.src='assets/img/'+d.img;im.alt=d.alt;
+    xmodal.classList.add('open');document.body.style.overflow='hidden';
+  };
+  const closeX=()=>{xmodal.classList.remove('open');document.body.style.overflow='';};
+  document.querySelectorAll('.excard[data-exp]').forEach(c=>{
+    c.addEventListener('click',()=>openX(c.dataset.exp));
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openX(c.dataset.exp);}});
+  });
+  xmodal.querySelectorAll('[data-xclose]').forEach(el=>el.addEventListener('click',closeX));
+  addEventListener('keydown',e=>{if(xmodal.classList.contains('open')&&e.key==='Escape')closeX();});
+}
 </script>
 <a href="#start" class="expert-fab" id="expertFab">Speak to an Expert</a>
 <script>
