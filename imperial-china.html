@@ -215,19 +215,17 @@ section{padding:100px 0}
 .exclusives .note{text-align:center;margin-top:38px;font-size:17px;color:#54635a}
 @media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
 @media(max-width:560px){
-  /* A&K-style mobile: swipeable cards, photo on top, solid panel below */
-  .ex-grid{display:flex;grid-template-columns:none;grid-auto-rows:auto;overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none}
-  .ex-grid::-webkit-scrollbar{display:none}
-  .excard,.excard.feature,.excard.wide{flex:0 0 84%;grid-column:auto;grid-row:auto;scroll-snap-align:center;display:flex;flex-direction:column;align-items:stretch;min-height:0;background:var(--paper);border:1px solid var(--mist);color:var(--ink)}
-  .excard img{position:static;width:100%;height:200px;object-fit:cover;flex:none}
+  /* A&K-style mobile: image left, white panel right, button at the bottom */
+  .ex-grid{display:flex;flex-direction:column;grid-template-columns:none;grid-auto-rows:auto;gap:16px}
+  .excard,.excard.feature,.excard.wide{grid-column:auto;grid-row:auto;display:flex;flex-direction:row;align-items:stretch;min-height:185px;background:#fff;border:1px solid var(--mist);color:var(--ink)}
+  .excard img{position:static;width:44%;height:auto;object-fit:cover;flex:none}
   .excard:hover img{transform:none}
-  .excard .b{background:none;text-shadow:none;padding:18px 18px 22px;display:flex;flex-direction:column;flex:1}
-  .excard .loc{color:var(--gold)}
-  .excard h3,.excard.feature h3{color:var(--pine);font-size:22px}
-  .excard p{color:#54635a;font-size:15.5px}
-  .ex-see{display:block;text-align:center;margin-top:auto;padding:12px 0 11px;color:var(--pine);border:1px solid var(--gold);border-radius:2px;border-bottom:1px solid var(--gold)}
+  .excard .b{background:none;text-shadow:none;padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;min-width:0}
+  .excard .loc{color:var(--gold);font-size:12px}
+  .excard h3,.excard.feature h3{color:var(--pine);font-size:20px;margin:7px 0 0}
+  .excard p{display:none}
+  .ex-see{display:block;text-align:center;margin-top:auto;padding:12px 6px 11px;color:var(--pine);border:1px solid var(--gold);border-radius:2px}
   .excard:hover .ex-see{color:var(--pine);border-color:var(--gold)}
-  .excard .b p{margin-bottom:14px}
   .xm-btn{width:100%}
 }
 /* experience details modal */
