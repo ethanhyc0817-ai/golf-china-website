@@ -200,18 +200,40 @@ section{padding:100px 0}
 @media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
 
 /* ===== STAY ===== */
-.stay{background:var(--pine);color:#fff}
-.stay .section-head h2{color:#fff}.stay .section-head p{color:rgba(255,255,255,.72)}
-.stay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:26px}
-.stay-wrap.rev .img{order:2}
-@media(max-width:860px){.stay-wrap{grid-template-columns:1fr}.stay-wrap.rev .img{order:0}}
-.stay-wrap .img{position:relative;min-height:380px}
-.stay-wrap .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.stay-wrap .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
-.stay-wrap .c .loc{font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
-.stay-wrap .c h3{font-size:32px;margin:8px 0 14px}
-.stay-wrap .c p{font-size:18px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch;margin-bottom:14px}
-.stay-wrap .c p:last-of-type{margin-bottom:0}
+.stay{background:var(--ivory)}
+.hotel-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+@media(max-width:900px){.hotel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hotel-grid{grid-template-columns:1fr}}
+.hcard{background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.hcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.hcard:hover .ph img{transform:scale(1.04)}
+.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.hcard .b{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.hcard h3{font-size:25px;color:var(--pine)}
+.hcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
+.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+.hcard .vd:hover{background:var(--gold);color:#fff}
+.stay .note{text-align:center;margin-top:38px;font-size:16px;color:#54635a}
+
+/* ===== HOTEL MODAL ===== */
+.hmodal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px}
+.hmodal.open{display:flex}
+.hmodal .ov{position:absolute;inset:0;background:rgba(20,36,28,.55)}
+.hm-panel{position:relative;z-index:2;background:var(--ivory);max-width:1100px;width:100%;max-height:90vh;overflow:auto;padding:40px 44px;border-radius:2px;box-shadow:var(--lift)}
+.hm-panel h3{font-size:clamp(26px,3.4vw,38px);color:var(--ink);margin-bottom:26px;max-width:22ch;padding-right:40px}
+.hm-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;line-height:1;padding:6px}
+.hm-close:hover{color:var(--cinnabar)}
+.hm-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:start}
+@media(max-width:860px){.hm-grid{grid-template-columns:1fr;gap:24px}.hm-panel{padding:28px 22px}.hm-panel h3{margin-bottom:18px}}
+.hm-gal{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--mist)}
+.hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hm-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;transition:.25s}
+.hm-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hm-btn.prev{left:14px}.hm-btn.next{right:14px}
+.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
+.hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+.hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
 
 /* ===== EXTEND ===== */
 .extend{background:var(--ivory)}
@@ -319,16 +341,15 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="ov-txt fade">
       <span class="eyebrow">The Journey</span>
       <h2>Begin where China began.</h2>
-      <p class="lede">Every empire leaves a capital, and none left one like Beijing. The Forbidden City still sits at the centre of the city's grid like a held breath; the Great Wall still rides the ridgelines an hour to the north. This is where a first journey through China should open — among the icons, before the country starts surprising you.</p>
-      <p>Our Beijing is quieter than the one most visitors see. You enter the Forbidden City as the gates open and the courtyards are still empty. You walk a wild, unrestored stretch of the Wall with no one else on it. And between the monuments you slip into the hutongs — the low, grey-brick lanes where the city actually lives — for noodles, courtyard cafés and the best roast duck of your life.</p>
-      <p>The golf belongs to the same landscape. At Reignwood Pine Valley, Jack Nicklaus laid fairways through the Jundu Mountains with the Wall tracing the skyline above the back nine. Few rounds anywhere carry a sense of place like it.</p>
+      <p class="lede">Every empire leaves a capital, and none left one like Beijing. The Forbidden City sits at the centre of the city's grid; the Great Wall rides the ridgelines an hour to the north. This is where a first journey through China should open.</p>
+      <p>Our Beijing is quieter than the one most visitors see: the Forbidden City brought to life by an expert English-speaking guide, the Wall on a stretch the tour buses never find, and the hutong lanes in between for courtyard cafés and the best roast duck of your life. The golf belongs to the same landscape — at Reignwood Pine Valley, Nicklaus fairways climb the Jundu Mountains with the Wall tracing the skyline above the back nine.</p>
     </div>
     <aside class="glance fade">
       <h3>At a Glance</h3>
       <ul>
         <li>Golf beneath the Great Wall at Reignwood Pine Valley</li>
-        <li>Early-access morning in the Forbidden City</li>
-        <li>A private, unrestored stretch of the Wall — with dinner on the ramparts</li>
+        <li>The Forbidden City, brought to life by an expert English-speaking guide</li>
+        <li>The Great Wall on its quietest stretches — ramparts all but to yourselves</li>
         <li>Hutong life: courtyard lanes, markets and a chef's-table duck dinner</li>
         <li>Hotels the likes of the Waldorf Astoria's hutong courtyards</li>
         <li>Private driver, guide and every tee time handled</li>
@@ -435,8 +456,8 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
         <img src="assets/img/place-greatwall.jpg" alt="The Great Wall snaking over ridgelines at golden hour">
         <div class="b">
           <div class="loc">Beijing · The Wall</div>
-          <h3>The Great Wall, after hours</h3>
-          <p>A wild, unrestored stretch with a private guide — and a table set on the ramparts as the light goes gold.</p>
+          <h3>The Great Wall, without the crowds</h3>
+          <p>Years on the ground have taught us exactly which stretch to climb, and at which hour — a private guide, and the ramparts all but to yourselves as the light goes gold.</p>
         </div>
       </article>
 
@@ -444,8 +465,8 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
         <img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing">
         <div class="b">
           <div class="loc">Beijing · Forbidden City</div>
-          <h3>First through the Meridian Gate</h3>
-          <p>The palace courtyards before the city wakes, with a historian who reads the architecture like a text.</p>
+          <h3>Through the Meridian Gate</h3>
+          <p>A private walk through the palace with an expert English-speaking historian who reads the architecture like a text — six centuries unlocked in a morning.</p>
         </div>
       </article>
 
@@ -471,32 +492,48 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
-      <h2>Sleep inside the old city.</h2>
-      <p>Not a tower by the ring road — an address that is part of the journey itself.</p>
-    </div>
-    <div class="stay-wrap fade">
-      <div class="img"><img src="assets/img/stay-city.jpg" alt="Golden imperial rooftops in central Beijing"></div>
-      <div class="c">
-        <div class="loc">In the City · Hutong Courtyards</div>
-        <h3>Sleep where the city is oldest</h3>
-        <p>Our Beijing favourites sit in the hutongs, a few lanes from the Forbidden City — the likes of the Waldorf Astoria's courtyard houses, where grey brick and bronze doors give way to deep baths and very good martinis. Step out of the gate and the oldest streets in the capital are yours before breakfast.</p>
-        <p>For travelers who prefer glass and skyline to grey brick, the city's modern landmarks along the central axis make an equally good base — we'll match the address to your taste.</p>
-      </div>
+      <h2>An address in the heart of the capital.</h2>
+      <p>Not a tower by the ring road — a base a short walk from the Forbidden City, part of the journey itself.</p>
     </div>
 
-    <div class="stay-wrap rev fade">
-      <div class="img"><img src="assets/img/place-greatwall.jpg" alt="The Great Wall riding mountain ridgelines at golden hour, north of Beijing"></div>
-      <div class="c">
-        <div class="loc">In the Mountains · Near the Wall</div>
-        <h3>A night at the foot of the Wall</h3>
-        <p>With both rounds played out in Huairou's mountains, a night in the countryside earns its place — a quiet retreat below the ridgeline, where the Wall is visible from the terrace and the first tee is minutes away rather than an hour through traffic.</p>
-        <p>It pairs naturally with the after-hours Wall evening: dinner on the ramparts, a short drive down, and mountain silence instead of the ring road.</p>
-      </div>
+    <div class="hotel-grid">
+
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Beijing · In the City</span><img src="assets/img/hotel-peninsula-beijing-card.jpg" alt="The Peninsula Beijing"></div>
+        <div class="b">
+          <h3>The Peninsula Beijing</h3>
+          <div class="loc">Beijing, China</div>
+          <button class="vd" data-hotel="peninsula">View Details</button>
+        </div>
+      </article>
+
     </div>
 
-    <p class="note fade" style="text-align:center;margin-top:38px;font-size:17px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
+    <p class="note fade">Prefer a hutong courtyard, a modern landmark on the central axis or a night in the mountains at the foot of the Wall? Alternatives, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
   </div>
 </section>
+
+<!-- HOTEL DETAILS MODAL -->
+<div class="hmodal" id="hmodal" role="dialog" aria-modal="true" aria-labelledby="hm-name">
+  <div class="ov" data-close></div>
+  <div class="hm-panel">
+    <button class="hm-close" data-close aria-label="Close">✕</button>
+    <h3 id="hm-name"></h3>
+    <div class="hm-grid">
+      <div class="hm-gal">
+        <img id="hm-img" src="" alt="">
+        <button class="hm-btn prev" aria-label="Previous image">‹</button>
+        <button class="hm-btn next" aria-label="Next image">›</button>
+        <span class="hm-count" id="hm-count"></span>
+      </div>
+      <div class="hm-desc">
+        <div class="hm-loc" id="hm-loc"></div>
+        <p id="hm-desc"></p>
+        <a href="index.html#start" class="btn btn-primary">Plan Your Journey</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
@@ -649,6 +686,38 @@ document.querySelectorAll('.gal').forEach(g=>{
   g.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
   g.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;},{passive:true});
 });
+/* hotel details modal */
+const HOTELS={
+ peninsula:{
+  name:'The Peninsula Beijing',loc:'Beijing, China',
+  desc:'Set on Wangfujing in the heart of the capital, The Peninsula Beijing is a short walk from the Forbidden City and the city’s finest shopping. A sweeping top-to-bottom renovation created some of the most generous rooms and suites in Beijing, finished in a calm, residential style, with celebrated Cantonese dining at Huang Ting and the Peninsula’s famously polished service. An ideal base between rounds at the capital’s leading courses and days among its imperial landmarks.',
+  imgs:['hotel-peninsula-beijing-card.jpg','hotel-peninsula-beijing-1.jpg','hotel-peninsula-beijing-2.jpg','hotel-peninsula-beijing-3.jpg','hotel-peninsula-beijing-4.jpg','hotel-peninsula-beijing-5.jpg','hotel-peninsula-beijing-6.jpg','hotel-peninsula-beijing-7.jpg']
+ }
+};
+const hmodal=document.getElementById('hmodal');
+if(hmodal){
+  let hgal=[],gi=0;
+  const hImg=document.getElementById('hm-img'),hCount=document.getElementById('hm-count');
+  const show=i=>{gi=(i+hgal.length)%hgal.length;hImg.src='assets/img/'+hgal[gi];hCount.textContent=(gi+1)+' / '+hgal.length;};
+  const openH=id=>{
+    const d=HOTELS[id];if(!d)return;
+    document.getElementById('hm-name').textContent=d.name;
+    document.getElementById('hm-loc').textContent=d.loc;
+    document.getElementById('hm-desc').textContent=d.desc;
+    hImg.alt=d.name;hgal=d.imgs;show(0);
+    hmodal.classList.add('open');document.body.style.overflow='hidden';
+  };
+  const closeH=()=>{hmodal.classList.remove('open');document.body.style.overflow='';};
+  document.querySelectorAll('.hcard .vd').forEach(b=>b.addEventListener('click',()=>openH(b.dataset.hotel)));
+  hmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeH));
+  hmodal.querySelector('.hm-btn.prev').addEventListener('click',()=>show(gi-1));
+  hmodal.querySelector('.hm-btn.next').addEventListener('click',()=>show(gi+1));
+  addEventListener('keydown',e=>{if(!hmodal.classList.contains('open'))return;if(e.key==='Escape')closeH();if(e.key==='ArrowLeft')show(gi-1);if(e.key==='ArrowRight')show(gi+1);});
+  let hx0=null;
+  const hg=hmodal.querySelector('.hm-gal');
+  hg.addEventListener('touchstart',e=>{hx0=e.touches[0].clientX},{passive:true});
+  hg.addEventListener('touchend',e=>{if(hx0===null)return;const dx=e.changedTouches[0].clientX-hx0;if(Math.abs(dx)>40)show(gi+(dx<0?1:-1));hx0=null;},{passive:true});
+}
 </script>
 </body>
 </html>
