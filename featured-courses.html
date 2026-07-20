@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Featured Courses — China's Finest Golf | Golf China</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="description" content="The signature golf courses of China — world-ranked designs beneath the Great Wall, above highland lakes and beside the South China Sea, all available to Golf China guests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== Golf China — design tokens (see DESIGN-SYSTEM.md) ===== */
+:root{
+  --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
+  --cinnabar:#b4452f; --gold:#b89150;
+  --ivory:#f6f1e7; --paper:#fffdf8; --mist:#e7e0d2;
+  --lift:0 18px 50px -20px rgba(20,36,28,.4);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',-apple-system,Segoe UI,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:19px;color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:14.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;font-family:var(--sans);font-size:15.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cinnabar);color:#fff}
+.btn-primary:hover{background:#9c3927}
+.btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--pine)}
+.btn-line{font-family:var(--sans);font-size:14.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);border-bottom:1px solid rgba(180,69,47,.35);padding-bottom:3px;transition:.25s}
+.btn-line:hover{border-color:var(--cinnabar)}
+.fade{opacity:0;transform:translateY(24px);transition:.7s ease}
+.fade.in{opacity:1;transform:none}
+
+/* ===== NAV ===== */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1200px;margin:0 auto}
+header.nav .logo{font-family:var(--serif);font-size:25px;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px}
+header.nav .logo .logo-mark{height:30px;width:auto;display:block}
+header.nav .logo .logo-text{color:#fff}
+header.nav .logo span{color:var(--gold)}
+header.nav nav{display:flex;gap:30px;align-items:center}
+header.nav nav a{font-size:15.5px;letter-spacing:.08em;color:#fff;opacity:.92;font-weight:400}
+header.nav nav a:hover{color:var(--gold)}
+header.nav .nav-cta{font-size:14.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px;border-radius:2px}
+header.nav.scrolled{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
+header.nav.scrolled .bar{padding:12px 28px}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;z-index:60}
+@media(max-width:960px){
+  header.nav .bar{padding:14px 20px}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--pine);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+  header.nav nav.open{max-height:520px}
+  header.nav nav a{padding:15px 22px;border-top:1px solid rgba(255,255,255,.1);font-size:17px;opacity:1}
+  .menu-toggle{display:block}
+}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:62vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.55) 0%,rgba(20,36,28,.15) 40%,rgba(20,36,28,.88) 100%)}
+.hero-inner{position:relative;z-index:2;padding-bottom:64px;width:100%}
+.crumbs{font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:22px}
+.crumbs a{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px}
+.crumbs a:hover{color:var(--gold);border-color:var(--gold)}
+.crumbs .sep{margin:0 10px;color:var(--gold)}
+.hero h1{font-size:clamp(45px,6.4vw,78px);max-width:16ch;margin:14px 0 16px}
+.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,28px);color:rgba(255,255,255,.94);max-width:46ch}
+
+/* ===== SECTION SHELL ===== */
+section{padding:100px 0}
+@media(max-width:760px){section{padding:72px 0}}
+.section-head{max-width:680px;margin-bottom:54px}
+.section-head h2{font-size:clamp(35px,4.6vw,53px);margin:14px 0}
+.section-head p{color:#4a5a50;font-size:19px}
+
+/* ===== OVERVIEW ===== */
+.overview{background:var(--ivory);padding:84px 0 0}
+.overview p{font-size:19.5px;color:#3f4f45;max-width:66ch}
+.overview p+p{margin-top:16px}
+
+/* ===== COURSES GRID ===== */
+.courses{background:var(--ivory)}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:1000px){.course-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.course-grid{grid-template-columns:1fr;gap:28px}}
+@media(min-width:761px){.course-grid:not(.expanded) .ccard.more{display:none}}
+.ccard{background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.ccard:hover{transform:translateY(-6px);box-shadow:var(--lift)}
+.ccard .img{position:relative;height:224px;overflow:hidden}
+.ccard .img img{width:100%;height:100%;object-fit:cover}
+.ccard .img .tag{position:absolute;left:0;bottom:0;background:rgba(20,36,28,.82);color:#fff;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;z-index:3}
+.cgal{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cgal::-webkit-scrollbar{display:none}
+.cgal img{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always}
+.cg-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:32px;height:32px;border-radius:999px;border:none;background:rgba(255,255,255,.88);color:var(--pine);font-size:15.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:.25s}
+.ccard .img:hover .cg-nav,.cg-nav:focus-visible{opacity:1}
+.cg-nav:hover{background:var(--pine);color:#fff}
+.cg-nav.prev{left:10px}.cg-nav.next{right:10px}
+.cg-dots{position:absolute;bottom:10px;right:12px;display:flex;gap:5px;z-index:3;pointer-events:none}
+.cg-dots i{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.55);transition:.25s}
+.cg-dots i.on{background:#fff}
+@media(hover:none){.cg-nav{display:none}}
+.ccard .rankline{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:-4px 0 12px}
+.ccard .c{padding:24px;display:flex;flex-direction:column;flex:1}
+.ccard .c .region{font-size:15.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.ccard .c h3{font-size:25px;margin:4px 0 10px;color:var(--pine)}
+.ccard .c p{font-size:18.5px;color:#54635a;font-weight:300}
+.ccard .c p+p{margin-top:8px}
+.ccard .c .meta{margin-top:16px;border-top:1px solid var(--mist);padding-top:13px;font-size:16px;color:#6a766d;display:flex;flex-direction:column;gap:5px}
+.ccard .c .meta span b{color:var(--pine);font-weight:500}
+.show-all-wrap{text-align:center;margin-top:44px}
+@media(max-width:760px){.show-all-wrap{display:none}}
+.show-all{font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;background:none;border:1px solid var(--pine);color:var(--pine);padding:15px 34px;border-radius:2px;cursor:pointer;transition:.25s}
+.show-all:hover{background:var(--pine);color:#fff}
+.courses .note{text-align:center;margin-top:40px;font-size:18px;color:#54635a}
+.courses .note b{color:var(--cinnabar);font-weight:500}
+
+/* ===== CTA ===== */
+.cta{background:var(--pine);color:#fff;text-align:center}
+.cta h2{font-size:clamp(34px,4.6vw,52px);max-width:20ch;margin:14px auto 18px}
+.cta p{color:rgba(255,255,255,.78);max-width:52ch;margin:0 auto 30px}
+
+/* ===== FOOTER ===== */
+footer{background:var(--pine);color:rgba(255,255,255,.8);padding:60px 0 30px;border-top:1px solid rgba(255,255,255,.12)}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer .logo{font-family:var(--serif);font-size:26px;color:#fff;display:flex;align-items:center;gap:12px}
+footer .logo .logo-mark{height:32px;width:auto}
+footer .logo .logo-text{color:#fff}
+footer .logo span{color:var(--gold)}
+footer h5{font-size:14.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+footer ul{list-style:none;font-size:16px;font-weight:300}
+footer ul li{padding:5px 0;opacity:.85}
+footer ul li a:hover{color:#fff}
+footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
+
+.expert-fab{position:fixed;right:24px;bottom:24px;z-index:90;display:inline-block;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:var(--cinnabar);color:#fff;padding:15px 24px;border-radius:2px;box-shadow:0 14px 36px -14px rgba(20,36,28,.5);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,visibility .3s,background .25s}
+.expert-fab.show{opacity:1;visibility:visible;transform:translateY(0)}
+.expert-fab:hover{background:#9a3a27;color:#fff}
+@media(max-width:640px){.expert-fab{right:14px;bottom:14px;padding:13px 18px;font-size:12.5px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></a>
+    <nav>
+      <a href="index.html#access">Exclusive Access</a>
+      <a href="index.html#destinations">Destinations</a>
+      <a href="#courses">Courses</a>
+      <a href="index.html#journeys">Sample Journeys</a>
+      <a href="index.html#exclusives">Experiences</a>
+      <a href="index.html#start" class="nav-cta">Plan Your Journey</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <picture>
+    <img class="bg" src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing">
+  </picture>
+  <div class="scrim"></div>
+  <div class="container hero-inner">
+    <div class="crumbs fade in"><a href="index.html">Home</a><span class="sep">·</span><a href="index.html#courses">Courses</a><span class="sep">·</span>Featured Courses</div>
+    <span class="eyebrow">Signature Courses</span>
+    <h1>Featured Courses</h1>
+    <p class="hero-tag">Courses worth crossing the world for — each one the anchor of an entire journey.</p>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="container">
+    <div class="fade">
+      <span class="eyebrow">Overview</span>
+      <p style="margin-top:14px">From Nicklaus fairways beneath the Great Wall to true links land on the South China Sea, these are the courses we build journeys around — world-ranked designs set in landscapes found nowhere else. Every one of them, including clubs that are otherwise strictly private, is available to Golf China guests.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses" id="courses" style="padding-top:56px">
+  <div class="container">
+    <div class="course-grid" id="courseGrid" aria-label="Featured courses">
+      <article class="ccard fade">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind, Beijing">
+            <img src="assets/img/reignwood-caddies.jpg" alt="Caddies and players walking a Reignwood fairway beneath the jagged Jundu peaks" loading="lazy">
+            <img src="assets/img/reignwood-bunkered-fairway.jpg" alt="Bunkered fairways at Reignwood Pine Valley beneath the craggy Jundu Mountains" loading="lazy">
+            <img src="assets/img/reignwood-clubhouse.jpg" alt="The white château clubhouse of Reignwood Pine Valley beneath the Jundu Mountains" loading="lazy">
+          </div>
+          <span class="tag">Beijing</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Beijing</div><h3>Reignwood Pine Valley</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>Nicklaus mountain golf beneath the Great Wall — one of China's most private clubs.</p>
+          <div class="meta"><span><b>Designer</b> · Jack Nicklaus / Nicklaus Design</span><span><b>Setting</b> · Great Wall mountain parkland</span><span><b>Access</b> · Exclusive private golf club access</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai">
+            <img src="assets/img/sheshan-tournament-green.jpg" alt="A tournament green at Sheshan International" loading="lazy">
+            <img src="assets/img/sheshan-wgc-sign.jpg" alt="The WGC-HSBC Champions sign at Sheshan International" loading="lazy">
+            <img src="assets/img/sheshan-pampas-tee.jpg" alt="A tee framed by pampas grass at Sheshan International" loading="lazy">
+            <img src="assets/img/sheshan-grandstand-crowds.jpg" alt="Crowds around the grandstand at Sheshan International" loading="lazy">
+          </div>
+          <span class="tag">Shanghai</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Shanghai</div><h3>Sheshan International</h3><div class="rankline">World Top 100 · Golf Digest</div>
+          <p>China's best-known championship course — long-time home of the WGC-HSBC Champions.</p>
+          <div class="meta"><span><b>Designer</b> · Nelson &amp; Haworth</span><span><b>Setting</b> · Tournament parkland</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/springcity-resort-aerial.jpg" alt="Aerial view of Spring City Resort above Yangzong Lake, Yunnan">
+            <img src="assets/img/springcity-lake-green.jpg" alt="A green opening towards Yangzong Lake at Spring City" loading="lazy">
+            <img src="assets/img/springcity-blossom-fairway.jpg" alt="Spring blossom beside a fairway at Spring City" loading="lazy">
+            <img src="assets/img/springcity-autumn-bunker.jpg" alt="An autumn bunker at Spring City" loading="lazy">
+            <img src="assets/img/springcity-forest-fairway.jpg" alt="A forest-lined fairway at Spring City" loading="lazy">
+            <img src="assets/img/springcity-lakeside-green.jpg" alt="A lakeside green at Spring City" loading="lazy">
+          </div>
+          <span class="tag">Yunnan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Kunming · Yunnan</div><h3>Spring City Resort</h3><div class="rankline">World Top 100 · Golf Digest</div>
+          <p>Two world-ranked courses above Yangzong Lake — one climbing the hills, one opening to the water.</p>
+          <div class="meta"><span><b>Designers</b> · Nicklaus · R.T. Jones Jr.</span><span><b>Setting</b> · Lakeside highland</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/jadedragon-course-view.jpg" alt="The Jade Dragon Snow Mountain course beneath the snow peaks">
+            <img src="assets/img/jadedragon-golden-fairway.jpg" alt="Golden evening light across a Jade Dragon fairway" loading="lazy">
+            <img src="assets/img/jadedragon-valley-green.jpg" alt="A valley green at Jade Dragon Snow Mountain" loading="lazy">
+            <img src="assets/img/jadedragon-bunkered-green.jpg" alt="A bunkered green beneath Jade Dragon Snow Mountain" loading="lazy">
+            <img src="assets/img/jadedragon-morning-light.jpg" alt="Morning light on the Jade Dragon Snow Mountain course" loading="lazy">
+            <img src="assets/img/jadedragon-fairway.jpg" alt="Jade Dragon Snow Mountain golf course beneath a glacier" loading="lazy">
+          </div>
+          <span class="tag">Yunnan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Lijiang · Yunnan</div><h3>Jade Dragon Snow Mountain</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>One of the highest courses in the world — 3,000 metres up, 8,548 yards from the tips.</p>
+          <div class="meta"><span><b>Designer</b> · Neil Haworth</span><span><b>Setting</b> · Himalayan foothills</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/fuchun-resort.jpg" alt="Fuchun Resort fairways and a Jiangnan-style resort mirrored in still water, Hangzhou">
+            <img src="assets/img/fuchun-mist.jpg" alt="Fuchun Resort in the morning mist" loading="lazy">
+            <img src="assets/img/fuchun-pavilion-lake.jpg" alt="A lakeside pavilion at Fuchun Resort" loading="lazy">
+            <img src="assets/img/fuchun-mist-bunkers.jpg" alt="Misty bunkers on the hillside course at Fuchun Resort" loading="lazy">
+            <img src="assets/img/fuchun-tea-terraces.jpg" alt="Tea terraces beside the fairways at Fuchun Resort" loading="lazy">
+            <img src="assets/img/fuchun-gateway.jpg" alt="The stone gateway at Fuchun Resort" loading="lazy">
+          </div>
+          <span class="tag">Hangzhou</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Hangzhou</div><h3>Fuchun Resort</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>A quiet hillside course among tea fields and Jiangnan architecture — more private retreat than golf resort.</p>
+          <div class="meta"><span><b>Designer</b> · Daniel Obermeyer</span><span><b>Setting</b> · Jiangnan garden resort</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/dunes-shenzhou-headland-aerial.jpg" alt="Aerial view of the Shenzhou Peninsula headland holes at The Dunes">
+            <img src="assets/img/dunes-shenzhou-aerial.jpg" alt="Aerial view of The Dunes at Shenzhou Peninsula beside the South China Sea" loading="lazy">
+            <img src="assets/img/dunes-shenzhou-clubhouse.jpg" alt="The clubhouse at The Dunes, Shenzhou Peninsula" loading="lazy">
+            <img src="assets/img/dunes-shenzhou-sea-green.jpg" alt="A green beside the South China Sea at The Dunes" loading="lazy">
+            <img src="assets/img/dunes-shenzhou-lagoon.jpg" alt="A lagoon hole at The Dunes, Shenzhou Peninsula" loading="lazy">
+          </div>
+          <span class="tag">Hainan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Hainan</div><h3>The Dunes at Shenzhou Peninsula</h3><div class="rankline">Asia Top 50 · Golf Magazine</div>
+          <p>Weiskopf golf through natural dunes beside the South China Sea — the strongest links golf in China.</p>
+          <div class="meta"><span><b>Designer</b> · Tom Weiskopf</span><span><b>Setting</b> · Oceanside links</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade more">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/yangtze-hole3-dusk.jpg" alt="The third hole at Yangtze Dunes at dusk, Chongming Island" loading="lazy">
+            <img src="assets/img/yangtze-green-dunes-aerial.jpg" alt="Aerial view of a green among the dunes at Yangtze Dunes" loading="lazy">
+            <img src="assets/img/yangtze-links-aerial.jpg" alt="Aerial view of the linksland at Yangtze Dunes" loading="lazy">
+            <img src="assets/img/yangtze-sunset-green.jpg" alt="A sunset green at Yangtze Dunes" loading="lazy">
+          </div>
+          <span class="tag">Shanghai</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Chongming Island · Shanghai</div><h3>Yangtze Dunes</h3><div class="rankline">China Top 3 · Golf Digest</div>
+          <p>A modern links among large-scale dunes on the Yangtze estuary — unlike anything else around Shanghai.</p>
+          <div class="meta"><span><b>Designer</b> · OCCM (Ogilvy, Clayton, Cocking &amp; Mead)</span><span><b>Setting</b> · Estuary linksland</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade more">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/blackstone-fairway-bunkers.jpg" alt="Rugged bunkers across a fairway on the Blackstone course, Haikou" loading="lazy">
+            <img src="assets/img/blackstone-palm-fairway.jpg" alt="A palm-lined fairway at Blackstone, Mission Hills Haikou" loading="lazy">
+            <img src="assets/img/blackstone-sandy-waste.jpg" alt="Sandy waste areas along a Blackstone fairway" loading="lazy">
+            <img src="assets/img/blackstone-sunrise.jpg" alt="Sunrise over the Blackstone course" loading="lazy">
+            <img src="assets/img/blackstone-tiger-rory.jpg" alt="Tiger Woods and Rory McIlroy at Blackstone, Mission Hills Haikou" loading="lazy">
+            <img src="assets/img/blackstone-lava-wall.jpg" alt="An ancient lava-rock wall beside a fairway at Blackstone" loading="lazy">
+          </div>
+          <span class="tag">Hainan</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Haikou · Hainan</div><h3>Mission Hills Haikou — Blackstone</h3><div class="rankline">World Top 100 · Golf Digest</div>
+          <p>The signature course at Mission Hills Haikou, routed through ancient black lava.</p>
+          <div class="meta"><span><b>Designer</b> · Schmidt-Curley</span><span><b>Setting</b> · Lava-rock parkland</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade more">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/topwin-yanqi-summer-aerial.jpg" alt="Aerial view of Topwin's fairways along Yanqi Lake, with the lakeside pagoda and the Yanshan mountains beyond, Beijing" loading="lazy">
+            <img src="assets/img/topwin-lakeside-green.jpg" alt="A lakeside green at Topwin" loading="lazy">
+            <img src="assets/img/topwin-pagoda-lake.jpg" alt="A pagoda above Yanqi Lake at Topwin" loading="lazy">
+            <img src="assets/img/topwin-autumn-fairways.jpg" alt="Autumn fairways at Topwin Golf & Country Club" loading="lazy">
+            <img src="assets/img/topwin-stone-bridge.jpg" alt="A stone bridge on the Topwin course" loading="lazy">
+            <img src="assets/img/topwin-autumn-pagoda-skyline.jpg" alt="Autumn fairways at Topwin beneath the Yanqi Lake pagoda" loading="lazy">
+            <img src="assets/img/topwin-yanqi-dusk-aerial.jpg" alt="Yanqi Lake at dusk, with Topwin's lakeside greens and the pagoda below the Yanshan range" loading="lazy">
+          </div>
+          <span class="tag">Beijing</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Beijing</div><h3>Topwin Golf &amp; Country Club</h3><div class="rankline">China Top 10 · Top 100 Golf Courses</div>
+          <p>Championship golf beside Yanqi Lake — host of the Volvo China Open.</p>
+          <div class="meta"><span><b>Designer</b> · Ian Woosnam / IMG</span><span><b>Setting</b> · Lakeside mountain parkland</span></div>
+        </div>
+      </article>
+
+      <article class="ccard fade more">
+        <div class="img">
+          <div class="cgal">
+            <img src="assets/img/course-guilin.jpg" alt="A karst limestone pinnacle rising above the fairways at Guilin Landscape Golf Club" loading="lazy">
+            <img src="assets/img/guilin-pano.jpg" alt="Panorama of karst peaks above the fairways at Guilin Landscape Golf Club" loading="lazy">
+          </div>
+          <span class="tag">Guilin</span>
+          <div class="cg-dots"></div>
+          <button class="cg-nav prev" type="button" aria-label="Previous photo">&#8592;</button>
+          <button class="cg-nav next" type="button" aria-label="Next photo">&#8594;</button>
+        </div>
+        <div class="c">
+          <div class="region">Guilin · Guangxi</div><h3>Guilin Landscape Golf Club</h3>
+          <p>Golf among Guilin's limestone karst peaks — few courses feel more part of their scenery.</p>
+          <div class="meta"><span><b>Designer</b> · Dana Fry</span><span><b>Setting</b> · Karst valley</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="show-all-wrap fade">
+      <button class="show-all" id="showAll" type="button" aria-expanded="false">Show All Courses</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container fade">
+    <span class="eyebrow">Plan Your Journey</span>
+    <h2>Tell us which courses call to you.</h2>
+    <p>We will build the journey around them — flights, hotels, tee times and everything in between.</p>
+    <a href="index.html#start" class="btn btn-primary">Plan Your Journey</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span></span></div>
+        <p style="font-size:16px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
+        <p style="font-size:14.5px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="index.html#why-china">Why China</a></li><li><a href="index.html#destinations">Destinations</a></li><li><a href="index.html#courses">Courses</a></li><li><a href="index.html#journeys">Sample Journeys</a></li><li><a href="index.html#exclusives">Signature Experiences</a></li><li><a href="index.html#stay">Where You Stay</a></li></ul></div>
+      <div><h5>Plan</h5><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#about">Who We Are</a></li><li><a href="index.html#plan">Plan Your Trip</a></li><li><a href="index.html#start">Plan Your Journey</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="index.html#start">Plan Your Journey</a></li></ul></div>
+    </div>
+    <div class="base">
+      <span>© 2026 Golf China. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const toggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('header.nav nav');
+toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+// Course card photo galleries
+document.querySelectorAll('.ccard .img').forEach(w=>{
+  const g=w.querySelector('.cgal');if(!g)return;
+  const imgs=g.querySelectorAll('img'),n=imgs.length,dots=w.querySelector('.cg-dots');
+  if(n<2){w.querySelectorAll('.cg-nav').forEach(b=>b.remove());return;}
+  imgs.forEach((_,i)=>{const d=document.createElement('i');if(i===0)d.classList.add('on');dots.appendChild(d);});
+  const idx=()=>Math.round(g.scrollLeft/g.clientWidth);
+  const go=i=>g.scrollTo({left:((i+n)%n)*g.clientWidth,behavior:'smooth'});
+  g.addEventListener('scroll',()=>requestAnimationFrame(()=>{
+    const i=idx();dots.querySelectorAll('i').forEach((d,j)=>d.classList.toggle('on',j===i));
+  }),{passive:true});
+  w.querySelector('.cg-nav.prev').addEventListener('click',()=>go(idx()-1));
+  w.querySelector('.cg-nav.next').addEventListener('click',()=>go(idx()+1));
+});
+// Show all courses (desktop)
+const grid=document.getElementById('courseGrid'),showAll=document.getElementById('showAll');
+showAll.addEventListener('click',()=>{
+  const ex=grid.classList.toggle('expanded');
+  showAll.textContent=ex?'Show Fewer Courses':'Show All Courses';
+  showAll.setAttribute('aria-expanded',ex);
+  if(!ex)grid.scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
+<a href="index.html#start" class="expert-fab" id="expertFab">Speak to an Expert</a>
+<script>
+(function(){var f=document.getElementById('expertFab');if(!f)return;var t=function(){var y=window.scrollY||document.documentElement.scrollTop;f.classList.toggle('show',y>window.innerHeight*0.6);};window.addEventListener('scroll',t,{passive:true});t();})();
+</script>
+</body>
+</html>

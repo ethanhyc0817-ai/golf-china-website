@@ -212,7 +212,7 @@ section{padding:100px 0}
 .course-grid{display:flex;gap:24px;overflow-x:auto;overflow-y:hidden;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .course-grid::-webkit-scrollbar{display:none}
 .course-grid .ccard{flex:0 0 352px;scroll-snap-align:start}
-@media(max-width:760px){.course-grid .ccard{flex-basis:80vw}.course-grid{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px;scroll-snap-type:x proximity}}
+@media(max-width:760px){.course-grid .ccard{flex-basis:80vw;scroll-snap-stop:always}.course-grid{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px;scroll-snap-type:x mandatory}}
 .ccard{background:var(--ivory);border:1px solid var(--mist);border-radius:2px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
 .ccard:hover{transform:translateY(-6px);box-shadow:var(--lift)}
 .ccard .img{position:relative;height:208px}
@@ -885,6 +885,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
+    <p class="note fade" style="margin-top:34px"><a class="btn-line" href="featured-courses.html">View All Featured Courses &rarr;</a></p>
   </div>
 </section>
 
