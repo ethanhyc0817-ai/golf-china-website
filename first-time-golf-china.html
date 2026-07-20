@@ -955,7 +955,21 @@ function openTab(id,scroll){
   if(!document.getElementById(id)||!document.getElementById(id).classList.contains('panel'))return;
   tabs.forEach(t=>t.classList.toggle('on',t.dataset.tab===id));
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));
-  if(scroll)window.scrollTo({top:tabbar.offsetTop-56,behavior:'smooth'});
+  if(scroll)snapToTabbar();
+}
+/* Jump the new panel to its top instantly. Smooth scrolling is unreliable here:
+   on mobile the animation is cancelled by leftover touch momentum, and swapping
+   to a shorter panel shrinks the document mid-animation so the scroll lands
+   clamped — either way you stay wherever you'd scrolled to. */
+function snapToTabbar(){
+  const root=document.documentElement, prev=root.style.scrollBehavior;
+  const y=()=>tabbar.offsetTop-(innerWidth<=1100?58:54);
+  root.style.scrollBehavior='auto';           // override html{scroll-behavior:smooth}
+  window.scrollTo(0,y());
+  requestAnimationFrame(()=>{                  // re-assert once the swap has laid out
+    window.scrollTo(0,y());
+    root.style.scrollBehavior=prev;
+  });
 }
 tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
 addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));
