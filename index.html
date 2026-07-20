@@ -253,7 +253,7 @@ section{padding:100px 0}
 /* ===== MOBILE SWIPE INDICATOR ===== */
 .swipe-ind{display:none}
 @media(max-width:760px){
-  .swipe-ind{display:flex;align-items:center;gap:16px;margin-top:18px}
+  .swipe-ind{display:flex;align-items:center;gap:16px;margin-bottom:16px}
   .swipe-ind .si-count{font-size:13.5px;letter-spacing:.14em;color:#6a766d;white-space:nowrap;font-variant-numeric:tabular-nums}
   .swipe-ind .si-track{flex:1;height:2px;background:var(--mist);border-radius:99px;position:relative}
   .swipe-ind .si-track i{position:absolute;top:-1px;left:0;height:4px;width:20%;background:var(--gold);border-radius:99px}
@@ -685,6 +685,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <h2>Courses worth crossing the world for.</h2>
       <p>Each has the landscape, architecture and sense of place to anchor an entire journey.</p>
     </div>
+    <div class="swipe-ind" data-swipe=".course-grid" aria-hidden="true"><span class="si-count">1 / 10</span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <div class="course-carousel fade">
       <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
       <div class="course-grid" aria-label="Signature courses carousel">
@@ -903,7 +904,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
-    <div class="swipe-ind" data-swipe=".course-grid" aria-hidden="true"><span class="si-count">1 / 10</span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <p class="note fade" style="margin-top:34px"><a class="btn-line" href="featured-courses.html">View All Featured Courses &rarr;</a></p>
   </div>
 </section>
@@ -986,6 +986,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <h2>China beyond the first tee.</h2>
       <p>The golf shapes the route — never the whole story. Culture, food, nature and remarkable stays are built around every journey.</p>
     </div>
+    <div class="swipe-ind" data-swipe=".ex-track" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <div class="ex-carousel fade">
       <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
       <div class="ex-track" aria-label="Experiences and stays carousel">
@@ -1078,7 +1079,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
-    <div class="swipe-ind" data-swipe=".ex-track" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <p class="note fade">Traveling with non-golfers? Everyone travels together without having to do everything together.</p>
   </div>
 </section>
@@ -1091,6 +1091,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <h2>Stays that belong to the journey.</h2>
       <p>We don't choose hotels for their stars. We choose them for character, sense of place and service.</p>
     </div>
+    <div class="swipe-ind" data-swipe=".hotel-row" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <div class="hotel-carousel fade">
       <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
       <div class="hotel-row">
@@ -1136,7 +1137,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
-    <div class="swipe-ind" data-swipe=".hotel-row" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <p class="note fade">Options are curated to your route, the season and how you prefer to travel.</p>
   </div>
 </section>
