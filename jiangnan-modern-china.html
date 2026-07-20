@@ -233,26 +233,34 @@ section{padding:100px 0}
 .hm-panel{position:relative;z-index:2;background:var(--ivory);max-width:1100px;width:100%;max-height:90vh;overflow:auto;padding:40px 44px;border-radius:2px;box-shadow:var(--lift)}
 .hm-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;line-height:1;padding:6px}
 .hm-close:hover{color:var(--cinnabar)}
+.hm-panel h3{font-size:clamp(26px,3.4vw,38px);color:var(--ink);margin-bottom:26px;max-width:22ch;padding-right:40px}
 .hm-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:start}
-@media(max-width:860px){.hm-grid{grid-template-columns:1fr;gap:24px}.hm-panel{padding:28px 22px}}
+@media(max-width:860px){.hm-grid{grid-template-columns:1fr;gap:24px}.hm-panel{padding:28px 22px}.hm-panel h3{margin-bottom:18px}}
+.hm-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;transition:.25s}
+.hm-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hm-btn.prev{left:14px}.hm-btn.next{right:14px}
+.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
 .hm-gal{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--mist)}
 .hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
 .hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
 
 /* ===== STAY ===== */
-.stay{background:var(--pine);color:#fff}
-.stay .section-head h2{color:#fff}.stay .section-head p{color:rgba(255,255,255,.72)}
-.stay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:26px}
-.stay-wrap.rev .img{order:2}
-@media(max-width:860px){.stay-wrap{grid-template-columns:1fr}.stay-wrap.rev .img{order:0}}
-.stay-wrap .img{position:relative;min-height:380px}
-.stay-wrap .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.stay-wrap .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
-.stay-wrap .c .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
-.stay-wrap .c h3{font-size:30px;margin:8px 0 14px}
-.stay-wrap .c p{font-size:16px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch;margin-bottom:14px}
-.stay-wrap .c p:last-of-type{margin-bottom:0}
+.stay{background:var(--ivory)}
+.hotel-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+@media(max-width:900px){.hotel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hotel-grid{grid-template-columns:1fr}}
+.hcard{background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.hcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.hcard:hover .ph img{transform:scale(1.04)}
+.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.hcard .b{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.hcard h3{font-size:25px;color:var(--pine)}
+.hcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
+.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+.hcard .vd:hover{background:var(--gold);color:#fff}
+.stay .note{text-align:center;margin-top:38px;font-size:16px;color:#54635a}
 
 /* ===== EXTEND ===== */
 .extend{background:var(--ivory)}
@@ -293,7 +301,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   .container{padding:0 20px}
   section{padding:68px 0}
   .section-head{margin-bottom:36px}
-  .golf-feature .c,.stay-wrap .c{padding:30px 24px}
+  .golf-feature .c{padding:30px 24px}
 }
 
 /* Floating expert CTA */
@@ -579,29 +587,54 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <h2>A skyline, then a lake.</h2>
       <p>Two addresses, two tempos — the city at full voltage, then Jiangnan calm.</p>
     </div>
-    <div class="stay-wrap fade">
-      <div class="img"><img src="assets/img/stay-shanghai-night.jpg" alt="The lit towers of Shanghai seen from above at night"></div>
-      <div class="c">
-        <div class="loc">Shanghai · Above the Lights</div>
-        <h3>Sleep over the skyline</h3>
-        <p>Our Shanghai favourites trade lobby grandeur for height and design — rooms where the wall is glass and the city performs below, a short walk from the Bund's heritage façades and the best tables in Asia.</p>
-        <p>For travelers who prefer plane trees to towers, the converted villas of the old concessions make an equally good base — we'll match the address to your taste.</p>
-      </div>
+
+    <div class="hotel-grid">
+
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Shanghai · On the Bund</span><img src="assets/img/hotel-waldorf-shanghai-card.jpg" alt="Waldorf Astoria Shanghai on the Bund"></div>
+        <div class="b">
+          <h3>Waldorf Astoria Shanghai on the Bund</h3>
+          <div class="loc">Shanghai, China</div>
+          <button class="vd" data-hotel="waldorf">View Details</button>
+        </div>
+      </article>
+
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Hangzhou · Fuchun Valley</span><img src="assets/img/fuchun-pavilion-lake.jpg" alt="The pavilions of Fuchun Resort across still water, green hills rising behind"></div>
+        <div class="b">
+          <h3>Fuchun Resort</h3>
+          <div class="loc">Hangzhou, China</div>
+          <button class="vd" data-hotel="fuchun">View Details</button>
+        </div>
+      </article>
+
     </div>
 
-    <div class="stay-wrap rev fade">
-      <div class="img"><img src="assets/img/stay-lakeside.jpg" alt="A pagoda rising above the lotus-fringed shore of West Lake, Hangzhou"></div>
-      <div class="c">
-        <div class="loc">Hangzhou · On West Lake</div>
-        <h3>Jiangnan calm between rounds</h3>
-        <p>In Hangzhou the address is the experience — the likes of the Four Seasons on West Lake, all temple bells, still water and gardens that blur into the lakeshore. Mornings begin with mist on the water; evenings end with it rolling back in.</p>
-        <p>For the Fuchun round, a night at the resort itself turns the course's valley into your view — tea terraces from the bath, mist from the breakfast table.</p>
-      </div>
-    </div>
-
-    <p class="note fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
+    <p class="note fade">Prefer a tower over the skyline, the converted villas of the old concessions or a resort on West Lake itself? Alternatives, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
   </div>
 </section>
+
+<!-- HOTEL DETAILS MODAL -->
+<div class="hmodal" id="hmodal" role="dialog" aria-modal="true" aria-labelledby="hm-name">
+  <div class="ov" data-close></div>
+  <div class="hm-panel">
+    <button class="hm-close" data-close aria-label="Close">✕</button>
+    <h3 id="hm-name"></h3>
+    <div class="hm-grid">
+      <div class="hm-gal">
+        <img id="hm-img" src="" alt="">
+        <button class="hm-btn prev" aria-label="Previous image">‹</button>
+        <button class="hm-btn next" aria-label="Next image">›</button>
+        <span class="hm-count" id="hm-count"></span>
+      </div>
+      <div class="hm-desc">
+        <div class="hm-loc" id="hm-loc"></div>
+        <p id="hm-desc"></p>
+        <a href="index.html#start" class="btn btn-primary">Plan Your Journey</a>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <div class="panel" id="extend">
@@ -766,6 +799,43 @@ document.querySelectorAll('.gal').forEach(g=>{
   g.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
   g.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;},{passive:true});
 });
+/* hotel details modal */
+const HOTELS={
+ waldorf:{
+  name:'Waldorf Astoria Shanghai on the Bund',loc:'Shanghai, China',
+  desc:'Occupying No. 2 on the Bund, with the storied 1911 Shanghai Club building at its heart, the Waldorf Astoria pairs restored colonial grandeur — including the famous Long Bar — with a contemporary tower above the Huangpu River. Generous rooms and a position at the foot of the Bund place both old and new Shanghai within easy reach, with the championship golf of Sheshan a straightforward drive away.',
+  imgs:['hotel-waldorf-shanghai-card.jpg','hotel-waldorf-shanghai-1.jpg','hotel-waldorf-shanghai-2.jpg','hotel-waldorf-shanghai-3.jpg','hotel-waldorf-shanghai-4.jpg','hotel-waldorf-shanghai-5.jpg','hotel-waldorf-shanghai-6.jpg','hotel-waldorf-shanghai-7.jpg','hotel-waldorf-shanghai-8.jpg']
+ },
+ fuchun:{
+  name:'Fuchun Resort',loc:'Hangzhou, China',
+  desc:'Folded into the forested hills above the Fuchun River, half an hour from West Lake, Fuchun Resort is Jiangnan distilled — grey-tiled pavilions, still water, and a Longjing tea plantation rolling to the edge of its own golf course. Rooms and villas look over the tea terraces and the valley mist; the spa and pavilion pool are among the most serene in China. Staying where you play turns the closing round into the gentlest chapter of the journey — tea terraces from the bath, mist from the breakfast table.',
+  imgs:['fuchun-pavilion-lake.jpg','fuchun-resort.jpg','fuchun-mist.jpg','fuchun-tea-terraces.jpg','fuchun-gateway.jpg','fuchun-clubhouse-wide.jpg']
+ }
+};
+const hmodal=document.getElementById('hmodal');
+if(hmodal){
+  let hgal=[],gi=0;
+  const hImg=document.getElementById('hm-img'),hCount=document.getElementById('hm-count');
+  const show=i=>{gi=(i+hgal.length)%hgal.length;hImg.src='assets/img/'+hgal[gi];hCount.textContent=(gi+1)+' / '+hgal.length;};
+  const openH=id=>{
+    const d=HOTELS[id];if(!d)return;
+    document.getElementById('hm-name').textContent=d.name;
+    document.getElementById('hm-loc').textContent=d.loc;
+    document.getElementById('hm-desc').textContent=d.desc;
+    hImg.alt=d.name;hgal=d.imgs;show(0);
+    hmodal.classList.add('open');document.body.style.overflow='hidden';
+  };
+  const closeH=()=>{hmodal.classList.remove('open');document.body.style.overflow='';};
+  document.querySelectorAll('.hcard .vd').forEach(b=>b.addEventListener('click',()=>openH(b.dataset.hotel)));
+  hmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeH));
+  hmodal.querySelector('.hm-btn.prev').addEventListener('click',()=>show(gi-1));
+  hmodal.querySelector('.hm-btn.next').addEventListener('click',()=>show(gi+1));
+  addEventListener('keydown',e=>{if(!hmodal.classList.contains('open'))return;if(e.key==='Escape')closeH();if(e.key==='ArrowLeft')show(gi-1);if(e.key==='ArrowRight')show(gi+1);});
+  let hx0=null;
+  const hg=hmodal.querySelector('.hm-gal');
+  hg.addEventListener('touchstart',e=>{hx0=e.touches[0].clientX},{passive:true});
+  hg.addEventListener('touchend',e=>{if(hx0===null)return;const dx=e.changedTouches[0].clientX-hx0;if(Math.abs(dx)>40)show(gi+(dx<0?1:-1));hx0=null;},{passive:true});
+}
 /* experience details modal */
 const EXPS={
  yacht:{
