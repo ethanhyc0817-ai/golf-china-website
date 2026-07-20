@@ -208,9 +208,17 @@ section{padding:100px 0}
 .excard h3{font-size:25px;margin:6px 0 7px}
 .excard.feature h3{font-size:30px}
 .excard p{font-size:17px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
+.excard{cursor:pointer}
+.excard.wide{grid-column:span 2}
+.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
+.excard:hover .ex-see{color:#fff;border-color:#fff}
 .exclusives .note{text-align:center;margin-top:38px;font-size:17px;color:#54635a}
 @media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
-@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}}
+@media(max-width:560px){.ex-grid{grid-template-columns:1fr;grid-auto-rows:auto}.excard{min-height:300px}.excard.feature{grid-column:span 1}.excard.wide{grid-column:span 1}}
+/* experience details modal */
+.xm-name{font-size:clamp(24px,3vw,32px);color:var(--ink);margin:2px 0 16px;line-height:1.15}
+.xm-btn{margin-top:6px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 36px;border-radius:2px;cursor:pointer;transition:.25s}
+.xm-btn:hover{background:var(--gold);color:#fff}
 
 /* ===== STAY ===== */
 .stay{background:var(--ivory)}
@@ -477,30 +485,43 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     </div>
     <div class="ex-grid">
 
-      <article class="excard feature fade">
+      <article class="excard feature fade" data-exp="wall" role="button" tabindex="0" aria-label="See the Great Wall without the crowds — see details">
         <img src="assets/img/place-greatwall.jpg" alt="The Great Wall snaking over ridgelines at golden hour">
         <div class="b">
           <div class="loc">Beijing · The Wall</div>
-          <h3>The Great Wall, without the crowds</h3>
+          <h3>See the Great Wall without the crowds</h3>
           <p>Years on the ground have taught us exactly which stretch to climb, and at which hour — a private guide, and the ramparts all but to yourselves as the light goes gold.</p>
+          <span class="ex-see">See Details</span>
         </div>
       </article>
 
-      <article class="excard fade">
-        <img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing">
-        <div class="b">
-          <div class="loc">Beijing · Forbidden City</div>
-          <h3>Through the Meridian Gate</h3>
-          <p>A private walk through the palace with an expert English-speaking historian who reads the architecture like a text — six centuries unlocked in a morning.</p>
-        </div>
-      </article>
-
-      <article class="excard fade">
-        <img src="assets/img/stay-city.jpg" alt="Golden roofs and vermilion walls of the Forbidden City, Beijing">
+      <article class="excard fade" data-exp="hutong" role="button" tabindex="0" aria-label="The hutong neighborhoods of Old Beijing — see details">
+        <img src="assets/img/itin-bj-day4-hutong.jpg" alt="Grey-brick hutong lanes in Beijing">
         <div class="b">
           <div class="loc">Beijing · Hutongs</div>
-          <h3>The hutong chef's table</h3>
-          <p>Into the morning markets with a chef, then lunch cooked and poured in a private courtyard house.</p>
+          <h3>The hutong neighborhoods of Old Beijing</h3>
+          <p>Into the grey-brick lanes around the Drum and Bell Towers with the people who grew up in them — the capital as it actually lives.</p>
+          <span class="ex-see">See Details</span>
+        </div>
+      </article>
+
+      <article class="excard fade" data-exp="duck" role="button" tabindex="0" aria-label="The Peking duck chef's table — see details">
+        <img src="assets/img/dining-peking-duck.jpg" alt="Lacquered slices of Peking duck served in a tiered wooden presentation box, condiments in its drawers">
+        <div class="b">
+          <div class="loc">Beijing · Chef's Table</div>
+          <h3>The Peking duck chef's table</h3>
+          <p>Beijing's most famous dish done properly — lacquered over fruitwood and carved before you at a private courtyard table.</p>
+          <span class="ex-see">See Details</span>
+        </div>
+      </article>
+
+      <article class="excard wide fade" data-exp="palace" role="button" tabindex="0" aria-label="Visit Tiananmen Square and the Forbidden City — see details">
+        <img src="assets/img/itin-bj-day2-forbiddencity.jpg" alt="The Forbidden City's courtyards in early light">
+        <div class="b">
+          <div class="loc">Beijing · Forbidden City</div>
+          <h3>Visit Tiananmen Square and the Forbidden City</h3>
+          <p>Across the world's largest square and through the Meridian Gate with an expert historian — six centuries unlocked in a morning.</p>
+          <span class="ex-see">See Details</span>
         </div>
       </article>
 
@@ -508,6 +529,23 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Beijing equivalent.</p>
   </div>
 </section>
+
+<!-- EXPERIENCE DETAILS MODAL -->
+<div class="hmodal" id="xmodal" role="dialog" aria-modal="true" aria-labelledby="xm-name">
+  <div class="ov" data-xclose></div>
+  <div class="hm-panel">
+    <button class="hm-close" data-xclose aria-label="Close">✕</button>
+    <div class="hm-grid">
+      <div class="hm-gal"><img id="xm-img" src="" alt=""></div>
+      <div class="hm-desc">
+        <div class="hm-loc" id="xm-loc"></div>
+        <h3 class="xm-name" id="xm-name"></h3>
+        <p id="xm-desc"></p>
+        <button class="xm-btn" data-xclose>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
@@ -742,6 +780,47 @@ if(hmodal){
   const hg=hmodal.querySelector('.hm-gal');
   hg.addEventListener('touchstart',e=>{hx0=e.touches[0].clientX},{passive:true});
   hg.addEventListener('touchend',e=>{if(hx0===null)return;const dx=e.changedTouches[0].clientX-hx0;if(Math.abs(dx)>40)show(gi+(dx<0?1:-1));hx0=null;},{passive:true});
+}
+/* experience details modal */
+const EXPS={
+ wall:{
+  name:'See the Great Wall without the crowds',loc:'Beijing · The Wall',
+  img:'place-greatwall.jpg',alt:'The Great Wall snaking over ridgelines at golden hour',
+  desc:'The Wall is at its finest when you have it nearly to yourselves. Years on the ground have taught us exactly which stretch to climb, and at which hour — a quiet run of ramparts at Juyongguan, twenty-five minutes from your final putt at Reignwood, where the watchtowers ride the mountain pass in both directions and the tour buses never arrive. A private guide walks the towers with you as the light goes gold over the Jundu Mountains, and your driver is waiting below when you’ve had your fill.'
+ },
+ hutong:{
+  name:'The hutong neighborhoods of Old Beijing',loc:'Beijing · Hutongs',
+  img:'itin-bj-day4-hutong.jpg',alt:'Grey-brick hutong lanes in Beijing',
+  desc:'The capital’s real life has always run through its grey-brick lanes. With someone who grew up in them, walk the alleys around the Drum and Bell Towers — courtyard doors ajar, songbirds caged in the trees, chess played on upturned crates — and hear the city told from the inside. The walk ends the way a hutong afternoon should: behind a red door, with tea poured in a private courtyard house.'
+ },
+ duck:{
+  name:'The Peking duck chef’s table',loc:'Beijing · Chef’s Table',
+  img:'dining-peking-duck.jpg',alt:'Lacquered slices of Peking duck served in a tiered wooden presentation box, condiments in its drawers',
+  desc:'No dish belongs to Beijing the way Peking duck does, and no version of it compares to a chef’s table. At a courtyard restaurant kept quiet from the tourist circuit, your table sits within view of the fruitwood ovens: the duck lacquered and roasted to order, carved before you, the first crisp slices taken with sugar in the old style, the rest folded into pancakes still steaming from the kitchen. Around it, a menu built on the capital’s seasons — booked, briefed and waiting by the time you’ve putted out.'
+ },
+ palace:{
+  name:'Visit Tiananmen Square and the Forbidden City',loc:'Beijing · Forbidden City',
+  img:'itin-bj-day2-forbiddencity.jpg',alt:'The Forbidden City’s courtyards in early light',
+  desc:'Begin on Tiananmen Square as the capital wakes, then pass through the Meridian Gate as the Forbidden City opens. An expert English-speaking historian reads the architecture like a text — the great ceremonial halls, the quieter side courtyards most visitors never find — six centuries of dynastic history brought to life hall by hall, ending beyond the northern gate with the overlook from Jingshan’s peak, the golden roofs of the palace spread beneath you.'
+ }
+};
+const xmodal=document.getElementById('xmodal');
+if(xmodal){
+  const openX=id=>{
+    const d=EXPS[id];if(!d)return;
+    document.getElementById('xm-name').textContent=d.name;
+    document.getElementById('xm-loc').textContent=d.loc;
+    document.getElementById('xm-desc').textContent=d.desc;
+    const im=document.getElementById('xm-img');im.src='assets/img/'+d.img;im.alt=d.alt;
+    xmodal.classList.add('open');document.body.style.overflow='hidden';
+  };
+  const closeX=()=>{xmodal.classList.remove('open');document.body.style.overflow='';};
+  document.querySelectorAll('.excard[data-exp]').forEach(c=>{
+    c.addEventListener('click',()=>openX(c.dataset.exp));
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openX(c.dataset.exp);}});
+  });
+  xmodal.querySelectorAll('[data-xclose]').forEach(el=>el.addEventListener('click',closeX));
+  addEventListener('keydown',e=>{if(xmodal.classList.contains('open')&&e.key==='Escape')closeX();});
 }
 </script>
 <a href="#start" class="expert-fab" id="expertFab">Speak to an Expert</a>
