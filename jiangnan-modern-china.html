@@ -90,12 +90,26 @@ header.nav.scrolled .bar{padding:12px 28px}
 
 /* ===== MOBILE: JUMP TO JOURNEYS ===== */
 .jump-journeys{display:none}
-#journeys{scroll-margin-top:78px}
+#journeys{scroll-margin-top:122px}
 @media(max-width:760px){
   .jump-journeys{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--ink);padding:15px 22px;font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.35;text-align:center;-webkit-tap-highlight-color:transparent}
   .jump-journeys:active{background:#a67f42}
   .jump-journeys svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 }
+
+/* ===== TAB BAR ===== */
+.tabbar{position:sticky;top:54px;z-index:40;background:var(--pine);border-top:1px solid rgba(255,255,255,.14);box-shadow:0 8px 24px -12px rgba(20,36,28,.35)}
+@media(max-width:1100px){.tabbar{top:58px}}
+.tabbar .tabs{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabbar .tabs::-webkit-scrollbar{display:none}
+.tab{appearance:none;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:16.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:22px 30px;position:relative;white-space:nowrap;transition:.25s;flex:1;text-align:center}
+.tab:hover{color:#fff}
+.tab::after{content:"";position:absolute;left:30px;right:30px;bottom:0;height:3px;background:transparent;transition:.25s}
+.tab.on{color:var(--gold)}
+.tab.on::after{background:var(--gold)}
+.panel{display:none}
+.panel.on{display:block}
+@media(max-width:700px){.tab{padding:18px 10px;font-size:15px;letter-spacing:.1em}.tab::after{left:10px;right:10px}}
 
 /* ===== SECTION SHELL ===== */
 section{padding:100px 0}
@@ -267,7 +281,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <a href="#overview">Overview</a>
       <a href="#golf">The Golf</a>
       <a href="#journeys">Journeys</a>
-      <a href="#exclusives">Experiences</a>
+      <a href="#experiences">Experiences</a>
       <a href="#stay">Where You Stay</a>
       <a href="index.html#start" class="nav-cta">Plan Your Journey</a>
     </nav>
@@ -302,14 +316,27 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   </div>
 </div>
 
-<!-- OVERVIEW -->
 <!-- MOBILE: JUMP TO JOURNEYS -->
 <a class="jump-journeys" href="#journeys">
   <span>Where Jiangnan fits in a journey</span>
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
 </a>
 
-<section class="overview" id="overview">
+
+<!-- TAB BAR -->
+<div class="tabbar" id="tabbar">
+  <div class="container tabs">
+    <button class="tab on" data-tab="overview">Overview</button>
+    <button class="tab" data-tab="golf">The Golf</button>
+    <button class="tab" data-tab="experiences">Experiences</button>
+    <button class="tab" data-tab="stay">Stays</button>
+    <button class="tab" data-tab="extend">Go Further</button>
+  </div>
+</div>
+
+<div class="panel on" id="overview">
+<!-- OVERVIEW -->
+<section class="overview">
   <div class="container ov-wrap">
     <div class="ov-txt fade">
       <span class="eyebrow">The Journey</span>
@@ -333,9 +360,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </aside>
   </div>
 </section>
+</div>
 
+<div class="panel" id="golf">
 <!-- THE GOLF -->
-<section class="golf" id="golf">
+<section class="golf">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">The Golf</span>
@@ -434,54 +463,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </div>
   </div>
 </section>
+</div>
 
-<!-- JOURNEYS FEATURING SHANGHAI & HANGZHOU -->
-<section class="journeys" id="journeys">
-  <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow">Journeys Featuring Shanghai &amp; Hangzhou</span>
-      <h2>Where Jiangnan fits in a journey.</h2>
-      <p>Shanghai and Hangzhou anchor the eastern leg of most of our routes — the elegant counterpoint to the capital's grandeur. Two sample journeys pass through; both are starting points, never scripts.</p>
-    </div>
-    <div class="sj-grid">
-
-      <article class="sjcard fade">
-        <img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"><div class="scrim"></div>
-        <div class="b">
-          <div class="specs">9 Nights · 4 Rounds</div>
-          <h3>First-Time Golf China</h3>
-          <div class="route">Beijing + Shanghai + Hangzhou</div>
-          <div class="hi">Imperial China, Great Wall golf, Shanghai's wild links and a tea-plantation finale amid the quiet elegance of West Lake.</div>
-          <div class="foot"><a href="first-time-golf-china.html">View Full Itinerary →</a></div>
-        </div>
-      </article>
-
-      <article class="sjcard fade">
-        <span class="sj-badge">The Complete Route</span>
-        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"><div class="scrim"></div>
-        <div class="b">
-          <div class="specs">14 Nights / 15 Days · 7–9 Rounds</div>
-          <h3>The Grand China Golf Journey</h3>
-          <div class="route">Beijing + Hangzhou + Yunnan + Hainan</div>
-          <div class="hi">Open in the capital, finish on a tropical coast — the most complete way to experience Golf China.</div>
-          <div class="foot"><a href="index.html#start">Tailor This Journey →</a></div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="tailor fade">
-      <div class="t">
-        <h3>Or build Jiangnan into your own.</h3>
-        <p>Add days, swap rounds for culture, bring non-golfers — every journey is designed from scratch. Tell us about your party and we'll shape the route around you.</p>
-      </div>
-      <a href="index.html#start" class="btn btn-primary">Plan Your Journey</a>
-    </div>
-  </div>
-</section>
-
+<div class="panel" id="experiences">
 <!-- SIGNATURE EXPERIENCES -->
-<section class="exclusives" id="exclusives">
+<section class="exclusives">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Signature Experiences</span>
@@ -530,9 +516,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its Jiangnan equivalent.</p>
   </div>
 </section>
+</div>
 
+<div class="panel" id="stay">
 <!-- WHERE YOU STAY -->
-<section class="stay" id="stay">
+<section class="stay">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow" style="color:var(--gold)">Where You Stay</span>
@@ -562,9 +550,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <p class="note fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
   </div>
 </section>
+</div>
 
+<div class="panel" id="extend">
 <!-- EXTEND -->
-<section class="extend" id="extend">
+<section class="extend">
   <div class="container">
     <div class="section-head fade">
       <span class="eyebrow">Extend the Journey</span>
@@ -593,6 +583,52 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         </div>
       </a>
 
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- JOURNEYS FEATURING SHANGHAI & HANGZHOU -->
+<section class="journeys" id="journeys">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Journeys Featuring Shanghai &amp; Hangzhou</span>
+      <h2>Where Jiangnan fits in a journey.</h2>
+      <p>Shanghai and Hangzhou anchor the eastern leg of most of our routes — the elegant counterpoint to the capital's grandeur. Two sample journeys pass through; both are starting points, never scripts.</p>
+    </div>
+    <div class="sj-grid">
+
+      <article class="sjcard fade">
+        <img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"><div class="scrim"></div>
+        <div class="b">
+          <div class="specs">9 Nights · 4 Rounds</div>
+          <h3>First-Time Golf China</h3>
+          <div class="route">Beijing + Shanghai + Hangzhou</div>
+          <div class="hi">Imperial China, Great Wall golf, Shanghai's wild links and a tea-plantation finale amid the quiet elegance of West Lake.</div>
+          <div class="foot"><a href="first-time-golf-china.html">View Full Itinerary →</a></div>
+        </div>
+      </article>
+
+      <article class="sjcard fade">
+        <span class="sj-badge">The Complete Route</span>
+        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"><div class="scrim"></div>
+        <div class="b">
+          <div class="specs">14 Nights / 15 Days · 7–9 Rounds</div>
+          <h3>The Grand China Golf Journey</h3>
+          <div class="route">Beijing + Hangzhou + Yunnan + Hainan</div>
+          <div class="hi">Open in the capital, finish on a tropical coast — the most complete way to experience Golf China.</div>
+          <div class="foot"><a href="index.html#start">Tailor This Journey →</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="tailor fade">
+      <div class="t">
+        <h3>Or build Jiangnan into your own.</h3>
+        <p>Add days, swap rounds for culture, bring non-golfers — every journey is designed from scratch. Tell us about your party and we'll shape the route around you.</p>
+      </div>
+      <a href="index.html#start" class="btn btn-primary">Plan Your Journey</a>
     </div>
   </div>
 </section>
@@ -637,6 +673,33 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+/* tabs */
+const tabbar=document.getElementById('tabbar');
+const tabs=[...document.querySelectorAll('.tab')];
+function openTab(id,scroll){
+  const p=document.getElementById(id);
+  if(!p||!p.classList.contains('panel'))return;
+  tabs.forEach(t=>t.classList.toggle('on',t.dataset.tab===id));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('on',x.id===id));
+  if(scroll)snapToTabbar();
+}
+/* Jump the new panel to its top instantly. Smooth scrolling is unreliable here:
+   on mobile the animation is cancelled by leftover touch momentum, and swapping
+   to a shorter panel shrinks the document mid-animation so the scroll lands
+   clamped — either way you stay wherever you'd scrolled to. */
+function snapToTabbar(){
+  const root=document.documentElement, prev=root.style.scrollBehavior;
+  const y=()=>tabbar.offsetTop-(innerWidth<=1100?58:54);
+  root.style.scrollBehavior='auto';           // override html{scroll-behavior:smooth}
+  window.scrollTo(0,y());
+  requestAnimationFrame(()=>{                  // re-assert once the swap has laid out
+    window.scrollTo(0,y());
+    root.style.scrollBehavior=prev;
+  });
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
+addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));
+if(location.hash)openTab(location.hash.slice(1),false);
 /* course image galleries */
 document.querySelectorAll('.gal').forEach(g=>{
   const imgs=[...g.querySelectorAll('img')];
