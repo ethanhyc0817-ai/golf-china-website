@@ -86,8 +86,16 @@ header.nav.scrolled .bar{padding:12px 28px}
 .facts .f:first-child{border-left:none;padding-left:0}
 .facts .fk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .facts .fv{font-family:var(--serif);font-size:21px;margin-top:6px;line-height:1.25}
-.facts .fs{font-size:13.5px;color:rgba(255,255,255,.65);margin-top:3px;font-weight:300}
 @media(max-width:860px){.facts .grid{grid-template-columns:1fr 1fr}.facts .f{padding:20px 22px}.facts .f:nth-child(odd){border-left:none;padding-left:0}}
+
+/* ===== MOBILE: JUMP TO JOURNEYS ===== */
+.jump-journeys{display:none}
+#journeys{scroll-margin-top:78px}
+@media(max-width:760px){
+  .jump-journeys{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--ink);padding:15px 22px;font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.35;text-align:center;-webkit-tap-highlight-color:transparent}
+  .jump-journeys:active{background:#a67f42}
+  .jump-journeys svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+}
 
 /* ===== SECTION SHELL ===== */
 section{padding:100px 0}
@@ -299,15 +307,21 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <div class="facts">
   <div class="container">
     <div class="grid">
-      <div class="f"><div class="fk">Ideal Length</div><div class="fv">5–7 nights</div><div class="fs">or 4 as part of a longer journey</div></div>
-      <div class="f"><div class="fk">Golf</div><div class="fv">3–4 rounds</div><div class="fs">Blackstone, The Dunes + selective Shanqin Bay</div></div>
-      <div class="f"><div class="fk">Best Season</div><div class="fv">Year-round</div><div class="fs">warm even when the north freezes</div></div>
-      <div class="f"><div class="fk">Pairs With</div><div class="fv">Yunnan · Shanghai</div><div class="fs">direct flights from Sanya and Haikou</div></div>
+      <div class="f"><div class="fk">Ideal Length</div><div class="fv">5–7 nights</div></div>
+      <div class="f"><div class="fk">Golf</div><div class="fv">3–4 rounds</div></div>
+      <div class="f"><div class="fk">Best Season</div><div class="fv">Year-round</div></div>
+      <div class="f"><div class="fk">Pairs With</div><div class="fv">Yunnan · Shanghai</div></div>
     </div>
   </div>
 </div>
 
 <!-- OVERVIEW -->
+<!-- MOBILE: JUMP TO JOURNEYS -->
+<a class="jump-journeys" href="#journeys">
+  <span>Where Hainan fits in a journey</span>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+</a>
+
 <section class="overview" id="overview">
   <div class="container ov-wrap">
     <div class="ov-txt fade">
