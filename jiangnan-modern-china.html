@@ -241,7 +241,8 @@ section{padding:100px 0}
 .hm-btn.prev{left:14px}.hm-btn.next{right:14px}
 .hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
 .hm-gal{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--mist)}
-.hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
+.hm-gal img.ld{opacity:.32}
 .hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
 .hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
 
@@ -816,17 +817,31 @@ const hmodal=document.getElementById('hmodal');
 if(hmodal){
   let hgal=[],gi=0;
   const hImg=document.getElementById('hm-img'),hCount=document.getElementById('hm-count');
-  const show=i=>{gi=(i+hgal.length)%hgal.length;hImg.src='assets/img/'+hgal[gi];hCount.textContent=(gi+1)+' / '+hgal.length;};
+  /* gallery preloader: keeps decoded bitmaps warm so next/prev is instant */
+  const pcache=new Map();
+  const warm=n=>{let p=pcache.get(n);if(!p){p=new Image();p.decoding='async';p.src='assets/img/'+n;pcache.set(n,p);}return p;};
+  const show=i=>{
+    const L=hgal.length;if(!L)return;
+    gi=(i+L)%L;
+    const p=warm(hgal[gi]),paint=()=>{if(p.src.endsWith(hgal[gi])){hImg.src=p.src;hImg.classList.remove('ld');}};
+    if(p.complete&&p.naturalWidth)paint();
+    else{hImg.classList.add('ld');p.decode?p.decode().then(paint).catch(paint):p.addEventListener('load',paint,{once:true});}
+    hCount.textContent=(gi+1)+' / '+L;
+    warm(hgal[(gi+1)%L]);warm(hgal[(gi-1+L)%L]);
+  };
+  const warmAll=()=>hgal.forEach(warm);
+  const idle=fn=>window.requestIdleCallback?requestIdleCallback(fn,{timeout:1200}):setTimeout(fn,250);
   const openH=id=>{
     const d=HOTELS[id];if(!d)return;
     document.getElementById('hm-name').textContent=d.name;
     document.getElementById('hm-loc').textContent=d.loc;
     document.getElementById('hm-desc').textContent=d.desc;
-    hImg.alt=d.name;hgal=d.imgs;show(0);
+    hImg.alt=d.name;hgal=d.imgs;show(0);idle(warmAll);
     hmodal.classList.add('open');document.body.style.overflow='hidden';
   };
   const closeH=()=>{hmodal.classList.remove('open');document.body.style.overflow='';};
   document.querySelectorAll('.hcard .vd').forEach(b=>b.addEventListener('click',()=>openH(b.dataset.hotel)));
+  document.querySelectorAll('.hcard .vd').forEach(b=>{const pre=()=>{const d=HOTELS[b.dataset.hotel];if(d&&d.imgs)d.imgs.slice(0,2).forEach(warm);};b.addEventListener('pointerenter',pre,{once:true});b.addEventListener('focus',pre,{once:true});});
   hmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeH));
   hmodal.querySelector('.hm-btn.prev').addEventListener('click',()=>show(gi-1));
   hmodal.querySelector('.hm-btn.next').addEventListener('click',()=>show(gi+1));

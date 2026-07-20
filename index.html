@@ -336,7 +336,8 @@ section{padding:100px 0}
 .hm-close:hover{color:var(--cinnabar)}
 .hm-main{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;padding:26px}
 .hm-gallery{position:relative;aspect-ratio:5/4;overflow:hidden;border-radius:2px;background:var(--mist)}
-.hm-gallery img{width:100%;height:100%;object-fit:cover;display:block}
+.hm-gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s ease}
+.hm-gallery img.ld{opacity:.32}
 .hg-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--pine);font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px -10px rgba(20,36,28,.45);transition:.25s}
 .hg-nav:hover{background:var(--pine);border-color:var(--pine);color:#fff}
 .hg-nav.prev{left:14px}.hg-nav.next{right:14px}
@@ -1440,7 +1441,20 @@ const hmodal=document.getElementById('hotel-modal');
 if(hmodal){
   let gal=[],gi=0;
   const img=document.getElementById('hm-img');
-  const show=i=>{gi=(i+gal.length)%gal.length;img.src='assets/img/'+gal[gi];};
+  /* gallery preloader: keeps decoded bitmaps warm so next/prev is instant */
+  const pcache=new Map();
+  const warm=n=>{let p=pcache.get(n);if(!p){p=new Image();p.decoding='async';p.src='assets/img/'+n;pcache.set(n,p);}return p;};
+  const show=i=>{
+    const L=gal.length;if(!L)return;
+    gi=(i+L)%L;
+    const p=warm(gal[gi]),paint=()=>{if(p.src.endsWith(gal[gi])){img.src=p.src;img.classList.remove('ld');}};
+    if(p.complete&&p.naturalWidth)paint();
+    else{img.classList.add('ld');p.decode?p.decode().then(paint).catch(paint):p.addEventListener('load',paint,{once:true});}
+    
+    warm(gal[(gi+1)%L]);warm(gal[(gi-1+L)%L]);
+  };
+  const warmAll=()=>gal.forEach(warm);
+  const idle=fn=>window.requestIdleCallback?requestIdleCallback(fn,{timeout:1200}):setTimeout(fn,250);
   const open=id=>{
     const d=HOTELS[id];if(!d)return;
     document.getElementById('hm-name').textContent=d.name;
@@ -1456,12 +1470,13 @@ if(hmodal){
     document.getElementById('hm-jroute').innerHTML=d.journey.route.join('<span>•</span>');
     document.getElementById('hm-jgo').href=d.journey.href;
     document.getElementById('hm-jimg').style.backgroundImage='url('+d.journey.img+')';
-    gal=d.imgs;show(0);
+    gal=d.imgs;show(0);idle(warmAll);
     hmodal.classList.add('open');document.body.classList.add('hm-lock');
     hmodal.querySelector('.panel').scrollTop=0;
   };
   const close=()=>{hmodal.classList.remove('open');document.body.classList.remove('hm-lock');};
   document.querySelectorAll('.btn-view[data-hotel]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.hotel)));
+  document.querySelectorAll('.btn-view[data-hotel]').forEach(b=>{const pre=()=>{const d=HOTELS[b.dataset.hotel];if(d&&d.imgs)d.imgs.slice(0,2).forEach(warm);};b.addEventListener('pointerenter',pre,{once:true});b.addEventListener('focus',pre,{once:true});});
   hmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',close));
   hmodal.querySelector('.hg-nav.prev').addEventListener('click',()=>show(gi-1));
   hmodal.querySelector('.hg-nav.next').addEventListener('click',()=>show(gi+1));
