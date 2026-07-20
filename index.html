@@ -212,7 +212,7 @@ section{padding:100px 0}
 .course-grid{display:flex;gap:24px;overflow-x:auto;overflow-y:hidden;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .course-grid::-webkit-scrollbar{display:none}
 .course-grid .ccard{flex:0 0 352px;scroll-snap-align:start}
-@media(max-width:760px){.course-grid .ccard{flex-basis:80vw;scroll-snap-stop:always}.course-grid{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px;scroll-snap-type:x mandatory}}
+@media(max-width:760px){.course-grid .ccard{flex-basis:74vw;scroll-snap-stop:always}.course-grid{margin:0 -28px;padding-left:28px;padding-right:70px;scroll-padding-left:28px;scroll-snap-type:x mandatory}}
 .ccard{background:var(--ivory);border:1px solid var(--mist);border-radius:2px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
 .ccard:hover{transform:translateY(-6px);box-shadow:var(--lift)}
 .ccard .img{position:relative;height:208px}
@@ -249,6 +249,16 @@ section{padding:100px 0}
 .ccard .c .meta span b{color:var(--pine);font-weight:500}
 .courses .note{text-align:center;margin-top:38px;font-size:18px;color:#54635a}
 .courses .note b{color:var(--cinnabar);font-weight:500}
+
+/* ===== MOBILE SWIPE INDICATOR ===== */
+.swipe-ind{display:none}
+@media(max-width:760px){
+  .swipe-ind{display:flex;align-items:center;gap:16px;margin-top:18px}
+  .swipe-ind .si-count{font-size:13.5px;letter-spacing:.14em;color:#6a766d;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .swipe-ind .si-track{flex:1;height:2px;background:var(--mist);border-radius:99px;position:relative}
+  .swipe-ind .si-track i{position:absolute;top:-1px;left:0;height:4px;width:20%;background:var(--gold);border-radius:99px}
+  .swipe-ind .si-hint{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+}
 
 /* ===== SAMPLE JOURNEYS ===== */
 .journeys{background:var(--ivory)}
@@ -294,7 +304,7 @@ section{padding:100px 0}
 .ex-nav.prev{left:-22px}
 .ex-nav.next{right:-22px}
 .exclusives .note{text-align:center;margin-top:30px;font-size:18.5px;color:#54635a}
-@media(max-width:760px){.ex-nav{display:none}.excard{height:410px}.ex-track{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px}}
+@media(max-width:760px){.ex-nav{display:none}.excard{height:410px;flex-basis:74vw}.ex-track{margin:0 -28px;padding-left:28px;padding-right:70px;scroll-padding-left:28px}}
 
 /* ===== WHERE YOU STAY (A&K-style recommended hotels) ===== */
 .stay{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
@@ -356,7 +366,7 @@ section{padding:100px 0}
 }
 body.hm-lock{overflow:hidden}
 @media(max-width:920px){.hcard{flex-basis:calc((100% - 20px)/2)}}
-@media(max-width:760px){.hcard{flex-basis:78vw}.hotel-row{margin:0 -28px;padding-left:28px;padding-right:28px;scroll-padding-left:28px}}
+@media(max-width:760px){.hcard{flex-basis:74vw}.hotel-row{margin:0 -28px;padding-left:28px;padding-right:70px;scroll-padding-left:28px}}
 .stay .note{text-align:center;margin-top:38px;font-size:18.5px;color:#54635a}
 
 /* ===== BEYOND GOLF (audiences) ===== */
@@ -387,16 +397,23 @@ body.hm-lock{overflow:hidden}
   .how-row{margin:0 -28px;padding-left:28px;padding-right:28px}
 }
 
-/* ===== ABOUT / WHO WE ARE ===== */
-.about{background:var(--ivory)}
-.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-@media(max-width:860px){.about-wrap{grid-template-columns:1fr;gap:36px}}
-.about .photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
-.about .txt h2{font-size:clamp(32px,4vw,47px);margin:14px 0 18px;color:var(--pine)}
-.about .txt p{font-size:19.5px;color:#4a5a50;max-width:58ch;margin-bottom:16px}
-.about .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--pine);margin-top:8px}
-.about .txt p a{border-bottom:1px solid rgba(31,61,46,.35);transition:border-color .3s}
-.about .txt p a:hover{border-color:var(--gold)}
+/* ===== OUR TEAM ===== */
+.team{background:var(--ivory)}
+.team .section-head{margin-bottom:70px}
+.team-row{display:flex;flex-wrap:wrap;justify-content:center;gap:56px 34px}
+.team .member{width:calc((100% - 136px)/5);min-width:0;text-align:center}
+.team .portrait{width:100%;aspect-ratio:1/1;border-radius:999px;overflow:hidden;margin-bottom:24px}
+.team .portrait img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+@media(hover:hover){.team .member:hover .portrait img{transform:scale(1.045)}}
+.team .member h3{font-size:27px;color:var(--pine);margin-bottom:5px}
+.team .member .role{font-size:13px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:13px}
+.team .member p{font-size:15.5px;line-height:1.65;color:#4a5a50;text-align:left}
+@media(max-width:1020px){.team .member{width:calc((100% - 68px)/3)}}
+@media(max-width:640px){
+  .team-row{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;gap:26px;margin:0 -28px;padding:0 28px 6px;scroll-snap-type:x mandatory;scroll-padding-left:28px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .team-row::-webkit-scrollbar{display:none}
+  .team .member{flex:0 0 76%;width:auto;scroll-snap-align:start}
+}
 
 /* ===== BRAND FAMILY ===== */
 .family{background:var(--ivory);border-top:1px solid var(--mist);padding:72px 0}
@@ -473,7 +490,8 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   .section-head{margin-bottom:36px}
   .hero .actions{flex-direction:column}
   .hero .actions .btn{text-align:center}
-  .ex-track,.hotel-row,.course-grid,.how-row{margin:0 -20px;padding-left:20px;padding-right:20px}
+  .ex-track,.hotel-row,.course-grid,.how-row{margin:0 -20px;padding-left:20px;padding-right:70px}
+  .ex-track,.hotel-row,.course-grid{scroll-padding-left:20px}
 }
 
 /* Floating expert CTA */
@@ -885,6 +903,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
+    <div class="swipe-ind" data-swipe=".course-grid" aria-hidden="true"><span class="si-count">1 / 10</span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <p class="note fade" style="margin-top:34px"><a class="btn-line" href="featured-courses.html">View All Featured Courses &rarr;</a></p>
   </div>
 </section>
@@ -1059,6 +1078,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
+    <div class="swipe-ind" data-swipe=".ex-track" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <p class="note fade">Traveling with non-golfers? Everyone travels together without having to do everything together.</p>
   </div>
 </section>
@@ -1116,6 +1136,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       </div>
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
+    <div class="swipe-ind" data-swipe=".hotel-row" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <p class="note fade">Options are curated to your route, the season and how you prefer to travel.</p>
   </div>
 </section>
@@ -1187,16 +1208,47 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   </div>
 </section>
 
-<!-- ABOUT / WHO WE ARE — placeholder copy, replace with real founder story & photo -->
-<section class="about" id="about">
-  <div class="container about-wrap">
-    <img class="photo fade" src="assets/img/about-team.jpg" alt="The Golf China team standing together on a golf course fairway">
-    <div class="txt fade">
-      <span class="eyebrow">Golf China</span>
-      <h2>We built the company China golf was missing.</h2>
-      <p>The best courses are hard to identify, private-club access is rarely public, and the distances demand local knowledge. Golf China was created to solve that — China's first travel company dedicated entirely to golf, managing every journey from arrival to departure.</p>
-      <p>We are the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">Surf China</a>. Every enquiry is answered personally by someone who knows the courses first-hand.</p>
-      <p class="sig">— The Golf China Team</p>
+<!-- OUR TEAM -->
+<section class="team" id="about">
+  <div class="container">
+    <div class="section-head center fade">
+      <span class="eyebrow">Our Team</span>
+      <h2>The people behind your journey.</h2>
+      <p>Golf knowledge, local access and thoughtful planning — brought together by people who know China personally.</p>
+    </div>
+    <div class="team-row fade">
+      <div class="member">
+        <div class="portrait"><img src="assets/img/team-ethan.jpg" alt="Ethan, China Golf Specialist" loading="lazy"></div>
+        <h3>Ethan</h3>
+        <div class="role">China Golf Specialist</div>
+        <p>Having played more than 150 golf courses across over 20 countries, Ethan brings an international golfer's perspective to every journey. He lived in the United States for eight years and has spent more than five years in the golf and travel industries, with an insider's knowledge of China and its finest courses.</p>
+      </div>
+      <div class="member">
+        <!-- TODO: replace team-aaron.jpg placeholder with Aaron's real portrait -->
+        <div class="portrait"><img src="assets/img/team-aaron.jpg" alt="Aaron, China Journey Designer" loading="lazy"></div>
+        <h3>Aaron</h3>
+        <div class="role">China Journey Designer</div>
+        <!-- TODO: replace the placeholder line below with Aaron's biography -->
+        <p>[Biography to be added.]</p>
+      </div>
+      <div class="member">
+        <div class="portrait"><img src="assets/img/team-jenny.jpg" alt="Jenny, Golf Access &amp; Course Specialist" loading="lazy"></div>
+        <h3>Jenny</h3>
+        <div class="role">Golf Access &amp; Course Specialist</div>
+        <p>Jenny works closely with golf clubs across China, coordinating course selection, tee times and the details behind each round. Her local knowledge helps make access to China's leading courses feel smooth and effortless.</p>
+      </div>
+      <div class="member">
+        <div class="portrait"><img src="assets/img/team-lin.jpg" alt="Lin, Guest Experience Manager" loading="lazy"></div>
+        <h3>Lin</h3>
+        <div class="role">Guest Experience Manager</div>
+        <p>Lin looks after each journey on the ground, from arrivals and transfers to tee times and special requests. She makes sure every stage feels personal, seamless and carefully looked after.</p>
+      </div>
+      <div class="member">
+        <div class="portrait"><img src="assets/img/team-tracy.jpg" alt="Tracy, China Culture &amp; Destination Specialist" loading="lazy"></div>
+        <h3>Tracy</h3>
+        <div class="role">China Culture &amp; Destination Specialist</div>
+        <p>Tracy brings China's history, culture and regional character into each journey. She helps select the places and experiences that reveal a more personal side of the country, beyond the familiar tourist route.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1326,6 +1378,25 @@ document.querySelectorAll('.chinamap .pin').forEach(p=>{
     t.classList.add('flash');setTimeout(()=>t.classList.remove('flash'),2200);};
   p.addEventListener('click',go);
   p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+});
+// Mobile swipe progress indicators
+document.querySelectorAll('.swipe-ind').forEach(ind=>{
+  const sc=document.querySelector(ind.dataset.swipe);if(!sc)return;
+  const thumb=ind.querySelector('.si-track i'),count=ind.querySelector('.si-count'),n=sc.children.length;
+  const upd=()=>{
+    const max=sc.scrollWidth-sc.clientWidth;
+    if(max<=1){ind.style.display='none';return;}
+    const frac=Math.max(sc.clientWidth/sc.scrollWidth,.12);
+    const p=Math.min(Math.max(sc.scrollLeft/max,0),1);
+    thumb.style.width=(frac*100)+'%';
+    thumb.style.left=(p*(100-frac*100))+'%';
+    if(count){
+      const step=sc.firstElementChild.getBoundingClientRect().width+(parseFloat(getComputedStyle(sc).gap)||20);
+      count.textContent=Math.min(n,Math.round(sc.scrollLeft/step)+1)+' / '+n;
+    }
+  };
+  sc.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
+  addEventListener('resize',upd);upd();
 });
 document.querySelectorAll('.ex-nav').forEach(btn=>btn.addEventListener('click',()=>{
   const wrap=btn.closest('.ex-carousel, .hotel-carousel, .course-carousel');if(!wrap)return;
