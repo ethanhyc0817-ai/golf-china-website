@@ -481,6 +481,12 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   .hero .actions .btn{text-align:center}
   .ex-track,.hotel-row,.how-row{margin:0 -20px;padding-left:20px;padding-right:20px}
 }
+
+/* Floating expert CTA */
+.expert-fab{position:fixed;right:24px;bottom:24px;z-index:90;display:inline-block;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:var(--cinnabar);color:#fff;padding:15px 24px;border-radius:2px;box-shadow:0 14px 36px -14px rgba(20,36,28,.5);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,visibility .3s,background .25s}
+.expert-fab.show{opacity:1;visibility:visible;transform:translateY(0)}
+.expert-fab:hover{background:#9a3a27;color:#fff}
+@media(max-width:640px){.expert-fab{right:14px;bottom:14px;padding:13px 18px;font-size:12.5px}}
 </style>
 </head>
 <body>
@@ -1428,6 +1434,10 @@ document.querySelectorAll('.bigcard').forEach(card=>{
   const link=card.querySelector('.foot a');if(!link)return;
   card.addEventListener('click',e=>{if(e.target.closest('a'))return;window.location.href=link.href;});
 });
+</script>
+<a href="#start" class="expert-fab" id="expertFab">Speak to an Expert</a>
+<script>
+(function(){var f=document.getElementById('expertFab');if(!f)return;var t=function(){var y=window.scrollY||document.documentElement.scrollTop;f.classList.toggle('show',y>window.innerHeight*0.6);};window.addEventListener('scroll',t,{passive:true});t();})();
 </script>
 </body>
 </html>
