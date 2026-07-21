@@ -96,21 +96,7 @@ section{padding:100px 0}
 
 /* ===== OVERVIEW ===== */
 .overview{background:var(--ivory)}
-.ov-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:stretch}
-@media(max-width:860px){.ov-grid{grid-template-columns:1fr}}
-.ov-dests{display:grid;grid-template-rows:1fr 1fr;gap:24px}
-@media(max-width:860px){.ov-dests{grid-template-rows:none;grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.ov-dests{grid-template-columns:1fr}}
-.ovd{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;min-height:210px;box-shadow:var(--lift)}
-.ovd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
-.ovd:hover img{transform:scale(1.05)}
-.ovd .db{position:relative;z-index:2;padding:20px 24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92))}
-.ovd .loc{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
-.ovd h3{color:#fff;font-size:25px;margin:5px 0 3px}
-.ovd p{font-size:14px;color:rgba(255,255,255,.88);margin:0;max-width:40ch}
-.ovd .go{margin-top:11px;display:inline-block;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
-.ovd:hover .go{color:var(--gold)}
-.glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px}
+.glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px;max-width:760px}
 .glance h3{font-size:15px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
 .glance h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:12px}
 .glance ul{list-style:none;margin-top:20px}
@@ -393,7 +379,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <span class="eyebrow">The Journey</span>
       <h2>Three cities. Four rounds. One unforgettable introduction.</h2>
     </div>
-    <div class="ov-grid">
       <aside class="glance fade">
         <h3>At a Glance</h3>
         <ul>
@@ -406,27 +391,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         </ul>
         <p class="gnote">Every element is a starting point — shaped to your dates, your party and your pace.</p>
       </aside>
-      <div class="ov-dests">
-        <a class="ovd fade" href="imperial-china.html">
-          <img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing">
-          <div class="db">
-            <div class="loc">The Destination · Nights 1–4</div>
-            <h3>Beijing</h3>
-            <p>Imperial China in depth — the Wall, the golf, the hutongs.</p>
-            <span class="go">Discover Beijing →</span>
-          </div>
-        </a>
-        <a class="ovd fade" href="jiangnan-modern-china.html">
-          <img src="assets/img/hero-shanghai-dusk.jpg" alt="The Shanghai skyline glowing gold at dusk across the Huangpu River">
-          <div class="db">
-            <div class="loc">The Destination · Nights 5–9</div>
-            <h3>Shanghai &amp; Hangzhou</h3>
-            <p>Jiangnan &amp; Modern China — the Bund, the links, West Lake.</p>
-            <span class="go">Discover Jiangnan →</span>
-          </div>
-        </a>
-      </div>
-    </div>
   </div>
 </section>
 
