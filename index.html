@@ -200,15 +200,16 @@ section{padding:76px 0}
 .bigcard .c .foot a{font-size:15.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .bigcard .c .foot a:hover{color:var(--gold)}
 @media(max-width:860px){
-  /* compact list cards on mobile: image left, text right, all four visible without swiping */
-  .bigcard{flex-direction:row}
-  .bigcard .img{width:41%;flex-shrink:0;height:auto;min-height:160px}
-  .bigcard .c{padding:16px 16px 14px}
-  .bigcard .c .region{font-size:12.5px;letter-spacing:.06em}
+  /* mobile: full-width image banner with text overlaid on a gradient scrim */
+  .bigcard{display:block;position:relative}
+  .bigcard .img{width:100%;height:262px;min-height:0}
+  .bigcard .c{position:absolute;left:0;right:0;bottom:0;padding:84px 18px 15px;background:linear-gradient(180deg,rgba(20,36,28,0) 0%,rgba(20,36,28,.42) 26%,rgba(20,36,28,.82) 58%,rgba(20,36,28,.97) 100%)}
+  .bigcard .c .region,.bigcard .c .tagline{text-shadow:0 1px 10px rgba(10,20,15,.55)}
+  .bigcard .c .region{font-size:12.5px;letter-spacing:.08em}
   .bigcard .c .foot .lnx{display:none}
-  .bigcard .c h3{font-size:21px}
-  .bigcard .c .tagline{font-size:14px;margin:5px 0 12px}
-  .bigcard .c .foot{padding-top:10px}
+  .bigcard .c h3{font-size:22px;text-shadow:0 1px 14px rgba(10,20,15,.5)}
+  .bigcard .c .tagline{font-size:14px;margin:5px 0 10px;color:rgba(255,255,255,.85)}
+  .bigcard .c .foot{padding-top:2px}
   .bigcard .c .foot a{font-size:13px;letter-spacing:.1em}
 }
 
