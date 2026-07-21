@@ -96,12 +96,7 @@ section{padding:100px 0}
 
 /* ===== OVERVIEW ===== */
 .overview{background:var(--ivory)}
-.ov-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
-@media(max-width:860px){.ov-wrap{grid-template-columns:1fr;gap:40px}}
-.ov-txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
-.ov-txt p{font-size:17.5px;color:#3f4f45;margin-bottom:18px;max-width:62ch}
-.ov-txt .lede::first-letter{font-family:var(--serif);font-size:54px;line-height:.9;float:left;padding:6px 10px 0 0;color:var(--cinnabar)}
-.glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px;position:sticky;top:96px}
+.glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px;max-width:760px}
 .glance h3{font-size:15px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
 .glance h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:12px}
 .glance ul{list-style:none;margin-top:20px}
@@ -201,6 +196,31 @@ section{padding:100px 0}
 .lvl .lk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
 .lvl h3{font-size:24px;margin:8px 0 10px}
 .lvl p{font-size:15px;color:rgba(255,255,255,.82);font-weight:300}
+
+/* ===== EXPERIENCES ===== */
+.exclusives{background:var(--ivory)}
+.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:295px;gap:20px}
+.excard{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift);cursor:pointer}
+.excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.excard:hover img{transform:scale(1.05)}
+.excard .b{position:relative;z-index:2;padding:22px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
+.excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.excard h3{font-size:22px;margin:6px 0 0}
+.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
+.excard:hover .ex-see{color:#fff;border-color:#fff}
+.exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
+@media(max-width:900px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}}
+@media(max-width:620px){
+  .ex-grid{display:flex;flex-direction:column;gap:16px}
+  .excard{display:flex;flex-direction:row;align-items:stretch;min-height:170px;background:#fff;border:1px solid var(--mist);color:var(--ink)}
+  .excard img{position:static;width:44%;height:auto;object-fit:cover;flex:none}
+  .excard:hover img{transform:none}
+  .excard .b{background:none;text-shadow:none;padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;min-width:0}
+  .excard .loc{color:var(--gold);font-size:12px}
+  .excard h3{color:var(--pine);font-size:19px;margin:7px 0 0}
+  .ex-see{display:block;text-align:center;margin-top:auto;padding:12px 6px 11px;color:var(--pine);border:1px solid var(--gold);border-radius:2px}
+  .excard:hover .ex-see{color:var(--pine);border-color:var(--gold)}
+}
 
 /* ===== STAY (hotel cards + details modal) ===== */
 .stay{background:var(--ivory)}
@@ -329,6 +349,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <a href="#itinerary">Itinerary</a>
       <a href="#surf">The Surf</a>
       <a href="#golf">The Golf</a>
+      <a href="#experiences">Experiences</a>
       <a href="#stay">Where You Stay</a>
       <a href="#extend">Go Further</a>
       <a href="index.html#start" class="nav-cta">Plan Your Journey</a>
@@ -367,27 +388,23 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
 <!-- OVERVIEW -->
 <section class="overview" id="overview">
-  <div class="container ov-wrap">
-    <div class="ov-txt fade">
+  <div class="container">
+    <div class="section-head fade">
       <span class="eyebrow">The Journey</span>
       <h2>One island. Two sports. Eight perfect nights.</h2>
-      <p class="lede">There is exactly one place on earth where you can ride a machine-perfect wave in the morning and play a World Top 100 course in the afternoon — a tropical island in the South China Sea, holding the world's only tropical-island surf pool and China's two top-ranked courses.</p>
-      <p>The journey opens on the wave at Wanning, where the PerfectSwell&reg; pool — run with our sister brand, Surf China Co. — generates the swell to order, first-timer to advanced, with a coach in the water and every ride on video. Twenty minutes away waits the round of the trip: The Dunes at Shenzhou Peninsula, a true coastal links ranked China's #2.</p>
-      <p>Then south to Sanya — a headland round at Lu Hui Tou, an afternoon under sail on a private yacht, evenings on Haitang Bay — before the island's crescendo in the north: Mission Hills Blackstone, China's #1, carved through black volcanic lava, where Tiger Woods and Rory McIlroy went head-to-head.</p>
     </div>
-    <aside class="glance fade">
-      <h3>At a Glance</h3>
-      <ul>
-        <li>Waves generated to order at the world's only tropical-island surf pool — every session dialled to your level, coach in the water, video on every ride</li>
-        <li>A true coastal links at The Dunes, Shenzhou Peninsula — ranked China's #2</li>
-        <li>A headland round at Lu Hui Tou — the sea on one side of the fairway, the mountain on the other</li>
-        <li>Lava-rock golf at Mission Hills Blackstone — China's #1, World Top 100, the Tiger v Rory venue</li>
-        <li>A private yacht afternoon out of Sanya and evenings at the night market</li>
-        <li>Hotels the likes of Rosewood on Haitang Bay, with the volcanic springs of Mission Hills to finish</li>
-        <li>Private driver, English-speaking guide — every session and tee time handled</li>
-      </ul>
-      <p class="gnote">Every element below is a starting point — shaped to your dates, your party and your pace.</p>
-    </aside>
+      <aside class="glance fade">
+        <h3>At a Glance</h3>
+        <ul>
+          <li>Waves generated to order at the world's only tropical-island surf pool — coach in the water, video on every ride</li>
+          <li>A true coastal links at The Dunes, Shenzhou Peninsula — China's #2</li>
+          <li>A headland round at Lu Hui Tou, the sea beside the fairway</li>
+          <li>Lava-rock golf at Mission Hills Blackstone — China's #1, the Tiger v Rory venue</li>
+          <li>A private yacht afternoon out of Sanya, evenings at the night market</li>
+          <li>Private driver, guide and every session and tee time handled</li>
+        </ul>
+        <p class="gnote">Every element is a starting point — shaped to your dates, your party and your pace.</p>
+      </aside>
   </div>
 </section>
 
@@ -397,6 +414,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <button class="tab on" data-tab="itinerary">Itinerary</button>
     <button class="tab" data-tab="surf">Surf</button>
     <button class="tab" data-tab="golf">Golf</button>
+    <button class="tab" data-tab="experiences">Experiences</button>
     <button class="tab" data-tab="stay">Stays</button>
     <button class="tab" data-tab="extend">Go Further</button>
   </div>
@@ -667,6 +685,48 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </article>
 
     <p class="golf-note fade"><b>All three rounds are confirmed before you fly</b> — tee times and caddies handled entirely on your behalf, with clubs and shoes hired to spec if you'd rather travel light with the boards.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="exclusives panel" id="experiences">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Signature Experiences</span>
+      <h2>Beyond the fairways.</h2>
+      <p>A few of the private moments woven between the rounds — each arranged for your party alone.</p>
+    </div>
+    <div class="ex-grid">
+
+      <a class="excard fade" href="sun-sand-and-lava.html#experiences">
+        <img src="assets/img/exp-hainan-li-culture.jpg" alt="A Li woman in traditional dress weaving brocade on a back-strap loom, central Hainan" loading="lazy">
+        <div class="b">
+          <div class="loc">Wuzhishan · Hainan</div>
+          <h3>An afternoon with the Li</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="sun-sand-and-lava.html#experiences">
+        <img src="assets/img/exp-sanya-yacht.jpg" alt="A private yacht anchored in a turquoise bay off the Sanya coast, Hainan" loading="lazy">
+        <div class="b">
+          <div class="loc">Sanya · Hainan</div>
+          <h3>A day on the water</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="sun-sand-and-lava.html#experiences">
+        <img src="assets/img/exp-hainan-coffee.jpg" alt="A cup of black Hainan coffee and a basket of red coffee cherries above the jungle" loading="lazy">
+        <div class="b">
+          <div class="loc">Xinglong · Wanning</div>
+          <h3>Coffee in the hills</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+    </div>
+    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we’ll find its equivalent.</p>
   </div>
 </section>
 
