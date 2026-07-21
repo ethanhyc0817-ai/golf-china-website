@@ -159,7 +159,7 @@ section{padding:100px 0}
 .itin-note{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .itin-note .t h3{font-size:23px;color:var(--pine);margin-bottom:5px}
 .itin-note .t p{font-size:15px;color:#54635a;max-width:56ch}
-@media(max-width:600px){.phase .ph-city{font-size:25px}.days{grid-auto-columns:82vw}}
+@media(max-width:600px){.phase{flex-wrap:wrap;gap:10px 14px}.phase .ph-city{flex:0 0 100%;font-size:clamp(20px,6.4vw,25px);white-space:nowrap}.days{grid-auto-columns:82vw}}
 
 /* ===== THE SURF + THE GOLF (shared feature styling) ===== */
 .golf{background:var(--pine);color:#fff}
@@ -201,6 +201,17 @@ section{padding:100px 0}
 .exclusives{background:var(--ivory)}
 .ex-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:295px;gap:20px}
 .excard{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift);cursor:pointer}
+.excard.feature{grid-row:span 2}
+.excard.feature h3{font-size:28px}
+/* surf feature: image on top, copy + CTA in a panel below */
+.excard.surf{display:flex;flex-direction:column;align-items:stretch;background:var(--pine);cursor:default}
+.excard.surf .surf-img{position:relative;flex:1 1 0;min-height:200px;overflow:hidden}
+.excard.surf .surf-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.excard.surf .surf-body{flex:0 0 auto;padding:24px 26px 26px;display:flex;flex-direction:column}
+.excard.surf .surf-body h3{font-size:26px;margin:6px 0 10px}
+.excard.surf .surf-body p{font-size:15px;color:rgba(255,255,255,.86);font-weight:300;max-width:50ch;margin-bottom:18px}
+.excard.surf .surf-cta{align-self:flex-start;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:var(--cinnabar);color:#fff;padding:13px 24px;border-radius:2px;transition:.25s}
+.excard.surf .surf-cta:hover{background:#9c3927}
 .excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .excard:hover img{transform:scale(1.05)}
 .excard .b{position:relative;z-index:2;padding:22px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
@@ -209,15 +220,17 @@ section{padding:100px 0}
 .ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
 .excard:hover .ex-see{color:#fff;border-color:#fff}
 .exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
-@media(max-width:900px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}}
+@media(max-width:900px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}.excard.surf{grid-row:span 2}}
 @media(max-width:620px){
+  /* A&K-style mobile: image left, white panel right, button at the bottom (surf feature keeps its stacked layout) */
   .ex-grid{display:flex;flex-direction:column;gap:16px}
-  .excard{display:flex;flex-direction:row;align-items:stretch;min-height:170px;background:#fff;border:1px solid var(--mist);color:var(--ink)}
-  .excard img{position:static;width:44%;height:auto;object-fit:cover;flex:none}
-  .excard:hover img{transform:none}
-  .excard .b{background:none;text-shadow:none;padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;min-width:0}
-  .excard .loc{color:var(--gold);font-size:12px}
-  .excard h3{color:var(--pine);font-size:19px;margin:7px 0 0}
+  .excard.surf{grid-row:auto;min-height:300px}
+  .excard:not(.surf){display:flex;flex-direction:row;align-items:stretch;min-height:170px;background:#fff;border:1px solid var(--mist);color:var(--ink)}
+  .excard:not(.surf) img{position:static;width:44%;height:auto;object-fit:cover;flex:none}
+  .excard:not(.surf):hover img{transform:none}
+  .excard:not(.surf) .b{background:none;text-shadow:none;padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;min-width:0}
+  .excard:not(.surf) .loc{color:var(--gold);font-size:12px}
+  .excard:not(.surf) h3{color:var(--pine);font-size:19px;margin:7px 0 0}
   .ex-see{display:block;text-align:center;margin-top:auto;padding:12px 6px 11px;color:var(--pine);border:1px solid var(--gold);border-radius:2px}
   .excard:hover .ex-see{color:var(--pine);border-color:var(--gold)}
 }
@@ -347,7 +360,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <nav>
       <a href="#overview">Overview</a>
       <a href="#itinerary">Itinerary</a>
-      <a href="#surf">The Surf</a>
       <a href="#golf">The Golf</a>
       <a href="#experiences">Experiences</a>
       <a href="#stay">Where You Stay</a>
@@ -412,7 +424,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <div class="tabbar" id="tabbar">
   <div class="container tabs">
     <button class="tab on" data-tab="itinerary">Itinerary</button>
-    <button class="tab" data-tab="surf">Surf</button>
     <button class="tab" data-tab="golf">Golf</button>
     <button class="tab" data-tab="experiences">Experiences</button>
     <button class="tab" data-tab="stay">Stays</button>
@@ -446,7 +457,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
           <h3>Two sessions on a wave built for you.</h3>
           <p>Two sessions on a wave generated to order. The first runs soft and forgiving — first-timers are standing within the hour, with a coach at their shoulder; the second steps up exactly as far as you want it to, from clean open faces to fast, steep walls. Every ride on video, reviewed over dinner.</p>
           <div class="dtags"><span class="dtag surf">Surf · 2 sessions</span><span class="dtag">Every level welcome</span><span class="dtag">Session video</span></div>
-          <button class="daylink" data-goto="surf">Explore the wave →</button>
+          <button class="daylink" data-goto="experiences">Explore the wave →</button>
           <img class="dimg" src="assets/img/wavepool-surf-lesson.jpg" alt="A surf coach guiding a beginner in the shallows of the wave pool" loading="lazy">
         </article>
 
@@ -538,59 +549,6 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </div>
 
     </div>
-  </div>
-</section>
-
-<!-- THE SURF -->
-<section class="golf panel" id="surf">
-  <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow" style="color:var(--gold)">The Surf</span>
-      <h2>A wave for every level. Literally.</h2>
-      <p>The world's only surf pool on a tropical island — where the swell is generated to order, session by session, so the wave meets you exactly where you are.</p>
-    </div>
-
-    <article class="golf-feature fade">
-      <div class="img gal">
-        <img class="active" src="assets/img/wavepool-aerial-golden-hour.jpg" alt="An aerial view of the PerfectSwell surf pool at golden hour on Hainan's surf coast">
-        <img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at the PerfectSwell pool, mountains behind" loading="lazy">
-        <img src="assets/img/wavepool-surf-lesson.jpg" alt="A surf coach guiding a beginner in the shallows of the wave pool" loading="lazy">
-        <button class="gal-btn prev" aria-label="Previous image">‹</button>
-        <button class="gal-btn next" aria-label="Next image">›</button>
-        <div class="gal-dots"></div>
-        <span class="tag">World's only tropical-island surf pool</span>
-      </div>
-      <div class="c">
-        <div class="region">Wanning · Hainan's Surf Coast</div>
-        <h3>The PerfectSwell&reg; Pool</h3>
-        <p>Powered by PerfectSwell&reg;, one of the most advanced surf systems in the world, the pool's real magic is control over the wave itself. Throughout the day it runs different wave types for different riders — so a couple where one has surfed Indo and the other has never touched a board share the same session, each on a wave built for them. Boards matched to your level, a coach in the water, and professional video on every ride. Run with our sister brand, Surf China Co.</p>
-        <dl>
-          <dt>The wave</dt><dd>Generated to order — shape, speed and size dialled per session</dd>
-          <dt>Levels</dt><dd>First-timer to advanced, in the same pool</dd>
-          <dt>Included</dt><dd>Coaching, boards and session video, every session</dd>
-        </dl>
-      </div>
-    </article>
-
-    <div class="level-grid fade">
-      <div class="lvl">
-        <span class="lk">Never Surfed</span>
-        <h3>Standing in session one.</h3>
-        <p>Soft, slow, forgiving peels — the same gentle shape every single time, no paddling out, no waiting, a coach at your shoulder. Most first-timers are on their feet within the hour, on video to prove it.</p>
-      </div>
-      <div class="lvl">
-        <span class="lk">Progressing</span>
-        <h3>The fastest learning curve in surfing.</h3>
-        <p>Clean, open-face waves on repeat — the identical section, ride after ride, until the bottom turn or the cutback finally clicks. What takes seasons in the ocean takes sessions in the pool.</p>
-      </div>
-      <div class="lvl">
-        <span class="lk">Advanced</span>
-        <h3>Steeper, faster, on demand.</h3>
-        <p>Quick, punchy walls and steep sections built for turns and airs — dialled up as far as you like, with drone and water angles captured for the reel on request.</p>
-      </div>
-    </div>
-
-    <p class="golf-note fade"><b>Four coached sessions are woven through the itinerary</b> — extra sessions, ocean surf trips on the open coast in season, and surf-only companions are all easily arranged.</p>
   </div>
 </section>
 
@@ -687,6 +645,25 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <p>A few of the private moments woven between the rounds — each arranged for your party alone.</p>
     </div>
     <div class="ex-grid">
+
+      <article class="excard feature surf fade">
+        <div class="surf-img"><img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan's surf coast" loading="lazy"></div>
+        <div class="surf-body">
+          <div class="loc">Wanning · Hainan</div>
+          <h3>Stand up on your first wave</h3>
+          <p>On Hainan's surf coast, with our partner SurfChinaCo, we put complete beginners onto a real wave from the very first session. At a PerfectSwell wave pool the swell is generated to order — the same shape, the same gentle peel, every time — so there's no paddling out and no waiting: just a coach at your shoulder and a wave built for your level. First-timers especially welcome.</p>
+          <a class="surf-cta" href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer">View more about Surf China Co.</a>
+        </div>
+      </article>
+
+      <a class="excard fade" href="sun-sand-and-lava.html#experiences">
+        <img src="assets/img/wavepool-surf-lesson.jpg" alt="A surf coach guiding a beginner in the shallows at a wave pool on Hainan" loading="lazy">
+        <div class="b">
+          <div class="loc">Wanning · For Beginners</div>
+          <h3>The private surf lesson</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
 
       <a class="excard fade" href="sun-sand-and-lava.html#experiences">
         <img src="assets/img/exp-hainan-li-culture.jpg" alt="A Li woman in traditional dress weaving brocade on a back-strap loom, central Hainan" loading="lazy">

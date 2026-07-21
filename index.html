@@ -290,6 +290,19 @@ section{padding:100px 0}
 .sjcard .foot a{background:var(--ink);color:#fff;font-size:16px;font-weight:500;padding:13px 24px;border-radius:12px;white-space:nowrap;transition:.25s}
 .sjcard .foot a:hover{background:var(--pine)}
 .journeys .note{text-align:center;margin-top:40px;font-size:16px;color:#54635a}
+/* Design-your-own card */
+.sjcard.sj-custom{background:var(--pine);color:#fff;justify-content:flex-start}
+.sjcard.sj-custom .b{display:flex;flex-direction:column;padding-top:34px}
+.sjcard.sj-custom .eyebrow{color:var(--gold)}
+.sjcard.sj-custom h3{color:#fff;margin-top:12px}
+.sjcard.sj-custom .hi{color:rgba(255,255,255,.85)}
+.sjcard.sj-custom .hi p+p{margin-top:10px}
+.sjcard.sj-custom .tl{color:var(--gold)}
+.sjcard.sj-custom .route{color:rgba(255,255,255,.8)}
+.sjcard.sj-custom .foot{background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.18)}
+.sjcard.sj-custom .price{color:rgba(255,255,255,.9)}
+.sjcard.sj-custom .foot a{background:var(--gold);color:var(--ink)}
+.sjcard.sj-custom .foot a:hover{background:#cfa961}
 
 /* ===== SIGNATURE EXPERIENCES ===== */
 .exclusives{background:var(--paper);border-top:1px solid var(--mist)}
@@ -1107,6 +1120,21 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         </div>
         <!-- TODO: 确认真实起价 -->
         <div class="foot"><span class="price">From <b>$12,950</b> per golfer.</span><a href="grand-china-golf-journey.html">View Full Itinerary</a></div>
+      </article>
+
+      <article class="sjcard sj-custom fade">
+        <div class="b">
+          <span class="eyebrow">Fully Tailored</span>
+          <h3>Design Your Own Journey</h3>
+          <div class="hi">
+            <p>Combine the places you want to see with the courses you want to play — the Great Wall and a wild Yangtze links, snow peaks and a tropical coast, in any order, at any pace.</p>
+            <p>Or simply tell us what kind of China you want to see, and leave the rest to us.</p>
+          </div>
+          <div class="tl">Speak to an Expert</div>
+          <div class="route">Our team designs the full itinerary around you.</div>
+          <div class="bestfor">Every journey we build is private and one of a kind.</div>
+        </div>
+        <div class="foot"><span class="price">Built from <b>a blank page</b>.</span><a href="#start">Speak to an Expert</a></div>
       </article>
 
     </div>
