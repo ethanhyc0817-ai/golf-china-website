@@ -21,7 +21,7 @@
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',-apple-system,Segoe UI,sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 html,body{overflow-x:clip}
 body{font-family:var(--sans);font-size:19px;color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
@@ -68,7 +68,7 @@ header.nav.scrolled .bar{padding:12px 28px}
 .banner{position:relative;min-height:min(52vh,470px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .banner .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.62) 0%,rgba(20,36,28,.18) 45%,rgba(20,36,28,.72) 100%)}
-.banner .cap{position:relative;z-index:2;width:100%;padding:130px 0 54px}
+.banner .cap{position:relative;z-index:2;width:100%;padding-top:130px;padding-bottom:54px}
 .banner h1{font-size:clamp(38px,5vw,60px);text-shadow:0 2px 24px rgba(0,0,0,.4);max-width:20ch;margin-top:14px}
 .banner .sub{margin-top:14px;font-size:19px;font-weight:300;max-width:52ch;color:rgba(255,255,255,.88)}
 
@@ -146,6 +146,8 @@ input.err,select.err{border-color:var(--cinnabar)}
 .f-note{font-size:14.5px;color:#8b9389;margin-top:16px;text-align:center;font-weight:300}
 .f-note .dot{color:var(--gold)}
 @media(max-width:560px){
+  .f-steps .st{font-size:11.5px;letter-spacing:.09em}
+  .f-steps .st .sn{font-size:15px;margin-right:5px}
   .f-nav{flex-direction:column-reverse;align-items:stretch}
   .btn-next{width:100%;font-size:13.5px;padding:15px 8px;letter-spacing:.08em;white-space:nowrap}
   .btn-back{align-self:center}
@@ -179,7 +181,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
 @media(max-width:600px){
   .container{padding:0 20px}
   section.enq{padding:56px 0 70px}
-  .banner .cap{padding:110px 0 40px}
+  .banner .cap{padding-top:110px;padding-bottom:40px}
 }
 </style>
 </head>
@@ -207,7 +209,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
   <div class="container cap">
     <span class="eyebrow" style="color:#e8cf95;text-shadow:0 1px 14px rgba(0,0,0,.5)">Start Planning</span>
     <h1>Bring us the idea. We&rsquo;ll build the journey.</h1>
-    <p class="sub">Three short steps — your trip, your golf, and how to reach you. It takes about two minutes, and there&rsquo;s no obligation.</p>
+    <p class="sub">Two short steps — the trip, then the golf and you. It takes about a minute, and there&rsquo;s no obligation.</p>
   </div>
 </div>
 
@@ -255,8 +257,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
           <div class="t">Plan your journey</div>
           <div class="f-steps" aria-hidden="true">
             <div class="st on" data-st="1"><span class="sn">i.</span>The Trip</div>
-            <div class="st" data-st="2"><span class="sn">ii.</span>The Golf</div>
-            <div class="st" data-st="3"><span class="sn">iii.</span>About You</div>
+            <div class="st" data-st="2"><span class="sn">ii.</span>The Golf &amp; You</div>
           </div>
         </div>
         <div class="f-body">
@@ -312,9 +313,20 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
                   </div>
                 </div>
               </div>
+              <div class="fq">
+                <label for="jrn">Interested in one of our sample journeys? <span class="hint">optional</span></label>
+                <select id="jrn" name="Sample journey">
+                  <option>Still browsing</option>
+                  <option>First-Time Golf China</option>
+                  <option>Snow Peaks to Tropical Coast</option>
+                  <option>The Grand China Golf Journey</option>
+                  <option>Surf &amp; Golf Hainan</option>
+                  <option>Something fully tailored</option>
+                </select>
+              </div>
             </div>
 
-            <!-- STEP 2 · THE GOLF -->
+            <!-- STEP 2 · THE GOLF & YOU -->
             <div class="step-panel" data-step="2">
               <div class="fq">
                 <span class="ql">How much golf feels right?</span>
@@ -324,34 +336,6 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
                   <label class="chip"><input type="radio" name="Golf pace" value="A few standout rounds"><span>A few standout rounds</span></label>
                   <label class="chip"><input type="radio" name="Golf pace" value="Not sure yet"><span>Not sure yet</span></label>
                 </div>
-              </div>
-              <div class="fq">
-                <label for="lvl">Playing level</label>
-                <select id="lvl" name="Playing level">
-                  <option>Mixed group</option><option>New to golf</option><option>Casual golfer</option><option>Mid handicap</option><option>Single digit</option>
-                </select>
-              </div>
-              <div class="fq">
-                <span class="ql">Beyond the fairway <span class="hint">for golfers and non-golfers alike</span></span>
-                <div class="chips">
-                  <label class="chip"><input type="checkbox" name="Interests" value="Culture & heritage"><span>Culture &amp; heritage</span></label>
-                  <label class="chip"><input type="checkbox" name="Interests" value="Food & tea"><span>Food &amp; tea</span></label>
-                  <label class="chip"><input type="checkbox" name="Interests" value="Nature & scenery"><span>Nature &amp; scenery</span></label>
-                  <label class="chip"><input type="checkbox" name="Interests" value="Wellness & spa"><span>Wellness &amp; spa</span></label>
-                  <label class="chip"><input type="checkbox" name="Interests" value="Family experiences"><span>Family experiences</span></label>
-                  <label class="chip"><input type="checkbox" name="Interests" value="Surfing in Hainan"><span>Surfing in Hainan</span></label>
-                </div>
-              </div>
-              <div class="fq">
-                <label for="jrn">Has a journey caught your eye?</label>
-                <select id="jrn" name="Journey preference">
-                  <option>Nothing specific yet</option>
-                  <option>First-Time Golf China</option>
-                  <option>Snow Peaks to Tropical Coast</option>
-                  <option>The Grand China Golf Journey</option>
-                  <option>Surf &amp; Golf Hainan</option>
-                  <option>Something fully tailored</option>
-                </select>
               </div>
               <div class="fq">
                 <label for="bud">Budget per person <span class="hint">excluding international flights</span></label>
@@ -364,10 +348,6 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
                   <option>I&rsquo;d rather discuss</option>
                 </select>
               </div>
-            </div>
-
-            <!-- STEP 3 · ABOUT YOU -->
-            <div class="step-panel" data-step="3">
               <div class="fq">
                 <div class="row">
                   <div><span class="sub-l">First name</span><input type="text" name="First name" autocomplete="given-name" required></div>
@@ -375,12 +355,8 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
                 </div>
               </div>
               <div class="fq">
-                <label for="em">Email</label>
-                <input id="em" type="email" name="_replyto" placeholder="you@email.com" autocomplete="email" required>
-              </div>
-              <div class="fq">
                 <div class="row">
-                  <div><span class="sub-l">Country of residence</span><input type="text" name="Country of residence" autocomplete="country-name" placeholder="e.g. Australia"></div>
+                  <div><span class="sub-l">Email</span><input id="em" type="email" name="_replyto" placeholder="you@email.com" autocomplete="email" required></div>
                   <div><span class="sub-l">Phone / WhatsApp <span class="hint">optional</span></span><input type="tel" name="Phone" autocomplete="tel" placeholder="+61 ..."></div>
                 </div>
               </div>
@@ -396,12 +372,6 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
               <div class="fq">
                 <label for="msg">Anything else we should know? <span class="hint">optional</span></label>
                 <textarea id="msg" name="Message" placeholder="A celebration, courses on your list, dietary needs, non-golfing companions — anything at all."></textarea>
-              </div>
-              <div class="fq">
-                <label for="hear">How did you hear about us? <span class="hint">optional</span></label>
-                <select id="hear" name="How did you hear">
-                  <option value="">Select</option><option>Google search</option><option>Instagram</option><option>Word of mouth</option><option>Press / magazine</option><option>Returning guest</option><option>Other</option>
-                </select>
               </div>
             </div>
 
@@ -465,7 +435,7 @@ const btnNext=document.getElementById('btnNext');
 const btnBack=document.getElementById('btnBack');
 const fErr=document.getElementById('fErr');
 let step=1;
-const LAST=3;
+const LAST=2;
 
 function show(n){
   step=n;
