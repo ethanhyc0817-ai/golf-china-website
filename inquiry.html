@@ -269,6 +269,17 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
             <!-- STEP 1 · THE TRIP -->
             <div class="step-panel on" data-step="1">
               <div class="fq">
+                <label for="jrn">Interested in one of our sample journeys? <span class="hint">optional</span></label>
+                <select id="jrn" name="Sample journey">
+                  <option>Still browsing</option>
+                  <option>First-Time Golf China</option>
+                  <option>Snow Peaks to Tropical Coast</option>
+                  <option>The Grand China Golf Journey</option>
+                  <option>Surf &amp; Golf Hainan</option>
+                  <option>Something fully tailored</option>
+                </select>
+              </div>
+              <div class="fq">
                 <span class="ql">Where would you like to go? <span class="hint">choose any</span></span>
                 <div class="chips">
                   <label class="chip"><input type="checkbox" name="Destinations" value="Beijing"><span>Beijing</span></label>
@@ -312,17 +323,6 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
                     <select name="Children"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
                   </div>
                 </div>
-              </div>
-              <div class="fq">
-                <label for="jrn">Interested in one of our sample journeys? <span class="hint">optional</span></label>
-                <select id="jrn" name="Sample journey">
-                  <option>Still browsing</option>
-                  <option>First-Time Golf China</option>
-                  <option>Snow Peaks to Tropical Coast</option>
-                  <option>The Grand China Golf Journey</option>
-                  <option>Surf &amp; Golf Hainan</option>
-                  <option>Something fully tailored</option>
-                </select>
               </div>
             </div>
 
@@ -465,6 +465,18 @@ btnNext.addEventListener('click',()=>{
   if(step<LAST){show(step+1);return;}
   submit();
 });
+/* journey -> destination auto-select */
+const JMAP={
+  'First-Time Golf China':['Beijing','Shanghai & Jiangnan'],
+  'Snow Peaks to Tropical Coast':['Yunnan','Hainan'],
+  'The Grand China Golf Journey':['Beijing','Shanghai & Jiangnan','Yunnan','Hainan'],
+  'Surf & Golf Hainan':['Hainan']
+};
+document.getElementById('jrn').addEventListener('change',e=>{
+  const picks=JMAP[e.target.value]||[];
+  document.querySelectorAll('input[name="Destinations"]').forEach(cb=>{cb.checked=picks.includes(cb.value);});
+});
+
 form.addEventListener('input',e=>{if(e.target.classList)e.target.classList.remove('err');});
 form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'){e.preventDefault();btnNext.click();}});
 
