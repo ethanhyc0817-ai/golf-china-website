@@ -331,13 +331,14 @@ section{padding:100px 0}
 .rcard .rphoto img{width:min(62%,196px);aspect-ratio:1/1;margin:0 auto;display:block;border-radius:999px;object-fit:cover;box-shadow:0 14px 32px -20px rgba(20,36,28,.5)}
 .rcard .b{text-align:center;padding:16px 22px 20px}
 .rcard h3{font-size:24px;margin:8px 0 0}
+.rcard .loc{margin-top:5px}
 .rcard .rq{font-family:var(--serif);font-style:italic;font-size:19.5px;line-height:1.55;color:#4a5a50;font-weight:500;margin:12px 0 20px}
 /* guest review modal */
 .rmodal .panel{width:min(640px,94vw)}
 .rm-body{padding:34px 38px 40px;text-align:center}
 .rm-body .rm-photo{width:150px;height:150px;border-radius:999px;object-fit:cover;margin:0 auto 12px;display:block}
 .rm-body .rm-caption{font-size:13.5px;font-style:italic;color:#8a948c;letter-spacing:.04em;margin-bottom:18px}
-.rm-body h3{font-family:var(--serif);font-size:clamp(27px,3vw,32px);font-weight:500;color:var(--ink);margin:0 0 8px}
+.rm-body h3{font-family:var(--serif);font-size:clamp(27px,3vw,32px);font-weight:500;color:var(--ink);margin:0 0 18px}
 .rm-body .loc{font-size:14.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
 .rm-text{text-align:left;font-size:18px;line-height:1.75;color:#4a5a50;font-weight:300}
 .rm-text p+p{margin-top:14px}
@@ -655,6 +656,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <div class="rphoto"><img src="assets/img/review-ben-matilda.webp" alt="Ben and Matilda at Jade Dragon Snow Mountain Golf Club, Lijiang" loading="lazy"></div>
         <div class="b">
           <h3>Ben &amp; Matilda</h3>
+          <div class="loc">Australia</div>
           <p class="rq">&ldquo;I&rsquo;m 55 and have played plenty of great golf around the world &mdash; but China was something else.&rdquo;</p>
           <button class="btn-view" type="button" data-review="ben-matilda">Read More</button>
         </div>
@@ -664,6 +666,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <div class="rphoto"><img src="assets/img/review-josh-friends.webp" alt="Josh and friends at The Dunes at Shenzhou Peninsula, Hainan" loading="lazy"></div>
         <div class="b">
           <h3>Josh &amp; Friends</h3>
+          <div class="loc">Australia &amp; Singapore</div>
           <p class="rq">&ldquo;Probably the best bucks golf trip we&rsquo;ve ever done.&rdquo;</p>
           <button class="btn-view" type="button" data-review="josh-friends">Read More</button>
         </div>
@@ -682,6 +685,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <div class="rphoto"><img src="assets/img/review-joe-margaret.webp" alt="Joe and Margaret at Yanqi Lake, Beijing" loading="lazy"></div>
         <div class="b">
           <h3>Joe &amp; Margaret</h3>
+          <div class="loc">United States</div>
           <p class="rq">&ldquo;Much more interesting than just doing the usual sightseeing.&rdquo;</p>
           <button class="btn-view" type="button" data-review="joe-margaret">Read More</button>
         </div>
@@ -714,7 +718,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <img class="rm-photo" id="rm-img" src="" alt="">
       <div class="rm-caption" id="rm-caption"></div>
       <h3 id="rm-name"></h3>
-      <div class="loc" id="rm-loc"></div>
       <div class="rm-text" id="rm-text"></div>
       <div class="rm-cta"><a class="btn btn-primary" href="#start" data-close>Plan Your Journey</a></div>
     </div>
@@ -1588,26 +1591,26 @@ if(hmodal){
 /* ===== Guest review modal ===== */
 const REVIEWS={
  'ben-matilda':{
-  name:'Ben & Matilda',loc:'Australia · 10 Days · Beijing & Yunnan',photo:'Photo taken at Jade Dragon Snow Mountain Golf Club, Lijiang',img:'assets/img/review-ben-matilda.webp',
+  name:'Ben & Matilda',photo:'Photo taken at Jade Dragon Snow Mountain Golf Club, Lijiang',img:'assets/img/review-ben-matilda.webp',
   text:['My wife and I originally booked their surf and golf trip on Hainan Island. I’m a pretty good surfer and golf mad, and towards the end of the trip we really wanted to see more of China. So I asked Ethan if he could put together a proper mainland golf trip for us.',
   'He organized 10 days through Beijing and Yunnan, and honestly, some of the most fascinating courses I’ve ever played. I’m 55 and have played plenty of great golf around the world, but China was something else.',
   'Me and my wife absolutely loved it. Not just the golf, but the whole experience. We were looked after the entire way and the people were so welcoming. One of the best trips we’ve ever done, no doubt.']},
  'josh-friends':{
-  name:'Josh & Friends',loc:'Australia & Singapore · 12 Days · Hainan & Shanghai',photo:'Photo taken at The Dunes at Shenzhou Peninsula, Hainan',img:'assets/img/review-josh-friends.webp',
+  name:'Josh & Friends',photo:'Photo taken at The Dunes at Shenzhou Peninsula, Hainan',img:'assets/img/review-josh-friends.webp',
   text:['Probably the best bucks golf trip we’ve ever done. We’re all from Australia, two of us live in Singapore.',
   'We did 12 days through Hainan and Shanghai, playing some really unique golf courses and even getting a few surf sessions in. Never thought we’d end up doing a golf trip in China, but it was such a good time. Special thanks to the caddies for finding the wallet we lost.',
   'There’s so much more to see over there, so we’ll probably come back next year to play a few more courses and explore other parts of China.']},
  'austin-family':{
-  name:'Austin & Family',loc:'',photo:'Photo taken at Spring City Golf & Lake Resort, Yunnan',img:'assets/img/review-austin-family.webp',
+  name:'Austin & Family',photo:'Photo taken at Spring City Golf & Lake Resort, Yunnan',img:'assets/img/review-austin-family.webp',
   text:['Happy wives, happy life. None of our wives play golf, so we weren’t sure if bringing them was a good idea. But the team planned plenty of things for them while we were out playing, and they ended up enjoying the trip just as much as we did.',
   'The golf courses were amazing. Yunnan was also a big surprise. We’ve been to China before, but never this part. Beautiful place, really interesting culture, and everyone had a great time.']},
  'joe-margaret':{
-  name:'Joe & Margaret',loc:'United States',photo:'Photo taken at Yanqi Lake, Beijing',img:'assets/img/review-joe-margaret.webp',
+  name:'Joe & Margaret',photo:'Photo taken at Yanqi Lake, Beijing',img:'assets/img/review-joe-margaret.webp',
   text:['Our friends who have been on their trip recommended the team to us, so we decided to come back for a golf trip.',
   'We absolutely loved it. It was much more interesting than just doing the usual sightseeing. The courses were amazing, and many of them had so much history and culture around them, which my wife really loved.',
   'Great golf, amazing hotels and food, everything was organized very well.']},
  'louis-denis-antoine':{
-  name:'Louis, Denis & Antoine',loc:'10 Days Across China',photo:'Photo taken at Fuchun Golf Club, Hangzhou',img:'assets/img/review-louis-denis-antoine.webp',
+  name:'Louis, Denis & Antoine',photo:'Photo taken at Fuchun Golf Club, Hangzhou',img:'assets/img/review-louis-denis-antoine.webp',
   text:['My two friends and I had wanted to visit China for a long time. We are all avid golfers, and were very curious to discover what golf in China was like.',
   'We did a 10 days trip across several cities and everything was very well organised. The team took care of us from beginning to end, and the golf courses were probably the most unique we have ever played.',
   'A very special trip for us and will come back to play more.']}
@@ -1618,7 +1621,6 @@ if(rmodal){
     const d=REVIEWS[id];if(!d)return;
     const im=document.getElementById('rm-img');im.src=d.img;im.alt=d.name;
     document.getElementById('rm-name').textContent=d.name;
-    const rl=document.getElementById('rm-loc');rl.textContent=d.loc||'';rl.style.display=d.loc?'':'none';
     const rc=document.getElementById('rm-caption');rc.textContent=d.photo||'';rc.style.display=d.photo?'':'none';
     document.getElementById('rm-text').innerHTML=d.text.map(p=>'<p>'+p+'</p>').join('');
     rmodal.classList.add('open');document.body.classList.add('hm-lock');
