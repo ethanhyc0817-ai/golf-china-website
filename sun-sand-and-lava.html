@@ -820,13 +820,17 @@ function openTab(id,scroll){
    clamped — either way you stay wherever you'd scrolled to. */
 function snapToTabbar(){
   const root=document.documentElement, prev=root.style.scrollBehavior;
-  const y=()=>tabbar.offsetTop-(innerWidth<=1100?58:54);
+  /* tabbar is position:sticky, so its offsetTop tracks the scroll once stuck —
+     anchor on the active panel instead, whose document position is stable. */
+  const y=()=>{const p=document.querySelector('.panel.on');return Math.max(0,Math.round(p.getBoundingClientRect().top+window.scrollY-tabbar.offsetHeight-(innerWidth<=1100?58:54)));};
   root.style.scrollBehavior='auto';           // override html{scroll-behavior:smooth}
   window.scrollTo(0,y());
-  requestAnimationFrame(()=>{                  // re-assert once the swap has laid out
-    window.scrollTo(0,y());
-    root.style.scrollBehavior=prev;
-  });
+  let n=0;
+  (function reassert(){                        // re-assert for a few frames so an
+    window.scrollTo(0,y());                    // in-flight smooth scroll can't win
+    if(++n<12)requestAnimationFrame(reassert);
+    else root.style.scrollBehavior=prev;
+  })();
 }
 tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
 addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));

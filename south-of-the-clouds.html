@@ -650,12 +650,12 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     </div>
     <div class="extend-grid">
 
-      <a class="xcard fade" href="sun-sand-and-lava.html">
-        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast">
+      <a class="xcard fade" href="asias-most-exclusive-golf.html">
+        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan">
         <div class="b">
           <div class="loc">90 min by air</div>
-          <h3>Sun, Sand &amp; Lava</h3>
-          <p>From snow peaks to a tropical coast — Mission Hills, The Dunes and Sanya's headland course.</p>
+          <h3>Asia's Most Exclusive Golf</h3>
+          <p>From snow peaks to a tropical coast — Mission Hills, The Dunes and selective Shanqin Bay.</p>
           <span class="go">Explore →</span>
         </div>
       </a>
@@ -700,7 +700,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
       <article class="sjcard fade">
         <span class="sj-badge">The Complete Route</span>
-        <div class="ph"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"></div>
+        <div class="ph"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"></div>
         <div class="b">
           <h3>The Grand China Golf Journey</h3>
           <div class="specs">14–15 Days · 7–9 Rounds</div>
@@ -778,13 +778,17 @@ function openTab(id,scroll){
    clamped — either way you stay wherever you'd scrolled to. */
 function snapToTabbar(){
   const root=document.documentElement, prev=root.style.scrollBehavior;
-  const y=()=>tabbar.offsetTop-(innerWidth<=1100?58:54);
+  /* tabbar is position:sticky, so its offsetTop tracks the scroll once stuck —
+     anchor on the active panel instead, whose document position is stable. */
+  const y=()=>{const p=document.querySelector('.panel.on');return Math.max(0,Math.round(p.getBoundingClientRect().top+window.scrollY-tabbar.offsetHeight-(innerWidth<=1100?58:54)));};
   root.style.scrollBehavior='auto';           // override html{scroll-behavior:smooth}
   window.scrollTo(0,y());
-  requestAnimationFrame(()=>{                  // re-assert once the swap has laid out
-    window.scrollTo(0,y());
-    root.style.scrollBehavior=prev;
-  });
+  let n=0;
+  (function reassert(){                        // re-assert for a few frames so an
+    window.scrollTo(0,y());                    // in-flight smooth scroll can't win
+    if(++n<12)requestAnimationFrame(reassert);
+    else root.style.scrollBehavior=prev;
+  })();
 }
 tabs.forEach(t=>t.addEventListener('click',()=>{openTab(t.dataset.tab,true);history.replaceState(null,'','#'+t.dataset.tab);}));
 addEventListener('hashchange',()=>openTab(location.hash.slice(1),true));
