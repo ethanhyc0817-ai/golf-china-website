@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Your Journey — Golf China Co.</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="description" content="Tell us your dates, your group and the kind of golf trip you have in mind. A specialist replies personally within one business day — no obligation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== Golf China Co. — design tokens (see DESIGN-SYSTEM.md) ===== */
+:root{
+  --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
+  --cinnabar:#b4452f; --gold:#b89150;
+  --ivory:#f6f1e7; --paper:#fffdf8; --mist:#e7e0d2;
+  --lift:0 18px 50px -20px rgba(20,36,28,.4);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',-apple-system,Segoe UI,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{font-family:var(--sans);font-size:19px;color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--sans);font-size:15.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.container{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;font-family:var(--sans);font-size:16px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--cinnabar);color:#fff}
+.btn-primary:hover{background:#9c3927}
+.fade{opacity:0;transform:translateY(24px);transition:.7s ease}
+.fade.in{opacity:1;transform:none}
+
+/* ===== NAV ===== */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1200px;margin:0 auto}
+header.nav .logo{font-family:var(--serif);font-size:25px;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px;white-space:nowrap;flex-shrink:0}
+header.nav .logo .logo-mark{height:30px;width:auto;display:block}
+header.nav .logo .logo-text{color:#fff}
+header.nav .logo span{color:var(--gold)}
+header.nav nav{display:flex;gap:13px;align-items:center}
+header.nav nav a{font-size:15px;letter-spacing:.02em;color:#fff;opacity:.92;font-weight:400;white-space:nowrap}
+header.nav nav a:hover{color:var(--gold)}
+header.nav .nav-cta{font-size:14.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:9px 16px;border-radius:2px}
+header.nav.scrolled{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
+header.nav.scrolled .bar{padding:12px 28px}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;z-index:60}
+@media(max-width:1280px){
+  header.nav nav{gap:11px}
+  header.nav nav a{font-size:14px;letter-spacing:.02em}
+  header.nav .nav-cta{font-size:13.5px;padding:8px 12px}
+}
+@media(max-width:1160px){
+  header.nav .bar{padding:14px 20px}
+  header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--pine);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+  header.nav nav.open{max-height:640px}
+  header.nav nav a{padding:15px 22px;border-top:1px solid rgba(255,255,255,.1);font-size:17px;opacity:1}
+  header.nav nav .nav-cta{border:none;border-top:1px solid rgba(255,255,255,.1);background:var(--cinnabar);text-align:center;border-radius:0}
+  .menu-toggle{display:block}
+}
+
+/* ===== BANNER ===== */
+.banner{position:relative;min-height:min(52vh,470px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.62) 0%,rgba(20,36,28,.18) 45%,rgba(20,36,28,.72) 100%)}
+.banner .cap{position:relative;z-index:2;width:100%;padding:130px 0 54px}
+.banner h1{font-size:clamp(38px,5vw,60px);text-shadow:0 2px 24px rgba(0,0,0,.4);max-width:20ch;margin-top:14px}
+.banner .sub{margin-top:14px;font-size:19px;font-weight:300;max-width:52ch;color:rgba(255,255,255,.88)}
+
+/* ===== LAYOUT ===== */
+section.enq{padding:84px 0 100px}
+.enq-wrap{display:grid;grid-template-columns:0.9fr 1.15fr;gap:64px;align-items:start}
+@media(max-width:960px){.enq-wrap{grid-template-columns:1fr;gap:44px}.enq-wrap>.intro{order:2}.enq-wrap>.fcol{order:1}}
+
+/* left column */
+.intro h2{font-size:clamp(30px,3.4vw,42px)}
+.intro .lede{margin-top:16px;color:#54635a;max-width:44ch}
+.next{margin-top:40px}
+.next .k{font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.next .n-item{display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--mist)}
+.next .n-item:last-child{border-bottom:1px solid var(--mist)}
+.next .n-num{font-family:var(--serif);font-size:34px;line-height:1;color:var(--gold);min-width:34px}
+.next h4{font-size:21px;font-weight:500}
+.next p{font-size:16.5px;color:#54635a;margin-top:3px;line-height:1.55}
+.quote{margin-top:40px;background:var(--pine);color:#fff;padding:30px 30px 26px;border-radius:2px;position:relative}
+.quote .qmark{font-family:var(--serif);font-size:64px;line-height:0;color:var(--gold);position:absolute;top:34px;left:26px;opacity:.9}
+.quote p{font-family:var(--serif);font-size:22.5px;line-height:1.42;font-style:italic;padding-left:34px}
+.quote .who{margin-top:14px;padding-left:34px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.contact{margin-top:36px}
+.contact .k{font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.contact p{font-size:17.5px;color:#3d4c43;padding:2px 0}
+.contact a{border-bottom:1px solid var(--gold);transition:.25s}
+.contact a:hover{color:var(--moss)}
+
+/* ===== FORM CARD ===== */
+.formcard{background:var(--paper);border:1px solid var(--mist);border-radius:3px;box-shadow:var(--lift);overflow:hidden}
+.f-head{background:var(--pine);color:#fff;padding:26px 36px 22px}
+.f-head .t{font-family:var(--serif);font-size:26px}
+.f-steps{display:flex;gap:0;margin-top:18px}
+.f-steps .st{flex:1;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);padding-bottom:11px;border-bottom:2px solid rgba(255,255,255,.18);transition:.3s;font-weight:400}
+.f-steps .st .sn{font-family:var(--serif);font-size:17px;margin-right:7px;font-style:italic}
+.f-steps .st.on{color:#fff;border-color:var(--gold)}
+.f-steps .st.done{color:var(--gold);border-color:var(--gold)}
+.f-body{padding:34px 36px 38px}
+@media(max-width:520px){.f-head{padding:22px 22px 18px}.f-body{padding:26px 20px 30px}}
+
+.step-panel{display:none}
+.step-panel.on{display:block;animation:fadein .45s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.fq{margin-bottom:26px}
+.fq:last-child{margin-bottom:0}
+.fq>label,.fq .ql{display:block;font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--pine);margin-bottom:10px}
+.fq .hint{font-size:14.5px;color:#8b9389;letter-spacing:0;text-transform:none;font-weight:300;margin-left:8px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:520px){.row{grid-template-columns:1fr}.row3{grid-template-columns:1fr 1fr}}
+.row .sub-l,.row3 .sub-l{display:block;font-size:14.5px;color:#54635a;margin-bottom:6px;font-weight:400}
+
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;background:#fff;border:1px solid var(--mist);color:var(--ink);padding:13px 14px;border-radius:2px;font-family:var(--sans);font-size:16.5px;font-weight:300;transition:border-color .25s}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' fill='none' stroke='%23b89150' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
+textarea{min-height:110px;resize:vertical;line-height:1.55}
+input::placeholder,textarea::placeholder{color:#a8ab9e}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+input.err,select.err{border-color:var(--cinnabar)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-block;font-size:15px;font-weight:400;padding:9px 17px;border:1px solid var(--mist);border-radius:999px;background:#fff;color:#3d4c43;cursor:pointer;transition:.22s;user-select:none}
+.chip:hover span{border-color:var(--gold)}
+.chip input:checked+span{background:var(--pine);border-color:var(--pine);color:#fff}
+.chip input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+
+/* nav buttons */
+.f-nav{display:flex;justify-content:space-between;align-items:center;margin-top:32px;gap:14px}
+.btn-back{background:none;border:none;font-family:var(--sans);font-size:14.5px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#8b9389;cursor:pointer;padding:10px 0;transition:.25s}
+.btn-back:hover{color:var(--pine)}
+.btn-next{min-width:190px;text-align:center}
+.f-note{font-size:14.5px;color:#8b9389;margin-top:16px;text-align:center;font-weight:300}
+.f-note .dot{color:var(--gold)}
+@media(max-width:560px){
+  .f-nav{flex-direction:column-reverse;align-items:stretch}
+  .btn-next{width:100%;font-size:13.5px;padding:15px 8px;letter-spacing:.08em;white-space:nowrap}
+  .btn-back{align-self:center}
+}
+.f-error{display:none;font-size:15px;color:var(--cinnabar);margin-top:14px;text-align:center}
+.f-error.show{display:block}
+
+/* success */
+.success{display:none;text-align:center;padding:26px 10px 12px}
+.success.show{display:block;animation:fadein .5s ease}
+.success .flag{width:52px;height:52px;margin:0 auto 20px;border-radius:999px;background:var(--pine);display:flex;align-items:center;justify-content:center}
+.success .flag svg{width:24px;height:24px}
+.success h3{font-size:32px}
+.success p{margin-top:12px;color:#54635a;font-size:17.5px;max-width:40ch;margin-left:auto;margin-right:auto}
+.success .s-mail{margin-top:22px;font-size:15px;color:#8b9389}
+.success a{border-bottom:1px solid var(--gold)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--pine);color:rgba(255,255,255,.75);padding:56px 0 30px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.14)}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}}
+footer .logo{font-family:var(--serif);font-size:26px;color:#fff;display:flex;align-items:center;gap:12px}
+footer .logo .logo-mark{height:30px;width:auto}
+footer .logo span{color:var(--gold)}
+footer h5{font-size:14px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+footer ul{list-style:none;font-size:16px}
+footer ul li{padding:5px 0}
+footer ul li a:hover{color:#fff}
+footer .base{display:flex;justify-content:space-between;font-size:14px;padding-top:22px;flex-wrap:wrap;gap:10px;color:rgba(255,255,255,.45)}
+
+@media(max-width:600px){
+  .container{padding:0 20px}
+  section.enq{padding:56px 0 70px}
+  .banner .cap{padding:110px 0 40px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="bar">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></a>
+    <nav>
+      <a href="index.html#destinations">Destinations</a>
+      <a href="index.html#courses">Courses</a>
+      <a href="index.html#journeys">Sample Journeys</a>
+      <a href="index.html#exclusives">Experiences</a>
+      <a href="index.html#about">Our Team</a>
+      <a href="index.html#plan">Travel Info</a>
+      <a href="inquiry.html" class="nav-cta" aria-current="page">Plan Your Journey</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="banner">
+  <img src="assets/img/yangtze-hole3-dusk.jpg" alt="A links green at dusk on the Yangtze Dunes" fetchpriority="high">
+  <div class="veil"></div>
+  <div class="container cap">
+    <span class="eyebrow" style="color:#e8cf95;text-shadow:0 1px 14px rgba(0,0,0,.5)">Start Planning</span>
+    <h1>Bring us the idea. We&rsquo;ll build the journey.</h1>
+    <p class="sub">Three short steps — your trip, your golf, and how to reach you. It takes about two minutes, and there&rsquo;s no obligation.</p>
+  </div>
+</div>
+
+<section class="enq">
+  <div class="container enq-wrap">
+
+    <!-- LEFT: reassurance -->
+    <div class="intro fade">
+      <h2>Tell us what you have in mind.</h2>
+      <p class="lede">Rough dates, your group and the kind of trip you&rsquo;re imagining — that&rsquo;s all we need to begin. Nothing here is binding; think of it as the start of a conversation.</p>
+
+      <div class="next">
+        <div class="k">What Happens Next</div>
+        <div class="n-item">
+          <div class="n-num">1</div>
+          <div><h4>A personal reply</h4><p>A specialist — not an autoresponder — reads every word and replies within one business day.</p></div>
+        </div>
+        <div class="n-item">
+          <div class="n-num">2</div>
+          <div><h4>A conversation</h4><p>Email, phone or video call, whatever suits you. We&rsquo;ll ask the right questions and listen.</p></div>
+        </div>
+        <div class="n-item">
+          <div class="n-num">3</div>
+          <div><h4>Your private proposal</h4><p>Courses, hotels and everything in between — shaped around you, and refined until it feels right.</p></div>
+        </div>
+      </div>
+
+      <div class="quote">
+        <span class="qmark">&ldquo;</span>
+        <p>I&rsquo;m 55 and have played plenty of great golf around the world — but China was something else.</p>
+        <div class="who">Ben &amp; Matilda · Australia</div>
+      </div>
+
+      <div class="contact">
+        <div class="k">Prefer to write directly?</div>
+        <p><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></p>
+        <p>WeChat: GolfChina</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: form -->
+    <div class="fade fcol">
+      <div class="formcard">
+        <div class="f-head">
+          <div class="t">Plan your journey</div>
+          <div class="f-steps" aria-hidden="true">
+            <div class="st on" data-st="1"><span class="sn">i.</span>The Trip</div>
+            <div class="st" data-st="2"><span class="sn">ii.</span>The Golf</div>
+            <div class="st" data-st="3"><span class="sn">iii.</span>About You</div>
+          </div>
+        </div>
+        <div class="f-body">
+          <form id="enqForm" action="https://formspree.io/f/xbdwrwna" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New enquiry — Golf China Co.">
+            <input type="hidden" name="Brand" value="Golf China Co. (golfchina.co)">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <!-- STEP 1 · THE TRIP -->
+            <div class="step-panel on" data-step="1">
+              <div class="fq">
+                <span class="ql">Where would you like to go? <span class="hint">choose any</span></span>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="Destinations" value="Beijing"><span>Beijing</span></label>
+                  <label class="chip"><input type="checkbox" name="Destinations" value="Shanghai & Jiangnan"><span>Shanghai &amp; Jiangnan</span></label>
+                  <label class="chip"><input type="checkbox" name="Destinations" value="Yunnan"><span>Yunnan</span></label>
+                  <label class="chip"><input type="checkbox" name="Destinations" value="Guilin"><span>Guilin</span></label>
+                  <label class="chip"><input type="checkbox" name="Destinations" value="Hainan"><span>Hainan</span></label>
+                  <label class="chip"><input type="checkbox" name="Destinations" value="Not sure yet — guide me"><span>Not sure yet — guide me</span></label>
+                </div>
+              </div>
+              <div class="fq">
+                <span class="ql">When would you like to travel?</span>
+                <div class="row">
+                  <div><span class="sub-l">Month</span>
+                    <select name="Travel month">
+                      <option>Not sure yet</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
+                    </select>
+                  </div>
+                  <div><span class="sub-l">Year</span>
+                    <select name="Travel year"><option>2026</option><option>2027</option><option>2028</option></select>
+                  </div>
+                </div>
+                <div style="margin-top:12px"><label class="chip"><input type="checkbox" name="Dates flexible" value="Yes"><span>My dates are still flexible</span></label></div>
+              </div>
+              <div class="fq">
+                <label for="dur">How long, roughly?</label>
+                <select id="dur" name="Trip length">
+                  <option>Not sure yet</option><option>5–7 nights</option><option>8–10 nights</option><option>11–14 nights</option><option>15+ nights</option>
+                </select>
+              </div>
+              <div class="fq">
+                <span class="ql">Who&rsquo;s travelling?</span>
+                <div class="row3">
+                  <div><span class="sub-l">Golfers</span>
+                    <select name="Golfers"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8+</option></select>
+                  </div>
+                  <div><span class="sub-l">Non-golfers</span>
+                    <select name="Non-golfers"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+                  </div>
+                  <div><span class="sub-l">Children</span>
+                    <select name="Children"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2 · THE GOLF -->
+            <div class="step-panel" data-step="2">
+              <div class="fq">
+                <span class="ql">How much golf feels right?</span>
+                <div class="chips" data-single>
+                  <label class="chip"><input type="radio" name="Golf pace" value="A round almost every day"><span>Almost every day</span></label>
+                  <label class="chip"><input type="radio" name="Golf pace" value="Golf most days"><span>Most days</span></label>
+                  <label class="chip"><input type="radio" name="Golf pace" value="A few standout rounds"><span>A few standout rounds</span></label>
+                  <label class="chip"><input type="radio" name="Golf pace" value="Not sure yet"><span>Not sure yet</span></label>
+                </div>
+              </div>
+              <div class="fq">
+                <label for="lvl">Playing level</label>
+                <select id="lvl" name="Playing level">
+                  <option>Mixed group</option><option>New to golf</option><option>Casual golfer</option><option>Mid handicap</option><option>Single digit</option>
+                </select>
+              </div>
+              <div class="fq">
+                <span class="ql">Beyond the fairway <span class="hint">for golfers and non-golfers alike</span></span>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="Interests" value="Culture & heritage"><span>Culture &amp; heritage</span></label>
+                  <label class="chip"><input type="checkbox" name="Interests" value="Food & tea"><span>Food &amp; tea</span></label>
+                  <label class="chip"><input type="checkbox" name="Interests" value="Nature & scenery"><span>Nature &amp; scenery</span></label>
+                  <label class="chip"><input type="checkbox" name="Interests" value="Wellness & spa"><span>Wellness &amp; spa</span></label>
+                  <label class="chip"><input type="checkbox" name="Interests" value="Family experiences"><span>Family experiences</span></label>
+                  <label class="chip"><input type="checkbox" name="Interests" value="Surfing in Hainan"><span>Surfing in Hainan</span></label>
+                </div>
+              </div>
+              <div class="fq">
+                <label for="jrn">Has a journey caught your eye?</label>
+                <select id="jrn" name="Journey preference">
+                  <option>Nothing specific yet</option>
+                  <option>First-Time Golf China</option>
+                  <option>Snow Peaks to Tropical Coast</option>
+                  <option>The Grand China Golf Journey</option>
+                  <option>Surf &amp; Golf Hainan</option>
+                  <option>Something fully tailored</option>
+                </select>
+              </div>
+              <div class="fq">
+                <label for="bud">Budget per person <span class="hint">excluding international flights</span></label>
+                <select id="bud" name="Budget per person" required>
+                  <option value="">Select a range</option>
+                  <option>Around US$4,000–6,000</option>
+                  <option>US$6,000–9,000</option>
+                  <option>US$9,000–14,000</option>
+                  <option>Above US$14,000</option>
+                  <option>I&rsquo;d rather discuss</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- STEP 3 · ABOUT YOU -->
+            <div class="step-panel" data-step="3">
+              <div class="fq">
+                <div class="row">
+                  <div><span class="sub-l">First name</span><input type="text" name="First name" autocomplete="given-name" required></div>
+                  <div><span class="sub-l">Last name</span><input type="text" name="Last name" autocomplete="family-name"></div>
+                </div>
+              </div>
+              <div class="fq">
+                <label for="em">Email</label>
+                <input id="em" type="email" name="_replyto" placeholder="you@email.com" autocomplete="email" required>
+              </div>
+              <div class="fq">
+                <div class="row">
+                  <div><span class="sub-l">Country of residence</span><input type="text" name="Country of residence" autocomplete="country-name" placeholder="e.g. Australia"></div>
+                  <div><span class="sub-l">Phone / WhatsApp <span class="hint">optional</span></span><input type="tel" name="Phone" autocomplete="tel" placeholder="+61 ..."></div>
+                </div>
+              </div>
+              <div class="fq">
+                <span class="ql">How should we reach you?</span>
+                <div class="chips">
+                  <label class="chip"><input type="radio" name="Preferred contact" value="Email" checked><span>Email</span></label>
+                  <label class="chip"><input type="radio" name="Preferred contact" value="WhatsApp"><span>WhatsApp</span></label>
+                  <label class="chip"><input type="radio" name="Preferred contact" value="Phone call"><span>Phone call</span></label>
+                  <label class="chip"><input type="radio" name="Preferred contact" value="WeChat"><span>WeChat</span></label>
+                </div>
+              </div>
+              <div class="fq">
+                <label for="msg">Anything else we should know? <span class="hint">optional</span></label>
+                <textarea id="msg" name="Message" placeholder="A celebration, courses on your list, dietary needs, non-golfing companions — anything at all."></textarea>
+              </div>
+              <div class="fq">
+                <label for="hear">How did you hear about us? <span class="hint">optional</span></label>
+                <select id="hear" name="How did you hear">
+                  <option value="">Select</option><option>Google search</option><option>Instagram</option><option>Word of mouth</option><option>Press / magazine</option><option>Returning guest</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="f-error" id="fErr">Please complete the highlighted fields before continuing.</div>
+
+            <div class="f-nav">
+              <button type="button" class="btn-back" id="btnBack" style="visibility:hidden">&larr; Back</button>
+              <button type="button" class="btn btn-primary btn-next" id="btnNext">Continue &rarr;</button>
+            </div>
+            <p class="f-note">No obligation <span class="dot">·</span> A personal reply within one business day <span class="dot">·</span> Your details stay with us</p>
+          </form>
+
+          <!-- SUCCESS -->
+          <div class="success" id="fDone">
+            <div class="flag">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 21V3m0 1h11l-2.5 3.5L15 11H4" stroke="#e8cf95" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Thank you — it&rsquo;s on its way.</h3>
+            <p>Your enquiry has reached our specialists. Expect a personal reply within one business day, from someone who has read every word.</p>
+            <p class="s-mail">In the meantime — <a href="index.html#journeys">browse our sample journeys</a>, or write to us any time at <a href="mailto:hello@golfchina.co">hello@golfchina.co</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></div>
+        <p style="font-size:16px;margin-top:14px;max-width:36ch;font-weight:300">Private golf journeys across China, built around world-class courses, rare access and a country unlike anywhere else.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="index.html#destinations">Destinations</a></li><li><a href="index.html#courses">Courses</a></li><li><a href="index.html#journeys">Sample Journeys</a></li><li><a href="index.html#exclusives">Beyond the Fairway</a></li></ul></div>
+      <div><h5>Plan</h5><ul><li><a href="index.html#how">How It Works</a></li><li><a href="index.html#about">Who We Are</a></li><li><a href="index.html#plan">Plan Your Trip</a></li><li><a href="inquiry.html">Plan Your Journey</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li></ul></div>
+    </div>
+    <div class="base">
+      <span>© 2026 Golf China Co. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const toggle=document.querySelector('.menu-toggle');
+const menu=document.querySelector('header.nav nav');
+toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+/* ===== multi-step form ===== */
+const form=document.getElementById('enqForm');
+const panels=[...form.querySelectorAll('.step-panel')];
+const stTabs=[...document.querySelectorAll('.f-steps .st')];
+const btnNext=document.getElementById('btnNext');
+const btnBack=document.getElementById('btnBack');
+const fErr=document.getElementById('fErr');
+let step=1;
+const LAST=3;
+
+function show(n){
+  step=n;
+  panels.forEach(p=>p.classList.toggle('on',+p.dataset.step===n));
+  stTabs.forEach(t=>{const s=+t.dataset.st;t.classList.toggle('on',s===n);t.classList.toggle('done',s<n);});
+  btnBack.style.visibility=n===1?'hidden':'visible';
+  btnNext.innerHTML=n===LAST?'Request My Private Proposal':'Continue &rarr;';
+  fErr.classList.remove('show');
+  document.querySelector('.formcard').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function validate(n){
+  const panel=panels.find(p=>+p.dataset.step===n);
+  let ok=true;
+  panel.querySelectorAll('[required]').forEach(el=>{
+    const bad=el.type==='email'?!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value):!el.value.trim();
+    el.classList.toggle('err',bad);
+    if(bad)ok=false;
+  });
+  fErr.classList.toggle('show',!ok);
+  return ok;
+}
+
+btnBack.addEventListener('click',()=>show(step-1));
+btnNext.addEventListener('click',()=>{
+  if(!validate(step))return;
+  if(step<LAST){show(step+1);return;}
+  submit();
+});
+form.addEventListener('input',e=>{if(e.target.classList)e.target.classList.remove('err');});
+form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'){e.preventDefault();btnNext.click();}});
+
+async function submit(){
+  btnNext.disabled=true;btnNext.textContent='Sending…';
+  try{
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(!res.ok)throw new Error();
+    form.style.display='none';
+    const done=document.getElementById('fDone');
+    done.classList.add('show');
+    setTimeout(()=>done.scrollIntoView({behavior:'smooth',block:'center'}),60);
+  }catch(err){
+    btnNext.disabled=false;btnNext.innerHTML='Request My Private Proposal';
+    fErr.textContent='Something went wrong sending your enquiry — please try again, or email us at hello@golfchina.co.';
+    fErr.classList.add('show');
+  }
+}
+</script>
+</body>
+</html>
