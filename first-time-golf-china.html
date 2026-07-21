@@ -96,12 +96,21 @@ section{padding:100px 0}
 
 /* ===== OVERVIEW ===== */
 .overview{background:var(--ivory)}
-.ov-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
-@media(max-width:860px){.ov-wrap{grid-template-columns:1fr;gap:40px}}
-.ov-txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
-.ov-txt p{font-size:17.5px;color:#3f4f45;margin-bottom:18px;max-width:62ch}
-.ov-txt .lede::first-letter{font-family:var(--serif);font-size:54px;line-height:.9;float:left;padding:6px 10px 0 0;color:var(--cinnabar)}
-.glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px;position:sticky;top:96px}
+.ov-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:stretch}
+@media(max-width:860px){.ov-grid{grid-template-columns:1fr}}
+.ov-dests{display:grid;grid-template-rows:1fr 1fr;gap:24px}
+@media(max-width:860px){.ov-dests{grid-template-rows:none;grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ov-dests{grid-template-columns:1fr}}
+.ovd{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;min-height:210px;box-shadow:var(--lift)}
+.ovd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.ovd:hover img{transform:scale(1.05)}
+.ovd .db{position:relative;z-index:2;padding:20px 24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92))}
+.ovd .loc{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.ovd h3{color:#fff;font-size:25px;margin:5px 0 3px}
+.ovd p{font-size:14px;color:rgba(255,255,255,.88);margin:0;max-width:40ch}
+.ovd .go{margin-top:11px;display:inline-block;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
+.ovd:hover .go{color:var(--gold)}
+.glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px}
 .glance h3{font-size:15px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
 .glance h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:12px}
 .glance ul{list-style:none;margin-top:20px}
@@ -192,6 +201,31 @@ section{padding:100px 0}
 .golf-feature dd{font-size:15px;color:rgba(255,255,255,.86);font-weight:300}
 .golf-note{font-size:15px;color:rgba(255,255,255,.65);max-width:64ch}
 .golf-note b{color:#fff;font-weight:500}
+
+/* ===== EXPERIENCES ===== */
+.exclusives{background:var(--ivory)}
+.ex-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:295px;gap:20px}
+.excard{position:relative;border-radius:2px;overflow:hidden;color:#fff;display:flex;align-items:flex-end;box-shadow:var(--lift);cursor:pointer}
+.excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.excard:hover img{transform:scale(1.05)}
+.excard .b{position:relative;z-index:2;padding:22px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
+.excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.excard h3{font-size:22px;margin:6px 0 0}
+.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
+.excard:hover .ex-see{color:#fff;border-color:#fff}
+.exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
+@media(max-width:1000px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}}
+@media(max-width:620px){
+  .ex-grid{display:flex;flex-direction:column;gap:16px}
+  .excard{display:flex;flex-direction:row;align-items:stretch;min-height:170px;background:#fff;border:1px solid var(--mist);color:var(--ink)}
+  .excard img{position:static;width:44%;height:auto;object-fit:cover;flex:none}
+  .excard:hover img{transform:none}
+  .excard .b{background:none;text-shadow:none;padding:16px 16px 18px;display:flex;flex-direction:column;flex:1;min-width:0}
+  .excard .loc{color:var(--gold);font-size:12px}
+  .excard h3{color:var(--pine);font-size:19px;margin:7px 0 0}
+  .ex-see{display:block;text-align:center;margin-top:auto;padding:12px 6px 11px;color:var(--pine);border:1px solid var(--gold);border-radius:2px}
+  .excard:hover .ex-see{color:var(--pine);border-color:var(--gold)}
+}
 
 /* ===== STAY (hotel cards + details modal) ===== */
 .stay{background:var(--ivory)}
@@ -319,6 +353,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <a href="#overview">Overview</a>
       <a href="#itinerary">Itinerary</a>
       <a href="#golf">The Golf</a>
+      <a href="#experiences">Experiences</a>
       <a href="#stay">Where You Stay</a>
       <a href="#extend">Go Further</a>
       <a href="index.html#start" class="nav-cta">Plan Your Journey</a>
@@ -353,27 +388,45 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
 <!-- OVERVIEW -->
 <section class="overview" id="overview">
-  <div class="container ov-wrap">
-    <div class="ov-txt fade">
+  <div class="container">
+    <div class="section-head fade">
       <span class="eyebrow">The Journey</span>
       <h2>Three cities. Four rounds. One unforgettable introduction.</h2>
-      <p class="lede">There is a right way to see China for the first time, and it runs from north to south — from the capital of emperors, through the city of the future, to the lake the poets never stopped painting. This journey holds all three, stitched together by high-speed rail, and threads four of the country's finest golf courses through the icons in between.</p>
-      <p>Beijing opens the trip the way it has opened China for six centuries: the Forbidden City before the crowds, the hutong lanes where the city still lives, and two rounds in the mountains north of the capital — Reignwood Pine Valley, Jack Nicklaus fairways laid beneath the Great Wall itself at a club whose membership is otherwise closed to the world, and Topwin on Yanqi Lake, where President Obama teed it up beneath the Yanshan range.</p>
-      <p>Then the country changes around you. Four hours south by rail, Shanghai delivers the counterpoint: the Bund, the old concessions, some of the best tables in the world — and a wild links among the dunes of the Yangtze estuary that feels closer to Ireland than to anything else in Asia. The finale is gentler still: an hour further south, Hangzhou's West Lake at dawn, Longjing tea on the hillside, and a closing round at Fuchun Golf Club, the only course in Asia routed through a tea plantation.</p>
     </div>
-    <aside class="glance fade">
-      <h3>At a Glance</h3>
-      <ul>
-        <li>Private golf beneath the Great Wall at Reignwood Pine Valley</li>
-        <li>Lakeside golf at Topwin on Yanqi Lake, where President Obama played</li>
-        <li>A wild links morning at Yangtze Dunes, China's Top-3 modern course</li>
-        <li>A closing round through the tea terraces of Fuchun Golf Club, Hangzhou</li>
-        <li>The Forbidden City with an expert English-speaking guide · the Great Wall at Juyongguan on its quietest stretch, 25 minutes from your opening round</li>
-        <li>The Bund after dark, hutong chef's tables and West Lake at dawn by private boat</li>
-        <li>Private driver, guide and every tee time handled, city to city — with tournament golf at Sheshan International as an optional add-on</li>
-      </ul>
-      <p class="gnote">Every element below is a starting point — shaped to your dates, your party and your pace.</p>
-    </aside>
+    <div class="ov-grid">
+      <aside class="glance fade">
+        <h3>At a Glance</h3>
+        <ul>
+          <li>Golf beneath the Great Wall at Reignwood Pine Valley, a closely-held private club</li>
+          <li>Lakeside fairways at Topwin on Yanqi Lake, where President Obama played</li>
+          <li>A wild links morning at Yangtze Dunes, China's Top-3 modern course</li>
+          <li>A closing round through the tea terraces of Fuchun Golf Club, Hangzhou</li>
+          <li>The Forbidden City privately guided, the Wall at its quietest, the Bund after dark and West Lake at dawn</li>
+          <li>Private driver, guide and every tee time handled, city to city</li>
+        </ul>
+        <p class="gnote">Every element is a starting point — shaped to your dates, your party and your pace.</p>
+      </aside>
+      <div class="ov-dests">
+        <a class="ovd fade" href="imperial-china.html">
+          <img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing">
+          <div class="db">
+            <div class="loc">The Destination · Nights 1–4</div>
+            <h3>Beijing</h3>
+            <p>Imperial China in depth — the Wall, the golf, the hutongs.</p>
+            <span class="go">Discover Beijing →</span>
+          </div>
+        </a>
+        <a class="ovd fade" href="jiangnan-modern-china.html">
+          <img src="assets/img/hero-shanghai-dusk.jpg" alt="The Shanghai skyline glowing gold at dusk across the Huangpu River">
+          <div class="db">
+            <div class="loc">The Destination · Nights 5–9</div>
+            <h3>Shanghai &amp; Hangzhou</h3>
+            <p>Jiangnan &amp; Modern China — the Bund, the links, West Lake.</p>
+            <span class="go">Discover Jiangnan →</span>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -382,6 +435,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container tabs">
     <button class="tab on" data-tab="itinerary">Itinerary</button>
     <button class="tab" data-tab="golf">Golf</button>
+    <button class="tab" data-tab="experiences">Experiences</button>
     <button class="tab" data-tab="stay">Stays</button>
     <button class="tab" data-tab="extend">Go Further</button>
   </div>
@@ -690,6 +744,93 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     </article>
 
     <p class="golf-note fade"><b>All four rounds are confirmed before you fly</b> — tee times, caddies and guest-play arrangements at the private clubs are handled entirely on your behalf, with clubs and shoes hired to spec if you'd rather travel light.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="exclusives panel" id="experiences">
+  <div class="container">
+    <div class="section-head fade">
+      <span class="eyebrow">Signature Experiences</span>
+      <h2>Beyond the fairways.</h2>
+      <p>A few of the private moments woven between the rounds — each arranged for your party alone.</p>
+    </div>
+    <div class="ex-grid">
+
+      <a class="excard fade" href="imperial-china.html#experiences">
+        <img src="assets/img/place-greatwall.jpg" alt="The Great Wall snaking over ridgelines at golden hour" loading="lazy">
+        <div class="b">
+          <div class="loc">Beijing · The Wall</div>
+          <h3>The Great Wall without the crowds</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="imperial-china.html#experiences">
+        <img src="assets/img/itin-bj-day2-forbiddencity.jpg" alt="The Forbidden City's courtyards in early light" loading="lazy">
+        <div class="b">
+          <div class="loc">Beijing · Forbidden City</div>
+          <h3>Tiananmen &amp; the Forbidden City</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="imperial-china.html#experiences">
+        <img src="assets/img/hutong-drumtower-rooftops.jpg" alt="Grey-tiled hutong rooftops stretching toward the Drum Tower, Beijing" loading="lazy">
+        <div class="b">
+          <div class="loc">Beijing · Hutongs</div>
+          <h3>The hutongs of Old Beijing</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="imperial-china.html#experiences">
+        <img src="assets/img/dining-peking-duck.jpg" alt="Lacquered slices of Peking duck served in a tiered wooden presentation box" loading="lazy">
+        <div class="b">
+          <div class="loc">Beijing · Chef's Table</div>
+          <h3>The Peking duck chef's table</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="jiangnan-modern-china.html#experiences">
+        <img src="assets/img/exp-yacht-bund.jpg" alt="The lit towers of Pudong rising over the Huangpu River at night, seen from the water" loading="lazy">
+        <div class="b">
+          <div class="loc">Shanghai · The Huangpu</div>
+          <h3>The Bund by private yacht</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="jiangnan-modern-china.html#experiences">
+        <img src="assets/img/exp-heritage-bund.jpg" alt="The clock tower and domes of the Bund's heritage banking halls in golden evening light, Shanghai" loading="lazy">
+        <div class="b">
+          <div class="loc">Shanghai · Old Concessions</div>
+          <h3>The concessions, decoded</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="jiangnan-modern-china.html#experiences">
+        <img src="assets/img/exp-westlake.jpg" alt="A traditional boat gliding across West Lake through morning greenery, Hangzhou" loading="lazy">
+        <div class="b">
+          <div class="loc">Hangzhou · West Lake</div>
+          <h3>West Lake before the world wakes</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+      <a class="excard fade" href="jiangnan-modern-china.html#experiences">
+        <img src="assets/img/exp-tea-picking.jpg" alt="Pickers with baskets working the terraced Longjing tea fields above Hangzhou" loading="lazy">
+        <div class="b">
+          <div class="loc">Hangzhou · Longjing Village</div>
+          <h3>Pick the tea harvest yourself</h3>
+          <span class="ex-see">See Details</span>
+        </div>
+      </a>
+
+    </div>
+    <p class="note fade">These are a beginning, not a menu — tell us what your party loves and we'll find its equivalent.</p>
   </div>
 </section>
 
