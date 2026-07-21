@@ -53,13 +53,19 @@ header.nav nav a:hover{color:var(--gold)}
 header.nav .nav-cta{font-size:14.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:9px 16px;border-radius:2px}
 header.nav.scrolled{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
 header.nav.scrolled .bar{padding:12px 28px}
-.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;z-index:60}
-@media(max-width:1280px){
+header.nav.menu-open{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
+.menu-toggle{display:none;background:none;border:none;padding:10px 2px;cursor:pointer;z-index:60}
+.menu-toggle .mt-bar{display:block;width:26px;height:1.5px;background:#fff;transition:.3s ease}
+.menu-toggle .mt-bar+.mt-bar{margin-top:8px}
+.menu-toggle.open .mt-bar:first-child{transform:translateY(4.75px) rotate(45deg)}
+.menu-toggle.open .mt-bar:last-child{transform:translateY(-4.75px) rotate(-45deg)}
+body.no-scroll{overflow:hidden}
+@media(max-width:1120px){
   header.nav nav{gap:11px}
   header.nav nav a{font-size:14px;letter-spacing:.02em}
   header.nav .nav-cta{font-size:13.5px;padding:8px 12px}
 }
-@media(max-width:1160px){
+@media(max-width:960px){
   header.nav .bar{padding:14px 20px}
   header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--pine);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
   header.nav nav.open{max-height:640px}
@@ -91,8 +97,8 @@ header.nav.scrolled .bar{padding:12px 28px}
 .hero .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:13.5px;letter-spacing:.25em;text-transform:uppercase;opacity:.75}
 
 /* ===== SECTION SHELL ===== */
-section{padding:100px 0}
-.section-head{max-width:680px;margin-bottom:54px}
+section{padding:76px 0}
+.section-head{max-width:680px;margin-bottom:40px}
 .section-head h2{font-size:clamp(35px,4.6vw,53px);margin:14px 0}
 .section-head p{color:#4a5a50;font-size:19px}
 .center{text-align:center;margin-left:auto;margin-right:auto}
@@ -175,7 +181,7 @@ section{padding:100px 0}
 .dest{background:var(--pine);color:#fff}
 .dest .section-head h2{color:#fff}.dest .section-head p{color:rgba(255,255,255,.72)}
 .dest-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-@media(max-width:860px){.dest-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.dest-grid{grid-template-columns:1fr;gap:14px}}
 .bigcard{background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
 .bigcard:hover{transform:translateY(-6px);border-color:var(--gold)}
 .bigcard{cursor:pointer}
@@ -194,6 +200,18 @@ section{padding:100px 0}
 .bigcard .c .foot{margin-top:auto;padding-top:20px}
 .bigcard .c .foot a{font-size:15.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .bigcard .c .foot a:hover{color:var(--gold)}
+@media(max-width:860px){
+  /* compact list cards on mobile: image left, text right, all four visible without swiping */
+  .bigcard{flex-direction:row}
+  .bigcard .img{width:41%;flex-shrink:0;height:auto;min-height:160px}
+  .bigcard .img .tag{font-size:12.5px;letter-spacing:.06em;padding:4px 9px;white-space:normal;line-height:1.35;max-width:100%}
+  .bigcard .c{padding:16px 16px 14px}
+  .bigcard .c .region{font-size:12.5px}
+  .bigcard .c h3{font-size:21px}
+  .bigcard .c .tagline{font-size:14px;margin:5px 0 12px}
+  .bigcard .c .foot{padding-top:10px}
+  .bigcard .c .foot a{font-size:13px;letter-spacing:.1em}
+}
 
 /* ===== DESTINATIONS MAP ===== */
 .dest-intro{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center;margin-bottom:58px}
@@ -269,7 +287,7 @@ section{padding:100px 0}
 .journeys{background:var(--ivory)}
 .sj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:920px){.sj-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.sj-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.sj-grid{grid-template-columns:1fr;gap:22px}}
 .sjcard{position:relative;display:flex;flex-direction:column;border-radius:8px;overflow:hidden;background:#d4c6a6;box-shadow:var(--lift)}
 .sjcard.signature{box-shadow:0 0 0 2px var(--gold),var(--lift)}
 .sjcard .sj-badge{position:absolute;left:16px;top:16px;z-index:3;background:#d4c6a6;color:var(--ink);font-size:13.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
@@ -299,13 +317,33 @@ section{padding:100px 0}
 .sjcard.sj-custom .hi p+p{margin-top:10px}
 .sjcard.sj-custom .tl{color:var(--gold)}
 .sjcard.sj-custom .route{color:rgba(255,255,255,.8)}
+.sjcard.sj-custom .bestfor{color:rgba(255,255,255,.6)}
 .sjcard.sj-custom .foot{background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.18)}
 .sjcard.sj-custom .price{color:rgba(255,255,255,.9)}
+@media(max-width:600px){
+  /* compact journey cards on mobile: keep name/specs/route/price, trim decoration */
+  .sjcard .ph img{aspect-ratio:16/9}
+  .sjcard .tl,.sjcard .bestfor{display:none}
+  .sjcard .b{padding:20px 20px 18px}
+  .sjcard h3{font-size:26px}
+  .sjcard .specs{font-size:14px;margin-top:8px}
+  .sjcard .hi{font-size:16.5px;margin-top:10px}
+  .sjcard .route{margin-top:12px;font-size:16.5px}
+  .sjcard .foot{padding:14px 20px}
+  .sjcard.sj-custom .b{padding-top:24px}
+}
 .sjcard.sj-custom .foot a{background:var(--gold);color:var(--ink)}
 .sjcard.sj-custom .foot a:hover{background:#cfa961}
 
 /* ===== SIGNATURE EXPERIENCES ===== */
-.exclusives{background:var(--paper);border-top:1px solid var(--mist)}
+.exclusives{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
+.exclusives .tabbar{display:flex;gap:38px;border-bottom:1px solid var(--mist);margin-bottom:36px}
+.exclusives .tab{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:15.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#6b7a70;padding:0 2px 14px;border-bottom:2px solid transparent;margin-bottom:-1px;transition:.25s}
+.exclusives .tab:hover{color:var(--ink)}
+.exclusives .tab.on{color:var(--ink);border-bottom-color:var(--gold)}
+.exclusives .tabpanel{display:none}
+.exclusives .tabpanel.on{display:block}
+.exclusives .tab-intro{font-size:18.5px;color:#54635a;max-width:62ch;margin-bottom:26px;font-weight:300}
 .ex-carousel{position:relative}
 .ex-track{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;padding:4px 4px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .ex-track::-webkit-scrollbar{display:none}
@@ -546,17 +584,15 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   <div class="bar">
     <a href="#top" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></a>
     <nav>
-      <a href="#access">Exclusive Access</a>
-      <a href="#reviews">Guest Stories</a>
       <a href="#destinations">Destinations</a>
       <a href="#courses">Courses</a>
       <a href="#journeys">Sample Journeys</a>
       <a href="#exclusives">Experiences</a>
       <a href="#about">Our Team</a>
-      <a href="#plan">Plan</a>
-      <a href="#start" class="nav-cta">Plan Your Journey</a>
+      <a href="#plan">Travel Info</a>
+      <a href="inquiry.html" class="nav-cta">Plan Your Journey</a>
     </nav>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="mt-bar"></span><span class="mt-bar"></span></button>
   </div>
 </header>
 
@@ -584,7 +620,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     <p class="hero-tag">Beyond the fairway, into China.</p>
     <div class="actions">
       <a href="#journeys" class="btn btn-primary">View Sample Journeys</a>
-      <a href="#start" class="btn btn-ghost">Plan Your Journey</a>
+      <a href="inquiry.html" class="btn btn-ghost">Plan Your Journey</a>
     </div>
   </div>
   <div class="scroll-hint">Scroll ↓</div>
@@ -736,7 +772,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <div class="rm-caption" id="rm-caption"></div>
       <h3 id="rm-name"></h3>
       <div class="rm-text" id="rm-text"></div>
-      <div class="rm-cta"><a class="btn btn-primary" href="#start" data-close>Plan Your Journey</a></div>
+      <div class="rm-cta"><a class="btn btn-primary" href="inquiry.html" data-close>Plan Your Journey</a></div>
     </div>
   </div>
 </div>
@@ -1134,7 +1170,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
           <div class="route">Our team designs the full itinerary around you.</div>
           <div class="bestfor">Every journey we build is private and one of a kind.</div>
         </div>
-        <div class="foot"><span class="price">Built from <b>a blank page</b>.</span><a href="#start">Speak to an Expert</a></div>
+        <div class="foot"><span class="price">Built from <b>a blank page</b>.</span><a href="inquiry.html">Speak to an Expert</a></div>
       </article>
 
     </div>
@@ -1149,6 +1185,11 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <h2>China beyond the first tee.</h2>
       <p>The golf shapes the route — never the whole story. Culture, food, nature and remarkable stays are built around every journey.</p>
     </div>
+    <div class="tabbar fade" role="tablist">
+      <button class="tab on" type="button" role="tab" aria-selected="true" data-tab="tp-exp">Experiences</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="tp-stay">Where You Stay</button>
+    </div>
+    <div class="tabpanel on" id="tp-exp" role="tabpanel">
     <div class="swipe-ind" data-swipe=".ex-track" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <div class="ex-carousel fade">
       <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
@@ -1188,38 +1229,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         </article>
 
         <article class="excard">
-          <span class="kind">Stay</span>
-          <!-- TODO: replace with a real hutong courtyard-hotel scene -->
-          <img src="assets/img/dest-beijing.jpg" alt="Golden-roofed halls of the Forbidden City at dusk, Beijing" loading="lazy">
-          <div class="b">
-            <div class="loc">Beijing</div>
-            <h3>A Courtyard Stay in Beijing</h3>
-            <p>A restored hutong courtyard — the likes of the Waldorf Astoria's villas — imperial Beijing outside the door.</p>
-          </div>
-        </article>
-
-        <article class="excard">
-          <span class="kind">Stay</span>
-          <!-- TODO: replace with a courtyard-retreat scene rather than a course view -->
-          <img src="assets/img/jadedragon-view.jpg" alt="Jade Dragon Snow Mountain rising above pine forest, Lijiang" loading="lazy">
-          <div class="b">
-            <div class="loc">Lijiang · Yunnan</div>
-            <h3>A Mountain Retreat in Lijiang</h3>
-            <p>Stone courtyards and Naxi-style villas beneath Jade Dragon Snow Mountain, Banyan Tree Lijiang among them.</p>
-          </div>
-        </article>
-
-        <article class="excard">
-          <span class="kind">Stay</span>
-          <img src="assets/img/stay-sanya-coast.jpg" alt="Palm trees and a lagoon pool meeting the beach on the Hainan coast" loading="lazy">
-          <div class="b">
-            <div class="loc">Hainan</div>
-            <h3>Hainan Island Hideaway</h3>
-            <p>Beachfront villas within reach of the island's finest courses — the likes of Rosewood.</p>
-          </div>
-        </article>
-
-        <article class="excard">
           <span class="kind">For Non-Golfers</span>
           <img src="assets/img/fuchun-mist.jpg" alt="A serene garden resort in the mist" loading="lazy">
           <div class="b">
@@ -1243,17 +1252,11 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
     <p class="note fade">Traveling with non-golfers? Everyone travels together without having to do everything together.</p>
-  </div>
-</section>
-
-<!-- WHERE YOU STAY — A&K-style recommended hotel cards -->
-<section class="stay" id="stay">
-  <div class="container">
-    <div class="section-head center fade">
-      <span class="eyebrow">Where You Stay</span>
-      <h2>Stays that belong to the journey.</h2>
-      <p>We don't choose hotels for their stars. We choose them for character, sense of place and service.</p>
     </div>
+
+    <!-- WHERE YOU STAY tab panel -->
+    <div class="tabpanel" id="tp-stay" role="tabpanel">
+    <p class="tab-intro">We don't choose hotels for their stars. We choose them for character, sense of place and service.</p>
     <div class="swipe-ind" data-swipe=".hotel-row" aria-hidden="true"><span class="si-count"></span><span class="si-track"><i></i></span><span class="si-hint">Swipe &rarr;</span></div>
     <div class="hotel-carousel fade">
       <button class="ex-nav prev" type="button" aria-label="Scroll back">&#8592;</button>
@@ -1301,6 +1304,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <button class="ex-nav next" type="button" aria-label="Scroll forward">&#8594;</button>
     </div>
     <p class="note fade">Options are curated to your route, the season and how you prefer to travel.</p>
+    </div>
   </div>
 </section>
 
@@ -1330,7 +1334,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
             <div class="k">Golf China Co. Specialists</div>
             <p id="hm-expert-line"></p>
           </div>
-          <a class="btn btn-primary" href="#start" data-close>Plan Your Journey</a>
+          <a class="btn btn-primary" href="inquiry.html" data-close>Plan Your Journey</a>
         </div>
       </div>
     </div>
@@ -1365,7 +1369,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <div class="step"><div class="n">4</div><h4>Confirm and travel</h4><p>We take care of everything on the ground. You just pack your clubs.</p></div>
     </div>
     <div class="cta-line fade">
-      <a class="btn btn-primary" href="#start">Plan Your Journey</a>
+      <a class="btn btn-primary" href="inquiry.html">Plan Your Journey</a>
       <p class="sub">It takes two minutes — and there's no obligation.</p>
     </div>
   </div>
@@ -1384,7 +1388,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <div class="portrait"><img src="assets/img/team-ethan.jpg" alt="Ethan, China Golf Specialist" loading="lazy"></div>
         <h3>Ethan</h3>
         <div class="role">China Golf Specialist</div>
-        <p>Having played more than 150 golf courses across over 20 countries, Ethan brings an international golfer's perspective to every journey. He lived in the United States for eight years and has spent more than five years in the golf and travel industries, with an insider's knowledge of China and its finest courses.</p>
+        <p>150+ courses played across 20 countries, eight years in the US — Ethan brings an international golfer's eye to China's finest courses.</p>
       </div>
       <div class="member">
         <!-- TODO: replace team-aaron.jpg placeholder with Aaron's real portrait -->
@@ -1398,19 +1402,19 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <div class="portrait"><img src="assets/img/team-jenny.jpg" alt="Jenny, Golf Access &amp; Course Specialist" loading="lazy"></div>
         <h3>Jenny</h3>
         <div class="role">Golf Access &amp; Course Specialist</div>
-        <p>Jenny works closely with golf clubs across China, coordinating course selection, tee times and the details behind each round. Her local knowledge helps make access to China's leading courses feel smooth and effortless.</p>
+        <p>Jenny works directly with clubs across China — course selection, tee times and the details behind every round, handled effortlessly.</p>
       </div>
       <div class="member">
         <div class="portrait"><img src="assets/img/team-lin.jpg" alt="Lin, Guest Experience Manager" loading="lazy"></div>
         <h3>Lin</h3>
         <div class="role">Guest Experience Manager</div>
-        <p>With eight years of experience in luxury travel, Lin looks after each journey on the ground, from arrivals and transfers to tee times and special requests. She makes sure every stage feels personal, seamless and carefully looked after.</p>
+        <p>Eight years in luxury travel — Lin looks after every journey on the ground, from arrivals and transfers to special requests.</p>
       </div>
       <div class="member">
         <div class="portrait"><img src="assets/img/team-tracy.jpg" alt="Tracy, China Culture &amp; Destination Specialist" loading="lazy"></div>
         <h3>Tracy</h3>
         <div class="role">China Culture &amp; Destination Specialist</div>
-        <p>Tibetan by heritage and raised in Yunnan, Tracy has an intimate feel for China's cultures and what makes each region unique. She helps select the places and experiences that reveal a more personal side of the country, beyond the familiar tourist route.</p>
+        <p>Tibetan by heritage and raised in Yunnan, Tracy selects the places that reveal a more personal China, beyond the familiar route.</p>
       </div>
     </div>
   </div>
@@ -1436,44 +1440,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
   </div>
 </section>
 
-<!-- CTA / FORM -->
-<section class="cta" id="start">
-  <div class="container cta-wrap">
-    <div class="fade">
-      <span class="eyebrow">Plan Your Journey</span>
-      <h2>Bring us the idea. We'll build the journey.</h2>
-      <p>Approximate dates, group size and the kind of trip you have in mind — that's all it takes. We reply personally and begin shaping the journey around you.</p>
-    </div>
-    <form class="form fade" onsubmit="event.preventDefault();var b=this.querySelector('.btn');b.textContent='Thank you — we will be in touch';b.style.background='#3f6f54';">
-      <div class="row">
-        <div><label>Name</label><input type="text" placeholder="Your name" required></div>
-        <div><label>Email</label><input type="email" placeholder="you@email.com" required></div>
-      </div>
-      <div class="row">
-        <div><label>Approx. dates</label><input type="text" placeholder="e.g. Oct 2026"></div>
-        <div><label>Party size</label>
-          <select><option>1–2</option><option>3–4</option><option>5–8</option><option>Group (8+)</option></select>
-        </div>
-      </div>
-      <div class="row">
-        <div><label>Golfers / non-golfers</label><input type="text" placeholder="e.g. 4 golfers, 2 non-golfers"></div>
-        <div><label>Handicap / level</label>
-          <select><option>Beginner</option><option>Casual</option><option>Single digit</option><option>Mixed group</option></select>
-        </div>
-      </div>
-      <div class="row">
-        <div><label>Interested in</label>
-          <select><option>Golf only</option><option>Golf + culture</option><option>Golf + surf</option><option>Family trip</option><option>Not sure yet</option></select>
-        </div>
-        <div><label>Journey preference</label>
-          <select><option>No preference yet</option><option>First-Time Golf China</option><option>Snow Peaks to Tropical Coast</option><option>The Grand China Golf Journey</option><option>A fully tailored combination</option></select>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Plan Your Journey</button>
-      <p class="form-note">No obligation · Personal reply within one business day</p>
-    </form>
-  </div>
-</section>
 
 <!-- BRAND FAMILY -->
 <section class="family" aria-label="Our brand family">
@@ -1503,8 +1469,8 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <p style="font-size:15.5px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">From the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>
       <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Beyond the Fairway</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
-      <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#exclusives">Beyond Golf</a></li><li><a href="#start">Plan Your Journey</a></li></ul></div>
-      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="#start">Plan Your Journey</a></li></ul></div>
+      <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#plan">Plan Your Trip</a></li><li><a href="#exclusives">Beyond Golf</a></li><li><a href="inquiry.html">Plan Your Journey</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li><li>WeChat: GolfChina</li><li><a href="inquiry.html">Plan Your Journey</a></li></ul></div>
     </div>
     <div class="base">
       <span>© 2026 Golf China Co. All rights reserved.</span>
@@ -1517,8 +1483,9 @@ const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
 const toggle=document.querySelector('.menu-toggle');
 const menu=document.querySelector('header.nav nav');
-toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggle.textContent=o?'✕':'☰';toggle.setAttribute('aria-expanded',o);});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
+const setMenu=o=>{menu.classList.toggle('open',o);toggle.classList.toggle('open',o);nav.classList.toggle('menu-open',o);document.body.classList.toggle('no-scroll',o);toggle.setAttribute('aria-expanded',o);};
+toggle.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 // Course card photo galleries
@@ -1549,6 +1516,7 @@ document.querySelectorAll('.swipe-ind').forEach(ind=>{
   const upd=()=>{
     const max=sc.scrollWidth-sc.clientWidth;
     if(max<=1){ind.style.display='none';return;}
+    ind.style.display='';
     const frac=Math.max(sc.clientWidth/sc.scrollWidth,.12);
     const p=Math.min(Math.max(sc.scrollLeft/max,0),1);
     thumb.style.width=(frac*100)+'%';
@@ -1561,6 +1529,21 @@ document.querySelectorAll('.swipe-ind').forEach(ind=>{
   sc.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
   addEventListener('resize',upd);upd();
 });
+/* ===== Beyond the Fairway tabs ===== */
+const exTabs=document.querySelectorAll('.exclusives .tab');
+const exPanels=document.querySelectorAll('.exclusives .tabpanel');
+const selectTab=t=>{
+  exTabs.forEach(x=>{x.classList.toggle('on',x===t);x.setAttribute('aria-selected',x===t);});
+  exPanels.forEach(p=>{const on=p.id===t.dataset.tab;p.classList.toggle('on',on);if(on)p.querySelectorAll('.fade').forEach(f=>f.classList.add('in'));});
+  dispatchEvent(new Event('resize'));
+};
+exTabs.forEach(t=>t.addEventListener('click',()=>selectTab(t)));
+const stayTab=document.querySelector('.exclusives .tab[data-tab="tp-stay"]');
+document.querySelectorAll('a[href="#stay"]').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();selectTab(stayTab);
+  document.getElementById('exclusives').scrollIntoView({behavior:'smooth'});
+}));
+if(location.hash==='#stay'){selectTab(stayTab);document.getElementById('exclusives').scrollIntoView();}
 document.querySelectorAll('.ex-nav').forEach(btn=>btn.addEventListener('click',()=>{
   const wrap=btn.closest('.ex-carousel, .hotel-carousel, .course-carousel');if(!wrap)return;
   const track=wrap.querySelector('.ex-track, .hotel-row, .course-grid');if(!track||!track.firstElementChild)return;
@@ -1688,7 +1671,7 @@ document.querySelectorAll('.bigcard').forEach(card=>{
   card.addEventListener('click',e=>{if(e.target.closest('a'))return;window.location.href=link.href;});
 });
 </script>
-<a href="#start" class="expert-fab" id="expertFab">Speak to an Expert</a>
+<a href="inquiry.html" class="expert-fab" id="expertFab">Speak to an Expert</a>
 <script>
 (function(){var f=document.getElementById('expertFab');if(!f)return;var t=function(){var y=window.scrollY||document.documentElement.scrollTop;f.classList.toggle('show',y>window.innerHeight*0.6);};window.addEventListener('scroll',t,{passive:true});t();})();
 </script>
