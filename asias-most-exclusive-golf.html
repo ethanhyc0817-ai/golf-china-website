@@ -256,26 +256,35 @@ section{padding:100px 0}
 .hm-panel{position:relative;z-index:2;background:var(--ivory);max-width:1100px;width:100%;max-height:90vh;overflow:auto;padding:40px 44px;border-radius:2px;box-shadow:var(--lift)}
 .hm-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;line-height:1;padding:6px}
 .hm-close:hover{color:var(--cinnabar)}
+.hm-panel h3{font-size:clamp(26px,3.4vw,38px);color:var(--ink);margin-bottom:26px;max-width:22ch;padding-right:40px}
 .hm-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:start}
-@media(max-width:860px){.hm-grid{grid-template-columns:1fr;gap:24px}.hm-panel{padding:28px 22px}}
+@media(max-width:860px){.hm-grid{grid-template-columns:1fr;gap:24px}.hm-panel{padding:28px 22px}.hm-panel h3{margin-bottom:18px}}
 .hm-gal{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--mist)}
-.hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hm-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
+.hm-gal img.ld{opacity:.32}
+.hm-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;transition:.25s}
+.hm-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hm-btn.prev{left:14px}.hm-btn.next{right:14px}
+.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
 .hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
 .hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
 
 /* ===== STAY ===== */
 .stay{background:var(--pine);color:#fff}
 .stay .section-head h2{color:#fff}.stay .section-head p{color:rgba(255,255,255,.72)}
-.stay-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#22422f;border:1px solid rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:26px}
-.stay-wrap.rev .img{order:2}
-@media(max-width:860px){.stay-wrap{grid-template-columns:1fr}.stay-wrap.rev .img{order:0}}
-.stay-wrap .img{position:relative;min-height:380px}
-.stay-wrap .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.stay-wrap .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
-.stay-wrap .c .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
-.stay-wrap .c h3{font-size:30px;margin:8px 0 14px}
-.stay-wrap .c p{font-size:16px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch;margin-bottom:14px}
-.stay-wrap .c p:last-of-type{margin-bottom:0}
+.hotel-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+@media(max-width:900px){.hotel-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hotel-grid{grid-template-columns:1fr}}
+.hcard{background:var(--paper);border:1px solid var(--mist);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.hcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.hcard:hover .ph img{transform:scale(1.04)}
+.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.hcard .b{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.hcard h3{font-size:25px;color:var(--pine)}
+.hcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
+.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+.hcard .vd:hover{background:var(--gold);color:#fff}
 
 /* ===== EXTEND ===== */
 .extend{background:var(--ivory)}
@@ -316,7 +325,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   .container{padding:0 20px}
   section{padding:68px 0}
   .section-head{margin-bottom:36px}
-  .golf-feature .c,.stay-wrap .c{padding:30px 24px}
+  .golf-feature .c{padding:30px 24px}
 }
 
 /* Floating expert CTA */
@@ -618,29 +627,62 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <h2>Sleep on the tropical coast.</h2>
       <p>Not a tower by the airport road — an address on the water that is part of the journey itself.</p>
     </div>
-    <div class="stay-wrap fade">
-      <div class="img"><img src="assets/img/stay-sanya-coast.jpg" alt="A tropical beachfront resort on the Sanya coast at dusk, Hainan"></div>
-      <div class="c">
-        <div class="loc">On the Coast · Sanya &amp; the South</div>
-        <h3>Barefoot luxury on the shore</h3>
-        <p>Our Hainan favourites sit right on the sand — the likes of Rosewood on the island's shore, where private terraces open to the sea, the spa runs late, and the morning's tee time is a short, easy transfer away.</p>
-        <p>For families, we choose resorts with the space and the pools to keep non-golfers happy all day — so the trip works whether you're chasing the World Top 100 or your first green wave.</p>
-      </div>
-    </div>
+    <div class="hotel-grid">
 
-    <div class="stay-wrap rev fade">
-      <div class="img"><img src="assets/img/hotel-ritz-carlton-haikou-card.jpg" alt="A lone piper at sunset on the fairway beneath The Ritz-Carlton at Mission Hills, Haikou"></div>
-      <div class="c">
-        <div class="loc">At Mission Hills · Haikou</div>
-        <h3>Stay where the volcanoes meet the springs</h3>
-        <p>For the Blackstone rounds, the move is to stay inside Mission Hills itself — where the first tee is minutes from your door and the day ends in the resort's natural volcanic hot springs, the rock still warm beneath the water.</p>
-        <p>It is the easiest, most self-contained golf stay on the island: thirty-six holes, mineral springs and dinner, with nothing more to arrange than when you'd like to play.</p>
-      </div>
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Sanya · Haitang Bay</span><img src="assets/img/hotel-rosewood-sanya-card.jpg" alt="Dining pavilions set among the pools at dusk, Rosewood Sanya"></div>
+        <div class="b">
+          <h3>Rosewood Sanya</h3>
+          <div class="loc">Haitang Bay, Sanya</div>
+          <button class="vd" data-hotel="rosewood">View Details</button>
+        </div>
+      </article>
+
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Haikou · At Mission Hills</span><img src="assets/img/hotel-ritz-carlton-haikou-card.jpg" alt="A lone piper at sunset on the fairway beneath The Ritz-Carlton at Mission Hills, Haikou"></div>
+        <div class="b">
+          <h3>The Ritz-Carlton at Mission Hills</h3>
+          <div class="loc">Mission Hills, Haikou</div>
+          <button class="vd" data-hotel="ritz">View Details</button>
+        </div>
+      </article>
+
+      <article class="hcard fade">
+        <div class="ph"><span class="badge">Wanning · Shenzhou Peninsula</span><img src="assets/img/hotel-grand-hyatt-shenzhou-card.jpg" alt="The Grand Hyatt resort running along the beach and bay at Shenzhou Peninsula, Wanning"></div>
+        <div class="b">
+          <h3>Grand Hyatt, Shenzhou Peninsula</h3>
+          <div class="loc">Shenzhou Peninsula, Wanning</div>
+          <button class="vd" data-hotel="hyatt">View Details</button>
+        </div>
+      </article>
+
     </div>
 
     <p class="note fade" style="text-align:center;margin-top:38px;font-size:15px;color:rgba(255,255,255,.65)">Specific hotels, room categories and the level of comfort you choose are set out in your private proposal — every address booked entirely on your behalf.</p>
   </div>
 </section>
+
+<!-- HOTEL DETAILS MODAL -->
+<div class="hmodal" id="hmodal" role="dialog" aria-modal="true" aria-labelledby="hm-name">
+  <div class="ov" data-close></div>
+  <div class="hm-panel">
+    <button class="hm-close" data-close aria-label="Close">✕</button>
+    <h3 id="hm-name"></h3>
+    <div class="hm-grid">
+      <div class="hm-gal">
+        <img id="hm-img" src="" alt="">
+        <button class="hm-btn prev" aria-label="Previous image">‹</button>
+        <button class="hm-btn next" aria-label="Next image">›</button>
+        <span class="hm-count" id="hm-count"></span>
+      </div>
+      <div class="hm-desc">
+        <div class="hm-loc" id="hm-loc"></div>
+        <p id="hm-desc"></p>
+        <a href="index.html#start" class="btn btn-primary">Plan Your Journey</a>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <div class="panel" id="extend">
@@ -818,6 +860,62 @@ document.querySelectorAll('.gal').forEach(g=>{
   g.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
   g.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;},{passive:true});
 });
+/* hotel details modal */
+const HOTELS={
+ rosewood:{
+  name:'Rosewood Sanya',loc:'Haitang Bay, Sanya',
+  desc:'Right on the sand at Haitang Bay — ocean-view rooms and suites, a rooftop infinity pool hanging above the bay, dining pavilions set among the pools and one of the island’s best spas, in the resort city that now holds its own Michelin Guide. The bay faces the sunrise, the morning’s tee time is an easy transfer away, and for families there is space and water enough to keep the non-golfers happy all day.',
+  imgs:['hotel-rosewood-sanya-card.jpg','hotel-rosewood-sanya-1.jpg','hotel-rosewood-sanya-2.jpg','hotel-rosewood-sanya-3.jpg','hotel-rosewood-sanya-4.jpg']
+ },
+ ritz:{
+  name:'The Ritz-Carlton at Mission Hills',loc:'Mission Hills, Haikou',
+  desc:'Inside Mission Hills itself — the first tee minutes from your door, and the day ending in the resort’s natural volcanic hot springs, the rock still warm beneath the water. The easiest, most self-contained golf stay on the island: thirty-six holes, mineral springs and dinner, with nothing more to arrange than when you’d like to play.',
+  imgs:['hotel-ritz-carlton-haikou-card.jpg','hotel-ritz-carlton-haikou-1.jpg','hotel-ritz-carlton-haikou-2.jpg','hotel-ritz-carlton-haikou-3.jpg','hotel-ritz-carlton-haikou-4.jpg','hotel-ritz-carlton-haikou-5.jpg','stay-missionhills-hotspring.jpg']
+ },
+ hyatt:{
+  name:'Grand Hyatt, Shenzhou Peninsula',loc:'Shenzhou Peninsula, Wanning',
+  desc:'Beside The Dunes, opening straight onto an unspoilt stretch of the South China Sea — the beach at the end of the garden, the links minutes away. Play the round in the morning, spend the afternoon barefoot.',
+  imgs:['hotel-grand-hyatt-shenzhou-card.jpg','hotel-grand-hyatt-shenzhou-1.jpg','hotel-grand-hyatt-shenzhou-2.jpg','hotel-grand-hyatt-shenzhou-3.jpg','hotel-grand-hyatt-shenzhou-4.jpg','dunes-shenzhou-clubhouse.jpg']
+ }
+};
+const hmodal=document.getElementById('hmodal');
+if(hmodal){
+  let hgal=[],gi=0;
+  const hImg=document.getElementById('hm-img'),hCount=document.getElementById('hm-count');
+  /* gallery preloader: keeps decoded bitmaps warm so next/prev is instant */
+  const pcache=new Map();
+  const warm=n=>{let p=pcache.get(n);if(!p){p=new Image();p.decoding='async';p.src='assets/img/'+n;pcache.set(n,p);}return p;};
+  const show=i=>{
+    const L=hgal.length;if(!L)return;
+    gi=(i+L)%L;
+    const p=warm(hgal[gi]),paint=()=>{if(p.src.endsWith(hgal[gi])){hImg.src=p.src;hImg.classList.remove('ld');}};
+    if(p.complete&&p.naturalWidth)paint();
+    else{hImg.classList.add('ld');p.decode?p.decode().then(paint).catch(paint):p.addEventListener('load',paint,{once:true});}
+    hCount.textContent=(gi+1)+' / '+L;
+    warm(hgal[(gi+1)%L]);warm(hgal[(gi-1+L)%L]);
+  };
+  const warmAll=()=>hgal.forEach(warm);
+  const idle=fn=>window.requestIdleCallback?requestIdleCallback(fn,{timeout:1200}):setTimeout(fn,250);
+  const openH=id=>{
+    const d=HOTELS[id];if(!d)return;
+    document.getElementById('hm-name').textContent=d.name;
+    document.getElementById('hm-loc').textContent=d.loc;
+    document.getElementById('hm-desc').textContent=d.desc;
+    hImg.alt=d.name;hgal=d.imgs;show(0);idle(warmAll);
+    hmodal.classList.add('open');document.body.style.overflow='hidden';
+  };
+  const closeH=()=>{hmodal.classList.remove('open');document.body.style.overflow='';};
+  document.querySelectorAll('.hcard .vd').forEach(b=>b.addEventListener('click',()=>openH(b.dataset.hotel)));
+  document.querySelectorAll('.hcard .vd').forEach(b=>{const pre=()=>{const d=HOTELS[b.dataset.hotel];if(d&&d.imgs)d.imgs.slice(0,2).forEach(warm);};b.addEventListener('pointerenter',pre,{once:true});b.addEventListener('focus',pre,{once:true});});
+  hmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeH));
+  hmodal.querySelector('.hm-btn.prev').addEventListener('click',()=>show(gi-1));
+  hmodal.querySelector('.hm-btn.next').addEventListener('click',()=>show(gi+1));
+  addEventListener('keydown',e=>{if(!hmodal.classList.contains('open'))return;if(e.key==='Escape')closeH();if(e.key==='ArrowLeft')show(gi-1);if(e.key==='ArrowRight')show(gi+1);});
+  let hx0=null;
+  const hg=hmodal.querySelector('.hm-gal');
+  hg.addEventListener('touchstart',e=>{hx0=e.touches[0].clientX},{passive:true});
+  hg.addEventListener('touchend',e=>{if(hx0===null)return;const dx=e.changedTouches[0].clientX-hx0;if(Math.abs(dx)>40)show(gi+(dx<0?1:-1));hx0=null;},{passive:true});
+}
 /* experience details modal */
 const EXPS={
  lesson:{
