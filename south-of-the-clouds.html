@@ -8,10 +8,152 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="description" content="A private golf journey through Yunnan — World Top 100 golf at Spring City, rounds beneath the glacier of Jade Dragon Snow Mountain, Lijiang's old town, the Tea Horse Road and dawn prayers in Shangri-La.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ===== Golf China Co. — design tokens (see DESIGN-SYSTEM.md) ===== */
 :root{
   --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
@@ -210,7 +352,7 @@ section{padding:100px 0}
 .excard p{font-size:17px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
 .excard{cursor:pointer}
 .excard.wide{grid-column:span 2}
-.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
+.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
 .excard:hover .ex-see{color:#fff;border-color:#fff}
 .exclusives .note{text-align:center;margin-top:38px;font-size:17px;color:#54635a}
 @media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}}
@@ -231,7 +373,7 @@ section{padding:100px 0}
 }
 /* experience details modal */
 .xm-name{font-size:clamp(24px,3vw,32px);color:var(--ink);margin:2px 0 16px;line-height:1.15}
-.xm-btn{margin-top:6px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 36px;border-radius:2px;cursor:pointer;transition:.25s}
+.xm-btn{margin-top:6px;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 36px;border-radius:2px;cursor:pointer;transition:.25s}
 .xm-btn:hover{background:var(--gold);color:#fff}
 
 /* ===== STAY ===== */
@@ -243,13 +385,13 @@ section{padding:100px 0}
 .hcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
 .hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .hcard:hover .ph img{transform:scale(1.04)}
-.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
 .hcard .b{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
 .hcard h3{font-size:25px;color:var(--pine)}
-.hcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
-.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+.hcard .loc{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
+.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
 .hcard .vd:hover{background:var(--gold);color:#fff}
-.stay .note{text-align:center;margin-top:38px;font-size:16px;color:#54635a}
+.stay .note{text-align:center;margin-top:38px;font-size:17px;color:#54635a}
 
 /* ===== HOTEL MODAL ===== */
 .hmodal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px}
@@ -267,9 +409,9 @@ section{padding:100px 0}
 .hm-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;transition:.25s}
 .hm-btn:hover{border-color:var(--gold);color:var(--gold)}
 .hm-btn.prev{left:14px}.hm-btn.next{right:14px}
-.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
-.hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
-.hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
+.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:12.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
+.hm-desc .hm-loc{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+.hm-desc p{font-size:17.5px;color:#3f4f45;margin-bottom:20px}
 
 /* ===== EXTEND ===== */
 .extend{background:var(--ivory)}
@@ -327,7 +469,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="bar">
-    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></a>
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></a>
     <nav>
       <a href="#overview">Overview</a>
       <a href="#golf">The Golf</a>
@@ -343,8 +485,8 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 <!-- HERO -->
 <section class="hero" id="top" style="padding:0">
   <picture>
-    <source media="(max-width:760px)" srcset="assets/img/hero-yunnan-mobile.jpg">
-    <img class="bg" src="assets/img/hero-yunnan.jpg" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang">
+    <source media="(max-width:760px)" srcset="assets/img/hero-yunnan-mobile.avif">
+    <img fetchpriority="high" class="bg" src="assets/img/hero-yunnan.avif" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang" width="1600" height="1067">
   </picture>
   <div class="scrim"></div>
   <div class="container hero-inner">
@@ -425,12 +567,12 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/springcity-resort-aerial.jpg" style="object-position:right center" alt="An aerial view of Spring City's forested fairways running down to Yangzong Lake at golden hour">
-        <img src="assets/img/springcity-lake-green.jpg" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy">
-        <img src="assets/img/springcity-blossom-fairway.jpg" alt="Spring blossoms lining a bunkered fairway on the Mountain Course at Spring City" loading="lazy">
-        <img src="assets/img/springcity-autumn-bunker.jpg" alt="A sculpted bunker curling along the lakeshore at Spring City, mountains across the water" loading="lazy">
-        <img src="assets/img/springcity-forest-fairway.jpg" alt="A tree-lined fairway of the Lake Course descending toward Yangzong Lake" loading="lazy">
-        <img src="assets/img/springcity-lakeside-green.jpg" alt="A green of the Lake Course jutting toward the silver water of Yangzong Lake" loading="lazy">
+        <img class="active" src="assets/img/springcity-resort-aerial.avif" style="object-position:right center" alt="An aerial view of Spring City's forested fairways running down to Yangzong Lake at golden hour" width="1600" height="1198" loading="lazy" decoding="async">
+        <img src="assets/img/springcity-lake-green.avif" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy" width="1024" height="683">
+        <img src="assets/img/springcity-blossom-fairway.avif" alt="Spring blossoms lining a bunkered fairway on the Mountain Course at Spring City" loading="lazy" width="1600" height="1068">
+        <img src="assets/img/springcity-autumn-bunker.avif" alt="A sculpted bunker curling along the lakeshore at Spring City, mountains across the water" loading="lazy" width="960" height="664">
+        <img src="assets/img/springcity-forest-fairway.avif" alt="A tree-lined fairway of the Lake Course descending toward Yangzong Lake" loading="lazy" width="1200" height="800">
+        <img src="assets/img/springcity-lakeside-green.avif" alt="A green of the Lake Course jutting toward the silver water of Yangzong Lake" loading="lazy" width="900" height="1226">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -451,11 +593,11 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/jadedragon-course-view.jpg" alt="A fairway at Jade Dragon Snow Mountain Golf Club running toward the cloud-wrapped peaks of the massif">
-        <img src="assets/img/jadedragon-golden-fairway.jpg" alt="Golden winter grasses framing a fairway beneath the snow range at Jade Dragon" loading="lazy">
-        <img src="assets/img/jadedragon-valley-green.jpg" alt="A green and its bunkers set in the high valley beneath Jade Dragon Snow Mountain" loading="lazy">
-        <img src="assets/img/jadedragon-bunkered-green.jpg" alt="White-sand bunkers guarding a green in the thin air at Jade Dragon" loading="lazy">
-        <img src="assets/img/jadedragon-morning-light.jpg" alt="Morning light breaking over the fairways beneath Jade Dragon Snow Mountain" loading="lazy">
+        <img class="active" src="assets/img/jadedragon-course-view.avif" alt="A fairway at Jade Dragon Snow Mountain Golf Club running toward the cloud-wrapped peaks of the massif" width="1067" height="1600" loading="lazy" decoding="async">
+        <img src="assets/img/jadedragon-golden-fairway.avif" alt="Golden winter grasses framing a fairway beneath the snow range at Jade Dragon" loading="lazy" width="1600" height="1066">
+        <img src="assets/img/jadedragon-valley-green.avif" alt="A green and its bunkers set in the high valley beneath Jade Dragon Snow Mountain" loading="lazy" width="1600" height="1066">
+        <img src="assets/img/jadedragon-bunkered-green.avif" alt="White-sand bunkers guarding a green in the thin air at Jade Dragon" loading="lazy" width="1600" height="1066">
+        <img src="assets/img/jadedragon-morning-light.avif" alt="Morning light breaking over the fairways beneath Jade Dragon Snow Mountain" loading="lazy" width="1200" height="768">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -481,7 +623,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 <!-- AFTER THE ROUND -->
 <section class="after" id="after">
   <div class="container after-wrap">
-    <img class="photo fade" src="assets/img/exp-tea-ceremony.jpg" alt="A tea master in embroidered dress warming tea over a charcoal hearth, surrounded by small bowls of leaves and spices">
+    <img class="photo fade" src="assets/img/exp-tea-ceremony.avif" alt="A tea master in embroidered dress warming tea over a charcoal hearth, surrounded by small bowls of leaves and spices" width="1440" height="1192" loading="lazy" decoding="async">
     <div class="txt fade">
       <span class="eyebrow">After the Round</span>
       <h2>The day does not end at the 18th.</h2>
@@ -506,8 +648,8 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
       <article class="excard feature fade" data-exp="songzanlin" role="button" tabindex="0" aria-label="Dawn prayers at Songzanlin — see details">
         <picture>
-          <source media="(max-width:760px)" srcset="assets/img/exp-songzanlin-mobile.jpg">
-          <img src="assets/img/exp-songzanlin.jpg" alt="Monks in crimson robes walking a sunlit lane at Songzanlin Monastery, Shangri-La">
+          <source media="(max-width:760px)" srcset="assets/img/exp-songzanlin-mobile.avif">
+          <img src="assets/img/exp-songzanlin.avif" alt="Monks in crimson robes walking a sunlit lane at Songzanlin Monastery, Shangri-La" width="1068" height="1600" loading="lazy" decoding="async">
         </picture>
         <div class="b">
           <div class="loc">Shangri-La · Yunnan</div>
@@ -518,7 +660,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="excard fade" data-exp="oldtown" role="button" tabindex="0" aria-label="The old town, privately guided — see details">
-        <img src="assets/img/exp-oldtown-guide.jpg" alt="Two travelers walking Lijiang's cobbled lanes at first light with their private guide">
+        <img src="assets/img/exp-oldtown-guide.avif" alt="Two travelers walking Lijiang's cobbled lanes at first light with their private guide" width="1091" height="1600" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Lijiang · Old Town</div>
           <h3>The old town, privately guided</h3>
@@ -528,7 +670,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="excard fade" data-exp="mushroom" role="button" tabindex="0" aria-label="The wild-mushroom table — see details">
-        <img src="assets/img/exp-mushroom.jpg" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan">
+        <img src="assets/img/exp-mushroom.avif" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan" width="1206" height="904" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Yunnan · Jun–Sep</div>
           <h3>The wild-mushroom table</h3>
@@ -538,7 +680,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="excard wide fade" data-exp="tea" role="button" tabindex="0" aria-label="A traditional tea tasting — see details">
-        <img src="assets/img/exp-tea-ceremony.jpg" alt="A tea master in embroidered dress warming tea over a charcoal hearth, surrounded by small bowls of leaves and spices">
+        <img src="assets/img/exp-tea-ceremony.avif" alt="A tea master in embroidered dress warming tea over a charcoal hearth, surrounded by small bowls of leaves and spices" width="1440" height="1192" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Lijiang · Yunnan</div>
           <h3>A traditional tea tasting</h3>
@@ -558,7 +700,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
   <div class="hm-panel">
     <button class="hm-close" data-xclose aria-label="Close">✕</button>
     <div class="hm-grid">
-      <div class="hm-gal"><img id="xm-img" src="" alt=""></div>
+      <div class="hm-gal"><img id="xm-img" src="" alt="" loading="lazy" decoding="async"></div>
       <div class="hm-desc">
         <div class="hm-loc" id="xm-loc"></div>
         <h3 class="xm-name" id="xm-name"></h3>
@@ -584,7 +726,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="hotel-grid">
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Lijiang · Naxi Courtyards</span><img src="assets/img/hotel-banyan-tree-lijiang-card.jpg" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain"></div>
+        <div class="ph"><span class="badge">Lijiang · Naxi Courtyards</span><img src="assets/img/hotel-banyan-tree-lijiang-card.avif" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain" width="880" height="1100" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Banyan Tree Lijiang</h3>
           <div class="loc">Lijiang, China</div>
@@ -593,7 +735,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Lijiang · At the Snow Mountain</span><img src="assets/img/hotel-jinmao-purelax-card.jpg" alt="Jinmao Purelax Lijiang beneath the glacier of Jade Dragon Snow Mountain"></div>
+        <div class="ph"><span class="badge">Lijiang · At the Snow Mountain</span><img src="assets/img/hotel-jinmao-purelax-card.avif" alt="Jinmao Purelax Lijiang beneath the glacier of Jade Dragon Snow Mountain" width="825" height="1100" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Jinmao Purelax Lijiang</h3>
           <div class="loc">Lijiang, China</div>
@@ -602,7 +744,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Kunming · On the Resort</span><img src="assets/img/springcity-resort-dusk.jpg" alt="Terracotta rooftops of the Spring City resort above Yangzong Lake at sunset"></div>
+        <div class="ph"><span class="badge">Kunming · On the Resort</span><img src="assets/img/springcity-resort-dusk.avif" alt="Terracotta rooftops of the Spring City resort above Yangzong Lake at sunset" width="1600" height="800" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Spring City Golf &amp; Lake Resort</h3>
           <div class="loc">Kunming, China</div>
@@ -624,7 +766,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <h3 id="hm-name"></h3>
     <div class="hm-grid">
       <div class="hm-gal">
-        <img id="hm-img" src="" alt="">
+        <img id="hm-img" src="" alt="" loading="lazy" decoding="async">
         <button class="hm-btn prev" aria-label="Previous image">‹</button>
         <button class="hm-btn next" aria-label="Next image">›</button>
         <span class="hm-count" id="hm-count"></span>
@@ -652,7 +794,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="extend-grid">
 
       <a class="xcard fade" href="asias-most-exclusive-golf.html">
-        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan">
+        <img src="assets/img/dest-hainan.avif" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan" width="1440" height="1152" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">90 min by air</div>
           <h3>Asia's Most Exclusive Golf</h3>
@@ -662,7 +804,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="xcard fade" href="imperial-china.html">
-        <img src="assets/img/dest-beijing.jpg" alt="The Forbidden City at golden hour, Beijing">
+        <img src="assets/img/dest-beijing.avif" alt="The Forbidden City at golden hour, Beijing" width="1440" height="960" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">3.5 h by air</div>
           <h3>Imperial China</h3>
@@ -689,7 +831,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
       <article class="sjcard fade">
         <span class="sj-badge">Signature Trip</span>
-        <div class="ph"><img src="assets/img/jadedragon-fairway.jpg" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan"></div>
+        <div class="ph"><img src="assets/img/jadedragon-fairway.avif" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan" width="1920" height="1280" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Snow Peaks to Tropical Coast</h3>
           <div class="specs">9 Nights · 4 Rounds</div>
@@ -701,7 +843,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
       <article class="sjcard fade">
         <span class="sj-badge">The Complete Route</span>
-        <div class="ph"><img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"></div>
+        <div class="ph"><img src="assets/img/dest-hainan.avif" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan" width="1440" height="1152" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>The Grand China Golf Journey</h3>
           <div class="specs">16 Nights · 7–9 Rounds</div>
@@ -725,7 +867,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
 <!-- CTA -->
 <section class="cta" id="start">
-  <img class="bg" src="assets/img/jadedragon-snowpeak-fairway.jpg" alt="">
+  <img class="bg" src="assets/img/jadedragon-snowpeak-fairway.avif" alt="" width="1200" height="798" loading="lazy" decoding="async">
   <div class="scrim"></div>
   <div class="container inner fade">
     <span class="eyebrow">Start Planning</span>
@@ -740,7 +882,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
   <div class="container">
     <div class="cols">
       <div>
-        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></div>
+        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></div>
         <p style="font-size:16px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
         <p style="font-size:14.5px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China Co. is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>

@@ -8,10 +8,152 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="description" content="A private golf journey on China's tropical island — World Top 100 golf at Mission Hills Blackstone, links on the dunes at Shenzhou Peninsula, a headland round at Lu Hui Tou above Sanya Bay, and beginner surfing on a PerfectSwell wave with our partner SurfChinaCo.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ===== Golf China Co. — design tokens (see DESIGN-SYSTEM.md) ===== */
 :root{
   --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
@@ -23,18 +165,18 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-size:19px;color:var(--ink);background:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.2px}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-.eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.eyebrow{font-family:var(--sans);font-size:14.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 .container{max-width:1200px;margin:0 auto;padding:0 28px}
-.btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
+.btn{display:inline-block;font-family:var(--sans);font-size:15.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.25s}
 .btn-primary{background:var(--cinnabar);color:#fff}
 .btn-primary:hover{background:#9c3927}
 .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
 .btn-ghost:hover{background:#fff;color:var(--pine)}
-.btn-line{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);border-bottom:1px solid rgba(180,69,47,.35);padding-bottom:3px;transition:.25s}
+.btn-line{font-family:var(--sans);font-size:14.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);border-bottom:1px solid rgba(180,69,47,.35);padding-bottom:3px;transition:.25s}
 .btn-line:hover{border-color:var(--cinnabar)}
 .fade{opacity:0;transform:translateY(24px);transition:.7s ease}
 .fade.in{opacity:1;transform:none}
@@ -42,17 +184,17 @@ a{color:inherit;text-decoration:none}
 /* ===== NAV ===== */
 header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
 header.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1200px;margin:0 auto}
-header.nav .logo{font-family:var(--serif);font-size:23px;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px;white-space:nowrap;flex-shrink:0}
+header.nav .logo{font-family:var(--serif);font-size:25px;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px;white-space:nowrap;flex-shrink:0}
 header.nav .logo .logo-mark{height:30px;width:auto;display:block}
 header.nav .logo .logo-text{color:#fff}
 header.nav .logo span{color:var(--gold)}
 header.nav nav{display:flex;gap:22px;align-items:center}
-header.nav nav a{font-size:13px;letter-spacing:.08em;color:#fff;opacity:.92;font-weight:400}
+header.nav nav a{font-size:15.5px;letter-spacing:.08em;color:#fff;opacity:.92;font-weight:400}
 header.nav nav a:hover{color:var(--gold)}
-header.nav .nav-cta{font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px;border-radius:2px}
+header.nav .nav-cta{font-size:14.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:10px 20px;border-radius:2px}
 header.nav.scrolled{background:var(--pine);box-shadow:0 2px 20px rgba(0,0,0,.18)}
 header.nav.scrolled .bar{padding:12px 28px}
-.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:60}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;z-index:60}
 @media(max-width:1180px){
   header.nav nav{gap:16px}
   header.nav nav a{font-size:15px}
@@ -62,7 +204,7 @@ header.nav.scrolled .bar{padding:12px 28px}
   header.nav .bar{padding:14px 20px}
   header.nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--pine);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:0 18px 40px rgba(0,0,0,.25)}
   header.nav nav.open{max-height:520px}
-  header.nav nav a{padding:15px 22px;border-top:1px solid rgba(255,255,255,.1);font-size:15px;opacity:1}
+  header.nav nav a{padding:15px 22px;border-top:1px solid rgba(255,255,255,.1);font-size:17px;opacity:1}
   header.nav nav .nav-cta{border:none;border-top:1px solid rgba(255,255,255,.1);background:var(--cinnabar);text-align:center;border-radius:0}
   .menu-toggle{display:block}
 }
@@ -72,20 +214,20 @@ header.nav.scrolled .bar{padding:12px 28px}
 .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.55) 0%,rgba(20,36,28,.15) 40%,rgba(20,36,28,.88) 100%)}
 .hero-inner{position:relative;z-index:2;padding-bottom:72px;width:100%}
-.crumbs{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:22px}
+.crumbs{font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:22px}
 .crumbs a{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px}
 .crumbs a:hover{color:var(--gold);border-color:var(--gold)}
 .crumbs .sep{margin:0 10px;color:var(--gold)}
-.hero h1{font-size:clamp(44px,7vw,84px);max-width:14ch;margin:14px 0 16px}
-.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,26px);color:rgba(255,255,255,.94);max-width:46ch}
+.hero h1{font-size:clamp(47px,7vw,87px);max-width:14ch;margin:14px 0 16px}
+.hero .hero-tag{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,28px);color:rgba(255,255,255,.94);max-width:46ch}
 
 /* ===== FACTS BAR (Black Tomato-style key facts) ===== */
 .facts{background:var(--pine);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
 .facts .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 .facts .f{padding:26px 28px;border-left:1px solid rgba(255,255,255,.14)}
 .facts .f:first-child{border-left:none;padding-left:0}
-.facts .fk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
-.facts .fv{font-family:var(--serif);font-size:21px;margin-top:6px;line-height:1.25}
+.facts .fk{font-size:13.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.facts .fv{font-family:var(--serif);font-size:23px;margin-top:6px;line-height:1.25}
 @media(max-width:860px){.facts .grid{grid-template-columns:1fr 1fr}.facts .f{padding:20px 22px}.facts .f:nth-child(odd){border-left:none;padding-left:0}}
 
 /* ===== TAB BAR ===== */
@@ -114,25 +256,25 @@ header.nav.scrolled .bar{padding:12px 28px}
 /* ===== SECTION SHELL ===== */
 section{padding:100px 0}
 .section-head{max-width:680px;margin-bottom:54px}
-.section-head h2{font-size:clamp(32px,4.6vw,50px);margin:14px 0}
-.section-head p{color:#4a5a50;font-size:18px}
+.section-head h2{font-size:clamp(35px,4.6vw,53px);margin:14px 0}
+.section-head p{color:#4a5a50;font-size:19px}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 
 /* ===== OVERVIEW (editorial intro + at a glance) ===== */
 .overview{background:var(--ivory)}
 .ov-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
 @media(max-width:860px){.ov-wrap{grid-template-columns:1fr;gap:40px}}
-.ov-txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
-.ov-txt p{font-size:17.5px;color:#3f4f45;margin-bottom:18px;max-width:62ch}
-.ov-txt .lede::first-letter{font-family:var(--serif);font-size:54px;line-height:.9;float:left;padding:6px 10px 0 0;color:var(--cinnabar)}
+.ov-txt h2{font-size:clamp(32px,4.4vw,51px);margin:14px 0 22px;color:var(--pine)}
+.ov-txt p{font-size:18.5px;color:#3f4f45;margin-bottom:18px;max-width:62ch}
+.ov-txt .lede::first-letter{font-family:var(--serif);font-size:57px;line-height:.9;float:left;padding:6px 10px 0 0;color:var(--cinnabar)}
 .glance{background:var(--paper);border:1px solid var(--mist);padding:34px 32px;position:sticky;top:96px}
-.glance h3{font-size:15px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
+.glance h3{font-size:17px;font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
 .glance h3::after{content:"";display:block;width:28px;height:2px;background:var(--gold);margin-top:12px}
 .glance ul{list-style:none;margin-top:20px}
-.glance li{font-size:15.5px;color:#3f4f45;padding:11px 0 11px 24px;border-bottom:1px solid var(--mist);position:relative}
+.glance li{font-size:17.5px;color:#3f4f45;padding:11px 0 11px 24px;border-bottom:1px solid var(--mist);position:relative}
 .glance li:last-child{border-bottom:none}
 .glance li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;background:var(--gold);border-radius:999px}
-.glance .gnote{font-size:13.5px;color:#7a857c;margin-top:16px;font-style:italic}
+.glance .gnote{font-size:16px;color:#7a857c;margin-top:16px;font-style:italic}
 
 /* ===== THE GOLF ===== */
 .golf{background:var(--pine);color:#fff}
@@ -141,12 +283,12 @@ section{padding:100px 0}
 @media(max-width:860px){.golf-feature{grid-template-columns:1fr}}
 .golf-feature .img{position:relative;min-height:380px}
 .golf-feature .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.golf-feature .img .tag{position:absolute;left:0;bottom:0;background:var(--cinnabar);color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;z-index:3}
+.golf-feature .img .tag{position:absolute;left:0;bottom:0;background:var(--cinnabar);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;z-index:3}
 
 /* ===== IMAGE GALLERY (course cards) ===== */
 .gal img{opacity:0;transition:opacity .55s ease}
 .gal img.active{opacity:1}
-.gal-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(20,36,28,.4);color:#fff;font-size:20px;line-height:1;cursor:pointer;transition:.25s;backdrop-filter:blur(2px)}
+.gal-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(20,36,28,.4);color:#fff;font-size:22px;line-height:1;cursor:pointer;transition:.25s;backdrop-filter:blur(2px)}
 .gal-btn:hover{background:var(--pine);border-color:var(--gold)}
 .gal-btn.prev{left:14px}
 .gal-btn.next{right:14px}
@@ -155,13 +297,13 @@ section{padding:100px 0}
 .gal-dot.on{background:var(--gold);transform:scale(1.25)}
 @media(max-width:600px){.gal-btn{display:none}}
 .golf-feature .c{padding:44px 42px;display:flex;flex-direction:column;justify-content:center}
-.golf-feature .c .region{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
-.golf-feature .c h3{font-size:32px;margin:8px 0 14px}
-.golf-feature .c p{font-size:16px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch}
+.golf-feature .c .region{font-size:14.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.golf-feature .c h3{font-size:35px;margin:8px 0 14px}
+.golf-feature .c p{font-size:18px;color:rgba(255,255,255,.85);font-weight:300;max-width:52ch}
 .golf-feature dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;border-top:1px solid rgba(255,255,255,.16);padding-top:18px;margin-top:20px}
-.golf-feature dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:2px}
-.golf-feature dd{font-size:15px;color:rgba(255,255,255,.86);font-weight:300}
-.golf-note{font-size:15px;color:rgba(255,255,255,.65);max-width:64ch}
+.golf-feature dt{font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:2px}
+.golf-feature dd{font-size:17px;color:rgba(255,255,255,.86);font-weight:300}
+.golf-note{font-size:17px;color:rgba(255,255,255,.65);max-width:64ch}
 .golf-note b{color:#fff;font-weight:500}
 
 /* ===== AFTER THE ROUND ===== */
@@ -169,8 +311,8 @@ section{padding:100px 0}
 .after-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center}
 @media(max-width:860px){.after-wrap{grid-template-columns:1fr;gap:36px}}
 .after .photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:var(--lift)}
-.after .txt h2{font-size:clamp(30px,4.4vw,48px);margin:14px 0 22px;color:var(--pine)}
-.after .txt p{font-size:17.5px;color:#3f4f45;max-width:58ch;margin-bottom:18px}
+.after .txt h2{font-size:clamp(32px,4.4vw,51px);margin:14px 0 22px;color:var(--pine)}
+.after .txt p{font-size:18.5px;color:#3f4f45;max-width:58ch;margin-bottom:18px}
 .after .txt p:last-of-type{margin-bottom:0}
 
 /* ===== JOURNEYS FEATURING HAINAN (package entry cards) ===== */
@@ -178,21 +320,21 @@ section{padding:100px 0}
 .sj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 @media(max-width:760px){.sj-grid{grid-template-columns:1fr}}
 .sjcard{position:relative;border-radius:2px;overflow:hidden;color:#fff;min-height:430px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--lift)}
-.sjcard .sj-badge{position:absolute;left:0;top:22px;z-index:3;background:var(--gold);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px}
+.sjcard .sj-badge{position:absolute;left:0;top:22px;z-index:3;background:var(--gold);color:var(--ink);font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px}
 .sjcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .sjcard:hover img{transform:scale(1.05)}
 .sjcard .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.06) 0%,rgba(20,36,28,.25) 45%,rgba(20,36,28,.78) 100%)}
 .sjcard .b{position:relative;z-index:2;padding:26px;text-shadow:0 1px 12px rgba(20,36,28,.55)}
-.sjcard .specs{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95}
-.sjcard h3{font-size:25px;margin:8px 0 4px}
-.sjcard .route{font-size:15px;color:rgba(255,255,255,.9);font-weight:300}
-.sjcard .hi{font-size:14.5px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
+.sjcard .specs{font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95}
+.sjcard h3{font-size:27px;margin:8px 0 4px}
+.sjcard .route{font-size:17px;color:rgba(255,255,255,.9);font-weight:300}
+.sjcard .hi{font-size:16.5px;color:rgba(255,255,255,.82);margin-top:12px;font-weight:300}
 .sjcard .foot{margin-top:16px}
-.sjcard .foot a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
+.sjcard .foot a{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .sjcard .foot a:hover{color:var(--gold)}
 .journeys .tailor{margin-top:44px;background:var(--ivory);border:1px solid var(--mist);padding:34px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.journeys .tailor .t h3{font-size:24px;color:var(--pine);margin-bottom:6px}
-.journeys .tailor .t p{font-size:15.5px;color:#54635a;max-width:52ch}
+.journeys .tailor .t h3{font-size:26px;color:var(--pine);margin-bottom:6px}
+.journeys .tailor .t p{font-size:17.5px;color:#54635a;max-width:52ch}
 
 /* ===== EXPERIENCES ===== */
 .exclusives{background:var(--ivory)}
@@ -202,13 +344,13 @@ section{padding:100px 0}
 .excard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .excard:hover img{transform:scale(1.05)}
 .excard .b{position:relative;z-index:2;padding:24px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92));text-shadow:0 1px 10px rgba(20,36,28,.5)}
-.excard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
-.excard h3{font-size:23px;margin:6px 0 7px}
+.excard .loc{font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.excard h3{font-size:25px;margin:6px 0 7px}
 .excard.feature h3{font-size:28px}
-.excard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
-.excard .ptag{display:inline-block;margin-top:11px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:5px 11px;font-weight:600;border-radius:2px}
+.excard p{font-size:17px;color:rgba(255,255,255,.88);font-weight:300;max-width:46ch}
+.excard .ptag{display:inline-block;margin-top:11px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:5px 11px;font-weight:600;border-radius:2px}
 .excard[data-exp]{cursor:pointer}
-.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
+.ex-see{display:inline-block;margin-top:13px;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#e8cf95;border-bottom:1px solid rgba(232,207,149,.45);padding-bottom:3px;transition:.25s}
 .excard:hover .ex-see{color:#fff;border-color:#fff}
 /* surf feature: image on top, copy + CTA in a panel below */
 .excard.surf{display:flex;flex-direction:column;align-items:stretch;background:var(--pine)}
@@ -216,10 +358,10 @@ section{padding:100px 0}
 .excard.surf .surf-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .excard.surf .surf-body{flex:0 0 auto;padding:24px 26px 26px;display:flex;flex-direction:column}
 .excard.surf .surf-body h3{font-size:26px;margin:6px 0 10px}
-.excard.surf .surf-body p{font-size:15px;color:rgba(255,255,255,.86);font-weight:300;max-width:50ch;margin-bottom:18px}
-.excard.surf .surf-cta{align-self:flex-start;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:var(--cinnabar);color:#fff;padding:13px 24px;border-radius:2px;transition:.25s}
+.excard.surf .surf-body p{font-size:17px;color:rgba(255,255,255,.86);font-weight:300;max-width:50ch;margin-bottom:18px}
+.excard.surf .surf-cta{align-self:flex-start;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;background:var(--cinnabar);color:#fff;padding:13px 24px;border-radius:2px;transition:.25s}
 .excard.surf .surf-cta:hover{background:#9c3927}
-.exclusives .note{text-align:center;margin-top:38px;font-size:15px;color:#54635a}
+.exclusives .note{text-align:center;margin-top:38px;font-size:17px;color:#54635a}
 @media(max-width:920px){.ex-grid{grid-template-columns:1fr 1fr;grid-auto-rows:280px}.excard.feature{grid-row:span 1;grid-column:span 2}.excard.surf{grid-row:span 2}}
 @media(max-width:560px){
   /* A&K-style mobile: image left, white panel right, button at the bottom (surf feature keeps its stacked layout) */
@@ -238,7 +380,7 @@ section{padding:100px 0}
 }
 /* experience details modal */
 .xm-name{font-size:clamp(24px,3vw,32px);color:var(--ink);margin:2px 0 16px;line-height:1.15}
-.xm-btn{margin-top:6px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 36px;border-radius:2px;cursor:pointer;transition:.25s}
+.xm-btn{margin-top:6px;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 36px;border-radius:2px;cursor:pointer;transition:.25s}
 .xm-btn:hover{background:var(--gold);color:#fff}
 .hmodal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px}
 .hmodal.open{display:flex}
@@ -255,9 +397,9 @@ section{padding:100px 0}
 .hm-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid var(--mist);background:var(--paper);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;transition:.25s}
 .hm-btn:hover{border-color:var(--gold);color:var(--gold)}
 .hm-btn.prev{left:14px}.hm-btn.next{right:14px}
-.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
-.hm-desc .hm-loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
-.hm-desc p{font-size:16px;color:#3f4f45;margin-bottom:20px}
+.hm-count{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(20,36,28,.72);color:#fff;font-size:12.5px;letter-spacing:.08em;padding:4px 12px;border-radius:2px}
+.hm-desc .hm-loc{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+.hm-desc p{font-size:17.5px;color:#3f4f45;margin-bottom:20px}
 
 /* ===== STAY ===== */
 .stay{background:var(--pine);color:#fff}
@@ -269,11 +411,11 @@ section{padding:100px 0}
 .hcard .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
 .hcard .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .hcard:hover .ph img{transform:scale(1.04)}
-.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.hcard .badge{position:absolute;left:12px;top:12px;z-index:2;background:var(--pine);color:#fff;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
 .hcard .b{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
 .hcard h3{font-size:25px;color:var(--pine)}
-.hcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
-.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+.hcard .loc{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#7a857c;margin-top:8px}
+.hcard .vd{margin-top:22px;align-self:stretch;text-align:center;font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 20px;border-radius:2px;cursor:pointer;transition:.25s}
 .hcard .vd:hover{background:var(--gold);color:#fff}
 
 /* ===== EXTEND ===== */
@@ -284,32 +426,32 @@ section{padding:100px 0}
 .xcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
 .xcard:hover img{transform:scale(1.05)}
 .xcard .b{position:relative;z-index:2;padding:26px;width:100%;background:linear-gradient(180deg,transparent,rgba(20,36,28,.55) 30%,rgba(20,36,28,.92))}
-.xcard .loc{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
-.xcard h3{font-size:25px;margin:6px 0 6px}
-.xcard p{font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:48ch}
-.xcard .go{margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:3px;display:inline-block}
+.xcard .loc{font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;color:#e8cf95;font-weight:500}
+.xcard h3{font-size:27px;margin:6px 0 6px}
+.xcard p{font-size:17px;color:rgba(255,255,255,.88);font-weight:300;max-width:48ch}
+.xcard .go{margin-top:14px;font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:3px;display:inline-block}
 
 /* ===== CTA ===== */
 .cta{position:relative;color:#fff;overflow:hidden;padding:130px 0}
 .cta img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cta .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,36,28,.78),rgba(20,36,28,.82))}
 .cta .inner{position:relative;z-index:2;text-align:center;max-width:640px;margin:0 auto}
-.cta h2{font-size:clamp(32px,4.5vw,50px)}
+.cta h2{font-size:clamp(35px,4.5vw,53px)}
 .cta p{color:rgba(255,255,255,.82);margin:18px auto 30px;max-width:46ch}
 
 /* ===== FOOTER ===== */
 footer{background:var(--pine);color:rgba(255,255,255,.8);padding:60px 0 30px}
 footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
 @media(max-width:760px){footer .cols{grid-template-columns:1fr 1fr}footer .cols>div:first-child{grid-column:1/-1}}
-footer .logo{font-family:var(--serif);font-size:24px;color:#fff;display:flex;align-items:center;gap:12px;white-space:nowrap}
+footer .logo{font-family:var(--serif);font-size:26px;color:#fff;display:flex;align-items:center;gap:12px;white-space:nowrap}
 footer .logo .logo-mark{height:32px;width:auto}
 footer .logo .logo-text{color:#fff}
 footer .logo span{color:var(--gold)}
-footer h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-footer ul{list-style:none;font-size:14px;font-weight:300}
+footer h5{font-size:14.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+footer ul{list-style:none;font-size:16px;font-weight:300}
 footer ul li{padding:5px 0;opacity:.85}
 footer ul li a:hover{color:#fff}
-footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
+footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity:.6;padding-top:22px;flex-wrap:wrap;gap:10px}
 
 @media(max-width:600px){
   .container{padding:0 20px}
@@ -332,7 +474,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="bar">
-    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></a>
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></a>
     <nav>
       <a href="#overview">Overview</a>
       <a href="#golf">The Golf</a>
@@ -348,8 +490,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <!-- HERO -->
 <section class="hero" id="top" style="padding:0">
   <picture>
-    <source media="(max-width:760px)" srcset="assets/img/hainan-hero-mobile.jpg">
-    <img class="bg" src="assets/img/hainan-hero-dunes-coast.jpg" alt="Sand dunes and fairway running down to a turquoise sea on the Hainan coast">
+    <source media="(max-width:760px)" srcset="assets/img/hainan-hero-mobile.avif">
+    <img fetchpriority="high" class="bg" src="assets/img/hainan-hero-dunes-coast.avif" alt="Sand dunes and fairway running down to a turquoise sea on the Hainan coast" width="1600" height="900">
   </picture>
   <div class="scrim"></div>
   <div class="container hero-inner">
@@ -430,12 +572,12 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/blackstone-fairway-bunkers.jpg" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway">
-        <img src="assets/img/blackstone-palm-fairway.jpg" alt="A palm-lined fairway running between walls of volcanic stone at Blackstone" loading="lazy">
-        <img src="assets/img/blackstone-sandy-waste.jpg" alt="A green set beyond a wide sandy waste area dotted with scrub on the Blackstone course" loading="lazy">
-        <img src="assets/img/blackstone-sunrise.jpg" alt="Dawn light over a Blackstone fairway, the sky turning pink above distant hills" loading="lazy">
-        <img src="assets/img/blackstone-tiger-rory.jpg" alt="Tiger Woods and Rory McIlroy walking a fairway together during The Match at Mission Hills Haikou" loading="lazy">
-        <img src="assets/img/blackstone-lava-wall.jpg" alt="A wall of black volcanic rock crossing the fairway toward a green at Blackstone" loading="lazy">
+        <img class="active" src="assets/img/blackstone-fairway-bunkers.avif" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway" width="1440" height="908" loading="lazy" decoding="async">
+        <img src="assets/img/blackstone-palm-fairway.avif" alt="A palm-lined fairway running between walls of volcanic stone at Blackstone" loading="lazy" width="1440" height="960">
+        <img src="assets/img/blackstone-sandy-waste.avif" alt="A green set beyond a wide sandy waste area dotted with scrub on the Blackstone course" loading="lazy" width="1372" height="810">
+        <img src="assets/img/blackstone-sunrise.avif" alt="Dawn light over a Blackstone fairway, the sky turning pink above distant hills" loading="lazy" width="1440" height="810">
+        <img src="assets/img/blackstone-tiger-rory.avif" alt="Tiger Woods and Rory McIlroy walking a fairway together during The Match at Mission Hills Haikou" loading="lazy" width="960" height="640">
+        <img src="assets/img/blackstone-lava-wall.avif" alt="A wall of black volcanic rock crossing the fairway toward a green at Blackstone" loading="lazy" width="1440" height="810">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -456,11 +598,11 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/dunes-shenzhou-headland-aerial.jpg" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula">
-        <img src="assets/img/dunes-shenzhou-aerial.jpg" alt="An aerial of The Dunes fairways, water and sand winding toward the sea at Shenzhou Peninsula" loading="lazy">
-        <img src="assets/img/dunes-shenzhou-clubhouse.jpg" alt="A fairway running up to the clubhouse at The Dunes, Shenzhou Peninsula" loading="lazy">
-        <img src="assets/img/dunes-shenzhou-sea-green.jpg" alt="A green set above the rocks and breaking surf at The Dunes, Shenzhou Peninsula" loading="lazy">
-        <img src="assets/img/dunes-shenzhou-lagoon.jpg" alt="A green beside a lagoon with a forested hill behind at The Dunes, Shenzhou Peninsula" loading="lazy">
+        <img class="active" src="assets/img/dunes-shenzhou-headland-aerial.avif" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula" width="1600" height="900" loading="lazy" decoding="async">
+        <img src="assets/img/dunes-shenzhou-aerial.avif" alt="An aerial of The Dunes fairways, water and sand winding toward the sea at Shenzhou Peninsula" loading="lazy" width="1457" height="1206">
+        <img src="assets/img/dunes-shenzhou-clubhouse.avif" alt="A fairway running up to the clubhouse at The Dunes, Shenzhou Peninsula" loading="lazy" width="1429" height="937">
+        <img src="assets/img/dunes-shenzhou-sea-green.avif" alt="A green set above the rocks and breaking surf at The Dunes, Shenzhou Peninsula" loading="lazy" width="1438" height="955">
+        <img src="assets/img/dunes-shenzhou-lagoon.avif" alt="A green beside a lagoon with a forested hill behind at The Dunes, Shenzhou Peninsula" loading="lazy" width="1600" height="893">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -481,10 +623,10 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/luhuitou-villas-fairway.jpg" alt="Palm-lined fairways beneath the green hills at Lu Hui Tou, villas on the slope behind">
-        <img src="assets/img/luhuitou-skyline-fairway.jpg" alt="A hilltop fairway at Lu Hui Tou with Sanya's skyline in the distance" loading="lazy">
-        <img src="assets/img/luhuitou-bay.jpg" alt="The turquoise bay beside the Lu Hui Tou course, mountains rising beyond" loading="lazy">
-        <img src="assets/img/luhuitou-tee-boulders.jpg" alt="A tee box set among granite boulders beside the water at Lu Hui Tou" loading="lazy">
+        <img class="active" src="assets/img/luhuitou-villas-fairway.avif" alt="Palm-lined fairways beneath the green hills at Lu Hui Tou, villas on the slope behind" width="1440" height="1080" loading="lazy" decoding="async">
+        <img src="assets/img/luhuitou-skyline-fairway.avif" alt="A hilltop fairway at Lu Hui Tou with Sanya's skyline in the distance" loading="lazy" width="1440" height="1080">
+        <img src="assets/img/luhuitou-bay.avif" alt="The turquoise bay beside the Lu Hui Tou course, mountains rising beyond" loading="lazy" width="1440" height="1080">
+        <img src="assets/img/luhuitou-tee-boulders.avif" alt="A tee box set among granite boulders beside the water at Lu Hui Tou" loading="lazy" width="1440" height="1080">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -510,7 +652,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 <!-- AFTER THE ROUND -->
 <section class="after" id="after">
   <div class="container after-wrap">
-    <img class="photo fade" src="assets/img/exp-hainan-seafood.jpg" alt="A Hainanese seafood table set out by the water at dusk">
+    <img class="photo fade" src="assets/img/exp-hainan-seafood.avif" alt="A Hainanese seafood table set out by the water at dusk" width="1200" height="1600" loading="lazy" decoding="async">
     <div class="txt fade">
       <span class="eyebrow">After the Round</span>
       <h2>The day does not end at the 18th.</h2>
@@ -533,7 +675,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="ex-grid">
 
       <article class="excard feature surf fade">
-        <div class="surf-img"><img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan's surf coast"></div>
+        <div class="surf-img"><img src="assets/img/wavepool-surfer-mountains.avif" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan's surf coast" width="1536" height="1017" loading="lazy" decoding="async"></div>
         <div class="surf-body">
           <div class="loc">Wanning · Hainan</div>
           <h3>Stand up on your first wave</h3>
@@ -543,7 +685,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="excard fade" data-exp="lesson" role="button" tabindex="0" aria-label="The private surf lesson — see details">
-        <img src="assets/img/wavepool-surf-lesson.jpg" alt="A surf coach guiding a beginner in the shallows at a wave pool on Hainan">
+        <img src="assets/img/wavepool-surf-lesson.avif" alt="A surf coach guiding a beginner in the shallows at a wave pool on Hainan" width="1600" height="1067" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">For Beginners</div>
           <h3>The private surf lesson</h3>
@@ -553,7 +695,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="excard fade" data-exp="li" role="button" tabindex="0" aria-label="An afternoon with the Li — see details">
-        <img src="assets/img/exp-hainan-li-culture.jpg" style="object-position:center 20%" alt="A Li woman in traditional dress and silver jewellery weaving brocade on a back-strap loom, central Hainan">
+        <img src="assets/img/exp-hainan-li-culture.avif" style="object-position:center 20%" alt="A Li woman in traditional dress and silver jewellery weaving brocade on a back-strap loom, central Hainan" width="1376" height="1600" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Wuzhishan · Hainan</div>
           <h3>An afternoon with the Li</h3>
@@ -563,7 +705,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="excard fade" data-exp="yacht" role="button" tabindex="0" aria-label="A day on the water — see details">
-        <img src="assets/img/exp-sanya-yacht.jpg" alt="A private yacht anchored in a turquoise bay off the Sanya coast, Hainan">
+        <img src="assets/img/exp-sanya-yacht.avif" alt="A private yacht anchored in a turquoise bay off the Sanya coast, Hainan" width="1600" height="889" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Sanya · Hainan</div>
           <h3>A day on the water</h3>
@@ -573,7 +715,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="excard fade" data-exp="coffee" role="button" tabindex="0" aria-label="Coffee in the hills — see details">
-        <img src="assets/img/exp-hainan-coffee.jpg" alt="A cup of black Hainan coffee, a basket of red coffee cherries and a carafe on a wooden table above the jungle">
+        <img src="assets/img/exp-hainan-coffee.avif" alt="A cup of black Hainan coffee, a basket of red coffee cherries and a carafe on a wooden table above the jungle" width="1086" height="907" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Xinglong · Wanning</div>
           <h3>Coffee in the hills</h3>
@@ -593,7 +735,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="hm-panel">
     <button class="hm-close" data-xclose aria-label="Close">✕</button>
     <div class="hm-grid">
-      <div class="hm-gal"><img id="xm-img" src="" alt=""></div>
+      <div class="hm-gal"><img id="xm-img" src="" alt="" loading="lazy" decoding="async"></div>
       <div class="hm-desc">
         <div class="hm-loc" id="xm-loc"></div>
         <h3 class="xm-name" id="xm-name"></h3>
@@ -617,7 +759,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="hotel-grid">
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Sanya · Haitang Bay</span><img src="assets/img/hotel-rosewood-sanya-card.jpg" alt="Dining pavilions set among the pools at dusk, Rosewood Sanya"></div>
+        <div class="ph"><span class="badge">Sanya · Haitang Bay</span><img src="assets/img/hotel-rosewood-sanya-card.avif" alt="Dining pavilions set among the pools at dusk, Rosewood Sanya" width="1280" height="854" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Rosewood Sanya</h3>
           <div class="loc">Haitang Bay, Sanya</div>
@@ -626,7 +768,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Haikou · At Mission Hills</span><img src="assets/img/hotel-ritz-carlton-haikou-card.jpg" alt="A lone piper at sunset on the fairway beneath The Ritz-Carlton at Mission Hills, Haikou"></div>
+        <div class="ph"><span class="badge">Haikou · At Mission Hills</span><img src="assets/img/hotel-ritz-carlton-haikou-card.avif" alt="A lone piper at sunset on the fairway beneath The Ritz-Carlton at Mission Hills, Haikou" width="1600" height="1066" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>The Ritz-Carlton at Mission Hills</h3>
           <div class="loc">Mission Hills, Haikou</div>
@@ -635,7 +777,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </article>
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Wanning · Shenzhou Peninsula</span><img src="assets/img/hotel-grand-hyatt-shenzhou-card.jpg" alt="The Grand Hyatt resort running along the beach and bay at Shenzhou Peninsula, Wanning"></div>
+        <div class="ph"><span class="badge">Wanning · Shenzhou Peninsula</span><img src="assets/img/hotel-grand-hyatt-shenzhou-card.avif" alt="The Grand Hyatt resort running along the beach and bay at Shenzhou Peninsula, Wanning" width="1280" height="719" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Grand Hyatt, Shenzhou Peninsula</h3>
           <div class="loc">Shenzhou Peninsula, Wanning</div>
@@ -657,7 +799,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <h3 id="hm-name"></h3>
     <div class="hm-grid">
       <div class="hm-gal">
-        <img id="hm-img" src="" alt="">
+        <img id="hm-img" src="" alt="" loading="lazy" decoding="async">
         <button class="hm-btn prev" aria-label="Previous image">‹</button>
         <button class="hm-btn next" aria-label="Next image">›</button>
         <span class="hm-count" id="hm-count"></span>
@@ -684,7 +826,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
     <div class="extend-grid">
 
       <a class="xcard fade" href="south-of-the-clouds.html">
-        <img src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan">
+        <img src="assets/img/dest-yunnan.avif" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan" width="1083" height="812" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">90 min by air</div>
           <h3>South of the Clouds</h3>
@@ -694,7 +836,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       </a>
 
       <a class="xcard fade" href="jiangnan-modern-china.html">
-        <img src="assets/img/dest-hangzhou.jpg" alt="A stone bridge over misty West Lake with the Leifeng Pagoda beyond, Hangzhou">
+        <img src="assets/img/dest-hangzhou.avif" alt="A stone bridge over misty West Lake with the Leifeng Pagoda beyond, Hangzhou" width="1600" height="900" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">2.5 h by air</div>
           <h3>Jiangnan &amp; Modern China</h3>
@@ -720,7 +862,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
       <article class="sjcard fade">
         <span class="sj-badge">Pure Hainan</span>
-        <img src="assets/img/wavepool-aerial-golden-hour.jpg" alt="The PerfectSwell surf pool at golden hour on Hainan's surf coast"><div class="scrim"></div>
+        <img src="assets/img/wavepool-aerial-golden-hour.avif" alt="The PerfectSwell surf pool at golden hour on Hainan's surf coast" width="1600" height="899" loading="lazy" decoding="async"><div class="scrim"></div>
         <div class="b">
           <div class="specs">8 Nights · 3 Rounds · 4 Surf Sessions</div>
           <h3>Surf &amp; Golf Hainan</h3>
@@ -732,7 +874,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
       <article class="sjcard fade">
         <span class="sj-badge">Signature Trip</span>
-        <img src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan"><div class="scrim"></div>
+        <img src="assets/img/dest-yunnan.avif" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan" width="1083" height="812" loading="lazy" decoding="async"><div class="scrim"></div>
         <div class="b">
           <div class="specs">9 Nights · 4 Rounds</div>
           <h3>Snow Peaks to Tropical Coast</h3>
@@ -744,7 +886,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
       <article class="sjcard fade">
         <span class="sj-badge">The Complete Route</span>
-        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on Hainan's tropical coast"><div class="scrim"></div>
+        <img src="assets/img/dest-hainan.avif" alt="An oceanfront golf hole on Hainan's tropical coast" width="1440" height="1152" loading="lazy" decoding="async"><div class="scrim"></div>
         <div class="b">
           <div class="specs">16 Nights / 17 Days · 7–9 Rounds</div>
           <h3>The Grand China Golf Journey</h3>
@@ -768,7 +910,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
 
 <!-- CTA -->
 <section class="cta" id="start">
-  <img class="bg" src="assets/img/hainan-sunset-coast.jpg" alt="">
+  <img class="bg" src="assets/img/hainan-sunset-coast.avif" alt="" width="808" height="1077" loading="lazy" decoding="async">
   <div class="scrim"></div>
   <div class="container inner fade">
     <span class="eyebrow">Start Planning</span>
@@ -783,7 +925,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
   <div class="container">
     <div class="cols">
       <div>
-        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></div>
+        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></div>
         <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
         <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China Co. is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>
