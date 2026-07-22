@@ -433,8 +433,8 @@ section{padding:76px 0}
 @media(max-width:600px){.sj-grid{grid-template-columns:1fr;gap:22px}}
 .sjcard{position:relative;display:flex;flex-direction:column;border-radius:8px;overflow:hidden;background:#d4c6a6;box-shadow:var(--lift)}
 .sjcard.signature{box-shadow:0 0 0 2px var(--gold),var(--lift)}
-.sjcard .sj-badge{position:absolute;left:16px;top:16px;z-index:3;background:#d4c6a6;color:var(--ink);font-size:13.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
-.sjcard .ph{overflow:hidden}
+.sjcard .sj-badge{position:absolute;left:0;bottom:0;top:auto;z-index:3;background:rgba(20,36,28,.82);color:#fff;font-size:13.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:0}
+.sjcard .ph{position:relative;overflow:hidden}
 .sjcard .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:.5s}
 .sjcard:hover .ph img{transform:scale(1.05)}
 .sjcard .b{padding:26px 26px 24px;flex:1}
@@ -1253,11 +1253,10 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     <div class="sj-grid">
 
       <article class="sjcard fade">
-        <span class="sj-badge">All Private Clubs</span>
-        <div class="ph"><img src="assets/img/sj-firsttime.avif" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind" width="1200" height="1600" loading="lazy" decoding="async"></div>
+        <div class="ph"><img src="assets/img/sj-firsttime.avif" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind" width="1200" height="1600" loading="lazy" decoding="async"><span class="sj-badge">private clubs</span></div>
         <div class="b">
           <h3>First-Time Golf China</h3>
-          <div class="specs">9 Nights · 4 Rounds · All Private Clubs</div>
+          <div class="specs">9 Nights · 4 Rounds · Private Clubs</div>
           <div class="hi"><p>Private golf beneath the Great Wall, Shanghai's skyline and wild links, then a tea-plantation finale on West Lake's doorstep.</p></div>
           <div class="tl">Plan Your Journey</div>
           <div class="route">Beijing · Shanghai · Hangzhou</div>
@@ -1267,8 +1266,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       </article>
 
       <article class="sjcard signature fade">
-        <span class="sj-badge">Signature Trip</span>
-        <div class="ph"><img src="assets/img/jadedragon-fairway.avif" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan" width="1920" height="1280" loading="lazy" decoding="async"></div>
+        <div class="ph"><img src="assets/img/jadedragon-fairway.avif" alt="A fairway beneath the snow peaks of Jade Dragon Snow Mountain, Yunnan" width="1920" height="1280" loading="lazy" decoding="async"><span class="sj-badge">Signature Trip</span></div>
         <div class="b">
           <h3>Snow Peaks to Tropical Coast</h3>
           <div class="specs">9 Nights · 4 Rounds</div>
