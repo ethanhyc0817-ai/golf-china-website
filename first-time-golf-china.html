@@ -379,6 +379,8 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
       <span class="eyebrow">The Journey</span>
       <h2>Three cities. Four rounds. One unforgettable introduction.</h2>
     </div>
+      <div class="rm-cols">
+      <div class="rm fade" data-map="route" data-stops="beijing:Days 1–4|shanghai:Days 5–7|hangzhou:Days 8–10" data-legs="rail,rail"></div>
       <aside class="glance fade">
         <h3>At a Glance</h3>
         <ul>
@@ -391,6 +393,7 @@ footer .base{display:flex;justify-content:space-between;font-size:12px;opacity:.
         </ul>
         <p class="gnote">Every element is a starting point — shaped to your dates, your party and your pace.</p>
       </aside>
+      </div>
   </div>
 </section>
 
@@ -1172,5 +1175,6 @@ document.querySelectorAll('.gal').forEach(g=>{
 <script>
 (function(){var f=document.getElementById('expertFab');if(!f)return;var t=function(){var y=window.scrollY||document.documentElement.scrollTop;f.classList.toggle('show',y>window.innerHeight*0.6);};window.addEventListener('scroll',t,{passive:true});t();})();
 </script>
+<script src="assets/js/route-map.js" defer></script>
 </body>
 </html>
