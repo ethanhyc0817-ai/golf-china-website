@@ -8,10 +8,152 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="description" content="A private golf journey through Jiangnan and modern China — tournament fairways at Sheshan International, garden-resort golf at Fuchun Golf Club, wild links on Chongming Island, the Bund after dark and West Lake at dawn.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ===== Golf China Co. — design tokens (see DESIGN-SYSTEM.md) ===== */
 :root{
   --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
@@ -319,7 +461,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="bar">
-    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></a>
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></a>
     <nav>
       <a href="#overview">Overview</a>
       <a href="#golf">The Golf</a>
@@ -335,8 +477,8 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 <!-- HERO -->
 <section class="hero" id="top" style="padding:0">
   <picture>
-    <source media="(max-width:760px)" srcset="assets/img/hero-shanghai-dusk-mobile.jpg">
-    <img class="bg" src="assets/img/hero-shanghai-dusk.jpg" alt="The Shanghai skyline glowing gold at dusk across the Huangpu River">
+    <source media="(max-width:760px)" srcset="assets/img/hero-shanghai-dusk-mobile.avif">
+    <img fetchpriority="high" class="bg" src="assets/img/hero-shanghai-dusk.avif" alt="The Shanghai skyline glowing gold at dusk across the Huangpu River" width="1600" height="1067">
   </picture>
   <div class="scrim"></div>
   <div class="container hero-inner">
@@ -417,11 +559,11 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/sheshan-hsbc.jpg" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai">
-        <img src="assets/img/sheshan-tournament-green.jpg" alt="Tournament crowds ringing a green at Sheshan International, Shanghai" loading="lazy">
-        <img src="assets/img/sheshan-wgc-sign.jpg" alt="A drive launched past the red world-championship sign on the 9th tee at Sheshan" loading="lazy">
-        <img src="assets/img/sheshan-pampas-tee.jpg" alt="A player on a Sheshan fairway framed by pampas grass and the lake beyond" loading="lazy">
-        <img src="assets/img/sheshan-grandstand-crowds.jpg" alt="Galleries filling the grandstands around the closing green at Sheshan International" loading="lazy">
+        <img class="active" src="assets/img/sheshan-hsbc.avif" alt="The grandstand and closing hole at Sheshan International during a world-tour event, Shanghai" width="1600" height="883" loading="lazy" decoding="async">
+        <img src="assets/img/sheshan-tournament-green.avif" alt="Tournament crowds ringing a green at Sheshan International, Shanghai" loading="lazy" width="1600" height="958">
+        <img src="assets/img/sheshan-wgc-sign.avif" alt="A drive launched past the red world-championship sign on the 9th tee at Sheshan" loading="lazy" width="1600" height="1032">
+        <img src="assets/img/sheshan-pampas-tee.avif" alt="A player on a Sheshan fairway framed by pampas grass and the lake beyond" loading="lazy" width="1600" height="1066">
+        <img src="assets/img/sheshan-grandstand-crowds.avif" alt="Galleries filling the grandstands around the closing green at Sheshan International" loading="lazy" width="1600" height="867">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -442,13 +584,13 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/fuchun-resort.jpg" alt="Fuchun Golf Club fairways and a Jiangnan-style resort mirrored in still water, Hangzhou">
-        <img src="assets/img/fuchun-fairway-valley.jpg" alt="A fairway at Fuchun Golf Club climbing toward hillside tea terraces, forested mountains beyond" loading="lazy">
-        <img src="assets/img/fuchun-pavilion-lake.jpg" alt="The pavilions of Fuchun Resort across still water, green hills rising behind" loading="lazy">
-        <img src="assets/img/fuchun-mist-bunkers.jpg" alt="Cloud and mist pouring over the mountains behind a bunkered green at Fuchun Golf Club" loading="lazy">
-        <img src="assets/img/fuchun-tea-terraces.jpg" alt="Golfers walking a Fuchun fairway beneath terraced walls of Longjing tea" loading="lazy">
-        <img src="assets/img/fuchun-clubhouse-green.jpg" alt="The grey-tiled clubhouse at Fuchun Golf Club across the water behind a lakeside green" loading="lazy">
-        <img src="assets/img/fuchun-tea-terraces-aerial.jpg" alt="Fairways at Fuchun Golf Club winding between terraced rows of Longjing tea in evening light" loading="lazy">
+        <img class="active" src="assets/img/fuchun-resort.avif" alt="Fuchun Golf Club fairways and a Jiangnan-style resort mirrored in still water, Hangzhou" width="1440" height="810" loading="lazy" decoding="async">
+        <img src="assets/img/fuchun-fairway-valley.avif" alt="A fairway at Fuchun Golf Club climbing toward hillside tea terraces, forested mountains beyond" loading="lazy" width="1600" height="1068">
+        <img src="assets/img/fuchun-pavilion-lake.avif" alt="The pavilions of Fuchun Resort across still water, green hills rising behind" loading="lazy" width="1080" height="893">
+        <img src="assets/img/fuchun-mist-bunkers.avif" alt="Cloud and mist pouring over the mountains behind a bunkered green at Fuchun Golf Club" loading="lazy" width="1440" height="1592">
+        <img src="assets/img/fuchun-tea-terraces.avif" alt="Golfers walking a Fuchun fairway beneath terraced walls of Longjing tea" loading="lazy" width="1440" height="1195">
+        <img src="assets/img/fuchun-clubhouse-green.avif" alt="The grey-tiled clubhouse at Fuchun Golf Club across the water behind a lakeside green" loading="lazy" width="1073" height="716">
+        <img src="assets/img/fuchun-tea-terraces-aerial.avif" alt="Fairways at Fuchun Golf Club winding between terraced rows of Longjing tea in evening light" loading="lazy" width="848" height="628">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -469,10 +611,10 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/yangtze-sunset-green.jpg" alt="A green glowing at sunset among native dunes at Yangtze Dunes">
-        <img src="assets/img/yangtze-hole3-dusk.jpg" alt="Evening light over a fairway threading between sand dunes at Yangtze Dunes, Chongming Island" loading="lazy">
-        <img src="assets/img/yangtze-green-dunes-aerial.jpg" alt="An aerial view of a green ringed by dark native dunes at Yangtze Dunes" loading="lazy">
-        <img src="assets/img/yangtze-links-aerial.jpg" alt="Links holes winding through dunes and wetland at the mouth of the Yangtze" loading="lazy">
+        <img class="active" src="assets/img/yangtze-sunset-green.avif" alt="A green glowing at sunset among native dunes at Yangtze Dunes" width="1600" height="906" loading="lazy" decoding="async">
+        <img src="assets/img/yangtze-hole3-dusk.avif" alt="Evening light over a fairway threading between sand dunes at Yangtze Dunes, Chongming Island" loading="lazy" width="1600" height="900">
+        <img src="assets/img/yangtze-green-dunes-aerial.avif" alt="An aerial view of a green ringed by dark native dunes at Yangtze Dunes" loading="lazy" width="1600" height="891">
+        <img src="assets/img/yangtze-links-aerial.avif" alt="Links holes winding through dunes and wetland at the mouth of the Yangtze" loading="lazy" width="1600" height="882">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -498,7 +640,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 <!-- AFTER THE ROUND -->
 <section class="after" id="after">
   <div class="container after-wrap">
-    <img class="photo fade" src="assets/img/exp-xiaolongbao.jpg" alt="Bamboo steamers of xiaolongbao soup dumplings on a Shanghai table">
+    <img class="photo fade" src="assets/img/exp-xiaolongbao.avif" alt="Bamboo steamers of xiaolongbao soup dumplings on a Shanghai table" width="1200" height="1600" loading="lazy" decoding="async">
     <div class="txt fade">
       <span class="eyebrow">After the Round</span>
       <h2>The day does not end at the 18th.</h2>
@@ -521,7 +663,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="ex-grid">
 
       <article class="excard fade" data-exp="yacht" role="button" tabindex="0" aria-label="The Bund by private yacht — see details">
-        <img src="assets/img/exp-yacht-bund.jpg" alt="The lit towers of Pudong rising over the Huangpu River at night, seen from the water">
+        <img src="assets/img/exp-yacht-bund.avif" alt="The lit towers of Pudong rising over the Huangpu River at night, seen from the water" width="1440" height="962" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Shanghai · The Huangpu</div>
           <h3>The Bund by private yacht</h3>
@@ -531,7 +673,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="excard fade" data-exp="westlake" role="button" tabindex="0" aria-label="West Lake before the world wakes — see details">
-        <img src="assets/img/exp-westlake.jpg" alt="A traditional boat gliding across West Lake through morning greenery, Hangzhou">
+        <img src="assets/img/exp-westlake.avif" alt="A traditional boat gliding across West Lake through morning greenery, Hangzhou" width="1440" height="1080" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Hangzhou · West Lake</div>
           <h3>West Lake before the world wakes</h3>
@@ -541,7 +683,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="excard fade" data-exp="tea" role="button" tabindex="0" aria-label="Pick the harvest yourself — see details">
-        <img src="assets/img/exp-tea-picking.jpg" alt="Pickers with baskets working the terraced Longjing tea fields above Hangzhou">
+        <img src="assets/img/exp-tea-picking.avif" alt="Pickers with baskets working the terraced Longjing tea fields above Hangzhou" width="1200" height="1600" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Hangzhou · Longjing Village</div>
           <h3>Pick the harvest yourself</h3>
@@ -551,7 +693,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="excard fade" data-exp="concessions" role="button" tabindex="0" aria-label="The concessions, decoded — see details">
-        <img src="assets/img/exp-heritage-bund.jpg" alt="The clock tower and domes of the Bund's heritage banking halls in golden evening light, Shanghai">
+        <img src="assets/img/exp-heritage-bund.avif" alt="The clock tower and domes of the Bund's heritage banking halls in golden evening light, Shanghai" width="1330" height="998" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">Shanghai · The Old Concessions</div>
           <h3>The concessions, decoded</h3>
@@ -571,7 +713,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
   <div class="hm-panel">
     <button class="hm-close" data-xclose aria-label="Close">✕</button>
     <div class="hm-grid">
-      <div class="hm-gal"><img id="xm-img" src="" alt=""></div>
+      <div class="hm-gal"><img id="xm-img" src="" alt="" loading="lazy" decoding="async"></div>
       <div class="hm-desc">
         <div class="hm-loc" id="xm-loc"></div>
         <h3 class="xm-name" id="xm-name"></h3>
@@ -596,7 +738,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="hotel-grid">
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Shanghai · On the Bund</span><img src="assets/img/hotel-waldorf-shanghai-card.jpg" alt="Waldorf Astoria Shanghai on the Bund"></div>
+        <div class="ph"><span class="badge">Shanghai · On the Bund</span><img src="assets/img/hotel-waldorf-shanghai-card.avif" alt="Waldorf Astoria Shanghai on the Bund" width="880" height="1100" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Waldorf Astoria Shanghai on the Bund</h3>
           <div class="loc">Shanghai, China</div>
@@ -605,7 +747,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Hangzhou · Fuchun Valley</span><img src="assets/img/fuchun-pavilion-lake.jpg" alt="The pavilions of Fuchun Resort across still water, green hills rising behind"></div>
+        <div class="ph"><span class="badge">Hangzhou · Fuchun Valley</span><img src="assets/img/fuchun-pavilion-lake.avif" alt="The pavilions of Fuchun Resort across still water, green hills rising behind" width="1080" height="893" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Fuchun Resort</h3>
           <div class="loc">Hangzhou, China</div>
@@ -627,7 +769,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <h3 id="hm-name"></h3>
     <div class="hm-grid">
       <div class="hm-gal">
-        <img id="hm-img" src="" alt="">
+        <img id="hm-img" src="" alt="" loading="lazy" decoding="async">
         <button class="hm-btn prev" aria-label="Previous image">‹</button>
         <button class="hm-btn next" aria-label="Next image">›</button>
         <span class="hm-count" id="hm-count"></span>
@@ -654,7 +796,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="extend-grid">
 
       <a class="xcard fade" href="imperial-china.html">
-        <img src="assets/img/place-greatwall.jpg" alt="The Great Wall snaking over ridgelines at golden hour, north of Beijing">
+        <img src="assets/img/place-greatwall.avif" alt="The Great Wall snaking over ridgelines at golden hour, north of Beijing" width="1600" height="1067" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">4.5 h by high-speed rail</div>
           <h3>Imperial China</h3>
@@ -664,7 +806,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="xcard fade" href="south-of-the-clouds.html">
-        <img src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan">
+        <img src="assets/img/dest-yunnan.avif" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan" width="1083" height="812" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">3 h by air</div>
           <h3>South of the Clouds</h3>
@@ -689,7 +831,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="sj-grid">
 
       <article class="sjcard fade">
-        <img src="assets/img/sj-firsttime.jpg" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind"><div class="scrim"></div>
+        <img src="assets/img/sj-firsttime.avif" style="object-position:bottom" alt="A palace-style clubhouse above bunkered fairways, misty hills behind" width="1200" height="1600" loading="lazy" decoding="async"><div class="scrim"></div>
         <div class="b">
           <div class="specs">9 Nights · 4 Rounds</div>
           <h3>First-Time Golf China</h3>
@@ -701,7 +843,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
       <article class="sjcard fade">
         <span class="sj-badge">The Complete Route</span>
-        <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan"><div class="scrim"></div>
+        <img src="assets/img/dest-hainan.avif" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan" width="1440" height="1152" loading="lazy" decoding="async"><div class="scrim"></div>
         <div class="b">
           <div class="specs">16 Nights / 17 Days · 7–9 Rounds</div>
           <h3>The Grand China Golf Journey</h3>
@@ -725,7 +867,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
 <!-- CTA -->
 <section class="cta" id="start">
-  <img class="bg" src="assets/img/fuchun-resort.jpg" alt="">
+  <img class="bg" src="assets/img/fuchun-resort.avif" alt="" width="1440" height="810" loading="lazy" decoding="async">
   <div class="scrim"></div>
   <div class="container inner fade">
     <span class="eyebrow">Start Planning</span>
@@ -740,7 +882,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
   <div class="container">
     <div class="cols">
       <div>
-        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></div>
+        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></div>
         <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
         <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China Co. is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>

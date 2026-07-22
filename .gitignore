@@ -42,3 +42,7 @@ _compressed_*
 # Local backups (not deployed)
 index.backup-*.html
 .fuse_hidden*
+
+# Claude session working files (bundles, trash staging) - never deploy
+/_to_delete/
+/_*

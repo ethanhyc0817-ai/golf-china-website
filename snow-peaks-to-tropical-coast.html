@@ -8,10 +8,152 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="description" content="A nine-night private golf journey from the Himalayan foothills to the South China Sea — golf at 3,100 metres beneath the glacier of Jade Dragon Snow Mountain, World Top 100 fairways at Spring City, lava-field golf at Blackstone and a closing links round at The Dunes, Shenzhou Peninsula.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400i-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/CormorantGaramond-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Jost-300-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Jost-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Jost-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/Jost-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ===== Golf China Co. — design tokens (see DESIGN-SYSTEM.md) ===== */
 :root{
   --ink:#14241c; --pine:#1f3d2e; --moss:#3f6f54;
@@ -334,7 +476,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="bar">
-    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></a>
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></a>
     <nav>
       <a href="#overview">Overview</a>
       <a href="#itinerary">Itinerary</a>
@@ -350,7 +492,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
 <!-- HERO -->
 <section class="hero" id="top" style="padding:0">
-  <img class="bg" src="assets/img/jadedragon-hole12-massif.jpg" alt="The 12th green at Jade Dragon Snow Mountain Golf Club beneath the snow-capped massif, Lijiang">
+  <img fetchpriority="high" class="bg" src="assets/img/jadedragon-hole12-massif.avif" alt="The 12th green at Jade Dragon Snow Mountain Golf Club beneath the snow-capped massif, Lijiang" width="1600" height="1066">
   <div class="scrim"></div>
   <div class="container hero-inner">
     <div class="crumbs fade in"><a href="index.html">Home</a><span class="sep">·</span><a href="index.html#journeys">Private Journeys</a><span class="sep">·</span>Snow Peaks to Tropical Coast</div>
@@ -426,7 +568,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <h3>Up into the foothills of the Himalaya.</h3>
           <p>Arrive into Lijiang and drive to your resort beneath Jade Dragon Snow Mountain, checked in at 2,400 metres with the glacier filling the horizon. A quiet dinner closes the day.</p>
           <div class="dtags"><span class="dtag">Private arrival</span><span class="dtag">No golf today — by design</span></div>
-          <img class="dimg" src="assets/img/place-lijiang.jpg" alt="The grey-tiled rooftops of Lijiang's old town beneath the mountains" loading="lazy">
+          <img class="dimg" src="assets/img/place-lijiang.avif" alt="The grey-tiled rooftops of Lijiang's old town beneath the mountains" loading="lazy" width="1600" height="1067">
         </article>
 
         <article class="day fade">
@@ -434,7 +576,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <h3>The old town, a mountain village, a long lunch.</h3>
           <p>Explore the UNESCO old town in the quiet hours and a Naxi village at the foot of the snow mountain, ending with a private dinner. The day doubles as acclimatisation — tomorrow's course sits at 3,100 metres.</p>
           <div class="dtags"><span class="dtag">UNESCO old town</span><span class="dtag">Naxi village</span><span class="dtag">Altitude day</span></div>
-          <img class="dimg" src="assets/img/dest-yunnan.jpg" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan" loading="lazy">
+          <img class="dimg" src="assets/img/dest-yunnan.avif" alt="Naxi rooftops with Jade Dragon Snow Mountain glowing at sunset, Yunnan" loading="lazy" width="1083" height="812">
         </article>
 
         <article class="day golfday fade">
@@ -443,7 +585,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <p>Play Jade Dragon Snow Mountain, the world's longest course at 8,548 yards, where the thin air carries your ball ten percent farther and the glacier fills the sky above every shot.</p>
           <div class="dtags"><span class="dtag golf">Golf · Jade Dragon Snow Mountain</span><span class="dtag">3,100 m</span></div>
           <button class="daylink" data-goto="golf">Explore this course →</button>
-          <img class="dimg" src="assets/img/jadedragon-morning-light.jpg" alt="Morning light breaking over the fairways beneath Jade Dragon Snow Mountain" loading="lazy">
+          <img class="dimg" src="assets/img/jadedragon-morning-light.avif" alt="Morning light breaking over the fairways beneath Jade Dragon Snow Mountain" loading="lazy" width="1200" height="768">
         </article>
 
         <article class="day fade">
@@ -451,7 +593,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <h3>Down from the mountains to a highland lake.</h3>
           <p>Travel by rail or a short flight to Kunming, then on to Spring City on Yangzong Lake. Settle in, walk the lakeshore, hit the range — nothing else is asked of the day.</p>
           <div class="dtags"><span class="dtag">Rail or air, 45 min–3 h</span><span class="dtag">Resort check-in</span></div>
-          <img class="dimg" src="assets/img/springcity-mountain-course.jpg" alt="A fairway of Spring City's Mountain Course rolling above Yangzong Lake" loading="lazy">
+          <img class="dimg" src="assets/img/springcity-mountain-course.avif" alt="A fairway of Spring City's Mountain Course rolling above Yangzong Lake" loading="lazy" width="1200" height="800">
         </article>
 
         <article class="day golfday fade">
@@ -460,7 +602,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <p>Play Robert Trent Jones Jr's Lake Course, a World Top 100 fixture tumbling toward the water, with no transfers to think about — you stay on the resort itself.</p>
           <div class="dtags"><span class="dtag golf">Golf · Spring City, Lake Course</span><span class="dtag">Stay &amp; play</span></div>
           <button class="daylink" data-goto="golf">Explore this course →</button>
-          <img class="dimg" src="assets/img/springcity-lake-green.jpg" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy">
+          <img class="dimg" src="assets/img/springcity-lake-green.avif" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy" width="1024" height="683">
         </article>
 
         <article class="day addon fade">
@@ -469,11 +611,11 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <p>Spring City's other half: Jack Nicklaus' Mountain Course on the ridgeline above the lake. Keen golfers add a night and play both.</p>
           <div class="dtags"><span class="dtag golf">Golf · Spring City, Mountain Course</span><span class="dtag">Add-on round</span></div>
           <button class="daylink" data-goto="golf">Explore this course →</button>
-          <img class="dimg" src="assets/img/springcity-blossom-fairway.jpg" alt="Spring blossoms lining a bunkered fairway on the Mountain Course at Spring City" loading="lazy">
+          <img class="dimg" src="assets/img/springcity-blossom-fairway.avif" alt="Spring blossoms lining a bunkered fairway on the Mountain Course at Spring City" loading="lazy" width="1600" height="1068">
         </article>
 
         <a class="day dest fade" href="south-of-the-clouds.html">
-          <img src="assets/img/hero-yunnan.jpg" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang">
+          <img src="assets/img/hero-yunnan.avif" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang" width="1600" height="1067" loading="lazy" decoding="async">
           <div class="db">
             <div class="loc">The Destination</div>
             <h3>More on Yunnan</h3>
@@ -492,7 +634,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <h3>South again, until the air turns tropical.</h3>
           <p>Fly ninety minutes south to Hainan and settle into Mission Hills, Haikou, where the volcanic hot springs wait beside the resort and tomorrow's first tee is minutes from your door.</p>
           <div class="dtags"><span class="dtag">Direct flight, 1.5 h</span><span class="dtag">Volcanic hot springs</span></div>
-          <img class="dimg" src="assets/img/hainan-tropical-island-aerial.jpg" alt="An aerial view of a jungle-covered island ringed by white sand and turquoise reef off Hainan" loading="lazy">
+          <img class="dimg" src="assets/img/hainan-tropical-island-aerial.avif" alt="An aerial view of a jungle-covered island ringed by white sand and turquoise reef off Hainan" loading="lazy" width="1206" height="658">
         </article>
 
         <article class="day golfday fade">
@@ -501,7 +643,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <p>Play Blackstone — carved through a field of black lava, ranked in the World Top 100, and the stage where Tiger met Rory in The Match. The hot springs are waiting off the eighteenth.</p>
           <div class="dtags"><span class="dtag golf">Golf · Blackstone</span><span class="dtag">World Top 100</span></div>
           <button class="daylink" data-goto="golf">Explore this course →</button>
-          <img class="dimg" src="assets/img/blackstone-fairway-bunkers.jpg" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway" loading="lazy">
+          <img class="dimg" src="assets/img/blackstone-fairway-bunkers.avif" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway" loading="lazy" width="1440" height="908">
         </article>
 
         <article class="day fade">
@@ -509,7 +651,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <h3>A day with nothing that has to happen.</h3>
           <p>A day kept empty, and kept that way. Volcano villages, the spa, or nothing at all beside the water.</p>
           <div class="dtags"><span class="dtag">Free day — protected</span><span class="dtag">Volcano villages · spa · coast</span></div>
-          <img class="dimg" src="assets/img/exp-hainan-coffee.jpg" alt="Coffee grown in the volcanic hills of northern Hainan" loading="lazy">
+          <img class="dimg" src="assets/img/exp-hainan-coffee.avif" alt="Coffee grown in the volcanic hills of northern Hainan" loading="lazy" width="1086" height="907">
         </article>
 
         <article class="day golfday fade">
@@ -518,7 +660,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <p>Travel south to Shenzhou Peninsula for the closing round at The Dunes, Tom Weiskopf's links through real sand dunes to the water's edge — and stay the night beside the course, the beach at the end of the garden.</p>
           <div class="dtags"><span class="dtag golf">Golf · The Dunes, Shenzhou Peninsula</span><span class="dtag">Night by the sea</span></div>
           <button class="daylink" data-goto="golf">Explore this course →</button>
-          <img class="dimg" src="assets/img/dunes-shenzhou-headland-aerial.jpg" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula" loading="lazy">
+          <img class="dimg" src="assets/img/dunes-shenzhou-headland-aerial.avif" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula" loading="lazy" width="1600" height="900">
         </article>
 
         <article class="day fade">
@@ -526,11 +668,11 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
           <h3>Homeward — or onward.</h3>
           <p>Breakfast by the sea, then a private transfer to your flight home — or onward: Beijing and Shanghai are a direct flight away.</p>
           <div class="dtags"><span class="dtag">Private departure</span></div>
-          <img class="dimg" src="assets/img/hainan-beach-palms-aerial.jpg" alt="A top-down aerial of white sand, palms and turquoise water on the Hainan coast" loading="lazy">
+          <img class="dimg" src="assets/img/hainan-beach-palms-aerial.avif" alt="A top-down aerial of white sand, palms and turquoise water on the Hainan coast" loading="lazy" width="1600" height="900">
         </article>
 
         <a class="day dest fade" href="asias-most-exclusive-golf.html">
-          <img src="assets/img/dest-hainan.jpg" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan">
+          <img src="assets/img/dest-hainan.avif" alt="An oceanfront golf hole on the cliffs of Shanqin Bay, Hainan" width="1440" height="1152" loading="lazy" decoding="async">
           <div class="db">
             <div class="loc">The Destination</div>
             <h3>More on Hainan</h3>
@@ -564,10 +706,10 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/jadedragon-course-view.jpg" alt="A fairway at Jade Dragon Snow Mountain Golf Club running toward the cloud-wrapped peaks of the massif">
-        <img src="assets/img/jadedragon-golden-fairway.jpg" alt="Golden winter grasses framing a fairway beneath the snow range at Jade Dragon" loading="lazy">
-        <img src="assets/img/jadedragon-valley-green.jpg" alt="A green and its bunkers set in the high valley beneath Jade Dragon Snow Mountain" loading="lazy">
-        <img src="assets/img/jadedragon-bunkered-green.jpg" alt="White-sand bunkers guarding a green in the thin air at Jade Dragon" loading="lazy">
+        <img class="active" src="assets/img/jadedragon-course-view.avif" alt="A fairway at Jade Dragon Snow Mountain Golf Club running toward the cloud-wrapped peaks of the massif" width="1067" height="1600" loading="lazy" decoding="async">
+        <img src="assets/img/jadedragon-golden-fairway.avif" alt="Golden winter grasses framing a fairway beneath the snow range at Jade Dragon" loading="lazy" width="1600" height="1066">
+        <img src="assets/img/jadedragon-valley-green.avif" alt="A green and its bunkers set in the high valley beneath Jade Dragon Snow Mountain" loading="lazy" width="1600" height="1066">
+        <img src="assets/img/jadedragon-bunkered-green.avif" alt="White-sand bunkers guarding a green in the thin air at Jade Dragon" loading="lazy" width="1600" height="1066">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -588,10 +730,10 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/springcity-resort-aerial.jpg" style="object-position:right center" alt="An aerial view of Spring City's forested fairways running down to Yangzong Lake at golden hour">
-        <img src="assets/img/springcity-lake-green.jpg" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy">
-        <img src="assets/img/springcity-forest-fairway.jpg" alt="A tree-lined fairway of the Lake Course descending toward Yangzong Lake" loading="lazy">
-        <img src="assets/img/springcity-lakeside-green.jpg" alt="A green of the Lake Course jutting toward the silver water of Yangzong Lake" loading="lazy">
+        <img class="active" src="assets/img/springcity-resort-aerial.avif" style="object-position:right center" alt="An aerial view of Spring City's forested fairways running down to Yangzong Lake at golden hour" width="1600" height="1198" loading="lazy" decoding="async">
+        <img src="assets/img/springcity-lake-green.avif" alt="A green of the Lake Course perched above Yangzong Lake, wildflowers in the foreground" loading="lazy" width="1024" height="683">
+        <img src="assets/img/springcity-forest-fairway.avif" alt="A tree-lined fairway of the Lake Course descending toward Yangzong Lake" loading="lazy" width="1200" height="800">
+        <img src="assets/img/springcity-lakeside-green.avif" alt="A green of the Lake Course jutting toward the silver water of Yangzong Lake" loading="lazy" width="900" height="1226">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -612,10 +754,10 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/blackstone-fairway-bunkers.jpg" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway">
-        <img src="assets/img/blackstone-palm-fairway.jpg" alt="A palm-lined fairway running between walls of volcanic stone at Blackstone" loading="lazy">
-        <img src="assets/img/blackstone-lava-wall.jpg" alt="A wall of black volcanic rock crossing the fairway toward a green at Blackstone" loading="lazy">
-        <img src="assets/img/blackstone-tiger-rory.jpg" alt="Tiger Woods and Rory McIlroy walking a fairway together during The Match at Mission Hills Haikou" loading="lazy">
+        <img class="active" src="assets/img/blackstone-fairway-bunkers.avif" alt="Rugged white-sand bunkers set against black lava rock on a Blackstone fairway" width="1440" height="908" loading="lazy" decoding="async">
+        <img src="assets/img/blackstone-palm-fairway.avif" alt="A palm-lined fairway running between walls of volcanic stone at Blackstone" loading="lazy" width="1440" height="960">
+        <img src="assets/img/blackstone-lava-wall.avif" alt="A wall of black volcanic rock crossing the fairway toward a green at Blackstone" loading="lazy" width="1440" height="810">
+        <img src="assets/img/blackstone-tiger-rory.avif" alt="Tiger Woods and Rory McIlroy walking a fairway together during The Match at Mission Hills Haikou" loading="lazy" width="960" height="640">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -636,10 +778,10 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
     <article class="golf-feature fade">
       <div class="img gal">
-        <img class="active" src="assets/img/dunes-shenzhou-headland-aerial.jpg" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula">
-        <img src="assets/img/dunes-shenzhou-aerial.jpg" alt="An aerial of The Dunes fairways, water and sand winding toward the sea at Shenzhou Peninsula" loading="lazy">
-        <img src="assets/img/dunes-shenzhou-sea-green.jpg" alt="A green set above the rocks and breaking surf at The Dunes, Shenzhou Peninsula" loading="lazy">
-        <img src="assets/img/dunes-shenzhou-lagoon.jpg" alt="A green beside a lagoon with a forested hill behind at The Dunes, Shenzhou Peninsula" loading="lazy">
+        <img class="active" src="assets/img/dunes-shenzhou-headland-aerial.avif" alt="An aerial view of The Dunes wrapping a rocky headland above a turquoise bay at Shenzhou Peninsula" width="1600" height="900" loading="lazy" decoding="async">
+        <img src="assets/img/dunes-shenzhou-aerial.avif" alt="An aerial of The Dunes fairways, water and sand winding toward the sea at Shenzhou Peninsula" loading="lazy" width="1457" height="1206">
+        <img src="assets/img/dunes-shenzhou-sea-green.avif" alt="A green set above the rocks and breaking surf at The Dunes, Shenzhou Peninsula" loading="lazy" width="1438" height="955">
+        <img src="assets/img/dunes-shenzhou-lagoon.avif" alt="A green beside a lagoon with a forested hill behind at The Dunes, Shenzhou Peninsula" loading="lazy" width="1600" height="893">
         <button class="gal-btn prev" aria-label="Previous image">‹</button>
         <button class="gal-btn next" aria-label="Next image">›</button>
         <div class="gal-dots"></div>
@@ -673,7 +815,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="ex-grid">
 
       <a class="excard fade" href="south-of-the-clouds.html#experiences">
-        <img src="assets/img/exp-oldtown-guide.jpg" alt="Two travelers walking Lijiang’s cobbled lanes at first light with their private guide" loading="lazy">
+        <img src="assets/img/exp-oldtown-guide.avif" alt="Two travelers walking Lijiang’s cobbled lanes at first light with their private guide" loading="lazy" width="1091" height="1600">
         <div class="b">
           <div class="loc">Lijiang · Old Town</div>
           <h3>The old town, privately guided</h3>
@@ -682,7 +824,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="excard fade" href="south-of-the-clouds.html#experiences">
-        <img src="assets/img/exp-tea-ceremony.jpg" alt="A tea master warming tea over a charcoal hearth, surrounded by small bowls of leaves and spices" loading="lazy">
+        <img src="assets/img/exp-tea-ceremony.avif" alt="A tea master warming tea over a charcoal hearth, surrounded by small bowls of leaves and spices" loading="lazy" width="1440" height="1192">
         <div class="b">
           <div class="loc">Lijiang · Yunnan</div>
           <h3>A traditional tea tasting</h3>
@@ -691,7 +833,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="excard fade" href="south-of-the-clouds.html#experiences">
-        <img src="assets/img/exp-mushroom.jpg" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan" loading="lazy">
+        <img src="assets/img/exp-mushroom.avif" alt="A wild porcini mushroom growing on the pine-forest floor, Yunnan" loading="lazy" width="1206" height="904">
         <div class="b">
           <div class="loc">Yunnan · Jun–Sep</div>
           <h3>The wild-mushroom table</h3>
@@ -700,7 +842,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="excard fade" href="sun-sand-and-lava.html#experiences">
-        <img src="assets/img/wavepool-surfer-mountains.jpg" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan’s surf coast" loading="lazy">
+        <img src="assets/img/wavepool-surfer-mountains.avif" alt="A surfer riding a clean, peeling wave at a PerfectSwell wave pool on Hainan’s surf coast" loading="lazy" width="1536" height="1017">
         <div class="b">
           <div class="loc">Wanning · Hainan</div>
           <h3>Stand up on your first wave</h3>
@@ -709,7 +851,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="excard fade" href="sun-sand-and-lava.html#experiences">
-        <img src="assets/img/exp-hainan-li-culture.jpg" alt="A Li woman in traditional dress weaving brocade on a back-strap loom, central Hainan" loading="lazy">
+        <img src="assets/img/exp-hainan-li-culture.avif" alt="A Li woman in traditional dress weaving brocade on a back-strap loom, central Hainan" loading="lazy" width="1376" height="1600">
         <div class="b">
           <div class="loc">Wuzhishan · Hainan</div>
           <h3>An afternoon with the Li</h3>
@@ -718,7 +860,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="excard fade" href="sun-sand-and-lava.html#experiences">
-        <img src="assets/img/exp-hainan-coffee.jpg" alt="A cup of black Hainan coffee and a basket of red coffee cherries above the jungle" loading="lazy">
+        <img src="assets/img/exp-hainan-coffee.avif" alt="A cup of black Hainan coffee and a basket of red coffee cherries above the jungle" loading="lazy" width="1086" height="907">
         <div class="b">
           <div class="loc">Xinglong · Wanning</div>
           <h3>Coffee in the hills</h3>
@@ -743,7 +885,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="hotel-grid">
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Lijiang · Nights 1–3</span><img src="assets/img/hotel-banyan-tree-lijiang-card.jpg" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain"></div>
+        <div class="ph"><span class="badge">Lijiang · Nights 1–3</span><img src="assets/img/hotel-banyan-tree-lijiang-card.avif" alt="Banyan Tree Lijiang beneath Jade Dragon Snow Mountain" width="880" height="1100" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Banyan Tree Lijiang</h3>
           <div class="loc">Lijiang, Yunnan</div>
@@ -752,7 +894,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </article>
 
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Spring City · Nights 4–5</span><img src="assets/img/springcity-resort-dusk.jpg" alt="Spring City resort glowing at dusk above Yangzong Lake"></div>
+        <div class="ph"><span class="badge">Spring City · Nights 4–5</span><img src="assets/img/springcity-resort-dusk.avif" alt="Spring City resort glowing at dusk above Yangzong Lake" width="1600" height="800" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Spring City Golf &amp; Lake Resort</h3>
           <div class="loc">Yangzong Lake, Kunming</div>
@@ -762,7 +904,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
       <!-- TODO: 确认观澜湖海口丽思卡尔顿酒店名称/合作 -->
       <article class="hcard fade">
-        <div class="ph"><span class="badge">Haikou · Nights 6–8</span><img src="assets/img/hotel-ritz-carlton-haikou-card.jpg" alt="A lone piper at sunset on the fairway beneath The Ritz-Carlton at Mission Hills, Haikou"></div>
+        <div class="ph"><span class="badge">Haikou · Nights 6–8</span><img src="assets/img/hotel-ritz-carlton-haikou-card.avif" alt="A lone piper at sunset on the fairway beneath The Ritz-Carlton at Mission Hills, Haikou" width="1600" height="1066" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>The Ritz-Carlton at Mission Hills</h3>
           <div class="loc">Mission Hills, Haikou</div>
@@ -772,7 +914,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
       <!-- TODO: 确认神州半岛君悦酒店名称/合作 -->
       <article class="hcard fade">
-        <div class="ph"><span class="badge">The Coast · Night 9</span><img src="assets/img/hotel-grand-hyatt-shenzhou-card.jpg" alt="The Grand Hyatt resort running along the beach and bay at Shenzhou Peninsula, Wanning"></div>
+        <div class="ph"><span class="badge">The Coast · Night 9</span><img src="assets/img/hotel-grand-hyatt-shenzhou-card.avif" alt="The Grand Hyatt resort running along the beach and bay at Shenzhou Peninsula, Wanning" width="1280" height="719" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Grand Hyatt, Shenzhou Peninsula</h3>
           <div class="loc">Shenzhou Peninsula, Wanning</div>
@@ -794,7 +936,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <h3 id="hm-name"></h3>
     <div class="hm-grid">
       <div class="hm-gal">
-        <img id="hm-img" src="" alt="">
+        <img id="hm-img" src="" alt="" loading="lazy" decoding="async">
         <button class="hm-btn prev" aria-label="Previous image">‹</button>
         <button class="hm-btn next" aria-label="Next image">›</button>
         <span class="hm-count" id="hm-count"></span>
@@ -819,7 +961,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <div class="extend-grid">
 
       <a class="xcard fade" href="south-of-the-clouds.html">
-        <img src="assets/img/hero-yunnan.jpg" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang">
+        <img src="assets/img/hero-yunnan.avif" alt="The turquoise water of Blue Moon Valley beneath the snow peaks of Jade Dragon Snow Mountain, Lijiang" width="1600" height="1067" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">+2–3 Nights · Before the golf</div>
           <h3>Higher Still: Shangri-La</h3>
@@ -829,7 +971,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       </a>
 
       <a class="xcard fade" href="first-time-golf-china.html">
-        <img src="assets/img/reignwood-greatwall.jpg" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind">
+        <img src="assets/img/reignwood-greatwall.avif" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall snaking across the mountains behind" width="1600" height="1067" loading="lazy" decoding="async">
         <div class="b">
           <div class="loc">+3–5 Nights · Direct flights from Haikou</div>
           <h3>The Icons: Beijing &amp; Shanghai</h3>
@@ -962,7 +1104,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
 
 <!-- CTA -->
 <section class="cta" id="start">
-  <img class="bg" src="assets/img/hainan-sunset-coast.jpg" alt="">
+  <img class="bg" src="assets/img/hainan-sunset-coast.avif" alt="" width="808" height="1077" loading="lazy" decoding="async">
   <div class="scrim"></div>
   <div class="container inner fade">
     <span class="eyebrow">Start Planning</span>
@@ -977,7 +1119,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
   <div class="container">
     <div class="cols">
       <div>
-        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt=""><span class="logo-text">Golf <span>China</span> Co.</span></div>
+        <div class="logo"><img class="logo-mark" src="assets/img/logo-mark-dark.svg" alt="" width="96" height="82"><span class="logo-text">Golf <span>China</span> Co.</span></div>
         <p style="font-size:14px;margin-top:14px;max-width:36ch;font-weight:300">Private, tailor-made golf journeys through China's most unexpected landscapes — for the discerning international traveler.</p>
         <p style="font-size:12px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">Golf China Co. is the dedicated golf travel brand from the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>
