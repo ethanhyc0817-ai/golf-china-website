@@ -474,15 +474,6 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
             <!-- STEP 2 · THE GOLF & YOU -->
             <div class="step-panel" data-step="2">
               <div class="fq">
-                <span class="ql">How much golf feels right?</span>
-                <div class="chips" data-single>
-                  <label class="chip"><input type="radio" name="Golf pace" value="A round almost every day"><span>Almost every day</span></label>
-                  <label class="chip"><input type="radio" name="Golf pace" value="Golf most days"><span>Most days</span></label>
-                  <label class="chip"><input type="radio" name="Golf pace" value="A few standout rounds"><span>A few standout rounds</span></label>
-                  <label class="chip"><input type="radio" name="Golf pace" value="Not sure yet"><span>Not sure yet</span></label>
-                </div>
-              </div>
-              <div class="fq">
                 <label for="bud">Budget per person <span class="hint">excluding international flights</span></label>
                 <select id="bud" name="Budget per person" required>
                   <option value="">Select a range</option>
@@ -658,7 +649,6 @@ function openInquiryMailDraft(form){
     if(nonGolfers&&nonGolfers!=='0')party.push(nonGolfers+' non-golfer(s)');
     if(children&&children!=='0')party.push(children+' child(ren)');
     if(party.length)lines.push('Party: '+party.join(', '));
-    push('Golf pace',fd.get('Golf pace'));
     push('Budget per person',fd.get('Budget per person'));
     push('Message',fd.get('Message'));
 
