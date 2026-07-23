@@ -536,7 +536,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14px;padding-t
             </div>
             <h3>Thank you — it&rsquo;s on its way.</h3>
             <p>Your enquiry has reached our specialists. Expect a personal reply within one business day, from someone who has read every word.</p>
-            <p class="s-mail">In the meantime — <a href="index.html#journeys">browse our sample journeys</a>, or write to us any time at <a href="mailto:hello@golfchina.co">hello@golfchina.co</a>.</p>
+            <p class="s-mail">Your email app may also open with a copy of your enquiry — feel free to send it to reach us directly. In the meantime — <a href="index.html#journeys">browse our sample journeys</a>, or write to us any time at <a href="mailto:hello@golfchina.co">hello@golfchina.co</a>.</p>
           </div>
         </div>
       </div>
@@ -625,11 +625,69 @@ document.getElementById('jrn').addEventListener('change',e=>{
 form.addEventListener('input',e=>{if(e.target.classList)e.target.classList.remove('err');});
 form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'){e.preventDefault();btnNext.click();}});
 
+/* Backup channel: after Formspree accepts the submission, open a pre-filled
+   mailto draft in the visitor's own mail client. Best-effort only — the visitor
+   still has to hit Send — so it never blocks or affects the main flow. */
+function openInquiryMailDraft(form){
+  try{
+    const fd=new FormData(form);
+    const first=(fd.get('First name')||'').toString().trim();
+    const last=(fd.get('Last name')||'').toString().trim();
+    const fullName=(first+' '+last).trim();
+
+    const lines=[];
+    const push=(label,val)=>{const v=(val||'').toString().trim();if(v)lines.push(label+': '+v);};
+
+    if(fullName)lines.push('Name: '+fullName);
+    push('Email',fd.get('_replyto'));
+    push('Phone / WhatsApp',fd.get('Phone'));
+    push('Preferred contact',fd.get('Preferred contact'));
+    push('Sample journey',fd.get('Sample journey'));
+    const dests=fd.getAll('Destinations').filter(Boolean);
+    if(dests.length)lines.push('Destinations: '+dests.join(', '));
+    const month=(fd.get('Travel month')||'').toString().trim();
+    const year=(fd.get('Travel year')||'').toString().trim();
+    if(month||year)lines.push('Travel: '+[month,year].filter(Boolean).join(' '));
+    if((fd.get('Dates flexible')||'').toString().trim())lines.push('Dates: Flexible');
+    push('Trip length',fd.get('Trip length'));
+    const golfers=(fd.get('Golfers')||'').toString().trim();
+    const nonGolfers=(fd.get('Non-golfers')||'').toString().trim();
+    const children=(fd.get('Children')||'').toString().trim();
+    const party=[];
+    if(golfers)party.push(golfers+' golfer(s)');
+    if(nonGolfers&&nonGolfers!=='0')party.push(nonGolfers+' non-golfer(s)');
+    if(children&&children!=='0')party.push(children+' child(ren)');
+    if(party.length)lines.push('Party: '+party.join(', '));
+    push('Golf pace',fd.get('Golf pace'));
+    push('Budget per person',fd.get('Budget per person'));
+    push('Message',fd.get('Message'));
+
+    const subject='Trip Enquiry'+(fullName?' — '+fullName:'')+' (golfchina.co)';
+    const body=
+      'Hello Golf China team,\n\n'+
+      'I just submitted an enquiry on golfchina.co. Here are my details:\n\n'+
+      lines.join('\n')+
+      '\n\nLooking forward to hearing from you.';
+
+    const mailto='mailto:hello@golfchina.co'
+      +'?subject='+encodeURIComponent(subject)
+      +'&body='+encodeURIComponent(body);
+
+    const a=document.createElement('a');
+    a.href=mailto;
+    a.style.display='none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }catch(_){/* mail draft is best-effort; never block the submission flow */}
+}
+
 async function submit(){
   btnNext.disabled=true;btnNext.textContent='Sending…';
   try{
     const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
     if(!res.ok)throw new Error();
+    openInquiryMailDraft(form);
     form.style.display='none';
     const done=document.getElementById('fDone');
     done.classList.add('show');
