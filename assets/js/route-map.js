@@ -24,6 +24,10 @@ var CITIES={
   kunming:   {x:369.9,y:471.5,label:"Kunming",   lx:-11,ly:17, anchor:"end"},
   guilin:    {x:450.1,y:456.8,label:"Guilin",    lx:12, ly:-2, anchor:"start"},
   haikou:    {x:447.4,y:521.7,label:"Haikou",    lx:12, ly:-3, anchor:"start"},
+  qingyuan:  {x:482.0,y:466.0,label:"Qingyuan",  lx:-11,ly:-4, anchor:"end"},
+  guangzhou: {x:488.5,y:483.5,label:"Guangzhou", lx:-12,ly:8,  anchor:"end"},
+  foshan:    {x:481.5,y:487.5,label:"Foshan",    lx:-12,ly:8,  anchor:"end"},
+  shenzhen:  {x:504.5,y:492.5,label:"Shenzhen",  lx:12, ly:4,  anchor:"start"},
   hainan:    {x:443.3,y:531.2,label:"Hainan",    lx:12, ly:4,  anchor:"start"}
 };
 /* Hainan close-up coordinates. */
