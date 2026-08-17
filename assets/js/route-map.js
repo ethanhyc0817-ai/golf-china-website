@@ -25,8 +25,8 @@ var CITIES={
   guilin:    {x:450.1,y:456.8,label:"Guilin",    lx:12, ly:-2, anchor:"start"},
   haikou:    {x:447.4,y:521.7,label:"Haikou",    lx:12, ly:-3, anchor:"start"},
   qingyuan:  {x:482.0,y:466.0,label:"Qingyuan",  lx:-11,ly:-4, anchor:"end"},
-  guangzhou: {x:488.5,y:483.5,label:"Guangzhou", lx:-12,ly:8,  anchor:"end"},
-  foshan:    {x:481.5,y:487.5,label:"Foshan",    lx:-12,ly:8,  anchor:"end"},
+  guangzhou: {x:488.5,y:483.5,label:"Guangzhou", lx:-12,ly:-8, anchor:"end"},
+  foshan:    {x:481.5,y:487.5,label:"Foshan",    lx:-12,ly:14, anchor:"end"},
   shenzhen:  {x:504.5,y:492.5,label:"Shenzhen",  lx:12, ly:4,  anchor:"start"},
   hainan:    {x:443.3,y:531.2,label:"Hainan",    lx:12, ly:4,  anchor:"start"}
 };
@@ -153,12 +153,12 @@ function legPath(a,b,air,region){
   var bow=d*(air?0.16:(region==="hainan"?0.045:0.07));
   return "M"+a.x+","+a.y+" Q"+(mx+nx*bow)+","+(my+ny*bow)+" "+b.x+","+b.y;
 }
-function routeViewBox(stops,region,px){
+function routeViewBox(stops,region,host){
   if(region==="hainan")return {x:0,y:0,w:HAINAN_VB.w,h:HAINAN_VB.h};
   var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
   for(var i=0;i<stops.length;i++){var c=stops[i].c;
     x0=Math.min(x0,c.x);x1=Math.max(x1,c.x);y0=Math.min(y0,c.y);y1=Math.max(y1,c.y);}
-  var padX=105,padY=72;
+  var padX=host&&host.dataset.padx?+host.dataset.padx:105,padY=host&&host.dataset.pady?+host.dataset.pady:72;
   x0=Math.max(0,x0-padX);y0=Math.max(0,y0-padY);
   x1=Math.min(MAP.w+22,x1+padX);y1=Math.min(MAP.h+16,y1+padY);
   return {x:x0,y:y0,w:x1-x0,h:y1-y0};
@@ -175,7 +175,7 @@ function buildRoute(host){
   sub.textContent=host.dataset.caption||stops.map(function(s){return s.c.label;}).join(" → ");
   head.appendChild(sub);
   var renderW=host.clientWidth||560;
-  var vb=routeViewBox(stops,region,null);
+  var vb=routeViewBox(stops,region,host);
   var svg=makeSvg(vb,renderW,"Route map: "+sub.textContent);
   panel.appendChild(svg);
   var px=svg._px;
