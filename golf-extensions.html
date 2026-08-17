@@ -264,6 +264,32 @@ section{padding:100px 0}
   .bk-card .b{padding:26px 24px}
 }
 
+.bk-card .vd{font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border:1px solid var(--gold);background:none;padding:13px 26px;border-radius:2px;cursor:pointer;transition:.25s}
+.bk-card .vd:hover{background:var(--gold);color:#fff}
+
+/* ===== EXTENSION DETAILS MODAL ===== */
+.xmodal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px}
+.xmodal.open{display:flex}
+.xmodal .ov{position:absolute;inset:0;background:rgba(20,36,28,.55)}
+.xm-panel{position:relative;z-index:2;background:var(--ivory);max-width:1060px;width:100%;max-height:90vh;overflow:auto;padding:40px 44px;border-radius:2px;box-shadow:var(--lift)}
+.xm-close{position:absolute;top:20px;right:22px;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;line-height:1;padding:6px}
+.xm-close:hover{color:var(--cinnabar)}
+.xm-item{display:none}
+.xm-item.on{display:block}
+.xm-item h3{font-size:clamp(26px,3.4vw,38px);color:var(--ink);margin-bottom:6px;padding-right:40px}
+.xm-spec{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:22px}
+.xm-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:38px;align-items:start}
+@media(max-width:860px){.xm-grid{grid-template-columns:1fr;gap:22px}.xm-panel{padding:28px 22px}}
+.xm-img{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--mist)}
+.xm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.xm-desc>p{font-size:17.5px;color:#3f4f45;margin-bottom:6px}
+.xm-h{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--pine);font-weight:600;margin:20px 0 8px}
+.xm-desc ul{list-style:none}
+.xm-desc li{position:relative;padding:4px 0 4px 22px;font-size:17px;font-weight:300}
+.xm-desc li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;background:var(--gold);border-radius:999px}
+.xm-note{font-style:italic;color:#54635a;font-size:16px;margin-top:20px}
+.xm-desc .btn{margin-top:24px}
+
 /* ===== INCLUDED ===== */
 .included{background:var(--ivory)}
 .inc-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
@@ -373,43 +399,33 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     <article class="bk-card fade">
       <div class="img"><img src="assets/img/stay-missionhills-hotspring.avif" alt="Mission Hills resort at dusk" loading="lazy" decoding="async"></div>
       <div class="b">
-        <span class="bk-city">Shenzhen &amp; Guangzhou</span>
-        <h3>The Greater Bay Extension</h3>
+        <h3>Shenzhen &amp; Guangzhou</h3>
         <div class="specs">3 Nights · 3 Rounds · On-Resort at Mission Hills</div>
-        <p class="copy">The world's largest golf resort sits between the two cities: twelve championship courses across Mission Hills Shenzhen and Dongguan, led by the World Cup–venue Olazábal Course. Stay on-resort, play a different design every day, and be back at either airport — or the Hong Kong border — the same afternoon.</p>
-        <!-- TODO: 确认球场阵容(广州侧 Foison / Dragon Lake 是否加入) -->
-        <p class="bk-courses"><b>The golf:</b> Olazábal Course · World Cup Course · a third design of your choosing</p>
-        <p class="bk-note">Timed around the Canton Fair? We'll collect you straight from Pazhou between phases.</p>
+        <p class="copy">The world's largest golf resort sits between the two cities — stay on-resort and play a different championship course every day.</p>
         <!-- TODO: 确认真实起价 -->
-        <div class="bk-foot"><span class="price">From <b>$1,950</b> per golfer.</span><a href="inquiry.html">Plan This Extension</a></div>
+        <div class="bk-foot"><span class="price">From <b>$1,950</b> per golfer.</span><button class="vd" data-ext="gba">See Details</button></div>
       </div>
     </article>
 
     <article class="bk-card fade">
       <div class="img"><img src="assets/img/yangtze-links-aerial.avif" alt="The dunes and fairways of Yangtze Dunes links from the air" loading="lazy" decoding="async"></div>
       <div class="b">
-        <span class="bk-city">Shanghai + Hangzhou</span>
-        <h3>The Jiangnan Extension</h3>
+        <h3>Shanghai + Hangzhou</h3>
         <div class="specs">4 Nights · 2–3 Rounds · Two Cities by Rail</div>
-        <p class="copy">A wild links morning at Yangtze Dunes — China's top-ranked modern course — then the high-speed rail south for a closing round through the tea terraces of Fuchun, staying at the resort on the course. The Bund is your first evening; West Lake at dawn is your last morning.</p>
-        <p class="bk-courses"><b>The golf:</b> Yangtze Dunes · Fuchun Golf Club · optional Sheshan, home of the HSBC Champions</p>
-        <p class="bk-note">In town for the CIIE or a trade week? The rail south takes about an hour.</p>
+        <p class="copy">China's top-ranked modern links, then tea-terrace golf an hour south by rail — staying on the course at Fuchun Resort.</p>
         <!-- TODO: 确认真实起价 -->
-        <div class="bk-foot"><span class="price">From <b>$2,950</b> per golfer.</span><a href="inquiry.html">Plan This Extension</a></div>
+        <div class="bk-foot"><span class="price">From <b>$2,950</b> per golfer.</span><button class="vd" data-ext="jiangnan">See Details</button></div>
       </div>
     </article>
 
     <article class="bk-card fade">
       <div class="img"><img src="assets/img/topwin-yanqi-dusk-aerial.avif" alt="Topwin golf course beside Yanqi Lake at dusk, mountains behind" loading="lazy" decoding="async"></div>
       <div class="b">
-        <span class="bk-city">Beijing</span>
-        <h3>The Capital Extension</h3>
+        <h3>Beijing</h3>
         <div class="specs">3–4 Nights · 2 Rounds · Golf Beneath the Great Wall</div>
-        <p class="copy">Nicklaus fairways beneath the Great Wall at Reignwood Pine Valley, a closely-held private club, and lakeside golf at Topwin on Yanqi Lake, where President Obama played. One morning stays free — the Forbidden City, privately guided, before your evening flight.</p>
-        <p class="bk-courses"><b>The golf:</b> Reignwood Pine Valley · Topwin at Yanqi Lake</p>
-        <p class="bk-note">Wrapping up meetings in the capital? Both courses are under ninety minutes from the CBD.</p>
+        <p class="copy">Nicklaus fairways beneath the Great Wall and lakeside golf on Yanqi Lake — with a private morning kept for the Forbidden City.</p>
         <!-- TODO: 确认真实起价 -->
-        <div class="bk-foot"><span class="price">From <b>$2,550</b> per golfer.</span><a href="inquiry.html">Plan This Extension</a></div>
+        <div class="bk-foot"><span class="price">From <b>$2,550</b> per golfer.</span><button class="vd" data-ext="beijing">See Details</button></div>
       </div>
     </article>
 
@@ -441,6 +457,85 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
     </div>
   </div>
 </section>
+
+<!-- EXTENSION DETAILS MODAL -->
+<div class="xmodal" id="xmodal" role="dialog" aria-modal="true">
+  <div class="ov" data-close></div>
+  <div class="xm-panel">
+    <button class="xm-close" data-close aria-label="Close">✕</button>
+
+    <div class="xm-item" data-ext="gba">
+      <h3>Shenzhen &amp; Guangzhou</h3>
+      <div class="xm-spec">3 Nights · 3 Rounds · On-Resort at Mission Hills</div>
+      <div class="xm-grid">
+        <!-- TODO: 换观澜湖球场实景图 -->
+        <div class="xm-img"><img src="assets/img/stay-missionhills-hotspring.avif" alt="Mission Hills resort at dusk" loading="lazy" decoding="async"></div>
+        <div class="xm-desc">
+          <p>Mission Hills is the world's largest golf resort — twelve championship courses spread across Shenzhen and Dongguan, under an hour from downtown Shenzhen and within easy reach of Guangzhou and the Hong Kong border.</p>
+          <div class="xm-h">The Golf</div>
+          <!-- TODO: 确认球场阵容 -->
+          <ul>
+            <li>The Olazábal Course — venue of the World Cup of Golf</li>
+            <li>The World Cup Course — the resort's original championship layout</li>
+            <li>A third course chosen with you, from ten more designs</li>
+          </ul>
+          <div class="xm-h">Where You Stay</div>
+          <p>The resort's own five-star hotel, a buggy ride from the first tee. We book everything — your room is waiting when you arrive.</p>
+          <div class="xm-h">Door to Door</div>
+          <p>A private car collects you from wherever you're staying — your hotel, or straight from the Canton Fair halls at Pazhou — and returns you to either airport or the Hong Kong border. Tee times, caddies and clubs are arranged before you arrive.</p>
+          <p class="xm-note">You change nothing about your trip. We build the golf around it.</p>
+          <a href="inquiry.html" class="btn btn-primary">Plan This Extension</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="xm-item" data-ext="jiangnan">
+      <h3>Shanghai + Hangzhou</h3>
+      <div class="xm-spec">4 Nights · 2–3 Rounds · Two Cities by Rail</div>
+      <div class="xm-grid">
+        <div class="xm-img"><img src="assets/img/fuchun-tea-terraces-aerial.avif" alt="The tea terraces of Fuchun rolling down to the golf course" loading="lazy" decoding="async"></div>
+        <div class="xm-desc">
+          <p>A wild links morning at Yangtze Dunes — China's top-ranked modern course — then the high-speed rail south to Hangzhou for a closing round through the tea terraces of Fuchun. West Lake at dawn before you fly.</p>
+          <div class="xm-h">The Golf</div>
+          <ul>
+            <li>Yangtze Dunes — a true links on the Yangtze estuary</li>
+            <li>Fuchun Golf Club — fairways threaded through a Longjing tea plantation</li>
+            <li>Optional: Sheshan, home of the HSBC Champions</li>
+          </ul>
+          <div class="xm-h">Where You Stay</div>
+          <p>Your Shanghai hotel works as the starting point — then Fuchun Resort itself, grey-tiled pavilions above the tea terraces, on the course you'll play.</p>
+          <div class="xm-h">Door to Door</div>
+          <p>Collected from your hotel or the exhibition halls, rail tickets in hand, met at every station. Your luggage moves with you; your clubs are waiting at each course.</p>
+          <p class="xm-note">You change nothing about your trip. We build the golf around it.</p>
+          <a href="inquiry.html" class="btn btn-primary">Plan This Extension</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="xm-item" data-ext="beijing">
+      <h3>Beijing</h3>
+      <div class="xm-spec">3–4 Nights · 2 Rounds · Golf Beneath the Great Wall</div>
+      <div class="xm-grid">
+        <div class="xm-img"><img src="assets/img/reignwood-greatwall.avif" alt="Golfers on a Reignwood Pine Valley fairway with the Great Wall behind" loading="lazy" decoding="async"></div>
+        <div class="xm-desc">
+          <p>Nicklaus fairways beneath the Great Wall at Reignwood Pine Valley, a closely-held private club, and lakeside golf at Topwin on Yanqi Lake, where President Obama played.</p>
+          <div class="xm-h">The Golf</div>
+          <ul>
+            <li>Reignwood Pine Valley — private golf beneath the Great Wall</li>
+            <li>Topwin at Yanqi Lake — lakeside fairways northeast of the capital</li>
+          </ul>
+          <div class="xm-h">Where You Stay</div>
+          <p>Keep the hotel you're already in — we work around it — or let us move you somewhere better placed between the courses and the city.</p>
+          <div class="xm-h">Door to Door</div>
+          <p>Both clubs are under ninety minutes from the CBD. A private car and driver handle every transfer, with one morning kept free for the Forbidden City, privately guided.</p>
+          <p class="xm-note">You change nothing about your trip. We build the golf around it.</p>
+          <a href="inquiry.html" class="btn btn-primary">Plan This Extension</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- CTA -->
 <section class="cta" id="start">
@@ -482,6 +577,13 @@ toggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');toggl
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.textContent='☰';}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+/* extension details modal */
+const xmodal=document.getElementById('xmodal');
+const openX=id=>{xmodal.querySelectorAll('.xm-item').forEach(x=>x.classList.toggle('on',x.dataset.ext===id));xmodal.classList.add('open');document.body.style.overflow='hidden';xmodal.querySelector('.xm-panel').scrollTop=0;};
+const closeX=()=>{xmodal.classList.remove('open');document.body.style.overflow='';};
+document.querySelectorAll('.vd[data-ext]').forEach(b=>b.addEventListener('click',()=>openX(b.dataset.ext)));
+xmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeX));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&xmodal.classList.contains('open'))closeX();});
 </script>
 </body>
 </html>
