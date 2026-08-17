@@ -478,26 +478,6 @@ section{padding:76px 0}
 }
 .sjcard.sj-custom .foot a{background:var(--gold);color:var(--ink)}
 .sjcard.sj-custom .foot a:hover{background:#cfa961}
-/* Golf Extension banner — "already coming to China" entry point */
-.ext-banner{display:grid;grid-template-columns:1.5fr 1fr;background:var(--pine);color:#fff;border-radius:8px;overflow:hidden;margin-bottom:36px;box-shadow:var(--lift);transition:.3s}
-.ext-banner:hover{transform:translateY(-3px)}
-.ext-banner .eb-b{padding:40px 46px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-.ext-banner .eb-k{font-size:13.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.ext-banner h3{font-family:var(--serif);font-size:clamp(29px,3.2vw,40px);font-weight:500;color:#fff;margin-top:10px;max-width:22ch}
-.ext-banner p{font-size:18px;color:rgba(255,255,255,.85);font-weight:300;margin-top:12px;max-width:56ch}
-.ext-banner .eb-cta{margin-top:24px;background:var(--cinnabar);color:#fff;font-size:15px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:2px;transition:.25s}
-.ext-banner:hover .eb-cta{background:#9c3927}
-.ext-banner .img{position:relative;min-height:100%}
-.ext-banner .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ext-banner .img::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--pine) 0%,rgba(31,61,46,0) 45%);z-index:1}
-@media(max-width:860px){
-  .ext-banner{grid-template-columns:1fr}
-  .ext-banner .img{order:-1;min-height:0;aspect-ratio:16/8}
-  .ext-banner .img::before{background:linear-gradient(0deg,var(--pine) 0%,rgba(31,61,46,0) 45%)}
-  .ext-banner .eb-b{padding:6px 24px 30px}
-  .ext-banner .eb-cta{width:100%;text-align:center}
-}
-
 /* ===== SIGNATURE EXPERIENCES ===== */
 .exclusives{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
 .exclusives .tabbar{display:flex;gap:38px;border-bottom:1px solid var(--mist);margin-bottom:36px}
@@ -1329,18 +1309,8 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
     <div class="section-head fade">
       <span class="eyebrow">Private Journeys</span>
       <h2>Journeys, not packages.</h2>
-      <p>These routes show what is possible. Change the pace, swap courses, add regions — or start from a blank page.</p>
+      <p>These routes show what is possible. Change the pace, swap courses, add regions — or start from a blank page. Short on time, or already coming to China? Any of these can be shaped into a 2–4 day golf extension of the trip you've planned.</p>
     </div>
-
-    <a class="ext-banner fade" href="golf-extensions.html">
-      <div class="eb-b">
-        <span class="eb-k">Already Coming to China?</span>
-        <h3>Build golf into the trip you've planned.</h3>
-        <p>A trade fair, a week of meetings, a holiday on the books — or you're here already. Add three to five private golf days before you fly home, door to door from Shenzhen &amp; Guangzhou, Shanghai or Beijing.</p>
-        <span class="eb-cta">See Golf Extensions</span>
-      </div>
-      <div class="img"><img src="assets/img/topwin-autumn-pagoda-skyline.avif" alt="Autumn fairways at Topwin with a pagoda and the mountains behind" width="1600" height="1067" loading="lazy" decoding="async"></div>
-    </a>
 
     <div class="sj-grid">
 
@@ -1371,17 +1341,17 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       </article>
 
       <article class="sjcard fade">
-        <div class="ph"><img src="assets/img/dest-hainan.avif" alt="An oceanfront golf hole on Hainan's tropical coast" width="1440" height="1152" loading="lazy" decoding="async"></div>
+        <div class="ph"><img src="assets/img/missionhills-guanlan-lead.jpg" alt="A championship fairway at Mission Hills, the world's largest golf club" width="1024" height="680" loading="lazy" decoding="async"><span class="sj-badge">world's largest club</span></div>
         <div class="b">
-          <h3>The Grand China Golf Journey</h3>
-          <div class="specs">16 Nights · 7–9 Rounds</div>
-          <div class="hi"><p>The full range — the Great Wall, a wild Yangtze links, Hangzhou's tea hills, Yunnan's snow peaks, Hainan's coast.</p></div>
+          <h3>Shenzhen &amp; Guangzhou</h3>
+          <div class="specs">4 Nights · 3 Rounds · Mission Hills &amp; Foshan</div>
+          <div class="hi"><p>Two rounds at the Guinness-record Mission Hills, a Challenge Tour test at Foshan — golf's biggest stage, an hour from the Canton Fair.</p></div>
           <div class="tl">Plan Your Journey</div>
-          <div class="route">Beijing · Shanghai / Hangzhou · Yunnan · Hainan</div>
-          <div class="bestfor">For travelers who want to see how far golf in China can go.</div>
+          <div class="route">Shenzhen · Guangzhou</div>
+          <div class="bestfor">Perfect around the Canton Fair — or any Greater Bay business trip.</div>
         </div>
         <!-- TODO: 确认真实起价 -->
-        <div class="foot"><span class="price">From <b>$12,950</b> per golfer.</span><a href="grand-china-golf-journey.html">View Full Itinerary</a></div>
+        <div class="foot"><span class="price">From <b>$2,450</b> per golfer.</span><a href="shenzhen-guangzhou.html">View Full Itinerary</a></div>
       </article>
 
       <article class="sjcard sj-custom fade">
@@ -1671,7 +1641,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <p style="font-size:17px;margin-top:14px;max-width:36ch;font-weight:300">Private golf journeys across China, built around world-class courses, rare access and a country unlike anywhere else.</p>
         <p style="font-size:15.5px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">From the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>
-      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="golf-extensions.html">Golf Extensions</a></li><li><a href="#exclusives">Beyond the Fairway</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Beyond the Fairway</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
       <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#exclusives">Beyond Golf</a></li><li><a href="inquiry.html">Plan Your Journey</a></li></ul></div>
       <div class="foot-contact"><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li></ul><a class="ig-link" href="https://www.instagram.com/golfchina.co" target="_blank" rel="noopener noreferrer" aria-label="Golf China Co. on Instagram"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg><span>@golfchina.co</span></a></div>
     </div>
