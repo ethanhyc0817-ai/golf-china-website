@@ -452,7 +452,8 @@ section{padding:76px 0}
 .sjcard .foot a:hover{background:var(--pine)}
 .journeys .note{text-align:center;margin-top:40px;font-size:16px;color:#54635a}
 /* Design-your-own card */
-.sjcard.sj-custom{background:var(--pine);color:#fff;justify-content:flex-start}
+.sjcard.sj-custom{background:var(--pine);color:#fff;justify-content:flex-start;grid-column:1/-1}
+@media(min-width:921px){.sjcard.sj-custom .hi{max-width:70ch}}
 .sjcard.sj-custom .b{display:flex;flex-direction:column;padding-top:34px}
 .sjcard.sj-custom .eyebrow{color:var(--gold)}
 .sjcard.sj-custom h3{color:#fff;margin-top:12px}
@@ -477,6 +478,14 @@ section{padding:76px 0}
 }
 .sjcard.sj-custom .foot a{background:var(--gold);color:var(--ink)}
 .sjcard.sj-custom .foot a:hover{background:#cfa961}
+/* Business golf-break banner */
+.biz-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--mist);border-left:3px solid var(--gold);border-radius:2px;padding:24px 28px;margin-bottom:34px}
+.biz-banner .bb-k{font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.biz-banner h3{font-family:var(--serif);font-size:clamp(24px,2.4vw,29px);font-weight:500;color:var(--ink);margin-top:4px}
+.biz-banner p{font-size:17px;color:#54635a;font-weight:300;margin-top:6px;max-width:62ch}
+.biz-banner .bb-cta{background:var(--ink);color:#fff;font-size:16px;font-weight:500;padding:14px 26px;border-radius:12px;white-space:nowrap;transition:.25s}
+.biz-banner .bb-cta:hover{background:var(--pine)}
+@media(max-width:600px){.biz-banner{padding:20px;margin-bottom:24px}.biz-banner .bb-cta{width:100%;text-align:center}}
 
 /* ===== SIGNATURE EXPERIENCES ===== */
 .exclusives{background:var(--paper);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
@@ -1250,6 +1259,16 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
       <h2>Journeys, not packages.</h2>
       <p>These routes show what is possible. Change the pace, swap courses, add regions — or start from a blank page.</p>
     </div>
+
+    <a class="biz-banner fade" href="golf-breaks.html">
+      <div>
+        <span class="bb-k">In China on Business?</span>
+        <h3>The Golf Break — 3 to 5 days, door to door</h3>
+        <p>Turn a trade fair into a golf trip. Private breaks from Shenzhen &amp; Guangzhou, Shanghai and Beijing — tee times confirmed, clubs handled, collected from your hotel and delivered back to the airport.</p>
+      </div>
+      <span class="bb-cta">View Golf Breaks</span>
+    </a>
+
     <div class="sj-grid">
 
       <article class="sjcard fade">
@@ -1276,20 +1295,6 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
           <div class="bestfor">Two completely different sides of China in one journey.</div>
         </div>
         <div class="foot"><span class="price">From <b>$5,950</b> per golfer.</span><a href="snow-peaks-to-tropical-coast.html">View Full Itinerary</a></div>
-      </article>
-
-      <article class="sjcard fade">
-        <div class="ph"><img src="assets/img/wavepool-aerial-golden-hour.avif" alt="The PerfectSwell surf pool at golden hour on Hainan's surf coast" width="1600" height="899" loading="lazy" decoding="async"></div>
-        <div class="b">
-          <h3>Surf &amp; Golf Hainan</h3>
-          <div class="specs">8 Nights · 3 Rounds · 4 Surf Sessions</div>
-          <div class="hi"><p>Waves built to order at the world's only tropical-island surf pool, links golf at The Dunes, and a lava-rock finale at Blackstone.</p></div>
-          <div class="tl">Plan Your Journey</div>
-          <div class="route">Wanning · Sanya · Haikou</div>
-          <div class="bestfor">Never surfed? First-timers stand up in session one.</div>
-        </div>
-        <!-- TODO: 确认真实起价 -->
-        <div class="foot"><span class="price">From <b>$4,650</b> per golfer.</span><a href="surf-and-golf-hainan.html">View Full Itinerary</a></div>
       </article>
 
       <article class="sjcard fade">
@@ -1593,7 +1598,7 @@ footer .base{display:flex;justify-content:space-between;font-size:15.5px;opacity
         <p style="font-size:17px;margin-top:14px;max-width:36ch;font-weight:300">Private golf journeys across China, built around world-class courses, rare access and a country unlike anywhere else.</p>
         <p style="font-size:15.5px;margin-top:12px;max-width:38ch;font-weight:300;opacity:.65">From the team behind <a href="https://www.surfchina.co" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">Surf China Co.</a></p>
       </div>
-      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="#exclusives">Beyond the Fairway</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#destinations">Destinations</a></li><li><a href="#courses">Courses</a></li><li><a href="#journeys">Sample Journeys</a></li><li><a href="golf-breaks.html">Golf Breaks</a></li><li><a href="#exclusives">Beyond the Fairway</a></li><li><a href="#stay">Where You Stay</a></li></ul></div>
       <div><h5>Plan</h5><ul><li><a href="#how">How It Works</a></li><li><a href="#about">Who We Are</a></li><li><a href="#exclusives">Beyond Golf</a></li><li><a href="inquiry.html">Plan Your Journey</a></li></ul></div>
       <div class="foot-contact"><h5>Contact</h5><ul><li><a href="mailto:hello@golfchina.co">hello@golfchina.co</a></li></ul><a class="ig-link" href="https://www.instagram.com/golfchina.co" target="_blank" rel="noopener noreferrer" aria-label="Golf China Co. on Instagram"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg><span>@golfchina.co</span></a></div>
     </div>
