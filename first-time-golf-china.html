@@ -357,6 +357,14 @@ section{padding:100px 0}
 
 /* ===== STAY (hotel cards + details modal) ===== */
 .stay{background:var(--ivory)}
+.tier-toggle{display:flex;justify-content:center;margin:0 0 14px}
+.tt{appearance:none;background:var(--paper);border:1px solid var(--mist);padding:12px 34px;font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#54635a;cursor:pointer;transition:.25s}
+.tt:first-child{border-radius:2px 0 0 2px}
+.tt:last-child{border-radius:0 2px 2px 0;border-left:none}
+.tt.on{background:var(--pine);border-color:var(--pine);color:#fff}
+.tier-cap{text-align:center;font-size:15px;color:#7a857c;font-style:italic;margin-bottom:34px}
+.hotel-grid[data-tier=premium] .hcard.lux{display:none}
+.hotel-grid[data-tier=luxury] .hcard.prem{display:none}
 .hotel-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
 @media(max-width:900px){.hotel-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.hotel-grid{grid-template-columns:1fr}}
@@ -939,9 +947,24 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
       <p>Two nights in the heart of the capital, two above Shanghai's grandest waterfront, two among the tea terraces of the Fuchun valley — each hotel part of the journey itself.</p>
     </div>
 
-    <div class="hotel-grid">
+    <div class="tier-toggle fade">
+      <button class="tt on" data-tier="premium">Premium</button>
+      <button class="tt" data-tier="luxury">Luxury</button>
+    </div>
+    <p class="tier-cap fade">Journey pricing is based on Premium · Luxury is quoted in your private proposal · Fuchun Resort features in both</p>
 
-      <article class="hcard fade">
+    <div class="hotel-grid" data-tier="premium">
+
+      <article class="hcard prem fade">
+        <div class="ph"><span class="badge">Beijing · Nights 1–2</span><img src="assets/img/hotel-ritz-carlton-beijing-card.jpg" alt="The Ritz-Carlton, Beijing" width="1336" height="890" loading="lazy" decoding="async"></div>
+        <div class="b">
+          <h3>The Ritz-Carlton, Beijing</h3>
+          <div class="loc">Beijing, China</div>
+          <button class="vd" data-hotel="ritz">View Details</button>
+        </div>
+      </article>
+
+      <article class="hcard lux fade">
         <div class="ph"><span class="badge">Beijing · Nights 1–2</span><img src="assets/img/hotel-peninsula-beijing-card.avif" alt="The Peninsula Beijing" width="833" height="1100" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>The Peninsula Beijing</h3>
@@ -950,7 +973,16 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
         </div>
       </article>
 
-      <article class="hcard fade">
+      <article class="hcard prem fade">
+        <div class="ph"><span class="badge">Shanghai · Nights 3–4</span><img src="assets/img/hotel-shangrila-shanghai-card.jpg" alt="Pudong Shangri-La, Shanghai" width="1206" height="786" loading="lazy" decoding="async"></div>
+        <div class="b">
+          <h3>Pudong Shangri-La, Shanghai</h3>
+          <div class="loc">Shanghai, China</div>
+          <button class="vd" data-hotel="shangrila">View Details</button>
+        </div>
+      </article>
+
+      <article class="hcard lux fade">
         <div class="ph"><span class="badge">Shanghai · Nights 3–4</span><img src="assets/img/hotel-waldorf-shanghai-card.avif" alt="Waldorf Astoria Shanghai on the Bund" width="880" height="1100" loading="lazy" decoding="async"></div>
         <div class="b">
           <h3>Waldorf Astoria Shanghai on the Bund</h3>
@@ -1141,7 +1173,7 @@ footer .base{display:flex;justify-content:space-between;font-size:14.5px;opacity
         <span class="pk">Priced From</span>
         <div class="amt">US$5,230</div>
         <div class="pp">per golfer</div>
-        <p>Based on two golfers travelling and sharing a room. Non-golfer companion pricing and preferred rates for private groups are available on request.</p>
+        <p>Based on two golfers travelling and sharing a room at the Premium hotel level. Luxury-level, non-golfer companion pricing and preferred rates for private groups are available on request.</p>
         <a href="inquiry.html" class="btn btn-primary">Plan Your Journey</a>
       </div>
     </div>
@@ -1222,6 +1254,16 @@ if(location.hash)openTab(location.hash.slice(1),false);
 document.querySelectorAll('.daylink').forEach(b=>b.addEventListener('click',()=>{openTab(b.dataset.goto,true);history.replaceState(null,'','#'+b.dataset.goto);}));
 /* hotel details modal */
 const HOTELS={
+ ritz:{
+  name:'The Ritz-Carlton, Beijing',loc:'Beijing, China',
+  desc:'In the heart of Beijing’s Central Business District, The Ritz-Carlton, Beijing is a classically styled address of chandeliers, deep armchairs and dark woods, with the brand’s famously warm, polished service. A calm, clubby base after days on the Wall and the fairways, with the Forbidden City a short drive away.',
+  imgs:['hotel-ritz-carlton-beijing-card.jpg','hotel-ritz-carlton-beijing-1.jpg','hotel-ritz-carlton-beijing-2.jpg','hotel-ritz-carlton-beijing-3.jpg','hotel-ritz-carlton-beijing-4.jpg','hotel-ritz-carlton-beijing-5.jpg','hotel-ritz-carlton-beijing-6.jpg']
+ },
+ shangrila:{
+  name:'Pudong Shangri-La, Shanghai',loc:'Shanghai, China',
+  desc:'Rising from the Lujiazui riverside, Pudong Shangri-La looks straight across the Huangpu to the floodlit facades of the Bund. Generous river-view rooms, one of the city’s great breakfast tables and Shangri-La’s unhurried Asian service put both Shanghais at your feet — the skyline out one window, the old waterfront out the other.',
+  imgs:['hotel-shangrila-shanghai-card.jpg','hotel-shangrila-shanghai-1.jpg','hotel-shangrila-shanghai-2.jpg','hotel-shangrila-shanghai-3.jpg','hotel-shangrila-shanghai-4.jpg','hotel-shangrila-shanghai-5.jpg']
+ },
  peninsula:{
   name:'The Peninsula Beijing',loc:'Beijing, China',
   desc:'Set on Wangfujing in the heart of the capital, The Peninsula Beijing is a short walk from the Forbidden City and the city’s finest shopping. A sweeping top-to-bottom renovation created some of the most generous rooms and suites in Beijing, finished in a calm, residential style, with celebrated Cantonese dining at Huang Ting and the Peninsula’s famously polished service. An ideal base between rounds at the capital’s leading courses and days among its imperial landmarks.',
@@ -1238,6 +1280,11 @@ const HOTELS={
   imgs:['fuchun-pavilion-lake.jpg','fuchun-resort.jpg','hotel-fuchun-lake-sunset.jpg','hotel-fuchun-bamboo-drive.jpg','hotel-fuchun-entrance-night.jpg','hotel-fuchun-courtyard-urns.jpg','hotel-fuchun-villa-room.jpg','hotel-fuchun-river-view.jpg','hotel-fuchun-lounge.jpg','hotel-fuchun-indoor-pool.jpg','hotel-fuchun-spa-pool.jpg']
  }
 };
+/* stay tier toggle */
+document.querySelectorAll('.tt').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tt').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelector('.hotel-grid').dataset.tier=b.dataset.tier;
+}));
 const hmodal=document.getElementById('hmodal');
 if(hmodal){
   let gal=[],gi=0;
