@@ -732,7 +732,7 @@ footer a{border-bottom:1px solid rgba(255,255,255,.3)}
             <div class="step" data-step="4">
               <div class="s-head">
                 <h2>Your rounds.</h2>
-                <p>Every place comes with its signature golf built in — green fees, caddies and tee times handled. Keen golfers can add a round; private clubs are arranged on your behalf and priced on request.</p>
+                <p>Every place comes with its signature golf built in — green fee, caddie fee and cart fee included, tee times handled. Keen golfers can add a round; private clubs are arranged on your behalf and priced on request.</p>
               </div>
               <div id="courseStops"></div>
               <div class="fq" style="margin-top:6px">
@@ -1270,12 +1270,12 @@ function renderStopBlocks(){
     d.innerHTML=stopHeader(s,`${inc.length} round${inc.length>1?'s':''} included`)+`<div class="stop-b"><div class="cards">`+inc.map(cc=>{ const closed=courseClosed(cc); return `
       <div class="card ${closed?'disabled':''}"><div class="cb"><div class="ph"><img src="${img(cc.img)}" alt="" loading="lazy"><span class="badge">${cc.standing}</span><span class="tick" style="background:var(--pine);color:#fff">✓</span></div>
       <div class="tx"><div class="t">${cc.name}</div><div class="d">${cc.sub} · ${cc.d}</div>
-      <div class="p"><span style="color:var(--moss)">Included · caddie incl.</span></div>
+      <div class="p"><span style="color:var(--moss)">Included · green fee, caddie fee &amp; cart fee</span></div>
       ${cc.priv?'<div class="warn" style="color:var(--moss)">Private members’ club — guest play arranged on your behalf</div>':''}${closed?'<div class="warn">Usually closed in your travel month — we’ll suggest an alternative</div>':''}</div></div></div>`;}).join('')+`</div>`+
       (add.length?`<div class="ql" style="margin:18px 0 8px">Add a round <span class="hint">${full?`optional — ${maxRounds()} round${maxRounds()>1?'s':''} is the most for ${S.nights} nights; on-request rounds can still be noted`:'optional'}</span></div><div class="list">`+add.map(cc=>`
       <label class="li ${full&&!cc.req&&!S.courses[s.id].includes(cc.id)?'locked':''}"><input type="checkbox" name="Add-on rounds — ${s.name}" value="${cc.name}${cc.req?' (on request)':''}" data-stop="${s.id}" data-id="${cc.id}" ${S.courses[s.id].includes(cc.id)?'checked':''} ${full&&!cc.req&&!S.courses[s.id].includes(cc.id)?'disabled':''}>
       <div class="lb"><span class="ck">✓</span><img class="im" src="${img(cc.img)}" alt="" loading="lazy"><div><div class="t">${cc.name}</div><div class="d">${cc.sub} · ${cc.d}</div></div>
-      <div class="p">${cc.req?'on request':`+US$${fmt(usd(cc.cost+CADDIE,MU.golf))}<em>per golfer, caddie incl.</em>`}</div></div></label>`).join('')+`</div>`:'')+
+      <div class="p">${cc.req?'on request':`+US$${fmt(usd(cc.cost+CADDIE,MU.golf))}<em>per golfer · green fee, caddie fee &amp; cart fee</em>`}</div></div></label>`).join('')+`</div>`:'')+
       `${s.courseNote?`<p class="help" style="margin-top:12px">${s.courseNote}</p>`:''}</div>`;
     d.querySelectorAll('input').forEach(i=>i.addEventListener('change',()=>{ const arr=S.courses[s.id]; if(i.checked){if(!arr.includes(i.dataset.id))arr.push(i.dataset.id);} else S.courses[s.id]=arr.filter(x=>x!==i.dataset.id); renderStopBlocks(); renderAll(); }));
     c.appendChild(d);
@@ -1350,7 +1350,7 @@ function renderAll(){
   const legs=E.legLines.filter(x=>/rail|flight|car ·|throughout/i.test(x.t)&&!/driver|Airport/i.test(x.t)).map(x=>x.t.replace(/:.*$/,'').replace(/ — .*$/,''));
   const inc=[
     `<b>${S.nights} nights</b> in hand-picked ${TIERS[S.tier].name.toLowerCase()} hotels — ${names.join(', ')} — breakfast every morning`,
-    `<b>${rounds.length} confirmed round${rounds.length!==1?'s':''}</b> — ${rounds.join(', ')} — green fees, carts and caddies included, tee times secured before you fly`,
+    `<b>${rounds.length} confirmed round${rounds.length!==1?'s':''}</b> — ${rounds.join(', ')} — green fee, caddie fee and cart fee included, tee times secured before you fly`,
     `<b>Private car and driver</b> on every golf day, airport to airport, never a shared shuttle`,
     legs.length?`<b>Every leg between places booked and handled</b> — ${legs.join(' · ')}`:`<b>Airport transfers</b> on arrival and departure, timed to your flights`,
     `<b>Culture, dining and a private English-speaking guide</b> woven around the rounds to your taste — on request, priced in your proposal`,
