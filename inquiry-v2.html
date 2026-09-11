@@ -474,6 +474,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
 .li .p em{display:block;font-style:normal;color:var(--faint);font-size:12px}
 .li .ck{width:20px;height:20px;border-radius:2px;border:1px solid var(--mist);flex:none;display:flex;align-items:center;justify-content:center;color:transparent;font-size:12px}
 .li input:checked+.lb .ck{background:var(--pine);border-color:var(--pine);color:#fff}
+.li.locked .lb{opacity:.45;cursor:not-allowed}.li.locked:hover .lb{border-color:var(--mist)}
 @media(max-width:560px){
   .li .lb{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px 12px;align-items:start;padding:12px}
   .li .ck{margin-top:2px}.li .im{grid-column:2;width:100%;height:130px}
@@ -510,6 +511,10 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
 .est-card .ph{font-family:var(--serif);font-size:26px;line-height:1.2;margin-top:8px;color:rgba(255,255,255,.85);font-style:italic}
 .est-card .ph2{font-size:14px;color:rgba(255,255,255,.65);margin-top:8px;line-height:1.5}
 .est-lines{margin-top:18px;border-top:1px solid rgba(255,255,255,.15);padding-top:12px}
+.est-lines .inc-k{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.est-lines .inc{display:flex;gap:9px;font-size:13.5px;line-height:1.45;padding:5px 0;color:rgba(255,255,255,.82)}
+.est-lines .inc b{font-weight:500;color:#fff}
+.est-lines .inc .tick{color:var(--gold);flex:none;font-size:12px;margin-top:2px}
 .est-lines .ln{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:4px 0;color:rgba(255,255,255,.85)}
 .est-lines .ln span:last-child{font-variant-numeric:tabular-nums;color:#fff}
 .est-lines .ln.sub{font-size:13px;color:rgba(255,255,255,.55);padding:1px 0 1px 12px}
@@ -554,6 +559,29 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
 .modal.show{display:flex}
 .modal .mb{background:#fff;max-width:720px;width:100%;max-height:85vh;overflow:auto;border-radius:3px;padding:26px 28px}
 .modal pre{white-space:pre-wrap;font-size:13px;line-height:1.5;font-family:ui-monospace,Menlo,monospace;background:var(--ivory);padding:16px;border-radius:2px;margin-top:14px}
+
+/* guest stories (same cards as the home page) */
+.stories{background:var(--paper);border-top:1px solid var(--mist);padding:70px 0 64px}
+.stories .head{text-align:center;max-width:56ch;margin:0 auto 34px}
+.stories h2{font-size:clamp(28px,3.4vw,40px);margin-top:8px}
+.stories .head p{color:var(--muted);margin-top:10px;font-size:17px}
+.srow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media(max-width:1100px){.srow{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.srow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:10px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none}.srow::-webkit-scrollbar{display:none}.rcard{flex:0 0 78%;scroll-snap-align:start}}
+.rcard{background:#fff;border:1px solid var(--mist);border-radius:3px;display:flex;flex-direction:column;text-align:center;padding:26px 20px 22px}
+.rcard img{width:min(62%,150px);aspect-ratio:1/1;margin:0 auto;display:block;border-radius:999px;object-fit:cover;box-shadow:0 14px 32px -20px rgba(20,36,28,.5)}
+.rcard h3{font-size:22px;margin:16px 0 0}
+.rcard .loc{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:5px;font-weight:500}
+.rcard .rq{font-family:var(--serif);font-style:italic;font-size:17.5px;line-height:1.5;color:#4a5a50;font-weight:500;margin:12px 0 18px;flex:1}
+.rcard .more{align-self:center;background:none;border:1px solid var(--gold);color:var(--pine);font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border-radius:2px;cursor:pointer;transition:.25s}
+.rcard .more:hover{background:var(--gold);color:#fff}
+.rm-panel{position:relative;z-index:2;background:var(--ivory);width:min(640px,94vw);max-height:90vh;overflow:auto;padding:36px 38px 40px;border-radius:2px;box-shadow:var(--lift);text-align:center}
+.rm-panel img{width:150px;height:150px;border-radius:999px;object-fit:cover;margin:0 auto 12px;display:block}
+.rm-panel .cap{font-size:13.5px;font-style:italic;color:#8a948c;letter-spacing:.04em;margin-bottom:16px}
+.rm-panel h3{font-size:clamp(27px,3vw,32px);margin-bottom:18px}
+.rm-text{text-align:left;font-size:17px;line-height:1.75;color:#4a5a50}
+.rm-text p+p{margin-top:14px}
+@media(max-width:760px){.rm-panel{padding:26px 22px 32px}}
 
 footer{background:var(--pine);color:rgba(255,255,255,.75);padding:44px 0 26px;margin-top:40px}
 footer .base{font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
@@ -636,8 +664,8 @@ footer a{border-bottom:1px solid rgba(255,255,255,.3)}
 
               <div class="fq">
                 <span class="ql">How many nights?<span class="req">*</span> <span class="hint">in China, excluding flights</span></span>
-                <input type="number" name="Nights" id="nights" min="1" max="30" step="1" inputmode="numeric" placeholder="e.g. 6" style="max-width:220px;font-size:22px;font-weight:400">
-                <p class="help">Most first journeys run 6–9 nights. A 3-night golf extension slots into a trip you&rsquo;ve already planned.</p>
+                <input type="number" name="Nights" id="nights" min="2" max="30" step="1" inputmode="numeric" placeholder="e.g. 6" style="max-width:220px;font-size:22px;font-weight:400">
+                <p class="help" id="nightsHelp">Two nights minimum. Most first journeys run 6–9 nights; a 2–3 night golf extension slots into a trip you&rsquo;ve already planned.</p>
               </div>
 
               <div class="fq">
@@ -813,16 +841,16 @@ footer a{border-bottom:1px solid rgba(255,255,255,.3)}
     <aside class="est" id="est">
       <div class="est-card">
         <button type="button" class="est-toggle" id="estToggle">Details</button>
-        <div class="k">Indicative price</div>
+        <div class="k">Your journey, from</div>
         <div id="estEmpty">
           <div class="ph">Your estimate appears here.</div>
           <div class="ph2">Choose your nights and destinations to begin — it updates as you go.</div>
         </div>
         <div id="estBody" style="display:none">
           <div class="big">from US$<span id="estPP">—</span><small>per person</small></div>
-          <div class="tot">US$<span id="estTot">—</span> total · <span id="estWho">—</span></div>
+          <div class="tot">US$<span id="estTot">—</span> for <span id="estWho">—</span> · tailored, not off the shelf</div>
           <div class="est-lines" id="estLines"></div>
-          <div class="fine" id="estFine">Based on our current rates for the hotels, courses and services you&rsquo;ve chosen, two people sharing where applicable. Excludes international flights, activities and dining (on request), and peak-date surcharges. Your proposal will confirm exact pricing.</div>
+          <div class="fine" id="estFine">An indicative figure, not an OTA price: it reflects this route, these courses and this hotel level, two sharing where applicable. Your private proposal will refine every detail and confirm the final price. Excludes international flights, gratuities and peak-date surcharges.</div>
         </div>
       </div>
       <div class="est-sum" id="estSum" style="display:none">
@@ -833,6 +861,29 @@ footer a{border-bottom:1px solid rgba(255,255,255,.3)}
 
   </div>
 </section>
+
+<section class="stories" id="stories">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">Guest Stories</span>
+      <h2>In their own words.</h2>
+      <p>Golfers who wondered if China was worth the flight &mdash; and what they told us when they came home.</p>
+    </div>
+    <div class="srow" id="srow"></div>
+  </div>
+</section>
+
+<div class="hmodal" id="rmodal" role="dialog" aria-modal="true" aria-labelledby="rm-name">
+  <div class="ov" data-rclose></div>
+  <div class="rm-panel">
+    <button type="button" class="hm-close" data-rclose aria-label="Close">✕</button>
+    <span class="eyebrow">Guest Stories</span>
+    <img id="rm-img" src="" alt="">
+    <div class="cap" id="rm-cap"></div>
+    <h3 id="rm-name"></h3>
+    <div class="rm-text" id="rm-text"></div>
+  </div>
+</div>
 
 <footer>
   <div class="container">
@@ -879,9 +930,12 @@ footer a{border-bottom:1px solid rgba(255,255,255,.3)}
 const LIVE = false;                       // ← flip to true on deploy (posts to Formspree)
 const IMG_BASE = 'assets/img/';   // ← 'assets/img/' on deploy
 const FX = 7.2, FEE = 0.10;
-const MU = { hotel:.15, transfer:.60, ground:.80, golf:.15, tickets:.20 };
+const MU = { hotel:.15, transfer:.60, ticketed:.15, ground:.80, golf:.15, tickets:.20 };   // ticketed = published fares (rail, flights): booking + coordination only
 const CADDIE = 250, CLUB_RENTAL = 350, CAR_DAY = 1400, VAN_DAY = 1800, AIRPORT_OW = 500, INTERCITY_CAR = 1500;
-const GUIDE_DAY = 800, FASTTRACK = 600, CONCIERGE = 1000, FLIGHT_ECO = 1500, FLIGHT_BIZ = 3500;
+const GUIDE_DAY = 800, FLIGHT_ECO = 1500, FLIGHT_BIZ = 3500;
+/* 24/7 on-the-ground support: flat per party, tiered by nights; ×1.5 for parties of 6+ (Ethan 2026-09-10) */
+const SUPPORT_TIERS_USD = [[4,250],[7,450],[10,650],[Infinity,850]], SUPPORT_GROUP_MIN = 6, SUPPORT_GROUP_MULT = 1.5;
+const supportFee = (nights,pax)=>{ const t=SUPPORT_TIERS_USD.find(([max])=>nights<=max)[1]; return t*(pax>=SUPPORT_GROUP_MIN?SUPPORT_GROUP_MULT:1); };
 
 const PEAK = [ // Chinese public holidays — hotel/course surcharges likely
   ['2026-09-25','2026-09-27','Mid-Autumn'],['2026-10-01','2026-10-07','National Day'],
@@ -914,15 +968,36 @@ const STOPS = [
         { id:'ACC-HZ-FUCHUN', name:'Fuchun Resort', room:'Lake-View King', tier:'Premium', cost:1689, img:'fuchun-resort.avif', d:'Jiangnan pavilions mirrored in still water — the course at your door.' } ] } ],
     legs:[ { label:'Shanghai → Hangzhou: high-speed rail · 1 h', pp:250 } ],
     courses:[
-      { id:'GOLF-YANGTZE-DUNES', builtin:true, area:'shanghai', name:'Yangtze Dunes', sub:'Shanghai · Chongming Island · OCM', standing:'China Top 3', cost:2550, img:'yangtze-hole3-dusk.avif', d:'A true links through river dunes at the mouth of the Yangtze.' },
+      { id:'GOLF-YANGTZE-DUNES', builtin:true, area:'shanghai', name:'Yangtze Dunes', sub:'Shanghai · Chongming Island · OCM', standing:'China Top 3', cost:2550, img:'yangtze-sunset-green.avif', d:'A true links through river dunes at the mouth of the Yangtze.' },
       { id:'GOLF-SHESHAN', addon:true, req:true, area:'shanghai', name:'Sheshan International', sub:'Shanghai · Nelson & Haworth', standing:'World Top 100 · Private club', cost:3800, priv:true, img:'sheshan-hsbc.avif', d:'China’s most famous course, long-time home of the WGC-HSBC Champions. A strictly private members’ club — guest play arranged on your behalf, priced on request.' },
-      { id:'GOLF-FUCHUN', builtin:true, area:'hangzhou', name:'Fuchun Golf Club', sub:'Hangzhou · Daniel Obermeyer', standing:'Asia Top 50', cost:2080, img:'fuchun-tea-terraces-aerial.avif', d:'The only course in Asia routed through a working Longjing tea plantation.' } ],
+      { id:'GOLF-FUCHUN', builtin:true, area:'hangzhou', name:'Fuchun Golf Club', sub:'Hangzhou · Daniel Obermeyer', standing:'Asia Top 50', cost:2080, img:'fuchun-resort.avif', d:'The only course in Asia routed through a working Longjing tea plantation.' } ],
     exps:[
       { id:'BUND-HERITAGE', builtin:true, name:'The Bund & French Concession, privately guided', cost:0, per:'pp', day:true, guided:true, img:'exp-heritage-bund.avif', d:'Banking halls, plane-tree lanes, the skyline after dark.' },
       { id:'XIAOLONGBAO', name:'Shanghai food walk', cost:0, per:'pp', day:false, guided:true, req:true, img:'exp-xiaolongbao.avif', d:'Xiaolongbao to hairy crab — an evening with a local. Priced on request.' },
       { id:'DIN-WELCOME-SH', name:'Dinner above two skylines', cost:400, per:'pp', dining:true, img:'hero-shanghai-dusk.avif', d:'A reserved table high over the Huangpu.' },
       { id:'TKT-WESTLAKE-BOAT', builtin:true, name:'West Lake by private boat', cost:800, per:'flat', day:false, guided:false, img:'exp-westlake.avif', d:'A wooden boat at first light, the shoreline to yourselves.' },
       { id:'TKT-LONGJING-TEA', builtin:true, name:'Longjing tea village & farmhouse lunch', cost:300, per:'pp', day:true, guided:true, img:'exp-tea-picking.avif', d:'Walk the terraces with a grower; pick and pan-fire your own leaves in season.' } ] },
+
+  { id:'guangdong', region:'Guangdong', name:'Guangdong', suffix:'Guangzhou & Shenzhen', face:'Business & Canton Fair', season:'Year-round', seasonNote:'Canton Fair: mid-Apr and mid-Oct', softMonths:[], line:'Bolts onto the Canton Fair, a Shenzhen trip or a Hong Kong stopover: the world’s largest golf club, old Canton, the border under an hour away.', tag:'Canton Fair · Shenzhen · Mission Hills', img:'missionhills-guanlan-lead.jpg', weight:3,
+    areas:[
+      { id:'lionlake', name:'Lion Lake · Qingyuan', weight:1, hotels:[
+        { id:'ACC-LL-SHERATON', name:'Sheraton Lion Lake Resort', room:'Deluxe Lake View', tier:'Premium', cost:929, img:'hotel-sheraton-lionlake-card.jpg', d:'On the lake beneath the Danxia cliffs — the course above.' } ] },
+      { id:'guangzhou', name:'Guangzhou', weight:1, hotels:[
+        { id:'ACC-GZ-CONRAD', name:'Conrad Guangzhou', room:'King Premium', tier:'Premium', cost:1989, img:'hotel-conrad-guangzhou-card.jpg', d:'High above Zhujiang New Town, Canton Tower in the window.' } ] },
+      { id:'shenzhen', name:'Shenzhen · Mission Hills', weight:1, hotels:[
+        { id:'ACC-SZ-MISSIONHILLS', name:'Mission Hills Hotel Shenzhen', room:'Grande Deluxe', tier:'Premium', cost:1097, img:'hotel-missionhills-shenzhen-card.jpg', d:'On the resort — tomorrow’s first tee minutes from your room.' } ] } ],
+    legs:[ { label:'Lion Lake → Guangzhou → Shenzhen: private car throughout', flat:INTERCITY_CAR } ],
+    courses:[
+      { id:'GOLF-LIONLAKE', builtin:true, prio:1, area:'lionlake', name:'Lion Lake — Moon Course', sub:'Qingyuan · Rick Jacobson', standing:'China Top 10', cost:850, img:'lionlake-lead.jpg', d:'The only course in the world on a UNESCO Danxia landform.' },
+      { id:'GOLF-FOSHAN', builtin:true, prio:3, area:'guangzhou', name:'Foshan Golf Club', sub:'Foshan · Tony Cashmore', standing:'Challenge Tour venue · Private club', cost:2700, priv:true, img:'foshan-golf-lead.jpg', d:'Kept in tournament condition year-round — guest play arranged on your behalf.' },
+      { id:'GOLF-MH-SHENZHEN', builtin:true, prio:2, area:'shenzhen', name:'Mission Hills — World Cup Course', sub:'Shenzhen · Jack Nicklaus', standing:'Host, 1995 World Cup of Golf', cost:2400, img:'missionhills-guanlan-lead.jpg', d:'The flagship of twelve.' },
+      { id:'GOLF-MH-NORMAN', addon:true, area:'shenzhen', name:'Mission Hills — Norman Course', sub:'Shenzhen · Greg Norman', standing:'The sternest test on the estate', cost:2400, img:'missionhills-guanlan-lead.jpg', d:'A buggy ride from the World Cup Course.' },
+      { id:'GOLF-MH-OTHER', addon:true, area:'shenzhen', name:'Mission Hills — Faldo, Els, Sörenstam or Ozaki', sub:'Shenzhen · your pick of the estate', standing:'One of twelve', cost:2400, img:'missionhills-guanlan-lead.jpg', d:'Tell us which in the notes — or leave it to us.' } ],
+    exps:[
+      { id:'TKT-CANTON-HERITAGE', builtin:true, name:'Old Canton, privately guided', cost:100, per:'pp', day:true, guided:true, img:'guangzhou-chen-clan-academy.jpg', d:'Chen Clan Academy, the Xiguan lanes, Shamian Island.' },
+      { id:'YUMCHA', name:'Yum cha the local way', cost:0, per:'pp', day:false, guided:true, img:'guangzhou-dimsum.jpg', d:'Morning tea, bamboo steamers, no menu in English.' },
+      { id:'DIN-WELCOME-GZ', builtin:true, name:'Dinner on the Pearl River', cost:400, per:'pp', dining:true, img:'guangzhou-canton-tower-night.jpg', d:'Canton Tower burning through the dusk.' },
+      { id:'SZ-SKYLINE', name:'Shenzhen Bay skyline by night', cost:0, per:'pp', day:false, guided:false, noimg:true, d:'Dinner and drinks against modern China.' } ] },
 
   { id:'yunnan', region:'Yunnan', name:'Yunnan', face:'The Exotic China', season:'Year-round', seasonNote:'Spring City plays all year; Jade Dragon closes mid-Dec to mid-Feb', closedMonths:[], softMonths:['12','01','02'], line:'Golf at 3,100 m beneath a glacier, Naxi old towns in the quiet hours, a World Top 100 stay-and-play on a highland lake.', tag:'Lijiang snow peaks · Spring City', img:'jadedragon-snowpeak-fairway.avif', weight:5,
     areas:[
@@ -933,9 +1008,9 @@ const STOPS = [
         { id:'ACC-KM-SPRINGCITY', name:'Spring City Golf & Lake Resort', room:'Lake View', tier:'Premium', cost:1032, img:'springcity-resort-dusk.avif', d:'On the resort — the first tee thirty steps from your room.' } ] } ],
     legs:[ { label:'Lijiang → Spring City: rail to Kunming + private car to the resort', pp:300, flat:INTERCITY_CAR } ],
     courses:[
-      { id:'GOLF-JADEDRAGON', builtin:true, area:'lijiang', name:'Jade Dragon Snow Mountain', sub:'Lijiang · Neil Haworth · 3,100 m', standing:'Asia Top 50 · World’s longest course', cost:1200, img:'jadedragon-fairway.avif', d:'8,548 yards beneath a 5,500 m glacier — we build in two nights to acclimatise.', closed:['12-15','02-15'] },
-      { id:'GOLF-SPRINGCITY-LAKE', builtin:true, area:'springcity', name:'Spring City — Lake Course', sub:'Kunming · Robert Trent Jones Jr', standing:'World Top 100', cost:1380, img:'springcity-lake-green.avif', d:'Tumbling toward Yangzong Lake — the crown jewel of Chinese golf.' },
-      { id:'GOLF-SPRINGCITY-MTN', addon:true, area:'springcity', name:'Spring City — Mountain Course', sub:'Kunming · Jack Nicklaus', standing:'Asia Top 100', cost:1380, img:'springcity-mountain-course.avif', d:'The ridgeline above the lake — keen golfers play both.' } ],
+      { id:'GOLF-JADEDRAGON', builtin:true, area:'lijiang', name:'Jade Dragon Snow Mountain', sub:'Lijiang · Neil Haworth · 3,100 m', standing:'Asia Top 50 · World’s longest course', cost:1200, img:'jadedragon-course-view.avif', d:'8,548 yards beneath a 5,500 m glacier — we build in two nights to acclimatise.', closed:['12-15','02-15'] },
+      { id:'GOLF-SPRINGCITY-LAKE', builtin:true, area:'springcity', name:'Spring City — Lake Course', sub:'Kunming · Robert Trent Jones Jr', standing:'World Top 100', cost:1380, img:'springcity-resort-aerial.avif', d:'Tumbling toward Yangzong Lake — the crown jewel of Chinese golf.' },
+      { id:'GOLF-SPRINGCITY-MTN', addon:true, area:'springcity', name:'Spring City — Mountain Course', sub:'Kunming · Jack Nicklaus', standing:'Asia Top 100', cost:1380, img:'springcity-resort-aerial.avif', d:'The ridgeline above the lake — keen golfers play both.' } ],
     exps:[
       { id:'TKT-LIJIANG-OLDTOWN', builtin:true, name:'Lijiang old town, privately guided', cost:80, per:'pp', day:true, guided:true, img:'exp-oldtown-guide.avif', d:'The UNESCO old town in the quiet hours, with a Naxi guide.' },
       { id:'TKT-NAXI-VILLAGE', builtin:true, name:'Naxi village & tea tasting', cost:200, per:'pp', day:false, guided:true, img:'exp-tea-ceremony.avif', d:'A mountain village at the foot of the snow mountain.' },
@@ -952,9 +1027,9 @@ const STOPS = [
     legs:[ { label:'Haikou → the coast: private car · 2 h', flat:INTERCITY_CAR } ],
     courses:[
       { id:'GOLF-BLACKSTONE', builtin:true, area:'haikou', name:'Mission Hills Haikou — Blackstone', sub:'Haikou · Schmidt-Curley', standing:'World Top 100', cost:1580, img:'blackstone-fairway-bunkers.avif', d:'Carved through black lava — where Tiger met Rory in The Match.' },
-      { id:'GOLF-LAVAFIELDS', addon:true, area:'haikou', name:'Mission Hills Haikou — Lava Fields', sub:'Haikou · Schmidt-Curley', standing:'Resort course', cost:1580, img:'blackstone-lava-wall.avif', d:'The second loop through the volcanic rock.' },
-      { id:'GOLF-DUNES', builtin:true, area:'coast', name:'The Dunes at Shenzhou Peninsula', sub:'The coast · Tom Weiskopf', standing:'Asia Top 50', cost:1300, img:'dunes-shenzhou-sea-green.avif', d:'Links through real sand dunes to the water’s edge.' },
-      { id:'GOLF-LUHUITOU', addon:true, area:'coast', name:'Lu Hui Tou Golf Club', sub:'Sanya · Nelson & Haworth', standing:'Sanya headland', cost:1290, img:'luhuitou-bay.avif', d:'The sea below one shoulder, the mountain ridge above the other.' } ],
+      { id:'GOLF-LAVAFIELDS', addon:true, area:'haikou', name:'Mission Hills Haikou — Lava Fields', sub:'Haikou · Schmidt-Curley', standing:'Resort course', cost:1580, img:'blackstone-fairway-bunkers.avif', d:'The second loop through the volcanic rock.' },
+      { id:'GOLF-DUNES', builtin:true, area:'coast', name:'The Dunes at Shenzhou Peninsula', sub:'The coast · Tom Weiskopf', standing:'Asia Top 50', cost:1300, img:'dunes-shenzhou-headland-aerial.avif', d:'Links through real sand dunes to the water’s edge.' },
+      { id:'GOLF-LUHUITOU', addon:true, area:'coast', name:'Lu Hui Tou Golf Club', sub:'Sanya · Nelson & Haworth', standing:'Sanya headland', cost:1290, img:'luhuitou-villas-fairway.avif', d:'The sea below one shoulder, the mountain ridge above the other.' } ],
     courseNote:'Shanqin Bay is arranged by approval only and is never part of a priced build — if it’s on your list, tell us in the notes and we’ll review it with you before anything is confirmed.',
     exps:[
       { id:'TKT-VOLCANIC-SPRINGS', builtin:true, name:'Volcanic mineral springs', cost:200, per:'pp', day:false, guided:false, img:'hainan-tropical-island-aerial.avif', d:'Recovery off the eighteenth.' },
@@ -963,28 +1038,10 @@ const STOPS = [
       { id:'LI-VILLAGE', name:'An afternoon with the Li', cost:0, per:'pp', day:true, guided:true, req:true, img:'exp-hainan-li-culture.avif', d:'Hainan’s indigenous culture in the Wuzhishan hills — priced on request.' },
       { id:'DIN-WELCOME-HN', name:'Seafood by the water', cost:400, per:'pp', dining:true, img:'exp-hainan-seafood.avif', d:'The day’s catch, feet from the sand.' } ] },
 
-  { id:'guangdong', region:'Guangdong', name:'Guangdong', suffix:'Guangzhou & Shenzhen', face:'Business & Canton Fair', season:'Year-round', seasonNote:'Canton Fair: mid-Apr and mid-Oct', softMonths:[], line:'Bolts onto the Canton Fair, a Shenzhen trip or a Hong Kong stopover: the world’s largest golf club, old Canton, the border under an hour away.', tag:'Canton Fair · Shenzhen · Mission Hills', img:'missionhills-guanlan-lead.jpg', weight:3,
-    areas:[
-      { id:'lionlake', name:'Lion Lake · Qingyuan', weight:1, hotels:[
-        { id:'ACC-LL-SHERATON', name:'Sheraton Lion Lake Resort', room:'Deluxe Lake View', tier:'Premium', cost:929, img:'hotel-sheraton-lionlake-card.jpg', d:'On the lake beneath the Danxia cliffs — the course above.' } ] },
-      { id:'guangzhou', name:'Guangzhou', weight:1, hotels:[
-        { id:'ACC-GZ-CONRAD', name:'Conrad Guangzhou', room:'King Premium', tier:'Premium', cost:1989, img:'hotel-conrad-guangzhou-card.jpg', d:'High above Zhujiang New Town, Canton Tower in the window.' } ] },
-      { id:'shenzhen', name:'Shenzhen · Mission Hills', weight:1, hotels:[
-        { id:'ACC-SZ-MISSIONHILLS', name:'Mission Hills Hotel Shenzhen', room:'Grande Deluxe', tier:'Premium', cost:1097, img:'hotel-missionhills-shenzhen-card.jpg', d:'On the resort — tomorrow’s first tee minutes from your room.' } ] } ],
-    legs:[ { label:'Lion Lake → Guangzhou → Shenzhen: private car throughout', flat:INTERCITY_CAR } ],
-    courses:[
-      { id:'GOLF-LIONLAKE', builtin:true, area:'lionlake', name:'Lion Lake — Moon Course', sub:'Qingyuan · Rick Jacobson', standing:'China Top 10', cost:850, img:'lionlake-lead.jpg', d:'The only course in the world on a UNESCO Danxia landform.' },
-      { id:'GOLF-FOSHAN', builtin:true, area:'guangzhou', name:'Foshan Golf Club', sub:'Foshan · Tony Cashmore', standing:'Challenge Tour venue · Private club', cost:2700, priv:true, img:'foshan-golf-lead.jpg', d:'Kept in tournament condition year-round — guest play arranged on your behalf.' },
-      { id:'GOLF-MH-SHENZHEN', builtin:true, area:'shenzhen', name:'Mission Hills — World Cup Course', sub:'Shenzhen · Jack Nicklaus', standing:'Host, 1995 World Cup of Golf', cost:2400, img:'missionhills-worldcup-course.jpg', d:'The flagship of twelve.' },
-      { id:'GOLF-MH-NORMAN', addon:true, area:'shenzhen', name:'Mission Hills — Norman Course', sub:'Shenzhen · Greg Norman', standing:'The sternest test on the estate', cost:2400, img:'missionhills-norman-course.jpg', d:'A buggy ride from the World Cup Course.' },
-      { id:'GOLF-MH-OTHER', addon:true, area:'shenzhen', name:'Mission Hills — Faldo, Els, Sörenstam or Ozaki', sub:'Shenzhen · your pick of the estate', standing:'One of twelve', cost:2400, img:'missionhills-faldo-course.jpg', d:'Tell us which in the notes — or leave it to us.' } ],
-    exps:[
-      { id:'TKT-CANTON-HERITAGE', builtin:true, name:'Old Canton, privately guided', cost:100, per:'pp', day:true, guided:true, img:'guangzhou-chen-clan-academy.jpg', d:'Chen Clan Academy, the Xiguan lanes, Shamian Island.' },
-      { id:'YUMCHA', name:'Yum cha the local way', cost:0, per:'pp', day:false, guided:true, img:'guangzhou-dimsum.jpg', d:'Morning tea, bamboo steamers, no menu in English.' },
-      { id:'DIN-WELCOME-GZ', builtin:true, name:'Dinner on the Pearl River', cost:400, per:'pp', dining:true, img:'guangzhou-canton-tower-night.jpg', d:'Canton Tower burning through the dusk.' },
-      { id:'SZ-SKYLINE', name:'Shenzhen Bay skyline by night', cost:0, per:'pp', day:false, guided:false, noimg:true, d:'Dinner and drinks against modern China.' } ] }
 ];
 
+/* geographic route order (the STOPS list above is the menu order) */
+const ROUTE_ORDER = ['beijing','jiangnan','yunnan','hainan','guangdong'];
 const HOTEL_INFO = {"ACC-LL-SHERATON": {"name": "Sheraton Qingyuan Lion Lake Resort","loc": "Lion Lake, north of Guangzhou","desc": "Spread along the lakeshore directly below the Moon Course, the Sheraton puts the whole first evening in one place — red sandstone towers across the water, gardens and pools running to the shore, and dinner without getting back in the car. The first tee is minutes away; so is the road south into Guangzhou.","imgs": ["hotel-sheraton-lionlake-card.jpg","hotel-sheraton-lionlake-1.jpg","hotel-sheraton-lionlake-2.jpg","hotel-sheraton-lionlake-3.jpg","hotel-sheraton-lionlake-4.jpg"]},"ACC-GZ-CONRAD": {"name": "Conrad Guangzhou","loc": "Zhujiang New Town, Guangzhou","desc": "High above Zhujiang New Town in the heart of the new city, the Conrad looks straight down the Pearl River to Canton Tower. Contemporary rooms with floor-to-ceiling glass, serious Cantonese dining in the tower itself, and the old city — Chen Clan Academy, the Xiguan lanes, Shamian Island — a short drive away.","imgs": ["hotel-conrad-guangzhou-card.jpg","hotel-conrad-guangzhou-1.jpg","hotel-conrad-guangzhou-2.jpg","hotel-conrad-guangzhou-3.jpg"]},"ACC-SZ-MISSIONHILLS": {"name": "Mission Hills Hotel Shenzhen","loc": "Guanlan, Shenzhen","desc": "The resort\\u2019s own five-star hotel at the world\\u2019s largest golf club — twelve championship courses out the door, the spa and pools in between, and tomorrow\\u2019s first tee on the World Cup Course a buggy ride from your room. The most efficient finale in golf travel: play, shower, and be at Shenzhen airport or the Hong Kong border inside the hour.","imgs": ["hotel-missionhills-shenzhen-card.jpg","hotel-missionhills-shenzhen-1.jpg","hotel-missionhills-shenzhen-2.jpg","hotel-missionhills-shenzhen-3.jpg"]},"ACC-LJ-BANYANTREE": {"name": "Banyan Tree Lijiang","loc": "Lijiang, China","desc": "Built the Naxi way at the foot of Jade Dragon Snow Mountain, Banyan Tree Lijiang is a village of grey-tile villas and private walled courtyards, the glacier filling the window at breakfast. Pavilions open onto lotus ponds and mountain views, the spa draws on highland traditions, and the old town is minutes away — yet the silence at night is absolute. The natural base for the Jade Dragon round and everything the Lijiang valley holds.","imgs": ["hotel-banyan-tree-lijiang-card.avif","hotel-banyan-tree-lijiang-1.jpg","hotel-banyan-tree-lijiang-2.jpg","hotel-banyan-tree-lijiang-3.jpg","hotel-banyan-tree-lijiang-4.jpg","hotel-banyan-tree-lijiang-5.jpg","hotel-banyan-tree-lijiang-6.jpg"]},"ACC-LJ-JINMAO": {"name": "Jinmao Purelax Lijiang","loc": "Lijiang, China","desc": "Up on the Ganhaizi meadow at 3,100 metres, Jinmao Purelax is the closest fine address to the Jade Dragon course — the glacier filling the floor-to-ceiling windows, alpine forest at the door. Rooms are oxygen-enriched against the altitude, fires are lit in the evening, and on clear nights the stargazing above the meadow is extraordinary. The natural choice for golfers who want the first tee time beneath the snow mountain.","imgs": ["hotel-jinmao-purelax-card.avif","hotel-jinmao-purelax-1.jpg","hotel-jinmao-purelax-2.jpg","hotel-jinmao-purelax-3.jpg","hotel-jinmao-purelax-4.jpg","hotel-jinmao-purelax-5.jpg","hotel-jinmao-purelax-6.jpg"]},"ACC-KM-SPRINGCITY": {"name": "Spring City Golf & Lake Resort","loc": "Kunming, China","desc": "For the Kunming rounds, the move is to stay within Spring City itself — suites and villas on the hillside above Yangzong Lake, where the first tee of the Lake Course is minutes from your door and the evening is a terrace, a drink and the water turning gold below. Thirty-six holes, no transfers, eternal-spring air: it is the easiest golf stay in China.","imgs": ["springcity-resort-dusk.avif","springcity-resort-aerial.avif","springcity-lake-green.avif","springcity-lakeside-green.avif"]},"ACC-SY-ROSEWOOD": {"name": "Rosewood Sanya","loc": "Haitang Bay, Sanya","desc": "Right on the sand at Haitang Bay — ocean-view rooms and suites, a rooftop infinity pool hanging above the bay, dining pavilions set among the pools and one of the island’s best spas, in the resort city that now holds its own Michelin Guide. The bay faces the sunrise, the morning’s tee time is an easy transfer away, and for families there is space and water enough to keep the non-golfers happy all day.","imgs": ["hotel-rosewood-sanya-card.avif","hotel-rosewood-sanya-1.jpg","hotel-rosewood-sanya-2.jpg","hotel-rosewood-sanya-3.jpg","hotel-rosewood-sanya-4.jpg"]},"ACC-HK-RITZ-MH": {"name": "The Ritz-Carlton at Mission Hills","loc": "Mission Hills, Haikou","desc": "Inside Mission Hills itself — the first tee minutes from your door, and the day ending in the resort’s natural volcanic hot springs, the rock still warm beneath the water. The easiest, most self-contained golf stay on the island: thirty-six holes, mineral springs and dinner, with nothing more to arrange than when you’d like to play.","imgs": ["hotel-ritz-carlton-haikou-card.avif","hotel-ritz-carlton-haikou-1.jpg","hotel-ritz-carlton-haikou-2.jpg","hotel-ritz-carlton-haikou-3.jpg","hotel-ritz-carlton-haikou-4.jpg","hotel-ritz-carlton-haikou-5.jpg","stay-missionhills-hotspring.avif"]},"ACC-SZP-HYATT": {"name": "Grand Hyatt, Shenzhou Peninsula","loc": "Shenzhou Peninsula, Wanning","desc": "Beside The Dunes, opening straight onto an unspoilt stretch of the South China Sea — the beach at the end of the garden, the links minutes away. Play the round in the morning, spend the afternoon barefoot.","imgs": ["hotel-grand-hyatt-shenzhou-card.avif","hotel-grand-hyatt-shenzhou-1.jpg","hotel-grand-hyatt-shenzhou-2.jpg","hotel-grand-hyatt-shenzhou-3.jpg","hotel-grand-hyatt-shenzhou-4.jpg","dunes-shenzhou-clubhouse.avif"]},"ACC-BJ-PENINSULA": {"name": "The Peninsula Beijing","loc": "Beijing, China","desc": "Set on Wangfujing in the heart of the capital, The Peninsula Beijing is a short walk from the Forbidden City and the city’s finest shopping. A sweeping top-to-bottom renovation created some of the most generous rooms and suites in Beijing, finished in a calm, residential style, with celebrated Cantonese dining at Huang Ting and the Peninsula’s famously polished service. An ideal base between rounds at the capital’s leading courses and days among its imperial landmarks.","imgs": ["hotel-peninsula-beijing-card.avif","hotel-peninsula-beijing-1.jpg","hotel-peninsula-beijing-2.jpg","hotel-peninsula-beijing-3.jpg","hotel-peninsula-beijing-4.jpg","hotel-peninsula-beijing-5.jpg","hotel-peninsula-beijing-6.jpg","hotel-peninsula-beijing-7.jpg"]},"ACC-SH-WALDORF": {"name": "Waldorf Astoria Shanghai on the Bund","loc": "Shanghai, China","desc": "Occupying No. 2 on the Bund, with the storied 1911 Shanghai Club building at its heart, the Waldorf Astoria pairs restored colonial grandeur — including the famous Long Bar — with a contemporary tower above the Huangpu River. Generous rooms and a position at the foot of the Bund place both old and new Shanghai within easy reach, with the championship golf of Sheshan a straightforward drive away.","imgs": ["hotel-waldorf-shanghai-card.avif","hotel-waldorf-shanghai-1.jpg","hotel-waldorf-shanghai-2.jpg","hotel-waldorf-shanghai-3.jpg","hotel-waldorf-shanghai-4.jpg","hotel-waldorf-shanghai-5.jpg","hotel-waldorf-shanghai-6.jpg","hotel-waldorf-shanghai-7.jpg","hotel-waldorf-shanghai-8.jpg"]},"ACC-HZ-FUCHUN": {"name": "Fuchun Resort","loc": "Hangzhou, China","desc": "Folded into the forested hills above the Fuchun River, half an hour from West Lake, Fuchun Resort is Jiangnan distilled — grey-tiled pavilions, still water, and a Longjing tea plantation rolling to the edge of its own golf course. Rooms and villas look over the tea terraces and the valley mist; the spa and pavilion pool are among the most serene in China. Staying where you play turns the closing round into the gentlest chapter of the journey — tea terraces from the bath, mist from the breakfast table.","imgs": ["fuchun-pavilion-lake.avif","fuchun-resort.avif","hotel-fuchun-lake-sunset.jpg","hotel-fuchun-bamboo-drive.jpg","hotel-fuchun-entrance-night.jpg","hotel-fuchun-courtyard-urns.jpg","hotel-fuchun-villa-room.jpg","hotel-fuchun-river-view.jpg","hotel-fuchun-lounge.jpg","hotel-fuchun-indoor-pool.jpg","hotel-fuchun-spa-pool.jpg"]},"ACC-BJ-RITZ": {"name": "The Ritz-Carlton, Beijing","loc": "Beijing, China","desc": "In the heart of Beijing’s Central Business District, The Ritz-Carlton, Beijing is a classically styled address of chandeliers, deep armchairs and dark woods, with the brand’s famously warm, polished service. A calm, clubby base after days on the Wall and the fairways, with the Forbidden City a short drive away.","imgs": ["hotel-ritz-carlton-beijing-card.jpg","hotel-ritz-carlton-beijing-1.jpg","hotel-ritz-carlton-beijing-2.jpg","hotel-ritz-carlton-beijing-3.jpg","hotel-ritz-carlton-beijing-4.jpg","hotel-ritz-carlton-beijing-5.jpg","hotel-ritz-carlton-beijing-6.jpg"]},"ACC-SH-SHANGRILA": {"name": "Pudong Shangri-La, Shanghai","loc": "Shanghai, China","desc": "Rising from the Lujiazui riverside, Pudong Shangri-La looks straight across the Huangpu to the floodlit facades of the Bund. Generous river-view rooms, one of the city’s great breakfast tables and Shangri-La’s unhurried Asian service put both Shanghais at your feet — the skyline out one window, the old waterfront out the other.","imgs": ["hotel-shangrila-shanghai-card.jpg","hotel-shangrila-shanghai-1.jpg","hotel-shangrila-shanghai-2.jpg","hotel-shangrila-shanghai-3.jpg","hotel-shangrila-shanghai-4.jpg","hotel-shangrila-shanghai-5.jpg"]}};
 const TIERS = {
   premium:{ name:'Premium', sub:'Five-star, well placed', d:'Ritz-Carlton, Shangri-La, Banyan Tree and the resort hotels beside the courses — polished, generous rooms, breakfast included.' },
@@ -1011,10 +1068,13 @@ const rooms = ()=>S.rooms||Math.max(1,Math.ceil(pax()/2));
 const areaNights = (s)=>{ const n=S.alloc[s.id]||1, tw=s.areas.reduce((a,x)=>a+x.weight,0); const out={}; let left=n;
   s.areas.forEach((a,i)=>{ const rest=s.areas.length-1-i; const v=i===s.areas.length-1?left:Math.round(n*a.weight/tw); out[a.id]=Math.max(0,Math.min(Math.max(1,v),left-Math.min(rest,left))); left-=out[a.id]; }); return out; };
 /* how many places a trip can hold: ≤2 nights → 1 · 3–4 → 2 · 5 → 3 · 6 → 4 · 7+ → all */
+/* rounds: at most one per night (2 nights → max 2 rounds) */
+const maxRounds = ()=>Math.max(1,S.nights||0);
+const roundsChosen = ()=>activeStops().reduce((n,s)=>n+(S.courses[s.id]||[]).filter(cid=>{const c=s.courses.find(x=>x.id===cid);return c&&!c.req;}).length,0);
 const maxStops = ()=>{ const n=S.nights||0; return n<=2?1:n<=4?2:n===5?3:n===6?4:STOPS.length; };
 const tierHotel = (a)=>a.hotels.find(h=>h.tier.toLowerCase()===S.tier)||a.hotels[0];
 const stopById = id=>STOPS.find(s=>s.id===id);
-const activeStops = ()=>STOPS.filter(s=>S.stops.includes(s.id));
+const activeStops = ()=>S.stops.map(stopById);
 
 /* ==================== NAV / SHELL ==================== */
 const nav=$('#nav');
@@ -1144,7 +1204,7 @@ function updateMap(){
       <div class="fseason"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="fs-main">${s.season}</span>${s.seasonNote?`<span class="fs-note">· ${s.seasonNote}</span>`:''}<span class="fs-warn"></span></div></div>
       <span class="fck">✓</span></div>`;
     l.querySelector('input').addEventListener('change',e=>{ const id=e.target.dataset.id; if(e.target.checked){ if(S.stops.length>=maxStops()&&!S.stops.includes(id)){ e.target.checked=false; nudgeRule(); return; } if(!S.stops.includes(id))S.stops.push(id); } else { S.stops=S.stops.filter(x=>x!==id); delete S.alloc[id]; delete S.courses[id]; delete S.exps[id]; }
-      S.stops.sort((a,b)=>STOPS.findIndex(x=>x.id===a)-STOPS.findIndex(x=>x.id===b)); $('#stopTiles').classList.remove('err-field'); autoAlloc(); renderStopBlocks(); updateMap(); applyStopRule(); renderAll(); });
+      S.stops.sort((a,b)=>ROUTE_ORDER.indexOf(a)-ROUTE_ORDER.indexOf(b)); $('#stopTiles').classList.remove('err-field'); autoAlloc(); renderStopBlocks(); updateMap(); applyStopRule(); renderAll(); });
     l.addEventListener('mouseenter',()=>hoverMap(s.id,true)); l.addEventListener('mouseleave',()=>hoverMap(s.id,false));
     w.appendChild(l);
   });
@@ -1200,20 +1260,24 @@ function renderStopBlocks(){
   /* courses */
   const c=$('#courseStops'); c.innerHTML='';
   st.forEach(s=>{
-    if(!S.courses[s.id])S.courses[s.id]=s.courses.filter(c=>c.builtin).map(c=>c.id);
+    { const an=areaNights(s); const others=activeStops().filter(x=>x.id!==s.id).reduce((n,x)=>n+(S.courses[x.id]||[]).filter(cid=>{const c=x.courses.find(y=>y.id===cid);return c&&!c.req&&c.builtin;}).length,0);
+      /* built-ins in priority order (prio, else listed order), capped at one round per night */
+      const inc=s.courses.filter(c=>c.builtin).map((c,i)=>[c.prio||i+1,c]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]).slice(0,Math.max(0,maxRounds()-others)).map(c=>c.id);
+      const keep=(S.courses[s.id]||[]).filter(cid=>{const c=s.courses.find(x=>x.id===cid);return c&&c.addon;});
+      S.courses[s.id]=inc.concat(keep); }
     const d=document.createElement('div'); d.className='stop'; d.dataset.stop=s.id;
-    const inc=s.courses.filter(c=>c.builtin), add=s.courses.filter(c=>c.addon);
+    const inc=s.courses.filter(c=>c.builtin&&S.courses[s.id].includes(c.id)), add=s.courses.filter(c=>c.addon); const full=roundsChosen()>=maxRounds();
     d.innerHTML=stopHeader(s,`${inc.length} round${inc.length>1?'s':''} included`)+`<div class="stop-b"><div class="cards">`+inc.map(cc=>{ const closed=courseClosed(cc); return `
       <div class="card ${closed?'disabled':''}"><div class="cb"><div class="ph"><img src="${img(cc.img)}" alt="" loading="lazy"><span class="badge">${cc.standing}</span><span class="tick" style="background:var(--pine);color:#fff">✓</span></div>
       <div class="tx"><div class="t">${cc.name}</div><div class="d">${cc.sub} · ${cc.d}</div>
       <div class="p"><span style="color:var(--moss)">Included · caddie incl.</span></div>
       ${cc.priv?'<div class="warn" style="color:var(--moss)">Private members’ club — guest play arranged on your behalf</div>':''}${closed?'<div class="warn">Usually closed in your travel month — we’ll suggest an alternative</div>':''}</div></div></div>`;}).join('')+`</div>`+
-      (add.length?`<div class="ql" style="margin:18px 0 8px">Add a round <span class="hint">optional</span></div><div class="list">`+add.map(cc=>`
-      <label class="li"><input type="checkbox" name="Add-on rounds — ${s.name}" value="${cc.name}${cc.req?' (on request)':''}" data-stop="${s.id}" data-id="${cc.id}" ${S.courses[s.id].includes(cc.id)?'checked':''}>
+      (add.length?`<div class="ql" style="margin:18px 0 8px">Add a round <span class="hint">${full?`optional — ${maxRounds()} round${maxRounds()>1?'s':''} is the most for ${S.nights} nights; on-request rounds can still be noted`:'optional'}</span></div><div class="list">`+add.map(cc=>`
+      <label class="li ${full&&!cc.req&&!S.courses[s.id].includes(cc.id)?'locked':''}"><input type="checkbox" name="Add-on rounds — ${s.name}" value="${cc.name}${cc.req?' (on request)':''}" data-stop="${s.id}" data-id="${cc.id}" ${S.courses[s.id].includes(cc.id)?'checked':''} ${full&&!cc.req&&!S.courses[s.id].includes(cc.id)?'disabled':''}>
       <div class="lb"><span class="ck">✓</span><img class="im" src="${img(cc.img)}" alt="" loading="lazy"><div><div class="t">${cc.name}</div><div class="d">${cc.sub} · ${cc.d}</div></div>
       <div class="p">${cc.req?'on request':`+US$${fmt(usd(cc.cost+CADDIE,MU.golf))}<em>per golfer, caddie incl.</em>`}</div></div></label>`).join('')+`</div>`:'')+
       `${s.courseNote?`<p class="help" style="margin-top:12px">${s.courseNote}</p>`:''}</div>`;
-    d.querySelectorAll('input').forEach(i=>i.addEventListener('change',()=>{ const arr=S.courses[s.id]; if(i.checked){if(!arr.includes(i.dataset.id))arr.push(i.dataset.id);} else S.courses[s.id]=arr.filter(x=>x!==i.dataset.id); renderAll(); }));
+    d.querySelectorAll('input').forEach(i=>i.addEventListener('change',()=>{ const arr=S.courses[s.id]; if(i.checked){if(!arr.includes(i.dataset.id))arr.push(i.dataset.id);} else S.courses[s.id]=arr.filter(x=>x!==i.dataset.id); renderStopBlocks(); renderAll(); }));
     c.appendChild(d);
   });
   /* experiences — showcase only, nothing to pick */
@@ -1243,7 +1307,7 @@ function estimate(){
     s.areas.forEach(a=>{ if(!an[a.id])return; const hh=tierHotel(a);
       const v=usd(hh.cost*an[a.id]*R,MU.hotel); L.hotel+=v; hotelLines.push({t:`${hh.name} · ${an[a.id]}N × ${R} room${R>1?'s':''}`,v}); });
     /* legs inside a merged region */
-    (s.legs||[]).forEach(leg=>{ let cny=0; if(leg.flight)cny+=(S.biz?FLIGHT_BIZ:FLIGHT_ECO)*P; if(leg.pp)cny+=leg.pp*P; if(leg.flat)cny+=leg.flat*(P>=6?Math.ceil(P/6):1); const v=usd(cny,MU.transfer); L.transfer+=v; legLines.push({t:leg.label,v}); });
+    (s.legs||[]).forEach(leg=>{ let fare=0,car=0; if(leg.flight)fare+=(S.biz?FLIGHT_BIZ:FLIGHT_ECO)*P; if(leg.pp)fare+=leg.pp*P; if(leg.flat)car+=leg.flat*(P>=6?Math.ceil(P/6):1); const v=usd(fare,MU.ticketed)+usd(car,MU.transfer); L.transfer+=v; legLines.push({t:leg.label,v}); });
     /* golf */
     let stopRounds=0;
     (S.courses[s.id]||[]).forEach(cid=>{ const cc=s.courses.find(x=>x.id===cid); if(!cc||cc.req)return; stopRounds++;
@@ -1263,11 +1327,11 @@ function estimate(){
   const carV=usd(dayRate*carDays,MU.transfer); L.transfer+=carV; legLines.push({t:`Private ${vans?'van':'car'} & driver · ${carDays} day${carDays!==1?'s':''}`,v:carV});
   const apV=usd(AIRPORT_OW*2*(vans||1),MU.transfer); L.transfer+=apV; legLines.push({t:'Airport transfers, arrival & departure',v:apV});
   for(let i=0;i<st.length-1;i++){ const a=st[i].id,b=st[i+1].id; const leg=LEGS[a+'>'+b]||LEGS[b+'>'+a]||{label:'Domestic flight',flight:true};
-    let cny=0; if(leg.flight)cny+=(S.biz?FLIGHT_BIZ:FLIGHT_ECO)*P; if(leg.pp)cny+=leg.pp*P; if(leg.flat)cny+=leg.flat*(vans||1);
-    const v=usd(cny,MU.transfer); L.transfer+=v; legLines.push({t:`${st[i].name} → ${st[i+1].name}: ${leg.label}${leg.flight&&S.biz?' (business)':''}`,v}); }
+    let fare=0,car=0; if(leg.flight)fare+=(S.biz?FLIGHT_BIZ:FLIGHT_ECO)*P; if(leg.pp)fare+=leg.pp*P; if(leg.flat)car+=leg.flat*(vans||1);
+    const v=usd(fare,MU.ticketed)+usd(car,MU.transfer); L.transfer+=v; legLines.push({t:`${st[i].name} → ${st[i+1].name}: ${leg.label}${leg.flight&&S.biz?' (business)':''}`,v}); }
   /* ground services */
   const gV=usd(GUIDE_DAY*guideDays*(vans||1),MU.ground); L.ground+=gV; if(guideDays)legLines.push({t:`English-speaking private guide · ${guideDays} day${guideDays!==1?'s':''}`,v:gV});
-  const ftV=usd(FASTTRACK*2+CONCIERGE,MU.ground); L.ground+=ftV; legLines.push({t:'Meet & greet, fast-track, 24/7 concierge',v:ftV});
+  const ccV=supportFee(S.nights,P); L.ground+=ccV; legLines.push({t:`24/7 on-the-ground support · per party, ${S.nights} nights${P>=SUPPORT_GROUP_MIN?' · group of '+P:''}`,v:ccV});
   const total=Object.values(L).reduce((a,b)=>a+b,0);
   return {L,total,pp:total/P,P,G,R,rounds,carDays,guideDays,hotelLines,golfLines,expLines,legLines};
 }
@@ -1280,13 +1344,19 @@ function renderAll(){
   body.style.display=''; empty.style.display='none'; sum.style.display='';
   $('#estPP').textContent=fmt(E.pp); $('#estTot').textContent=fmt(E.total);
   $('#estWho').textContent=`${E.P} traveller${E.P>1?'s':''}, ${E.R} room${E.R>1?'s':''}`;
-  const ln=(t,v,sub)=>`<div class="ln${sub?' sub':''}"><span>${t}</span><span>${v!=null?'US$'+fmt(v):''}</span></div>`;
-  let h='';
-  h+=ln(`Hotels · ${TIERS[S.tier].name} · ${S.nights} nights`,E.L.hotel); E.hotelLines.forEach(x=>h+=ln(x.t,x.v,1));
-  h+=ln(`Golf · ${E.rounds} round${E.rounds!==1?'s':''}${S.rental?' + clubs':''}`,E.L.golf); E.golfLines.forEach(x=>h+=ln(x.t,x.v,1));
-  h+=ln('Transfers & travel',E.L.transfer); E.legLines.filter(x=>!/guide|concierge/i.test(x.t)).forEach(x=>h+=ln(x.t,x.v,1));
-  h+=ln('Guide & concierge',E.L.ground); E.legLines.filter(x=>/guide|concierge/i.test(x.t)).forEach(x=>h+=ln(x.t,x.v,1));
-  if(E.expLines.length){ h+=ln('Culture & dining, as in our journeys',E.L.tickets); E.expLines.forEach(x=>h+=ln(x.t,x.v,1)); }
+  /* client-facing: what the journey includes — no line prices (the itemised breakdown goes to the team in the summary) */
+  const st0=activeStops(); const names=[]; st0.forEach(s=>{ const an=areaNights(s); s.areas.forEach(a=>{ if(an[a.id])names.push(tierHotel(a).name); }); });
+  const rounds=[]; st0.forEach(s=>(S.courses[s.id]||[]).forEach(cid=>{ const c=s.courses.find(x=>x.id===cid); if(c&&!c.req)rounds.push(c.name.replace('Mission Hills Haikou — ','').replace('Mission Hills — ','Mission Hills ').replace(' — ',' ')); }));
+  const legs=E.legLines.filter(x=>/rail|flight|car ·|throughout/i.test(x.t)&&!/driver|Airport/i.test(x.t)).map(x=>x.t.replace(/:.*$/,'').replace(/ — .*$/,''));
+  const inc=[
+    `<b>${S.nights} nights</b> in hand-picked ${TIERS[S.tier].name.toLowerCase()} hotels — ${names.join(', ')} — breakfast every morning`,
+    `<b>${rounds.length} confirmed round${rounds.length!==1?'s':''}</b> — ${rounds.join(', ')} — green fees, carts and caddies included, tee times secured before you fly`,
+    `<b>Private car and driver</b> on every golf day, airport to airport, never a shared shuttle`,
+    legs.length?`<b>Every leg between places booked and handled</b> — ${legs.join(' · ')}`:`<b>Airport transfers</b> on arrival and departure, timed to your flights`,
+    `<b>Culture, dining and a private English-speaking guide</b> woven around the rounds to your taste — on request, priced in your proposal`,
+    `<b>A dedicated journey designer</b> before you fly and <b>24/7 on-the-ground support</b> while you're here — one team, first tee to final transfer`,
+    `<b>One proposal, one invoice</b> — nothing to book, chase or reconfirm yourself` ];
+  let h=`<div class="inc-k">Your tailored journey includes</div>`+inc.map(x=>`<div class="inc"><span class="tick">✓</span><span>${x}</span></div>`).join('');
   $('#estLines').innerHTML=h;
   /* summary card */
   const st=activeStops();
@@ -1327,12 +1397,12 @@ addEventListener('keydown',e=>{ if(!$('#hmodal').classList.contains('open'))retu
 const TOTAL_STEPS=6;
 function validate(step){
   let bad=[];
-  if(step===1){ if(!S.nights)bad.push(nightsEl); if(S.dateMode==='fixed'&&!S.arr)bad.push(arrEl); if(!pax())bad.push($('#golfersStep')); if(!S.rooms)bad.push(roomsEl); }
+  if(step===1){ if(!S.nights||S.nights<2)bad.push(nightsEl); if(S.dateMode==='fixed'&&!S.arr)bad.push(arrEl); if(!pax())bad.push($('#golfersStep')); if(!S.rooms)bad.push(roomsEl); }
   if(step===2){ if(!S.stops.length)bad.push($('#stopTiles')); }
   if(step===6){ if(!$('#fn').value.trim())bad.push($('#fn')); if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#em').value))bad.push($('#em')); }
   $$('.err-field').forEach(e=>e.classList.remove('err-field'));
   bad.forEach(e=>e&&e.classList.add('err-field'));
-  const err=$('#fErr'); err.textContent=step===4?'Choose at least one course in each place (or drop the place).':'Please complete the highlighted fields before continuing.';
+  const err=$('#fErr'); err.textContent=(step===1&&S.nights===1)?'Our journeys start at two nights — please enter 2 or more.':step===4?'Choose at least one course in each place (or drop the place).':'Please complete the highlighted fields before continuing.';
   err.classList.toggle('show',bad.length>0);
   if(bad.length)bad[0].scrollIntoView({behavior:'smooth',block:'center'});
   return !bad.length;
@@ -1397,6 +1467,25 @@ async function submit(){
   }catch(e){ btn.disabled=false; btn.innerHTML='Send My Journey →'; const er=$('#fErr'); er.textContent='Something went wrong — please try again, or email hello@golfchina.co.'; er.classList.add('show'); }
 }
 $('#previewClose').addEventListener('click',()=>$('#previewModal').classList.remove('show'));
+
+/* ==================== GUEST STORIES (same content as the home page) ==================== */
+const REVIEWS=[
+ { id:'ben-matilda', name:'Ben & Matilda', loc:'Australia', img:'review-ben-matilda.avif', photo:'Photo taken at Jade Dragon Snow Mountain Golf Club, Lijiang', quote:'I’m 55 and have played plenty of great golf around the world — but China was something else.',
+   text:['My wife and I originally booked their surf and golf trip on Hainan Island. I’m a pretty good surfer and golf mad, and towards the end of the trip we really wanted to see more of China. So I asked Ethan if he could put together a proper mainland golf trip for us.','He organized 10 days through Beijing and Yunnan, and honestly, some of the most fascinating courses I’ve ever played. I’m 55 and have played plenty of great golf around the world, but China was something else.','Me and my wife absolutely loved it. Not just the golf, but the whole experience. We were looked after the entire way and the people were so welcoming. One of the best trips we’ve ever done, no doubt.'] },
+ { id:'austin-family', name:'Austin & Family', loc:'United States', img:'review-austin-family.avif', photo:'Photo taken at Spring City Golf & Lake Resort, Yunnan', quote:'None of our wives play golf — and they ended up enjoying the trip just as much as we did.',
+   text:['Happy wives, happy life. None of our wives play golf, so we weren’t sure if bringing them was a good idea. But the team planned plenty of things for them while we were out playing, and they ended up enjoying the trip just as much as we did.','The golf courses were amazing. Yunnan was also a big surprise. We’ve been to China before, but never this part. Beautiful place, really interesting culture, and everyone had a great time.'] },
+ { id:'josh-friends', name:'Josh & Friends', loc:'Australia & Singapore', img:'review-josh-friends.avif', photo:'Photo taken at The Dunes at Shenzhou Peninsula, Hainan', quote:'Probably the best bucks golf trip we’ve ever done.',
+   text:['Probably the best bucks golf trip we’ve ever done. We’re all from Australia, two of us live in Singapore.','We did 12 days through Hainan and Shanghai, playing some really unique golf courses and even getting a few surf sessions in. Never thought we’d end up doing a golf trip in China, but it was such a good time. Special thanks to the caddies for finding the wallet we lost.','There’s so much more to see over there, so we’ll probably come back next year to play a few more courses and explore other parts of China.'] },
+ { id:'joe-margaret', name:'Joe & Margaret', loc:'United States', img:'review-joe-margaret.avif', photo:'Photo taken at Yanqi Lake, Beijing', quote:'Much more interesting than just doing the usual sightseeing.',
+   text:['Our friends who have been on their trip recommended the team to us, so we decided to come back for a golf trip.','We absolutely loved it. It was much more interesting than just doing the usual sightseeing. The courses were amazing, and many of them had so much history and culture around them, which my wife really loved.','Great golf, amazing hotels and food, everything was organized very well.'] },
+ { id:'louis-denis-antoine', name:'Louis, Denis & Antoine', loc:'France', img:'review-louis-denis-antoine.avif', photo:'Photo taken at Fuchun Golf Club, Hangzhou', quote:'Probably the most unique courses we have ever played.',
+   text:['My two friends and I had wanted to visit China for a long time. We are all avid golfers, and were very curious to discover what golf in China was like.','We did a 10 days trip across several cities and everything was very well organised. The team took care of us from beginning to end, and the golf courses were probably the most unique we have ever played.','A very special trip for us and will come back to play more.'] }
+];
+$('#srow').innerHTML=REVIEWS.map(r=>`<article class="rcard"><img src="${img(r.img)}" alt="${r.name}" loading="lazy"><h3>${r.name.replace('&','&amp;')}</h3><div class="loc">${r.loc.replace('&','&amp;')}</div><p class="rq">&ldquo;${r.quote}&rdquo;</p><button type="button" class="more" data-review="${r.id}">Read more</button></article>`).join('');
+$$('#srow .more').forEach(b=>b.addEventListener('click',()=>{ const r=REVIEWS.find(x=>x.id===b.dataset.review); $('#rm-img').src=img(r.img); $('#rm-img').alt=r.name; $('#rm-cap').textContent=r.photo; $('#rm-name').textContent=r.name; $('#rm-text').innerHTML=r.text.map(t=>`<p>${t}</p>`).join(''); $('#rmodal').classList.add('open'); document.body.style.overflow='hidden'; }));
+const closeR=()=>{ $('#rmodal').classList.remove('open'); document.body.style.overflow=''; };
+$$('#rmodal [data-rclose]').forEach(e=>e.addEventListener('click',closeR));
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&$('#rmodal').classList.contains('open'))closeR(); });
 
 /* init */
 renderMap(); applyStopRule(); go(1); renderAll();
