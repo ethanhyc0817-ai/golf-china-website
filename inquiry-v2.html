@@ -248,6 +248,9 @@ section.enq{padding:56px 0 110px}
 .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
 @media(max-width:560px){.row,.row3{grid-template-columns:1fr}}
 .sub-l{display:block;font-size:14.5px;color:var(--muted);margin-bottom:6px;font-weight:400}
+.row>div,.row3>div{min-width:0}
+input[type=date]{-webkit-appearance:none;appearance:none;min-width:0;max-width:100%;box-sizing:border-box;display:block}
+input[type=date]::-webkit-date-and-time-value{text-align:left;min-height:1.4em}
 
 input[type=text],input[type=email],input[type=tel],input[type=date],input[type=month],input[type=number],select,textarea{width:100%;background:#fff;border:1px solid var(--mist);color:var(--ink);padding:13px 14px;border-radius:2px;font-family:var(--sans);font-size:16.5px;font-weight:300;transition:border-color .25s;min-height:50px}
 select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' fill='none' stroke='%23b89150' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
@@ -788,15 +791,6 @@ footer a{border-bottom:1px solid rgba(255,255,255,.3)}
                 <div class="review" id="review"></div>
               </div>
               <div class="fq">
-                <span class="ql">How does the estimate feel?</span>
-                <div class="chips">
-                  <label class="chip"><input type="radio" name="Estimate fit" value="About right"><span>About right</span></label>
-                  <label class="chip"><input type="radio" name="Estimate fit" value="I'd like to spend less"><span>I&rsquo;d like to spend less</span></label>
-                  <label class="chip"><input type="radio" name="Estimate fit" value="Happy to go further"><span>Happy to go further</span></label>
-                  <label class="chip"><input type="radio" name="Estimate fit" value="Rather discuss"><span>I&rsquo;d rather discuss</span></label>
-                </div>
-              </div>
-              <div class="fq">
                 <span class="ql">Your details<span class="req">*</span></span>
                 <div class="row">
                   <div><span class="sub-l">First name</span><input type="text" name="First name" id="fn" autocomplete="given-name" required></div>
@@ -808,8 +802,6 @@ footer a{border-bottom:1px solid rgba(255,255,255,.3)}
                 </div>
                 <div class="row" style="margin-top:12px">
                   <div><span class="sub-l">Country of residence</span><input type="text" name="Country" autocomplete="country-name" placeholder="Australia"></div>
-                  <div><span class="sub-l">How did you hear about us? <span style="color:var(--faint)">optional</span></span>
-                    <select name="Source"><option value="">Select</option><option>Google search</option><option>Instagram</option><option>Golf Digest / press</option><option>Friend or past guest</option><option>Golf club / pro</option><option>Other</option></select></div>
                 </div>
               </div>
               <div class="fq">
@@ -991,8 +983,7 @@ const STOPS = [
       { id:'GOLF-LIONLAKE', builtin:true, prio:1, area:'lionlake', name:'Lion Lake — Moon Course', sub:'Qingyuan · Rick Jacobson', standing:'China Top 10', cost:850, img:'lionlake-lead.jpg', d:'The only course in the world on a UNESCO Danxia landform.' },
       { id:'GOLF-FOSHAN', builtin:true, prio:3, area:'guangzhou', name:'Foshan Golf Club', sub:'Foshan · Tony Cashmore', standing:'Challenge Tour venue · Private club', cost:2700, priv:true, img:'foshan-golf-lead.jpg', d:'Kept in tournament condition year-round — guest play arranged on your behalf.' },
       { id:'GOLF-MH-SHENZHEN', builtin:true, prio:2, area:'shenzhen', name:'Mission Hills — World Cup Course', sub:'Shenzhen · Jack Nicklaus', standing:'Host, 1995 World Cup of Golf', cost:2400, img:'missionhills-guanlan-lead.jpg', d:'The flagship of twelve.' },
-      { id:'GOLF-MH-NORMAN', addon:true, area:'shenzhen', name:'Mission Hills — Norman Course', sub:'Shenzhen · Greg Norman', standing:'The sternest test on the estate', cost:2400, img:'missionhills-guanlan-lead.jpg', d:'A buggy ride from the World Cup Course.' },
-      { id:'GOLF-MH-OTHER', addon:true, area:'shenzhen', name:'Mission Hills — Faldo, Els, Sörenstam or Ozaki', sub:'Shenzhen · your pick of the estate', standing:'One of twelve', cost:2400, img:'missionhills-guanlan-lead.jpg', d:'Tell us which in the notes — or leave it to us.' } ],
+      { id:'GOLF-MH-SECOND', addon:true, area:'shenzhen', name:'Mission Hills — a second design', sub:'Shenzhen · Norman, Faldo, Els, Sörenstam or Ozaki', standing:'One of twelve', cost:2400, img:'missionhills-norman-course.jpg', d:'Another of the estate’s twelve — tell us which in the notes, or leave it to us.' } ],
     exps:[
       { id:'TKT-CANTON-HERITAGE', builtin:true, name:'Old Canton, privately guided', cost:100, per:'pp', day:true, guided:true, img:'guangzhou-chen-clan-academy.jpg', d:'Chen Clan Academy, the Xiguan lanes, Shamian Island.' },
       { id:'YUMCHA', name:'Yum cha the local way', cost:0, per:'pp', day:false, guided:true, img:'guangzhou-dimsum.jpg', d:'Morning tea, bamboo steamers, no menu in English.' },
@@ -1010,7 +1001,7 @@ const STOPS = [
     courses:[
       { id:'GOLF-JADEDRAGON', builtin:true, area:'lijiang', name:'Jade Dragon Snow Mountain', sub:'Lijiang · Neil Haworth · 3,100 m', standing:'Asia Top 50 · World’s longest course', cost:1200, img:'jadedragon-course-view.avif', d:'8,548 yards beneath a 5,500 m glacier — we build in two nights to acclimatise.', closed:['12-15','02-15'] },
       { id:'GOLF-SPRINGCITY-LAKE', builtin:true, area:'springcity', name:'Spring City — Lake Course', sub:'Kunming · Robert Trent Jones Jr', standing:'World Top 100', cost:1380, img:'springcity-resort-aerial.avif', d:'Tumbling toward Yangzong Lake — the crown jewel of Chinese golf.' },
-      { id:'GOLF-SPRINGCITY-MTN', addon:true, area:'springcity', name:'Spring City — Mountain Course', sub:'Kunming · Jack Nicklaus', standing:'Asia Top 100', cost:1380, img:'springcity-resort-aerial.avif', d:'The ridgeline above the lake — keen golfers play both.' } ],
+      { id:'GOLF-SPRINGCITY-MTN', addon:true, area:'springcity', name:'Spring City — Mountain Course', sub:'Kunming · Jack Nicklaus', standing:'Asia Top 100', cost:1380, img:'springcity-mountain-course.avif', d:'The ridgeline above the lake — keen golfers play both.' } ],
     exps:[
       { id:'TKT-LIJIANG-OLDTOWN', builtin:true, name:'Lijiang old town, privately guided', cost:80, per:'pp', day:true, guided:true, img:'exp-oldtown-guide.avif', d:'The UNESCO old town in the quiet hours, with a Naxi guide.' },
       { id:'TKT-NAXI-VILLAGE', builtin:true, name:'Naxi village & tea tasting', cost:200, per:'pp', day:false, guided:true, img:'exp-tea-ceremony.avif', d:'A mountain village at the foot of the snow mountain.' },
@@ -1275,7 +1266,7 @@ function renderStopBlocks(){
       (add.length?`<div class="ql" style="margin:18px 0 8px">Add a round <span class="hint">${full?`optional — ${maxRounds()} round${maxRounds()>1?'s':''} is the most for ${S.nights} nights; on-request rounds can still be noted`:'optional'}</span></div><div class="list">`+add.map(cc=>`
       <label class="li ${full&&!cc.req&&!S.courses[s.id].includes(cc.id)?'locked':''}"><input type="checkbox" name="Add-on rounds — ${s.name}" value="${cc.name}${cc.req?' (on request)':''}" data-stop="${s.id}" data-id="${cc.id}" ${S.courses[s.id].includes(cc.id)?'checked':''} ${full&&!cc.req&&!S.courses[s.id].includes(cc.id)?'disabled':''}>
       <div class="lb"><span class="ck">✓</span><img class="im" src="${img(cc.img)}" alt="" loading="lazy"><div><div class="t">${cc.name}</div><div class="d">${cc.sub} · ${cc.d}</div></div>
-      <div class="p">${cc.req?'on request':`+US$${fmt(usd(cc.cost+CADDIE,MU.golf))}<em>per golfer · green fee, caddie fee &amp; cart fee</em>`}</div></div></label>`).join('')+`</div>`:'')+
+      <div class="p">${cc.req?'on request':`add a round<em>green fee, caddie fee &amp; cart fee</em>`}</div></div></label>`).join('')+`</div>`:'')+
       `${s.courseNote?`<p class="help" style="margin-top:12px">${s.courseNote}</p>`:''}</div>`;
     d.querySelectorAll('input').forEach(i=>i.addEventListener('change',()=>{ const arr=S.courses[s.id]; if(i.checked){if(!arr.includes(i.dataset.id))arr.push(i.dataset.id);} else S.courses[s.id]=arr.filter(x=>x!==i.dataset.id); renderStopBlocks(); renderAll(); }));
     c.appendChild(d);
@@ -1449,7 +1440,6 @@ function buildSummary(){
   L.push('');
   L.push(`INDICATIVE PRICE: from US$${fmt(E.pp)} pp · US$${fmt(E.total)} total`);
   L.push(`  Hotels US$${fmt(E.L.hotel)} · Golf US$${fmt(E.L.golf)} (${E.rounds} rounds) · Transfers US$${fmt(E.L.transfer)} (${E.carDays} car days) · Ground US$${fmt(E.L.ground)} (${E.guideDays} guide days) · Experiences US$${fmt(E.L.tickets)}`);
-  L.push(`Estimate fit: ${fd.get('Estimate fit')||'—'} · Source: ${fd.get('Source')||'—'}`);
   if(fd.get('Message'))L.push('',`Message: ${fd.get('Message')}`);
   const client=`${fd.get('First name')} ${fd.get('Last name')||''}`.trim().replace(/"/g,'');
   L.push('',`INTAKE: python3 skills/new-inquiry-intake/intake.py --client "${client}" --email ${fd.get('_replyto')} --channel email --journey ${journey}${S.dateMode==='fixed'&&S.arr?' --start '+S.arr:''} --pax ${E.P} --golfers ${S.golfers} --rooms ${E.R} --notes "Formspree journey builder · from US$${fmt(E.pp)} pp · ${st.map(s=>s.name+' '+(S.alloc[s.id]||1)+'N').join(' → ')}"${journey!=='custom'?' --quote':''}`);
